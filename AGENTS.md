@@ -15,7 +15,7 @@
 ### 2.1. O projeto e o time
 - **Missão:** ficha pública e apartidária de parlamentares — como votaram, quanto gastaram, o que declaram de patrimônio. Tagline: "Nosso compromisso é com a verdade."
 - **Organização:** [`github.com/ficha-do-politico`](https://github.com/ficha-do-politico). Perfil/missão completa no repo `.github`.
-- **Time:** projeto paralelo (não é trabalho principal de ninguém) de Antonio Leblanc + Soutto + Ludovic + Layr.
+- **Time:** projeto paralelo (não é trabalho principal de ninguém) de Antonio + Soutto + Ludovic + Layr.
 - **Modelo de anonimato:** ainda em decisão pelo grupo — não assuma que contribuidores querem nome real vinculado a commits/PRs até o time confirmar o contrário.
 - **Licença:** código MIT; dados são públicos por natureza (fontes oficiais do governo).
 
