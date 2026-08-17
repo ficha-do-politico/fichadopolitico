@@ -204,7 +204,3 @@ A seguir, um resumo organizado das informações sobre os principais cargos pol�
 - **Poder Individual:** Devido ao volume, mais de 80% dos casos são decididos monocraticamente (por um juiz sozinho).
 
 ---
-
-## Nota pessoal (não é conteúdo da ficha)
-
-> O vídeo-fonte deste resumo termina com uma observação sobre o cenário eleitoral de São Paulo (corrida Marçal x Nunes, disputa interna na direita). Isso é opinião/análise de terceiros, não um fato verificável com fonte oficial — por isso foi removido daqui. Mantendo o princípio apartidário do projeto (§3.1 do `ai-code-agent.md`), este documento serve só como referência rápida de "o que cada cargo faz", não como comentário de conjuntura.
