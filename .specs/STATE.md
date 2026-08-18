@@ -5,7 +5,7 @@
 ### AD-001
 - **Decisão**: O MVP v0 foca em *votações importantes curadas* por deputado, não em um dump cronológico de votações nominais recentes.
 - **Motivo**: A análise competitiva (Meu Congresso, Radar do Congresso, Vamos Cobrar Brasil) já agrega dados parlamentares; a lacuna é o acesso amigável ao cidadão sobre *decisões que importaram*, sem precisar saber o número do PL/PEC antes.
-- **Trade-off**: Exige uma camada editorial explícita e curadoria contínua; não pode ser totalmente automatizado no dia one.
+- **Trade-off**: Exige uma camada editorial explícita e curadoria contínua; não pode ser totalmente automatizado no primeiro dia.
 - **Escopo**: Definição de produto do MVP v0, UX e catálogo de votações curadas.
 - **Data**: 2026-08-18
 - **Status**: ativo — substitui o enquadramento da issue #1 no GitHub ("votações nominais mais recentes"), mantendo a mesma fonte de dados e os princípios apartidários.
@@ -66,13 +66,29 @@
 - **Data**: 2026-08-18
 - **Status**: ativo
 
+### AD-009
+- **Decisão**: A ficha pública do MVP v0 NÃO exibe CPF nem outros dados sensíveis retornados pela API (ex.: email, telefone de gabinete), mesmo quando disponíveis no payload ou em artefatos de discovery.
+- **Motivo**: PR #4 (`discovery/deputies-data`) gera markdowns com CPF para exploração; o produto cidadão deve expor apenas identificação política mínima (nome, partido, UF, foto) + votos com fonte.
+- **Trade-off**: Descarta campos que a API oferece e que concorrentes às vezes exibem; reduz risco de LGPD e superfície de abuso.
+- **Escopo**: MVP v0 UI, seeds/fixtures, scripts de exportação pública.
+- **Data**: 2026-08-18
+- **Status**: ativo
+
+### AD-010
+- **Decisão**: Discovery de `/deputados` está em andamento via PR #4 — script Python (`scripts/fetch_deputados.py`) + fichas markdown em `dados/deputados/{id}.md`; isso satisfaz parcialmente DISC-01..03, mas não substitui discovery de `/votacoes`.
+- **Motivo**: Layr entregou exploração reproduzível com rastreio de fonte por campo; Design deve decidir se v0 consome API ao vivo, arquivos estáticos ou híbrido.
+- **Trade-off**: Artefatos estáticos envelhecem; API ao vivo exige cache/rate limit (DISC-08..09 ainda pendentes).
+- **Escopo**: Issue #2, api-discovery, camada de ingestão do mvp-v0.
+- **Data**: 2026-08-18
+- **Status**: ativo
+
 ## Handoff
 
-- **Feature**: Bootstrap das specs do projeto (`.specs/`)
-- **Fase / Task**: Specify — specs escritas, aguardando revisão/confirmação do time
-- **Concluído**: STATE.md, `features/mvp-v0/spec.md`, `features/mvp-v0/context.md`, `features/api-discovery/spec.md`
-- **Em progresso**: nenhum
-- **Próximo passo**: Time revisa specs na branch `definindo-specs`; confirmar ou ajustar AD-001 (curado vs. votos recentes); depois seguir para Design do mvp-v0
-- **Bloqueios**: Stack não escolhida; entradas do catálogo curado precisam de IDs oficiais de proposição/votação vindos do api-discovery (issue #2)
-- **Arquivos não commitados**: `.specs/**` (novo)
+- **Feature**: Specs do projeto (`.specs/`) + alinhamento com PR #4
+- **Fase / Task**: Specify — specs commitadas; sincronizado com `origin/main` (2026-08-18); atualizado pós-PR #4
+- **Concluído**: STATE.md (AD-001..010), specs mvp-v0 e api-discovery; merge com main
+- **Em progresso**: PR #4 (Layr) — discovery `/deputados`; issue #2 parcialmente atendida
+- **Próximo passo**: Abrir/atualizar PR das specs para `main`; time confirma AD-001; após merge do PR #4, completar DISC-04..07 (votações) e decidir live API vs. estático no Design
+- **Bloqueios**: Mapeamento tema → `votacao_id` ainda pendente; PR #4 pode conflitar com estrutura atual (`estudo/` vs. paths na branch discovery)
+- **Arquivos não commitados**: alterações pendentes em `.specs/**` desta sessão
 - **Branch**: `definindo-specs`

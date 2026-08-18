@@ -57,9 +57,11 @@ Modelo mental do cidadão: **deputado primeiro, tema depois** — inverso de fer
 
 **Pergunta:** Entregar votos recentes cronológicos (issue #1 original) ou temas importantes curados (conclusão do debate)?
 
-**Decisão:** Temas importantes curados (AD-001). Lista de votos recentes é commodity; simplificação curada é a hipótese a validar.
+**Decisão:** Temas importantes curados (AD-001). Lista de votos recentes é commodity; simplificação curada é a hipótese a validar. Comentário da Layr na issue #1 ("começar pelas mais importantes") reforça esta direção.
 
 **Racional:** Quando a 6×1 passou, grandes veículos publicaram listas por deputado — a demanda existe, mas a entrega é jornalismo episódico, não ferramenta permanente.
+
+**Confirmado?** s — alinhamento explícito do time na issue #1 (Layr, 17/08).
 
 ---
 
@@ -143,5 +145,6 @@ Quando a fase de Design começar, priorizar:
 2. **Componente de card de voto** — título do tema, badge de voto (Sim/Não/…), data, ref. da proposição, links duplos de fonte
 3. **Schema do catálogo** — localização do arquivo, script de validação, check de CI que IDs de votação resolvem
 4. **Estratégia de cache** — rate limits da API da Câmara (output da issue #2 deve informar TTL)
+5. **Reutilizar PR #4?** — `scripts/fetch_deputados.py` + `dados/deputados/` vs. fetch ao vivo; remover CPF dos artefatos públicos se forem versionados (AD-009)
 
-Stack permanece aberta (AD-008). PR em andamento da Layr em `/deputados` pode informar a primeira escolha de implementação — ler antes do Design.
+Stack permanece aberta (AD-008). [PR #4](https://github.com/ficha-do-politico/fichadopolitico/pull/4) da Layr (`discovery/deputies-data`, 18/08) entrega 513 fichas markdown com rastreio de fonte — boa base para P2 (lista de deputados) e input de stack (Python stdlib). Falta merge e possível rebase sobre `main` atual (`estudo/`). Discovery de `/votacoes` ainda não iniciado.

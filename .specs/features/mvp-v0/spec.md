@@ -28,6 +28,7 @@ Explicitamente excluído no v0. Documentado para evitar creep de escopo.
 | Rótulos políticos, scores, alinhamento, rankings | Viola AD-004 |
 | Detecção automatizada de "importância" via ML/notícias | Curadoria do v0 é manual e transparente (AD-003) |
 | App mobile nativo | Web responsivo basta para validar o MVP |
+| Exibição de CPF, email ou telefone de gabinete | Dado sensível; API retorna mas produto não expõe (AD-009). PR #4 inclui CPF só como artefato de discovery |
 
 ---
 
@@ -36,7 +37,7 @@ Explicitamente excluído no v0. Documentado para evitar creep de escopo.
 | Premissa / decisão | Default escolhido | Racional | Confirmado? |
 | ------------------ | ----------------- | -------- | ----------- |
 | Formato do catálogo curado | Arquivo versionado (YAML/JSON) no repo | Transparente, revisável em PRs, sem CMS no v0 | n |
-| Temas seed iniciais | 4 da Layr + espaço para crescer até ~20 | Comentário na issue #1 + AD-007 | n |
+| Temas seed iniciais | 4 da Layr (comentário na issue #1, alinhado com AD-001) | Issue #1 comment + AD-007 | s |
 | Deputado ausente de uma votação | Exibir `Ausente` ou `Não votou` conforme valor da API; nunca inferir | API oficial é fonte da verdade (AD-006) | s |
 | Múltiplas votações por tema | Catálogo mapeia tema → lista ordenada de IDs de votação; UI mostra último voto decisivo ou todos (ver context.md) | Alguns temas abrangem várias votações | n |
 | Stack / hospedagem | Indefinido (AD-008) | Fase de Design | n |
@@ -223,7 +224,8 @@ Todas as outras dimensões resolvidas ou marcadas como N/A abaixo.
 | Issue | Relação |
 | ----- | ------- |
 | [#1 MVP v0](https://github.com/ficha-do-politico/fichadopolitico/issues/1) | Esta spec **refina** a issue #1: substitui "votações recentes" por "temas relevantes curados"; mantém lista de deputados, ficha, links oficiais, fonte só Câmara |
-| [#2 API discovery](https://github.com/ficha-do-politico/fichadopolitico/issues/2) | Pré-requisito para mapear entradas do catálogo para `votacao_ids` reais; ver `features/api-discovery/spec.md` |
+| [#2 API discovery](https://github.com/ficha-do-politico/fichadopolitico/issues/2) | Pré-requisito para mapear entradas do catálogo para `votacao_ids` reais; `/deputados` em progresso via [PR #4](https://github.com/ficha-do-politico/fichadopolitico/pull/4) |
+| [PR #4](https://github.com/ficha-do-politico/fichadopolitico/pull/4) | Discovery parcial — lista/ficha de deputados; Design deve decidir reutilização vs. API ao vivo (AD-010) |
 
 ## Posicionamento Competitivo (referência)
 

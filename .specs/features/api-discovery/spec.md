@@ -2,7 +2,18 @@
 
 ## Declaração do Problema
 
-Antes de construir o catálogo de votações curadas do MVP e o pipeline de ingestão, o time precisa de conhecimento verificado sobre o que as APIs oficiais retornam: formatos de campos, paginação, rate limits, ligação proposição↔votação e enums de rótulos de voto. A issue #2 no GitHub rastreia esse trabalho; a Layr começou pelos endpoints `/deputados` da Câmara. Sem o output do discovery, entradas do catálogo curado não podem ser mapeadas para `votacao_ids` reais com confiança.
+Antes de construir o catálogo de votações curadas do MVP e o pipeline de ingestão, o time precisa de conhecimento verificado sobre o que as APIs oficiais retornam: formatos de campos, paginação, rate limits, ligação proposição↔votação e enums de rótulos de voto. A issue #2 no GitHub rastreia esse trabalho; a Layr começou pelos endpoints `/deputados` da Câmara ([PR #4](https://github.com/ficha-do-politico/fichadopolitico/pull/4), branch `discovery/deputies-data`). Sem o output do discovery de **votações**, entradas do catálogo curado ainda não podem ser mapeadas para `votacao_ids` reais com confiança.
+
+## Progresso Atual (2026-08-18)
+
+| Entregável | Status | Onde |
+| ---------- | ------ | ---- |
+| DISC-01..03 (`/deputados`) | **Em progresso** — PR #4 aberta | `scripts/fetch_deputados.py`, `dados/deputados/{id}.md`, `discovery/deputados_ordem_ASC_ordenarPor_nome.json` |
+| DISC-04..07 (`/votacoes`) | Pendente | — |
+| DISC-08..09 (limites/cache) | Pendente | PR #4 usa `--delay` no script; falta documentar formalmente |
+| DISC-10 (Senado) | Pendente | — |
+
+**Nota:** Os markdowns do PR #4 incluem CPF e outros campos sensíveis para exploração. O MVP v0 **não** exibirá esses campos (AD-009).
 
 ## Objetivos
 
@@ -24,7 +35,7 @@ Antes de construir o catálogo de votações curadas do MVP e o pipeline de inge
 
 | Premissa / decisão | Default escolhido | Racional | Confirmado? |
 | ------------------ | ----------------- | -------- | ----------- |
-| Localização do doc principal | `docs/api/camara.md` (ou `.specs/features/api-discovery/findings.md`) | Descobrível por implementadores | n |
+| Localização do doc principal | `docs/api/camara.md` (ou `.specs/features/api-discovery/findings.md`); artefatos interim do PR #4 em `scripts/` + `dados/deputados/` | Descobrível por implementadores; PR #4 já gera exemplos reais | n |
 | Referência Swagger | https://dadosabertos.camara.leg.br/swagger/api.html (conforme Layr, issue #2) | Já em uso | s |
 | Exploração do Senado | Seção breve nos findings; sem entregável bloqueante | Título da issue #2 menciona Senado; MVP é só Câmara | n |
 
@@ -109,9 +120,9 @@ Dimensões de requisitos implícitos restantes: N/A para esta feature de pesquis
 
 | ID de Requisito | Story | Fase | Status |
 | --------------- | ----- | ---- | ------ |
-| DISC-01 | P1: Deputados | Execute | Pendente |
-| DISC-02 | P1: Deputados | Execute | Pendente |
-| DISC-03 | P1: Deputados | Execute | Pendente |
+| DISC-01 | P1: Deputados | Execute | Em progresso (PR #4) |
+| DISC-02 | P1: Deputados | Execute | Em progresso (PR #4) |
+| DISC-03 | P1: Deputados | Execute | Em progresso (PR #4) |
 | DISC-04 | P1: Votações | Execute | Pendente |
 | DISC-05 | P1: Votações | Execute | Pendente |
 | DISC-06 | P1: Votações | Execute | Pendente |
@@ -136,5 +147,6 @@ Dimensões de requisitos implícitos restantes: N/A para esta feature de pesquis
 | ----- | ------- |
 | [#2 Discovery](https://github.com/ficha-do-politico/fichadopolitico/issues/2) | Alvo direto de implementação desta spec |
 | [#1 MVP v0](https://github.com/ficha-do-politico/fichadopolitico/issues/1) | Consumidor do output do discovery |
+| [PR #4](https://github.com/ficha-do-politico/fichadopolitico/pull/4) | Implementação parcial de DISC-01..03; falta merge e discovery de votações |
 
-**Nota da issue #2:** Layr reportou uso de `/deputados` e `/deputados/{ID}`; Senado pendente. Esta spec formaliza entregáveis para que o discovery não seja ad hoc.
+**Nota da issue #2:** Layr reportou uso de `/deputados` e `/deputados/{ID}`; entregou script + 513 fichas markdown (18/08). Senado e endpoints `/votacoes` ainda pendentes.
