@@ -1,0 +1,37 @@
+---
+interface Props {
+  voto: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { voto, size = 'md' } = Astro.props;
+
+let colorClasses = 'bg-zinc-100 text-zinc-700 border-zinc-300';
+let label = voto;
+
+if (voto === 'Sim') {
+  colorClasses = 'bg-emerald-50 text-emerald-800 border-emerald-300';
+} else if (voto === 'Não') {
+  colorClasses = 'bg-rose-50 text-rose-800 border-rose-300';
+} else if (voto === 'Abstenção') {
+  colorClasses = 'bg-amber-50 text-amber-800 border-amber-300';
+} else if (voto === 'Obstrução') {
+  colorClasses = 'bg-orange-50 text-orange-800 border-orange-300';
+} else if (voto === 'Artigo 17') {
+  colorClasses = 'bg-slate-100 text-slate-700 border-slate-300';
+  label = 'Art. 17 (Presidência)';
+} else if (voto.includes('Ausente') || voto.includes('Não votou')) {
+  colorClasses = 'bg-zinc-100 text-zinc-600 border-zinc-200';
+  label = 'Não votou / Ausente';
+}
+
+const sizeClasses = size === 'sm' 
+  ? 'px-2 py-0.5 text-xs' 
+  : size === 'lg' 
+  ? 'px-4 py-1.5 text-base font-semibold' 
+  : 'px-3 py-1 text-sm font-medium';
+---
+
+<span class={`inline-flex items-center rounded-full border ${colorClasses} ${sizeClasses} shadow-sm transition-colors`}>
+  {label}
+</span>

@@ -112,19 +112,29 @@
 
 
 
+### AD-012
+
+- **Decisão**: A stack de frontend do MVP v0 adotará **Astro SSG** (Static Site Generation) com Tailwind CSS, pré-renderizando 513 páginas estáticas individuais de deputados federais e a página de busca principal.
+- **Motivo**: Astro gera HTML puro sem runtime JavaScript pesado no cliente, garantindo carregamento instantâneo em conexões mobile (3G/4G), pontuação máxima de performance no Lighthouse e suporte nativo a tags `<meta property="og:...">` pré-renderizadas para cada deputado (essencial para cards formatados com foto no WhatsApp e redes sociais). Além disso, exporta arquivos estáticos (`dist/`) compatíveis com qualquer hospedagem gratuita (Cloudflare Pages, Vercel ou GitHub Pages).
+- **Trade-off**: A geração estática exige um rebuild/deploy sempre que novos temas forem adicionados ao catálogo; perfeitamente aceitável dado o ciclo editorial quinzenal/mensal de curadoria.
+- **Escopo**: Aplicação web do MVP v0 (`site/`).
+- **Data**: 2026-09-12
+- **Status**: ativo
+
+
+
 ## Handoff
 
-- **Feature**: Discovery de Votações Nominais da Câmara (MVP v0)
-- **Fase / Task**: Execute / Discovery — concluído mapeamento de votações nominais da Câmara (DISC-04..07)
+- **Feature**: Frontend & Pipeline de Dados do MVP v0
+- **Fase / Task**: Plan & Implementation
 - **Concluído**: 
-  - Script `scripts/discovery_votacoes.py` criado e testado.
-  - Artefatos de votações extraídos em `dados/votacoes/` (Reforma Tributária 1º e 2º turno, Marco Temporal, PEC da Anistia, Taxação das Blusinhas).
-  - Documentação completa em `docs/discovery-votacoes-camara.md` com enums de `tipoVoto`, tratamento de parlamentares ausentes e heurística de mérito para o Plenário.
-  - Atualizada spec em `.specs/features/api-discovery/spec.md`.
-- **Em progresso**: Validação com o time dos temas curados para o catálogo do MVP v0.
-- **Próximo passo**: 
-  1. Definir o arquivo de catálogo curado (`catalogo-temas.json` ou `yaml`) com as votações descobertas.
-  2. Partir para a fase de Design e Implementação da Ficha do Deputado (UI + Ingestão/Renderização de votos).
-- **Bloqueios**: Nenhum bloqueio na API da Câmara.
-- **Branch**: `discovery/camara-votacoes`
-
+  - Discovery de dados concluído e mergeado na `main` (PR #8).
+  - 513 deputados federais catalogados em `dados/deputados/`.
+  - 5 votações nominais completas extraídas em `dados/votacoes/`.
+  - Requisitos formais mapeados em `.specs/features/mvp-v0/spec.md`.
+  - Plano técnico de arquitetura e implementação documentado em `.specs/features/mvp-v0/plan.md`.
+  - Decisão AD-012 aprovada (Astro SSG + Tailwind CSS).
+- **Em progresso**: Implementação do script de consolidação de dados (`scripts/build_site_data.py`) e scaffold do site Astro.
+- **Próximo passo**: Executar Tasks 1 a 5 do `plan.md` sob aprovação do time.
+- **Bloqueios**: Nenhum.
+- **Branch**: `main`

@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VotoBadge from '../../components/VotoBadge.astro';
+import deputados from '../../data/deputados.json';
+import temas from '../../data/temas.json';
+
+export async function getStaticPaths() {
+  return deputados.map(dep => ({
+    params: { id: String(dep.id) },
+    props: { deputado: dep },
+  }));
+}
+
+interface Props {
+  deputado: typeof deputados[0];
+}
+
+const { deputado } = Astro.props;
+
+const pageTitle = `Dep. ${deputado.nome_eleitoral} (${deputado.partido}-${deputado.uf})`;
+const pageDescription = `Confira como o Deputado Federal ${deputado.nome_eleitoral} (${deputado.partido}/${deputado.uf}) votou nas principais matérias da Câmara dos Deputados.`;
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  image={deputado.url_foto}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <!-- Navegação / Voltar -->
+    <div class="mb-6">
+      <a href="/" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-emerald-700 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Voltar para a busca de deputados
+      </a>
+    </div>
+
+    <!-- Card de Perfil do Parlamentar -->
+    <header class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6">
+      <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-slate-100 border-2 border-slate-200 shadow-inner flex-shrink-0">
+        <img 
+          src={deputado.url_foto} 
+          alt={deputado.nome_eleitoral} 
+          class="w-full h-full object-cover object-top"
+          onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%2394a3b8\'><path d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/></svg>';"
+        />
+      </div>
+
+      <div class="text-center sm:text-left flex-1 space-y-3">
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+              {deputado.nome_eleitoral}
+            </h1>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+              57ª Legislatura
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 font-mono">
+            Nome civil: {deputado.nome_civil}
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-sm">
+          <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm font-semibold bg-slate-100 text-slate-800 border border-slate-200">
+            Partido: {deputado.partido}
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm font-semibold bg-slate-100 text-slate-800 border border-slate-200">
+            Estado: {deputado.uf}
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs text-slate-600 bg-slate-50 border border-slate-200">
+            {deputado.situacao}
+          </span>
+        </div>
+
+        <div class="pt-1">
+          <a 
+            href={deputado.url_perfil_camara} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2"
+          >
+            <span>Ver perfil e biografia oficial na Câmara dos Deputados</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contexto e Aviso de Escopo do MVP -->
+    <div class="my-8 p-4 rounded-xl bg-slate-100/80 border border-slate-200/80 text-xs text-slate-600 space-y-1">
+      <div class="font-semibold text-slate-800 flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Sobre esta ficha pública
+      </div>
+      <p>
+        Esta página exibe os votos oficiais registrados no painel eletrônico do Plenário da Câmara dos Deputados em matérias cruciais de grande repercussão nacional. Todos os registros possuem link direto para a fonte oficial do Congresso. A ficha não expressa juízo de valor ou rotulação política.
+      </p>
+    </div>
+
+    <!-- Lista de Votações Nominais Curadas -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-bold text-slate-900">
+          Votações em Temas Nacionais Relevantes
+        </h2>
+        <span class="text-xs text-slate-500 font-medium">
+          {temas.length} decisões cadastradas
+        </span>
+      </div>
+
+      <div class="space-y-4">
+        {temas.map(tema => {
+          const voto = deputado.votos[tema.id] || "Não votou / Ausente";
+          return (
+            <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm transition hover:border-slate-300">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      {tema.proposicao}
+                    </span>
+                    <span class="text-xs text-slate-400 font-medium">
+                      Data: {tema.data}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900">
+                    {tema.titulo}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-slate-600">
+                    {tema.subtitulo}
+                  </p>
+                </div>
+
+                <div class="flex flex-col sm:items-end gap-1 flex-shrink-0">
+                  <span class="text-xs text-slate-400 font-medium">Voto do deputado:</span>
+                  <VotoBadge voto={voto} size="lg" />
+                </div>
+              </div>
+
+              <!-- Rastreabilidade de Fonte Oficial Obrigatória (AGENTS.md §3.1) -->
+              <div class="pt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
+                <div class="italic text-slate-500">
+                  Resultado no plenário: <span class="font-medium text-slate-700">{tema.resultado_oficial}</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <a 
+                    href={tema.url_votacao} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="text-emerald-700 hover:text-emerald-900 underline inline-flex items-center gap-0.5"
+                  >
+                    <span>Registro oficial da votação ↗</span>
+                  </a>
+                  <span>•</span>
+                  <a 
+                    href={tema.url_proposicao} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="text-emerald-700 hover:text-emerald-900 underline inline-flex items-center gap-0.5"
+                  >
+                    <span>Íntegra da proposição ↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  </div>
+</Layout>

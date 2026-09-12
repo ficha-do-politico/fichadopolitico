@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import temas from '../data/temas.json';
+---
+
+<Layout 
+  title="Critérios & Metodologia"
+  description="Critérios editoriais públicos e metodologia de verificação de fontes oficiais do Ficha do Político."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+    <!-- Header -->
+    <header class="space-y-4 text-center sm:text-left border-b border-slate-200 pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+        Transparência & Metodologia
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Como os dados e votações são selecionados?
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl">
+        Nosso compromisso inegociável é com a verdade factual. Não julgamos, não pontuamos e não rotulamos parlamentares. Entenda abaixo as regras que regem a ficha.
+      </p>
+    </header>
+
+    <!-- Pilares Centrais -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
+          1
+        </div>
+        <h3 class="font-bold text-slate-900 text-base">Apartidarismo Estrito</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Nenhum dado é filtrado, omitido ou destacado por viés partidário. Não atribuímos "notas", "scores" ou juízos de valor ("bom", "ruim", "traidor"). O dado é entregue cru ao cidadão.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
+          2
+        </div>
+        <h3 class="font-bold text-slate-900 text-base">Verificabilidade Oficial</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Cada voto e perfil parlamentar exibe link direto para o sistema oficial da Câmara dos Deputados (<code class="bg-slate-100 px-1 py-0.5 rounded text-[11px]">dadosabertos.camara.leg.br</code>). Qualquer cidadão pode conferir a fonte original em um clique.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
+          3
+        </div>
+        <h3 class="font-bold text-slate-900 text-base">Código Aberto (MIT)</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          O código-fonte, os scripts de coleta e a lista de votações estão disponíveis no GitHub. O processo é 100% público e passível de auditoria comunitária.
+        </p>
+      </div>
+    </section>
+
+    <!-- Critérios de Seleção de Temas -->
+    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">
+        Critérios de Seleção dos Temas
+      </h2>
+
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Na Câmara dos Deputados ocorrem milhares de votações ao longo de uma legislatura, mas a imensa maioria é composta por requerimentos procedimentais (como adiamento de votação, inversão de pauta ou redação final). Para permitir que o eleitor veja rapidamente a posição do parlamentar nas decisões substantivas do país, selecionamos matérias com base em quatro critérios objetivos:
+      </p>
+
+      <ul class="space-y-3 text-sm text-slate-700 list-disc list-inside">
+        <li><strong>Repercussão pública nacional:</strong> Matérias com ampla cobertura jornalística e debate na sociedade civil.</li>
+        <li><strong>Votação nominal de mérito no Plenário:</strong> Selecionamos apenas a votação principal do texto (1º ou 2º turno de PECs, ou Substitutivo Global de PLs) onde todos os 513 deputados são chamados a registrar voto nominal.</li>
+        <li><strong>Descarte de ruído regimental:</strong> Excluímos votações protocolares de comissões temáticas reduzidas ou requerimentos meramente regimentais.</li>
+        <li><strong>Histórico concluído:</strong> Projetos que ainda não foram submetidos ao Plenário (como propostas em fase de coleta de assinaturas ou paradas em comissões) não entram no catálogo até que ocorra votação nominal oficial.</li>
+      </ul>
+    </section>
+
+    <!-- Tabela dos Temas Cadastrados no MVP v0 -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold text-slate-900">
+          Catálogo de Temas do MVP v0
+        </h2>
+        <span class="text-xs text-slate-500 font-medium">
+          {temas.length} matérias ativas
+        </span>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-50 border-b border-slate-200 text-xs text-slate-500 uppercase tracking-wider">
+              <tr>
+                <th class="px-6 py-4">Matéria</th>
+                <th class="px-6 py-4">Proposição</th>
+                <th class="px-6 py-4">Data Oficial</th>
+                <th class="px-6 py-4">Resultado no Plenário</th>
+                <th class="px-6 py-4 text-right">Fonte Oficial</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {temas.map(tema => (
+                <tr class="hover:bg-slate-50/50 transition">
+                  <td class="px-6 py-4 font-semibold text-slate-900">
+                    {tema.titulo}
+                    <div class="text-xs text-slate-500 font-normal mt-0.5">{tema.subtitulo}</div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      {tema.proposicao}
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 text-slate-500 text-xs whitespace-nowrap">
+                    {tema.data}
+                  </td>
+                  <td class="px-6 py-4 text-xs font-medium text-slate-700">
+                    {tema.resultado_oficial}
+                  </td>
+                  <td class="px-6 py-4 text-right whitespace-nowrap text-xs">
+                    <a 
+                      href={tema.url_votacao} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="text-emerald-700 hover:text-emerald-900 font-medium underline"
+                    >
+                      Ver na Câmara ↗
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparência Regimental: Ausência e Artigo 17 -->
+    <section class="bg-slate-100/70 rounded-2xl border border-slate-200 p-6 space-y-3 text-xs text-slate-600">
+      <h3 class="font-bold text-slate-900 text-sm">
+        Como tratamos ausências e o Artigo 17?
+      </h3>
+      <p>
+        <strong>Deputados que não registraram voto:</strong> A API da Câmara registra apenas parlamentares que abriram o terminal e escolheram Sim, Não, Abstenção ou Obstrução. Se um deputado em exercício não consta no payload oficial, o sistema o marca formalmente como <span class="font-medium text-slate-800">"Não votou / Ausente"</span> — nunca inferimos intenção de voto.
+      </p>
+      <p>
+        <strong>Artigo 17 (Presidência):</strong> De acordo com o Regimento Interno da Câmara (Art. 17), o Presidente da Casa não vota, exceto em escrutínio secreto ou em caso de empate. Quando o presidente está presidindo a sessão, seu registro oficial consta como "Artigo 17".
+      </p>
+    </section>
+
+    <!-- Convite à Comunidade -->
+    <section class="text-center py-6 space-y-3">
+      <h3 class="text-lg font-bold text-slate-900">Quer sugerir uma votação relevante?</h3>
+      <p class="text-sm text-slate-600 max-w-lg mx-auto">
+        O catálogo é aberto e evolutivo. Você pode sugerir a inclusão de novas votações nominais da 57ª legislatura abrindo uma issue ou Pull Request no repositório oficial.
+      </p>
+      <div class="pt-2">
+        <a 
+          href="https://github.com/ficha-do-politico/fichadopolitico" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-medium text-sm transition shadow-sm"
+        >
+          <span>Acessar repositório no GitHub ↗</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
