@@ -24,6 +24,25 @@ Para análise de projetos cívicos correlatos, benchmarks de UX e referências m
 - Toda informação exibida cita a fonte oficial original.
 - Código aberto (MIT); os dados em si são públicos por natureza.
 
+## Como rodar o site localmente
+
+```bash
+# 1. Compilar os dados de votações e deputados
+python scripts/build_site_data.py
+
+# 2. Instalar dependências do site
+cd site
+npm install
+
+# 3. Rodar em modo de desenvolvimento (http://localhost:4321)
+npm run dev
+
+# 4. Gerar build estático pré-renderizado (pasta site/dist/)
+npm run build
+```
+
+Para instruções de hospedagem gratuita com domínio próprio, veja o [Guia de Publicação e Deploy](docs/deploy-guia.md).
+
 ## Como contribuir
 
 Abra uma issue ou peça pra entrar na organização. Não precisa nome real — handle já basta.
