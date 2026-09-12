@@ -1,6 +1,6 @@
 # Vídeos de referência
 
-Fontes usadas nos resumos de `todos-os-cargos.md` e `tres-poderes.md`.
+Fontes usadas nos resumos de `guia-cargos-eletivos.md` e `tres-poderes.md`.
 
 - **Como funcionam os Três Poderes do Brasil | EXAMINANDO**
   Canal: EXAMINANDO
