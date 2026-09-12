@@ -1,0 +1,3081 @@
+{
+  "metadados": {
+    "votacao_id": "2422697-75",
+    "dataHora": "2024-05-28T22:08:21",
+    "descricao": "Mantido o texto. Sim: 280; não: 121; total: 401.",
+    "siglaOrgao": "PLEN",
+    "uri_api": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2422697-75",
+    "url_portal_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2422697-75",
+    "total_votos_registrados": 402,
+    "total_deputados_locais": 513,
+    "total_ausentes_nao_votantes": 161,
+    "distribuicao_votos": {
+      "Não": 121,
+      "Sim": 280,
+      "Artigo 17": 1
+    },
+    "total_orientacoes": 11,
+    "orientacoes": [
+      {
+        "bancada": "PL",
+        "orientacao": "Não"
+      },
+      {
+        "bancada": "Oposição",
+        "orientacao": "Não"
+      },
+      {
+        "bancada": "Bl MdbPsdRepPode",
+        "orientacao": "Sim"
+      },
+      {
+        "bancada": "Fdr PSOL-REDE",
+        "orientacao": "Sim"
+      },
+      {
+        "bancada": "Fdr PT-PCdoB-PV",
+        "orientacao": "Sim"
+      },
+      {
+        "bancada": "Maioria",
+        "orientacao": "Sim"
+      },
+      {
+        "bancada": "NOVO",
+        "orientacao": "Não"
+      },
+      {
+        "bancada": "Minoria",
+        "orientacao": "Não"
+      },
+      {
+        "bancada": "PSB",
+        "orientacao": "Sim"
+      },
+      {
+        "bancada": "Governo",
+        "orientacao": "Sim"
+      },
+      {
+        "bancada": "Bl UniPpFdrPsdbCid...",
+        "orientacao": "Sim"
+      }
+    ],
+    "amostra_votos": [
+      {
+        "nome": "Marcelo Álvaro Antônio",
+        "partido": "PL",
+        "uf": "MG",
+        "tipoVoto": "Não",
+        "dataRegistro": "2024-05-28T22:07:49"
+      },
+      {
+        "nome": "Duarte Jr.",
+        "partido": "PSB",
+        "uf": "MA",
+        "tipoVoto": "Sim",
+        "dataRegistro": "2024-05-28T22:07:35"
+      },
+      {
+        "nome": "Sâmia Bomfim",
+        "partido": "PSOL",
+        "uf": "SP",
+        "tipoVoto": "Sim",
+        "dataRegistro": "2024-05-28T22:07:25"
+      },
+      {
+        "nome": "Cleber Verde",
+        "partido": "MDB",
+        "uf": "MA",
+        "tipoVoto": "Sim",
+        "dataRegistro": "2024-05-28T22:07:14"
+      },
+      {
+        "nome": "Elmar Nascimento",
+        "partido": "UNIÃO",
+        "uf": "BA",
+        "tipoVoto": "Sim",
+        "dataRegistro": "2024-05-28T22:06:48"
+      }
+    ]
+  },
+  "votos": {
+    "179000": {
+      "nome": "Marcelo Álvaro Antônio",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:07:49"
+    },
+    "220686": {
+      "nome": "Duarte Jr.",
+      "partido": "PSB",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:07:35"
+    },
+    "204535": {
+      "nome": "Sâmia Bomfim",
+      "partido": "PSOL",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:07:25"
+    },
+    "141408": {
+      "nome": "Cleber Verde",
+      "partido": "MDB",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:07:14"
+    },
+    "178854": {
+      "nome": "Elmar Nascimento",
+      "partido": "UNIÃO",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:06:48"
+    },
+    "74428": {
+      "nome": "Mendonça Filho",
+      "partido": "UNIÃO",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:06:37"
+    },
+    "220681": {
+      "nome": "Fábio Macedo",
+      "partido": "PODE",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:06:24"
+    },
+    "74550": {
+      "nome": "João Leão",
+      "partido": "PP",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:06:21"
+    },
+    "204365": {
+      "nome": "Gilson Marques",
+      "partido": "NOVO",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:06:01"
+    },
+    "160629": {
+      "nome": "Romero Rodrigues",
+      "partido": "PODE",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:06:00"
+    },
+    "220660": {
+      "nome": "Yury do Paredão",
+      "partido": "MDB",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:59"
+    },
+    "204364": {
+      "nome": "Eli Borges",
+      "partido": "PL",
+      "uf": "TO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:05:52"
+    },
+    "220592": {
+      "nome": "Zezinho Barbary",
+      "partido": "PP",
+      "uf": "AC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:50"
+    },
+    "153423": {
+      "nome": "Renilce Nicodemos",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:41"
+    },
+    "219585": {
+      "nome": "Marco Brasil",
+      "partido": "PP",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:40"
+    },
+    "220576": {
+      "nome": "Alfredo Gaspar",
+      "partido": "UNIÃO",
+      "uf": "AL",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:05:28"
+    },
+    "220532": {
+      "nome": "Rafael Prudente",
+      "partido": "MDB",
+      "uf": "DF",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:26"
+    },
+    "220613": {
+      "nome": "Roberto Monteiro Pai",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:05:22"
+    },
+    "204572": {
+      "nome": "Capitão Alberto Neto",
+      "partido": "PL",
+      "uf": "AM",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:05:15"
+    },
+    "141487": {
+      "nome": "Luiz Fernando Faria",
+      "partido": "PSD",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:09"
+    },
+    "220563": {
+      "nome": "Icaro de Valmir",
+      "partido": "PL",
+      "uf": "SE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:01"
+    },
+    "220674": {
+      "nome": "Dra. Alessandra Haber",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:05:00"
+    },
+    "160556": {
+      "nome": "Padre João",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:04:58"
+    },
+    "204506": {
+      "nome": "Marcos Pereira",
+      "partido": "REPUBLICANOS",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:04:50"
+    },
+    "220704": {
+      "nome": "Carol Dartora",
+      "partido": "PT",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:04:47"
+    },
+    "204390": {
+      "nome": "Professor Alcides",
+      "partido": "PL",
+      "uf": "GO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:04:42"
+    },
+    "220649": {
+      "nome": "Delegado da Cunha",
+      "partido": "PP",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:04:38"
+    },
+    "160604": {
+      "nome": "Pedro Uczai",
+      "partido": "PT",
+      "uf": "SC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:04:30"
+    },
+    "204444": {
+      "nome": "Helio Lopes",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:04:13"
+    },
+    "226708": {
+      "nome": "Allan Garcês",
+      "partido": "PP",
+      "uf": "MA",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:04:10"
+    },
+    "123756": {
+      "nome": "Antônia Lúcia",
+      "partido": "REPUBLICANOS",
+      "uf": "AC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:04:08"
+    },
+    "180214": {
+      "nome": "Pastor Diniz",
+      "partido": "UNIÃO",
+      "uf": "RR",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:04:01"
+    },
+    "220565": {
+      "nome": "Delegada Adriana Accorsi",
+      "partido": "PT",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:56"
+    },
+    "220574": {
+      "nome": "Cabo Gilberto Silva",
+      "partido": "PL",
+      "uf": "PB",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:50"
+    },
+    "204473": {
+      "nome": "General Girão",
+      "partido": "PL",
+      "uf": "RN",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:49"
+    },
+    "74171": {
+      "nome": "Chico Alencar",
+      "partido": "PSOL",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:48"
+    },
+    "220656": {
+      "nome": "Fernanda Pessoa",
+      "partido": "UNIÃO",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:46"
+    },
+    "74084": {
+      "nome": "Raimundo Santos",
+      "partido": "PSD",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:45"
+    },
+    "204409": {
+      "nome": "Daniel Trzeciak",
+      "partido": "PSDB",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:39"
+    },
+    "220627": {
+      "nome": "Paulinho Freire",
+      "partido": "UNIÃO",
+      "uf": "RN",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:27"
+    },
+    "204456": {
+      "nome": "Gutemberg Reis",
+      "partido": "MDB",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:15"
+    },
+    "204464": {
+      "nome": "Talíria Petrone",
+      "partido": "PSOL",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:14"
+    },
+    "220587": {
+      "nome": "Gerlen Diniz",
+      "partido": "PP",
+      "uf": "AC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:14"
+    },
+    "139285": {
+      "nome": "Lídice da Mata",
+      "partido": "PSB",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:10"
+    },
+    "178908": {
+      "nome": "Delegado Éder Mauro",
+      "partido": "PL",
+      "uf": "PA",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:10"
+    },
+    "220700": {
+      "nome": "Florentino Neto",
+      "partido": "PT",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:07"
+    },
+    "220685": {
+      "nome": "Paulo Litro",
+      "partido": "PSD",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:03:06"
+    },
+    "220549": {
+      "nome": "Any Ortiz",
+      "partido": "CIDADANIA",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:05"
+    },
+    "220635": {
+      "nome": "Bruno Ganem",
+      "partido": "PODE",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:03:04"
+    },
+    "204479": {
+      "nome": "Nicoletti",
+      "partido": "UNIÃO",
+      "uf": "RR",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:55"
+    },
+    "178966": {
+      "nome": "Geovania de Sá",
+      "partido": "PSDB",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:52"
+    },
+    "220591": {
+      "nome": "Meire Serafim",
+      "partido": "UNIÃO",
+      "uf": "AC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:52"
+    },
+    "220601": {
+      "nome": "Washington Quaquá",
+      "partido": "PT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:49"
+    },
+    "136811": {
+      "nome": "Afonso Hamm",
+      "partido": "PP",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:48"
+    },
+    "204525": {
+      "nome": "Rosana Valle",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:48"
+    },
+    "226179": {
+      "nome": "Gisela Simona",
+      "partido": "UNIÃO",
+      "uf": "MT",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:48"
+    },
+    "220602": {
+      "nome": "Dimas Gadelha",
+      "partido": "PT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:47"
+    },
+    "133810": {
+      "nome": "Marcelo Moraes",
+      "partido": "PL",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:44"
+    },
+    "74160": {
+      "nome": "Patrus Ananias",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:43"
+    },
+    "220667": {
+      "nome": "Pedro Campos",
+      "partido": "PSB",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:43"
+    },
+    "220651": {
+      "nome": "Simone Marquetto",
+      "partido": "MDB",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:41"
+    },
+    "178873": {
+      "nome": "Helder Salomão",
+      "partido": "PT",
+      "uf": "ES",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:33"
+    },
+    "223128": {
+      "nome": "Rodrigo Estacho",
+      "partido": "PSD",
+      "uf": "PR",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:31"
+    },
+    "152605": {
+      "nome": "Glauber Braga",
+      "partido": "PSOL",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:27"
+    },
+    "220606": {
+      "nome": "Reimont",
+      "partido": "PT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:27"
+    },
+    "160976": {
+      "nome": "Tiririca",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:25"
+    },
+    "92102": {
+      "nome": "Leur Lomanto Júnior",
+      "partido": "UNIÃO",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:19"
+    },
+    "204536": {
+      "nome": "Kim Kataguiri",
+      "partido": "UNIÃO",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:19"
+    },
+    "220560": {
+      "nome": "Thiago de Joaldo",
+      "partido": "PP",
+      "uf": "SE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:19"
+    },
+    "220542": {
+      "nome": "Alexandre Guimarães",
+      "partido": "MDB",
+      "uf": "TO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:16"
+    },
+    "178933": {
+      "nome": "Sergio Souza",
+      "partido": "MDB",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:15"
+    },
+    "220567": {
+      "nome": "Jeferson Rodrigues",
+      "partido": "REPUBLICANOS",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:15"
+    },
+    "204372": {
+      "nome": "Julio Cesar Ribeiro",
+      "partido": "REPUBLICANOS",
+      "uf": "DF",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:13"
+    },
+    "74075": {
+      "nome": "Elcione Barbalho",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:11"
+    },
+    "74041": {
+      "nome": "Luiz Couto",
+      "partido": "PT",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:09"
+    },
+    "160610": {
+      "nome": "Valmir Assunção",
+      "partido": "PT",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:08"
+    },
+    "220657": {
+      "nome": "André Fernandes",
+      "partido": "PL",
+      "uf": "CE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:08"
+    },
+    "74374": {
+      "nome": "Geraldo Resende",
+      "partido": "PSDB",
+      "uf": "MS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:06"
+    },
+    "178970": {
+      "nome": "João Daniel",
+      "partido": "PT",
+      "uf": "SE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:04"
+    },
+    "204379": {
+      "nome": "Acácio Favacho",
+      "partido": "MDB",
+      "uf": "AP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:04"
+    },
+    "220617": {
+      "nome": "Murillo Gouvea",
+      "partido": "UNIÃO",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:02"
+    },
+    "204412": {
+      "nome": "Dr. Zacharias Calil",
+      "partido": "UNIÃO",
+      "uf": "GO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:02:01"
+    },
+    "107970": {
+      "nome": "Ana Paula Leão",
+      "partido": "PP",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:02:00"
+    },
+    "220645": {
+      "nome": "Erika Hilton",
+      "partido": "PSOL",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:58"
+    },
+    "220702": {
+      "nome": "Geraldo Mendes",
+      "partido": "UNIÃO",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:58"
+    },
+    "220703": {
+      "nome": "Neto Carletto",
+      "partido": "PP",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:57"
+    },
+    "74253": {
+      "nome": "Julio Lopes",
+      "partido": "PP",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:56"
+    },
+    "204404": {
+      "nome": "Lucas Redecker",
+      "partido": "PSDB",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:56"
+    },
+    "107283": {
+      "nome": "Gleisi Hoffmann",
+      "partido": "PT",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:51"
+    },
+    "220663": {
+      "nome": "Eriberto Medeiros",
+      "partido": "PSB",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:51"
+    },
+    "218086": {
+      "nome": "Ely Santos",
+      "partido": "REPUBLICANOS",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:49"
+    },
+    "220626": {
+      "nome": "Rafael Simoes",
+      "partido": "UNIÃO",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:49"
+    },
+    "220526": {
+      "nome": "Gilvan da Federal",
+      "partido": "PL",
+      "uf": "ES",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:45"
+    },
+    "141464": {
+      "nome": "José Airton Félix Cirilo",
+      "partido": "PT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:44"
+    },
+    "157130": {
+      "nome": "Túlio Gadêlha",
+      "partido": "REDE",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:44"
+    },
+    "171617": {
+      "nome": "Paulão",
+      "partido": "PT",
+      "uf": "AL",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:44"
+    },
+    "72442": {
+      "nome": "Felipe Carreras",
+      "partido": "PSB",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:42"
+    },
+    "204549": {
+      "nome": "AJ Albuquerque",
+      "partido": "PP",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:42"
+    },
+    "74060": {
+      "nome": "Daniel Almeida",
+      "partido": "PCdoB",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:41"
+    },
+    "74090": {
+      "nome": "Átila Lins",
+      "partido": "PSD",
+      "uf": "AM",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:41"
+    },
+    "73692": {
+      "nome": "Osmar Terra",
+      "partido": "MDB",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:40"
+    },
+    "198197": {
+      "nome": "Greyce Elias",
+      "partido": "AVANTE",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:40"
+    },
+    "205865": {
+      "nome": "Reinhold Stephanes",
+      "partido": "PSD",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:40"
+    },
+    "204518": {
+      "nome": "Dr. Frederico",
+      "partido": "PRD",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:39"
+    },
+    "73441": {
+      "nome": "Celso Russomanno",
+      "partido": "REPUBLICANOS",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:38"
+    },
+    "74044": {
+      "nome": "Wilson Santiago",
+      "partido": "REPUBLICANOS",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:38"
+    },
+    "220650": {
+      "nome": "Paulo Alexandre Barbosa",
+      "partido": "PSDB",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:38"
+    },
+    "220558": {
+      "nome": "Zé Trovão",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:37"
+    },
+    "204406": {
+      "nome": "Pedro Westphalen",
+      "partido": "PP",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:35"
+    },
+    "204567": {
+      "nome": "Raimundo Costa",
+      "partido": "PODE",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:35"
+    },
+    "213274": {
+      "nome": "Ricardo Silva",
+      "partido": "PSD",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:35"
+    },
+    "220697": {
+      "nome": "Jadyel Alencar",
+      "partido": "REPUBLICANOS",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:35"
+    },
+    "222429": {
+      "nome": "Luis Carlos Gomes",
+      "partido": "REPUBLICANOS",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:35"
+    },
+    "204512": {
+      "nome": "Delegado Marcelo Freitas",
+      "partido": "UNIÃO",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:33"
+    },
+    "204488": {
+      "nome": "Célio Studart",
+      "partido": "PSD",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:32"
+    },
+    "220621": {
+      "nome": "Sargento Gonçalves",
+      "partido": "PL",
+      "uf": "RN",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:32"
+    },
+    "220538": {
+      "nome": "Albuquerque",
+      "partido": "REPUBLICANOS",
+      "uf": "RR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:31"
+    },
+    "220699": {
+      "nome": "Castro Neto",
+      "partido": "PSD",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:31"
+    },
+    "204481": {
+      "nome": "Dr. Jaziel",
+      "partido": "PL",
+      "uf": "CE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:30"
+    },
+    "220571": {
+      "nome": "Daniel Agrobom",
+      "partido": "PL",
+      "uf": "GO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:30"
+    },
+    "74537": {
+      "nome": "Claudio Cajado",
+      "partido": "PP",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:28"
+    },
+    "141516": {
+      "nome": "Paulo Abi-Ackel",
+      "partido": "PSDB",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:25"
+    },
+    "198783": {
+      "nome": "Emanuel Pinheiro Neto",
+      "partido": "MDB",
+      "uf": "MT",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:24"
+    },
+    "178887": {
+      "nome": "Rubens Pereira Júnior",
+      "partido": "PT",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:22"
+    },
+    "204560": {
+      "nome": "Adolfo Viana",
+      "partido": "PSDB",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:22"
+    },
+    "74283": {
+      "nome": "Vicentinho",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:20"
+    },
+    "225386": {
+      "nome": "Renan Ferreirinha",
+      "partido": "PSD",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:18"
+    },
+    "74858": {
+      "nome": "Lindbergh Farias",
+      "partido": "PT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:17"
+    },
+    "227991": {
+      "nome": "Dr Flávio",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:17"
+    },
+    "73604": {
+      "nome": "Rui Falcão",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:16"
+    },
+    "220554": {
+      "nome": "Alexandre Lindenmeyer",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:15"
+    },
+    "227800": {
+      "nome": "Duarte Gonçalves Jr",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:15"
+    },
+    "80815": {
+      "nome": "Leo Prates",
+      "partido": "PDT",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:14"
+    },
+    "204508": {
+      "nome": "Igor Timo",
+      "partido": "PODE",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:14"
+    },
+    "74467": {
+      "nome": "Damião Feliciano",
+      "partido": "UNIÃO",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:13"
+    },
+    "220604": {
+      "nome": "Marcos Tavares",
+      "partido": "PDT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:13"
+    },
+    "204391": {
+      "nome": "José Nelto",
+      "partido": "PP",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:12"
+    },
+    "220677": {
+      "nome": "Keniston Braga",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:12"
+    },
+    "220569": {
+      "nome": "Silvye Alves",
+      "partido": "UNIÃO",
+      "uf": "GO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:11"
+    },
+    "220586": {
+      "nome": "Rafael Brito",
+      "partido": "MDB",
+      "uf": "AL",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:11"
+    },
+    "220623": {
+      "nome": "Duda Salabert",
+      "partido": "PDT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:11"
+    },
+    "220588": {
+      "nome": "Roberto Duarte",
+      "partido": "REPUBLICANOS",
+      "uf": "AC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:10"
+    },
+    "220665": {
+      "nome": "Clarissa Tércio",
+      "partido": "PP",
+      "uf": "PE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:09"
+    },
+    "220610": {
+      "nome": "Dr. Fernando Máximo",
+      "partido": "UNIÃO",
+      "uf": "RO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:08"
+    },
+    "160598": {
+      "nome": "Flávia Morais",
+      "partido": "PDT",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:07"
+    },
+    "178871": {
+      "nome": "Evair Vieira de Melo",
+      "partido": "PP",
+      "uf": "ES",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:06"
+    },
+    "204497": {
+      "nome": "Júnior Ferrari",
+      "partido": "PSD",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:06"
+    },
+    "220625": {
+      "nome": "Delegada Ione",
+      "partido": "AVANTE",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:06"
+    },
+    "221378": {
+      "nome": "Reginete Bispo",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:05"
+    },
+    "204534": {
+      "nome": "Tabata Amaral",
+      "partido": "PSB",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:03"
+    },
+    "220568": {
+      "nome": "Gustavo Gayer",
+      "partido": "PL",
+      "uf": "GO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:01:03"
+    },
+    "160518": {
+      "nome": "Weliton Prado",
+      "partido": "SOLIDARIEDADE",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:01"
+    },
+    "73768": {
+      "nome": "Dilceu Sperafico",
+      "partido": "PP",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:01:00"
+    },
+    "220531": {
+      "nome": "Gilvan Maximo",
+      "partido": "REPUBLICANOS",
+      "uf": "DF",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:59"
+    },
+    "204566": {
+      "nome": "Marreca Filho",
+      "partido": "PRD",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:57"
+    },
+    "220648": {
+      "nome": "Marangoni",
+      "partido": "UNIÃO",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:57"
+    },
+    "178947": {
+      "nome": "Sóstenes Cavalcante",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:56"
+    },
+    "178993": {
+      "nome": "Carlos Henrique Gaguim",
+      "partido": "UNIÃO",
+      "uf": "TO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:56"
+    },
+    "74057": {
+      "nome": "Alice Portugal",
+      "partido": "PCdoB",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:55"
+    },
+    "74273": {
+      "nome": "Jefferson Campos",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:55"
+    },
+    "204515": {
+      "nome": "André Janones",
+      "partido": "AVANTE",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:55"
+    },
+    "220624": {
+      "nome": "Robinson Faria",
+      "partido": "PL",
+      "uf": "RN",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:55"
+    },
+    "228272": {
+      "nome": "Délio Pinheiro",
+      "partido": "PDT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:54"
+    },
+    "91228": {
+      "nome": "Waldemar Oliveira",
+      "partido": "AVANTE",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:52"
+    },
+    "156190": {
+      "nome": "Marcel van Hattem",
+      "partido": "NOVO",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:51"
+    },
+    "204351": {
+      "nome": "Dr. Luiz Ovando",
+      "partido": "PP",
+      "uf": "MS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:51"
+    },
+    "222142": {
+      "nome": "Coronel Telhada",
+      "partido": "PP",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:51"
+    },
+    "141391": {
+      "nome": "Arnaldo Jardim",
+      "partido": "CIDADANIA",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:50"
+    },
+    "161550": {
+      "nome": "Emidinho Madeira",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:50"
+    },
+    "204455": {
+      "nome": "Luiz Lima",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:50"
+    },
+    "141421": {
+      "nome": "Eduardo da Fonte",
+      "partido": "PP",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:49"
+    },
+    "204480": {
+      "nome": "Rogério Correia",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:49"
+    },
+    "204553": {
+      "nome": "Pastor Sargento Isidório",
+      "partido": "AVANTE",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:49"
+    },
+    "223398": {
+      "nome": "Ulisses Guimarães",
+      "partido": "MDB",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:49"
+    },
+    "220696": {
+      "nome": "Ivoneide Caetano",
+      "partido": "PT",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:48"
+    },
+    "221338": {
+      "nome": "Professora Luciene Cavalcante",
+      "partido": "PSOL",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:48"
+    },
+    "160538": {
+      "nome": "Bohn Gass",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:47"
+    },
+    "66385": {
+      "nome": "Julio Arcoverde",
+      "partido": "PP",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:46"
+    },
+    "160535": {
+      "nome": "Marcon",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:46"
+    },
+    "73801": {
+      "nome": "Renildo Calheiros",
+      "partido": "PCdoB",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:45"
+    },
+    "220666": {
+      "nome": "Coronel Meira",
+      "partido": "PL",
+      "uf": "PE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:44"
+    },
+    "109429": {
+      "nome": "Benes Leocádio",
+      "partido": "UNIÃO",
+      "uf": "RN",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:43"
+    },
+    "160592": {
+      "nome": "Zeca Dirceu",
+      "partido": "PT",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:43"
+    },
+    "220664": {
+      "nome": "Guilherme Uchoa",
+      "partido": "PSB",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:42"
+    },
+    "98615": {
+      "nome": "Ismael",
+      "partido": "PSD",
+      "uf": "SC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:41"
+    },
+    "191923": {
+      "nome": "Flávio Nogueira",
+      "partido": "PT",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:40"
+    },
+    "204368": {
+      "nome": "Fabio Schiochet",
+      "partido": "UNIÃO",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:40"
+    },
+    "209189": {
+      "nome": "Joseildo Ramos",
+      "partido": "PT",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:40"
+    },
+    "204501": {
+      "nome": "Alencar Santana",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:39"
+    },
+    "88256": {
+      "nome": "Clodoaldo Magalhães",
+      "partido": "PV",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:38"
+    },
+    "160548": {
+      "nome": "Jonas Donizette",
+      "partido": "PSB",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:38"
+    },
+    "204394": {
+      "nome": "Gervásio Maia",
+      "partido": "PSB",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:37"
+    },
+    "69871": {
+      "nome": "Bacelar",
+      "partido": "PV",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:36"
+    },
+    "74848": {
+      "nome": "Jandira Feghali",
+      "partido": "PCdoB",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:35"
+    },
+    "133439": {
+      "nome": "André Figueiredo",
+      "partido": "PDT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:35"
+    },
+    "220668": {
+      "nome": "Maria Arraes",
+      "partido": "SOLIDARIEDADE",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:35"
+    },
+    "74398": {
+      "nome": "Maria do Rosário",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:34"
+    },
+    "204445": {
+      "nome": "Fernando Mineiro",
+      "partido": "PT",
+      "uf": "RN",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:34"
+    },
+    "214694": {
+      "nome": "Jorge Goetten",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:34"
+    },
+    "220573": {
+      "nome": "Dorinaldo Malafaia",
+      "partido": "PDT",
+      "uf": "AP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:34"
+    },
+    "204498": {
+      "nome": "Olival Marques",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:33"
+    },
+    "74454": {
+      "nome": "Eunício Oliveira",
+      "partido": "MDB",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:32"
+    },
+    "204528": {
+      "nome": "Adriana Ventura",
+      "partido": "NOVO",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:32"
+    },
+    "74554": {
+      "nome": "José Rocha",
+      "partido": "UNIÃO",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:31"
+    },
+    "204410": {
+      "nome": "Luisa Canziani",
+      "partido": "PSD",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:31"
+    },
+    "221328": {
+      "nome": "Adilson Barroso",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:31"
+    },
+    "73579": {
+      "nome": "Alberto Fraga",
+      "partido": "PL",
+      "uf": "DF",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:30"
+    },
+    "204388": {
+      "nome": "Bibo Nunes",
+      "partido": "PL",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:30"
+    },
+    "220594": {
+      "nome": "Coronel Assis",
+      "partido": "UNIÃO",
+      "uf": "MT",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:30"
+    },
+    "220533": {
+      "nome": "Prof. Reginaldo Veras",
+      "partido": "PV",
+      "uf": "DF",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:29"
+    },
+    "220544": {
+      "nome": "Antonio Andrade",
+      "partido": "REPUBLICANOS",
+      "uf": "TO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:29"
+    },
+    "81055": {
+      "nome": "Márcio Jerry",
+      "partido": "PCdoB",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:28"
+    },
+    "220600": {
+      "nome": "Lebrão",
+      "partido": "UNIÃO",
+      "uf": "RO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:28"
+    },
+    "220620": {
+      "nome": "Rosângela Reis",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:28"
+    },
+    "220693": {
+      "nome": "Roberta Roma",
+      "partido": "PL",
+      "uf": "BA",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:28"
+    },
+    "160575": {
+      "nome": "Erika Kokay",
+      "partido": "PT",
+      "uf": "DF",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:27"
+    },
+    "204540": {
+      "nome": "Maria Rosas",
+      "partido": "REPUBLICANOS",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:27"
+    },
+    "220631": {
+      "nome": "Samuel Viana",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:27"
+    },
+    "178866": {
+      "nome": "Luizianne Lins",
+      "partido": "PT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:25"
+    },
+    "220584": {
+      "nome": "Murilo Galdino",
+      "partido": "REPUBLICANOS",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:25"
+    },
+    "220619": {
+      "nome": "Delegado Ramagem",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:25"
+    },
+    "160642": {
+      "nome": "Pastor Eurico",
+      "partido": "PL",
+      "uf": "PE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:24"
+    },
+    "204485": {
+      "nome": "Luiz Carlos Motta",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:24"
+    },
+    "220581": {
+      "nome": "Luciano Amaral",
+      "partido": "PV",
+      "uf": "AL",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:24"
+    },
+    "220609": {
+      "nome": "Maurício Carvalho",
+      "partido": "UNIÃO",
+      "uf": "RO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:24"
+    },
+    "220615": {
+      "nome": "Pastor Henrique Vieira",
+      "partido": "PSOL",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:24"
+    },
+    "92776": {
+      "nome": "Stefano Aguiar",
+      "partido": "PSD",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:23"
+    },
+    "204507": {
+      "nome": "Carla Zambelli",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:23"
+    },
+    "220556": {
+      "nome": "Ana Paula Lima",
+      "partido": "PT",
+      "uf": "SC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:23"
+    },
+    "220566": {
+      "nome": "Lêda Borges",
+      "partido": "PSDB",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:23"
+    },
+    "220676": {
+      "nome": "Andreia Siqueira",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:23"
+    },
+    "204426": {
+      "nome": "Carlos Veras",
+      "partido": "PT",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:22"
+    },
+    "161440": {
+      "nome": "Pezenti",
+      "partido": "MDB",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:21"
+    },
+    "165470": {
+      "nome": "Rodrigo Valadares",
+      "partido": "UNIÃO",
+      "uf": "SE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:21"
+    },
+    "220540": {
+      "nome": "Duda Ramos",
+      "partido": "MDB",
+      "uf": "RR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:21"
+    },
+    "220593": {
+      "nome": "Abilio Brunini",
+      "partido": "PL",
+      "uf": "MT",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:21"
+    },
+    "74161": {
+      "nome": "Reginaldo Lopes",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:20"
+    },
+    "160666": {
+      "nome": "Félix Mendonça Júnior",
+      "partido": "PDT",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:20"
+    },
+    "215043": {
+      "nome": "Josivaldo JP",
+      "partido": "PSD",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:20"
+    },
+    "220608": {
+      "nome": "Cristiane Lopes",
+      "partido": "UNIÃO",
+      "uf": "RO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:20"
+    },
+    "221148": {
+      "nome": "Alfredinho",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:20"
+    },
+    "74043": {
+      "nome": "Wellington Roberto",
+      "partido": "PL",
+      "uf": "PB",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:19"
+    },
+    "178860": {
+      "nome": "Paulo Azi",
+      "partido": "UNIÃO",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:18"
+    },
+    "178963": {
+      "nome": "Covatti Filho",
+      "partido": "PP",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:18"
+    },
+    "204486": {
+      "nome": "Mauro Benevides Filho",
+      "partido": "PDT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:18"
+    },
+    "204495": {
+      "nome": "Airton Faleiro",
+      "partido": "PT",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:18"
+    },
+    "220688": {
+      "nome": "Dr. Francisco",
+      "partido": "PT",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:18"
+    },
+    "228837": {
+      "nome": "Juliana Kolankiewicz",
+      "partido": "MDB",
+      "uf": "MT",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:18"
+    },
+    "220618": {
+      "nome": "Sargento Portugal",
+      "partido": "PODE",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:17"
+    },
+    "74141": {
+      "nome": "Josias Gomes",
+      "partido": "PT",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:16"
+    },
+    "163321": {
+      "nome": "Ronaldo Nogueira",
+      "partido": "REPUBLICANOS",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:16"
+    },
+    "220553": {
+      "nome": "Denise Pessôa",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:16"
+    },
+    "141531": {
+      "nome": "Rodrigo de Castro",
+      "partido": "UNIÃO",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:15"
+    },
+    "160600": {
+      "nome": "Arthur Oliveira Maia",
+      "partido": "UNIÃO",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:15"
+    },
+    "178986": {
+      "nome": "Nilto Tatto",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:15"
+    },
+    "178909": {
+      "nome": "Hélio Leite",
+      "partido": "UNIÃO",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:14"
+    },
+    "220551": {
+      "nome": "Franciane Bayer",
+      "partido": "REPUBLICANOS",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:14"
+    },
+    "227433": {
+      "nome": "Douglas Viegas",
+      "partido": "UNIÃO",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:14"
+    },
+    "141456": {
+      "nome": "Jilmar Tatto",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:13"
+    },
+    "160674": {
+      "nome": "Hugo Motta",
+      "partido": "REPUBLICANOS",
+      "uf": "PB",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:13"
+    },
+    "220630": {
+      "nome": "Pedro Aihara",
+      "partido": "PRD",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:13"
+    },
+    "220687": {
+      "nome": "Márcio Honaiser",
+      "partido": "PDT",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:13"
+    },
+    "73433": {
+      "nome": "Arlindo Chinaglia",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:12"
+    },
+    "74371": {
+      "nome": "Rubens Otoni",
+      "partido": "PT",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:12"
+    },
+    "178884": {
+      "nome": "Hildo Rocha",
+      "partido": "MDB",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:12"
+    },
+    "220611": {
+      "nome": "General Pazuello",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:12"
+    },
+    "74262": {
+      "nome": "Carlos Sampaio",
+      "partido": "PSD",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:11"
+    },
+    "204387": {
+      "nome": "Sargento Fahur",
+      "partido": "PSD",
+      "uf": "PR",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:11"
+    },
+    "220655": {
+      "nome": "Mario Frias",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:11"
+    },
+    "141398": {
+      "nome": "Carlos Zarattini",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:10"
+    },
+    "160599": {
+      "nome": "Dimas Fabiano",
+      "partido": "PP",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:10"
+    },
+    "160640": {
+      "nome": "Eros Biondini",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:10"
+    },
+    "220672": {
+      "nome": "Henderson Pinto",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:10"
+    },
+    "74585": {
+      "nome": "Lincoln Portela",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:09"
+    },
+    "162067": {
+      "nome": "Kiko Celeguim",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:08"
+    },
+    "204422": {
+      "nome": "Ossesio Silva",
+      "partido": "REPUBLICANOS",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:08"
+    },
+    "220632": {
+      "nome": "Ana Pimentel",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:08"
+    },
+    "220641": {
+      "nome": "Rodrigo Gambale",
+      "partido": "PODE",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:08"
+    },
+    "74376": {
+      "nome": "Vander Loubet",
+      "partido": "PT",
+      "uf": "MS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:07"
+    },
+    "98057": {
+      "nome": "Lafayette de Andrada",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:07"
+    },
+    "205550": {
+      "nome": "Jorge Braz",
+      "partido": "REPUBLICANOS",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:07"
+    },
+    "178910": {
+      "nome": "Joaquim Passarinho",
+      "partido": "PL",
+      "uf": "PA",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:06"
+    },
+    "220528": {
+      "nome": "Dr. Victor Linhalis",
+      "partido": "PODE",
+      "uf": "ES",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:06"
+    },
+    "220714": {
+      "nome": "Adail Filho",
+      "partido": "REPUBLICANOS",
+      "uf": "AM",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:06"
+    },
+    "178929": {
+      "nome": "Diego Garcia",
+      "partido": "REPUBLICANOS",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:05"
+    },
+    "220671": {
+      "nome": "Dilvanda Faro",
+      "partido": "PT",
+      "uf": "PA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:05"
+    },
+    "220683": {
+      "nome": "Beto Richa",
+      "partido": "PSDB",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:05"
+    },
+    "226837": {
+      "nome": "Saulo Pedroso",
+      "partido": "PSD",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:05"
+    },
+    "220599": {
+      "nome": "Marcelo Crivella",
+      "partido": "REPUBLICANOS",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:04"
+    },
+    "220612": {
+      "nome": "Bebeto",
+      "partido": "PP",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:04"
+    },
+    "104552": {
+      "nome": "Socorro Neri",
+      "partido": "PP",
+      "uf": "AC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:03"
+    },
+    "204427": {
+      "nome": "Fernando Rodolfo",
+      "partido": "PL",
+      "uf": "PE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:03"
+    },
+    "220557": {
+      "nome": "Daniela Reinehr",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:03"
+    },
+    "220684": {
+      "nome": "Tião Medeiros",
+      "partido": "PP",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:03"
+    },
+    "220701": {
+      "nome": "Delegado Matheus Laiola",
+      "partido": "UNIÃO",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:03"
+    },
+    "220695": {
+      "nome": "Rogéria Santos",
+      "partido": "REPUBLICANOS",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:02"
+    },
+    "220589": {
+      "nome": "Eduardo Velloso",
+      "partido": "UNIÃO",
+      "uf": "AC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:01"
+    },
+    "220598": {
+      "nome": "Tarcísio Motta",
+      "partido": "PSOL",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:01"
+    },
+    "228797": {
+      "nome": "Júlio Oliveira",
+      "partido": "PP",
+      "uf": "TO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:01"
+    },
+    "178983": {
+      "nome": "Marcio Alvino",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T22:00:00"
+    },
+    "220580": {
+      "nome": "Professora Goreth",
+      "partido": "PDT",
+      "uf": "AP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T22:00:00"
+    },
+    "178937": {
+      "nome": "Altineu Côrtes",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:59"
+    },
+    "73486": {
+      "nome": "Pompeo de Mattos",
+      "partido": "PDT",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "74156": {
+      "nome": "Leonardo Monteiro",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "74784": {
+      "nome": "Luiza Erundina",
+      "partido": "PSOL",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "121948": {
+      "nome": "Adriano do Baldy",
+      "partido": "PP",
+      "uf": "GO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "204557": {
+      "nome": "Sidney Leite",
+      "partido": "PSD",
+      "uf": "AM",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "220653": {
+      "nome": "Fábio Teruel",
+      "partido": "MDB",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "220673": {
+      "nome": "Delegado Caveira",
+      "partido": "PL",
+      "uf": "PA",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:58"
+    },
+    "178987": {
+      "nome": "Orlando Silva",
+      "partido": "PCdoB",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:57"
+    },
+    "220536": {
+      "nome": "Zé Haroldo Cathedral",
+      "partido": "PSD",
+      "uf": "RR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:57"
+    },
+    "220559": {
+      "nome": "Julia Zanatta",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:57"
+    },
+    "220652": {
+      "nome": "Delegado Palumbo",
+      "partido": "MDB",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:56"
+    },
+    "220658": {
+      "nome": "Luiz Gastão",
+      "partido": "PSD",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:56"
+    },
+    "221339": {
+      "nome": "Dr. Benjamim",
+      "partido": "UNIÃO",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:56"
+    },
+    "178931": {
+      "nome": "Luciano Ducci",
+      "partido": "PSB",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:55"
+    },
+    "220578": {
+      "nome": "Josenildo",
+      "partido": "PDT",
+      "uf": "AP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:55"
+    },
+    "204453": {
+      "nome": "Natália Bonavides",
+      "partido": "PT",
+      "uf": "RN",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:54"
+    },
+    "220539": {
+      "nome": "Defensor Stélio Dener",
+      "partido": "REPUBLICANOS",
+      "uf": "RR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:54"
+    },
+    "220575": {
+      "nome": "Sonize Barbosa",
+      "partido": "PL",
+      "uf": "AP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:54"
+    },
+    "220713": {
+      "nome": "Saullo Vianna",
+      "partido": "UNIÃO",
+      "uf": "AM",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:54"
+    },
+    "141459": {
+      "nome": "João Maia",
+      "partido": "PP",
+      "uf": "RN",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:53"
+    },
+    "220527": {
+      "nome": "Jack Rocha",
+      "partido": "PT",
+      "uf": "ES",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:53"
+    },
+    "220530": {
+      "nome": "Messias Donato",
+      "partido": "REPUBLICANOS",
+      "uf": "ES",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:53"
+    },
+    "220590": {
+      "nome": "Coronel Ulysses",
+      "partido": "UNIÃO",
+      "uf": "AC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:53"
+    },
+    "220605": {
+      "nome": "Bandeira de Mello",
+      "partido": "PSB",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:53"
+    },
+    "188097": {
+      "nome": "Merlong Solano",
+      "partido": "PT",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:52"
+    },
+    "220550": {
+      "nome": "Mauricio Marcon",
+      "partido": "PODE",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:52"
+    },
+    "220552": {
+      "nome": "Zucco",
+      "partido": "PL",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:52"
+    },
+    "220583": {
+      "nome": "Delegado Fabio Costa",
+      "partido": "PP",
+      "uf": "AL",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:52"
+    },
+    "160161": {
+      "nome": "Marcelo Queiroz",
+      "partido": "PP",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:51"
+    },
+    "74095": {
+      "nome": "Pauderney Avelino",
+      "partido": "UNIÃO",
+      "uf": "AM",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:50"
+    },
+    "204408": {
+      "nome": "Gustinho Ribeiro",
+      "partido": "REPUBLICANOS",
+      "uf": "SE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:50"
+    },
+    "204541": {
+      "nome": "Eduardo Bismarck",
+      "partido": "PDT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:50"
+    },
+    "73531": {
+      "nome": "Ivan Valente",
+      "partido": "PSOL",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "92699": {
+      "nome": "Fernando Monteiro",
+      "partido": "PP",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "220545": {
+      "nome": "Filipe Martins",
+      "partido": "PL",
+      "uf": "TO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "220546": {
+      "nome": "Rodolfo Nogueira",
+      "partido": "PL",
+      "uf": "MS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "220548": {
+      "nome": "Camila Jara",
+      "partido": "PT",
+      "uf": "MS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "220555": {
+      "nome": "Daiana Santos",
+      "partido": "PCdoB",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "228616": {
+      "nome": "Dr. Remy Soares",
+      "partido": "PP",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:49"
+    },
+    "150418": {
+      "nome": "Márcio Marinho",
+      "partido": "REPUBLICANOS",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:47"
+    },
+    "160512": {
+      "nome": "Aureo Ribeiro",
+      "partido": "SOLIDARIEDADE",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:47"
+    },
+    "160665": {
+      "nome": "Augusto Coutinho",
+      "partido": "REPUBLICANOS",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:47"
+    },
+    "204367": {
+      "nome": "Daniel Freitas",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:47"
+    },
+    "220640": {
+      "nome": "Juliana Cardoso",
+      "partido": "PT",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:47"
+    },
+    "116379": {
+      "nome": "Darci de Matos",
+      "partido": "PSD",
+      "uf": "SC",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:46"
+    },
+    "178858": {
+      "nome": "Mário Negromonte Jr.",
+      "partido": "PP",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:46"
+    },
+    "204356": {
+      "nome": "Amaro Neto",
+      "partido": "REPUBLICANOS",
+      "uf": "ES",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:46"
+    },
+    "204526": {
+      "nome": "Luiz Philippe de Orleans e Bragança",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:46"
+    },
+    "220561": {
+      "nome": "Delegada Katarina",
+      "partido": "PSD",
+      "uf": "SE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:46"
+    },
+    "224117": {
+      "nome": "Gabriel Mota",
+      "partido": "REPUBLICANOS",
+      "uf": "RR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:46"
+    },
+    "160632": {
+      "nome": "Zé Silva",
+      "partido": "SOLIDARIEDADE",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:45"
+    },
+    "204398": {
+      "nome": "Felipe Francischini",
+      "partido": "UNIÃO",
+      "uf": "PR",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:45"
+    },
+    "204472": {
+      "nome": "José Medeiros",
+      "partido": "PL",
+      "uf": "MT",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:45"
+    },
+    "204492": {
+      "nome": "Paulo Guedes",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:45"
+    },
+    "220597": {
+      "nome": "Thiago Flores",
+      "partido": "REPUBLICANOS",
+      "uf": "RO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:45"
+    },
+    "220659": {
+      "nome": "Dayany Bittencourt",
+      "partido": "UNIÃO",
+      "uf": "CE",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:45"
+    },
+    "220682": {
+      "nome": "Tadeu Veneri",
+      "partido": "PT",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:44"
+    },
+    "204504": {
+      "nome": "Cezinha de Madureira",
+      "partido": "PSD",
+      "uf": "SP",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:43"
+    },
+    "220564": {
+      "nome": "Yandra Moura",
+      "partido": "UNIÃO",
+      "uf": "SE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:43"
+    },
+    "220595": {
+      "nome": "Coronel Fernanda",
+      "partido": "PL",
+      "uf": "MT",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:42"
+    },
+    "103758": {
+      "nome": "Luciano Azevedo",
+      "partido": "PSD",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:41"
+    },
+    "160673": {
+      "nome": "Giovani Cherini",
+      "partido": "PL",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:41"
+    },
+    "178895": {
+      "nome": "Misael Varella",
+      "partido": "PSD",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:41"
+    },
+    "204355": {
+      "nome": "Da Vitoria",
+      "partido": "PP",
+      "uf": "ES",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:41"
+    },
+    "204378": {
+      "nome": "Coronel Chrisóstomo",
+      "partido": "PL",
+      "uf": "RO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:41"
+    },
+    "204374": {
+      "nome": "Bia Kicis",
+      "partido": "PL",
+      "uf": "DF",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:40"
+    },
+    "206018": {
+      "nome": "Célia Xakriabá",
+      "partido": "PSOL",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:40"
+    },
+    "220628": {
+      "nome": "Mauricio do Vôlei",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:40"
+    },
+    "73701": {
+      "nome": "Benedita da Silva",
+      "partido": "PT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:39"
+    },
+    "92346": {
+      "nome": "Eduardo Bolsonaro",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:39"
+    },
+    "160601": {
+      "nome": "Pr. Marco Feliciano",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:39"
+    },
+    "204360": {
+      "nome": "Silvia Cristina",
+      "partido": "PL",
+      "uf": "RO",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:39"
+    },
+    "204511": {
+      "nome": "David Soares",
+      "partido": "UNIÃO",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:39"
+    },
+    "74299": {
+      "nome": "Leônidas Cristino",
+      "partido": "PDT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:38"
+    },
+    "141450": {
+      "nome": "Hugo Leal",
+      "partido": "PSD",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:38"
+    },
+    "178881": {
+      "nome": "Aluisio Mendes",
+      "partido": "REPUBLICANOS",
+      "uf": "MA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:38"
+    },
+    "204407": {
+      "nome": "Fernanda Melchionna",
+      "partido": "PSOL",
+      "uf": "RS",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:38"
+    },
+    "204416": {
+      "nome": "Sanderson",
+      "partido": "PL",
+      "uf": "RS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:38"
+    },
+    "220607": {
+      "nome": "Max Lemos",
+      "partido": "PDT",
+      "uf": "RJ",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:38"
+    },
+    "141431": {
+      "nome": "Fernando Coelho Filho",
+      "partido": "UNIÃO",
+      "uf": "PE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:36"
+    },
+    "205476": {
+      "nome": "Charles Fernandes",
+      "partido": "PSD",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:35"
+    },
+    "220654": {
+      "nome": "Delegado Paulo Bilynskyj",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:35"
+    },
+    "220708": {
+      "nome": "Gabriel Nunes",
+      "partido": "PSD",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:35"
+    },
+    "220715": {
+      "nome": "Amom Mandel",
+      "partido": "CIDADANIA",
+      "uf": "AM",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:35"
+    },
+    "141470": {
+      "nome": "José Guimarães",
+      "partido": "PT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:34"
+    },
+    "178946": {
+      "nome": "Soraya Santos",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:34"
+    },
+    "74574": {
+      "nome": "Paulo Magalhães",
+      "partido": "PSD",
+      "uf": "BA",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:33"
+    },
+    "209787": {
+      "nome": "Nikolas Ferreira",
+      "partido": "PL",
+      "uf": "MG",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:33"
+    },
+    "123086": {
+      "nome": "Átila Lira",
+      "partido": "PP",
+      "uf": "PI",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:31"
+    },
+    "178934": {
+      "nome": "Toninho Wandscheer",
+      "partido": "PP",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:31"
+    },
+    "220547": {
+      "nome": "Marcos Pollon",
+      "partido": "PL",
+      "uf": "MS",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:31"
+    },
+    "204411": {
+      "nome": "Filipe Barros",
+      "partido": "PL",
+      "uf": "PR",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:30"
+    },
+    "74159": {
+      "nome": "Odair Cunha",
+      "partido": "PT",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:28"
+    },
+    "220543": {
+      "nome": "Ricardo Ayres",
+      "partido": "REPUBLICANOS",
+      "uf": "TO",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:28"
+    },
+    "220638": {
+      "nome": "Antonio Carlos Rodrigues",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:28"
+    },
+    "204533": {
+      "nome": "Idilvan Alencar",
+      "partido": "PDT",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:27"
+    },
+    "178997": {
+      "nome": "Moses Rodrigues",
+      "partido": "UNIÃO",
+      "uf": "CE",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:26"
+    },
+    "204369": {
+      "nome": "Caroline de Toni",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não",
+      "dataRegistro": "2024-05-28T21:59:26"
+    },
+    "204491": {
+      "nome": "Gilberto Abramo",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "tipoVoto": "Sim",
+      "dataRegistro": "2024-05-28T21:59:25"
+    },
+    "160541": {
+      "nome": "Arthur Lira",
+      "partido": "PP",
+      "uf": "AL",
+      "tipoVoto": "Artigo 17",
+      "dataRegistro": "2024-05-28T21:59:14"
+    }
+  },
+  "ausentes_ids": [
+    62881,
+    66828,
+    73778,
+    73788,
+    73806,
+    73808,
+    74079,
+    74140,
+    74158,
+    74270,
+    74295,
+    74317,
+    74356,
+    74400,
+    74478,
+    74646,
+    74856,
+    98148,
+    115200,
+    122158,
+    122195,
+    122974,
+    137070,
+    141411,
+    141458,
+    141485,
+    141488,
+    141518,
+    141533,
+    141555,
+    143084,
+    143632,
+    154178,
+    154700,
+    160508,
+    160510,
+    160517,
+    160527,
+    160545,
+    160552,
+    160553,
+    160558,
+    160559,
+    160561,
+    160569,
+    160588,
+    160591,
+    160621,
+    160635,
+    160641,
+    160758,
+    162332,
+    166402,
+    171623,
+    171786,
+    175765,
+    178829,
+    178831,
+    178832,
+    178835,
+    178843,
+    178857,
+    178876,
+    178882,
+    178886,
+    178896,
+    178905,
+    178927,
+    178943,
+    178945,
+    178954,
+    178962,
+    178964,
+    178972,
+    178975,
+    178985,
+    178992,
+    179001,
+    194260,
+    204353,
+    204358,
+    204361,
+    204362,
+    204395,
+    204396,
+    204419,
+    204423,
+    204425,
+    204431,
+    204436,
+    204441,
+    204449,
+    204450,
+    204457,
+    204459,
+    204460,
+    204462,
+    204474,
+    204482,
+    204489,
+    204494,
+    204496,
+    204517,
+    204520,
+    204524,
+    204531,
+    204539,
+    204550,
+    204558,
+    204559,
+    204563,
+    204570,
+    204574,
+    210989,
+    213762,
+    220529,
+    220534,
+    220537,
+    220570,
+    220572,
+    220582,
+    220585,
+    220603,
+    220614,
+    220622,
+    220629,
+    220633,
+    220637,
+    220642,
+    220643,
+    220644,
+    220646,
+    220647,
+    220661,
+    220662,
+    220669,
+    220670,
+    220675,
+    220689,
+    220690,
+    220691,
+    220692,
+    220694,
+    220698,
+    220707,
+    220712,
+    221329,
+    224333,
+    225846,
+    226075,
+    230765,
+    230767,
+    230768,
+    230957,
+    233592,
+    233594,
+    235800,
+    236284,
+    236375,
+    236423,
+    236518
+  ]
+}
