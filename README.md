@@ -6,7 +6,7 @@ Ficha pública e apartidária de parlamentares: como votaram, quanto gastaram, o
 
 ## Status
 
-🚧 MVP em construção — veja a [issue #1](../../issues/1) para o escopo atual.
+🚧 MVP em construção — veja a especificação detalhada em [MVP.md](MVP.md) (discussões e histórico na [issue #1](../../issues/1)).
 
 ## Fontes de dados (planejadas)
 

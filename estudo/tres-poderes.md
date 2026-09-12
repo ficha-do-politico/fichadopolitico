@@ -1,6 +1,6 @@
 # Presidencialismo e os Três Poderes no Brasil
 
-Resumo da separação e do equilíbrio entre os três poderes da República, com os órgãos e números de cada um. Complementa o [`todos-os-cargos.md`](./todos-os-cargos.md), que detalha cargo por cargo — aqui o foco é a estrutura institucional.
+Resumo da separação e do equilíbrio entre os três poderes da República, com os órgãos e números de cada um. Complementa o [`guia-cargos-eletivos.md`](./guia-cargos-eletivos.md), que detalha cargo por cargo — aqui o foco é a estrutura institucional.
 
 ## Executivo
 
@@ -39,4 +39,4 @@ Resumo da separação e do equilíbrio entre os três poderes da República, com
 
 ## Nota pessoal (não é conteúdo da ficha)
 
-> Resumo baseado em anotações + vídeos de referência ("Como funcionam os Três Poderes do Brasil | EXAMINANDO", "Entenda o sistema político no Brasil - OS 3 PODERES - de um jeito SIMPLES", "Explicando Todos os Cargos Políticos em 10 Minutos"). Mesmo princípio do `todos-os-cargos.md`: isso é material de estudo/contexto de domínio, não dado verificável de ficha — não citar aqui como fonte de fato sobre um político específico.
+> Resumo baseado em anotações + vídeos de referência ("Como funcionam os Três Poderes do Brasil | EXAMINANDO", "Entenda o sistema político no Brasil - OS 3 PODERES - de um jeito SIMPLES", "Explicando Todos os Cargos Políticos em 10 Minutos"). Mesmo princípio do `guia-cargos-eletivos.md`: isso é material de estudo/contexto de domínio, não dado verificável de ficha — não citar aqui como fonte de fato sobre um político específico.

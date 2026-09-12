@@ -1,6 +1,28 @@
 # Guia Rápido da Política Brasileira: Cargos e Funções
 
-A seguir, um resumo organizado das informações sobre os principais cargos políticos no Brasil, com base no vídeo transcrito.
+A seguir, um resumo organizado das informações sobre os principais cargos políticos no Brasil, com base nos materiais e vídeos de estudo do projeto.
+
+## Visão Geral dos Ciclos Eleitorais
+
+No Brasil, as eleições ocorrem a cada 2 anos, alternando entre o ciclo municipal e o ciclo geral (estadual e federal):
+
+```mermaid
+flowchart TD
+    subgraph Eleicoes_Municipais["Eleições Municipais (ex: 2024, 2028) — 2 votos"]
+        EM_Exec["Prefeito & Vice (Poder Executivo Municipal)"]
+        EM_Leg["Vereador (Poder Legislativo Municipal)"]
+    end
+
+    subgraph Eleicoes_Gerais["Eleições Gerais (ex: 2022, 2026) — 5 votos"]
+        EG_Exec1["Presidente & Vice (Poder Executivo Federal)"]
+        EG_Exec2["Governador & Vice (Poder Executivo Estadual)"]
+        EG_Leg1["Senador & 2 Suplentes (Poder Legislativo Federal - Estados)"]
+        EG_Leg2["Deputado Federal (Poder Legislativo Federal - Povo)"]
+        EG_Leg3["Deputado Estadual / Distrital (Poder Legislativo Estadual)"]
+    end
+```
+
+---
 
 ## Poder Legislativo Municipal
 

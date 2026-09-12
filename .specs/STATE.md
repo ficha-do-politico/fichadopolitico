@@ -101,6 +101,17 @@
 
 
 
+### AD-011
+
+- **Decisão**: O escopo do projeto é estritamente delimitado ao Poder Legislativo Federal (Câmara dos Deputados no v0 e Senado Federal no v1), excluindo permanentemente os âmbitos municipal (Vereadores/Prefeitos) e estadual (Deputados Estaduais/Governadores).
+- **Motivo**: Ausência de infraestrutura nacional unificada de dados abertos nos 5.570 municípios e 27 estados. O esforço técnico para construir e manter milhares de scrapers para portais municipais/estaduais heterogêneos inviabilizaria o projeto e comprometeria os pilares de verificabilidade e fonte oficial. O Congresso Nacional é a única esfera com APIs REST públicas padronizadas e mantidas centralmente pelo Estado.
+- **Trade-off**: Deixa de atender demandas locais de usuários por vereadores de suas cidades ou deputados estaduais.
+- **Escopo**: Modelo de dados, roadmap do produto e arquitetura de ingestão.
+- **Data**: 2026-09-12
+- **Status**: ativo
+
+
+
 ## Handoff
 
 - **Feature**: Specs do projeto (`.specs/`) + alinhamento com PR #4
