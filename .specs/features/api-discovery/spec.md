@@ -8,10 +8,10 @@ Antes de construir o catálogo de votações curadas do MVP e o pipeline de inge
 
 | Entregável | Status | Onde |
 | ---------- | ------ | ---- |
-| DISC-01..03 (`/deputados`) | **Em progresso** — PR #4 aberta | `scripts/fetch_deputados.py`, `dados/deputados/{id}.md`, `discovery/deputados_ordem_ASC_ordenarPor_nome.json` |
-| DISC-04..07 (`/votacoes`) | Pendente | — |
-| DISC-08..09 (limites/cache) | Pendente | PR #4 usa `--delay` no script; falta documentar formalmente |
-| DISC-10 (Senado) | Pendente | — |
+| DISC-01..03 (`/deputados`) | **Concluído** (PR #4) | `scripts/fetch_deputados.py`, `dados/deputados/{id}.md` |
+| DISC-04..07 (`/votacoes`) | **Concluído** | `scripts/discovery_votacoes.py`, `dados/votacoes/*.json`, `docs/discovery-votacoes-camara.md` |
+| DISC-08..09 (limites/cache) | **Concluído** | Tratamento de rate limit (429) e retentativas em `scripts/discovery_votacoes.py` |
+| DISC-10 (Senado) | Pendente (v1) | Mapeamento preliminar em `fontes-oficiais-de-dados.md` |
 
 **Nota:** Os markdowns do PR #4 incluem CPF e outros campos sensíveis para exploração. O MVP v0 **não** exibirá esses campos (AD-009).
 
@@ -120,16 +120,16 @@ Dimensões de requisitos implícitos restantes: N/A para esta feature de pesquis
 
 | ID de Requisito | Story | Fase | Status |
 | --------------- | ----- | ---- | ------ |
-| DISC-01 | P1: Deputados | Execute | Em progresso (PR #4) |
-| DISC-02 | P1: Deputados | Execute | Em progresso (PR #4) |
-| DISC-03 | P1: Deputados | Execute | Em progresso (PR #4) |
-| DISC-04 | P1: Votações | Execute | Pendente |
-| DISC-05 | P1: Votações | Execute | Pendente |
-| DISC-06 | P1: Votações | Execute | Pendente |
-| DISC-07 | P1: Votações | Execute | Pendente |
-| DISC-08 | P2: Limites | Execute | Pendente |
-| DISC-09 | P2: Limites | Execute | Pendente |
-| DISC-10 | P3: Senado | - | Pendente |
+| DISC-01 | P1: Deputados | Execute | Concluído (PR #4) |
+| DISC-02 | P1: Deputados | Execute | Concluído (PR #4) |
+| DISC-03 | P1: Deputados | Execute | Concluído (PR #4) |
+| DISC-04 | P1: Votações | Execute | Concluído |
+| DISC-05 | P1: Votações | Execute | Concluído |
+| DISC-06 | P1: Votações | Execute | Concluído |
+| DISC-07 | P1: Votações | Execute | Concluído |
+| DISC-08 | P2: Limites | Execute | Concluído |
+| DISC-09 | P2: Limites | Execute | Concluído |
+| DISC-10 | P3: Senado | - | Pendente (v1) |
 
 ---
 

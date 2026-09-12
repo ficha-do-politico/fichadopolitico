@@ -114,12 +114,17 @@
 
 ## Handoff
 
-- **Feature**: Specs do projeto (`.specs/`) + alinhamento com PR #4
-- **Fase / Task**: Specify — specs commitadas; sincronizado com `origin/main` (2026-08-18); atualizado pós-PR #4
-- **Concluído**: STATE.md (AD-001..010), specs mvp-v0 e api-discovery; merge com main
-- **Em progresso**: PR #4 (Layr) — discovery `/deputados`; issue #2 parcialmente atendida
-- **Próximo passo**: Abrir/atualizar PR das specs para `main`; time confirma AD-001; após merge do PR #4, completar DISC-04..07 (votações) e decidir live API vs. estático no Design
-- **Bloqueios**: Mapeamento tema → `votacao_id` ainda pendente; PR #4 pode conflitar com estrutura atual (`estudo/` vs. paths na branch discovery)
-- **Arquivos não commitados**: alterações pendentes em `.specs/`** desta sessão
-- **Branch**: `definindo-specs`
+- **Feature**: Discovery de Votações Nominais da Câmara (MVP v0)
+- **Fase / Task**: Execute / Discovery — concluído mapeamento de votações nominais da Câmara (DISC-04..07)
+- **Concluído**: 
+  - Script `scripts/discovery_votacoes.py` criado e testado.
+  - Artefatos de votações extraídos em `dados/votacoes/` (Reforma Tributária 1º e 2º turno, Marco Temporal, PEC da Anistia, Taxação das Blusinhas).
+  - Documentação completa em `docs/discovery-votacoes-camara.md` com enums de `tipoVoto`, tratamento de parlamentares ausentes e heurística de mérito para o Plenário.
+  - Atualizada spec em `.specs/features/api-discovery/spec.md`.
+- **Em progresso**: Validação com o time dos temas curados para o catálogo do MVP v0.
+- **Próximo passo**: 
+  1. Definir o arquivo de catálogo curado (`catalogo-temas.json` ou `yaml`) com as votações descobertas.
+  2. Partir para a fase de Design e Implementação da Ficha do Deputado (UI + Ingestão/Renderização de votos).
+- **Bloqueios**: Nenhum bloqueio na API da Câmara.
+- **Branch**: `discovery/camara-votacoes`
 
