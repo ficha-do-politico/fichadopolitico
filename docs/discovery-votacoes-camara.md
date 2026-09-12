@@ -141,15 +141,15 @@ Uma proposição de grande repercussão pode ter de **20 a mais de 100 votaçõe
 
 ## 6. Mapeamento dos Casos Reais para o MVP v0 (Seed Curado)
 
-Foram gerados artefatos consolidados em `dados/votacoes/` pelo script `scripts/discovery_votacoes.py`:
+Foram gerados artefatos consolidados em `dados/camara/votacoes/` pelo script `scripts/discovery_votacoes.py`:
 
 | Tema Curado | Proposição | Votação ID | Data/Hora | Descrição Resumida | Arquivo Local |
 |---|---|---|---|---|---|
-| **Reforma Tributária (1º Turno)** | PEC 45/2019 (ID: 2196833) | `2196833-326` | 2023-07-06 21:49 | Aprovado o Substitutivo em 1º turno (Sim: 382, Não: 118, Abst: 3) | [`dados/votacoes/2196833-326.json`](../dados/votacoes/2196833-326.json) |
-| **Reforma Tributária (2º Turno)** | PEC 45/2019 (ID: 2196833) | `2196833-373` | 2023-07-07 01:39 | Aprovada a PEC 45/2019 em 2º turno (Sim: 375, Não: 113, Abst: 3) | [`dados/votacoes/2196833-373.json`](../dados/votacoes/2196833-373.json) |
-| **Marco Temporal das Terras Indígenas** | PL 490/2007 (ID: 345311) | `345311-270` | 2023-05-30 20:12 | Aprovada a Subemenda Substitutiva Global (Sim: 283, Não: 155, Abst: 1) | [`dados/votacoes/345311-270.json`](../dados/votacoes/345311-270.json) |
-| **Anistia aos Partidos Políticos (2º Turno)** | PEC 9/2023 (ID: 2352476) | `2352476-168` | 2024-07-11 18:52 | Aprovada a PEC em 2º turno (Sim: 338, Não: 83, Abst: 4) | [`dados/votacoes/2352476-168.json`](../dados/votacoes/2352476-168.json) |
-| **Taxação de Compras Internacionais (Mover)** | PL 914/2024 (ID: 2422697) | `2422697-75` | 2024-05-28 22:08 | Mantido o texto da alíquota de 20% (Sim: 280, Não: 121) | [`dados/votacoes/2422697-75.json`](../dados/votacoes/2422697-75.json) |
+| **Reforma Tributária (1º Turno)** | PEC 45/2019 (ID: 2196833) | `2196833-326` | 2023-07-06 21:49 | Aprovado o Substitutivo em 1º turno (Sim: 382, Não: 118, Abst: 3) | [`dados/camara/votacoes/2196833-326.json`](../dados/camara/votacoes/2196833-326.json) |
+| **Reforma Tributária (2º Turno)** | PEC 45/2019 (ID: 2196833) | `2196833-373` | 2023-07-07 01:39 | Aprovada a PEC 45/2019 em 2º turno (Sim: 375, Não: 113, Abst: 3) | [`dados/camara/votacoes/2196833-373.json`](../dados/camara/votacoes/2196833-373.json) |
+| **Marco Temporal das Terras Indígenas** | PL 490/2007 (ID: 345311) | `345311-270` | 2023-05-30 20:12 | Aprovada a Subemenda Substitutiva Global (Sim: 283, Não: 155, Abst: 1) | [`dados/camara/votacoes/345311-270.json`](../dados/camara/votacoes/345311-270.json) |
+| **Anistia aos Partidos Políticos (2º Turno)** | PEC 9/2023 (ID: 2352476) | `2352476-168` | 2024-07-11 18:52 | Aprovada a PEC em 2º turno (Sim: 338, Não: 83, Abst: 4) | [`dados/camara/votacoes/2352476-168.json`](../dados/camara/votacoes/2352476-168.json) |
+| **Taxação de Compras Internacionais (Mover)** | PL 914/2024 (ID: 2422697) | `2422697-75` | 2024-05-28 22:08 | Mantido o texto da alíquota de 20% (Sim: 280, Não: 121) | [`dados/camara/votacoes/2422697-75.json`](../dados/camara/votacoes/2422697-75.json) |
 
 ---
 

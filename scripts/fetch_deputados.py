@@ -17,7 +17,7 @@ import urllib.error
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIST_JSON = ROOT / 'discovery' / 'deputados_ordem_ASC_ordenarPor_nome.json'
-OUT_DIR = ROOT / 'dados' / 'deputados'
+OUT_DIR = ROOT / 'dados' / 'camara' / 'deputados'
 DETAIL_URL = 'https://dadosabertos.camara.leg.br/api/v2/deputados/{}'
 
 

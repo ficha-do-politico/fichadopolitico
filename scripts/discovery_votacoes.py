@@ -22,8 +22,9 @@ import urllib.request
 import urllib.error
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DEPUTADOS_DIR = ROOT / 'dados' / 'deputados'
-OUT_DIR = ROOT / 'dados' / 'votacoes'
+DEPUTADOS_DIR = ROOT / 'dados' / 'camara' / 'deputados'
+OUT_DIR = ROOT / 'dados' / 'camara' / 'votacoes'
+TEMAS_CATALOGO_FILE = ROOT / 'dados' / 'catalogo' / 'temas.json'
 
 API_BASE = 'https://dadosabertos.camara.leg.br/api/v2'
 USER_AGENT = 'FichaDoPoliticoBot/0.1 (github.com/ficha-do-politico)'
@@ -228,43 +229,57 @@ def executar_demo():
     print("DEMO: Discovery de Votações Nominais da Câmara dos Deputados (MVP v0)")
     print("=" * 70)
 
-    temas = [
-        {
-            'nome': 'Reforma Tributária (1º Turno)',
-            'tipo': 'PEC',
-            'numero': 45,
-            'ano': 2019,
-            'votacao_id': '2196833-326',
-        },
-        {
-            'nome': 'Reforma Tributária (2º Turno)',
-            'tipo': 'PEC',
-            'numero': 45,
-            'ano': 2019,
-            'votacao_id': '2196833-373',
-        },
-        {
-            'nome': 'Marco Temporal das Terras Indígenas',
-            'tipo': 'PL',
-            'numero': 490,
-            'ano': 2007,
-            'votacao_id': '345311-270',
-        },
-        {
-            'nome': 'PEC da Anistia aos Partidos (2º Turno)',
-            'tipo': 'PEC',
-            'numero': 9,
-            'ano': 2023,
-            'votacao_id': '2352476-168',
-        },
-        {
-            'nome': 'Taxação de Compras Internacionais / Mover',
-            'tipo': 'PL',
-            'numero': 914,
-            'ano': 2024,
-            'votacao_id': '2422697-75',
-        },
-    ]
+    if TEMAS_CATALOGO_FILE.exists():
+        with open(TEMAS_CATALOGO_FILE, 'r', encoding='utf-8') as f:
+            catalogo = json.load(f)
+        temas = [
+            {
+                'nome': t.get('titulo'),
+                'tipo': t.get('tipo', 'PEC'),
+                'numero': t.get('numero', 0),
+                'ano': t.get('ano', 0),
+                'votacao_id': t.get('id'),
+            }
+            for t in catalogo
+        ]
+    else:
+        temas = [
+            {
+                'nome': 'Reforma Tributária (1º Turno)',
+                'tipo': 'PEC',
+                'numero': 45,
+                'ano': 2019,
+                'votacao_id': '2196833-326',
+            },
+            {
+                'nome': 'Reforma Tributária (2º Turno)',
+                'tipo': 'PEC',
+                'numero': 45,
+                'ano': 2019,
+                'votacao_id': '2196833-373',
+            },
+            {
+                'nome': 'Marco Temporal das Terras Indígenas',
+                'tipo': 'PL',
+                'numero': 490,
+                'ano': 2007,
+                'votacao_id': '345311-270',
+            },
+            {
+                'nome': 'PEC da Anistia aos Partidos (2º Turno)',
+                'tipo': 'PEC',
+                'numero': 9,
+                'ano': 2023,
+                'votacao_id': '2352476-168',
+            },
+            {
+                'nome': 'Taxação de Compras Internacionais / Mover',
+                'tipo': 'PL',
+                'numero': 914,
+                'ano': 2024,
+                'votacao_id': '2422697-75',
+            },
+        ]
 
     for t in temas:
         print(f"\n--- {t['nome']} ({t['tipo']} {t['numero']}/{t['ano']}) ---")
