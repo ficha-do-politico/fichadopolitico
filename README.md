@@ -30,14 +30,17 @@ Para análise de projetos cívicos correlatos, benchmarks de UX e referências m
 # 1. Compilar os dados de votações e deputados
 python scripts/build_site_data.py
 
-# 2. Instalar dependências do site
+# 2. Executar testes de integridade de dados e LGPD
+python -m unittest discover tests
+
+# 3. Instalar dependências do site
 cd site
 npm install
 
-# 3. Rodar em modo de desenvolvimento (http://localhost:4321)
+# 4. Rodar em modo de desenvolvimento (http://localhost:4321)
 npm run dev
 
-# 4. Gerar build estático pré-renderizado (pasta site/dist/)
+# 5. Gerar build estático pré-renderizado (pasta site/dist/)
 npm run build
 ```
 

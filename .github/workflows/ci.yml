@@ -1,0 +1,37 @@
+name: CI - Integridade e Build
+
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run data integrity & LGPD tests
+        run: python -m unittest discover tests
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install site dependencies
+        run: npm --prefix site ci
+
+      - name: Build Astro site
+        run: npm --prefix site run build
+        env:
+          ASTRO_SITE: "https://ficha-do-politico.github.io"
+          ASTRO_BASE: "/"

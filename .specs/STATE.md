@@ -123,18 +123,30 @@
 
 
 
+### AD-013
+
+- **Decisão**: Reorganização da arquitetura de dados desacoplando Curadoria (`dados/catalogo/temas.json`), Dados Canônicos da Câmara (`dados/camara/`) e automação de testes de conformidade (`tests/`).
+- **Motivo**: O modelo anterior embutia metadados de temas hardcoded nos scripts e misturava dados da Câmara na raiz de `dados/`. A nova estrutura elimina duplicação, estabelece o catálogo como Single Source of Truth editável sem tocar em código e prepara o repositório para ingestão do Senado (`dados/senado/`) e gastos/patrimônio no v1.
+- **Trade-off**: Requer manutenção de suíte de testes de integridade referencial contínua.
+- **Escopo**: `dados/`, `scripts/`, `tests/`, `.github/workflows/ci.yml`.
+- **Data**: 2026-09-12
+- **Status**: ativo
+
+
+
 ## Handoff
 
-- **Feature**: Frontend & Pipeline de Dados do MVP v0
-- **Fase / Task**: Plan & Implementation
+- **Feature**: Reestruturação de Dados e Health Check Arquitetural (v0 → v1)
+- **Fase / Task**: Implementation & Review
 - **Concluído**: 
-  - Discovery de dados concluído e mergeado na `main` (PR #8).
-  - 513 deputados federais catalogados em `dados/deputados/`.
-  - 5 votações nominais completas extraídas em `dados/votacoes/`.
-  - Requisitos formais mapeados em `.specs/features/mvp-v0/spec.md`.
-  - Plano técnico de arquitetura e implementação documentado em `.specs/features/mvp-v0/plan.md`.
-  - Decisão AD-012 aprovada (Astro SSG + Tailwind CSS).
-- **Em progresso**: Implementação do script de consolidação de dados (`scripts/build_site_data.py`) e scaffold do site Astro.
-- **Próximo passo**: Executar Tasks 1 a 5 do `plan.md` sob aprovação do time.
+  - Criação do catálogo isolado em `dados/catalogo/temas.json`.
+  - Migração de `dados/deputados/` e `dados/votacoes/` para `dados/camara/` via `git mv`.
+  - Geração de dataset canônico estruturado `dados/camara/deputados.json`.
+  - Criação de suíte de testes de integridade e LGPD em `tests/test_data_integrity.py`.
+  - Criação de workflow de CI em `.github/workflows/ci.yml`.
+  - Diagnóstico de saúde do código formalizado em `docs/code-health.md`.
+- **Em progresso**: Validação de PR e merge.
+- **Próximo passo**: Revisão pelo time e expansão para novos temas ou início do módulo do Senado Federal.
 - **Bloqueios**: Nenhum.
-- **Branch**: `main`
+- **Branch**: `refactor/data-architecture`
+
