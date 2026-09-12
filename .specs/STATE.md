@@ -136,17 +136,15 @@
 
 ## Handoff
 
-- **Feature**: Reestruturação de Dados e Health Check Arquitetural (v0 → v1)
+- **Feature**: Pipeline ETL Canônico e Blindagem de CI (Fase 2 do Code Health)
 - **Fase / Task**: Implementation & Review
 - **Concluído**: 
-  - Criação do catálogo isolado em `dados/catalogo/temas.json`.
-  - Migração de `dados/deputados/` e `dados/votacoes/` para `dados/camara/` via `git mv`.
-  - Geração de dataset canônico estruturado `dados/camara/deputados.json`.
-  - Criação de suíte de testes de integridade e LGPD em `tests/test_data_integrity.py`.
-  - Criação de workflow de CI em `.github/workflows/ci.yml`.
-  - Diagnóstico de saúde do código formalizado em `docs/code-health.md`.
-- **Em progresso**: Validação de PR e merge.
-- **Próximo passo**: Revisão pelo time e expansão para novos temas ou início do módulo do Senado Federal.
+  - Refatoração de `scripts/build_site_data.py` consumindo diretamente `dados/camara/deputados.json` canônico sem depender de parse regex de 513 `.md`.
+  - Criação de suíte de testes de ponta a ponta do pipeline em `tests/test_build_pipeline.py`.
+  - Inclusão dos steps de compilação de dados (`python scripts/build_site_data.py`) e verificação de drift (`git diff --exit-code`) no CI (`.github/workflows/ci.yml`).
+  - Atualização do diagnóstico de code health em `docs/code-health.md`.
+- **Em progresso**: Abertura e validação de Pull Request.
+- **Próximo passo**: Adição de tipagem TypeScript no frontend Astro (`tsconfig.json`, `types/index.ts`) ou expansão de novos temas no catálogo.
 - **Bloqueios**: Nenhum.
-- **Branch**: `refactor/data-architecture`
+- **Branch**: `refactor/pipeline-canonical-json`
 

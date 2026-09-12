@@ -3,8 +3,9 @@ Compila os dados de 513 deputados federais e as votações curadas para o fronte
 
 Entrada:
   - dados/catalogo/temas.json (catálogo curado com proposições e links oficiais)
-  - dados/camara/deputados/*.md (513 parlamentares da 57ª legislatura)
+  - dados/camara/deputados.json (dataset canônico consolidado da Câmara)
   - dados/camara/votacoes/*.json (votações nominais extraídas da API da Câmara)
+  - dados/camara/deputados/*.md (fallback para bootstrap se deputados.json não existir)
 
 Saída:
   - dados/camara/deputados.json (dataset canônico consolidado da Câmara)
@@ -25,6 +26,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CATALOGO_FILE = ROOT / 'dados' / 'catalogo' / 'temas.json'
 CAMARA_DIR = ROOT / 'dados' / 'camara'
+CANON_DEPUTADOS_FILE = CAMARA_DIR / 'deputados.json'
 DEPUTADOS_DIR = CAMARA_DIR / 'deputados'
 VOTACOES_DIR = CAMARA_DIR / 'votacoes'
 SITE_DATA_DIR = ROOT / 'site' / 'src' / 'data'
@@ -56,6 +58,7 @@ def load_votacoes(temas):
 
 
 def parse_deputado_md(filepath: pathlib.Path):
+    """Fallback legatário: parseia dados a partir do markdown gerado no discovery."""
     dep_id = int(filepath.stem)
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
@@ -83,6 +86,35 @@ def parse_deputado_md(filepath: pathlib.Path):
         "url_foto": foto_url,
         "url_perfil_camara": f"https://www.camara.leg.br/deputados/{dep_id}",
     }
+
+
+def load_deputados_base():
+    """Carrega dados biográficos canônicos dos deputados a partir de JSON ou fallback em MD."""
+    if CANON_DEPUTADOS_FILE.exists():
+        with open(CANON_DEPUTADOS_FILE, "r", encoding="utf-8") as f:
+            raw_deputados = json.load(f)
+        deputados = []
+        for d in raw_deputados:
+            deputados.append({
+                "id": int(d["id"]),
+                "nome_eleitoral": str(d["nome_eleitoral"]),
+                "nome_civil": str(d["nome_civil"]),
+                "partido": str(d["partido"]),
+                "uf": str(d["uf"]),
+                "situacao": str(d["situacao"]),
+                "url_foto": str(d["url_foto"]),
+                "url_perfil_camara": str(d.get("url_perfil_camara") or f"https://www.camara.leg.br/deputados/{d['id']}"),
+            })
+        return deputados
+
+    # Fallback se deputados.json ainda não tiver sido compilado
+    md_files = sorted(DEPUTADOS_DIR.glob("*.md")) if DEPUTADOS_DIR.exists() else []
+    if not md_files:
+        print(f"ERRO: Nem {CANON_DEPUTADOS_FILE} nem arquivos em {DEPUTADOS_DIR} encontrados.", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Aviso: {CANON_DEPUTADOS_FILE} ausente. Carregando dados a partir de {len(md_files)} arquivos .md (fallback)")
+    return [parse_deputado_md(p) for p in md_files]
 
 
 def validar_integridade(deputados, temas):
@@ -113,14 +145,11 @@ def main():
     votacoes = load_votacoes(temas)
     print(f"Carregadas {len(votacoes)} votações oficiais em {VOTACOES_DIR.relative_to(ROOT)}")
 
-    md_files = sorted(DEPUTADOS_DIR.glob("*.md"))
-    if not md_files:
-        print(f"ERRO: Nenhum arquivo em {DEPUTADOS_DIR}", file=sys.stderr)
-        sys.exit(1)
+    deputados_base = load_deputados_base()
+    print(f"Carregados {len(deputados_base)} deputados (base canônica)")
 
     deputados = []
-    for p in md_files:
-        dep = parse_deputado_md(p)
+    for dep in deputados_base:
         dep_id_str = str(dep["id"])
 
         votos_map = {}
@@ -158,7 +187,7 @@ def main():
     with open(out_temas, "w", encoding="utf-8") as f:
         json.dump(temas, f, ensure_ascii=False, indent=2)
 
-    print(f"Sucesso!")
+    print("Sucesso!")
     print(f"  - Dataset canônico da Câmara: {canon_deputados} ({canon_deputados.stat().st_size / 1024:.1f} KB)")
     print(f"  - {len(deputados)} deputados exportados em: {out_deputados} ({out_deputados.stat().st_size / 1024:.1f} KB)")
     print(f"  - {len(temas)} temas exportados em: {out_temas} ({out_temas.stat().st_size / 1024:.1f} KB)")
