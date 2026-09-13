@@ -1,15 +1,15 @@
-# fichadopolitico
+# Ficha do politico
+
+>**Nosso compromisso é com a verdade.**
 
 Ficha pública e apartidária de parlamentares: como votaram, quanto gastaram, o que declaram de patrimônio — sempre com a fonte oficial linkada.
-
-**Nosso compromisso é com a verdade.**
 
 ## Status
 
 🚧 MVP online — veja a especificação detalhada em [MVP.md](MVP.md).
 
-Para a especificação técnica detalhada das APIs e dumps de dados oficiais (incluindo Câmara, Senado, TSE, CGU, TCU e CNJ), veja [fontes-oficiais-de-dados.md](fontes-oficiais-de-dados.md).  
-Para análise de projetos cívicos correlatos, benchmarks de UX e referências metodológicas, veja [referencias.md](referencias.md).
+- Para a especificação técnica detalhada das APIs e dumps de dados oficiais (incluindo Câmara, Senado, TSE, CGU, TCU e CNJ), veja [fontes-oficiais-de-dados.md](fontes-oficiais-de-dados.md).
+- Para análise de projetos cívicos correlatos, benchmarks de UX e referências metodológicas, veja [referencias.md](referencias.md).
 
 ## Princípios
 
