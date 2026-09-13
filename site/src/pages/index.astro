@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DeputadoCard from '../components/DeputadoCard.astro';
-import deputados from '../data/deputados.json';
-import temas from '../data/temas.json';
+import deputadosData from '../data/deputados.json';
+import temasData from '../data/temas.json';
+import type { Deputado, Tema } from '../types';
+
+const deputados = deputadosData as Deputado[];
+const temas = temasData as Tema[];
 
 const totalDeputados = deputados.length;
 const totalTemas = temas.length;
@@ -118,44 +122,52 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     const visibleCount = document.getElementById('visibleCount');
     const emptyState = document.getElementById('emptyState');
 
-    function filterDeputados() {
+    let debounceTimer = null;
+
+    function renderFilter() {
       const q = input.value.trim().toLowerCase();
       const uf = filterUf.value;
       const partido = filterPartido.value;
 
       clearBtn.classList.toggle('hidden', q.length === 0);
 
-      let visible = 0;
-      items.forEach(item => {
-        const link = item.querySelector('a');
-        const nome = link.getAttribute('data-nome') || '';
-        const civil = link.getAttribute('data-civil') || '';
-        const p = link.getAttribute('data-partido') || '';
-        const u = link.getAttribute('data-uf') || '';
+      window.requestAnimationFrame(() => {
+        let visible = 0;
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          const link = item.querySelector('a');
+          const nome = link.getAttribute('data-nome') || '';
+          const civil = link.getAttribute('data-civil') || '';
+          const p = link.getAttribute('data-partido') || '';
+          const u = link.getAttribute('data-uf') || '';
 
-        const matchesQuery = !q || nome.includes(q) || civil.includes(q) || p.includes(q) || u.includes(q);
-        const matchesUf = !uf || u === uf;
-        const matchesPartido = !partido || p === partido;
+          const matchesQuery = !q || nome.includes(q) || civil.includes(q) || p.includes(q) || u.includes(q);
+          const matchesUf = !uf || u === uf;
+          const matchesPartido = !partido || p === partido;
 
-        if (matchesQuery && matchesUf && matchesPartido) {
-          item.style.display = '';
-          visible++;
-        } else {
-          item.style.display = 'none';
+          if (matchesQuery && matchesUf && matchesPartido) {
+            item.style.display = '';
+            visible++;
+          } else {
+            item.style.display = 'none';
+          }
         }
-      });
 
-      visibleCount.textContent = visible;
-      emptyState.classList.toggle('hidden', visible > 0);
+        visibleCount.textContent = visible;
+        emptyState.classList.toggle('hidden', visible > 0);
+      });
     }
 
-    input.addEventListener('input', filterDeputados);
-    filterUf.addEventListener('change', filterDeputados);
-    filterPartido.addEventListener('change', filterDeputados);
+    input.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(renderFilter, 150);
+    });
+    filterUf.addEventListener('change', renderFilter);
+    filterPartido.addEventListener('change', renderFilter);
 
     clearBtn.addEventListener('click', () => {
       input.value = '';
-      filterDeputados();
+      renderFilter();
       input.focus();
     });
   </script>

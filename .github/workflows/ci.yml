@@ -36,6 +36,9 @@ jobs:
       - name: Install site dependencies
         run: npm --prefix site ci
 
+      - name: Typecheck Astro site
+        run: npm --prefix site run check
+
       - name: Build Astro site
         run: npm --prefix site run build
         env:

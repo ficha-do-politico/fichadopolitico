@@ -28,21 +28,20 @@ Este documento consolida o diagnóstico técnico de saúde do código, dívidas 
    - `scripts/build_site_data.py` refatorado para consumir diretamente `dados/camara/deputados.json` em JSON canônico (com fallback para `.md`), eliminando parsing via regex e garantindo velocidade e tipagem íntegra.
 6. **Teste de Ponta a Ponta do Pipeline:**
    - Criado `tests/test_build_pipeline.py` validando a execução do pipeline de compilação e paridade dos arquivos de saída.
+7. **Tipagem Estrita e Typecheck Automatizado no Frontend (PR #16):**
+   - Configurado `site/tsconfig.json` e contratos centrais em `site/src/types/index.ts`. Adicionado step de validação `astro check` no CI sem alertas (`0 errors, 0 warnings, 0 hints`).
+8. **Otimização de Busca Mobile com Debounce e RAF (PR #16):**
+   - Implementado debounce de 150ms e renderização síncrona com `requestAnimationFrame` na busca client-side em `index.astro`, prevenindo congelamento de UI em teclados móveis.
+9. **Eliminação de Duplicação de Assets SVG Inline (PR #16):**
+   - Extraído avatar placeholder para `site/public/avatar-placeholder.svg` reutilizável em `DeputadoCard.astro` e `[id].astro`, enxugando o HTML estático gerado.
 
 ---
 
 ### 2.2. Gargalos Críticos Ativos (Foco v0 → v1)
 
-1. **Tipagem e Contratos de Dados Frágeis no Frontend:**
-   - A pasta `site/` não possui `tsconfig.json` ativo nem validação via `astro check`. Falta pasta canônica de contratos de tipo (`site/src/types/index.ts`).
-2. **Injeção de 513 nós no DOM inicial e busca sem debounce:**
-   - Em `site/src/pages/index.astro`, todos os parlamentares são instanciados diretamente no DOM e a busca client-side filtra todos os nós a cada evento `input`.
-   - *Impacto:* Risco de engasgo em conexões móveis lentas, que aumentará com a adição do Senado (81 senadores).
-3. **Duplicação de Assets Inline:**
-   - Em `DeputadoCard.astro` e `[id].astro`, o SVG de avatar fallback embutido em `onerror` é repetido centenas de vezes no HTML gerado. Deve ser extraído para `site/public/avatar-placeholder.svg`.
-4. **Duplicação e Fragilidade de Rotinas HTTP:**
+1. **Duplicação e Fragilidade de Rotinas HTTP:**
    - `fetch_deputados.py` e `discovery_votacoes.py` duplicam chamadas `urllib`. `fetch_deputados.py` opera com delay fixo de 5s sem backoff exponencial em HTTP 429 nem checkpoint em disco.
-5. **Ausência de Linters, Formatadores e Lock de Dependências Python:**
+2. **Ausência de Linters, Formatadores e Lock de Dependências Python:**
    - Não há ferramentas de lint/formatação configuradas (`ruff`, `eslint`, `prettier`). Não há `pyproject.toml` ou `requirements.txt` formalizando o ambiente Python.
 
 ---
@@ -117,7 +116,7 @@ fichadopolitico/
 | **Fase 2** | Ativar CI com validação em Pull Requests | ✅ Concluído (PR #12) | Garante que PRs não quebrem integridade de dados nem build do site. |
 | **Fase 2** | Eliminar parse de Markdown em `build_site_data.py` | ✅ Concluído (PR #15) | Consumir JSONs canônicos diretamente; remover regex frágil. |
 | **Fase 2** | Incluir step de compilação de dados no CI | ✅ Concluído (PR #15) | Garante que o pipeline ETL executa sem erros antes do build Astro. |
-| **Fase 2** | Configurar `tsconfig.json` e types centrais no frontend | ⏳ Pendente | Previne inconsistências em tempo de compilação no Astro. |
+| **Fase 2** | Configurar `tsconfig.json` e types centrais no frontend | ✅ Concluído (PR #16) | Previne inconsistências em tempo de compilação no Astro. |
+| **Fase 2** | Otimizar busca e DOM em `index.astro` (debounce/render) | ✅ Concluído (PR #16) | Garante fluidez no mobile prevenindo stutter no teclado. |
+| **Fase 2** | Extrair SVG de avatar para `avatar-placeholder.svg` | ✅ Concluído (PR #16) | Reduz tamanho do HTML gerado e elimina duplicação de inline SVG. |
 | **Fase 3** | Modularizar cliente HTTP resiliente (`http_client.py`) | ⏳ Pendente | Reúso de rotinas com retries e backoff 429 para Câmara, Senado e TSE. |
-| **Fase 3** | Otimizar busca e DOM em `index.astro` (debounce/render) | ⏳ Pendente | Garante fluidez no mobile quando a base atingir > 600 parlamentares. |
-| **Fase 3** | Extrair SVG de avatar para `avatar-placeholder.svg` | ⏳ Pendente | Reduz tamanho do HTML gerado e elimina duplicação de inline SVG. |
