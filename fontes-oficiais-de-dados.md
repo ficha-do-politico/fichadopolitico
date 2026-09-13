@@ -183,4 +183,4 @@ Este documento cataloga as fontes de dados primárias e oficiais do Estado brasi
 | **TCU (CADIRREG)** | Ficha Limpa / Contas | Consulta web / Export CSV | Nenhuma | Baixa | **v2** |
 | **Transferegov.br** | Destino de Emendas | REST JSON / Dumps CSV | Nenhuma | Média | **v2** |
 | **CNJ (DataJud)** | Processos Judiciais | REST Elasticsearch | API Key pública | Alta | **v3 (Avançado)** |
-| **Receita Federal (CNPJ QSA)** | Empresas e Vínculos | Dumps CSV (~GBs) | Nenhuma | Alta (volume) | **v3 (Avançado)** |
+| **Receita Federal (CNPJ QSA)** | Empresas e Vínculos | Dumps CSV (~GBs) | Nenhuma | Alta (volume) | **v3 (Avançado)** |

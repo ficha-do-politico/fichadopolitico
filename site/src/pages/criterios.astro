@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import temas from '../data/temas.json';
+import temasData from '../data/temas.json';
+import type { Tema } from '../types';
+
+const temas = temasData as Tema[];
 ---
 
 <Layout 

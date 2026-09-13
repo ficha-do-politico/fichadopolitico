@@ -136,15 +136,18 @@
 
 ## Handoff
 
-- **Feature**: Pipeline ETL Canônico e Blindagem de CI (Fase 2 do Code Health)
-- **Fase / Task**: Implementation & Review
+- **Feature**: Tipagem TypeScript Estrita, Otimização de Busca Mobile e Asset Placeholder (Fase 2 do Code Health)
+- **Fase / Task**: Implementation & Validation Complete
 - **Concluído**: 
-  - Refatoração de `scripts/build_site_data.py` consumindo diretamente `dados/camara/deputados.json` canônico sem depender de parse regex de 513 `.md`.
-  - Criação de suíte de testes de ponta a ponta do pipeline em `tests/test_build_pipeline.py`.
-  - Inclusão dos steps de compilação de dados (`python scripts/build_site_data.py`) e verificação de drift (`git diff --exit-code`) no CI (`.github/workflows/ci.yml`).
-  - Atualização do diagnóstico de code health em `docs/code-health.md`.
-- **Em progresso**: Abertura e validação de Pull Request.
-- **Próximo passo**: Adição de tipagem TypeScript no frontend Astro (`tsconfig.json`, `types/index.ts`) ou expansão de novos temas no catálogo.
+  - Adição de `typescript` e `@astrojs/check` no frontend Astro (`site/package.json`).
+  - Criação de `site/tsconfig.json` (`astro/tsconfigs/strict`) e contratos em `site/src/types/index.ts` (`Deputado`, `Tema`, `VotoTipo`).
+  - Tipagem estrita de props e datasets em `DeputadoCard.astro`, `VotoBadge.astro`, `[id].astro`, `index.astro` e `criterios.astro`.
+  - Extração do SVG duplicado inline para asset estático compartilhado em `site/public/avatar-placeholder.svg`.
+  - Otimização da busca client-side com debounce (150ms) e `requestAnimationFrame` em `site/src/pages/index.astro`.
+  - Adição do script `check` (`astro check`) no `site/package.json` e no workflow `.github/workflows/ci.yml`.
+  - Validação estrita: `astro check` reporta 0 errors, 0 warnings, 0 hints. Build estático Astro de 515 páginas concluído com sucesso. Testes de integridade em Python passando 100%.
+- **Em progresso**: Validação e abertura de Pull Request.
+- **Próximo passo**: Modularização de cliente HTTP resiliente (`scripts/core/http_client.py`) ou expansão de temas no catálogo (`dados/catalogo/temas.json`).
 - **Bloqueios**: Nenhum.
-- **Branch**: `refactor/pipeline-canonical-json`
+- **Branch**: `feat/frontend-health-and-types`
 
