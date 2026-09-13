@@ -13,58 +13,28 @@ Uso:
 
 import argparse
 import json
-import os
 import pathlib
 import sys
-import time
 import urllib.parse
-import urllib.request
-import urllib.error
 
+# Permite imports relativos a partir da raiz do projeto
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DEPUTADOS_DIR = ROOT / 'dados' / 'camara' / 'deputados'
-OUT_DIR = ROOT / 'dados' / 'camara' / 'votacoes'
-TEMAS_CATALOGO_FILE = ROOT / 'dados' / 'catalogo' / 'temas.json'
+sys.path.insert(0, str(ROOT))
 
-API_BASE = 'https://dadosabertos.camara.leg.br/api/v2'
-USER_AGENT = 'FichaDoPoliticoBot/0.1 (github.com/ficha-do-politico)'
+from scripts.core.http_client import fetch_json  # noqa: E402
 
+CANON_DEPUTADOS_FILE = ROOT / "dados" / "camara" / "deputados.json"
+OUT_DIR = ROOT / "dados" / "camara" / "votacoes"
+TEMAS_CATALOGO_FILE = ROOT / "dados" / "catalogo" / "temas.json"
 
-def fetch_json(url: str, retries: int = 3, delay: float = 1.0) -> dict:
-    """Faz requisição GET na API de Dados Abertos com retentativas e headers adequados."""
-    req = urllib.request.Request(
-        url,
-        headers={
-            'Accept': 'application/json',
-            'User-Agent': USER_AGENT,
-        }
-    )
-    for attempt in range(retries):
-        try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                return json.loads(resp.read().decode('utf-8'))
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                wait = (attempt + 1) * 3
-                print(f"  [Aviso] Rate limit (429). Aguardando {wait}s...", file=sys.stderr)
-                time.sleep(wait)
-            elif e.code >= 500 and attempt < retries - 1:
-                time.sleep(2)
-            else:
-                raise
-        except Exception:
-            if attempt < retries - 1:
-                time.sleep(2)
-            else:
-                raise
-    raise RuntimeError(f"Falha ao consultar {url}")
+API_BASE = "https://dadosabertos.camara.leg.br/api/v2"
 
 
 def buscar_proposicao(tipo: str, numero: int, ano: int) -> dict:
     """Localiza o ID oficial e metadados de uma proposição."""
     url = f"{API_BASE}/proposicoes?siglaTipo={urllib.parse.quote(tipo)}&numero={numero}&ano={ano}"
     res = fetch_json(url)
-    dados = res.get('dados', [])
+    dados = res.get("dados", [])
     if not dados:
         raise ValueError(f"Proposição {tipo} {numero}/{ano} não encontrada na API.")
     return dados[0]
@@ -74,14 +44,14 @@ def listar_votacoes_proposicao(proposicao_id: int) -> list:
     """Lista todas as votações registradas para uma proposição."""
     url = f"{API_BASE}/proposicoes/{proposicao_id}/votacoes"
     res = fetch_json(url)
-    return res.get('dados', [])
+    return res.get("dados", [])
 
 
 def detalhar_votacao(votacao_id: str) -> dict:
     """Obtém os detalhes e metadados de uma votação."""
     url = f"{API_BASE}/votacoes/{votacao_id}"
     res = fetch_json(url)
-    return res.get('dados', {})
+    return res.get("dados", {})
 
 
 def obter_orientacoes(votacao_id: str) -> list:
@@ -89,7 +59,7 @@ def obter_orientacoes(votacao_id: str) -> list:
     url = f"{API_BASE}/votacoes/{votacao_id}/orientacoes"
     try:
         res = fetch_json(url)
-        return res.get('dados', [])
+        return res.get("dados", [])
     except urllib.error.HTTPError as e:
         if e.code == 404:
             return []
@@ -100,7 +70,7 @@ def obter_votos_nominais(votacao_id: str) -> list:
     """Obtém os votos nominais registrados dos deputados."""
     url = f"{API_BASE}/votacoes/{votacao_id}/votos"
     res = fetch_json(url)
-    return res.get('dados', [])
+    return res.get("dados", [])
 
 
 def filtrar_votacoes_plenario_merito(votacoes: list) -> list:
@@ -113,27 +83,49 @@ def filtrar_votacoes_plenario_merito(votacoes: list) -> list:
     """
     candidatas = []
     for v in votacoes:
-        sigla = v.get('siglaOrgao', '')
-        desc = v.get('descricao', '')
+        sigla = v.get("siglaOrgao", "")
+        desc = v.get("descricao", "")
         desc_lower = desc.lower()
 
-        if sigla != 'PLEN':
+        if sigla != "PLEN":
             continue
 
         # Ignora requerimentos puramente procedimentais
-        if any(termo in desc_lower for termo in [
-            'requerimento de adiamento',
-            'requerimento de retirada de pauta',
-            'requerimento de encerramento',
-            'requerimento de quebra de interstício',
-            'urgência (art. 155',
-        ]):
+        if any(
+            termo in desc_lower
+            for termo in [
+                "requerimento de adiamento",
+                "requerimento de retirada de pauta",
+                "requerimento de encerramento",
+                "requerimento de quebra de interstício",
+                "urgência (art. 155",
+            ]
+        ):
             continue
 
         # Verifica se é votação de mérito ou turno
-        is_turno = any(t in desc_lower for t in ['primeiro turno', '1º turno', '1o turno', 'segundo turno', '2º turno', '2o turno'])
-        is_merito = any(m in desc_lower for m in ['substitutivo', 'subemenda substitutiva', 'projeto de lei de conversão', 'parecer da comissão', 'aprovada a proposta de emenda'])
-        is_destaque_chave = 'mantido o texto' in desc_lower or 'suprimido o texto' in desc_lower
+        is_turno = any(
+            t in desc_lower
+            for t in [
+                "primeiro turno",
+                "1º turno",
+                "1o turno",
+                "segundo turno",
+                "2º turno",
+                "2o turno",
+            ]
+        )
+        is_merito = any(
+            m in desc_lower
+            for m in [
+                "substitutivo",
+                "subemenda substitutiva",
+                "projeto de lei de conversão",
+                "parecer da comissão",
+                "aprovada a proposta de emenda",
+            ]
+        )
+        is_destaque_chave = "mantido o texto" in desc_lower or "suprimido o texto" in desc_lower
 
         if is_turno or is_merito or is_destaque_chave:
             candidatas.append(v)
@@ -142,16 +134,15 @@ def filtrar_votacoes_plenario_merito(votacoes: list) -> list:
 
 
 def carregar_ids_deputados_locais() -> set:
-    """Carrega os IDs dos deputados já mapeados no diretório dados/deputados."""
-    if not DEPUTADOS_DIR.exists():
+    """Carrega os IDs dos deputados mapeados no dataset canônico dados/camara/deputados.json."""
+    if not CANON_DEPUTADOS_FILE.exists():
         return set()
-    ids = set()
-    for f in DEPUTADOS_DIR.glob('*.md'):
-        try:
-            ids.add(int(f.stem))
-        except ValueError:
-            pass
-    return ids
+    try:
+        with open(CANON_DEPUTADOS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+            return {d["id"] for d in data if "id" in d}
+    except Exception:
+        return set()
 
 
 def analisar_votos(votacao_id: str, salvar_artefato: bool = True) -> dict:
@@ -167,18 +158,18 @@ def analisar_votos(votacao_id: str, salvar_artefato: bool = True) -> dict:
     votos_map = {}
 
     for v in votos:
-        tv = v.get('tipoVoto')
+        tv = v.get("tipoVoto")
         contagem_tipos[tv] = contagem_tipos.get(tv, 0) + 1
-        dep = v.get('deputado_', {})
-        dep_id = dep.get('id')
+        dep = v.get("deputado_", {})
+        dep_id = dep.get("id")
         if dep_id:
             deputados_votaram.add(dep_id)
             votos_map[dep_id] = {
-                'nome': dep.get('nome'),
-                'partido': dep.get('siglaPartido'),
-                'uf': dep.get('siglaUf'),
-                'tipoVoto': tv,
-                'dataRegistro': v.get('dataRegistroVoto'),
+                "nome": dep.get("nome"),
+                "partido": dep.get("siglaPartido"),
+                "uf": dep.get("siglaUf"),
+                "tipoVoto": tv,
+                "dataRegistro": v.get("dataRegistroVoto"),
             }
 
     # Deputados ausentes / não votantes
@@ -188,36 +179,41 @@ def analisar_votos(votacao_id: str, salvar_artefato: bool = True) -> dict:
             ausentes.append(dep_id)
 
     resumo = {
-        'votacao_id': votacao_id,
-        'dataHora': detalhes.get('dataHoraRegistro') or detalhes.get('data'),
-        'descricao': detalhes.get('descricao'),
-        'siglaOrgao': detalhes.get('siglaOrgao'),
-        'uri_api': f"{API_BASE}/votacoes/{votacao_id}",
-        'url_portal_votacao': f"https://dadosabertos.camara.leg.br/api/v2/votacoes/{votacao_id}",
-        'total_votos_registrados': len(votos),
-        'total_deputados_locais': len(deputados_conhecidos),
-        'total_ausentes_nao_votantes': len(ausentes),
-        'distribuicao_votos': contagem_tipos,
-        'total_orientacoes': len(orientacoes),
-        'orientacoes': [
+        "votacao_id": votacao_id,
+        "dataHora": detalhes.get("dataHoraRegistro") or detalhes.get("data"),
+        "descricao": detalhes.get("descricao"),
+        "siglaOrgao": detalhes.get("siglaOrgao"),
+        "uri_api": f"{API_BASE}/votacoes/{votacao_id}",
+        "url_portal_votacao": f"https://dadosabertos.camara.leg.br/api/v2/votacoes/{votacao_id}",
+        "total_votos_registrados": len(votos),
+        "total_deputados_locais": len(deputados_conhecidos),
+        "total_ausentes_nao_votantes": len(ausentes),
+        "distribuicao_votos": contagem_tipos,
+        "total_orientacoes": len(orientacoes),
+        "orientacoes": [
             {
-                'bancada': o.get('siglaPartidoBloco'),
-                'orientacao': o.get('orientacaoVoto'),
+                "bancada": o.get("siglaPartidoBloco"),
+                "orientacao": o.get("orientacaoVoto"),
             }
             for o in orientacoes
         ],
-        'amostra_votos': list(votos_map.values())[:5],
+        "amostra_votos": list(votos_map.values())[:5],
     }
 
     if salvar_artefato:
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         out_file = OUT_DIR / f"{votacao_id}.json"
-        with open(out_file, 'w', encoding='utf-8') as f:
-            json.dump({
-                'metadados': resumo,
-                'votos': votos_map,
-                'ausentes_ids': ausentes,
-            }, f, indent=2, ensure_ascii=False)
+        with open(out_file, "w", encoding="utf-8") as f:
+            json.dump(
+                {
+                    "metadados": resumo,
+                    "votos": votos_map,
+                    "ausentes_ids": ausentes,
+                },
+                f,
+                indent=2,
+                ensure_ascii=False,
+            )
         print(f"  [Salvo] Artefato de votação salvo em: {out_file.relative_to(ROOT)}")
 
     return resumo
@@ -230,78 +226,82 @@ def executar_demo():
     print("=" * 70)
 
     if TEMAS_CATALOGO_FILE.exists():
-        with open(TEMAS_CATALOGO_FILE, 'r', encoding='utf-8') as f:
+        with open(TEMAS_CATALOGO_FILE, encoding="utf-8") as f:
             catalogo = json.load(f)
         temas = [
             {
-                'nome': t.get('titulo'),
-                'tipo': t.get('tipo', 'PEC'),
-                'numero': t.get('numero', 0),
-                'ano': t.get('ano', 0),
-                'votacao_id': t.get('id'),
+                "nome": t.get("titulo"),
+                "tipo": t.get("tipo", "PEC"),
+                "numero": t.get("numero", 0),
+                "ano": t.get("ano", 0),
+                "votacao_id": t.get("id"),
             }
             for t in catalogo
         ]
     else:
         temas = [
             {
-                'nome': 'Reforma Tributária (1º Turno)',
-                'tipo': 'PEC',
-                'numero': 45,
-                'ano': 2019,
-                'votacao_id': '2196833-326',
+                "nome": "Reforma Tributária (1º Turno)",
+                "tipo": "PEC",
+                "numero": 45,
+                "ano": 2019,
+                "votacao_id": "2196833-326",
             },
             {
-                'nome': 'Reforma Tributária (2º Turno)',
-                'tipo': 'PEC',
-                'numero': 45,
-                'ano': 2019,
-                'votacao_id': '2196833-373',
+                "nome": "Reforma Tributária (2º Turno)",
+                "tipo": "PEC",
+                "numero": 45,
+                "ano": 2019,
+                "votacao_id": "2196833-373",
             },
             {
-                'nome': 'Marco Temporal das Terras Indígenas',
-                'tipo': 'PL',
-                'numero': 490,
-                'ano': 2007,
-                'votacao_id': '345311-270',
+                "nome": "Marco Temporal das Terras Indígenas",
+                "tipo": "PL",
+                "numero": 490,
+                "ano": 2007,
+                "votacao_id": "345311-270",
             },
             {
-                'nome': 'PEC da Anistia aos Partidos (2º Turno)',
-                'tipo': 'PEC',
-                'numero': 9,
-                'ano': 2023,
-                'votacao_id': '2352476-168',
+                "nome": "PEC da Anistia aos Partidos (2º Turno)",
+                "tipo": "PEC",
+                "numero": 9,
+                "ano": 2023,
+                "votacao_id": "2352476-168",
             },
             {
-                'nome': 'Taxação de Compras Internacionais / Mover',
-                'tipo': 'PL',
-                'numero': 914,
-                'ano': 2024,
-                'votacao_id': '2422697-75',
+                "nome": "Taxação de Compras Internacionais / Mover",
+                "tipo": "PL",
+                "numero": 914,
+                "ano": 2024,
+                "votacao_id": "2422697-75",
             },
         ]
 
     for t in temas:
         print(f"\n--- {t['nome']} ({t['tipo']} {t['numero']}/{t['ano']}) ---")
-        analise = analisar_votos(t['votacao_id'], salvar_artefato=True)
+        analise = analisar_votos(t["votacao_id"], salvar_artefato=True)
         print(f"  Votação ID: {analise['votacao_id']}")
         print(f"  Data/Hora: {analise['dataHora']}")
         print(f"  Descrição: {analise['descricao'][:100]}...")
         print(f"  Distribuição de votos: {analise['distribuicao_votos']}")
         print(f"  Votos nominais registrados: {analise['total_votos_registrados']}")
-        print(f"  Deputados sem registro (ausentes/não votou): {analise['total_ausentes_nao_votantes']}")
+        print(
+            f"  Deputados sem registro (ausentes/não votou): {analise['total_ausentes_nao_votantes']}"
+        )
         print("  Orientações de bancada:")
-        for o in analise['orientacoes'][:4]:
+        for o in analise["orientacoes"][:4]:
             print(f"    - {o['bancada']}: {o['orientacao']}")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Discovery de Votações Nominais da Câmara")
-    parser.add_argument('--demo', action='store_true', help="Executa análise das votações de temas-chave do MVP")
-    parser.add_argument('--tipo', type=str, help="Tipo da proposição (ex: PEC, PL, PLP, MPV)")
-    parser.add_argument('--numero', type=int, help="Número da proposição")
-    parser.add_argument('--ano', type=int, help="Ano da proposição")
-    parser.add_argument('--votacao', type=str, help="ID da votação para inspecionar votos")
+    parser.add_argument(
+        "--demo", action="store_true", help="Executa análise das votações de temas-chave do MVP"
+    )
+    parser.add_argument("--tipo", type=str, help="Tipo da proposição (ex: PEC, PL, PLP, MPV)")
+    parser.add_argument("--numero", type=int, help="Número da proposição")
+    parser.add_argument("--ano", type=int, help="Ano da proposição")
+    parser.add_argument("--votacao", type=str, help="ID da votação para inspecionar votos")
 
     args = parser.parse_args()
 
@@ -315,7 +315,7 @@ def main():
 
     if args.tipo and args.numero and args.ano:
         prop = buscar_proposicao(args.tipo, args.numero, args.ano)
-        p_id = prop['id']
+        p_id = prop["id"]
         print(f"Proposição encontrada: {args.tipo} {args.numero}/{args.ano} (ID: {p_id})")
         print(f"Ementa: {prop.get('ementa')}")
         vots = listar_votacoes_proposicao(p_id)
@@ -323,11 +323,13 @@ def main():
         merito = filtrar_votacoes_plenario_merito(vots)
         print(f"Votações de mérito/turno no Plenário ({len(merito)}):")
         for v in merito:
-            print(f"  [{v['id']}] {v.get('dataHoraRegistro') or v.get('data')}: {v.get('descricao')}")
+            print(
+                f"  [{v['id']}] {v.get('dataHoraRegistro') or v.get('data')}: {v.get('descricao')}"
+            )
         return
 
     parser.print_help()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -19,21 +19,26 @@ Ficha pública e apartidária de parlamentares: como votaram, quanto gastaram, o
 
 ## Como rodar o site localmente
 
+Recomendamos o uso de [uv](https://github.com/astral-sh/uv) para gerenciamento rápido do ambiente Python.
+
 ```bash
-# 1. Compilar os dados de votações e deputados
-python scripts/build_site_data.py
+# 1. Compilar os dados de votações e parlamentares
+uv run python scripts/build_site_data.py
 
 # 2. Executar testes de integridade de dados e LGPD
-python -m unittest discover tests
+uv run python -m unittest discover tests
 
-# 3. Instalar dependências do site
+# 3. Validar linter e formatação (opcional)
+uv run ruff check
+
+# 4. Instalar dependências do site
 cd site
 npm install
 
-# 4. Rodar em modo de desenvolvimento (http://localhost:4321)
+# 5. Rodar em modo de desenvolvimento (http://localhost:4321)
 npm run dev
 
-# 5. Gerar build estático pré-renderizado (pasta site/dist/)
+# 6. Gerar build estático pré-renderizado (pasta site/dist/)
 npm run build
 ```
 

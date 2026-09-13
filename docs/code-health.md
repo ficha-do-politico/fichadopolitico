@@ -35,14 +35,19 @@ Este documento consolida o diagnóstico técnico de saúde do código, dívidas 
 9. **Eliminação de Duplicação de Assets SVG Inline (PR #16):**
    - Extraído avatar placeholder para `site/public/avatar-placeholder.svg` reutilizável em `DeputadoCard.astro` e `[id].astro`, enxugando o HTML estático gerado.
 
+10. **Modularização de Cliente HTTP Resiliente (PR #17 / PR #19):**
+    - Unificação das chamadas na Câmara e Senado em `scripts/core/http_client.py` com backoff exponencial para HTTP 429 e retries para 5xx.
+11. **Ambiente Python Moderno com UV, Ruff e pyproject.toml (PR #19):**
+    - Padronização de tooling com `uv` (`pyproject.toml` + `uv.lock`), linter e formatador estrito `ruff` integrado ao CI.
+
 ---
 
-### 2.2. Gargalos Críticos Ativos (Foco v0 → v1)
+### 2.2. Gargalos Críticos Ativos (Foco v1)
 
-1. **Duplicação e Fragilidade de Rotinas HTTP:**
-   - `fetch_deputados.py` e `discovery_votacoes.py` duplicam chamadas `urllib`. `fetch_deputados.py` opera com delay fixo de 5s sem backoff exponencial em HTTP 429 nem checkpoint em disco.
-2. **Ausência de Linters, Formatadores e Lock de Dependências Python:**
-   - Não há ferramentas de lint/formatação configuradas (`ruff`, `eslint`, `prettier`). Não há `pyproject.toml` ou `requirements.txt` formalizando o ambiente Python.
+1. **Paridade de Votações Nominais no Senado Federal:**
+   - Mapeamento das votações correlatas no Senado para os temas do catálogo e ingestão automatizada dos votos nominais dos 81 senadores.
+2. **Expansão Curada de Matérias de Alta Relevância:**
+   - Ampliação do catálogo editorial de 5 para 10 a 20 temas de impacto nacional.
 
 ---
 
@@ -119,5 +124,7 @@ fichadopolitico/
 | **Fase 2** | Configurar `tsconfig.json` e types centrais no frontend | ✅ Concluído (PR #16) | Previne inconsistências em tempo de compilação no Astro. |
 | **Fase 2** | Otimizar busca e DOM em `index.astro` (debounce/render) | ✅ Concluído (PR #16) | Garante fluidez no mobile prevenindo stutter no teclado. |
 | **Fase 2** | Extrair SVG de avatar para `avatar-placeholder.svg` | ✅ Concluído (PR #16) | Reduz tamanho do HTML gerado e elimina duplicação de inline SVG. |
-| **Fase 3** | Modularizar cliente HTTP resiliente (`http_client.py`) | ✅ Concluído | Reúso de rotinas com retries e backoff 429 para Câmara, Senado e TSE. |
-| **Fase v1** | Ingestão e Fichas dos 81 Senadores da República | ✅ Concluído | Expansão bicameral com dados oficiais do Senado e busca unificada. |
+| **Fase 3** | Modularizar cliente HTTP resiliente (`http_client.py`) | ✅ Concluído (PR #17) | Reúso de rotinas com retries e backoff 429 para Câmara, Senado e TSE. |
+| **Fase 3** | Migrar scripts de ingestão para o cliente unificado | ✅ Concluído (PR #19) | Unifica `fetch_deputados.py` e `discovery_votacoes.py` no `http_client`. |
+| **Fase 3** | Modernizar tooling Python com `uv`, `pyproject.toml` e `ruff` | ✅ Concluído (PR #19) | Padroniza locks de dependências, linter e formatação estrita no CI. |
+| **Fase v1** | Ingestão e Fichas dos 81 Senadores da República | ✅ Concluído (PR #17) | Expansão bicameral com dados oficiais do Senado e busca unificada. |
