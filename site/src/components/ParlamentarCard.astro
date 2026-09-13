@@ -1,0 +1,61 @@
+---
+import type { ParlamentarCardData } from '../types';
+
+interface Props {
+  parlamentar: ParlamentarCardData;
+}
+
+const { parlamentar } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const isSenado = parlamentar.casa === 'senado';
+---
+
+<a 
+  href={parlamentar.href} 
+  class="group relative flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-emerald-500/50 hover:shadow-md transition-all duration-200"
+  data-nome={parlamentar.nome_eleitoral.toLowerCase()}
+  data-civil={parlamentar.nome_civil.toLowerCase()}
+  data-partido={parlamentar.partido.toLowerCase()}
+  data-uf={parlamentar.uf.toLowerCase()}
+  data-casa={parlamentar.casa}
+>
+  <div class="relative w-14 h-14 rounded-full overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0 group-hover:ring-2 group-hover:ring-emerald-500 transition">
+    <img 
+      src={parlamentar.url_foto} 
+      alt={parlamentar.nome_eleitoral} 
+      class="w-full h-full object-cover object-top"
+      loading="lazy"
+      onerror={`this.onerror=null; this.src='${base}avatar-placeholder.svg';`}
+    />
+  </div>
+
+  <div class="min-w-0 flex-1">
+    <div class="flex items-center gap-2">
+      <h3 class="font-semibold text-slate-900 truncate group-hover:text-emerald-700 transition">
+        {parlamentar.nome_eleitoral}
+      </h3>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-2 mt-1">
+      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+        {parlamentar.partido}
+      </span>
+      <span class="text-xs font-medium text-slate-500">
+        {parlamentar.uf}
+      </span>
+      <span class={`inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium border ${
+        isSenado 
+          ? 'bg-blue-50 text-blue-700 border-blue-200' 
+          : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+      }`}>
+        {isSenado ? 'Senado' : 'Câmara'}
+      </span>
+    </div>
+  </div>
+
+  <div class="text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition flex-shrink-0">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+</a>

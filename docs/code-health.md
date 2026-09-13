@@ -119,4 +119,5 @@ fichadopolitico/
 | **Fase 2** | Configurar `tsconfig.json` e types centrais no frontend | ✅ Concluído (PR #16) | Previne inconsistências em tempo de compilação no Astro. |
 | **Fase 2** | Otimizar busca e DOM em `index.astro` (debounce/render) | ✅ Concluído (PR #16) | Garante fluidez no mobile prevenindo stutter no teclado. |
 | **Fase 2** | Extrair SVG de avatar para `avatar-placeholder.svg` | ✅ Concluído (PR #16) | Reduz tamanho do HTML gerado e elimina duplicação de inline SVG. |
-| **Fase 3** | Modularizar cliente HTTP resiliente (`http_client.py`) | ⏳ Pendente | Reúso de rotinas com retries e backoff 429 para Câmara, Senado e TSE. |
+| **Fase 3** | Modularizar cliente HTTP resiliente (`http_client.py`) | ✅ Concluído | Reúso de rotinas com retries e backoff 429 para Câmara, Senado e TSE. |
+| **Fase v1** | Ingestão e Fichas dos 81 Senadores da República | ✅ Concluído | Expansão bicameral com dados oficiais do Senado e busca unificada. |

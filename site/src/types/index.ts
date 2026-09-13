@@ -1,6 +1,6 @@
 /**
  * Contratos centrais de tipos para o portal Ficha do Político.
- * Alinhado às decisões AD-005, AD-006 e AD-009.
+ * Alinhado às decisões AD-005, AD-006, AD-009 e AD-014.
  */
 
 export type VotoTipo =
@@ -22,6 +22,32 @@ export interface Deputado {
   url_foto: string;
   url_perfil_camara: string;
   votos: Record<string, string>;
+}
+
+export interface Senador {
+  id: number;
+  nome_eleitoral: string;
+  nome_civil: string;
+  partido: string;
+  uf: string;
+  situacao: string;
+  url_foto: string;
+  url_perfil_senado: string;
+  votos: Record<string, string>;
+}
+
+export type CasaLegislativa = 'camara' | 'senado';
+
+export interface ParlamentarCardData {
+  id: number;
+  nome_eleitoral: string;
+  nome_civil: string;
+  partido: string;
+  uf: string;
+  url_foto: string;
+  casa: CasaLegislativa;
+  cargo: string;
+  href: string;
 }
 
 export interface Tema {
