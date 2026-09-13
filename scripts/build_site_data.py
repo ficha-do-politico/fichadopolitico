@@ -5,11 +5,11 @@ Entrada:
   - dados/catalogo/temas.json (catálogo curado com proposições e links oficiais)
   - dados/camara/deputados.json (dataset canônico consolidado da Câmara)
   - dados/camara/votacoes/*.json (votações nominais extraídas da API da Câmara)
-  - dados/camara/deputados/*.md (fallback para bootstrap se deputados.json não existir)
+  - dados/senado/senadores.json (dataset canônico consolidado do Senado)
 
 Saída:
-  - dados/camara/deputados.json (dataset canônico consolidado da Câmara)
   - site/src/data/deputados.json (dataset compacto consumido pelo site)
+  - site/src/data/senadores.json (dataset de senadores consumido pelo site)
   - site/src/data/temas.json (catálogo dos temas consumido pelo site)
 
 Regras de negócio:
@@ -20,14 +20,12 @@ Regras de negócio:
 
 import json
 import pathlib
-import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CATALOGO_FILE = ROOT / 'dados' / 'catalogo' / 'temas.json'
 CAMARA_DIR = ROOT / 'dados' / 'camara'
 CANON_DEPUTADOS_FILE = CAMARA_DIR / 'deputados.json'
-DEPUTADOS_DIR = CAMARA_DIR / 'deputados'
 VOTACOES_DIR = CAMARA_DIR / 'votacoes'
 SENADO_DIR = ROOT / 'dados' / 'senado'
 CANON_SENADORES_FILE = SENADO_DIR / 'senadores.json'
@@ -59,64 +57,28 @@ def load_votacoes(temas):
     return votacoes_data
 
 
-def parse_deputado_md(filepath: pathlib.Path):
-    """Fallback legatário: parseia dados a partir do markdown gerado no discovery."""
-    dep_id = int(filepath.stem)
-    with open(filepath, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    foto_match = re.search(r'\!\[Foto\]\((https?://[^\)]+)\)', content)
-    foto_url = foto_match.group(1) if foto_match else ""
-
-    def get_field(label: str) -> str:
-        m = re.search(r'\|\s*' + re.escape(label) + r'\s*\|\s*([^\|]+?)\s*\|', content)
-        return m.group(1).strip() if m else ""
-
-    nome_eleitoral = get_field("Nome eleitoral")
-    nome_civil = get_field("Nome civil")
-    partido = get_field("Partido")
-    uf = get_field("UF")
-    situacao = get_field("Situação")
-
-    return {
-        "id": dep_id,
-        "nome_eleitoral": nome_eleitoral,
-        "nome_civil": nome_civil,
-        "partido": partido,
-        "uf": uf,
-        "situacao": situacao,
-        "url_foto": foto_url,
-        "url_perfil_camara": f"https://www.camara.leg.br/deputados/{dep_id}",
-    }
-
-
 def load_deputados_base():
-    """Carrega dados biográficos canônicos dos deputados a partir de JSON ou fallback em MD."""
-    if CANON_DEPUTADOS_FILE.exists():
-        with open(CANON_DEPUTADOS_FILE, "r", encoding="utf-8") as f:
-            raw_deputados = json.load(f)
-        deputados = []
-        for d in raw_deputados:
-            deputados.append({
-                "id": int(d["id"]),
-                "nome_eleitoral": str(d["nome_eleitoral"]),
-                "nome_civil": str(d["nome_civil"]),
-                "partido": str(d["partido"]),
-                "uf": str(d["uf"]),
-                "situacao": str(d["situacao"]),
-                "url_foto": str(d["url_foto"]),
-                "url_perfil_camara": str(d.get("url_perfil_camara") or f"https://www.camara.leg.br/deputados/{d['id']}"),
-            })
-        return deputados
-
-    # Fallback se deputados.json ainda não tiver sido compilado
-    md_files = sorted(DEPUTADOS_DIR.glob("*.md")) if DEPUTADOS_DIR.exists() else []
-    if not md_files:
-        print(f"ERRO: Nem {CANON_DEPUTADOS_FILE} nem arquivos em {DEPUTADOS_DIR} encontrados.", file=sys.stderr)
+    """Carrega dados biográficos canônicos dos deputados a partir de dados/camara/deputados.json."""
+    if not CANON_DEPUTADOS_FILE.exists():
+        print(f"ERRO: Dataset canônico da Câmara não encontrado em {CANON_DEPUTADOS_FILE}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Aviso: {CANON_DEPUTADOS_FILE} ausente. Carregando dados a partir de {len(md_files)} arquivos .md (fallback)")
-    return [parse_deputado_md(p) for p in md_files]
+    with open(CANON_DEPUTADOS_FILE, "r", encoding="utf-8") as f:
+        raw_deputados = json.load(f)
+
+    deputados = []
+    for d in raw_deputados:
+        deputados.append({
+            "id": int(d["id"]),
+            "nome_eleitoral": str(d["nome_eleitoral"]),
+            "nome_civil": str(d["nome_civil"]),
+            "partido": str(d["partido"]),
+            "uf": str(d["uf"]),
+            "situacao": str(d["situacao"]),
+            "url_foto": str(d["url_foto"]),
+            "url_perfil_camara": str(d.get("url_perfil_camara") or f"https://www.camara.leg.br/deputados/{d['id']}"),
+        })
+    return deputados
 
 
 def validar_integridade(deputados, temas):
