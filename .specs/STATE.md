@@ -134,20 +134,35 @@
 
 
 
+### AD-014
+
+- **Decisão**: Expansão bicameral integrando os 81 senadores da República em exercício (`dados/senado/senadores.json`), cliente HTTP resiliente com retries exponenciais (`scripts/core/http_client.py`) e busca unificada no frontend Astro (`site/src/pages/senador/[id].astro` e abas de Casa em `index.astro`).
+- **Motivo**: O projeto avança do MVP v0 para o v1 cobrindo integralmente o Poder Legislativo Federal (594 parlamentares: 513 deputados e 81 senadores). Prepara a arquitetura para futuras dimensões cívicas (TSE - histórico eleitoral e declarações de patrimônio) que unificarão parlamentares e governadores sob a entidade "Pessoa Política".
+- **Trade-off**: As votações do catálogo inicial do v0 foram registradas na Câmara; votações correlatas no Senado (como a votação da Reforma Tributária e do Marco Temporal) serão mapeadas no catálogo para paridade bicameral completa de votos nominais.
+- **Escopo**: `dados/senado/`, `scripts/core/`, `scripts/senado/`, `site/src/pages/senador/`, `site/src/pages/index.astro`, `site/src/types/`, `tests/`.
+- **Data**: 2026-09-13
+- **Status**: ativo
+
+
+
 ## Handoff
 
-- **Feature**: Tipagem TypeScript Estrita, Otimização de Busca Mobile e Asset Placeholder (Fase 2 do Code Health)
+- **Feature**: Expansão Bicameral — Ingestão e Fichas dos 81 Senadores da República (v1)
 - **Fase / Task**: Implementation & Validation Complete
 - **Concluído**: 
-  - Adição de `typescript` e `@astrojs/check` no frontend Astro (`site/package.json`).
-  - Criação de `site/tsconfig.json` (`astro/tsconfigs/strict`) e contratos em `site/src/types/index.ts` (`Deputado`, `Tema`, `VotoTipo`).
-  - Tipagem estrita de props e datasets em `DeputadoCard.astro`, `VotoBadge.astro`, `[id].astro`, `index.astro` e `criterios.astro`.
-  - Extração do SVG duplicado inline para asset estático compartilhado em `site/public/avatar-placeholder.svg`.
-  - Otimização da busca client-side com debounce (150ms) e `requestAnimationFrame` em `site/src/pages/index.astro`.
-  - Adição do script `check` (`astro check`) no `site/package.json` e no workflow `.github/workflows/ci.yml`.
-  - Validação estrita: `astro check` reporta 0 errors, 0 warnings, 0 hints. Build estático Astro de 515 páginas concluído com sucesso. Testes de integridade em Python passando 100%.
+  - Criação de cliente HTTP compartilhado com retries e backoff exponencial em `scripts/core/http_client.py`.
+  - Ingestor oficial do Senado Federal em `scripts/senado/fetch_senadores.py` (`https://legis.senado.leg.br/dadosabertos/senador/lista/atual`).
+  - Extração, sanitização LGPD (AD-009) e persistência canônica de 81 senadores em `dados/senado/senadores.json`.
+  - Atualização do compilador `scripts/build_site_data.py` com validações estritas de conformidade para o Senado e exportação para `site/src/data/senadores.json`.
+  - Atualização da suíte de testes de integridade (`tests/test_data_integrity.py` e `tests/test_build_pipeline.py`) cobrindo os 81 senadores, LGPD e links oficiais. Testes 100% passando.
+  - Tipagem em `site/src/types/index.ts` (`Senador`, `CasaLegislativa`, `ParlamentarCardData`).
+  - Componente universal `ParlamentarCard.astro` com badge de identificação de Casa (Câmara / Senado).
+  - Página estática individual para cada senador em `site/src/pages/senador/[id].astro`.
+  - Busca na Home (`site/src/pages/index.astro`) unificada com abas de filtro rápido (`Todos (594)`, `Câmara (513)`, `Senado (81)`), busca instantânea com debounce e selects de UF/Partido.
+  - Verificação de tipos (`astro check`) reportando 0 erros, 0 avisos, 0 hints.
+  - Build estático do Astro completado gerando 596 páginas HTML (513 deputados + 81 senadores + index + critérios).
 - **Em progresso**: Validação e abertura de Pull Request.
-- **Próximo passo**: Modularização de cliente HTTP resiliente (`scripts/core/http_client.py`) ou expansão de temas no catálogo (`dados/catalogo/temas.json`).
+- **Próximo passo**: Mapeamento bicameral dos IDs de votação do Senado correspondentes aos temas do catálogo (`dados/catalogo/temas.json`), ou ingestão de despesas (CEAP/CEAPS) e patrimônio (TSE).
 - **Bloqueios**: Nenhum.
-- **Branch**: `feat/frontend-health-and-types`
+- **Branch**: `feat/senado-federal-81-senadores`
 

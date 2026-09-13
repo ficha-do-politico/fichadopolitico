@@ -18,7 +18,9 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 BUILD_SCRIPT = ROOT / 'scripts' / 'build_site_data.py'
 CATALOGO_FILE = ROOT / 'dados' / 'catalogo' / 'temas.json'
 CAMARA_DEPUTADOS_FILE = ROOT / 'dados' / 'camara' / 'deputados.json'
+SENADO_SENADORES_FILE = ROOT / 'dados' / 'senado' / 'senadores.json'
 SITE_DEPUTADOS_FILE = ROOT / 'site' / 'src' / 'data' / 'deputados.json'
+SITE_SENADORES_FILE = ROOT / 'site' / 'src' / 'data' / 'senadores.json'
 SITE_TEMAS_FILE = ROOT / 'site' / 'src' / 'data' / 'temas.json'
 
 
@@ -46,9 +48,11 @@ class TestBuildPipeline(unittest.TestCase):
         self.assertIn("Sucesso!", result.stdout)
 
     def test_pipeline_output_files_exist_and_match(self):
-        """Verifica se os arquivos gerados existem e se há paridade entre Câmara e Site."""
+        """Verifica se os arquivos gerados existem e se há paridade entre Câmara/Senado e Site."""
         self.assertTrue(CAMARA_DEPUTADOS_FILE.exists())
+        self.assertTrue(SENADO_SENADORES_FILE.exists())
         self.assertTrue(SITE_DEPUTADOS_FILE.exists())
+        self.assertTrue(SITE_SENADORES_FILE.exists())
         self.assertTrue(SITE_TEMAS_FILE.exists())
 
         with open(CAMARA_DEPUTADOS_FILE, "r", encoding="utf-8") as f:
@@ -57,13 +61,23 @@ class TestBuildPipeline(unittest.TestCase):
         with open(SITE_DEPUTADOS_FILE, "r", encoding="utf-8") as f:
             site_deps = json.load(f)
 
+        with open(SENADO_SENADORES_FILE, "r", encoding="utf-8") as f:
+            senado_sens = json.load(f)
+
+        with open(SITE_SENADORES_FILE, "r", encoding="utf-8") as f:
+            site_sens = json.load(f)
+
         with open(SITE_TEMAS_FILE, "r", encoding="utf-8") as f:
             site_temas = json.load(f)
 
-        # Paridade exata de dados entre dataset canônico da Câmara e dataset consumido pelo site
+        # Paridade exata de dados entre datasets canônicos e datasets consumidos pelo site
         self.assertEqual(len(camara_deps), 513)
         self.assertEqual(len(site_deps), 513)
         self.assertEqual(camara_deps, site_deps, "Dataset de site/src/data difere de dados/camara/deputados.json")
+
+        self.assertEqual(len(senado_sens), 81)
+        self.assertEqual(len(site_sens), 81)
+        self.assertEqual(senado_sens, site_sens, "Dataset de site/src/data/senadores.json difere de dados/senado/senadores.json")
 
         # Verifica consistência dos temas compilados
         with open(CATALOGO_FILE, "r", encoding="utf-8") as f:

@@ -29,6 +29,8 @@ CAMARA_DIR = ROOT / 'dados' / 'camara'
 CANON_DEPUTADOS_FILE = CAMARA_DIR / 'deputados.json'
 DEPUTADOS_DIR = CAMARA_DIR / 'deputados'
 VOTACOES_DIR = CAMARA_DIR / 'votacoes'
+SENADO_DIR = ROOT / 'dados' / 'senado'
+CANON_SENADORES_FILE = SENADO_DIR / 'senadores.json'
 SITE_DATA_DIR = ROOT / 'site' / 'src' / 'data'
 
 
@@ -134,10 +136,23 @@ def validar_integridade(deputados, temas):
             raise ValueError(f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no deputado {d.get('id')}")
 
 
+def validar_senadores(senadores):
+    """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD) para o Senado."""
+    campos_proibidos = {"cpf", "email", "telefone", "redes", "redeSocial"}
+    for s in senadores:
+        chaves_encontradas = set(s.keys()).intersection(campos_proibidos)
+        if chaves_encontradas:
+            raise ValueError(f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no senador {s.get('id')}")
+        url_perfil = s.get("url_perfil_senado", "")
+        if not url_perfil.startswith("https://"):
+            raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
+
+
 def main():
-    print("Compilando dados para o site do MVP v0...")
+    print("Compilando dados para o site do Ficha do Político...")
     SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
     CAMARA_DIR.mkdir(parents=True, exist_ok=True)
+    SENADO_DIR.mkdir(parents=True, exist_ok=True)
 
     temas = load_catalogo_temas()
     print(f"Carregados {len(temas)} temas a partir de {CATALOGO_FILE.relative_to(ROOT)}")
@@ -178,7 +193,18 @@ def main():
     with open(canon_deputados, "w", encoding="utf-8") as f:
         json.dump(deputados, f, ensure_ascii=False, indent=2)
 
-    # 2. Grava datasets do frontend Astro
+    # 2. Processa e compila senadores se existirem
+    senadores = []
+    if CANON_SENADORES_FILE.exists():
+        with open(CANON_SENADORES_FILE, "r", encoding="utf-8") as f:
+            senadores = json.load(f)
+        validar_senadores(senadores)
+        out_senadores = SITE_DATA_DIR / "senadores.json"
+        with open(out_senadores, "w", encoding="utf-8") as f:
+            json.dump(senadores, f, ensure_ascii=False, indent=2)
+        print(f"  - {len(senadores)} senadores exportados em: {out_senadores} ({out_senadores.stat().st_size / 1024:.1f} KB)")
+
+    # 3. Grava datasets do frontend Astro
     out_deputados = SITE_DATA_DIR / "deputados.json"
     with open(out_deputados, "w", encoding="utf-8") as f:
         json.dump(deputados, f, ensure_ascii=False, indent=2)

@@ -1,20 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DeputadoCard from '../components/DeputadoCard.astro';
+import ParlamentarCard from '../components/ParlamentarCard.astro';
 import deputadosData from '../data/deputados.json';
+import senadoresData from '../data/senadores.json';
 import temasData from '../data/temas.json';
-import type { Deputado, Tema } from '../types';
+import type { Deputado, Senador, Tema, ParlamentarCardData } from '../types';
 
 const deputados = deputadosData as Deputado[];
+const senadores = senadoresData as Senador[];
 const temas = temasData as Tema[];
 
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const parlamentares: ParlamentarCardData[] = [
+  ...deputados.map(d => ({
+    id: d.id,
+    nome_eleitoral: d.nome_eleitoral,
+    nome_civil: d.nome_civil,
+    partido: d.partido,
+    uf: d.uf,
+    url_foto: d.url_foto,
+    casa: 'camara' as const,
+    cargo: 'Deputado Federal',
+    href: `${base}deputado/${d.id}`,
+  })),
+  ...senadores.map(s => ({
+    id: s.id,
+    nome_eleitoral: s.nome_eleitoral,
+    nome_civil: s.nome_civil,
+    partido: s.partido,
+    uf: s.uf,
+    url_foto: s.url_foto,
+    casa: 'senado' as const,
+    cargo: 'Senador',
+    href: `${base}senador/${s.id}`,
+  })),
+].sort((a, b) => a.nome_eleitoral.localeCompare(b.nome_eleitoral, 'pt-BR'));
+
 const totalDeputados = deputados.length;
+const totalSenadores = senadores.length;
+const totalParlamentares = parlamentares.length;
 const totalTemas = temas.length;
 
 // Lista única ordenada de partidos e estados para filtros rápidos
-const partidos = [...new Set(deputados.map(d => d.partido))].sort();
-const ufs = [...new Set(deputados.map(d => d.uf))].sort();
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const partidos = [...new Set(parlamentares.map(p => p.partido))].filter(Boolean).sort();
+const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
 ---
 
 <Layout title="Início">
@@ -23,15 +53,15 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <div class="max-w-4xl mx-auto text-center space-y-5">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 border border-emerald-300/60 text-emerald-800 text-xs font-semibold">
         <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-        Dados Oficiais da Câmara dos Deputados • 57ª Legislatura
+        Dados Oficiais do Congresso Nacional • 57ª Legislatura
       </div>
 
       <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-        Como votou seu deputado federal?
+        Como votou seu parlamentar?
       </h1>
 
       <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        A maneira mais simples, transparente e apartidária de acompanhar como os <strong class="text-slate-900">{totalDeputados} deputados</strong> votaram em <strong class="text-slate-900">{totalTemas} decisões cruciais</strong> para o Brasil.
+        A maneira mais simples, transparente e apartidária de acompanhar como os <strong class="text-slate-900">{totalDeputados} deputados</strong> e <strong class="text-slate-900">{totalSenadores} senadores</strong> votaram em decisões cruciais para o país.
       </p>
 
       <!-- Barra de Busca Hero -->
@@ -45,7 +75,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           <input 
             type="text" 
             id="searchInput" 
-            placeholder="Busque por nome do deputado, partido ou estado (ex: Arthur Lira, SP, PT)..."
+            placeholder="Busque por nome do parlamentar, partido ou estado (ex: Arthur Lira, SP, PT)..."
             autocomplete="off"
             class="w-full pl-11 pr-10 py-4 text-base sm:text-lg rounded-2xl border border-slate-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition outline-none bg-white text-slate-900 placeholder:text-slate-400"
           />
@@ -61,29 +91,57 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           </button>
         </div>
 
-        <!-- Filtros rápidos por UF ou Partido -->
-        <div class="flex flex-wrap items-center justify-center gap-2 mt-3 text-xs text-slate-500">
-          <span>Filtrar por UF:</span>
-          <select id="filterUf" class="bg-white border border-slate-200 rounded px-2 py-1 text-slate-700 outline-none focus:border-emerald-500">
-            <option value="">Todos os estados</option>
-            {ufs.map(uf => <option value={uf.toLowerCase()}>{uf}</option>)}
-          </select>
+        <!-- Filtros Rápidos: Abas de Casa Legislativa + Selects -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mt-4 text-xs">
+          <!-- Filtro por Casa (Todos / Câmara / Senado) -->
+          <div class="inline-flex rounded-lg border border-slate-200 bg-white p-0.5 shadow-xs" id="casaFilterGroup">
+            <button 
+              type="button"
+              data-filter-casa="" 
+              class="casa-btn active px-3 py-1.5 rounded-md font-semibold text-xs transition bg-slate-900 text-white shadow-xs"
+            >
+              Todos ({totalParlamentares})
+            </button>
+            <button 
+              type="button"
+              data-filter-casa="camara" 
+              class="casa-btn px-3 py-1.5 rounded-md font-semibold text-xs transition text-slate-600 hover:text-slate-900"
+            >
+              Câmara ({totalDeputados})
+            </button>
+            <button 
+              type="button"
+              data-filter-casa="senado" 
+              class="casa-btn px-3 py-1.5 rounded-md font-semibold text-xs transition text-slate-600 hover:text-slate-900"
+            >
+              Senado ({totalSenadores})
+            </button>
+          </div>
 
-          <span class="ml-2">Partido:</span>
-          <select id="filterPartido" class="bg-white border border-slate-200 rounded px-2 py-1 text-slate-700 outline-none focus:border-emerald-500">
-            <option value="">Todos os partidos</option>
-            {partidos.map(p => <option value={p.toLowerCase()}>{p}</option>)}
-          </select>
+          <!-- Selects de UF e Partido -->
+          <div class="flex flex-wrap items-center gap-2 text-slate-500">
+            <span>UF:</span>
+            <select id="filterUf" class="bg-white border border-slate-200 rounded px-2 py-1 text-slate-700 outline-none focus:border-emerald-500">
+              <option value="">Todos os estados</option>
+              {ufs.map(uf => <option value={uf.toLowerCase()}>{uf}</option>)}
+            </select>
+
+            <span class="ml-1">Partido:</span>
+            <select id="filterPartido" class="bg-white border border-slate-200 rounded px-2 py-1 text-slate-700 outline-none focus:border-emerald-500">
+              <option value="">Todos</option>
+              {partidos.map(p => <option value={p.toLowerCase()}>{p}</option>)}
+            </select>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Lista de Deputados -->
+  <!-- Lista de Parlamentares -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
     <div class="flex items-center justify-between pb-4 border-b border-slate-200 text-sm">
       <span class="text-slate-500">
-        Mostrando <strong id="visibleCount" class="text-slate-900 font-semibold">{totalDeputados}</strong> de {totalDeputados} deputados federais
+        Mostrando <strong id="visibleCount" class="text-slate-900 font-semibold">{totalParlamentares}</strong> de {totalParlamentares} parlamentares
       </span>
       <a href={`${base}criterios`} class="text-emerald-700 hover:underline font-medium text-xs sm:text-sm">
         Ver os {totalTemas} temas curados ↗
@@ -91,10 +149,10 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     </div>
 
     <!-- Grid de Cards -->
-    <div id="deputadosGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-6">
-      {deputados.map(dep => (
-        <div class="deputado-item">
-          <DeputadoCard deputado={dep} />
+    <div id="parlamentaresGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-6">
+      {parlamentares.map(p => (
+        <div class="parlamentar-item">
+          <ParlamentarCard parlamentar={p} />
         </div>
       ))}
     </div>
@@ -104,24 +162,26 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto text-xl font-bold">
         ?
       </div>
-      <h3 class="text-lg font-semibold text-slate-900">Nenhum deputado encontrado</h3>
+      <h3 class="text-lg font-semibold text-slate-900">Nenhum parlamentar encontrado</h3>
       <p class="text-sm text-slate-500 max-w-sm mx-auto">
-        Tente buscar com outra grafia, apenas o primeiro nome ou selecione o estado/partido.
+        Tente buscar com outra grafia, apenas o primeiro nome ou altere os filtros de Casa, UF ou Partido.
       </p>
     </div>
   </section>
 
-  <!-- Script de Busca Client-Side Ultra-rápido -->
+  <!-- Script de Busca Client-Side Instantâneo com Debounce -->
   <script is:inline>
     const input = document.getElementById('searchInput');
     const clearBtn = document.getElementById('clearSearch');
     const filterUf = document.getElementById('filterUf');
     const filterPartido = document.getElementById('filterPartido');
-    const grid = document.getElementById('deputadosGrid');
-    const items = Array.from(grid.getElementsByClassName('deputado-item'));
+    const casaBtns = Array.from(document.querySelectorAll('.casa-btn'));
+    const grid = document.getElementById('parlamentaresGrid');
+    const items = Array.from(grid.getElementsByClassName('parlamentar-item'));
     const visibleCount = document.getElementById('visibleCount');
     const emptyState = document.getElementById('emptyState');
 
+    let activeCasa = '';
     let debounceTimer = null;
 
     function renderFilter() {
@@ -140,12 +200,14 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           const civil = link.getAttribute('data-civil') || '';
           const p = link.getAttribute('data-partido') || '';
           const u = link.getAttribute('data-uf') || '';
+          const c = link.getAttribute('data-casa') || '';
 
           const matchesQuery = !q || nome.includes(q) || civil.includes(q) || p.includes(q) || u.includes(q);
           const matchesUf = !uf || u === uf;
           const matchesPartido = !partido || p === partido;
+          const matchesCasa = !activeCasa || c === activeCasa;
 
-          if (matchesQuery && matchesUf && matchesPartido) {
+          if (matchesQuery && matchesUf && matchesPartido && matchesCasa) {
             item.style.display = '';
             visible++;
           } else {
@@ -162,8 +224,22 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(renderFilter, 150);
     });
+
     filterUf.addEventListener('change', renderFilter);
     filterPartido.addEventListener('change', renderFilter);
+
+    casaBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        casaBtns.forEach(b => {
+          b.classList.remove('active', 'bg-slate-900', 'text-white', 'shadow-xs');
+          b.classList.add('text-slate-600');
+        });
+        btn.classList.add('active', 'bg-slate-900', 'text-white', 'shadow-xs');
+        btn.classList.remove('text-slate-600');
+        activeCasa = btn.getAttribute('data-filter-casa') || '';
+        renderFilter();
+      });
+    });
 
     clearBtn.addEventListener('click', () => {
       input.value = '';

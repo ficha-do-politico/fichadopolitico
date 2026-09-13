@@ -1,7 +1,7 @@
 # Especificação do MVP — Ficha do Político
 
-> **Status:** MVP v0 em construção  
-> **Última atualização:** 2026-09-12 (reflete decisões AD-001 a AD-011)
+> **Status:** MVP v0 online / v1 em expansão (Senado Federal)  
+> **Última atualização:** 2026-09-13 (reflete decisões AD-001 a AD-014)
 
 Este documento define o escopo do **Produto Mínimo Viável (MVP)** do Ficha do Político. Ele é a fonte da verdade sobre o que estamos construindo agora e o que fica para depois, versionado diretamente no repositório através de Pull Requests.
 
