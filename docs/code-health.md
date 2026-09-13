@@ -14,7 +14,7 @@ Este documento consolida o diagnóstico técnico de saúde do código, dívidas 
 
 ## 2. Diagnóstico Técnico
 
-### 2.1. Dívidas Saneadas no MVP v0 (PR #12 / AD-013)
+### 2.1. Dívidas Saneadas no MVP v0 (PR #12 e PR #15)
 
 1. **Single Source of Truth para Curadoria Editorial:**
    - Criado `dados/catalogo/temas.json`. Elimina hardcode de temas em scripts executáveis (`build_site_data.py` e `discovery_votacoes.py`).
@@ -22,28 +22,27 @@ Este documento consolida o diagnóstico técnico de saúde do código, dívidas 
    - Dados migrados para `dados/camara/` (`deputados/`, `votacoes/` e dataset canônico estruturado `dados/camara/deputados.json`).
 3. **Suíte Automatizada de Integridade e LGPD:**
    - Implementado `tests/test_data_integrity.py` validando AD-006 (verificabilidade e integridade referencial de URLs/votos) e AD-009 (ausência de CPF, email e telefone pessoal em datasets públicos).
-4. **CI Ativo em Pull Requests:**
-   - Criado `.github/workflows/ci.yml` executando a suíte de testes de dados e o build estático do Astro em cada PR para a branch `main`.
+4. **CI Ativo em Pull Requests com Compilação e Drift Check:**
+   - Criado `.github/workflows/ci.yml` executando `python scripts/build_site_data.py`, checagem de drift (`git diff --exit-code`), testes de integridade e build estático do Astro.
+5. **Eliminação do Anti-pattern de Persistência Intermediária em Markdown:**
+   - `scripts/build_site_data.py` refatorado para consumir diretamente `dados/camara/deputados.json` em JSON canônico (com fallback para `.md`), eliminando parsing via regex e garantindo velocidade e tipagem íntegra.
+6. **Teste de Ponta a Ponta do Pipeline:**
+   - Criado `tests/test_build_pipeline.py` validando a execução do pipeline de compilação e paridade dos arquivos de saída.
 
 ---
 
 ### 2.2. Gargalos Críticos Ativos (Foco v0 → v1)
 
-1. **Anti-pattern de Persistência Intermediária em Markdown:**
-   - `scripts/build_site_data.py` ainda lê e parseia 513 arquivos `.md` via expressões regulares (`re.search`) para gerar os JSONs do site.
-   - *Impacto:* Fragilidade a caracteres especiais (ex.: pipes `|`), lentidão e perda de tipagem nativa. A geração deve consumir diretamente JSONs canônicos brutos da API.
-2. **Ausência de Step de Compilação de Dados no CI:**
-   - O workflow `.github/workflows/ci.yml` executa os testes sobre os JSONs já gerados, mas **não reexecuta** `python scripts/build_site_data.py`. Alterações no catálogo ou entradas podem quebrar a compilação sem falhar o CI.
-3. **Injeção de 513 nós no DOM inicial e busca sem debounce:**
+1. **Tipagem e Contratos de Dados Frágeis no Frontend:**
+   - A pasta `site/` não possui `tsconfig.json` ativo nem validação via `astro check`. Falta pasta canônica de contratos de tipo (`site/src/types/index.ts`).
+2. **Injeção de 513 nós no DOM inicial e busca sem debounce:**
    - Em `site/src/pages/index.astro`, todos os parlamentares são instanciados diretamente no DOM e a busca client-side filtra todos os nós a cada evento `input`.
    - *Impacto:* Risco de engasgo em conexões móveis lentas, que aumentará com a adição do Senado (81 senadores).
-4. **Tipagem e Contratos de Dados Frágeis no Frontend:**
-   - A pasta `site/` não possui `tsconfig.json` ativo nem validação via `astro check`. Falta pasta canônica de contratos de tipo (`site/src/types/index.ts`).
-5. **Duplicação de Assets Inline:**
+3. **Duplicação de Assets Inline:**
    - Em `DeputadoCard.astro` e `[id].astro`, o SVG de avatar fallback embutido em `onerror` é repetido centenas de vezes no HTML gerado. Deve ser extraído para `site/public/avatar-placeholder.svg`.
-6. **Duplicação e Fragilidade de Rotinas HTTP:**
+4. **Duplicação e Fragilidade de Rotinas HTTP:**
    - `fetch_deputados.py` e `discovery_votacoes.py` duplicam chamadas `urllib`. `fetch_deputados.py` opera com delay fixo de 5s sem backoff exponencial em HTTP 429 nem checkpoint em disco.
-7. **Ausência de Linters, Formatadores e Lock de Dependências Python:**
+5. **Ausência de Linters, Formatadores e Lock de Dependências Python:**
    - Não há ferramentas de lint/formatação configuradas (`ruff`, `eslint`, `prettier`). Não há `pyproject.toml` ou `requirements.txt` formalizando o ambiente Python.
 
 ---
@@ -116,9 +115,9 @@ fichadopolitico/
 | **Fase 1** | Reestruturar dados da Câmara em `dados/camara/` | ✅ Concluído (PR #12) | Prepara repositório para acomodar Senado e TSE. |
 | **Fase 2** | Criar testes automatizados de LGPD e verificabilidade | ✅ Concluído (PR #12) | Blindagem contínua contra vazamento de dados e votos sem fonte. |
 | **Fase 2** | Ativar CI com validação em Pull Requests | ✅ Concluído (PR #12) | Garante que PRs não quebrem integridade de dados nem build do site. |
-| **Fase 2** | Eliminar parse de Markdown em `build_site_data.py` | ⏳ Pendente | Consumir JSONs canônicos diretamente; remover regex frágil. |
+| **Fase 2** | Eliminar parse de Markdown em `build_site_data.py` | ✅ Concluído (PR #15) | Consumir JSONs canônicos diretamente; remover regex frágil. |
+| **Fase 2** | Incluir step de compilação de dados no CI | ✅ Concluído (PR #15) | Garante que o pipeline ETL executa sem erros antes do build Astro. |
 | **Fase 2** | Configurar `tsconfig.json` e types centrais no frontend | ⏳ Pendente | Previne inconsistências em tempo de compilação no Astro. |
 | **Fase 3** | Modularizar cliente HTTP resiliente (`http_client.py`) | ⏳ Pendente | Reúso de rotinas com retries e backoff 429 para Câmara, Senado e TSE. |
 | **Fase 3** | Otimizar busca e DOM em `index.astro` (debounce/render) | ⏳ Pendente | Garante fluidez no mobile quando a base atingir > 600 parlamentares. |
 | **Fase 3** | Extrair SVG de avatar para `avatar-placeholder.svg` | ⏳ Pendente | Reduz tamanho do HTML gerado e elimina duplicação de inline SVG. |
-| **Fase 3** | Incluir step de compilação de dados no CI | ⏳ Pendente | Garante que o pipeline ETL executa sem erros antes do build Astro. |
