@@ -143,9 +143,15 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
       <span class="text-slate-500">
         Mostrando <strong id="visibleCount" class="text-slate-900 font-semibold">{totalParlamentares}</strong> de {totalParlamentares} parlamentares
       </span>
-      <a href={`${base}criterios`} class="text-emerald-700 hover:underline font-medium text-xs sm:text-sm">
-        Ver os {totalTemas} temas curados ↗
-      </a>
+      <div class="flex items-center gap-3">
+        <a href={`${base}votacoes`} class="text-emerald-700 hover:underline font-semibold text-xs sm:text-sm">
+          Ver as {totalTemas} votações nominais →
+        </a>
+        <span class="text-slate-300 hidden sm:inline">•</span>
+        <a href={`${base}criterios`} class="hidden sm:inline text-slate-500 hover:underline font-medium text-xs sm:text-sm">
+          Critérios ↗
+        </a>
+      </div>
     </div>
 
     <!-- Grid de Cards -->

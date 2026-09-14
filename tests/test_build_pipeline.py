@@ -22,6 +22,7 @@ SENADO_SENADORES_FILE = ROOT / "dados" / "senado" / "senadores.json"
 SITE_DEPUTADOS_FILE = ROOT / "site" / "src" / "data" / "deputados.json"
 SITE_SENADORES_FILE = ROOT / "site" / "src" / "data" / "senadores.json"
 SITE_TEMAS_FILE = ROOT / "site" / "src" / "data" / "temas.json"
+SITE_VOTACOES_FILE = ROOT / "site" / "src" / "data" / "votacoes.json"
 
 
 class TestBuildPipeline(unittest.TestCase):
@@ -54,6 +55,7 @@ class TestBuildPipeline(unittest.TestCase):
         self.assertTrue(SITE_DEPUTADOS_FILE.exists())
         self.assertTrue(SITE_SENADORES_FILE.exists())
         self.assertTrue(SITE_TEMAS_FILE.exists())
+        self.assertTrue(SITE_VOTACOES_FILE.exists())
 
         with open(CAMARA_DEPUTADOS_FILE, encoding="utf-8") as f:
             camara_deps = json.load(f)

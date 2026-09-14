@@ -79,3 +79,54 @@ export interface Tema {
   senado?: TemaSenadoInfo;
 }
 
+export interface OrientacaoBancada {
+  bancada: string;
+  orientacao: string;
+}
+
+export interface VotacaoCamaraDetalhe {
+  votacao_id: string;
+  dataHora?: string;
+  descricao?: string;
+  siglaOrgao?: string;
+  total_votos_registrados: number;
+  total_deputados_locais: number;
+  total_ausentes: number;
+  distribuicao_votos: Record<string, number>;
+  orientacoes: OrientacaoBancada[];
+}
+
+export interface VotacaoSenadoDetalhe {
+  senado_votacao_id?: number;
+  senado_sessao_id?: number;
+  codigo_materia?: number;
+  data?: string;
+  descricao?: string;
+  resultado_oficial?: string;
+  url_votacao?: string;
+  url_proposicao?: string;
+  total_votos_registrados: number;
+  total_senadores: number;
+  total_ausentes: number;
+  distribuicao_votos: Record<string, number>;
+}
+
+export interface VotacaoDetalhe {
+  id: string;
+  camara: VotacaoCamaraDetalhe;
+  senado?: VotacaoSenadoDetalhe;
+}
+
+export interface VotoParlamentarItem {
+  id: number;
+  nome_eleitoral: string;
+  nome_civil: string;
+  partido: string;
+  uf: string;
+  url_foto: string;
+  casa: CasaLegislativa;
+  cargo: string;
+  voto: string;
+  href: string;
+}
+

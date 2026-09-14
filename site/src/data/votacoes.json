@@ -1,0 +1,485 @@
+{
+  "2196833-326": {
+    "id": "2196833-326",
+    "camara": {
+      "votacao_id": "2196833-326",
+      "dataHora": "2023-07-06T21:49:55",
+      "descricao": "Aprovado, em primeiro turno, o Substitutivo adotado pelo relator da Comissão Especial à Proposta de Emenda Constitucional nº 45, de 2019, ressalvados os destaques. Sim: 382; não: 118; abstenção: 3; total: 503.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 503,
+      "total_deputados_locais": 513,
+      "total_ausentes": 10,
+      "distribuicao_votos": {
+        "Sim": 382,
+        "Não": 118,
+        "Abstenção": 3,
+        "Não votou / Ausente": 10
+      },
+      "orientacoes": [
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPodePsc",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Liberado"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6773,
+      "senado_sessao_id": 368878,
+      "codigo_materia": 158930,
+      "data": "2023-11-08",
+      "descricao": "Votação nominal da Emenda nº 803 (Substitutivo) e das Emendas e Subemendas de Plenário, em primeiro turno, nos termos dos pareceres, ressalvados os destaques.",
+      "resultado_oficial": "Aprovado em 1º turno (Sim: 53, Não: 24)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/368878",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/158930",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Sim": 53,
+        "Não": 24,
+        "Não votou / Ausente": 3,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "2196833-373": {
+    "id": "2196833-373",
+    "camara": {
+      "votacao_id": "2196833-373",
+      "dataHora": "2023-07-07T01:39:35",
+      "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 45, de 2019, ressalvados os destaques. Sim: 375; não: 113; abstenção:3; total: 491.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 491,
+      "total_deputados_locais": 513,
+      "total_ausentes": 22,
+      "distribuicao_votos": {
+        "Sim": 375,
+        "Não": 113,
+        "Abstenção": 3,
+        "Não votou / Ausente": 22
+      },
+      "orientacoes": [
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPodePsc",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Liberado"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6777,
+      "senado_sessao_id": 368878,
+      "codigo_materia": 158930,
+      "data": "2023-11-08",
+      "descricao": "Votação nominal da Proposta de Emenda à Constituição nº 45, de 2019, nos termos do Parecer, em segundo turno.",
+      "resultado_oficial": "Aprovado em 2º turno (Sim: 53, Não: 24)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/368878",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/158930",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Sim": 53,
+        "Não": 24,
+        "Não votou / Ausente": 3,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "345311-270": {
+    "id": "345311-270",
+    "camara": {
+      "votacao_id": "345311-270",
+      "dataHora": "2023-05-30T20:12:44",
+      "descricao": "Aprovada a Subemenda Substitutiva Global ao Projeto de Lei nº 490, de 2007, adotada pelo relator da Comissão de Constituição e Justiça e de Cidadania, ressalvados os destaques. Sim: 283; não: 155; abstenção: 1; total: 439.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 440,
+      "total_deputados_locais": 513,
+      "total_ausentes": 73,
+      "distribuicao_votos": {
+        "Não": 155,
+        "Sim": 283,
+        "Abstenção": 1,
+        "Artigo 17": 1,
+        "Não votou / Ausente": 73
+      },
+      "orientacoes": [
+        {
+          "bancada": "Bl MdbPsdRepPodePsc",
+          "orientacao": "Liberado"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Liberado"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Sim"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6756,
+      "senado_sessao_id": 359754,
+      "codigo_materia": 157888,
+      "data": "2023-09-27",
+      "descricao": "Votação nominal do Projeto de Lei nº 2.903 de 2023, nos termos dos Pareceres, ressalvados os destaques.",
+      "resultado_oficial": "Aprovado (Sim: 43, Não: 21)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/359754",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157888",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Sim": 43,
+        "Não": 21,
+        "Não votou / Ausente": 16,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "2352476-168": {
+    "id": "2352476-168",
+    "camara": {
+      "votacao_id": "2352476-168",
+      "dataHora": "2024-07-11T18:52:27",
+      "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição n° 9, de 2023, ressalvado o destaque. Sim: 338; não: 83; abstenção: 4; Total: 425.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 426,
+      "total_deputados_locais": 513,
+      "total_ausentes": 87,
+      "distribuicao_votos": {
+        "Sim": 338,
+        "Não": 83,
+        "Abstenção": 4,
+        "Artigo 17": 1,
+        "Não votou / Ausente": 87
+      },
+      "orientacoes": [
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": ""
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": ""
+        },
+        {
+          "bancada": "Bl MdbPsdRepPode",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PSB",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": ""
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6874,
+      "senado_sessao_id": 422342,
+      "codigo_materia": 164727,
+      "data": "2024-08-14",
+      "descricao": "Votação nominal da Proposta de Emenda à Constituição nº 9, de 2023 (2º turno).",
+      "resultado_oficial": "Aprovado em 2º turno (Sim: 54, Não: 16)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/422342",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/164727",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Sim": 54,
+        "Não": 16,
+        "Não votou / Ausente": 10,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "2422697-75": {
+    "id": "2422697-75",
+    "camara": {
+      "votacao_id": "2422697-75",
+      "dataHora": "2024-05-28T22:08:21",
+      "descricao": "Mantido o texto. Sim: 280; não: 121; total: 401.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 402,
+      "total_deputados_locais": 513,
+      "total_ausentes": 111,
+      "distribuicao_votos": {
+        "Não": 121,
+        "Sim": 280,
+        "Artigo 17": 1,
+        "Não votou / Ausente": 111
+      },
+      "orientacoes": [
+        {
+          "bancada": "PL",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPode",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "PSB",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6836,
+      "senado_sessao_id": 408825,
+      "codigo_materia": 163889,
+      "data": "2024-06-05",
+      "descricao": "Votação nominal do Projeto de Lei nº 914, de 2024, nos termos do parecer, ressalvados os destaques.",
+      "resultado_oficial": "Aprovado (Sim: 67, Não: 0)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/408825",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/163889",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Não votou / Ausente": 13,
+        "Sim": 67,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "2233802-438": {
+    "id": "2233802-438",
+    "camara": {
+      "votacao_id": "2233802-438",
+      "dataHora": "2026-05-27T23:34:05",
+      "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição n° 221, de 2019. . Sim: 461; Não: 19; Total: 480.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 480,
+      "total_deputados_locais": 513,
+      "total_ausentes": 33,
+      "distribuicao_votos": {
+        "Sim": 461,
+        "Não": 19,
+        "Não votou / Ausente": 33
+      },
+      "orientacoes": [
+        {
+          "bancada": "Oposição",
+          "orientacao": "Liberado"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "MISSÃO",
+          "orientacao": ""
+        },
+        {
+          "bancada": "PDT",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "SOLIDARIEDADE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PRD",
+          "orientacao": ""
+        },
+        {
+          "bancada": "PSB",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "AVANTE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl UniPpPsd...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        }
+      ]
+    }
+  }
+}

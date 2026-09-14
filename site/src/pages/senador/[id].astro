@@ -146,7 +146,9 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
                       </span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900">
-                      {tema.titulo}
+                      <a href={`${base}votacao/${tema.id}`} class="hover:text-emerald-700 transition">
+                        {tema.titulo}
+                      </a>
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-600">
                       {tema.subtitulo}
@@ -173,15 +175,25 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
                       <span>Registro oficial da votação ↗</span>
                     </a>
                     {urlProposicao && (
-                      <a 
-                        href={urlProposicao} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="text-blue-700 hover:text-blue-900 underline inline-flex items-center gap-0.5"
-                      >
-                        <span>Página da matéria ↗</span>
-                      </a>
+                      <>
+                        <span>•</span>
+                        <a 
+                          href={urlProposicao} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          class="text-blue-700 hover:text-blue-900 underline inline-flex items-center gap-0.5"
+                        >
+                          <span>Página da matéria ↗</span>
+                        </a>
+                      </>
                     )}
+                    <span>•</span>
+                    <a 
+                      href={`${base}votacao/${tema.id}`} 
+                      class="text-blue-700 hover:text-blue-900 font-semibold underline inline-flex items-center gap-0.5"
+                    >
+                      <span>Ver todos os votos desta votação →</span>
+                    </a>
                   </div>
                 </div>
               </article>

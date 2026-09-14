@@ -1,0 +1,68 @@
+---
+import type { VotoParlamentarItem } from '../types';
+import VotoBadge from './VotoBadge.astro';
+
+interface Props {
+  parlamentar: VotoParlamentarItem;
+}
+
+const { parlamentar } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const isSenado = parlamentar.casa === 'senado';
+---
+
+<div 
+  class="voto-parlamentar-card flex items-center justify-between gap-3 p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm transition"
+  data-nome={parlamentar.nome_eleitoral.toLowerCase()}
+  data-civil={parlamentar.nome_civil.toLowerCase()}
+  data-partido={parlamentar.partido.toLowerCase()}
+  data-uf={parlamentar.uf.toLowerCase()}
+  data-casa={parlamentar.casa}
+  data-voto={parlamentar.voto}
+>
+  <div class="flex items-center gap-3 min-w-0">
+    <a 
+      href={parlamentar.href}
+      class="relative w-12 h-12 rounded-full overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0 hover:ring-2 hover:ring-emerald-500 transition"
+      title={`Ver ficha completa de ${parlamentar.nome_eleitoral}`}
+    >
+      <img 
+        src={parlamentar.url_foto} 
+        alt={parlamentar.nome_eleitoral} 
+        class="w-full h-full object-cover object-top"
+        loading="lazy"
+        onerror={`this.onerror=null; this.src='${base}avatar-placeholder.svg';`}
+      />
+    </a>
+
+    <div class="min-w-0">
+      <a 
+        href={parlamentar.href}
+        class="font-semibold text-sm sm:text-base text-slate-900 truncate hover:text-emerald-700 transition block"
+      >
+        {parlamentar.nome_eleitoral}
+      </a>
+      
+      <div class="flex flex-wrap items-center gap-1.5 mt-0.5 text-xs text-slate-500">
+        <span class="inline-flex items-center px-1.5 py-0.2 rounded font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+          {parlamentar.partido}
+        </span>
+        <span class="font-medium text-slate-600">
+          {parlamentar.uf}
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class={`inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-medium border ${
+          isSenado 
+            ? 'bg-blue-50 text-blue-700 border-blue-200' 
+            : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+        }`}>
+          {isSenado ? 'Senado' : 'Câmara'}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-shrink-0">
+    <VotoBadge voto={parlamentar.voto} size="sm" />
+  </div>
+</div>
