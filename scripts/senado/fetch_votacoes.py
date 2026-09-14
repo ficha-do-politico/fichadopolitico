@@ -122,7 +122,9 @@ def fetch_and_save_senado_votacoes():
             if not isinstance(votacoes_node, list):
                 votacoes_node = [votacoes_node]
         except Exception as e:
-            print(f"ERRO: Estrutura inválida na resposta da matéria {cod_mat}: {e}", file=sys.stderr)
+            print(
+                f"ERRO: Estrutura inválida na resposta da matéria {cod_mat}: {e}", file=sys.stderr
+            )
             sys.exit(1)
 
         votacao_alvo = None
@@ -132,7 +134,9 @@ def fetch_and_save_senado_votacoes():
                 break
 
         if not votacao_alvo:
-            print(f"ERRO: Votação {vot_id} não encontrada para a matéria {cod_mat}", file=sys.stderr)
+            print(
+                f"ERRO: Votação {vot_id} não encontrada para a matéria {cod_mat}", file=sys.stderr
+            )
             sys.exit(1)
 
         descricao = votacao_alvo.get("DescricaoVotacao", "")

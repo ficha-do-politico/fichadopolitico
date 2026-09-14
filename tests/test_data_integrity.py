@@ -21,7 +21,6 @@ SITE_SENADORES_FILE = ROOT / "site" / "src" / "data" / "senadores.json"
 SITE_TEMAS_FILE = ROOT / "site" / "src" / "data" / "temas.json"
 
 
-
 class TestDataIntegrity(unittest.TestCase):
     def setUp(self):
         self.assertTrue(CATALOGO_FILE.exists(), f"Catálogo ausente: {CATALOGO_FILE}")
@@ -209,7 +208,9 @@ class TestDataIntegrity(unittest.TestCase):
             self.assertTrue(sen_info.get("proposicao"), f"Tema {t_id} sem proposição no Senado.")
             self.assertTrue(sen_info.get("votacao_id"), f"Tema {t_id} sem votacao_id no Senado.")
             self.assertTrue(sen_info.get("data"), f"Tema {t_id} sem data no Senado.")
-            self.assertTrue(sen_info.get("resultado_oficial"), f"Tema {t_id} sem resultado no Senado.")
+            self.assertTrue(
+                sen_info.get("resultado_oficial"), f"Tema {t_id} sem resultado no Senado."
+            )
 
             url_votacao = sen_info.get("url_votacao", "")
             url_proposicao = sen_info.get("url_proposicao", "")
@@ -224,7 +225,8 @@ class TestDataIntegrity(unittest.TestCase):
 
             votacao_file = SENADO_VOTACOES_DIR / f"{t_id}.json"
             self.assertTrue(
-                votacao_file.exists(), f"Arquivo de votação do Senado não encontrado para tema {t_id}"
+                votacao_file.exists(),
+                f"Arquivo de votação do Senado não encontrado para tema {t_id}",
             )
 
     def test_integridade_votos_nominais_senadores(self):
@@ -253,4 +255,3 @@ class TestDataIntegrity(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -153,7 +153,9 @@ def main():
     print(f"Carregados {len(temas)} temas a partir de {CATALOGO_FILE.relative_to(ROOT)}")
 
     votacoes = load_votacoes(temas)
-    print(f"Carregadas {len(votacoes)} votações oficiais da Câmara em {VOTACOES_DIR.relative_to(ROOT)}")
+    print(
+        f"Carregadas {len(votacoes)} votações oficiais da Câmara em {VOTACOES_DIR.relative_to(ROOT)}"
+    )
 
     senado_votacoes = load_senado_votacoes(temas)
     print(
