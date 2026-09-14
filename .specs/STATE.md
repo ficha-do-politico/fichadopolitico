@@ -2,7 +2,7 @@
 
 > **Status:** v1 em expansão (Legislativo Federal Bicameral)  
 > **Última atualização:** 2026-09-13  
-> **Base de Decisões:** AD-001 a AD-014
+> **Base de Decisões:** AD-001 a AD-017
 
 ---
 
@@ -39,14 +39,17 @@
 - **Fase:** Transição MVP v0 → v1 (Expansão Bicameral).
 - **Estado Entregue:**
   - 594 fichas geradas (513 deputados + 81 senadores na 57ª Legislatura).
-  - 5 votações nominais da Câmara registradas com links duplos de verificabilidade.
+  - 5 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
   - Busca rápida unificada na Home com filtros por Casa, Partido e UF.
   - Testes automatizados de LGPD e integridade de fontes com 100% de sucesso.
-- **Foco Ativo:**
-  1. *Votações Nominais no Senado:* Mapear IDs de votações oficiais no Senado para os temas do catálogo e ingestão de votos.
-  2. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes (meta 10+ matérias).
+  - Documentação de backlog de votações criada (`docs/backlog-votacoes.md`).
+- **Foco Ativo (v1):**
+  1. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes com votação nominal concluída (meta 10+ matérias).
+  2. *Módulo Eleições 2026 (Roadmap Prioritário - AD-015):* Apoio ao eleitor para o pleito de 03/10/2026 (mandatários disputando eleição + bens declarados no TSE).
   3. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
-  4. *Módulo Eleições 2026 (Roadmap Prioritário):* Apoio ao eleitor para o pleito de 03/10/2026 (AD-015).
+- **Próximas Fases (v2 / v3):**
+  4. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
+  5. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
 - **Bloqueios:** Nenhum.
 
 ---
@@ -58,4 +61,23 @@
 > 1. **Fidelidade ao Escopo Federal (AD-011):** Cobertura restrita a candidatos a Deputado Federal e Senador da República (cargos estaduais e municipais permanecem fora de escopo).
 > 2. **Fase 1 (Mandatários & Reeleição):** Sinalização na ficha de quais dos 594 congressistas atuais estão disputando a reeleição ou outro cargo, incorporando os bens declarados no TSE (pleito 2026).
 > 3. **Fase 2 (Novos Candidatos Federais):** Ingestão do dump oficial do TSE (DivulgaCandContas 2026) com busca dedicada por UF e cargo, exibindo bens declarados, número de urna e proposta, mantendo integridade e neutralidade (AD-004).
+
+---
+
+## 5. Planejamento — Módulo Destinação de Emendas Parlamentares (AD-016)
+
+> **Decisão Arquitetural AD-016 (Rastreabilidade de Emendas Parlamentares):**  
+> Exibir em cada ficha parlamentar a destinação dos recursos do Orçamento Geral da União (emendas individuais, de bancada e transferências especiais):
+> 1. **Fontes Oficiais:** Portal da Transparência da CGU (`/api-de-dados/emendas`) e Transferegov.br (convênios e contratos de repasse).
+> 2. **Sem Adjetivação:** Exibição quantitativa de valores autorizados, empenhados, liquidados e pagos, acompanhados do município/estado beneficiário e objeto do convênio, sempre linkando o documento fiscal e registro oficial.
+
+---
+
+## 6. Planejamento — Módulo Transparência Processual e Judicial (AD-017)
+
+> **Decisão Arquitetural AD-017 (Integridade Processual e Presunção de Inocência):**  
+> Para exibir processos em aberto de parlamentares em tribunais:
+> 1. **Fontes Primárias Estritas:** Consulta ao STF (foro por prerrogativa de função para matéria penal) e base DataJud do CNJ.
+> 2. **Impedimento de Homônimos:** O match DEVE ser 100% verificado por identificador unívoco para evitar atribuição indevida de processos judiciais de homônimos.
+> 3. **Neutralidade e Presunção de Inocência:** Distinção obrigatória e inequívoca entre "Inquérito / Processo em Andamento" e "Condenação Transitada em Julgado". Processos sob segredo de justiça não são exibidos. Link direto para o andamento processual no tribunal de origem é mandatório.
 

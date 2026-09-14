@@ -40,14 +40,18 @@ O MVP v0 valida o formato da ficha com o menor esforço viável:
 
 ---
 
-## 3. Escopo do MVP v1 (Próxima Fase)
+## 3. Escopo do MVP v1 & Roadmap de Expansão
 
-Após validar a experiência do v0 com usuários reais, o escopo se expandirá para:
-1. **Senado Federal:** Paridade completa para os 81 Senadores (dados da API do Senado).
-2. **Gastos Parlamentares (CEAP / CEAPS):** Detalhamento de notas fiscais e gastos das cotas parlamentares da Câmara e do Senado.
-3. **Patrimônio Declarado (TSE):** Evolução de bens declarados à Justiça Eleitoral a cada eleição.
-4. **Catálogo Ampliado:** Expansão da curadoria para 20 a 50 temas nacionais relevantes.
-5. **Navegação Avançada:** Filtros por partido, estado e temas.
+### 3.1. MVP v1 (Foco Atual):
+1. **Senado Federal (Entregue):** Paridade completa para os 81 Senadores com dados oficiais da API do Senado.
+2. **Catálogo Ampliado (Em andamento):** Expansão da curadoria de 5 para 10 a 20 temas de grande repercussão com votação nominal concluída (ver `docs/backlog-votacoes.md`).
+3. **Módulo Eleições 2026 (AD-015 - Prioridade):** Identificação na ficha dos congressistas que disputam o pleito de 2026, com exibição de bens declarados ao TSE.
+4. **Gastos Parlamentares (CEAP / CEAPS):** Detalhamento de notas fiscais e despesas das cotas parlamentares da Câmara e do Senado.
+5. **Navegação Rápida (Entregue):** Filtros combinados por Casa, Partido e Estado (UF).
+
+### 3.2. Fases Subsequentes (v2 e v3):
+- **v2 — Destinação de Emendas Parlamentares (AD-016):** Rastreabilidade de valores empenhados e pagos do Orçamento da União via CGU e destino físico no Transferegov.br.
+- **v3 — Transparência Processual e Judicial (AD-017):** Levantamento de inquéritos e ações penais no STF (foro privilegiado) e ações públicas no DataJud/CNJ, com rigorosa desambiguação de homônimos e respeito à presunção de inocência.
 
 ---
 
