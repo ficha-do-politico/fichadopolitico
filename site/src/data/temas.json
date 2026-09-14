@@ -128,5 +128,21 @@
       "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/408825",
       "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/163889"
     }
+  },
+  {
+    "id": "2233802-438",
+    "ordem": 6,
+    "titulo": "Fim da Escala 6×1 / Redução de Jornada (2º Turno)",
+    "subtitulo": "Redução da jornada máxima semanal de 44h para 40h e garantia de dois dias de descanso remunerado por semana.",
+    "tipo": "PEC",
+    "numero": 221,
+    "ano": 2019,
+    "proposicao": "PEC 221/2019",
+    "proposicao_id": 2233802,
+    "data": "2026-05-27",
+    "resultado_oficial": "Aprovado em 2º turno (Sim: 461, Não: 19)",
+    "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2233802-438",
+    "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2233802",
+    "criterio_resumo": "Proposta de Emenda à Constituição (com PEC 8/2025 apensada) que limita a jornada normal a 40h semanais sem perda salarial e assegura 2 dias de descanso semanal. Aprovada na Câmara; aguarda deliberação em Plenário no Senado."
   }
 ]
