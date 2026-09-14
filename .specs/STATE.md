@@ -1,168 +1,49 @@
-# STATE
+# STATE — Ficha do Político
 
-## Decisions
+> **Status:** v1 em expansão (Legislativo Federal Bicameral)  
+> **Última atualização:** 2026-09-13  
+> **Base de Decisões:** AD-001 a AD-014
 
-### AD-001
+---
 
-- **Decisão**: O MVP v0 foca em *votações importantes curadas* por deputado, não em um dump cronológico de votações nominais recentes.
-- **Motivo**: A análise competitiva (Meu Congresso, Radar do Congresso, Vamos Cobrar Brasil) já agrega dados parlamentares; a lacuna é o acesso amigável ao cidadão sobre *decisões que importaram*, sem precisar saber o número do PL/PEC antes.
-- **Trade-off**: Exige uma camada editorial explícita e curadoria contínua; não pode ser totalmente automatizado no primeiro dia.
-- **Escopo**: Definição de produto do MVP v0, UX e catálogo de votações curadas.
-- **Data**: 2026-08-18
-- **Status**: ativo — substitui o enquadramento da issue #1 no GitHub ("votações nominais mais recentes"), mantendo a mesma fonte de dados e os princípios apartidários.
+## 1. Diretrizes Arquiteturais Ativas (ADRs Consolidados)
 
+### 1.1. Produto & Curadoria Editorial
+- **AD-001 & AD-007 (Temas Curados vs. Dumps):** O portal foca em votações nominais cruciais de grande repercussão pública nacional (seed inicial de 5 temas, meta de expansão para 10–20 no v1), em vez de dumps cronológicos ou procedimentais.
+- **AD-003 (Transparência Editorial):** A curadoria é pública, documentada em critérios auditáveis (`site/src/pages/criterios.astro`) e versionada diretamente em `dados/catalogo/temas.json`.
+- **AD-004 (Apartidarismo e Isenção de Scores):** Proibido qualquer score, nota, ranqueamento ou rotulação ideológica ("progressista", "conservador", "governista"). O portal exibe o dado cru oficial; a interpretação cabe exclusivamente ao cidadão.
 
+### 1.2. Fontes Oficiais, Integridade & Privacidade
+- **AD-006 (Verificabilidade Estrita):** Todo dado político exibido (identidade parlamentar ou voto nominal) DEVE conter link direto para a URL da fonte oficial de origem (Câmara ou Senado). Fato sem fonte é proibido no projeto.
+- **AD-009 (Privacidade e LGPD):** Dados pessoais sensíveis (CPF, email, telefone de gabinete ou endereço residencial) NÃO são expostos na aplicação, mesmo quando disponíveis nas APIs públicas.
+- **AD-011 & AD-014 (Escopo Federal Bicameral):** O projeto cobre estritamente o Congresso Nacional (513 Deputados Federais + 81 Senadores da República). Âmbitos municipal e estadual estão definitivamente fora de escopo por inviabilidade técnica de sustentação sem APIs unificadas.
 
-### AD-002
+### 1.3. Arquitetura de Software & Stack
+- **AD-002 & AD-013 (Desacoplamento em 3 Camadas):**
+  1. *Curadoria Editorial:* `dados/catalogo/temas.json` (Single Source of Truth).
+  2. *Dados Canônicos:* `dados/camara/` e `dados/senado/` (JSONs estruturados e sanitizados).
+  3. *Frontend & Compilador:* Pipeline Python (`scripts/build_site_data.py`) compila datasets estáticos para o consumo do site.
+- **AD-012 (Frontend Astro SSG + Tailwind CSS):** Geração estática (HTML puro sem runtime cliente desnecessário), garantindo performance mobile instantânea (Lighthouse 100) e geração de metatags OpenGraph pré-renderizadas por parlamentar.
 
-- **Decisão**: Arquitetura em três camadas — (1) dados oficiais da API da Câmara, (2) catálogo de "temas importantes" curados com critérios transparentes, (3) UX de ficha do deputado voltada ao cidadão.
-- **Motivo**: Separa fatos oficiais inegociáveis da seleção editorial; mantém verificabilidade enquanto permite simplificação.
-- **Trade-off**: A camada 2 é mantida manualmente em YAML/JSON (ou equivalente) até existir um CMS.
-- **Escopo**: Todas as funcionalidades do MVP v0 que exibem votos.
-- **Data**: 2026-08-18
-- **Status**: ativo
+---
 
+## 2. Decisões Históricas Superadas (Arquivo)
 
+- **AD-005 (Fonte exclusiva Câmara):** Superada pela AD-014 com a expansão bicameral para o Senado Federal.
+- **AD-008 (Stack indefinida):** Superada pela AD-012 com a adoção definitiva do Astro SSG + Tailwind CSS.
 
-### AD-003
+---
 
-- **Decisão**: A curadoria editorial é explícita, pública e documentada em critérios — nunca disfarçada de neutralidade algorítmica.
-- **Motivo**: "Quais votações são importantes?" é o problema difícil do produto; esconder a curadoria corrói a confiança quando o usuário discorda da inclusão.
-- **Trade-off**: Expõe o projeto a debate sobre viés de seleção; mitigado publicando critérios e links de fonte por item.
-- **Escopo**: Catálogo de votações curadas, README/docs, futuras diretrizes de contribuição.
-- **Data**: 2026-08-18
-- **Status**: ativo
+## 3. Handoff & Foco Atual
 
-
-
-### AD-004
-
-- **Decisão**: Sem rotulação política, pontuação ou julgamentos de valor sobre deputados (ex.: "progressista", "alinhamento", "bom/mau").
-- **Motivo**: Princípio apartidário central do README e AGENTS.md; a diferenciação é *acesso*, não *interpretação*.
-- **Trade-off**: Menos "engajamento" que recursos de comparação/alinhamento vistos no Meu Congresso.
-- **Escopo**: Todo texto voltado ao usuário, campos do modelo de dados e analytics futuros.
-- **Data**: 2026-08-18
-- **Status**: ativo
-
-
-
-### AD-005
-
-- **Decisão**: A fonte de dados do MVP v0 é exclusivamente a API Dados Abertos da Câmara (`dadosabertos.camara.leg.br`) — endpoints `/deputados`, `/votacoes`, `/votacoes/{id}/votos`, mais links de proposição conforme retornados pela API.
-- **Motivo**: Escopo da issue #1, discovery da issue #2 em andamento (Layr); fonte única reduz risco de integração no v0.
-- **Trade-off**: Senado, gastos e patrimônio ficam para depois, apesar da visão de longo prazo no README.
-- **Escopo**: Ingestão e exibição do MVP v0.
-- **Data**: 2026-08-18
-- **Status**: ativo
-
-
-
-### AD-006
-
-- **Decisão**: Todo fato político exibido (voto, campo de identidade do deputado vindo da API) DEVERÁ linkar para a URL oficial de origem.
-- **Motivo**: Pilar inegociável do projeto ("Nosso compromisso é com a verdade"); AGENTS.md §3.1.
-- **Trade-off**: A UI deve sempre exibir links de fonte, mesmo quando isso aumenta a densidade visual.
-- **Escopo**: Todas as funcionalidades que exibem dados de deputado ou voto.
-- **Data**: 2026-08-18
-- **Status**: ativo
-
-
-
-### AD-007
-
-- **Decisão**: O catálogo curado inicial começa com 4–10 temas propostos pelo time (comentário da Layr na issue #1) e cresce em direção a 20–50 — sem cobertura exaustiva do Congresso.
-- **Motivo**: Valida o formato antes da curadoria escalar; alinha com a restrição de "MVP simples".
-- **Trade-off**: Cobertura incompleta até o catálogo crescer; deve comunicar "temas selecionados", não "todos os votos".
-- **Escopo**: Seed do catálogo de votações curadas e copy de UX.
-- **Data**: 2026-08-18
-- **Status**: ativo
-
-
-
-### AD-008
-
-- **Decisão**: Stack permanece indefinida até a fase de Design; specs são agnósticas de stack.
-- **Motivo**: README e AGENTS.md adiam explicitamente a escolha de framework; issue #2 foca primeiro nos contratos de API.
-- **Trade-off**: Design/tasks ainda não podem assumir Next.js, Python, etc.
-- **Escopo**: Projeto inteiro até o primeiro AD ser substituído após escolha de stack.
-- **Data**: 2026-08-18
-- **Status**: ativo
-
-
-
-### AD-009
-
-- **Decisão**: A ficha pública do MVP v0 NÃO exibe CPF nem outros dados sensíveis retornados pela API (ex.: email, telefone de gabinete), mesmo quando disponíveis no payload ou em artefatos de discovery.
-- **Motivo**: PR #4 (`discovery/deputies-data`) gera markdowns com CPF para exploração; o produto cidadão deve expor apenas identificação política mínima (nome, partido, UF, foto) + votos com fonte.
-- **Trade-off**: Descarta campos que a API oferece e que concorrentes às vezes exibem; reduz risco de LGPD e superfície de abuso.
-- **Escopo**: MVP v0 UI, seeds/fixtures, scripts de exportação pública.
-- **Data**: 2026-08-18
-- **Status**: ativo
-
-
-
-### AD-011
-
-- **Decisão**: O escopo do projeto é estritamente delimitado ao Poder Legislativo Federal (Câmara dos Deputados no v0 e Senado Federal no v1), excluindo permanentemente os âmbitos municipal (Vereadores/Prefeitos) e estadual (Deputados Estaduais/Governadores).
-- **Motivo**: Ausência de infraestrutura nacional unificada de dados abertos nos 5.570 municípios e 27 estados. O esforço técnico para construir e manter milhares de scrapers para portais municipais/estaduais heterogêneos inviabilizaria o projeto e comprometeria os pilares de verificabilidade e fonte oficial. O Congresso Nacional é a única esfera com APIs REST públicas padronizadas e mantidas centralmente pelo Estado.
-- **Trade-off**: Deixa de atender demandas locais de usuários por vereadores de suas cidades ou deputados estaduais.
-- **Escopo**: Modelo de dados, roadmap do produto e arquitetura de ingestão.
-- **Data**: 2026-09-12
-- **Status**: ativo
-
-
-
-### AD-012
-
-- **Decisão**: A stack de frontend do MVP v0 adotará **Astro SSG** (Static Site Generation) com Tailwind CSS, pré-renderizando 513 páginas estáticas individuais de deputados federais e a página de busca principal.
-- **Motivo**: Astro gera HTML puro sem runtime JavaScript pesado no cliente, garantindo carregamento instantâneo em conexões mobile (3G/4G), pontuação máxima de performance no Lighthouse e suporte nativo a tags `<meta property="og:...">` pré-renderizadas para cada deputado (essencial para cards formatados com foto no WhatsApp e redes sociais). Além disso, exporta arquivos estáticos (`dist/`) compatíveis com qualquer hospedagem gratuita (Cloudflare Pages, Vercel ou GitHub Pages).
-- **Trade-off**: A geração estática exige um rebuild/deploy sempre que novos temas forem adicionados ao catálogo; perfeitamente aceitável dado o ciclo editorial quinzenal/mensal de curadoria.
-- **Escopo**: Aplicação web do MVP v0 (`site/`).
-- **Data**: 2026-09-12
-- **Status**: ativo
-
-
-
-### AD-013
-
-- **Decisão**: Reorganização da arquitetura de dados desacoplando Curadoria (`dados/catalogo/temas.json`), Dados Canônicos da Câmara (`dados/camara/`) e automação de testes de conformidade (`tests/`).
-- **Motivo**: O modelo anterior embutia metadados de temas hardcoded nos scripts e misturava dados da Câmara na raiz de `dados/`. A nova estrutura elimina duplicação, estabelece o catálogo como Single Source of Truth editável sem tocar em código e prepara o repositório para ingestão do Senado (`dados/senado/`) e gastos/patrimônio no v1.
-- **Trade-off**: Requer manutenção de suíte de testes de integridade referencial contínua.
-- **Escopo**: `dados/`, `scripts/`, `tests/`, `.github/workflows/ci.yml`.
-- **Data**: 2026-09-12
-- **Status**: ativo
-
-
-
-### AD-014
-
-- **Decisão**: Expansão bicameral integrando os 81 senadores da República em exercício (`dados/senado/senadores.json`), cliente HTTP resiliente com retries exponenciais (`scripts/core/http_client.py`) e busca unificada no frontend Astro (`site/src/pages/senador/[id].astro` e abas de Casa em `index.astro`).
-- **Motivo**: O projeto avança do MVP v0 para o v1 cobrindo integralmente o Poder Legislativo Federal (594 parlamentares: 513 deputados e 81 senadores). Prepara a arquitetura para futuras dimensões cívicas (TSE - histórico eleitoral e declarações de patrimônio) que unificarão parlamentares e governadores sob a entidade "Pessoa Política".
-- **Trade-off**: As votações do catálogo inicial do v0 foram registradas na Câmara; votações correlatas no Senado (como a votação da Reforma Tributária e do Marco Temporal) serão mapeadas no catálogo para paridade bicameral completa de votos nominais.
-- **Escopo**: `dados/senado/`, `scripts/core/`, `scripts/senado/`, `site/src/pages/senador/`, `site/src/pages/index.astro`, `site/src/types/`, `tests/`.
-- **Data**: 2026-09-13
-- **Status**: ativo
-
-
-
-## Handoff
-
-- **Feature**: Expansão Bicameral — Ingestão e Fichas dos 81 Senadores da República (v1)
-- **Fase / Task**: Implementation & Validation Complete
-- **Concluído**: 
-  - Criação de cliente HTTP compartilhado com retries e backoff exponencial em `scripts/core/http_client.py`.
-  - Ingestor oficial do Senado Federal em `scripts/senado/fetch_senadores.py` (`https://legis.senado.leg.br/dadosabertos/senador/lista/atual`).
-  - Extração, sanitização LGPD (AD-009) e persistência canônica de 81 senadores em `dados/senado/senadores.json`.
-  - Atualização do compilador `scripts/build_site_data.py` com validações estritas de conformidade para o Senado e exportação para `site/src/data/senadores.json`.
-  - Atualização da suíte de testes de integridade (`tests/test_data_integrity.py` e `tests/test_build_pipeline.py`) cobrindo os 81 senadores, LGPD e links oficiais. Testes 100% passando.
-  - Tipagem em `site/src/types/index.ts` (`Senador`, `CasaLegislativa`, `ParlamentarCardData`).
-  - Componente universal `ParlamentarCard.astro` com badge de identificação de Casa (Câmara / Senado).
-  - Página estática individual para cada senador em `site/src/pages/senador/[id].astro`.
-  - Busca na Home (`site/src/pages/index.astro`) unificada com abas de filtro rápido (`Todos (594)`, `Câmara (513)`, `Senado (81)`), busca instantânea com debounce e selects de UF/Partido.
-  - Verificação de tipos (`astro check`) reportando 0 erros, 0 avisos, 0 hints.
-  - Build estático do Astro completado gerando 596 páginas HTML (513 deputados + 81 senadores + index + critérios).
-- **Em progresso**: Validação e abertura de Pull Request.
-- **Próximo passo**: Mapeamento bicameral dos IDs de votação do Senado correspondentes aos temas do catálogo (`dados/catalogo/temas.json`), ou ingestão de despesas (CEAP/CEAPS) e patrimônio (TSE).
-- **Bloqueios**: Nenhum.
-- **Branch**: `feat/senado-federal-81-senadores`
-
+- **Fase:** Transição MVP v0 → v1 (Expansão Bicameral).
+- **Estado Entregue:**
+  - 594 fichas geradas (513 deputados + 81 senadores na 57ª Legislatura).
+  - 5 votações nominais da Câmara registradas com links duplos de verificabilidade.
+  - Busca rápida unificada na Home com filtros por Casa, Partido e UF.
+  - Testes automatizados de LGPD e integridade de fontes com 100% de sucesso.
+- **Foco Ativo:**
+  1. *Votações Nominais no Senado:* Mapear IDs de votações oficiais no Senado para os temas do catálogo e ingestão de votos.
+  2. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes (meta 10+ matérias).
+  3. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
+- **Bloqueios:** Nenhum.

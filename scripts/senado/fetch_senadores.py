@@ -64,7 +64,7 @@ def fetch_and_save_senadores():
         nome_civil = ident.get("NomeCompletoParlamentar", "").strip()
         partido = ident.get("SiglaPartidoParlamentar", "").strip()
         uf = ident.get("UfParlamentar", "").strip()
-        
+
         participacao = mandato.get("DescricaoParticipacao", "Titular").strip()
         situacao = f"Exercício ({participacao})" if participacao else "Exercício"
 

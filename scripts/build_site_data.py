@@ -23,20 +23,20 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CATALOGO_FILE = ROOT / 'dados' / 'catalogo' / 'temas.json'
-CAMARA_DIR = ROOT / 'dados' / 'camara'
-CANON_DEPUTADOS_FILE = CAMARA_DIR / 'deputados.json'
-VOTACOES_DIR = CAMARA_DIR / 'votacoes'
-SENADO_DIR = ROOT / 'dados' / 'senado'
-CANON_SENADORES_FILE = SENADO_DIR / 'senadores.json'
-SITE_DATA_DIR = ROOT / 'site' / 'src' / 'data'
+CATALOGO_FILE = ROOT / "dados" / "catalogo" / "temas.json"
+CAMARA_DIR = ROOT / "dados" / "camara"
+CANON_DEPUTADOS_FILE = CAMARA_DIR / "deputados.json"
+VOTACOES_DIR = CAMARA_DIR / "votacoes"
+SENADO_DIR = ROOT / "dados" / "senado"
+CANON_SENADORES_FILE = SENADO_DIR / "senadores.json"
+SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
 
 def load_catalogo_temas():
     if not CATALOGO_FILE.exists():
         print(f"ERRO: Catálogo de temas não encontrado em {CATALOGO_FILE}", file=sys.stderr)
         sys.exit(1)
-    with open(CATALOGO_FILE, "r", encoding="utf-8") as f:
+    with open(CATALOGO_FILE, encoding="utf-8") as f:
         temas = json.load(f)
     if not temas:
         print("ERRO: Catálogo de temas vazio.", file=sys.stderr)
@@ -52,7 +52,7 @@ def load_votacoes(temas):
         if not filepath.exists():
             print(f"ERRO: Arquivo de votação não encontrado: {filepath}", file=sys.stderr)
             sys.exit(1)
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(filepath, encoding="utf-8") as f:
             votacoes_data[vid] = json.load(f)
     return votacoes_data
 
@@ -60,24 +60,31 @@ def load_votacoes(temas):
 def load_deputados_base():
     """Carrega dados biográficos canônicos dos deputados a partir de dados/camara/deputados.json."""
     if not CANON_DEPUTADOS_FILE.exists():
-        print(f"ERRO: Dataset canônico da Câmara não encontrado em {CANON_DEPUTADOS_FILE}", file=sys.stderr)
+        print(
+            f"ERRO: Dataset canônico da Câmara não encontrado em {CANON_DEPUTADOS_FILE}",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
-    with open(CANON_DEPUTADOS_FILE, "r", encoding="utf-8") as f:
+    with open(CANON_DEPUTADOS_FILE, encoding="utf-8") as f:
         raw_deputados = json.load(f)
 
     deputados = []
     for d in raw_deputados:
-        deputados.append({
-            "id": int(d["id"]),
-            "nome_eleitoral": str(d["nome_eleitoral"]),
-            "nome_civil": str(d["nome_civil"]),
-            "partido": str(d["partido"]),
-            "uf": str(d["uf"]),
-            "situacao": str(d["situacao"]),
-            "url_foto": str(d["url_foto"]),
-            "url_perfil_camara": str(d.get("url_perfil_camara") or f"https://www.camara.leg.br/deputados/{d['id']}"),
-        })
+        deputados.append(
+            {
+                "id": int(d["id"]),
+                "nome_eleitoral": str(d["nome_eleitoral"]),
+                "nome_civil": str(d["nome_civil"]),
+                "partido": str(d["partido"]),
+                "uf": str(d["uf"]),
+                "situacao": str(d["situacao"]),
+                "url_foto": str(d["url_foto"]),
+                "url_perfil_camara": str(
+                    d.get("url_perfil_camara") or f"https://www.camara.leg.br/deputados/{d['id']}"
+                ),
+            }
+        )
     return deputados
 
 
@@ -95,7 +102,9 @@ def validar_integridade(deputados, temas):
     for d in deputados:
         chaves_encontradas = set(d.keys()).intersection(campos_proibidos)
         if chaves_encontradas:
-            raise ValueError(f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no deputado {d.get('id')}")
+            raise ValueError(
+                f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no deputado {d.get('id')}"
+            )
 
 
 def validar_senadores(senadores):
@@ -104,7 +113,9 @@ def validar_senadores(senadores):
     for s in senadores:
         chaves_encontradas = set(s.keys()).intersection(campos_proibidos)
         if chaves_encontradas:
-            raise ValueError(f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no senador {s.get('id')}")
+            raise ValueError(
+                f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no senador {s.get('id')}"
+            )
         url_perfil = s.get("url_perfil_senado", "")
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
@@ -158,13 +169,15 @@ def main():
     # 2. Processa e compila senadores se existirem
     senadores = []
     if CANON_SENADORES_FILE.exists():
-        with open(CANON_SENADORES_FILE, "r", encoding="utf-8") as f:
+        with open(CANON_SENADORES_FILE, encoding="utf-8") as f:
             senadores = json.load(f)
         validar_senadores(senadores)
         out_senadores = SITE_DATA_DIR / "senadores.json"
         with open(out_senadores, "w", encoding="utf-8") as f:
             json.dump(senadores, f, ensure_ascii=False, indent=2)
-        print(f"  - {len(senadores)} senadores exportados em: {out_senadores} ({out_senadores.stat().st_size / 1024:.1f} KB)")
+        print(
+            f"  - {len(senadores)} senadores exportados em: {out_senadores} ({out_senadores.stat().st_size / 1024:.1f} KB)"
+        )
 
     # 3. Grava datasets do frontend Astro
     out_deputados = SITE_DATA_DIR / "deputados.json"
@@ -176,9 +189,15 @@ def main():
         json.dump(temas, f, ensure_ascii=False, indent=2)
 
     print("Sucesso!")
-    print(f"  - Dataset canônico da Câmara: {canon_deputados} ({canon_deputados.stat().st_size / 1024:.1f} KB)")
-    print(f"  - {len(deputados)} deputados exportados em: {out_deputados} ({out_deputados.stat().st_size / 1024:.1f} KB)")
-    print(f"  - {len(temas)} temas exportados em: {out_temas} ({out_temas.stat().st_size / 1024:.1f} KB)")
+    print(
+        f"  - Dataset canônico da Câmara: {canon_deputados} ({canon_deputados.stat().st_size / 1024:.1f} KB)"
+    )
+    print(
+        f"  - {len(deputados)} deputados exportados em: {out_deputados} ({out_deputados.stat().st_size / 1024:.1f} KB)"
+    )
+    print(
+        f"  - {len(temas)} temas exportados em: {out_temas} ({out_temas.stat().st_size / 1024:.1f} KB)"
+    )
 
 
 if __name__ == "__main__":
