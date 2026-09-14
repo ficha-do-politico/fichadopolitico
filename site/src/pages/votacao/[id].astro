@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import VotoBadge from '../../components/VotoBadge.astro';
 import VotoParlamentarCard from '../../components/VotoParlamentarCard.astro';
 import deputadosData from '../../data/deputados.json';
 import senadoresData from '../../data/senadores.json';
@@ -16,11 +15,7 @@ export async function getStaticPaths() {
   }));
 }
 
-interface Props {
-  tema: Tema;
-}
-
-const { tema } = Astro.props;
+const { tema } = Astro.props as { tema: Tema };
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const deputados = deputadosData as Deputado[];

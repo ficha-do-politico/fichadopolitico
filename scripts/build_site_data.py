@@ -261,7 +261,7 @@ def main():
                 "total_ausentes": ausentes_camara,
                 "distribuicao_votos": camara_dist,
                 "orientacoes": camara_meta.get("orientacoes", []),
-            }
+            },
         }
 
         if vid in senado_votacoes:
