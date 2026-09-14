@@ -13,7 +13,17 @@
     "resultado_oficial": "Aprovado em 1º turno (Sim: 382, Não: 118, Abst: 3)",
     "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2196833-326",
     "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2196833",
-    "criterio_resumo": "Reforma constitucional que reestrutura o sistema de tributação sobre o consumo no Brasil."
+    "criterio_resumo": "Reforma constitucional que reestrutura o sistema de tributação sobre o consumo no Brasil.",
+    "senado": {
+      "votacao_id": 6773,
+      "sessao_id": 368878,
+      "codigo_materia": 158930,
+      "proposicao": "PEC 45/2019",
+      "data": "2023-11-08",
+      "resultado_oficial": "Aprovado em 1º turno (Sim: 53, Não: 24)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/368878",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/158930"
+    }
   },
   {
     "id": "2196833-373",
@@ -29,7 +39,17 @@
     "resultado_oficial": "Aprovado em 2º turno (Sim: 375, Não: 113, Abst: 3)",
     "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2196833-373",
     "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2196833",
-    "criterio_resumo": "Votação definitiva do texto principal da PEC 45/2019 na Câmara antes do envio ao Senado."
+    "criterio_resumo": "Votação definitiva do texto principal da PEC 45/2019 na Câmara antes do envio ao Senado.",
+    "senado": {
+      "votacao_id": 6777,
+      "sessao_id": 368878,
+      "codigo_materia": 158930,
+      "proposicao": "PEC 45/2019",
+      "data": "2023-11-08",
+      "resultado_oficial": "Aprovado em 2º turno (Sim: 53, Não: 24)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/368878",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/158930"
+    }
   },
   {
     "id": "345311-270",
@@ -45,7 +65,17 @@
     "resultado_oficial": "Aprovado Substitutivo (Sim: 283, Não: 155, Abst: 1)",
     "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/345311-270",
     "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/345311",
-    "criterio_resumo": "Projeto que estabelece a data da promulgação da Constituição de 1988 como marco para demarcação de terras indígenas."
+    "criterio_resumo": "Projeto que estabelece a data da promulgação da Constituição de 1988 como marco para demarcação de terras indígenas.",
+    "senado": {
+      "votacao_id": 6756,
+      "sessao_id": 359754,
+      "codigo_materia": 157888,
+      "proposicao": "PL 2903/2023",
+      "data": "2023-09-27",
+      "resultado_oficial": "Aprovado (Sim: 43, Não: 21)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/359754",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157888"
+    }
   },
   {
     "id": "2352476-168",
@@ -61,7 +91,17 @@
     "resultado_oficial": "Aprovado em 2º turno (Sim: 338, Não: 83, Abst: 4)",
     "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2352476-168",
     "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2352476",
-    "criterio_resumo": "Emenda à Constituição que concedeu anistia a partidos políticos sobre prestações de contas anteriores e redistribuição de cotas."
+    "criterio_resumo": "Emenda à Constituição que concedeu anistia a partidos políticos sobre prestações de contas anteriores e redistribuição de cotas.",
+    "senado": {
+      "votacao_id": 6874,
+      "sessao_id": 422342,
+      "codigo_materia": 164727,
+      "proposicao": "PEC 9/2023",
+      "data": "2024-08-14",
+      "resultado_oficial": "Aprovado em 2º turno (Sim: 54, Não: 16)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/422342",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/164727"
+    }
   },
   {
     "id": "2422697-75",
@@ -77,6 +117,16 @@
     "resultado_oficial": "Mantido o texto da alíquota (Sim: 280, Não: 121)",
     "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2422697-75",
     "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2422697",
-    "criterio_resumo": "Votação do destaque no PL do Programa Mover que instituiu o fim da isenção tributária para remessas postais internacionais de pequeno valor."
+    "criterio_resumo": "Votação do destaque no PL do Programa Mover que instituiu o fim da isenção tributária para remessas postais internacionais de pequeno valor.",
+    "senado": {
+      "votacao_id": 6836,
+      "sessao_id": 408825,
+      "codigo_materia": 163889,
+      "proposicao": "PL 914/2024",
+      "data": "2024-06-05",
+      "resultado_oficial": "Aprovado (Sim: 67, Não: 0)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/408825",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/163889"
+    }
   }
 ]

@@ -50,6 +50,17 @@ export interface ParlamentarCardData {
   href: string;
 }
 
+export interface TemaSenadoInfo {
+  votacao_id: number;
+  sessao_id: number;
+  codigo_materia: number;
+  proposicao: string;
+  data: string;
+  resultado_oficial: string;
+  url_votacao: string;
+  url_proposicao: string;
+}
+
 export interface Tema {
   id: string;
   ordem: number;
@@ -65,4 +76,6 @@ export interface Tema {
   url_votacao: string;
   url_proposicao: string;
   criterio_resumo: string;
+  senado?: TemaSenadoInfo;
 }
+

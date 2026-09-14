@@ -1,0 +1,502 @@
+{
+  "metadados": {
+    "tema_id": "2196833-373",
+    "senado_votacao_id": 6777,
+    "senado_sessao_id": 368878,
+    "codigo_materia": 158930,
+    "proposicao": "PEC 45/2019",
+    "data": "2023-11-08",
+    "descricao": "Votação nominal da Proposta de Emenda à Constituição nº 45, de 2019, nos termos do Parecer, em segundo turno.",
+    "resultado_oficial": "Aprovado em 2º turno (Sim: 53, Não: 24)",
+    "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/368878",
+    "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/158930"
+  },
+  "votos": {
+    "5672": {
+      "nome": "Alan Rick",
+      "partido": "UNIÃO",
+      "uf": "AC",
+      "tipoVoto": "Sim"
+    },
+    "5982": {
+      "nome": "Alessandro Vieira",
+      "partido": "MDB",
+      "uf": "SE",
+      "tipoVoto": "Sim"
+    },
+    "6358": {
+      "nome": "Ana Paula Lobato",
+      "partido": "PSB",
+      "uf": "MA",
+      "tipoVoto": "Sim"
+    },
+    "5967": {
+      "nome": "Angelo Coronel",
+      "partido": "PSD",
+      "uf": "BA",
+      "tipoVoto": "Sim"
+    },
+    "6009": {
+      "nome": "Astronauta Marcos Pontes",
+      "partido": "PL",
+      "uf": "SP",
+      "tipoVoto": "Não"
+    },
+    "6350": {
+      "nome": "Augusta Brito",
+      "partido": "PT",
+      "uf": "CE",
+      "tipoVoto": "Sim"
+    },
+    "4639": {
+      "nome": "Beto Faro",
+      "partido": "PT",
+      "uf": "PA",
+      "tipoVoto": "Sim"
+    },
+    "5936": {
+      "nome": "Carlos Portinho",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não"
+    },
+    "5990": {
+      "nome": "Carlos Viana",
+      "partido": "PODE",
+      "uf": "MG",
+      "tipoVoto": "Sim"
+    },
+    "470": {
+      "nome": "Chico Rodrigues",
+      "partido": "PSB",
+      "uf": "RR",
+      "tipoVoto": "Sim"
+    },
+    "5973": {
+      "nome": "Cid Gomes",
+      "partido": "PDT",
+      "uf": "CE",
+      "tipoVoto": "Não votou / Ausente"
+    },
+    "739": {
+      "nome": "Ciro Nogueira",
+      "partido": "PP",
+      "uf": "PI",
+      "tipoVoto": "Sim"
+    },
+    "6337": {
+      "nome": "Cleitinho",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "tipoVoto": "Não"
+    },
+    "475": {
+      "nome": "Confúcio Moura",
+      "partido": "MDB",
+      "uf": "RO",
+      "tipoVoto": "Sim"
+    },
+    "6335": {
+      "nome": "Damares Alves",
+      "partido": "REPUBLICANOS",
+      "uf": "DF",
+      "tipoVoto": "Não"
+    },
+    "5998": {
+      "nome": "Daniella Ribeiro",
+      "partido": "PSD",
+      "uf": "PB",
+      "tipoVoto": "Sim"
+    },
+    "3830": {
+      "nome": "Davi Alcolumbre",
+      "partido": "UNIÃO",
+      "uf": "AP",
+      "tipoVoto": "Sim"
+    },
+    "5793": {
+      "nome": "Dr. Hiran",
+      "partido": "PP",
+      "uf": "RR",
+      "tipoVoto": "Não"
+    },
+    "4994": {
+      "nome": "Eduardo Braga",
+      "partido": "MDB",
+      "uf": "AM",
+      "tipoVoto": "Sim"
+    },
+    "5976": {
+      "nome": "Eduardo Girão",
+      "partido": "NOVO",
+      "uf": "CE",
+      "tipoVoto": "Não"
+    },
+    "3777": {
+      "nome": "Eduardo Gomes",
+      "partido": "PL",
+      "uf": "TO",
+      "tipoVoto": "Sim"
+    },
+    "4642": {
+      "nome": "Efraim Filho",
+      "partido": "UNIÃO",
+      "uf": "PB",
+      "tipoVoto": "Sim"
+    },
+    "5718": {
+      "nome": "Eliziane Gama",
+      "partido": "PSD",
+      "uf": "MA",
+      "tipoVoto": "Sim"
+    },
+    "22": {
+      "nome": "Esperidião Amin",
+      "partido": "PP",
+      "uf": "SC",
+      "tipoVoto": "Não"
+    },
+    "5953": {
+      "nome": "Fabiano Contarato",
+      "partido": "PT",
+      "uf": "ES",
+      "tipoVoto": "Sim"
+    },
+    "5917": {
+      "nome": "Fernando Dueire",
+      "partido": "MDB",
+      "uf": "PE",
+      "tipoVoto": "Sim"
+    },
+    "6345": {
+      "nome": "Fernando Farias",
+      "partido": "MDB",
+      "uf": "AL",
+      "tipoVoto": "Sim"
+    },
+    "345": {
+      "nome": "Flávio Arns",
+      "partido": "PSB",
+      "uf": "PR",
+      "tipoVoto": "Sim"
+    },
+    "5894": {
+      "nome": "Flávio Bolsonaro",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não"
+    },
+    "6008": {
+      "nome": "Giordano",
+      "partido": "MDB",
+      "uf": "SP",
+      "tipoVoto": "Sim"
+    },
+    "6341": {
+      "nome": "Hamilton Mourão",
+      "partido": "REPUBLICANOS",
+      "uf": "RS",
+      "tipoVoto": "Não"
+    },
+    "5008": {
+      "nome": "Humberto Costa",
+      "partido": "PT",
+      "uf": "PE",
+      "tipoVoto": "Sim"
+    },
+    "5385": {
+      "nome": "Irajá",
+      "partido": "PSD",
+      "uf": "TO",
+      "tipoVoto": "Não votou / Ausente"
+    },
+    "6010": {
+      "nome": "Ivete da Silveira",
+      "partido": "MDB",
+      "uf": "SC",
+      "tipoVoto": "Sim"
+    },
+    "4770": {
+      "nome": "Izalci Lucas",
+      "partido": "PSDB",
+      "uf": "DF",
+      "tipoVoto": "Não"
+    },
+    "35": {
+      "nome": "Jader Barbalho",
+      "partido": "MDB",
+      "uf": "PA",
+      "tipoVoto": "Sim"
+    },
+    "6340": {
+      "nome": "Jaime Bagattoli",
+      "partido": "PL",
+      "uf": "RO",
+      "tipoVoto": "Não"
+    },
+    "581": {
+      "nome": "Jaques Wagner",
+      "partido": "PT",
+      "uf": "BA",
+      "tipoVoto": "Sim"
+    },
+    "4531": {
+      "nome": "Jayme Campos",
+      "partido": "UNIÃO",
+      "uf": "MT",
+      "tipoVoto": "Sim"
+    },
+    "5895": {
+      "nome": "Jorge Kajuru",
+      "partido": "PSB",
+      "uf": "GO",
+      "tipoVoto": "Sim"
+    },
+    "6342": {
+      "nome": "Jorge Seif",
+      "partido": "PL",
+      "uf": "SC",
+      "tipoVoto": "Não"
+    },
+    "6369": {
+      "nome": "Jussara Lima",
+      "partido": "PSD",
+      "uf": "PI",
+      "tipoVoto": "Sim"
+    },
+    "4811": {
+      "nome": "Laércio Oliveira",
+      "partido": "PP",
+      "uf": "SE",
+      "tipoVoto": "Sim"
+    },
+    "5979": {
+      "nome": "Leila Barros",
+      "partido": "PDT",
+      "uf": "DF",
+      "tipoVoto": "Sim"
+    },
+    "5926": {
+      "nome": "Lucas Barreto",
+      "partido": "PSD",
+      "uf": "AP",
+      "tipoVoto": "Sim"
+    },
+    "1186": {
+      "nome": "Luis Carlos Heinze",
+      "partido": "PP",
+      "uf": "RS",
+      "tipoVoto": "Não"
+    },
+    "631": {
+      "nome": "Magno Malta",
+      "partido": "PL",
+      "uf": "ES",
+      "tipoVoto": "Não"
+    },
+    "5376": {
+      "nome": "Mara Gabrilli",
+      "partido": "PSD",
+      "uf": "SP",
+      "tipoVoto": "Sim"
+    },
+    "742": {
+      "nome": "Marcelo Castro",
+      "partido": "MDB",
+      "uf": "PI",
+      "tipoVoto": "Sim"
+    },
+    "285": {
+      "nome": "Marcio Bittar",
+      "partido": "UNIÃO",
+      "uf": "AC",
+      "tipoVoto": "Sim"
+    },
+    "5422": {
+      "nome": "Marcos Rogério",
+      "partido": "PL",
+      "uf": "RO",
+      "tipoVoto": "Não votou / Ausente"
+    },
+    "5942": {
+      "nome": "Marcos do Val",
+      "partido": "PODE",
+      "uf": "ES",
+      "tipoVoto": "Não"
+    },
+    "6304": {
+      "nome": "Margareth Buzetti",
+      "partido": "PSD",
+      "uf": "MT",
+      "tipoVoto": "Sim"
+    },
+    "6027": {
+      "nome": "Mecias de Jesus",
+      "partido": "REPUBLICANOS",
+      "uf": "RR",
+      "tipoVoto": "Não"
+    },
+    "5985": {
+      "nome": "Nelsinho Trad",
+      "partido": "PSD",
+      "uf": "MS",
+      "tipoVoto": "Sim"
+    },
+    "5525": {
+      "nome": "Omar Aziz",
+      "partido": "PSD",
+      "uf": "AM",
+      "tipoVoto": "Sim"
+    },
+    "5924": {
+      "nome": "Oriovisto Guimarães",
+      "partido": "PODE",
+      "uf": "PR",
+      "tipoVoto": "Não"
+    },
+    "5523": {
+      "nome": "Otto Alencar",
+      "partido": "PSD",
+      "uf": "BA",
+      "tipoVoto": "Sim"
+    },
+    "825": {
+      "nome": "Paulo Paim",
+      "partido": "PT",
+      "uf": "RS",
+      "tipoVoto": "Sim"
+    },
+    "5502": {
+      "nome": "Plínio Valério",
+      "partido": "PSDB",
+      "uf": "AM",
+      "tipoVoto": "Sim"
+    },
+    "5386": {
+      "nome": "Professora Dorinha Seabra",
+      "partido": "UNIÃO",
+      "uf": "TO",
+      "tipoVoto": "Sim"
+    },
+    "5012": {
+      "nome": "Randolfe Rodrigues",
+      "partido": "REDE",
+      "uf": "AP",
+      "tipoVoto": "Sim"
+    },
+    "70": {
+      "nome": "Renan Calheiros",
+      "partido": "MDB",
+      "uf": "AL",
+      "tipoVoto": "Sim"
+    },
+    "5905": {
+      "nome": "Rodrigo Cunha",
+      "partido": "PODE",
+      "uf": "AL",
+      "tipoVoto": "Sim"
+    },
+    "5732": {
+      "nome": "Rodrigo Pacheco",
+      "partido": "PSD",
+      "uf": "MG",
+      "tipoVoto": "Presidente (Art. 51)"
+    },
+    "4694": {
+      "nome": "Rogerio Marinho",
+      "partido": "PL",
+      "uf": "RN",
+      "tipoVoto": "Não"
+    },
+    "5352": {
+      "nome": "Rogério Carvalho",
+      "partido": "PT",
+      "uf": "SE",
+      "tipoVoto": "Sim"
+    },
+    "5322": {
+      "nome": "Romário",
+      "partido": "PL",
+      "uf": "RJ",
+      "tipoVoto": "Não"
+    },
+    "6331": {
+      "nome": "Sergio Moro",
+      "partido": "UNIÃO",
+      "uf": "PR",
+      "tipoVoto": "Não"
+    },
+    "5988": {
+      "nome": "Soraya Thronicke",
+      "partido": "PODE",
+      "uf": "MS",
+      "tipoVoto": "Não"
+    },
+    "5959": {
+      "nome": "Styvenson Valentim",
+      "partido": "PODE",
+      "uf": "RN",
+      "tipoVoto": "Sim"
+    },
+    "4560": {
+      "nome": "Sérgio Petecão",
+      "partido": "PSD",
+      "uf": "AC",
+      "tipoVoto": "Sim"
+    },
+    "6338": {
+      "nome": "Teresa Leitão",
+      "partido": "PT",
+      "uf": "PE",
+      "tipoVoto": "Sim"
+    },
+    "5736": {
+      "nome": "Tereza Cristina",
+      "partido": "PP",
+      "uf": "MS",
+      "tipoVoto": "Não"
+    },
+    "5899": {
+      "nome": "Vanderlan Cardoso",
+      "partido": "PSD",
+      "uf": "GO",
+      "tipoVoto": "Sim"
+    },
+    "5748": {
+      "nome": "Veneziano Vital do Rêgo",
+      "partido": "MDB",
+      "uf": "PB",
+      "tipoVoto": "Sim"
+    },
+    "1173": {
+      "nome": "Wellington Fagundes",
+      "partido": "PL",
+      "uf": "MT",
+      "tipoVoto": "Não"
+    },
+    "5411": {
+      "nome": "Weverton",
+      "partido": "PDT",
+      "uf": "MA",
+      "tipoVoto": "Sim"
+    },
+    "5070": {
+      "nome": "Wilder Morais",
+      "partido": "PL",
+      "uf": "GO",
+      "tipoVoto": "Não"
+    },
+    "5783": {
+      "nome": "Zenaide Maia",
+      "partido": "PSD",
+      "uf": "RN",
+      "tipoVoto": "Sim"
+    },
+    "3806": {
+      "nome": "Zequinha Marinho",
+      "partido": "PODE",
+      "uf": "PA",
+      "tipoVoto": "Sim"
+    }
+  }
+}

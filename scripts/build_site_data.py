@@ -29,6 +29,7 @@ CANON_DEPUTADOS_FILE = CAMARA_DIR / "deputados.json"
 VOTACOES_DIR = CAMARA_DIR / "votacoes"
 SENADO_DIR = ROOT / "dados" / "senado"
 CANON_SENADORES_FILE = SENADO_DIR / "senadores.json"
+SENADO_VOTACOES_DIR = SENADO_DIR / "votacoes"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
 
@@ -55,6 +56,19 @@ def load_votacoes(temas):
         with open(filepath, encoding="utf-8") as f:
             votacoes_data[vid] = json.load(f)
     return votacoes_data
+
+
+def load_senado_votacoes(temas):
+    senado_votacoes_data = {}
+    if not SENADO_VOTACOES_DIR.exists():
+        return senado_votacoes_data
+    for tema in temas:
+        vid = tema["id"]
+        filepath = SENADO_VOTACOES_DIR / f"{vid}.json"
+        if filepath.exists():
+            with open(filepath, encoding="utf-8") as f:
+                senado_votacoes_data[vid] = json.load(f)
+    return senado_votacoes_data
 
 
 def load_deputados_base():
@@ -107,7 +121,7 @@ def validar_integridade(deputados, temas):
             )
 
 
-def validar_senadores(senadores):
+def validar_senadores(senadores, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD) para o Senado."""
     campos_proibidos = {"cpf", "email", "telefone", "redes", "redeSocial"}
     for s in senadores:
@@ -120,6 +134,14 @@ def validar_senadores(senadores):
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
 
+    for t in temas:
+        if "senado" in t:
+            sen_info = t["senado"]
+            if not sen_info.get("url_votacao", "").startswith("https://"):
+                raise ValueError(f"Tema {t.get('id')} sem url_votacao oficial do Senado válida.")
+            if not sen_info.get("url_proposicao", "").startswith("https://"):
+                raise ValueError(f"Tema {t.get('id')} sem url_proposicao oficial do Senado válida.")
+
 
 def main():
     print("Compilando dados para o site do Ficha do Político...")
@@ -131,7 +153,12 @@ def main():
     print(f"Carregados {len(temas)} temas a partir de {CATALOGO_FILE.relative_to(ROOT)}")
 
     votacoes = load_votacoes(temas)
-    print(f"Carregadas {len(votacoes)} votações oficiais em {VOTACOES_DIR.relative_to(ROOT)}")
+    print(f"Carregadas {len(votacoes)} votações oficiais da Câmara em {VOTACOES_DIR.relative_to(ROOT)}")
+
+    senado_votacoes = load_senado_votacoes(temas)
+    print(
+        f"Carregadas {len(senado_votacoes)} votações oficiais do Senado em {SENADO_VOTACOES_DIR.relative_to(ROOT)}"
+    )
 
     deputados_base = load_deputados_base()
     print(f"Carregados {len(deputados_base)} deputados (base canônica)")
@@ -170,8 +197,30 @@ def main():
     senadores = []
     if CANON_SENADORES_FILE.exists():
         with open(CANON_SENADORES_FILE, encoding="utf-8") as f:
-            senadores = json.load(f)
-        validar_senadores(senadores)
+            senadores_raw = json.load(f)
+
+        for sen in senadores_raw:
+            sen_id_str = str(sen["id"])
+            votos_map = {}
+            for tema in temas:
+                vid = tema["id"]
+                if vid in senado_votacoes:
+                    votacao_json = senado_votacoes[vid]
+                    votos_dict = votacao_json.get("votos", {})
+                    if sen_id_str in votos_dict:
+                        votos_map[vid] = votos_dict[sen_id_str].get("tipoVoto", "Sim")
+                    else:
+                        votos_map[vid] = "Não votou / Ausente"
+            sen["votos"] = votos_map
+            senadores.append(sen)
+
+        senadores.sort(key=lambda s: s["nome_eleitoral"].lower())
+        validar_senadores(senadores, temas)
+
+        # Atualiza o arquivo canônico do Senado
+        with open(CANON_SENADORES_FILE, "w", encoding="utf-8") as f:
+            json.dump(senadores, f, ensure_ascii=False, indent=2)
+
         out_senadores = SITE_DATA_DIR / "senadores.json"
         with open(out_senadores, "w", encoding="utf-8") as f:
             json.dump(senadores, f, ensure_ascii=False, indent=2)

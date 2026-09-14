@@ -8,7 +8,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5672.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5672",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5982,
@@ -19,7 +25,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5982.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5982",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5967,
@@ -30,7 +42,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5967.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5967",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6009,
@@ -41,7 +59,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6009.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6009",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 4639,
@@ -52,7 +76,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4639.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4639",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6336,
@@ -63,7 +93,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6336.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6336",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 6295,
@@ -74,7 +110,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6295.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6295",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5936,
@@ -85,7 +127,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5936.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5936",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5990,
@@ -96,7 +144,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5990.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5990",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 470,
@@ -107,7 +161,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador470.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/470",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5973,
@@ -118,7 +178,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5973.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5973",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 739,
@@ -129,7 +195,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador739.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/739",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6337,
@@ -140,7 +212,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6337.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6337",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 475,
@@ -151,7 +229,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador475.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/475",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6335,
@@ -162,7 +246,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6335.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6335",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5998,
@@ -173,7 +263,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5998.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5998",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 3830,
@@ -184,7 +280,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador3830.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/3830",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5793,
@@ -195,7 +297,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5793.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5793",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5906,
@@ -206,7 +314,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5906.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5906",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 4994,
@@ -217,7 +331,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4994",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 3777,
@@ -228,7 +348,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador3777.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/3777",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 4642,
@@ -239,7 +365,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4642.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4642",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5718,
@@ -250,7 +382,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5718",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 22,
@@ -261,7 +399,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador22.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/22",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5953,
@@ -272,7 +416,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5953.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5953",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5917,
@@ -283,7 +433,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5917",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 345,
@@ -294,7 +450,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador345.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/345",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5894,
@@ -305,7 +467,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5894",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6008,
@@ -316,7 +484,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6008.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6008",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 6341,
@@ -327,7 +501,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6341.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6341",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5008,
@@ -338,7 +518,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5008",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5385,
@@ -349,7 +535,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5385.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5385",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6010,
@@ -360,7 +552,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6010.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6010",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 4770,
@@ -371,7 +569,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4770",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 35,
@@ -382,7 +586,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador35.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/35",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 6340,
@@ -393,7 +603,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6340.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6340",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 581,
@@ -404,7 +620,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador581.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/581",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 4531,
@@ -415,7 +637,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4531.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4531",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5895,
@@ -426,7 +654,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5895",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6342,
@@ -437,7 +671,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6342.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6342",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6369,
@@ -448,7 +688,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6369.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6369",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 4811,
@@ -459,7 +705,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4811.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4811",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5979,
@@ -470,7 +722,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5979",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6359,
@@ -481,7 +739,13 @@
     "situacao": "Exercício (2º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6359.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6359",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5926,
@@ -492,7 +756,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5926.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5926",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 1186,
@@ -503,7 +773,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/1186",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 631,
@@ -514,7 +790,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador631.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/631",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5376,
@@ -525,7 +807,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5376",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 742,
@@ -536,7 +824,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/742",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 285,
@@ -547,18 +841,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/285",
-    "votos": {}
-  },
-  {
-    "id": 5422,
-    "nome_eleitoral": "Marcos Rogério",
-    "nome_civil": "Marcos Rogério da Silva Brito",
-    "partido": "PL",
-    "uf": "RO",
-    "situacao": "Exercício (Titular)",
-    "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5422.jpg",
-    "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5422",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5942,
@@ -569,7 +858,30 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5942.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5942",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
+  },
+  {
+    "id": 5422,
+    "nome_eleitoral": "Marcos Rogério",
+    "nome_civil": "Marcos Rogério da Silva Brito",
+    "partido": "PL",
+    "uf": "RO",
+    "situacao": "Exercício (Titular)",
+    "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5422.jpg",
+    "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5422",
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5985,
@@ -580,7 +892,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5985.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5985",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5525,
@@ -591,7 +909,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5525.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5525",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5924,
@@ -602,7 +926,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5924.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5924",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5523,
@@ -613,7 +943,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5523.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5523",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 825,
@@ -624,7 +960,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador825.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/825",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Não",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5502,
@@ -635,7 +977,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5502.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5502",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5386,
@@ -646,7 +994,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5386.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5386",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5012,
@@ -657,7 +1011,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5012",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 70,
@@ -668,7 +1028,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador70.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/70",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5207,
@@ -679,7 +1045,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5207.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5207",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 6025,
@@ -690,7 +1062,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6025.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6025",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 5732,
@@ -701,7 +1079,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5732",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Presidente (Art. 51)",
+      "2196833-373": "Presidente (Art. 51)",
+      "345311-270": "Presidente (Art. 51)",
+      "2352476-168": "Presidente (Art. 51)",
+      "2422697-75": "Presidente (Art. 51)"
+    }
   },
   {
     "id": 4694,
@@ -712,7 +1096,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4694.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4694",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5352,
@@ -723,7 +1113,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5352.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5352",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5322,
@@ -734,7 +1130,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5322.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5322",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5974,
@@ -745,7 +1147,13 @@
     "situacao": "Exercício (1º Suplente)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5974.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5974",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não votou / Ausente",
+      "2196833-373": "Não votou / Ausente",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Não votou / Ausente"
+    }
   },
   {
     "id": 6331,
@@ -756,7 +1164,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6331.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6331",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5988,
@@ -767,7 +1181,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5988",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5959,
@@ -778,7 +1198,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5959.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5959",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 4560,
@@ -789,7 +1215,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4560.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4560",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 6338,
@@ -800,7 +1232,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6338.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6338",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5736,
@@ -811,7 +1249,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5736.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5736",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5899,
@@ -822,7 +1266,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5899.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5899",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5748,
@@ -833,7 +1283,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5748",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 1173,
@@ -844,7 +1300,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador1173.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/1173",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Não votou / Ausente",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5411,
@@ -855,7 +1317,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5411",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5070,
@@ -866,7 +1334,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5070.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5070",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Não",
+      "2196833-373": "Não",
+      "345311-270": "Sim",
+      "2352476-168": "Sim",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 5783,
@@ -877,7 +1351,13 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5783.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5783",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Não",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   },
   {
     "id": 3806,
@@ -888,6 +1368,12 @@
     "situacao": "Exercício (Titular)",
     "url_foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador3806.jpg",
     "url_perfil_senado": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/3806",
-    "votos": {}
+    "votos": {
+      "2196833-326": "Sim",
+      "2196833-373": "Sim",
+      "345311-270": "Sim",
+      "2352476-168": "Não votou / Ausente",
+      "2422697-75": "Sim"
+    }
   }
 ]
