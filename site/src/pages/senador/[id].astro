@@ -126,16 +126,23 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
         <div class="space-y-4">
           {temas.filter(t => senador.votos[t.id]).map(tema => {
             const voto = senador.votos[tema.id] || "Não votou / Ausente";
+            const infoSenado = tema.senado;
+            const proposicao = infoSenado?.proposicao || tema.proposicao;
+            const dataVotacao = infoSenado?.data || tema.data;
+            const resultadoOficial = infoSenado?.resultado_oficial || tema.resultado_oficial;
+            const urlVotacao = infoSenado?.url_votacao || tema.url_votacao;
+            const urlProposicao = infoSenado?.url_proposicao || tema.url_proposicao;
+
             return (
               <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm transition hover:border-slate-300">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
                   <div class="space-y-1">
                     <div class="flex items-center gap-2">
                       <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                        {tema.proposicao}
+                        {proposicao}
                       </span>
                       <span class="text-xs text-slate-400 font-medium">
-                        Data: {tema.data}
+                        Data: {dataVotacao}
                       </span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900">
@@ -154,17 +161,27 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
 
                 <div class="pt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
                   <div class="italic text-slate-500">
-                    Resultado no plenário: <span class="font-medium text-slate-700">{tema.resultado_oficial}</span>
+                    Resultado no plenário: <span class="font-medium text-slate-700">{resultadoOficial}</span>
                   </div>
                   <div class="flex items-center gap-3">
                     <a 
-                      href={tema.url_votacao} 
+                      href={urlVotacao} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       class="text-blue-700 hover:text-blue-900 underline inline-flex items-center gap-0.5"
                     >
                       <span>Registro oficial da votação ↗</span>
                     </a>
+                    {urlProposicao && (
+                      <a 
+                        href={urlProposicao} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-blue-700 hover:text-blue-900 underline inline-flex items-center gap-0.5"
+                      >
+                        <span>Página da matéria ↗</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>

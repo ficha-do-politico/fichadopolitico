@@ -15,6 +15,7 @@ CATALOGO_FILE = ROOT / "dados" / "catalogo" / "temas.json"
 CAMARA_DEPUTADOS_FILE = ROOT / "dados" / "camara" / "deputados.json"
 CAMARA_VOTACOES_DIR = ROOT / "dados" / "camara" / "votacoes"
 SENADO_SENADORES_FILE = ROOT / "dados" / "senado" / "senadores.json"
+SENADO_VOTACOES_DIR = ROOT / "dados" / "senado" / "votacoes"
 SITE_DEPUTADOS_FILE = ROOT / "site" / "src" / "data" / "deputados.json"
 SITE_SENADORES_FILE = ROOT / "site" / "src" / "data" / "senadores.json"
 SITE_TEMAS_FILE = ROOT / "site" / "src" / "data" / "temas.json"
@@ -192,6 +193,63 @@ class TestDataIntegrity(unittest.TestCase):
                     tipo_voto,
                     votos_permitidos,
                     f"Deputado {d.get('id')} com voto com tipo desconhecido '{tipo_voto}' no tema {tid}",
+                )
+
+    def test_senado_votacoes_e_verificabilidade(self):
+        """Verifica se as votações do Senado mapeadas no catálogo possuem arquivos e links oficiais válidos (AD-006)."""
+        temas_com_senado = [t for t in self.temas if "senado" in t]
+        self.assertGreaterEqual(
+            len(temas_com_senado), 4, "No mínimo 4 temas devem ter mapeamento oficial no Senado."
+        )
+
+        for t in temas_com_senado:
+            t_id = t["id"]
+            sen_info = t["senado"]
+            self.assertTrue(sen_info.get("proposicao"), f"Tema {t_id} sem proposição no Senado.")
+            self.assertTrue(sen_info.get("votacao_id"), f"Tema {t_id} sem votacao_id no Senado.")
+            self.assertTrue(sen_info.get("data"), f"Tema {t_id} sem data no Senado.")
+            self.assertTrue(
+                sen_info.get("resultado_oficial"), f"Tema {t_id} sem resultado no Senado."
+            )
+
+            url_votacao = sen_info.get("url_votacao", "")
+            url_proposicao = sen_info.get("url_proposicao", "")
+            self.assertTrue(
+                url_votacao.startswith("https://"),
+                f"Tema {t_id} com url_votacao do Senado inválida: {url_votacao}",
+            )
+            self.assertTrue(
+                url_proposicao.startswith("https://"),
+                f"Tema {t_id} com url_proposicao do Senado inválida: {url_proposicao}",
+            )
+
+            votacao_file = SENADO_VOTACOES_DIR / f"{t_id}.json"
+            self.assertTrue(
+                votacao_file.exists(),
+                f"Arquivo de votação do Senado não encontrado para tema {t_id}",
+            )
+
+    def test_integridade_votos_nominais_senadores(self):
+        """Garante que todo senador possui voto nominal válido para cada tema bicameral."""
+        temas_com_senado_ids = [t["id"] for t in self.temas if "senado" in t]
+        votos_permitidos = {
+            "Sim",
+            "Não",
+            "Abstenção",
+            "Obstrução",
+            "Presidente (Art. 51)",
+            "Não votou / Ausente",
+        }
+
+        for s in self.senadores:
+            votos = s.get("votos", {})
+            for tid in temas_com_senado_ids:
+                self.assertIn(tid, votos, f"Senador {s.get('id')} sem registro para tema {tid}")
+                tipo_voto = votos[tid]
+                self.assertIn(
+                    tipo_voto,
+                    votos_permitidos,
+                    f"Senador {s.get('id')} com tipo de voto inválido '{tipo_voto}' no tema {tid}",
                 )
 
 

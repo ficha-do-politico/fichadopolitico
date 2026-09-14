@@ -19,9 +19,9 @@ if (voto === 'Sim') {
   colorClasses = 'bg-amber-50 text-amber-800 border-amber-300';
 } else if (voto === 'Obstrução') {
   colorClasses = 'bg-orange-50 text-orange-800 border-orange-300';
-} else if (voto === 'Artigo 17') {
+} else if (voto === 'Artigo 17' || voto.includes('Art. 51') || voto.includes('Presidente')) {
   colorClasses = 'bg-slate-100 text-slate-700 border-slate-300';
-  label = 'Art. 17 (Presidência)';
+  label = 'Presidência (Não vota)';
 } else if (voto.includes('Ausente') || voto.includes('Não votou')) {
   colorClasses = 'bg-zinc-100 text-zinc-600 border-zinc-200';
   label = 'Não votou / Ausente';

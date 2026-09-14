@@ -46,4 +46,16 @@
   1. *Votações Nominais no Senado:* Mapear IDs de votações oficiais no Senado para os temas do catálogo e ingestão de votos.
   2. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes (meta 10+ matérias).
   3. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
+  4. *Módulo Eleições 2026 (Roadmap Prioritário):* Apoio ao eleitor para o pleito de 03/10/2026 (AD-015).
 - **Bloqueios:** Nenhum.
+
+---
+
+## 4. Planejamento — Módulo Eleições 2026 (AD-015)
+
+> **Decisão Arquitetural AD-015 (Escopo Eleitoral Focado no Congresso):**  
+> Diante da proximidade do pleito nacional (03/10/2026), o portal incluirá apoio à consulta eleitoral com as seguintes diretrizes:
+> 1. **Fidelidade ao Escopo Federal (AD-011):** Cobertura restrita a candidatos a Deputado Federal e Senador da República (cargos estaduais e municipais permanecem fora de escopo).
+> 2. **Fase 1 (Mandatários & Reeleição):** Sinalização na ficha de quais dos 594 congressistas atuais estão disputando a reeleição ou outro cargo, incorporando os bens declarados no TSE (pleito 2026).
+> 3. **Fase 2 (Novos Candidatos Federais):** Ingestão do dump oficial do TSE (DivulgaCandContas 2026) com busca dedicada por UF e cargo, exibindo bens declarados, número de urna e proposta, mantendo integridade e neutralidade (AD-004).
+
