@@ -7,19 +7,22 @@ Este documento organiza as matérias legislativas sugeridas para inclusão no [C
 
 ---
 
-6x1 eh importante ja foi votada sim refazer a verificacao AGENT
+## 1. Matérias Integradas Recentemente no Catálogo Oficial
 
-## 1. Matérias em Radar com Impedimento Regimental (Sem Votação Nominal em Plenário)
+### 1.1. PEC da Escala 6×1 / Redução da Jornada para 40h (PEC 221/2019)
+- **Autoria / Proposição:** PEC 221/2019 (Dep. Reginaldo Lopes - PT/MG), à qual foi apensada a PEC 8/2025 (Dep. Erika Hilton - PSOL/SP e movimento VAT).
+- **Status Regimental:**
+  - **Câmara dos Deputados:** Aprovada no Plenário em 2 turnos em 27/05/2026. 1º turno (`2233802-424`: Sim: 472, Não: 22); 2º turno (`2233802-438`: Sim: 461, Não: 19).
+  - **Senado Federal:** Matéria `174386` autuada em 28/05/2026. Aprovada na CCJ em 02/09/2026. Aguarda deliberação no Plenário do Senado em 2 turnos.
+- **Situação no Portal:** **Integrada ao Catálogo Oficial como Tema 6** (votos nominais dos 513 deputados federais registrados a partir da API oficial).
+
+---
+
+## 2. Matérias em Radar com Impedimento Regimental (Sem Votação Nominal em Plenário)
 
 As propostas abaixo geram forte debate público, mas **não possuem votação nominal no Plenário do Congresso até o momento**. Ficam catalogadas aqui para acompanhamento contínuo.
 
-### 1.1. PEC da Escala 6×1 (Redução da Jornada de Trabalho)
-- **Autoria / Proposição:** Proposta de Emenda à Constituição articulada pela Dep. Erika Hilton (PSOL/SP) e movimento VAT (Vida Além do Trabalho).
-- **Status Regimental:** Fase de protocolo / tramitação inicial na Comissão de Constituição e Justiça e de Cidadania (CCJC).
-- **Situação de Voto:** **Inviável para a ficha no momento.** Não houve deliberação no Plenário da Câmara nem do Senado.
-- **Ação Futura:** Caso seja admitida e avance até votação em dois turnos no Plenário, será priorizada no catálogo.
-
-### 1.2. PEC da Segurança Pública
+### 2.1. PEC da Segurança Pública
 - **Origem:** Proposta elaborada pelo Ministério da Justiça e Segurança Pública (Poder Executivo) para constitucionalizar o SUSP e ampliar atribuições da Polícia Federal e PRF.
 - **Status Regimental:** Fase de negociação com governadores e tramitação no Congresso.
 - **Situação de Voto:** **Inviável para a ficha no momento.** Nenhuma votação nominal em plenário registrada.
