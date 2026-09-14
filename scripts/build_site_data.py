@@ -230,7 +230,74 @@ def main():
             f"  - {len(senadores)} senadores exportados em: {out_senadores} ({out_senadores.stat().st_size / 1024:.1f} KB)"
         )
 
-    # 3. Grava datasets do frontend Astro
+    # 3. Compila metadados detalhados de cada votação (distribuição, orientações de bancada)
+    votacoes_site_data = {}
+    for tema in temas:
+        vid = tema["id"]
+        camara_raw = votacoes.get(vid, {})
+        camara_meta = camara_raw.get("metadados", {})
+
+        # Calcula distribuição precisa de votos da Câmara
+        votos_camara_dict = camara_raw.get("votos", {})
+        camara_dist = {}
+        for v_item in votos_camara_dict.values():
+            tv = v_item.get("tipoVoto", "Sim")
+            camara_dist[tv] = camara_dist.get(tv, 0) + 1
+
+        # Deputados que não registraram voto no painel eletrônico
+        ausentes_camara = 513 - len(votos_camara_dict)
+        if ausentes_camara > 0:
+            camara_dist["Não votou / Ausente"] = ausentes_camara
+
+        item = {
+            "id": vid,
+            "camara": {
+                "votacao_id": camara_meta.get("votacao_id", vid),
+                "dataHora": camara_meta.get("dataHora"),
+                "descricao": camara_meta.get("descricao"),
+                "siglaOrgao": camara_meta.get("siglaOrgao", "PLEN"),
+                "total_votos_registrados": len(votos_camara_dict),
+                "total_deputados_locais": 513,
+                "total_ausentes": ausentes_camara,
+                "distribuicao_votos": camara_dist,
+                "orientacoes": camara_meta.get("orientacoes", []),
+            }
+        }
+
+        if vid in senado_votacoes:
+            sen_raw = senado_votacoes[vid]
+            sen_meta = sen_raw.get("metadados", {})
+            sen_votos_dict = sen_raw.get("votos", {})
+            sen_dist = {}
+            for v_item in sen_votos_dict.values():
+                tv = v_item.get("tipoVoto", "Sim")
+                sen_dist[tv] = sen_dist.get(tv, 0) + 1
+            ausentes_senado = 81 - len(sen_votos_dict)
+            if ausentes_senado > 0:
+                sen_dist["Não votou / Ausente"] = ausentes_senado
+
+            item["senado"] = {
+                "senado_votacao_id": sen_meta.get("senado_votacao_id"),
+                "senado_sessao_id": sen_meta.get("senado_sessao_id"),
+                "codigo_materia": sen_meta.get("codigo_materia"),
+                "data": sen_meta.get("data"),
+                "descricao": sen_meta.get("descricao"),
+                "resultado_oficial": sen_meta.get("resultado_oficial"),
+                "url_votacao": sen_meta.get("url_votacao"),
+                "url_proposicao": sen_meta.get("url_proposicao"),
+                "total_votos_registrados": len(sen_votos_dict),
+                "total_senadores": 81,
+                "total_ausentes": ausentes_senado,
+                "distribuicao_votos": sen_dist,
+            }
+
+        votacoes_site_data[vid] = item
+
+    out_votacoes = SITE_DATA_DIR / "votacoes.json"
+    with open(out_votacoes, "w", encoding="utf-8") as f:
+        json.dump(votacoes_site_data, f, ensure_ascii=False, indent=2)
+
+    # 4. Grava datasets do frontend Astro
     out_deputados = SITE_DATA_DIR / "deputados.json"
     with open(out_deputados, "w", encoding="utf-8") as f:
         json.dump(deputados, f, ensure_ascii=False, indent=2)
@@ -248,6 +315,9 @@ def main():
     )
     print(
         f"  - {len(temas)} temas exportados em: {out_temas} ({out_temas.stat().st_size / 1024:.1f} KB)"
+    )
+    print(
+        f"  - {len(votacoes_site_data)} detalhes de votações exportados em: {out_votacoes} ({out_votacoes.stat().st_size / 1024:.1f} KB)"
     )
 
 

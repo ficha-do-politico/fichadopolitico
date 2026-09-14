@@ -2,7 +2,8 @@
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const pathname = Astro.url.pathname;
 const isCriterios = pathname.includes('/criterios');
-const isHome = !isCriterios && (pathname === base || pathname === `${base}index.html` || pathname.endsWith('/'));
+const isVotacoes = pathname.includes('/votacao') || pathname.includes('/votacoes');
+const isHome = !isCriterios && !isVotacoes && (pathname === base || pathname === `${base}index.html` || pathname.endsWith('/'));
 ---
 <header class="border-b border-slate-200 bg-white/90 backdrop-blur sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -21,6 +22,12 @@ const isHome = !isCriterios && (pathname === base || pathname === `${base}index.
         class={`px-2 sm:px-3 py-1.5 rounded-lg transition ${isHome ? 'text-emerald-700 font-semibold bg-emerald-50/70' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
       >
         Parlamentares
+      </a>
+      <a 
+        href={`${base}votacoes`} 
+        class={`px-2 sm:px-3 py-1.5 rounded-lg transition ${isVotacoes ? 'text-emerald-700 font-semibold bg-emerald-50/70' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
+      >
+        Votações
       </a>
       <a 
         href={`${base}criterios`} 

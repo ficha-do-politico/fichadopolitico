@@ -1,0 +1,652 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VotoBadge from '../../components/VotoBadge.astro';
+import VotoParlamentarCard from '../../components/VotoParlamentarCard.astro';
+import deputadosData from '../../data/deputados.json';
+import senadoresData from '../../data/senadores.json';
+import temasData from '../../data/temas.json';
+import votacoesData from '../../data/votacoes.json';
+import type { Deputado, Senador, Tema, VotacaoDetalhe, VotoParlamentarItem } from '../../types';
+
+export async function getStaticPaths() {
+  const temas = temasData as Tema[];
+  return temas.map(tema => ({
+    params: { id: String(tema.id) },
+    props: { tema },
+  }));
+}
+
+interface Props {
+  tema: Tema;
+}
+
+const { tema } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const deputados = deputadosData as Deputado[];
+const senadores = senadoresData as Senador[];
+const votacoesMap = votacoesData as Record<string, VotacaoDetalhe>;
+const votacao = votacoesMap[tema.id];
+
+// Prepara lista nominal da Câmara
+const deputadosVotos: VotoParlamentarItem[] = deputados.map(dep => ({
+  id: dep.id,
+  nome_eleitoral: dep.nome_eleitoral,
+  nome_civil: dep.nome_civil,
+  partido: dep.partido,
+  uf: dep.uf,
+  url_foto: dep.url_foto,
+  casa: 'camara' as const,
+  cargo: 'Deputado Federal',
+  voto: dep.votos[tema.id] || 'Não votou / Ausente',
+  href: `${base}deputado/${dep.id}`,
+})).sort((a, b) => a.nome_eleitoral.localeCompare(b.nome_eleitoral, 'pt-BR'));
+
+// Prepara lista nominal do Senado (se a matéria tiver sido votada no Plenário do Senado)
+const temVotacaoSenado = Boolean(tema.senado);
+const senadoresVotos: VotoParlamentarItem[] = temVotacaoSenado 
+  ? senadores.map(sen => ({
+      id: sen.id,
+      nome_eleitoral: sen.nome_eleitoral,
+      nome_civil: sen.nome_civil,
+      partido: sen.partido,
+      uf: sen.uf,
+      url_foto: sen.url_foto,
+      casa: 'senado' as const,
+      cargo: 'Senador',
+      voto: sen.votos[tema.id] || 'Não votou / Ausente',
+      href: `${base}senador/${sen.id}`,
+    })).sort((a, b) => a.nome_eleitoral.localeCompare(b.nome_eleitoral, 'pt-BR'))
+  : [];
+
+// Estatísticas de Voto da Câmara
+const camaraDist = votacao?.camara?.distribuicao_votos || {};
+const camaraSim = camaraDist['Sim'] || 0;
+const camaraNao = camaraDist['Não'] || 0;
+const camaraAbstencao = (camaraDist['Abstenção'] || 0) + (camaraDist['Obstrução'] || 0) + (camaraDist['Artigo 17'] || 0);
+const camaraAusente = camaraDist['Não votou / Ausente'] || (513 - (camaraSim + camaraNao + camaraAbstencao));
+
+// Estatísticas de Voto do Senado
+const senadoDist = votacao?.senado?.distribuicao_votos || {};
+const senadoSim = senadoDist['Sim'] || 0;
+const senadoNao = senadoDist['Não'] || 0;
+const senadoAbstencao = (senadoDist['Abstenção'] || 0) + (senadoDist['Obstrução'] || 0);
+const senadoAusente = senadoDist['Não votou / Ausente'] || (81 - (senadoSim + senadoNao + senadoAbstencao));
+
+// Orientações de Bancada oficiais
+const orientacoes = votacao?.camara?.orientacoes || [];
+
+// Listas únicas de partidos e UFs para os filtros
+const partidosCamara = [...new Set(deputadosVotos.map(p => p.partido))].filter(Boolean).sort();
+const ufsCamara = [...new Set(deputadosVotos.map(p => p.uf))].filter(Boolean).sort();
+
+const pageTitle = `Votação: ${tema.titulo} (${tema.proposicao})`;
+const pageDescription = `Confira a lista nominal completa de quem votou a favor, contra e ausentes na votação de ${tema.proposicao} (${tema.titulo}) com fontes oficiais do Congresso.`;
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+    <!-- Navegação / Breadcrumb -->
+    <div class="flex items-center justify-between text-sm">
+      <a href={`${base}votacoes`} class="inline-flex items-center gap-1.5 font-medium text-slate-500 hover:text-emerald-700 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Ver todas as votações curadas
+      </a>
+      <a href={base} class="text-xs text-slate-400 hover:text-slate-600 transition">
+        Início
+      </a>
+    </div>
+
+    <!-- Cabeçalho da Votação -->
+    <header class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+          {tema.proposicao}
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+          Data: {tema.data}
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
+          Tipo: {tema.tipo}
+        </span>
+      </div>
+
+      <div class="space-y-2">
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          {tema.titulo}
+        </h1>
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+          {tema.subtitulo}
+        </p>
+      </div>
+
+      <!-- Resumo de Contexto / Relevância -->
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-1.5">
+        <div class="font-semibold text-slate-900 flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Contexto regimental da deliberação:
+        </div>
+        <p class="leading-relaxed">
+          {tema.criterio_resumo}
+        </p>
+      </div>
+
+      <!-- Links Oficiais e Rastreabilidade (AGENTS.md §3.1) -->
+      <div class="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs border-t border-slate-100">
+        <div class="text-slate-600">
+          Resultado oficial no Plenário: <strong class="text-slate-900">{tema.resultado_oficial}</strong>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a 
+            href={tema.url_votacao} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-emerald-700 hover:text-emerald-900 font-semibold underline inline-flex items-center gap-1"
+          >
+            <span>Dados Oficiais da Câmara (API / Portal) ↗</span>
+          </a>
+          <span class="text-slate-300">•</span>
+          <a 
+            href={tema.url_proposicao} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-emerald-700 hover:text-emerald-900 font-semibold underline inline-flex items-center gap-1"
+          >
+            <span>Íntegra da Proposição Oficial ↗</span>
+          </a>
+          {tema.senado && (
+            <>
+              <span class="text-slate-300">•</span>
+              <a 
+                href={tema.senado.url_votacao} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-emerald-700 hover:text-emerald-900 font-semibold underline inline-flex items-center gap-1"
+              >
+                <span>Sessão Oficial no Senado ↗</span>
+              </a>
+            </>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- Orientações Oficiais de Bancada / Partidos (Câmara dos Deputados) -->
+    {orientacoes.length > 0 && (
+      <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            Orientações Oficiais de Bancada e Lideranças (Câmara)
+          </h2>
+          <span class="text-[11px] text-slate-400">Fonte: Painel Eletrônico</span>
+        </div>
+        <div class="flex flex-wrap gap-2 pt-1">
+          {orientacoes.map(o => {
+            const isSim = o.orientacao.toLowerCase().includes('sim');
+            const isNao = o.orientacao.toLowerCase().includes('não') || o.orientacao.toLowerCase().includes('nao');
+            const isLib = o.orientacao.toLowerCase().includes('liberado');
+            let badgeClass = 'bg-slate-50 text-slate-700 border-slate-200';
+            if (isSim) badgeClass = 'bg-emerald-50 text-emerald-800 border-emerald-200';
+            if (isNao) badgeClass = 'bg-rose-50 text-rose-800 border-rose-200';
+            if (isLib) badgeClass = 'bg-amber-50 text-amber-800 border-amber-200';
+
+            return (
+              <div class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs ${badgeClass}`}>
+                <span class="font-bold">{o.bancada}:</span>
+                <span class="font-medium">{o.orientacao || 'Sem registro'}</span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <!-- Abas de Casa Legislativa (Câmara dos Deputados vs. Senado Federal) -->
+    <div class="space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div class="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-1 shadow-inner text-sm" id="casaTabs">
+          <button 
+            type="button" 
+            data-casa="camara" 
+            class="casa-tab-btn active px-4 py-2 rounded-lg font-bold text-xs sm:text-sm transition bg-white text-slate-900 shadow-xs"
+          >
+            Câmara dos Deputados (513)
+          </button>
+          <button 
+            type="button" 
+            data-casa="senado" 
+            class={`casa-tab-btn px-4 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-slate-600 hover:text-slate-900 ${
+              !temVotacaoSenado ? 'opacity-80' : ''
+            }`}
+          >
+            Senado Federal (81)
+            {!temVotacaoSenado && (
+              <span class="ml-1.5 text-[10px] uppercase font-semibold text-amber-700 bg-amber-100 px-1.5 py-0.2 rounded">
+                Aguardando Plenário
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL CÂMARA -->
+      <div id="painelCamara" class="space-y-6">
+        <!-- Placar Visual Interativo (Câmara) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          <button 
+            type="button" 
+            data-filtro-voto="" 
+            class="placar-btn active p-4 rounded-2xl bg-white border-2 border-slate-900 text-left transition hover:shadow-sm"
+          >
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total</div>
+            <div class="text-2xl sm:text-3xl font-black text-slate-900 mt-0.5">513</div>
+            <div class="text-[11px] text-slate-400 mt-1">Todos os deputados</div>
+          </button>
+
+          <button 
+            type="button" 
+            data-filtro-voto="sim" 
+            class="placar-btn p-4 rounded-2xl bg-white border-2 border-emerald-200 text-left transition hover:border-emerald-500 hover:shadow-sm"
+          >
+            <div class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">A favor (Sim)</div>
+            <div class="text-2xl sm:text-3xl font-black text-emerald-600 mt-0.5">{camaraSim}</div>
+            <div class="text-[11px] text-slate-500 mt-1">{((camaraSim / 513) * 100).toFixed(1)}% do plenário</div>
+          </button>
+
+          <button 
+            type="button" 
+            data-filtro-voto="nao" 
+            class="placar-btn p-4 rounded-2xl bg-white border-2 border-rose-200 text-left transition hover:border-rose-500 hover:shadow-sm"
+          >
+            <div class="text-xs font-semibold text-rose-700 uppercase tracking-wider">Contra (Não)</div>
+            <div class="text-2xl sm:text-3xl font-black text-rose-600 mt-0.5">{camaraNao}</div>
+            <div class="text-[11px] text-slate-500 mt-1">{((camaraNao / 513) * 100).toFixed(1)}% do plenário</div>
+          </button>
+
+          <button 
+            type="button" 
+            data-filtro-voto="ausente" 
+            class="placar-btn p-4 rounded-2xl bg-white border-2 border-slate-200 text-left transition hover:border-slate-400 hover:shadow-sm"
+          >
+            <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider">Ausentes / Não votou</div>
+            <div class="text-2xl sm:text-3xl font-black text-slate-600 mt-0.5">{camaraAusente}</div>
+            <div class="text-[11px] text-slate-400 mt-1">{((camaraAusente / 513) * 100).toFixed(1)}% do plenário</div>
+          </button>
+        </div>
+
+        <!-- Barra de Busca & Filtros Rápidos (Câmara) -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm space-y-4">
+          <div class="flex flex-col md:flex-row gap-3">
+            <!-- Input de busca textual -->
+            <div class="relative flex-1">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input 
+                type="text" 
+                id="searchDeputados" 
+                placeholder="Busque por nome do deputado, partido ou estado..."
+                autocomplete="off"
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition outline-none"
+              />
+            </div>
+
+            <!-- Filtros de UF e Partido -->
+            <div class="flex items-center gap-2">
+              <select id="selectUfCamara" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-700 outline-none focus:border-emerald-500">
+                <option value="">Todos os Estados</option>
+                {ufsCamara.map(uf => <option value={uf.toLowerCase()}>{uf}</option>)}
+              </select>
+
+              <select id="selectPartidoCamara" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-700 outline-none focus:border-emerald-500">
+                <option value="">Todos os Partidos</option>
+                {partidosCamara.map(p => <option value={p.toLowerCase()}>{p}</option>)}
+              </select>
+
+              <button 
+                id="resetFiltersCamara" 
+                type="button" 
+                class="px-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-600 hover:bg-slate-50 transition"
+                title="Limpar todos os filtros"
+              >
+                Limpar
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
+            <span>
+              Mostrando <strong id="countCamara" class="text-slate-900 font-bold">{deputadosVotos.length}</strong> de 513 deputados federais
+            </span>
+            <span class="text-slate-400">Clique no card para abrir a ficha completa</span>
+          </div>
+        </div>
+
+        <!-- Grid de Votos dos Deputados -->
+        <div id="gridCamara" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {deputadosVotos.map(p => (
+            <VotoParlamentarCard parlamentar={p} />
+          ))}
+        </div>
+
+        <!-- Empty State Câmara -->
+        <div id="emptyCamara" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200 p-8 space-y-3">
+          <p class="text-slate-500 text-sm">Nenhum deputado encontrado para os filtros selecionados.</p>
+          <button 
+            type="button" 
+            id="clearSearchEmptyCamara" 
+            class="text-xs text-emerald-700 font-semibold underline"
+          >
+            Limpar filtros e ver todos os deputados
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL SENADO -->
+      <div id="painelSenado" class="hidden space-y-6">
+        {temVotacaoSenado ? (
+          <>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+              <button 
+                type="button" 
+                data-filtro-voto-senado="" 
+                class="placar-senado-btn active p-4 rounded-2xl bg-white border-2 border-slate-900 text-left transition hover:shadow-sm"
+              >
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total</div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mt-0.5">81</div>
+                <div class="text-[11px] text-slate-400 mt-1">Todos os senadores</div>
+              </button>
+
+              <button 
+                type="button" 
+                data-filtro-voto-senado="sim" 
+                class="placar-senado-btn p-4 rounded-2xl bg-white border-2 border-emerald-200 text-left transition hover:border-emerald-500 hover:shadow-sm"
+              >
+                <div class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">A favor (Sim)</div>
+                <div class="text-2xl sm:text-3xl font-black text-emerald-600 mt-0.5">{senadoSim}</div>
+                <div class="text-[11px] text-slate-500 mt-1">{((senadoSim / 81) * 100).toFixed(1)}% do senado</div>
+              </button>
+
+              <button 
+                type="button" 
+                data-filtro-voto-senado="nao" 
+                class="placar-senado-btn p-4 rounded-2xl bg-white border-2 border-rose-200 text-left transition hover:border-rose-500 hover:shadow-sm"
+              >
+                <div class="text-xs font-semibold text-rose-700 uppercase tracking-wider">Contra (Não)</div>
+                <div class="text-2xl sm:text-3xl font-black text-rose-600 mt-0.5">{senadoNao}</div>
+                <div class="text-[11px] text-slate-500 mt-1">{((senadoNao / 81) * 100).toFixed(1)}% do senado</div>
+              </button>
+
+              <button 
+                type="button" 
+                data-filtro-voto-senado="ausente" 
+                class="placar-senado-btn p-4 rounded-2xl bg-white border-2 border-slate-200 text-left transition hover:border-slate-400 hover:shadow-sm"
+              >
+                <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider">Ausentes / Não votou</div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-600 mt-0.5">{senadoAusente}</div>
+                <div class="text-[11px] text-slate-400 mt-1">{((senadoAusente / 81) * 100).toFixed(1)}% do senado</div>
+              </button>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm space-y-4">
+              <div class="flex flex-col sm:flex-row gap-3">
+                <div class="relative flex-1">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                  <input 
+                    type="text" 
+                    id="searchSenadores" 
+                    placeholder="Busque por nome do senador, partido ou estado..."
+                    autocomplete="off"
+                    class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition outline-none"
+                  />
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
+                <span>
+                  Mostrando <strong id="countSenado" class="text-slate-900 font-bold">{senadoresVotos.length}</strong> de 81 senadores da República
+                </span>
+                <span class="text-slate-400">Clique no card para abrir a ficha completa</span>
+              </div>
+            </div>
+
+            <div id="gridSenado" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {senadoresVotos.map(s => (
+                <VotoParlamentarCard parlamentar={s} />
+              ))}
+            </div>
+
+            <div id="emptySenado" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200 p-8 space-y-3">
+              <p class="text-slate-500 text-sm">Nenhum senador encontrado para os filtros selecionados.</p>
+            </div>
+          </>
+        ) : (
+          <div class="bg-white rounded-2xl border border-amber-200 p-8 text-center space-y-4 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="max-w-xl mx-auto space-y-2">
+              <h3 class="text-lg font-bold text-slate-900">
+                Aguardando Deliberação em Plenário no Senado Federal
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Esta proposição foi aprovada na Câmara dos Deputados e encontra-se em tramitação regimental no Senado Federal. Conforme o pilar de <strong>verificabilidade e apartidarismo</strong> do Ficha do Político (<a href={`${base}criterios`} class="underline text-emerald-700">critérios oficiais</a>), votos nominais de parlamentares são incorporados exclusivamente após a votação oficial no Plenário.
+              </p>
+            </div>
+            <div class="pt-2">
+              <a 
+                href={tema.url_proposicao} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition shadow-xs"
+              >
+                <span>Acompanhar tramitação oficial do projeto ↗</span>
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Controle das Abas de Casa Legislativa (Câmara vs Senado)
+    const casaButtons = document.querySelectorAll('.casa-tab-btn');
+    const painelCamara = document.getElementById('painelCamara');
+    const painelSenado = document.getElementById('painelSenado');
+
+    casaButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        casaButtons.forEach(b => {
+          b.classList.remove('active', 'bg-white', 'text-slate-900', 'shadow-xs');
+          b.classList.add('text-slate-600');
+        });
+        btn.classList.add('active', 'bg-white', 'text-slate-900', 'shadow-xs');
+        btn.classList.remove('text-slate-600');
+
+        const casa = btn.getAttribute('data-casa');
+        if (casa === 'camara') {
+          painelCamara?.classList.remove('hidden');
+          painelSenado?.classList.add('hidden');
+        } else {
+          painelCamara?.classList.add('hidden');
+          painelSenado?.classList.remove('hidden');
+        }
+      });
+    });
+
+    // 2. Filtros Dinâmicos da Câmara
+    const searchDep = document.getElementById('searchDeputados');
+    const selectUfCamara = document.getElementById('selectUfCamara');
+    const selectPartidoCamara = document.getElementById('selectPartidoCamara');
+    const resetFiltersCamara = document.getElementById('resetFiltersCamara');
+    const placarBtns = document.querySelectorAll('.placar-btn');
+    const gridCamara = document.getElementById('gridCamara');
+    const emptyCamara = document.getElementById('emptyCamara');
+    const countCamara = document.getElementById('countCamara');
+    const clearSearchEmpty = document.getElementById('clearSearchEmptyCamara');
+
+    let filtroVotoAtivo = '';
+
+    function filtrarCamara() {
+      const termo = (searchDep?.value || '').toLowerCase().trim();
+      const uf = (selectUfCamara?.value || '').toLowerCase().trim();
+      const partido = (selectPartidoCamara?.value || '').toLowerCase().trim();
+
+      const cards = gridCamara ? gridCamara.querySelectorAll('.voto-parlamentar-card') : [];
+      let visiveis = 0;
+
+      cards.forEach(card => {
+        const nome = card.getAttribute('data-nome') || '';
+        const civil = card.getAttribute('data-civil') || '';
+        const cardPartido = card.getAttribute('data-partido') || '';
+        const cardUf = card.getAttribute('data-uf') || '';
+        const cardVoto = (card.getAttribute('data-voto') || '').toLowerCase();
+
+        const bateTexto = !termo || nome.includes(termo) || civil.includes(termo) || cardPartido.includes(termo) || cardUf.includes(termo);
+        const bateUf = !uf || cardUf === uf;
+        const batePartido = !partido || cardPartido === partido;
+
+        let bateVoto = true;
+        if (filtroVotoAtivo === 'sim') {
+          bateVoto = cardVoto === 'sim';
+        } else if (filtroVotoAtivo === 'nao') {
+          bateVoto = cardVoto === 'não' || cardVoto === 'nao';
+        } else if (filtroVotoAtivo === 'ausente') {
+          bateVoto = cardVoto.includes('ausente') || cardVoto.includes('não votou');
+        }
+
+        if (bateTexto && bateUf && batePartido && bateVoto) {
+          card.classList.remove('hidden');
+          visiveis++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (countCamara) countCamara.textContent = String(visiveis);
+      if (emptyCamara) {
+        if (visiveis === 0) {
+          emptyCamara.classList.remove('hidden');
+          gridCamara?.classList.add('hidden');
+        } else {
+          emptyCamara.classList.add('hidden');
+          gridCamara?.classList.remove('hidden');
+        }
+      }
+    }
+
+    placarBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        placarBtns.forEach(b => {
+          b.classList.remove('active', 'border-slate-900', 'ring-2', 'ring-slate-900/10');
+        });
+        btn.classList.add('active', 'border-slate-900', 'ring-2', 'ring-slate-900/10');
+        filtroVotoAtivo = btn.getAttribute('data-filtro-voto') || '';
+        filtrarCamara();
+      });
+    });
+
+    searchDep?.addEventListener('input', filtrarCamara);
+    selectUfCamara?.addEventListener('change', filtrarCamara);
+    selectPartidoCamara?.addEventListener('change', filtrarCamara);
+
+    function limparFiltrosCamara() {
+      if (searchDep) searchDep.value = '';
+      if (selectUfCamara) selectUfCamara.value = '';
+      if (selectPartidoCamara) selectPartidoCamara.value = '';
+      filtroVotoAtivo = '';
+      placarBtns.forEach((b, i) => {
+        if (i === 0) b.classList.add('active', 'border-slate-900');
+        else b.classList.remove('active', 'border-slate-900', 'ring-2', 'ring-slate-900/10');
+      });
+      filtrarCamara();
+    }
+
+    resetFiltersCamara?.addEventListener('click', limparFiltrosCamara);
+    clearSearchEmpty?.addEventListener('click', limparFiltrosCamara);
+
+    // 3. Filtros Dinâmicos do Senado
+    const searchSen = document.getElementById('searchSenadores');
+    const placarSenadoBtns = document.querySelectorAll('.placar-senado-btn');
+    const gridSenado = document.getElementById('gridSenado');
+    const emptySenado = document.getElementById('emptySenado');
+    const countSenado = document.getElementById('countSenado');
+
+    let filtroVotoSenadoAtivo = '';
+
+    function filtrarSenado() {
+      const termo = (searchSen?.value || '').toLowerCase().trim();
+      const cards = gridSenado ? gridSenado.querySelectorAll('.voto-parlamentar-card') : [];
+      let visiveis = 0;
+
+      cards.forEach(card => {
+        const nome = card.getAttribute('data-nome') || '';
+        const civil = card.getAttribute('data-civil') || '';
+        const partido = card.getAttribute('data-partido') || '';
+        const uf = card.getAttribute('data-uf') || '';
+        const cardVoto = (card.getAttribute('data-voto') || '').toLowerCase();
+
+        const bateTexto = !termo || nome.includes(termo) || civil.includes(termo) || partido.includes(termo) || uf.includes(termo);
+
+        let bateVoto = true;
+        if (filtroVotoSenadoAtivo === 'sim') {
+          bateVoto = cardVoto === 'sim';
+        } else if (filtroVotoSenadoAtivo === 'nao') {
+          bateVoto = cardVoto === 'não' || cardVoto === 'nao';
+        } else if (filtroVotoSenadoAtivo === 'ausente') {
+          bateVoto = cardVoto.includes('ausente') || cardVoto.includes('não votou');
+        }
+
+        if (bateTexto && bateVoto) {
+          card.classList.remove('hidden');
+          visiveis++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (countSenado) countSenado.textContent = String(visiveis);
+      if (emptySenado) {
+        if (visiveis === 0) {
+          emptySenado.classList.remove('hidden');
+          gridSenado?.classList.add('hidden');
+        } else {
+          emptySenado.classList.add('hidden');
+          gridSenado?.classList.remove('hidden');
+        }
+      }
+    }
+
+    placarSenadoBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        placarSenadoBtns.forEach(b => b.classList.remove('active', 'border-slate-900'));
+        btn.classList.add('active', 'border-slate-900');
+        filtroVotoSenadoAtivo = btn.getAttribute('data-filtro-voto-senado') || '';
+        filtrarSenado();
+      });
+    });
+
+    searchSen?.addEventListener('input', filtrarSenado);
+  });
+</script>

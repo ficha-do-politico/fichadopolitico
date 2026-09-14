@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import temasData from '../data/temas.json';
+import votacoesData from '../data/votacoes.json';
+import type { Tema, VotacaoDetalhe } from '../types';
+
+const temas = (temasData as Tema[]).sort((a, b) => a.ordem - b.ordem);
+const votacoesMap = votacoesData as Record<string, VotacaoDetalhe>;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout 
+  title="Votações Nominais"
+  description="Consulte a lista nominal de quem votou a favor, contra e ausentes nas votações mais relevantes do Congresso Nacional."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-8">
+    <!-- Header -->
+    <header class="space-y-4 border-b border-slate-200 pb-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+        Radar de Votações Nominais • 57ª Legislatura
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Votações em Destaque
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
+        Selecione uma deliberação do Congresso para ver o <strong>placar completo</strong>, as <strong>orientações de cada partido</strong> e a <strong>lista nominal de quem votou a favor, contra ou esteve ausente</strong>.
+      </p>
+    </header>
+
+    <!-- Lista de Votações Curadas -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between text-sm text-slate-500">
+        <span>{temas.length} deliberações oficiais cadastradas</span>
+        <a href={`${base}criterios`} class="text-emerald-700 hover:underline font-medium text-xs sm:text-sm">
+          Entenda os critérios de seleção ↗
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4">
+        {temas.map(tema => {
+          const votacao = votacoesMap[tema.id];
+          const camaraDist = votacao?.camara?.distribuicao_votos || {};
+          const simCount = camaraDist['Sim'] || 0;
+          const naoCount = camaraDist['Não'] || 0;
+          const temSenado = Boolean(tema.senado);
+
+          return (
+            <article class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:border-slate-300 hover:shadow-md transition space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    {tema.proposicao}
+                  </span>
+                  <span class="text-xs text-slate-500 font-medium">
+                    Data: {tema.data}
+                  </span>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700">
+                    {tema.tipo}
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                    Câmara: {simCount > 0 ? `Sim: ${simCount} • Não: ${naoCount}` : 'Nominal'}
+                  </span>
+                  {temSenado ? (
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200">
+                      Senado: Deliberado
+                    </span>
+                  ) : (
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                      Senado: Aguarda Plenário
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <h2 class="text-xl font-bold text-slate-900 hover:text-emerald-700 transition">
+                  <a href={`${base}votacao/${tema.id}`}>
+                    {tema.titulo}
+                  </a>
+                </h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  {tema.subtitulo}
+                </p>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500 italic">
+                  Resultado: <span class="font-medium text-slate-800">{tema.resultado_oficial}</span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <a 
+                    href={`${base}votacao/${tema.id}`}
+                    class="inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow-xs"
+                  >
+                    <span>Ver lista de quem votou a favor / contra</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  </div>
+</Layout>

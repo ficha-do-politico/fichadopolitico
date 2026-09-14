@@ -136,7 +136,9 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                     </span>
                   </div>
                   <h3 class="text-lg font-bold text-slate-900">
-                    {tema.titulo}
+                    <a href={`${base}votacao/${tema.id}`} class="hover:text-emerald-700 transition">
+                      {tema.titulo}
+                    </a>
                   </h3>
                   <p class="text-xs sm:text-sm text-slate-600">
                     {tema.subtitulo}
@@ -171,6 +173,13 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                     class="text-emerald-700 hover:text-emerald-900 underline inline-flex items-center gap-0.5"
                   >
                     <span>Íntegra da proposição ↗</span>
+                  </a>
+                  <span>•</span>
+                  <a 
+                    href={`${base}votacao/${tema.id}`} 
+                    class="text-emerald-700 hover:text-emerald-900 font-semibold underline inline-flex items-center gap-0.5"
+                  >
+                    <span>Ver todos os votos desta votação →</span>
                   </a>
                 </div>
               </div>
