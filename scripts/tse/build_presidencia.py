@@ -29,7 +29,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido Liberal",
         "numeroUrna": "22",
         "cargo": "Presidente",
-        "fotoUrl": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg",
+        "fotoUrl": "fotos/presidencia/flavio-bolsonaro.jpg",
+        "fotoFonteOficial": "Senado Federal (senado.leg.br)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Alfredo Gaspar", "partido": "UNIÃO"},
@@ -203,7 +204,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido dos Trabalhadores",
         "numeroUrna": "13",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607829/2022/BR",
+        "fotoUrl": "fotos/presidencia/luiz-inacio-lula-da-silva.jpg",
+        "fotoFonteOficial": "Presidência da República / Ricardo Stuckert (gov.br)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Geraldo Alckmin", "partido": "PSB"},
@@ -345,7 +347,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido Novo",
         "numeroUrna": "30",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/130001607830/2022/MG",
+        "fotoUrl": "fotos/presidencia/romeu-zema.jpg",
+        "fotoFonteOficial": "Governo do Estado de Minas Gerais (mg.gov.br)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
@@ -431,7 +434,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido Social Democrático",
         "numeroUrna": "55",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/90001607855/2022/GO",
+        "fotoUrl": "fotos/presidencia/ronaldo-caiado.jpg",
+        "fotoFonteOficial": "Governo do Estado de Goiás (go.gov.br)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Gilberto Kassab", "partido": "PSD"},
@@ -542,7 +546,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Avante",
         "numeroUrna": "70",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607870/2026/BR",
+        "fotoUrl": "fotos/presidencia/augusto-cury.jpg",
+        "fotoFonteOficial": "Divulgação Oficial / Acervo Aberto (CC BY)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Júlio Delgado", "partido": "AVANTE"},
@@ -581,7 +586,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido Missão",
         "numeroUrna": "33",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607833/2026/BR",
+        "fotoUrl": "fotos/presidencia/renan-santos.jpg",
+        "fotoFonteOficial": "Divulgação Institucional / Movimento Missão",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
@@ -619,7 +625,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Unidade Popular",
         "numeroUrna": "80",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607880/2026/BR",
+        "fotoUrl": "fotos/presidencia/samara-martins.jpg",
+        "fotoFonteOficial": "TSE DivulgaCandContas (Registro Oficial 2022)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Raquel Brício", "partido": "UP"},
@@ -662,7 +669,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido da Causa Operária",
         "numeroUrna": "29",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607829/2026/BR",
+        "fotoUrl": "fotos/presidencia/rui-costa-pimenta.jpg",
+        "fotoFonteOficial": "Agência Brasil / EBC (agenciabrasil.ebc.com.br)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Antônio Carlos", "partido": "PCO"},
@@ -693,7 +701,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido Comunista Brasileiro",
         "numeroUrna": "21",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607821/2026/BR",
+        "fotoUrl": "fotos/presidencia/edmilson-costa.jpg",
+        "fotoFonteOficial": "Acervo Partidário Oficial PCB / Registro Eleitoral",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
@@ -726,7 +735,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Partido Socialista dos Trabalhadores Unificado",
         "numeroUrna": "16",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607816/2026/BR",
+        "fotoUrl": "fotos/presidencia/hertz-dias.jpg",
+        "fotoFonteOficial": "Acervo Partidário Oficial PSTU / Registro Eleitoral",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
@@ -768,7 +778,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Democracia Cristã",
         "numeroUrna": "27",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607827/2026/BR",
+        "fotoUrl": "fotos/presidencia/clariana-barao.jpg",
+        "fotoFonteOficial": "TSE DivulgaCandContas (Registro Eleitoral)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
@@ -801,7 +812,8 @@ PRESIDENCIA_DATA_2026 = [
         "partidoNome": "Democrata",
         "numeroUrna": "35",
         "cargo": "Presidente",
-        "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607835/2026/BR",
+        "fotoUrl": "fotos/presidencia/wilson-grassi.jpg",
+        "fotoFonteOficial": "TSE DivulgaCandContas (Registro Eleitoral)",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
@@ -845,6 +857,15 @@ def validate_and_save():
         violation = cand_keys.intersection(prohibited_keys)
         if violation:
             raise ValueError(f"Violação LGPD detectada no candidato {cand['id']}: {violation}")
+
+        # Validar fotoUrl e fotos locais
+        foto_url = cand.get("fotoUrl", "")
+        if "divulgacandcontas.tse.jus.br" in foto_url:
+            raise ValueError(f"Hotlinking não permitido para o WAF do TSE em {cand['id']}: {foto_url}")
+        if foto_url.startswith("fotos/"):
+            foto_path = ROOT / "site" / "public" / foto_url
+            if not foto_path.exists():
+                raise FileNotFoundError(f"Foto local não encontrada para {cand['id']}: {foto_path}")
 
         # Validar histórico patrimonial
         for hist in cand["historicoPatrimonial"]:
