@@ -30,8 +30,12 @@ PROHIBITED_LGPD_KEYS = {
 
 class TestTSEPatrimonio(unittest.TestCase):
     def setUp(self):
-        self.assertTrue(CANON_PRESIDENCIA.exists(), f"Arquivo canônico ausente: {CANON_PRESIDENCIA}")
-        self.assertTrue(SITE_PRESIDENCIA.exists(), f"Arquivo compilado do site ausente: {SITE_PRESIDENCIA}")
+        self.assertTrue(
+            CANON_PRESIDENCIA.exists(), f"Arquivo canônico ausente: {CANON_PRESIDENCIA}"
+        )
+        self.assertTrue(
+            SITE_PRESIDENCIA.exists(), f"Arquivo compilado do site ausente: {SITE_PRESIDENCIA}"
+        )
 
         with open(CANON_PRESIDENCIA, encoding="utf-8") as f:
             self.canon_candidatos = json.load(f)
@@ -82,7 +86,9 @@ class TestTSEPatrimonio(unittest.TestCase):
             "tsePerfilUrl",
             "historicoPatrimonial",
         ]
-        self.assertGreaterEqual(len(self.site_candidatos), 10, "Esperado ao menos 10 candidatos presidenciais.")
+        self.assertGreaterEqual(
+            len(self.site_candidatos), 10, "Esperado ao menos 10 candidatos presidenciais."
+        )
 
         for cand in self.site_candidatos:
             cid = cand.get("id")
@@ -90,11 +96,17 @@ class TestTSEPatrimonio(unittest.TestCase):
                 self.assertIn(campo, cand, f"Campo {campo} ausente no candidato {cid}")
 
             historico = cand["historicoPatrimonial"]
-            self.assertGreaterEqual(len(historico), 1, f"Candidato {cid} deve ter ao menos 1 registro patrimonial.")
+            self.assertGreaterEqual(
+                len(historico), 1, f"Candidato {cid} deve ter ao menos 1 registro patrimonial."
+            )
 
             # Valida ordenação cronológica do histórico
             anos = [h["ano"] for h in historico]
-            self.assertEqual(anos, sorted(anos), f"Histórico patrimonial de {cid} não está em ordem cronológica: {anos}")
+            self.assertEqual(
+                anos,
+                sorted(anos),
+                f"Histórico patrimonial de {cid} não está em ordem cronológica: {anos}",
+            )
 
             for h in historico:
                 self.assertIsInstance(h["totalDeclarado"], (int, float))

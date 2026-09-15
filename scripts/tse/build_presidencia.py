@@ -32,10 +32,7 @@ PRESIDENCIA_DATA_2026 = [
         "fotoUrl": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
         "situacaoCandidatura": "Deferido",
-        "vice": {
-            "nomeUrna": "Alfredo Gaspar",
-            "partido": "UNIÃO"
-        },
+        "vice": {"nomeUrna": "Alfredo Gaspar", "partido": "UNIÃO"},
         "historicoPatrimonial": [
             {
                 "ano": 2006,
@@ -44,10 +41,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 385.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2006/RJ/7/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial no Rio de Janeiro/RJ", "valor": 250000.00},
-                    {"tipo": "Veículo Automotor Terrestre", "descricao": "Veículo automotor terrestre declarado", "valor": 65000.00},
-                    {"tipo": "Aplicações e Depósitos", "descricao": "Saldo bancário e poupança", "valor": 70000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial no Rio de Janeiro/RJ",
+                        "valor": 250000.00,
+                    },
+                    {
+                        "tipo": "Veículo Automotor Terrestre",
+                        "descricao": "Veículo automotor terrestre declarado",
+                        "valor": 65000.00,
+                    },
+                    {
+                        "tipo": "Aplicações e Depósitos",
+                        "descricao": "Saldo bancário e poupança",
+                        "valor": 70000.00,
+                    },
+                ],
             },
             {
                 "ano": 2010,
@@ -56,10 +65,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 691.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2010/RJ/7/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial na Barra da Tijuca, Rio de Janeiro/RJ", "valor": 450000.00},
-                    {"tipo": "Salas ou Conjuntos", "descricao": "Sala comercial no Rio de Janeiro/RJ", "valor": 120000.00},
-                    {"tipo": "Aplicações Financeiras", "descricao": "Investimentos e saldo bancário", "valor": 121000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial na Barra da Tijuca, Rio de Janeiro/RJ",
+                        "valor": 450000.00,
+                    },
+                    {
+                        "tipo": "Salas ou Conjuntos",
+                        "descricao": "Sala comercial no Rio de Janeiro/RJ",
+                        "valor": 120000.00,
+                    },
+                    {
+                        "tipo": "Aplicações Financeiras",
+                        "descricao": "Investimentos e saldo bancário",
+                        "valor": 121000.00,
+                    },
+                ],
             },
             {
                 "ano": 2014,
@@ -68,10 +89,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 714.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/RJ/7/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial no Rio de Janeiro/RJ", "valor": 450000.00},
-                    {"tipo": "Salas ou Conjuntos", "descricao": "Sala comercial na Barra da Tijuca", "valor": 140000.00},
-                    {"tipo": "Veículo e Aplicações", "descricao": "Veículo e investimentos em renda fixa", "valor": 124000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial no Rio de Janeiro/RJ",
+                        "valor": 450000.00,
+                    },
+                    {
+                        "tipo": "Salas ou Conjuntos",
+                        "descricao": "Sala comercial na Barra da Tijuca",
+                        "valor": 140000.00,
+                    },
+                    {
+                        "tipo": "Veículo e Aplicações",
+                        "descricao": "Veículo e investimentos em renda fixa",
+                        "valor": 124000.00,
+                    },
+                ],
             },
             {
                 "ano": 2016,
@@ -80,10 +113,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 1.500.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2016/RJ/11/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em Laranjeiras, Rio de Janeiro/RJ", "valor": 844000.00},
-                    {"tipo": "Salas Comerciais", "descricao": "Salas comerciais no Edifício Barra Prime, Rio de Janeiro/RJ", "valor": 450000.00},
-                    {"tipo": "Aplicações e Investimentos", "descricao": "Quotas de franquia e aplicações financeiras", "valor": 206000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em Laranjeiras, Rio de Janeiro/RJ",
+                        "valor": 844000.00,
+                    },
+                    {
+                        "tipo": "Salas Comerciais",
+                        "descricao": "Salas comerciais no Edifício Barra Prime, Rio de Janeiro/RJ",
+                        "valor": 450000.00,
+                    },
+                    {
+                        "tipo": "Aplicações e Investimentos",
+                        "descricao": "Quotas de franquia e aplicações financeiras",
+                        "valor": 206000.00,
+                    },
+                ],
             },
             {
                 "ano": 2018,
@@ -92,11 +137,27 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 1.740.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2018/2022802018/RJ/190000600001/bens",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em Laranjeiras, Rio de Janeiro/RJ", "valor": 950000.00},
-                    {"tipo": "Salas Comerciais", "descricao": "Salas comerciais na Barra da Tijuca, Rio de Janeiro/RJ", "valor": 550000.00},
-                    {"tipo": "Quotas de Capital / Franquia", "descricao": "Participação em sociedade limitada (loja de chocolates)", "valor": 100000.00},
-                    {"tipo": "Aplicações Financeiras", "descricao": "Caderneta de poupança e saldo bancário", "valor": 140000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em Laranjeiras, Rio de Janeiro/RJ",
+                        "valor": 950000.00,
+                    },
+                    {
+                        "tipo": "Salas Comerciais",
+                        "descricao": "Salas comerciais na Barra da Tijuca, Rio de Janeiro/RJ",
+                        "valor": 550000.00,
+                    },
+                    {
+                        "tipo": "Quotas de Capital / Franquia",
+                        "descricao": "Participação em sociedade limitada (loja de chocolates)",
+                        "valor": 100000.00,
+                    },
+                    {
+                        "tipo": "Aplicações Financeiras",
+                        "descricao": "Caderneta de poupança e saldo bancário",
+                        "valor": 140000.00,
+                    },
+                ],
             },
             {
                 "ano": 2026,
@@ -105,14 +166,34 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 8.180.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Casa Residencial (Mansão)", "descricao": "Casa residencial no setor de Mansões Dom Bosco, Lago Sul, Brasília/DF", "valor": 6200000.00},
-                    {"tipo": "Salas Comerciais", "descricao": "Conjunto de salas comerciais na Barra da Tijuca, Rio de Janeiro/RJ", "valor": 950000.00},
-                    {"tipo": "Aplicações de Renda Fixa e Fundos", "descricao": "Aplicações financeiras em instituições financeiras nacionais", "valor": 680000.00},
-                    {"tipo": "Veículo Automotor Terrestre", "descricao": "Veículo automotor terrestre modelo 2024", "valor": 250000.00},
-                    {"tipo": "Depósitos Bancários", "descricao": "Saldo em conta corrente bancária", "valor": 100000.00}
-                ]
-            }
-        ]
+                    {
+                        "tipo": "Casa Residencial (Mansão)",
+                        "descricao": "Casa residencial no setor de Mansões Dom Bosco, Lago Sul, Brasília/DF",
+                        "valor": 6200000.00,
+                    },
+                    {
+                        "tipo": "Salas Comerciais",
+                        "descricao": "Conjunto de salas comerciais na Barra da Tijuca, Rio de Janeiro/RJ",
+                        "valor": 950000.00,
+                    },
+                    {
+                        "tipo": "Aplicações de Renda Fixa e Fundos",
+                        "descricao": "Aplicações financeiras em instituições financeiras nacionais",
+                        "valor": 680000.00,
+                    },
+                    {
+                        "tipo": "Veículo Automotor Terrestre",
+                        "descricao": "Veículo automotor terrestre modelo 2024",
+                        "valor": 250000.00,
+                    },
+                    {
+                        "tipo": "Depósitos Bancários",
+                        "descricao": "Saldo em conta corrente bancária",
+                        "valor": 100000.00,
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "luiz-inacio-lula-da-silva",
@@ -125,10 +206,7 @@ PRESIDENCIA_DATA_2026 = [
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607829/2022/BR",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
         "situacaoCandidatura": "Deferido",
-        "vice": {
-            "nomeUrna": "Geraldo Alckmin",
-            "partido": "PSB"
-        },
+        "vice": {"nomeUrna": "Geraldo Alckmin", "partido": "PSB"},
         "historicoPatrimonial": [
             {
                 "ano": 2006,
@@ -137,11 +215,27 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 839.033,52",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2006/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Terreno", "descricao": "Terreno urbano em São Bernardo do Campo/SP", "valor": 265000.00},
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em São Bernardo do Campo/SP", "valor": 130000.00},
-                    {"tipo": "Aplicação de Renda Fixa", "descricao": "Aplicações financeiras (CDB / Fundos de Renda Fixa)", "valor": 249033.52},
-                    {"tipo": "Outros Bens Móveis", "descricao": "Veículos e participações declarados à Receita Federal", "valor": 195000.00}
-                ]
+                    {
+                        "tipo": "Terreno",
+                        "descricao": "Terreno urbano em São Bernardo do Campo/SP",
+                        "valor": 265000.00,
+                    },
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
+                        "valor": 130000.00,
+                    },
+                    {
+                        "tipo": "Aplicação de Renda Fixa",
+                        "descricao": "Aplicações financeiras (CDB / Fundos de Renda Fixa)",
+                        "valor": 249033.52,
+                    },
+                    {
+                        "tipo": "Outros Bens Móveis",
+                        "descricao": "Veículos e participações declarados à Receita Federal",
+                        "valor": 195000.00,
+                    },
+                ],
             },
             {
                 "ano": 2022,
@@ -150,17 +244,57 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 7.423.725,78",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607829/bens",
                 "bens": [
-                    {"tipo": "VGBL - Previdência Privada", "descricao": "Plano de previdência privada Vida Gerador de Benefício Livre (VGBL)", "valor": 5570798.99},
-                    {"tipo": "Construção Residencial", "descricao": "Construção residencial em São Bernardo do Campo/SP", "valor": 246918.82},
-                    {"tipo": "Terreno", "descricao": "Terreno em São Bernardo do Campo/SP", "valor": 265000.00},
-                    {"tipo": "Terreno", "descricao": "Terreno urbano adquirido em São Bernardo do Campo/SP", "valor": 130000.00},
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em São Bernardo do Campo/SP", "valor": 94571.25},
-                    {"tipo": "Veículo Automotor Terrestre", "descricao": "Veículo automotor terrestre declarado", "valor": 85000.00},
-                    {"tipo": "Veículo Automotor Terrestre", "descricao": "Veículo automotor terrestre declarado", "valor": 48475.00},
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em São Bernardo do Campo/SP", "valor": 19167.34},
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em São Bernardo do Campo/SP", "valor": 19167.34},
-                    {"tipo": "Aplicação Financeira / Outros", "descricao": "Caderneta de poupança, quotas societárias e depósitos bancários", "valor": 944627.04}
-                ]
+                    {
+                        "tipo": "VGBL - Previdência Privada",
+                        "descricao": "Plano de previdência privada Vida Gerador de Benefício Livre (VGBL)",
+                        "valor": 5570798.99,
+                    },
+                    {
+                        "tipo": "Construção Residencial",
+                        "descricao": "Construção residencial em São Bernardo do Campo/SP",
+                        "valor": 246918.82,
+                    },
+                    {
+                        "tipo": "Terreno",
+                        "descricao": "Terreno em São Bernardo do Campo/SP",
+                        "valor": 265000.00,
+                    },
+                    {
+                        "tipo": "Terreno",
+                        "descricao": "Terreno urbano adquirido em São Bernardo do Campo/SP",
+                        "valor": 130000.00,
+                    },
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
+                        "valor": 94571.25,
+                    },
+                    {
+                        "tipo": "Veículo Automotor Terrestre",
+                        "descricao": "Veículo automotor terrestre declarado",
+                        "valor": 85000.00,
+                    },
+                    {
+                        "tipo": "Veículo Automotor Terrestre",
+                        "descricao": "Veículo automotor terrestre declarado",
+                        "valor": 48475.00,
+                    },
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
+                        "valor": 19167.34,
+                    },
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
+                        "valor": 19167.34,
+                    },
+                    {
+                        "tipo": "Aplicação Financeira / Outros",
+                        "descricao": "Caderneta de poupança, quotas societárias e depósitos bancários",
+                        "valor": 944627.04,
+                    },
+                ],
             },
             {
                 "ano": 2026,
@@ -169,15 +303,39 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 4.775.650,64",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "VGBL - Previdência Privada", "descricao": "Plano de previdência privada VGBL", "valor": 3300000.00},
-                    {"tipo": "Construção Residencial", "descricao": "Construção residencial em São Bernardo do Campo/SP", "valor": 246918.82},
-                    {"tipo": "Terreno", "descricao": "Terreno em São Bernardo do Campo/SP", "valor": 265000.00},
-                    {"tipo": "Terreno", "descricao": "Terreno urbano em São Bernardo do Campo/SP", "valor": 130000.00},
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em São Bernardo do Campo/SP", "valor": 94571.25},
-                    {"tipo": "Aplicações e Depósitos", "descricao": "Saldo em caderneta de poupança e contas bancárias", "valor": 739160.57}
-                ]
-            }
-        ]
+                    {
+                        "tipo": "VGBL - Previdência Privada",
+                        "descricao": "Plano de previdência privada VGBL",
+                        "valor": 3300000.00,
+                    },
+                    {
+                        "tipo": "Construção Residencial",
+                        "descricao": "Construção residencial em São Bernardo do Campo/SP",
+                        "valor": 246918.82,
+                    },
+                    {
+                        "tipo": "Terreno",
+                        "descricao": "Terreno em São Bernardo do Campo/SP",
+                        "valor": 265000.00,
+                    },
+                    {
+                        "tipo": "Terreno",
+                        "descricao": "Terreno urbano em São Bernardo do Campo/SP",
+                        "valor": 130000.00,
+                    },
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
+                        "valor": 94571.25,
+                    },
+                    {
+                        "tipo": "Aplicações e Depósitos",
+                        "descricao": "Saldo em caderneta de poupança e contas bancárias",
+                        "valor": 739160.57,
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "romeu-zema",
@@ -198,10 +356,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 69.752.863,96",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2018/2022802018/MG/130000600001/bens",
                 "bens": [
-                    {"tipo": "Quotas de Sociedade / Holding", "descricao": "Participação em holdings e empresas do Grupo Zema", "valor": 45000000.00},
-                    {"tipo": "Aplicações Financeiras / Fundos", "descricao": "Aplicações em fundos de investimento e ações", "valor": 18500000.00},
-                    {"tipo": "Imóveis Residenciais e Comerciais", "descricao": "Imóveis declarados em Araxá e Belo Horizonte/MG", "valor": 6252863.96}
-                ]
+                    {
+                        "tipo": "Quotas de Sociedade / Holding",
+                        "descricao": "Participação em holdings e empresas do Grupo Zema",
+                        "valor": 45000000.00,
+                    },
+                    {
+                        "tipo": "Aplicações Financeiras / Fundos",
+                        "descricao": "Aplicações em fundos de investimento e ações",
+                        "valor": 18500000.00,
+                    },
+                    {
+                        "tipo": "Imóveis Residenciais e Comerciais",
+                        "descricao": "Imóveis declarados em Araxá e Belo Horizonte/MG",
+                        "valor": 6252863.96,
+                    },
+                ],
             },
             {
                 "ano": 2022,
@@ -210,10 +380,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 129.795.421,70",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/MG/130001607830/bens",
                 "bens": [
-                    {"tipo": "Quotas de Capital / Holding", "descricao": "Participação na holding familiar Zema Participações", "valor": 78000000.00},
-                    {"tipo": "Aplicações em Fundos de Investimento", "descricao": "Cotas de fundos de investimento multimercado e renda fixa", "valor": 43500000.00},
-                    {"tipo": "Imóveis e Terrenos", "descricao": "Casas, apartamentos e terrenos em Minas Gerais", "valor": 8295421.70}
-                ]
+                    {
+                        "tipo": "Quotas de Capital / Holding",
+                        "descricao": "Participação na holding familiar Zema Participações",
+                        "valor": 78000000.00,
+                    },
+                    {
+                        "tipo": "Aplicações em Fundos de Investimento",
+                        "descricao": "Cotas de fundos de investimento multimercado e renda fixa",
+                        "valor": 43500000.00,
+                    },
+                    {
+                        "tipo": "Imóveis e Terrenos",
+                        "descricao": "Casas, apartamentos e terrenos em Minas Gerais",
+                        "valor": 8295421.70,
+                    },
+                ],
             },
             {
                 "ano": 2026,
@@ -222,12 +404,24 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 178.700.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Quotas de Holding Familiar", "descricao": "Participações societárias na holding familiar do Grupo Zema", "valor": 94000000.00},
-                    {"tipo": "Fundos de Investimento e Renda Fixa", "descricao": "Carteira de fundos de investimento e aplicações no Brasil", "valor": 56200000.00},
-                    {"tipo": "Imóveis Residenciais e Terrenos", "descricao": "Propriedades residenciais e terrenos no estado de Minas Gerais", "valor": 28500000.00}
-                ]
-            }
-        ]
+                    {
+                        "tipo": "Quotas de Holding Familiar",
+                        "descricao": "Participações societárias na holding familiar do Grupo Zema",
+                        "valor": 94000000.00,
+                    },
+                    {
+                        "tipo": "Fundos de Investimento e Renda Fixa",
+                        "descricao": "Carteira de fundos de investimento e aplicações no Brasil",
+                        "valor": 56200000.00,
+                    },
+                    {
+                        "tipo": "Imóveis Residenciais e Terrenos",
+                        "descricao": "Propriedades residenciais e terrenos no estado de Minas Gerais",
+                        "valor": 28500000.00,
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "ronaldo-caiado",
@@ -240,10 +434,7 @@ PRESIDENCIA_DATA_2026 = [
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/90001607855/2022/GO",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
         "situacaoCandidatura": "Deferido",
-        "vice": {
-            "nomeUrna": "Gilberto Kassab",
-            "partido": "PSD"
-        },
+        "vice": {"nomeUrna": "Gilberto Kassab", "partido": "PSD"},
         "historicoPatrimonial": [
             {
                 "ano": 2014,
@@ -252,10 +443,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 7.500.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/GO/5/candidatos",
                 "bens": [
-                    {"tipo": "Imóvel Rural / Fazenda", "descricao": "Fazendas e terras agropecuárias no estado de Goiás", "valor": 5200000.00},
-                    {"tipo": "Rebanho Bovino", "descricao": "Semoventes e rebanho de gado bovino", "valor": 1500000.00},
-                    {"tipo": "Imóveis Urbanos", "descricao": "Casas residenciais em Goiânia/GO e Brasília/DF", "valor": 800000.00}
-                ]
+                    {
+                        "tipo": "Imóvel Rural / Fazenda",
+                        "descricao": "Fazendas e terras agropecuárias no estado de Goiás",
+                        "valor": 5200000.00,
+                    },
+                    {
+                        "tipo": "Rebanho Bovino",
+                        "descricao": "Semoventes e rebanho de gado bovino",
+                        "valor": 1500000.00,
+                    },
+                    {
+                        "tipo": "Imóveis Urbanos",
+                        "descricao": "Casas residenciais em Goiânia/GO e Brasília/DF",
+                        "valor": 800000.00,
+                    },
+                ],
             },
             {
                 "ano": 2018,
@@ -264,10 +467,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 8.200.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2018/2022802018/GO/90000600001/bens",
                 "bens": [
-                    {"tipo": "Imóveis Rurais / Terras", "descricao": "Fazendas e propriedades agropecuárias em Goiás e Bahia", "valor": 5800000.00},
-                    {"tipo": "Rebanho de Gado", "descricao": "Gado bovino registrado na agropecuária", "valor": 1600000.00},
-                    {"tipo": "Imóveis Urbanos e Aplicações", "descricao": "Apartamento em Goiânia e fundos bancários", "valor": 800000.00}
-                ]
+                    {
+                        "tipo": "Imóveis Rurais / Terras",
+                        "descricao": "Fazendas e propriedades agropecuárias em Goiás e Bahia",
+                        "valor": 5800000.00,
+                    },
+                    {
+                        "tipo": "Rebanho de Gado",
+                        "descricao": "Gado bovino registrado na agropecuária",
+                        "valor": 1600000.00,
+                    },
+                    {
+                        "tipo": "Imóveis Urbanos e Aplicações",
+                        "descricao": "Apartamento em Goiânia e fundos bancários",
+                        "valor": 800000.00,
+                    },
+                ],
             },
             {
                 "ano": 2022,
@@ -276,10 +491,22 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 24.890.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/GO/90001607855/bens",
                 "bens": [
-                    {"tipo": "Fazendas e Propriedades Rurais", "descricao": "Áreas rurais agropecuárias em Goiás", "valor": 17500000.00},
-                    {"tipo": "Rebanho Bovino", "descricao": "Cabeças de gado e matrizes reprodutoras", "valor": 5500000.00},
-                    {"tipo": "Imóveis Urbanos e Investimentos", "descricao": "Casas e aplicações financeiras", "valor": 1890000.00}
-                ]
+                    {
+                        "tipo": "Fazendas e Propriedades Rurais",
+                        "descricao": "Áreas rurais agropecuárias em Goiás",
+                        "valor": 17500000.00,
+                    },
+                    {
+                        "tipo": "Rebanho Bovino",
+                        "descricao": "Cabeças de gado e matrizes reprodutoras",
+                        "valor": 5500000.00,
+                    },
+                    {
+                        "tipo": "Imóveis Urbanos e Investimentos",
+                        "descricao": "Casas e aplicações financeiras",
+                        "valor": 1890000.00,
+                    },
+                ],
             },
             {
                 "ano": 2026,
@@ -288,12 +515,24 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 52.560.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Imóveis Rurais e Urbanos", "descricao": "Fazendas produtivas e imóveis nos estados de GO e BA", "valor": 36200000.00},
-                    {"tipo": "Rebanho Bovino (Semoventes)", "descricao": "Rebanho bovino e gado de corte/criação registrado", "valor": 10490000.00},
-                    {"tipo": "Aplicações e Participações", "descricao": "Aplicações de renda fixa, quotas societárias e depósitos", "valor": 5870000.00}
-                ]
-            }
-        ]
+                    {
+                        "tipo": "Imóveis Rurais e Urbanos",
+                        "descricao": "Fazendas produtivas e imóveis nos estados de GO e BA",
+                        "valor": 36200000.00,
+                    },
+                    {
+                        "tipo": "Rebanho Bovino (Semoventes)",
+                        "descricao": "Rebanho bovino e gado de corte/criação registrado",
+                        "valor": 10490000.00,
+                    },
+                    {
+                        "tipo": "Aplicações e Participações",
+                        "descricao": "Aplicações de renda fixa, quotas societárias e depósitos",
+                        "valor": 5870000.00,
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "augusto-cury",
@@ -306,10 +545,7 @@ PRESIDENCIA_DATA_2026 = [
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607870/2026/BR",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
         "situacaoCandidatura": "Deferido",
-        "vice": {
-            "nomeUrna": "Júlio Delgado",
-            "partido": "AVANTE"
-        },
+        "vice": {"nomeUrna": "Júlio Delgado", "partido": "AVANTE"},
         "historicoPatrimonial": [
             {
                 "ano": 2026,
@@ -318,12 +554,24 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 38.450.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Direitos Autorais e Propriedade Intelectual", "descricao": "Direitos autorais de obras literárias e editoriais no Brasil e exterior", "valor": 22000000.00},
-                    {"tipo": "Imóveis Residenciais e Comerciais", "descricao": "Imóveis declarados nos estados de São Paulo e Minas Gerais", "valor": 11500000.00},
-                    {"tipo": "Aplicações Financeiras", "descricao": "Fundos de investimento e títulos de renda fixa", "valor": 4950000.00}
-                ]
+                    {
+                        "tipo": "Direitos Autorais e Propriedade Intelectual",
+                        "descricao": "Direitos autorais de obras literárias e editoriais no Brasil e exterior",
+                        "valor": 22000000.00,
+                    },
+                    {
+                        "tipo": "Imóveis Residenciais e Comerciais",
+                        "descricao": "Imóveis declarados nos estados de São Paulo e Minas Gerais",
+                        "valor": 11500000.00,
+                    },
+                    {
+                        "tipo": "Aplicações Financeiras",
+                        "descricao": "Fundos de investimento e títulos de renda fixa",
+                        "valor": 4950000.00,
+                    },
+                ],
             }
-        ]
+        ],
     },
     {
         "id": "renan-santos",
@@ -344,12 +592,24 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 1.250.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial na cidade de São Paulo/SP", "valor": 850000.00},
-                    {"tipo": "Quotas de Capital", "descricao": "Participação em sociedade limitada de produção de conteúdo", "valor": 250000.00},
-                    {"tipo": "Aplicações e Depósitos", "descricao": "Investimentos em renda fixa e saldo bancário", "valor": 150000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial na cidade de São Paulo/SP",
+                        "valor": 850000.00,
+                    },
+                    {
+                        "tipo": "Quotas de Capital",
+                        "descricao": "Participação em sociedade limitada de produção de conteúdo",
+                        "valor": 250000.00,
+                    },
+                    {
+                        "tipo": "Aplicações e Depósitos",
+                        "descricao": "Investimentos em renda fixa e saldo bancário",
+                        "valor": 150000.00,
+                    },
+                ],
             }
-        ]
+        ],
     },
     {
         "id": "samara-martins",
@@ -362,10 +622,7 @@ PRESIDENCIA_DATA_2026 = [
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607880/2026/BR",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
         "situacaoCandidatura": "Deferido",
-        "vice": {
-            "nomeUrna": "Raquel Brício",
-            "partido": "UP"
-        },
+        "vice": {"nomeUrna": "Raquel Brício", "partido": "UP"},
         "historicoPatrimonial": [
             {
                 "ano": 2022,
@@ -374,8 +631,12 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 3.500,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607839/bens",
                 "bens": [
-                    {"tipo": "Caderneta de Poupança", "descricao": "Saldo em caderneta de poupança na Caixa Econômica", "valor": 3500.00}
-                ]
+                    {
+                        "tipo": "Caderneta de Poupança",
+                        "descricao": "Saldo em caderneta de poupança na Caixa Econômica",
+                        "valor": 3500.00,
+                    }
+                ],
             },
             {
                 "ano": 2026,
@@ -384,10 +645,14 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 4.800,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Caderneta de Poupança", "descricao": "Saldo em caderneta de poupança", "valor": 4800.00}
-                ]
-            }
-        ]
+                    {
+                        "tipo": "Caderneta de Poupança",
+                        "descricao": "Saldo em caderneta de poupança",
+                        "valor": 4800.00,
+                    }
+                ],
+            },
+        ],
     },
     {
         "id": "rui-costa-pimenta",
@@ -400,10 +665,7 @@ PRESIDENCIA_DATA_2026 = [
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607829/2026/BR",
         "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
         "situacaoCandidatura": "Deferido",
-        "vice": {
-            "nomeUrna": "Antônio Carlos",
-            "partido": "PCO"
-        },
+        "vice": {"nomeUrna": "Antônio Carlos", "partido": "PCO"},
         "historicoPatrimonial": [
             {
                 "ano": 2014,
@@ -411,7 +673,7 @@ PRESIDENCIA_DATA_2026 = [
                 "totalDeclarado": 0.00,
                 "totalFormatado": "R$ 0,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/BR/1/candidatos",
-                "bens": []
+                "bens": [],
             },
             {
                 "ano": 2026,
@@ -419,9 +681,9 @@ PRESIDENCIA_DATA_2026 = [
                 "totalDeclarado": 0.00,
                 "totalFormatado": "R$ 0,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
-                "bens": []
-            }
-        ]
+                "bens": [],
+            },
+        ],
     },
     {
         "id": "edmilson-costa",
@@ -442,11 +704,19 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 420.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial na cidade de São Paulo/SP", "valor": 380000.00},
-                    {"tipo": "Caderneta de Poupança", "descricao": "Saldo em poupança", "valor": 40000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial na cidade de São Paulo/SP",
+                        "valor": 380000.00,
+                    },
+                    {
+                        "tipo": "Caderneta de Poupança",
+                        "descricao": "Saldo em poupança",
+                        "valor": 40000.00,
+                    },
+                ],
             }
-        ]
+        ],
     },
     {
         "id": "hertz-dias",
@@ -467,8 +737,12 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 100.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607838/bens",
                 "bens": [
-                    {"tipo": "Casa", "descricao": "Casa residencial em São Luís/MA", "valor": 100000.00}
-                ]
+                    {
+                        "tipo": "Casa",
+                        "descricao": "Casa residencial em São Luís/MA",
+                        "valor": 100000.00,
+                    }
+                ],
             },
             {
                 "ano": 2026,
@@ -477,10 +751,14 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 120.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Casa", "descricao": "Casa residencial em São Luís/MA", "valor": 120000.00}
-                ]
-            }
-        ]
+                    {
+                        "tipo": "Casa",
+                        "descricao": "Casa residencial em São Luís/MA",
+                        "valor": 120000.00,
+                    }
+                ],
+            },
+        ],
     },
     {
         "id": "clariana-barao",
@@ -501,11 +779,19 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 580.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Apartamento", "descricao": "Apartamento residencial em Curitiba/PR", "valor": 480000.00},
-                    {"tipo": "Veículo Automotor Terrestre", "descricao": "Veículo de passeio", "valor": 100000.00}
-                ]
+                    {
+                        "tipo": "Apartamento",
+                        "descricao": "Apartamento residencial em Curitiba/PR",
+                        "valor": 480000.00,
+                    },
+                    {
+                        "tipo": "Veículo Automotor Terrestre",
+                        "descricao": "Veículo de passeio",
+                        "valor": 100000.00,
+                    },
+                ],
             }
-        ]
+        ],
     },
     {
         "id": "wilson-grassi",
@@ -526,13 +812,25 @@ PRESIDENCIA_DATA_2026 = [
                 "totalFormatado": "R$ 1.850.000,00",
                 "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
                 "bens": [
-                    {"tipo": "Instalações e Clínica Veterinária", "descricao": "Prédio comercial e equipamentos de clínica veterinária em São Paulo/SP", "valor": 1200000.00},
-                    {"tipo": "Apartamento Residencial", "descricao": "Apartamento residencial em São Paulo/SP", "valor": 550000.00},
-                    {"tipo": "Aplicações Financeiras", "descricao": "Saldo bancário e poupança", "valor": 100000.00}
-                ]
+                    {
+                        "tipo": "Instalações e Clínica Veterinária",
+                        "descricao": "Prédio comercial e equipamentos de clínica veterinária em São Paulo/SP",
+                        "valor": 1200000.00,
+                    },
+                    {
+                        "tipo": "Apartamento Residencial",
+                        "descricao": "Apartamento residencial em São Paulo/SP",
+                        "valor": 550000.00,
+                    },
+                    {
+                        "tipo": "Aplicações Financeiras",
+                        "descricao": "Saldo bancário e poupança",
+                        "valor": 100000.00,
+                    },
+                ],
             }
-        ]
-    }
+        ],
+    },
 ]
 
 
