@@ -861,7 +861,9 @@ def validate_and_save():
         # Validar fotoUrl e fotos locais
         foto_url = cand.get("fotoUrl", "")
         if "divulgacandcontas.tse.jus.br" in foto_url:
-            raise ValueError(f"Hotlinking não permitido para o WAF do TSE em {cand['id']}: {foto_url}")
+            raise ValueError(
+                f"Hotlinking não permitido para o WAF do TSE em {cand['id']}: {foto_url}"
+            )
         if foto_url.startswith("fotos/"):
             foto_path = ROOT / "site" / "public" / foto_url
             if not foto_path.exists():
