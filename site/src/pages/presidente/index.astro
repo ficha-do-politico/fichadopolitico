@@ -80,6 +80,9 @@ const partidos = [...new Set(candidatos.map(c => c.partido))].sort();
         const ultimoPleito = historico[historico.length - 1];
         const primeiroPleito = historico[0];
         const totalEleicoes = historico.length;
+        const fotoSrc = cand.fotoUrl 
+          ? (cand.fotoUrl.startsWith('http') ? cand.fotoUrl : `${base}${cand.fotoUrl.replace(/^\//, '')}`)
+          : `${base}avatar-placeholder.svg`;
 
         return (
           <a 
@@ -94,7 +97,7 @@ const partidos = [...new Set(candidatos.map(c => c.partido))].sort();
               <div class="flex items-center gap-3.5">
                 <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0 relative shadow-2xs">
                   <img 
-                    src={cand.fotoUrl} 
+                    src={fotoSrc} 
                     alt={cand.nomeUrna}
                     class="w-full h-full object-cover object-top"
                     onerror={`this.onerror=null; this.src='${base}avatar-placeholder.svg';`}

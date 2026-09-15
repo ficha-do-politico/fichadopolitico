@@ -185,6 +185,7 @@ export interface CandidatoPresidencia {
   numeroUrna: string;
   cargo: string;
   fotoUrl: string;
+  fotoFonteOficial?: string;
   tsePerfilUrl: string;
   situacaoCandidatura: string;
   vice?: {

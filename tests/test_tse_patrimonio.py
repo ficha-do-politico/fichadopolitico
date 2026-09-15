@@ -195,6 +195,28 @@ class TestTSEPatrimonio(unittest.TestCase):
                 self.assertIn("valor", b)
                 self.assertGreaterEqual(b["valor"], 0)
 
+    def test_fotos_presidencia_sem_waf_e_locais_existem(self):
+        """Valida que fotos da presidência não dependem do WAF bloqueado do TSE e existem como arquivos locais."""
+        for cand in self.site_candidatos:
+            cid = cand.get("id")
+            foto_url = cand.get("fotoUrl", "")
+            self.assertNotIn(
+                "divulgacandcontas.tse.jus.br",
+                foto_url,
+                f"Candidato {cid} com hotlink direto para endpoint protegido por WAF do TSE: {foto_url}",
+            )
+            if foto_url.startswith("fotos/"):
+                arquivo_foto = ROOT / "site" / "public" / foto_url
+                self.assertTrue(
+                    arquivo_foto.exists(),
+                    f"Arquivo local de foto referenciado por {cid} não encontrado: {arquivo_foto}",
+                )
+                self.assertGreater(
+                    arquivo_foto.stat().st_size,
+                    1000,
+                    f"Arquivo de foto de {cid} corrompido ou vazio ({arquivo_foto.stat().st_size} bytes)",
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
