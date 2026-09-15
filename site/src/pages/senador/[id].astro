@@ -191,7 +191,7 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
                   <div class="italic text-slate-500">
                     Resultado no plenário: <span class="font-medium text-slate-700">{resultadoOficial}</span>
                   </div>
-                  <div class="flex items-center gap-3">
+                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
                     <a 
                       href={urlVotacao} 
                       target="_blank" 
@@ -202,7 +202,7 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
                     </a>
                     {urlProposicao && (
                       <>
-                        <span>•</span>
+                        <span class="text-slate-300 hidden sm:inline">•</span>
                         <a 
                           href={urlProposicao} 
                           target="_blank" 
@@ -213,7 +213,7 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
                         </a>
                       </>
                     )}
-                    <span>•</span>
+                    <span class="text-slate-300 hidden sm:inline">•</span>
                     <a 
                       href={`${base}votacao/${tema.id}`} 
                       class="text-blue-700 hover:text-blue-900 font-semibold underline inline-flex items-center gap-0.5"

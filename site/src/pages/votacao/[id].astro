@@ -208,29 +208,31 @@ const pageDescription = `Confira a lista nominal completa de quem votou a favor,
 
     <!-- Abas de Casa Legislativa (Câmara dos Deputados vs. Senado Federal) -->
     <div class="space-y-6">
-      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-        <div class="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-1 shadow-inner text-sm" id="casaTabs">
-          <button 
-            type="button" 
-            data-casa="camara" 
-            class="casa-tab-btn active px-4 py-2 rounded-lg font-bold text-xs sm:text-sm transition bg-white text-slate-900 shadow-xs"
-          >
-            Câmara dos Deputados (513)
-          </button>
-          <button 
-            type="button" 
-            data-casa="senado" 
-            class={`casa-tab-btn px-4 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-slate-600 hover:text-slate-900 ${
-              !temVotacaoSenado ? 'opacity-80' : ''
-            }`}
-          >
-            Senado Federal (81)
-            {!temVotacaoSenado && (
-              <span class="ml-1.5 text-[10px] uppercase font-semibold text-amber-700 bg-amber-100 px-1.5 py-0.2 rounded">
-                Aguardando Plenário
-              </span>
-            )}
-          </button>
+      <div class="border-b border-slate-200 pb-3">
+        <div class="w-full sm:w-auto overflow-x-auto pb-1 -mb-1">
+          <div class="inline-flex w-full sm:w-auto rounded-xl border border-slate-200 bg-slate-100 p-1 shadow-inner text-sm" id="casaTabs">
+            <button 
+              type="button" 
+              data-casa="camara" 
+              class="casa-tab-btn active flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-center bg-white text-slate-900 shadow-xs whitespace-nowrap"
+            >
+              Câmara dos Deputados (513)
+            </button>
+            <button 
+              type="button" 
+              data-casa="senado" 
+              class={`casa-tab-btn flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-center text-slate-600 hover:text-slate-900 whitespace-nowrap ${
+                !temVotacaoSenado ? 'opacity-80' : ''
+              }`}
+            >
+              Senado Federal (81)
+              {!temVotacaoSenado && (
+                <span class="ml-1 text-[10px] uppercase font-semibold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded inline-block">
+                  Aguardando
+                </span>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -299,13 +301,13 @@ const pageDescription = `Confira a lista nominal completa de quem votou a favor,
             </div>
 
             <!-- Filtros de UF e Partido -->
-            <div class="flex items-center gap-2">
-              <select id="selectUfCamara" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-700 outline-none focus:border-emerald-500">
+            <div class="flex items-center gap-2 w-full md:w-auto">
+              <select id="selectUfCamara" class="flex-1 md:flex-initial bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-700 outline-none focus:border-emerald-500 min-w-0">
                 <option value="">Todos os Estados</option>
                 {ufsCamara.map(uf => <option value={uf.toLowerCase()}>{uf}</option>)}
               </select>
 
-              <select id="selectPartidoCamara" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-700 outline-none focus:border-emerald-500">
+              <select id="selectPartidoCamara" class="flex-1 md:flex-initial bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-700 outline-none focus:border-emerald-500 min-w-0">
                 <option value="">Todos os Partidos</option>
                 {partidosCamara.map(p => <option value={p.toLowerCase()}>{p}</option>)}
               </select>
@@ -313,7 +315,7 @@ const pageDescription = `Confira a lista nominal completa de quem votou a favor,
               <button 
                 id="resetFiltersCamara" 
                 type="button" 
-                class="px-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-600 hover:bg-slate-50 transition"
+                class="px-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-600 hover:bg-slate-50 transition flex-shrink-0"
                 title="Limpar todos os filtros"
               >
                 Limpar
@@ -321,7 +323,7 @@ const pageDescription = `Confira a lista nominal completa de quem votou a favor,
             </div>
           </div>
 
-          <div class="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-slate-500 pt-1 border-t border-slate-100">
             <span>
               Mostrando <strong id="countCamara" class="text-slate-900 font-bold">{deputadosVotos.length}</strong> de 513 deputados federais
             </span>
@@ -413,7 +415,7 @@ const pageDescription = `Confira a lista nominal completa de quem votou a favor,
                 </div>
               </div>
 
-              <div class="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-slate-500 pt-1 border-t border-slate-100">
                 <span>
                   Mostrando <strong id="countSenado" class="text-slate-900 font-bold">{senadoresVotos.length}</strong> de 81 senadores da República
                 </span>

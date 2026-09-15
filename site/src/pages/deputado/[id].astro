@@ -182,7 +182,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 <div class="italic text-slate-500">
                   Resultado no plenário: <span class="font-medium text-slate-700">{tema.resultado_oficial}</span>
                 </div>
-                <div class="flex items-center gap-3">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
                   <a 
                     href={tema.url_votacao} 
                     target="_blank" 
@@ -191,7 +191,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                   >
                     <span>Registro oficial da votação ↗</span>
                   </a>
-                  <span>•</span>
+                  <span class="text-slate-300 hidden sm:inline">•</span>
                   <a 
                     href={tema.url_proposicao} 
                     target="_blank" 
@@ -200,7 +200,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                   >
                     <span>Íntegra da proposição ↗</span>
                   </a>
-                  <span>•</span>
+                  <span class="text-slate-300 hidden sm:inline">•</span>
                   <a 
                     href={`${base}votacao/${tema.id}`} 
                     class="text-emerald-700 hover:text-emerald-900 font-semibold underline inline-flex items-center gap-0.5"
