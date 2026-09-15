@@ -23,6 +23,9 @@ const parlamentares: ParlamentarCardData[] = [
     casa: 'camara' as const,
     cargo: 'Deputado Federal',
     href: `${base}deputado/${d.id}`,
+    is_candidato_2026: !!d.candidatura_2026,
+    is_reeleicao: d.candidatura_2026?.reeleicao ?? false,
+    cargo_2026: d.candidatura_2026?.cargo,
   })),
   ...senadores.map(s => ({
     id: s.id,
@@ -34,6 +37,9 @@ const parlamentares: ParlamentarCardData[] = [
     casa: 'senado' as const,
     cargo: 'Senador',
     href: `${base}senador/${s.id}`,
+    is_candidato_2026: !!s.candidatura_2026,
+    is_reeleicao: s.candidatura_2026?.reeleicao ?? false,
+    cargo_2026: s.candidatura_2026?.cargo,
   })),
 ].sort((a, b) => a.nome_eleitoral.localeCompare(b.nome_eleitoral, 'pt-BR'));
 
@@ -41,6 +47,8 @@ const totalDeputados = deputados.length;
 const totalSenadores = senadores.length;
 const totalParlamentares = parlamentares.length;
 const totalTemas = temas.length;
+const totalCandidatos2026 = parlamentares.filter(p => p.is_candidato_2026).length;
+const totalReeleicao2026 = parlamentares.filter(p => p.is_reeleicao).length;
 
 // Lista única ordenada de partidos e estados para filtros rápidos
 const partidos = [...new Set(parlamentares.map(p => p.partido))].filter(Boolean).sort();
@@ -118,9 +126,16 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
             </button>
           </div>
 
-          <!-- Selects de UF e Partido -->
+          <!-- Selects de Eleições 2026, UF e Partido -->
           <div class="flex flex-wrap items-center gap-2 text-slate-500">
-            <span>UF:</span>
+            <span>Eleições 2026:</span>
+            <select id="filterEleicao" class="bg-white border border-slate-200 rounded px-2 py-1 text-slate-700 outline-none focus:border-emerald-500 font-medium">
+              <option value="">Todos</option>
+              <option value="candidatos">Candidatos 2026 ({totalCandidatos2026})</option>
+              <option value="reeleicao">Reeleição ({totalReeleicao2026})</option>
+            </select>
+
+            <span class="ml-1">UF:</span>
             <select id="filterUf" class="bg-white border border-slate-200 rounded px-2 py-1 text-slate-700 outline-none focus:border-emerald-500">
               <option value="">Todos os estados</option>
               {ufs.map(uf => <option value={uf.toLowerCase()}>{uf}</option>)}
@@ -179,6 +194,7 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
   <script is:inline>
     const input = document.getElementById('searchInput');
     const clearBtn = document.getElementById('clearSearch');
+    const filterEleicao = document.getElementById('filterEleicao');
     const filterUf = document.getElementById('filterUf');
     const filterPartido = document.getElementById('filterPartido');
     const casaBtns = Array.from(document.querySelectorAll('.casa-btn'));
@@ -194,6 +210,7 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
       const q = input.value.trim().toLowerCase();
       const uf = filterUf.value;
       const partido = filterPartido.value;
+      const eleicao = filterEleicao ? filterEleicao.value : '';
 
       clearBtn.classList.toggle('hidden', q.length === 0);
 
@@ -207,13 +224,18 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
           const p = link.getAttribute('data-partido') || '';
           const u = link.getAttribute('data-uf') || '';
           const c = link.getAttribute('data-casa') || '';
+          const isCand = link.getAttribute('data-candidato-2026') === 'true';
+          const isReel = link.getAttribute('data-reeleicao') === 'true';
 
           const matchesQuery = !q || nome.includes(q) || civil.includes(q) || p.includes(q) || u.includes(q);
           const matchesUf = !uf || u === uf;
           const matchesPartido = !partido || p === partido;
           const matchesCasa = !activeCasa || c === activeCasa;
+          let matchesEleicao = true;
+          if (eleicao === 'candidatos') matchesEleicao = isCand;
+          else if (eleicao === 'reeleicao') matchesEleicao = isReel;
 
-          if (matchesQuery && matchesUf && matchesPartido && matchesCasa) {
+          if (matchesQuery && matchesUf && matchesPartido && matchesCasa && matchesEleicao) {
             item.style.display = '';
             visible++;
           } else {
@@ -231,6 +253,9 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
       debounceTimer = setTimeout(renderFilter, 150);
     });
 
+    if (filterEleicao) {
+      filterEleicao.addEventListener('change', renderFilter);
+    }
     filterUf.addEventListener('change', renderFilter);
     filterPartido.addEventListener('change', renderFilter);
 

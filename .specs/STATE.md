@@ -39,23 +39,32 @@
 - **Fase:** Transição MVP v0 → v1 (Expansão Bicameral).
 - **Estado Entregue:**
   - 594 fichas parlamentares geradas (513 deputados + 81 senadores na 57ª Legislatura).
-  - 11 fichas completas de candidatos à Presidência da República com evolução patrimonial histórica oficial (TSE).
-  - 5 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
+  - 548 candidaturas do Congresso Nacional mapeadas para o pleito geral de 2026 com número de urna, partido, situação do registro e link direto ao TSE DivulgaCand (AD-015).
+  - Exibição de bens autodeclarados ao TSE em 2026 nas fichas individuais de deputados e senadores, com comparativo de eleições anteriores e discriminação item a item (AD-015).
+  - Filtro instantâneo client-side na Home por status eleitoral em 2026 ("Todos", "Candidatos 2026", "Reeleição").
+  - 11 fichas completas de candidatos à Presidência da República com evolução patrimonial histórica oficial (TSE / AD-018).
+  - 6 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
   - Busca rápida unificada na Home (parlamentares) e rota dedicada `/presidente` com busca e visualização gráfica de bens.
-  - Testes automatizados de LGPD e integridade de fontes com 100% de sucesso.
+  - Testes automatizados de LGPD e integridade de fontes com 100% de sucesso (16 testes).
   - Documentação de backlog de votações criada (`docs/backlog-votacoes.md`).
 - **Foco Ativo (v1):**
   1. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes com votação nominal concluída (meta 10+ matérias).
-  2. *Módulo Eleições 2026 (Roadmap Prioritário - AD-015 & AD-018):* Apoio ao eleitor para o pleito de 03/10/2026 (entregue rota de presidenciáveis + expansão para mandatários no Congresso).
-  3. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
+  2. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
 - **Próximas Fases (v2 / v3):**
-  4. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
-  5. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
+  3. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
+  4. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
 - **Bloqueios:** Nenhum.
 
 ---
 
-## 4. Planejamento — Módulo Eleições & Presidenciáveis (AD-015 & AD-018)
+## 4. Decisões Arquiteturais — Módulo Eleições 2026 (AD-015 & AD-018)
+
+> **Decisão Arquitetural AD-015 (Candidaturas e Patrimônio TSE no Congresso Nacional):**  
+> Cruzamento do Legislativo Federal (513 deputados + 81 senadores) com a base oficial de candidaturas de 2026 do TSE DivulgaCandContas:
+> 1. **Diferenciação Canônica:** Distinção explícita e neutra entre *Reeleição* (disputa para o mesmo cargo) e *Novo Cargo* (ex: Deputado disputando Senado ou Governo; Senador disputando Presidência).
+> 2. **Rastreabilidade Obrigatória:** Cada parlamentar candidato exibe badge oficial com número de urna, partido registrado, situação do registro ("Deferido" / "Aguardando julgamento") e link direto seguro para o DivulgaCandContas.
+> 3. **Patrimônio Declarado (2026):** Exibição da discriminação oficial de bens, total declarado e variação matemática com eleição anterior, acompanhado da nota legal mandatória de custo histórico (IRPF/Receita Federal).
+> 4. **LGPD Rigorosa (AD-009):** Barreira no pipeline que descarta totalmente CPF, título de eleitor, endereço residencial e contato pessoal.
 
 > **Decisão Arquitetural AD-018 (Rota Dedicada para Presidência e Evolução Patrimonial):**  
 > Para garantir utilidade pública imediata diante do ciclo eleitoral sem poluir a modelagem de dados do Legislativo bicameral:

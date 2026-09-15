@@ -18,6 +18,8 @@ const isSenado = parlamentar.casa === 'senado';
   data-partido={parlamentar.partido.toLowerCase()}
   data-uf={parlamentar.uf.toLowerCase()}
   data-casa={parlamentar.casa}
+  data-candidato-2026={parlamentar.is_candidato_2026 ? "true" : "false"}
+  data-reeleicao={parlamentar.is_reeleicao ? "true" : "false"}
 >
   <div class="relative w-14 h-14 rounded-full overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0 group-hover:ring-2 group-hover:ring-emerald-500 transition">
     <img 
@@ -36,7 +38,7 @@ const isSenado = parlamentar.casa === 'senado';
       </h3>
     </div>
     
-    <div class="flex flex-wrap items-center gap-2 mt-1">
+    <div class="flex flex-wrap items-center gap-1.5 mt-1">
       <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
         {parlamentar.partido}
       </span>
@@ -50,6 +52,15 @@ const isSenado = parlamentar.casa === 'senado';
       }`}>
         {isSenado ? 'Senado' : 'Câmara'}
       </span>
+      {parlamentar.is_candidato_2026 && (
+        <span class={`inline-flex items-center px-1.5 py-0.2 rounded text-[11px] font-medium border ${
+          parlamentar.is_reeleicao
+            ? 'bg-purple-50 text-purple-700 border-purple-200'
+            : 'bg-amber-50 text-amber-800 border-amber-200'
+        }`}>
+          {parlamentar.is_reeleicao ? 'Reeleição 2026' : `2026: ${parlamentar.cargo_2026}`}
+        </span>
+      )}
     </div>
   </div>
 

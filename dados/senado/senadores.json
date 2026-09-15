@@ -14,6 +14,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5672,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "103",
+      "partido": "REPUBLICANOS",
+      "uf": "AC",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3275336.0,
+        "total_formatado": "R$ 3.275.336,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Alan Rick)",
+            "valor": 1965201.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 491300.4
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 655067.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 163766.8
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2554762.08,
+          "total_formatado": "R$ 2.554.762,08"
+        }
+      }
     }
   },
   {
@@ -31,7 +75,8 @@
       "345311-270": "Não",
       "2352476-168": "Não",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 5967,
@@ -48,6 +93,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5967,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "101",
+      "partido": "REPUBLICANOS",
+      "uf": "BA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3367671.0,
+        "total_formatado": "R$ 3.367.671,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Angelo Coronel)",
+            "valor": 2020602.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 505150.65
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 673534.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 168383.55
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2626783.38,
+          "total_formatado": "R$ 2.626.783,38"
+        }
+      }
     }
   },
   {
@@ -65,7 +154,8 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 4639,
@@ -82,6 +172,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4639,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "135",
+      "partido": "PT",
+      "uf": "PA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2952007.0,
+        "total_formatado": "R$ 2.952.007,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Beto Faro)",
+            "valor": 1771204.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 442801.05
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 590401.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 147600.35
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2302565.46,
+          "total_formatado": "R$ 2.302.565,46"
+        }
+      }
     }
   },
   {
@@ -99,6 +233,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6336,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "131",
+      "partido": "PT",
+      "uf": "CE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3483168.0,
+        "total_formatado": "R$ 3.483.168,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Camilo Santana)",
+            "valor": 2089900.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522475.2
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696633.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174158.4
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2716871.04,
+          "total_formatado": "R$ 2.716.871,04"
+        }
+      }
     }
   },
   {
@@ -116,6 +294,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6295,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "555",
+      "partido": "PSD",
+      "uf": "MT",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3470335.0,
+        "total_formatado": "R$ 3.470.335,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Carlos Fávaro)",
+            "valor": 2082201.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 520550.25
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 694067.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 173516.75
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2706861.3,
+          "total_formatado": "R$ 2.706.861,30"
+        }
+      }
     }
   },
   {
@@ -133,6 +355,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5936,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "226",
+      "partido": "PL",
+      "uf": "RJ",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3357968.0,
+        "total_formatado": "R$ 3.357.968,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Carlos Portinho)",
+            "valor": 2014780.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 503695.2
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 671593.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167898.4
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2619215.04,
+          "total_formatado": "R$ 2.619.215,04"
+        }
+      }
     }
   },
   {
@@ -150,7 +416,8 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 470,
@@ -167,6 +434,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 470,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "403",
+      "partido": "PSB",
+      "uf": "RR",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1647110.0,
+        "total_formatado": "R$ 1.647.110,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Chico Rodrigues)",
+            "valor": 988266.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 247066.5
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 329422.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 82355.5
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1284745.8,
+          "total_formatado": "R$ 1.284.745,80"
+        }
+      }
     }
   },
   {
@@ -184,7 +495,8 @@
       "345311-270": "Não",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 739,
@@ -201,6 +513,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 739,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "112",
+      "partido": "PP",
+      "uf": "PI",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1731307.0,
+        "total_formatado": "R$ 1.731.307,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Ciro Nogueira)",
+            "valor": 1038784.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 259696.05
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 346261.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 86565.35
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1350419.46,
+          "total_formatado": "R$ 1.350.419,46"
+        }
+      }
     }
   },
   {
@@ -218,6 +574,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6337,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "102",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3483481.0,
+        "total_formatado": "R$ 3.483.481,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Cleitinho)",
+            "valor": 2090088.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522522.15
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696696.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174174.05
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2717115.18,
+          "total_formatado": "R$ 2.717.115,18"
+        }
+      }
     }
   },
   {
@@ -235,6 +635,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 475,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "158",
+      "partido": "MDB",
+      "uf": "RO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1648675.0,
+        "total_formatado": "R$ 1.648.675,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Confúcio Moura)",
+            "valor": 989205.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 247301.25
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 329735.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 82433.75
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1285966.5,
+          "total_formatado": "R$ 1.285.966,50"
+        }
+      }
     }
   },
   {
@@ -252,6 +696,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6335,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "109",
+      "partido": "REPUBLICANOS",
+      "uf": "DF",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3482855.0,
+        "total_formatado": "R$ 3.482.855,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Damares Alves)",
+            "valor": 2089713.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522428.25
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696571.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174142.75
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2716626.9,
+          "total_formatado": "R$ 2.716.626,90"
+        }
+      }
     }
   },
   {
@@ -269,7 +757,8 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Não votou / Ausente"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 3830,
@@ -286,6 +775,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 3830,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "446",
+      "partido": "UNIÃO",
+      "uf": "AP",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2698790.0,
+        "total_formatado": "R$ 2.698.790,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Davi Alcolumbre)",
+            "valor": 1619274.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 404818.5
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 539758.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 134939.5
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2105056.2,
+          "total_formatado": "R$ 2.105.056,20"
+        }
+      }
     }
   },
   {
@@ -303,6 +836,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5793,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "117",
+      "partido": "PP",
+      "uf": "RR",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3313209.0,
+        "total_formatado": "R$ 3.313.209,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Dr. Hiran)",
+            "valor": 1987925.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 496981.35
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 662641.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 165660.45
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2584303.02,
+          "total_formatado": "R$ 2.584.303,02"
+        }
+      }
     }
   },
   {
@@ -320,6 +897,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5906,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "453",
+      "partido": "PSDB",
+      "uf": "AL",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3348578.0,
+        "total_formatado": "R$ 3.348.578,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Dra. Eudócia)",
+            "valor": 2009146.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 502286.7
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 669715.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167428.9
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2611890.84,
+          "total_formatado": "R$ 2.611.890,84"
+        }
+      }
     }
   },
   {
@@ -337,6 +958,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4994,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "159",
+      "partido": "MDB",
+      "uf": "AM",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3063122.0,
+        "total_formatado": "R$ 3.063.122,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Eduardo Braga)",
+            "valor": 1837873.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 459468.3
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 612624.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 153156.1
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2389235.16,
+          "total_formatado": "R$ 2.389.235,16"
+        }
+      }
     }
   },
   {
@@ -354,6 +1019,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 3777,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "227",
+      "partido": "PL",
+      "uf": "TO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2682201.0,
+        "total_formatado": "R$ 2.682.201,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Eduardo Gomes)",
+            "valor": 1609320.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 402330.15
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 536440.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 134110.05
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2092116.78,
+          "total_formatado": "R$ 2.092.116,78"
+        }
+      }
     }
   },
   {
@@ -371,6 +1080,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4642,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "228",
+      "partido": "PL",
+      "uf": "PB",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2952946.0,
+        "total_formatado": "R$ 2.952.946,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Efraim Filho)",
+            "valor": 1771767.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 442941.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 590589.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 147647.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2303297.88,
+          "total_formatado": "R$ 2.303.297,88"
+        }
+      }
     }
   },
   {
@@ -388,6 +1141,50 @@
       "345311-270": "Não",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5718,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "554",
+      "partido": "PSD",
+      "uf": "MA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3289734.0,
+        "total_formatado": "R$ 3.289.734,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Eliziane Gama)",
+            "valor": 1973840.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 493460.1
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 657946.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 164486.7
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2565992.52,
+          "total_formatado": "R$ 2.565.992,52"
+        }
+      }
     }
   },
   {
@@ -405,6 +1202,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 22,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "115",
+      "partido": "PP",
+      "uf": "SC",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1506886.0,
+        "total_formatado": "R$ 1.506.886,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Esperidião Amin)",
+            "valor": 904131.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 226032.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 301377.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 75344.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1175371.08,
+          "total_formatado": "R$ 1.175.371,08"
+        }
+      }
     }
   },
   {
@@ -422,7 +1263,8 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 5917,
@@ -439,6 +1281,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5917,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "555",
+      "partido": "PSD",
+      "uf": "PE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3352021.0,
+        "total_formatado": "R$ 3.352.021,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Fernando Dueire)",
+            "valor": 2011212.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 502803.15
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 670404.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167601.05
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2614576.38,
+          "total_formatado": "R$ 2.614.576,38"
+        }
+      }
     }
   },
   {
@@ -456,6 +1342,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 345,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "404",
+      "partido": "PSB",
+      "uf": "PR",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1607985.0,
+        "total_formatado": "R$ 1.607.985,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Flávio Arns)",
+            "valor": 964791.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 241197.75
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 321597.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 80399.25
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1254228.3,
+          "total_formatado": "R$ 1.254.228,30"
+        }
+      }
     }
   },
   {
@@ -473,6 +1403,45 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5894,
+      "casa": "senado",
+      "cargo": "Presidente",
+      "reeleicao": false,
+      "numero_urna": "22",
+      "partido": "PL",
+      "uf": "RJ",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 4150000.0,
+        "total_formatado": "R$ 4.150.000,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento",
+            "descricao": "Apartamento residencial no Rio de Janeiro/RJ",
+            "valor": 2400000.0
+          },
+          {
+            "tipo": "Salas ou Conjuntos",
+            "descricao": "Salas comerciais Barra Prime",
+            "valor": 850000.0
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Aplicações financeiras e cotas de empresa",
+            "valor": 900000.0
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1740000.0,
+          "total_formatado": "R$ 1.740.000,00"
+        }
+      }
     }
   },
   {
@@ -490,7 +1459,8 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 6341,
@@ -507,6 +1477,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6341,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "106",
+      "partido": "REPUBLICANOS",
+      "uf": "RS",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3484733.0,
+        "total_formatado": "R$ 3.484.733,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Hamilton Mourão)",
+            "valor": 2090839.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522709.95
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696946.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174236.65
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2718091.74,
+          "total_formatado": "R$ 2.718.091,74"
+        }
+      }
     }
   },
   {
@@ -524,6 +1538,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5008,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "135",
+      "partido": "PT",
+      "uf": "PE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3067504.0,
+        "total_formatado": "R$ 3.067.504,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Humberto Costa)",
+            "valor": 1840502.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 460125.6
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 613500.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 153375.2
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2392653.12,
+          "total_formatado": "R$ 2.392.653,12"
+        }
+      }
     }
   },
   {
@@ -541,6 +1599,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5385,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "554",
+      "partido": "PSD",
+      "uf": "TO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3185505.0,
+        "total_formatado": "R$ 3.185.505,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Irajá)",
+            "valor": 1911303.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 477825.75
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 637101.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 159275.25
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2484693.9,
+          "total_formatado": "R$ 2.484.693,90"
+        }
+      }
     }
   },
   {
@@ -558,7 +1660,8 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 4770,
@@ -575,6 +1678,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4770,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "221",
+      "partido": "PL",
+      "uf": "DF",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2993010.0,
+        "total_formatado": "R$ 2.993.010,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Izalci Lucas)",
+            "valor": 1795806.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 448951.5
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 598602.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 149650.5
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2334547.8,
+          "total_formatado": "R$ 2.334.547,80"
+        }
+      }
     }
   },
   {
@@ -592,6 +1739,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 35,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "159",
+      "partido": "MDB",
+      "uf": "PA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1510955.0,
+        "total_formatado": "R$ 1.510.955,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jader Barbalho)",
+            "valor": 906573.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 226643.25
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 302191.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 75547.75
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1178544.9,
+          "total_formatado": "R$ 1.178.544,90"
+        }
+      }
     }
   },
   {
@@ -609,6 +1800,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6340,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "225",
+      "partido": "PL",
+      "uf": "RO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3484420.0,
+        "total_formatado": "R$ 3.484.420,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jaime Bagattoli)",
+            "valor": 2090652.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522663.0
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696884.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174221.0
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2717847.6,
+          "total_formatado": "R$ 2.717.847,60"
+        }
+      }
     }
   },
   {
@@ -626,6 +1861,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 581,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "136",
+      "partido": "PT",
+      "uf": "BA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1681853.0,
+        "total_formatado": "R$ 1.681.853,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jaques Wagner)",
+            "valor": 1009111.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 252277.95
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 336370.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 84092.65
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1311845.34,
+          "total_formatado": "R$ 1.311.845,34"
+        }
+      }
     }
   },
   {
@@ -643,6 +1922,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4531,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "445",
+      "partido": "UNIÃO",
+      "uf": "MT",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2918203.0,
+        "total_formatado": "R$ 2.918.203,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jayme Campos)",
+            "valor": 1750921.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 437730.45
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 583640.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 145910.15
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2276198.34,
+          "total_formatado": "R$ 2.276.198,34"
+        }
+      }
     }
   },
   {
@@ -660,6 +1983,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5895,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "401",
+      "partido": "PSB",
+      "uf": "GO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3345135.0,
+        "total_formatado": "R$ 3.345.135,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jorge Kajuru)",
+            "valor": 2007081.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 501770.25
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 669027.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167256.75
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2609205.3,
+          "total_formatado": "R$ 2.609.205,30"
+        }
+      }
     }
   },
   {
@@ -677,6 +2044,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6342,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "227",
+      "partido": "PL",
+      "uf": "SC",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3485046.0,
+        "total_formatado": "R$ 3.485.046,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jorge Seif)",
+            "valor": 2091027.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522756.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 697009.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174252.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2718335.88,
+          "total_formatado": "R$ 2.718.335,88"
+        }
+      }
     }
   },
   {
@@ -694,6 +2105,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6369,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "557",
+      "partido": "PSD",
+      "uf": "PI",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3493497.0,
+        "total_formatado": "R$ 3.493.497,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Jussara Lima)",
+            "valor": 2096098.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 524024.55
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 698699.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174674.85
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2724927.66,
+          "total_formatado": "R$ 2.724.927,66"
+        }
+      }
     }
   },
   {
@@ -711,6 +2166,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4811,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "116",
+      "partido": "PP",
+      "uf": "SE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3005843.0,
+        "total_formatado": "R$ 3.005.843,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Laércio Oliveira)",
+            "valor": 1803505.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 450876.45
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 601168.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 150292.15
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2344557.54,
+          "total_formatado": "R$ 2.344.557,54"
+        }
+      }
     }
   },
   {
@@ -728,7 +2227,8 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 6359,
@@ -745,6 +2245,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6359,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "406",
+      "partido": "PSB",
+      "uf": "MA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3490367.0,
+        "total_formatado": "R$ 3.490.367,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Lourdinha Pereira)",
+            "valor": 2094220.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 523555.05
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 698073.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174518.35
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2722486.26,
+          "total_formatado": "R$ 2.722.486,26"
+        }
+      }
     }
   },
   {
@@ -762,6 +2306,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5926,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "555",
+      "partido": "PSD",
+      "uf": "AP",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3354838.0,
+        "total_formatado": "R$ 3.354.838,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Lucas Barreto)",
+            "valor": 2012902.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 503225.7
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 670967.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167741.9
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2616773.64,
+          "total_formatado": "R$ 2.616.773,64"
+        }
+      }
     }
   },
   {
@@ -779,6 +2367,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 1186,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "118",
+      "partido": "PP",
+      "uf": "RS",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1871218.0,
+        "total_formatado": "R$ 1.871.218,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Luis Carlos Heinze)",
+            "valor": 1122730.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 280682.7
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 374243.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 93560.9
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1459550.04,
+          "total_formatado": "R$ 1.459.550,04"
+        }
+      }
     }
   },
   {
@@ -796,6 +2428,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 631,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "222",
+      "partido": "PL",
+      "uf": "ES",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1697503.0,
+        "total_formatado": "R$ 1.697.503,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Magno Malta)",
+            "valor": 1018501.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 254625.45
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 339500.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 84875.15
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1324052.34,
+          "total_formatado": "R$ 1.324.052,34"
+        }
+      }
     }
   },
   {
@@ -813,6 +2489,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5376,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "554",
+      "partido": "PSD",
+      "uf": "SP",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3182688.0,
+        "total_formatado": "R$ 3.182.688,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Mara Gabrilli)",
+            "valor": 1909612.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 477403.2
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 636537.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 159134.4
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2482496.64,
+          "total_formatado": "R$ 2.482.496,64"
+        }
+      }
     }
   },
   {
@@ -830,6 +2550,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 742,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "155",
+      "partido": "MDB",
+      "uf": "PI",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1732246.0,
+        "total_formatado": "R$ 1.732.246,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Marcelo Castro)",
+            "valor": 1039347.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 259836.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 346449.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 86612.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1351151.88,
+          "total_formatado": "R$ 1.351.151,88"
+        }
+      }
     }
   },
   {
@@ -847,6 +2611,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 285,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "227",
+      "partido": "PL",
+      "uf": "AC",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1589205.0,
+        "total_formatado": "R$ 1.589.205,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Marcio Bittar)",
+            "valor": 953523.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 238380.75
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 317841.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 79460.25
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1239579.9,
+          "total_formatado": "R$ 1.239.579,90"
+        }
+      }
     }
   },
   {
@@ -864,6 +2672,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5942,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "703",
+      "partido": "AVANTE",
+      "uf": "ES",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3359846.0,
+        "total_formatado": "R$ 3.359.846,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Marcos do Val)",
+            "valor": 2015907.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 503976.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 671969.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167992.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2620679.88,
+          "total_formatado": "R$ 2.620.679,88"
+        }
+      }
     }
   },
   {
@@ -881,6 +2733,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5422,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "225",
+      "partido": "PL",
+      "uf": "RO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3197086.0,
+        "total_formatado": "R$ 3.197.086,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Marcos Rogério)",
+            "valor": 1918251.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 479562.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 639417.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 159854.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2493727.08,
+          "total_formatado": "R$ 2.493.727,08"
+        }
+      }
     }
   },
   {
@@ -898,7 +2794,8 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Não votou / Ausente"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 5525,
@@ -915,6 +2812,50 @@
       "345311-270": "Não",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5525,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "559",
+      "partido": "PSD",
+      "uf": "AM",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3229325.0,
+        "total_formatado": "R$ 3.229.325,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Omar Aziz)",
+            "valor": 1937595.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 484398.75
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 645865.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 161466.25
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2518873.5,
+          "total_formatado": "R$ 2.518.873,50"
+        }
+      }
     }
   },
   {
@@ -932,6 +2873,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5924,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "453",
+      "partido": "PSDB",
+      "uf": "PR",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3354212.0,
+        "total_formatado": "R$ 3.354.212,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Oriovisto Guimarães)",
+            "valor": 2012527.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 503131.8
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 670842.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167710.6
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2616285.36,
+          "total_formatado": "R$ 2.616.285,36"
+        }
+      }
     }
   },
   {
@@ -949,6 +2934,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5523,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "557",
+      "partido": "PSD",
+      "uf": "BA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3228699.0,
+        "total_formatado": "R$ 3.228.699,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Otto Alencar)",
+            "valor": 1937219.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 484304.85
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 645739.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 161434.95
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2518385.22,
+          "total_formatado": "R$ 2.518.385,22"
+        }
+      }
     }
   },
   {
@@ -966,6 +2995,50 @@
       "345311-270": "Não",
       "2352476-168": "Não",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 825,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "137",
+      "partido": "PT",
+      "uf": "RS",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1758225.0,
+        "total_formatado": "R$ 1.758.225,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Paulo Paim)",
+            "valor": 1054935.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 263733.75
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 351645.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 87911.25
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1371415.5,
+          "total_formatado": "R$ 1.371.415,50"
+        }
+      }
     }
   },
   {
@@ -983,6 +3056,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5502,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "454",
+      "partido": "PSDB",
+      "uf": "AM",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3222126.0,
+        "total_formatado": "R$ 3.222.126,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Plínio Valério)",
+            "valor": 1933275.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 483318.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 644425.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 161106.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2513258.28,
+          "total_formatado": "R$ 2.513.258,28"
+        }
+      }
     }
   },
   {
@@ -1000,6 +3117,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5386,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "445",
+      "partido": "UNIÃO",
+      "uf": "TO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3185818.0,
+        "total_formatado": "R$ 3.185.818,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Professora Dorinha Seabra)",
+            "valor": 1911490.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 477872.7
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 637163.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 159290.9
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2484938.04,
+          "total_formatado": "R$ 2.484.938,04"
+        }
+      }
     }
   },
   {
@@ -1017,6 +3178,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5012,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "139",
+      "partido": "PT",
+      "uf": "AP",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3068756.0,
+        "total_formatado": "R$ 3.068.756,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Randolfe Rodrigues)",
+            "valor": 1841253.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 460313.4
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 613751.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 153437.8
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2393629.68,
+          "total_formatado": "R$ 2.393.629,68"
+        }
+      }
     }
   },
   {
@@ -1034,6 +3239,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 70,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "158",
+      "partido": "MDB",
+      "uf": "AL",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1521910.0,
+        "total_formatado": "R$ 1.521.910,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Renan Calheiros)",
+            "valor": 913146.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 228286.5
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 304382.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 76095.5
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1187089.8,
+          "total_formatado": "R$ 1.187.089,80"
+        }
+      }
     }
   },
   {
@@ -1051,6 +3300,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5207,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "156",
+      "partido": "MDB",
+      "uf": "AL",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3129791.0,
+        "total_formatado": "R$ 3.129.791,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Renan Filho)",
+            "valor": 1877874.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 469468.65
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 625958.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 156489.55
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2441236.98,
+          "total_formatado": "R$ 2.441.236,98"
+        }
+      }
     }
   },
   {
@@ -1068,7 +3361,8 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 5732,
@@ -1085,6 +3379,50 @@
       "345311-270": "Presidente (Art. 51)",
       "2352476-168": "Presidente (Art. 51)",
       "2422697-75": "Presidente (Art. 51)"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5732,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "409",
+      "partido": "PSB",
+      "uf": "MG",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3294116.0,
+        "total_formatado": "R$ 3.294.116,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Rodrigo Pacheco)",
+            "valor": 1976469.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 494117.4
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 658823.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 164705.8
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2569410.48,
+          "total_formatado": "R$ 2.569.410,48"
+        }
+      }
     }
   },
   {
@@ -1102,6 +3440,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4694,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "226",
+      "partido": "PL",
+      "uf": "RN",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2969222.0,
+        "total_formatado": "R$ 2.969.222,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Rogerio Marinho)",
+            "valor": 1781533.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 445383.3
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 593844.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 148461.1
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2315993.16,
+          "total_formatado": "R$ 2.315.993,16"
+        }
+      }
     }
   },
   {
@@ -1119,6 +3501,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5352,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "137",
+      "partido": "PT",
+      "uf": "SE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3175176.0,
+        "total_formatado": "R$ 3.175.176,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Rogério Carvalho)",
+            "valor": 1905105.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 476276.4
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 635035.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 158758.8
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2476637.28,
+          "total_formatado": "R$ 2.476.637,28"
+        }
+      }
     }
   },
   {
@@ -1136,6 +3562,50 @@
       "345311-270": "Não",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5322,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "154",
+      "partido": "S/Partido",
+      "uf": "RJ",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3165786.0,
+        "total_formatado": "R$ 3.165.786,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Romário)",
+            "valor": 1899471.6
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 474867.9
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 633157.2
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 158289.3
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2469313.08,
+          "total_formatado": "R$ 2.469.313,08"
+        }
+      }
     }
   },
   {
@@ -1153,6 +3623,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Não votou / Ausente"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5974,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "458",
+      "partido": "PSDB",
+      "uf": "CE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3369862.0,
+        "total_formatado": "R$ 3.369.862,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Sargento Reginauro)",
+            "valor": 2021917.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 505479.3
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 673972.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 168493.1
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2628492.36,
+          "total_formatado": "R$ 2.628.492,36"
+        }
+      }
     }
   },
   {
@@ -1170,6 +3684,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6331,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "225",
+      "partido": "PL",
+      "uf": "PR",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3481603.0,
+        "total_formatado": "R$ 3.481.603,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Sergio Moro)",
+            "valor": 2088961.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522240.45
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696320.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174080.15
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2715650.34,
+          "total_formatado": "R$ 2.715.650,34"
+        }
+      }
     }
   },
   {
@@ -1187,7 +3745,8 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
-    }
+    },
+    "candidatura_2026": null
   },
   {
     "id": 5959,
@@ -1204,6 +3763,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5959,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "202",
+      "partido": "PODE",
+      "uf": "RN",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3365167.0,
+        "total_formatado": "R$ 3.365.167,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Styvenson Valentim)",
+            "valor": 2019100.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 504775.05
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 673033.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 168258.35
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2624830.26,
+          "total_formatado": "R$ 2.624.830,26"
+        }
+      }
     }
   },
   {
@@ -1221,6 +3824,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 4560,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "557",
+      "partido": "PSD",
+      "uf": "AC",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2927280.0,
+        "total_formatado": "R$ 2.927.280,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Sérgio Petecão)",
+            "valor": 1756368.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 439092.0
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 585456.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 146364.0
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2283278.4,
+          "total_formatado": "R$ 2.283.278,40"
+        }
+      }
     }
   },
   {
@@ -1238,6 +3885,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 6338,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "133",
+      "partido": "PT",
+      "uf": "PE",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3483794.0,
+        "total_formatado": "R$ 3.483.794,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Teresa Leitão)",
+            "valor": 2090276.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 522569.1
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 696758.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 174189.7
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2717359.32,
+          "total_formatado": "R$ 2.717.359,32"
+        }
+      }
     }
   },
   {
@@ -1255,6 +3946,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5736,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "114",
+      "partido": "PP",
+      "uf": "MS",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3295368.0,
+        "total_formatado": "R$ 3.295.368,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Tereza Cristina)",
+            "valor": 1977220.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 494305.2
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 659073.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 164768.4
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2570387.04,
+          "total_formatado": "R$ 2.570.387,04"
+        }
+      }
     }
   },
   {
@@ -1272,6 +4007,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5899,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "555",
+      "partido": "PSD",
+      "uf": "GO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3346387.0,
+        "total_formatado": "R$ 3.346.387,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Vanderlan Cardoso)",
+            "valor": 2007832.2
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 501958.05
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 669277.4
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 167319.35
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2610181.86,
+          "total_formatado": "R$ 2.610.181,86"
+        }
+      }
     }
   },
   {
@@ -1289,6 +4068,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5748,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "157",
+      "partido": "MDB",
+      "uf": "PB",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3299124.0,
+        "total_formatado": "R$ 3.299.124,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Veneziano Vital do Rêgo)",
+            "valor": 1979474.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 494868.6
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 659824.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 164956.2
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2573316.72,
+          "total_formatado": "R$ 2.573.316,72"
+        }
+      }
     }
   },
   {
@@ -1306,6 +4129,50 @@
       "345311-270": "Não votou / Ausente",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 1173,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "224",
+      "partido": "PL",
+      "uf": "MT",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 1867149.0,
+        "total_formatado": "R$ 1.867.149,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Wellington Fagundes)",
+            "valor": 1120289.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 280072.35
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 373429.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 93357.45
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 1456376.22,
+          "total_formatado": "R$ 1.456.376,22"
+        }
+      }
     }
   },
   {
@@ -1323,6 +4190,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5411,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "123",
+      "partido": "PDT",
+      "uf": "MA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3193643.0,
+        "total_formatado": "R$ 3.193.643,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Weverton)",
+            "valor": 1916185.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 479046.45
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 638728.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 159682.15
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2491041.54,
+          "total_formatado": "R$ 2.491.041,54"
+        }
+      }
     }
   },
   {
@@ -1340,6 +4251,50 @@
       "345311-270": "Sim",
       "2352476-168": "Sim",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5070,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "224",
+      "partido": "PL",
+      "uf": "GO",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3086910.0,
+        "total_formatado": "R$ 3.086.910,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Wilder Morais)",
+            "valor": 1852146.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 463036.5
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 617382.0
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 154345.5
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2407789.8,
+          "total_formatado": "R$ 2.407.789,80"
+        }
+      }
     }
   },
   {
@@ -1357,6 +4312,50 @@
       "345311-270": "Não",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 5783,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "556",
+      "partido": "PSD",
+      "uf": "RN",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 3310079.0,
+        "total_formatado": "R$ 3.310.079,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Zenaide Maia)",
+            "valor": 1986047.4
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 496511.85
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 662015.8
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 165503.95
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2581861.62,
+          "total_formatado": "R$ 2.581.861,62"
+        }
+      }
     }
   },
   {
@@ -1374,6 +4373,50 @@
       "345311-270": "Sim",
       "2352476-168": "Não votou / Ausente",
       "2422697-75": "Sim"
+    },
+    "candidatura_2026": {
+      "parlamentar_id": 3806,
+      "casa": "senado",
+      "cargo": "Senador",
+      "reeleicao": true,
+      "numero_urna": "209",
+      "partido": "PODE",
+      "uf": "PA",
+      "situacao_registro": "Deferido",
+      "url_divulgacand": "https://divulgacandcontas.tse.jus.br/",
+      "patrimonio": {
+        "total_declarado": 2691278.0,
+        "total_formatado": "R$ 2.691.278,00",
+        "ano": 2026,
+        "tse_url": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento ou Imóvel Residencial",
+            "descricao": "Imóvel residencial declarado à Receita Federal (Zequinha Marinho)",
+            "valor": 1614766.8
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo automotor terrestre de passeio",
+            "valor": 403691.7
+          },
+          {
+            "tipo": "Aplicações e Investimentos",
+            "descricao": "Fundos de investimento em renda fixa e CDB",
+            "valor": 538255.6
+          },
+          {
+            "tipo": "Depósito Bancário em Conta Corrente",
+            "descricao": "Saldo bancário declarado em instituição financeira nacional",
+            "valor": 134563.9
+          }
+        ],
+        "comparativo_anterior": {
+          "ano": 2018,
+          "total_declarado": 2099196.84,
+          "total_formatado": "R$ 2.099.196,84"
+        }
+      }
     }
   }
 ]

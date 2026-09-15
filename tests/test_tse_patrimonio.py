@@ -14,6 +14,8 @@ import unittest
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CANON_PRESIDENCIA = ROOT / "dados" / "tse" / "presidencia.json"
 SITE_PRESIDENCIA = ROOT / "site" / "src" / "data" / "presidencia.json"
+CANON_CONGRESSO = ROOT / "dados" / "tse" / "congresso_2026.json"
+SITE_CONGRESSO = ROOT / "site" / "src" / "data" / "congresso_2026.json"
 
 PROHIBITED_LGPD_KEYS = {
     "cpf",
@@ -36,12 +38,24 @@ class TestTSEPatrimonio(unittest.TestCase):
         self.assertTrue(
             SITE_PRESIDENCIA.exists(), f"Arquivo compilado do site ausente: {SITE_PRESIDENCIA}"
         )
+        self.assertTrue(
+            CANON_CONGRESSO.exists(), f"Arquivo canônico do congresso ausente: {CANON_CONGRESSO}"
+        )
+        self.assertTrue(
+            SITE_CONGRESSO.exists(), f"Arquivo compilado do congresso ausente: {SITE_CONGRESSO}"
+        )
 
         with open(CANON_PRESIDENCIA, encoding="utf-8") as f:
             self.canon_candidatos = json.load(f)
 
         with open(SITE_PRESIDENCIA, encoding="utf-8") as f:
             self.site_candidatos = json.load(f)
+
+        with open(CANON_CONGRESSO, encoding="utf-8") as f:
+            self.canon_congresso = json.load(f)
+
+        with open(SITE_CONGRESSO, encoding="utf-8") as f:
+            self.site_congresso = json.load(f)
 
     def test_conformidade_lgpd(self):
         """Garante que nenhum dado pessoal sensível (CPF, email, telefone) está presente no dataset."""
@@ -117,6 +131,69 @@ class TestTSEPatrimonio(unittest.TestCase):
                     self.assertIn("descricao", b)
                     self.assertIn("valor", b)
                     self.assertGreaterEqual(b["valor"], 0)
+
+    def test_congresso_2026_conformidade_lgpd(self):
+        """Garante que nenhum dado sensível esteja presente no dataset do Congresso 2026."""
+        self.assertGreaterEqual(
+            len(self.site_congresso), 500, "Esperado ao menos 500 congressistas mapeados."
+        )
+        for pid, cand in self.site_congresso.items():
+            cand_keys = {k.lower() for k in cand.keys()}
+            violacoes = cand_keys.intersection(PROHIBITED_LGPD_KEYS)
+            self.assertEqual(
+                violacoes,
+                set(),
+                f"Violação LGPD detectada no congressista {pid}: {violacoes}",
+            )
+
+    def test_congresso_2026_verificabilidade(self):
+        """Garante que todas as candidaturas do Congresso possuem links oficiais seguros do TSE."""
+        for pid, cand in self.site_congresso.items():
+            url_cand = cand.get("url_divulgacand", "")
+            self.assertTrue(
+                url_cand.startswith("https://divulgacandcontas.tse.jus.br"),
+                f"Congressista {pid} sem URL segura oficial do TSE: {url_cand}",
+            )
+            patrimonio = cand.get("patrimonio", {})
+            url_patrimonio = patrimonio.get("tse_url", "")
+            self.assertTrue(
+                url_patrimonio.startswith("https://divulgacandcontas.tse.jus.br"),
+                f"Patrimônio do congressista {pid} sem URL segura oficial do TSE: {url_patrimonio}",
+            )
+
+    def test_congresso_2026_estrutura(self):
+        """Valida que todos os congressistas possuem campos obrigatórios e patrimônio válido."""
+        campos = [
+            "parlamentar_id",
+            "casa",
+            "cargo",
+            "reeleicao",
+            "numero_urna",
+            "partido",
+            "uf",
+            "situacao_registro",
+            "url_divulgacand",
+            "patrimonio",
+        ]
+        for pid, cand in self.site_congresso.items():
+            for c in campos:
+                self.assertIn(c, cand, f"Campo {c} ausente no congressista {pid}")
+
+            self.assertIn(cand["casa"], ["camara", "senado"])
+            self.assertIsInstance(cand["reeleicao"], bool)
+            self.assertIn(cand["situacao_registro"], ["Deferido", "Aguardando julgamento"])
+
+            pat = cand["patrimonio"]
+            self.assertIsInstance(pat["total_declarado"], (int, float))
+            self.assertGreaterEqual(pat["total_declarado"], 0)
+            self.assertTrue(pat["total_formatado"].startswith("R$ "))
+            self.assertEqual(pat["ano"], 2026)
+
+            for b in pat.get("bens", []):
+                self.assertIn("tipo", b)
+                self.assertIn("descricao", b)
+                self.assertIn("valor", b)
+                self.assertGreaterEqual(b["valor"], 0)
 
 
 if __name__ == "__main__":

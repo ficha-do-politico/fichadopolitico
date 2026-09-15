@@ -130,7 +130,16 @@ class TestDataIntegrity(unittest.TestCase):
 
     def test_lgpd_compliance(self):
         """Garante que dados sensíveis (AD-009 / LGPD) nunca existam nos datasets públicos."""
-        campos_sensiveis = {"cpf", "email", "telefone", "redes", "redeSocial"}
+        campos_sensiveis = {
+            "cpf",
+            "email",
+            "telefone",
+            "redes",
+            "redeSocial",
+            "rg",
+            "endereco",
+            "titulo_eleitor",
+        }
 
         # Valida deputados (canônico e site)
         for d in self.deputados:
@@ -140,6 +149,14 @@ class TestDataIntegrity(unittest.TestCase):
                     d,
                     f"Violação de LGPD detectada: campo '{campo}' no deputado {d.get('id')}",
                 )
+            cand = d.get("candidatura_2026")
+            if cand:
+                for campo in campos_sensiveis:
+                    self.assertNotIn(
+                        campo,
+                        cand,
+                        f"Violação de LGPD na candidatura do deputado {d.get('id')}: {campo}",
+                    )
 
         with open(SITE_DEPUTADOS_FILE, encoding="utf-8") as f:
             site_deputados = json.load(f)
@@ -151,6 +168,14 @@ class TestDataIntegrity(unittest.TestCase):
                     d,
                     f"Violação de LGPD no site/src/data: campo '{campo}' no deputado {d.get('id')}",
                 )
+            cand = d.get("candidatura_2026")
+            if cand:
+                for campo in campos_sensiveis:
+                    self.assertNotIn(
+                        campo,
+                        cand,
+                        f"Violação de LGPD na candidatura do site para deputado {d.get('id')}: {campo}",
+                    )
 
         # Valida senadores (canônico e site)
         for s in self.senadores:
@@ -160,6 +185,14 @@ class TestDataIntegrity(unittest.TestCase):
                     s,
                     f"Violação de LGPD detectada: campo '{campo}' no senador {s.get('id')}",
                 )
+            cand = s.get("candidatura_2026")
+            if cand:
+                for campo in campos_sensiveis:
+                    self.assertNotIn(
+                        campo,
+                        cand,
+                        f"Violação de LGPD na candidatura do senador {s.get('id')}: {campo}",
+                    )
 
         with open(SITE_SENADORES_FILE, encoding="utf-8") as f:
             site_senadores = json.load(f)
@@ -171,6 +204,14 @@ class TestDataIntegrity(unittest.TestCase):
                     s,
                     f"Violação de LGPD no site/src/data: campo '{campo}' no senador {s.get('id')}",
                 )
+            cand = s.get("candidatura_2026")
+            if cand:
+                for campo in campos_sensiveis:
+                    self.assertNotIn(
+                        campo,
+                        cand,
+                        f"Violação de LGPD na candidatura do site para senador {s.get('id')}: {campo}",
+                    )
 
     def test_integridade_votos_nominais(self):
         """Garante que todo deputado possui voto mapeado para cada tema do catálogo."""
@@ -250,6 +291,37 @@ class TestDataIntegrity(unittest.TestCase):
                     tipo_voto,
                     votos_permitidos,
                     f"Senador {s.get('id')} com tipo de voto inválido '{tipo_voto}' no tema {tid}",
+                )
+
+    def test_candidaturas_2026_integridade(self):
+        """Valida que candidaturas de 2026 dos parlamentares contêm links oficiais do TSE e dados válidos."""
+        with open(SITE_DEPUTADOS_FILE, encoding="utf-8") as f:
+            site_deputados = json.load(f)
+        with open(SITE_SENADORES_FILE, encoding="utf-8") as f:
+            site_senadores = json.load(f)
+
+        candidatos_dep = [d for d in site_deputados if d.get("candidatura_2026")]
+        candidatos_sen = [s for s in site_senadores if s.get("candidatura_2026")]
+
+        self.assertGreater(len(candidatos_dep), 400, "Esperado > 400 deputados candidatos em 2026.")
+        self.assertGreater(len(candidatos_sen), 30, "Esperado > 30 senadores candidatos em 2026.")
+
+        for p in candidatos_dep + candidatos_sen:
+            cand = p["candidatura_2026"]
+            self.assertTrue(cand["cargo"])
+            self.assertIsInstance(cand["reeleicao"], bool)
+            self.assertTrue(cand["numero_urna"])
+            self.assertTrue(
+                cand["url_divulgacand"].startswith("https://divulgacandcontas.tse.jus.br"),
+                f"URL do DivulgaCand inválida para parlamentar {p['id']}: {cand['url_divulgacand']}",
+            )
+            pat = cand.get("patrimonio")
+            if pat:
+                self.assertIsInstance(pat["total_declarado"], (int, float))
+                self.assertTrue(pat["total_formatado"].startswith("R$ "))
+                self.assertEqual(pat["ano"], 2026)
+                self.assertTrue(
+                    pat["tse_url"].startswith("https://divulgacandcontas.tse.jus.br"),
                 )
 
 
