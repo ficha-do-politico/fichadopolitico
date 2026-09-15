@@ -17,36 +17,37 @@ const isHome = !isCriterios && !isVotacoes && !isPresidente && (pathname === bas
       </div>
     </a>
 
-    <nav class="flex items-center gap-2 sm:gap-4 text-sm font-medium">
+    <!-- Navegação Desktop (telas médias e grandes) -->
+    <nav class="hidden md:flex items-center gap-1.5 lg:gap-3 text-sm font-medium">
       <a 
         href={base} 
-        class={`px-2 sm:px-3 py-1.5 rounded-lg transition ${isHome ? 'text-emerald-700 font-semibold bg-emerald-50/70' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
+        class={`px-3 py-1.5 rounded-lg transition ${isHome ? 'text-emerald-700 font-semibold bg-emerald-50/80' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
       >
         Parlamentares
       </a>
       <a 
         href={`${base}presidente`} 
-        class={`px-2 sm:px-3 py-1.5 rounded-lg transition ${isPresidente ? 'text-emerald-700 font-semibold bg-emerald-50/70' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
+        class={`px-3 py-1.5 rounded-lg transition ${isPresidente ? 'text-emerald-700 font-semibold bg-emerald-50/80' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
       >
         Presidência
       </a>
       <a 
         href={`${base}votacoes`} 
-        class={`px-2 sm:px-3 py-1.5 rounded-lg transition ${isVotacoes ? 'text-emerald-700 font-semibold bg-emerald-50/70' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
+        class={`px-3 py-1.5 rounded-lg transition ${isVotacoes ? 'text-emerald-700 font-semibold bg-emerald-50/80' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
       >
         Votações
       </a>
       <a 
         href={`${base}criterios`} 
-        class={`px-2 sm:px-3 py-1.5 rounded-lg transition ${isCriterios ? 'text-emerald-700 font-semibold bg-emerald-50/70' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
+        class={`px-3 py-1.5 rounded-lg transition ${isCriterios ? 'text-emerald-700 font-semibold bg-emerald-50/80' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
       >
         Critérios & Fontes
       </a>
       <a 
         href="https://github.com/ficha-do-politico/fichadopolitico" 
         target="_blank" 
-        rel="noopener noreferrer"
-        class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition text-slate-700 text-xs font-semibold shadow-2xs"
+        rel="noopener noreferrer" 
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition text-slate-700 text-xs font-semibold shadow-2xs ml-1"
         aria-label="Repositório no GitHub"
       >
         <svg class="w-4 h-4 text-slate-800" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -55,5 +56,109 @@ const isHome = !isCriterios && !isVotacoes && !isPresidente && (pathname === bas
         <span>GitHub</span>
       </a>
     </nav>
+
+    <!-- Botão Menu Mobile (telas pequenas) -->
+    <button 
+      id="mobileMenuBtn" 
+      type="button" 
+      class="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+      aria-label="Abrir menu de navegação"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <!-- Ícone Menu (Hambúrguer) -->
+      <svg id="menuOpenIcon" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <!-- Ícone Fechar (X) -->
+      <svg id="menuCloseIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
+
+  <!-- Menu Dropdown Mobile -->
+  <nav 
+    id="mobileMenu" 
+    class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-5 space-y-1.5 shadow-lg transition-all duration-200"
+    aria-label="Navegação mobile"
+  >
+    <a 
+      href={base} 
+      class={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition ${isHome ? 'text-emerald-700 font-semibold bg-emerald-50 border border-emerald-200/60' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'}`}
+    >
+      <span>Parlamentares</span>
+      {isHome && <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>}
+    </a>
+    <a 
+      href={`${base}presidente`} 
+      class={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition ${isPresidente ? 'text-emerald-700 font-semibold bg-emerald-50 border border-emerald-200/60' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'}`}
+    >
+      <span>Presidência</span>
+      {isPresidente && <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>}
+    </a>
+    <a 
+      href={`${base}votacoes`} 
+      class={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition ${isVotacoes ? 'text-emerald-700 font-semibold bg-emerald-50 border border-emerald-200/60' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'}`}
+    >
+      <span>Votações</span>
+      {isVotacoes && <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>}
+    </a>
+    <a 
+      href={`${base}criterios`} 
+      class={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition ${isCriterios ? 'text-emerald-700 font-semibold bg-emerald-50 border border-emerald-200/60' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'}`}
+    >
+      <span>Critérios & Fontes</span>
+      {isCriterios && <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>}
+    </a>
+
+    <div class="pt-2 mt-2 border-t border-slate-100">
+      <a 
+        href="https://github.com/ficha-do-politico/fichadopolitico" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition text-slate-700 text-xs font-semibold"
+      >
+        <svg class="w-4 h-4 text-slate-800" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+        </svg>
+        <span>Repositório no GitHub (Código Aberto)</span>
+        <span class="ml-auto text-slate-400">↗</span>
+      </a>
+    </div>
+  </nav>
+
+  <script is:inline>
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    const openIcon = document.getElementById('menuOpenIcon');
+    const closeIcon = document.getElementById('menuCloseIcon');
+
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (openIcon) openIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+        } else {
+          menu.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          if (openIcon) openIcon.classList.add('hidden');
+          if (closeIcon) closeIcon.classList.remove('hidden');
+        }
+      });
+
+      // Fecha menu se clicar fora
+      document.addEventListener('click', (e) => {
+        if (!btn.contains(e.target) && !menu.contains(e.target) && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (openIcon) openIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 </header>
