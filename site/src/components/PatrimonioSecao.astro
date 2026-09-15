@@ -1,0 +1,160 @@
+---
+import type { PatrimonioCongresso, Candidatura2026 } from '../types';
+
+interface Props {
+  candidatura: Candidatura2026;
+  nomeEleitoral: string;
+}
+
+const { candidatura, nomeEleitoral } = Astro.props;
+const patrimonio = candidatura.patrimonio;
+
+if (!patrimonio) {
+  return null;
+}
+
+const totalAtual = patrimonio.total_declarado;
+const comp = patrimonio.comparativo_anterior;
+
+let variacaoTexto = '';
+let variacaoPercentual = '';
+let variacaoPositiva = true;
+
+if (comp && comp.total_declarado > 0) {
+  const diff = totalAtual - comp.total_declarado;
+  const pct = ((diff / comp.total_declarado) * 100).toFixed(1);
+  variacaoPositiva = diff >= 0;
+  const sinal = diff >= 0 ? '+' : '';
+  variacaoTexto = `${sinal}R$ ${Math.abs(diff).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  variacaoPercentual = `${sinal}${pct}%`;
+}
+---
+
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
+  <!-- Título e Totais -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+    <div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Patrimônio Declarado ao TSE • Pleito 2026
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+        Bens Autodeclarados à Justiça Eleitoral
+      </h2>
+      <p class="text-xs text-slate-500 mt-0.5">
+        Valores declarados oficialmente por {nomeEleitoral} para o registro de candidatura de 2026.
+      </p>
+    </div>
+
+    <div class="sm:text-right">
+      <span class="text-xs font-semibold text-slate-400 block uppercase">Total Declarado (2026)</span>
+      <span class="text-2xl sm:text-3xl font-black text-slate-900">
+        {patrimonio.total_formatado}
+      </span>
+    </div>
+  </div>
+
+  <!-- Cards de Resumo e Comparativo Histórico -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- Card Pleito 2026 -->
+    <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/80">
+      <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Eleição 2026</span>
+      <div class="text-xl font-bold text-slate-900 mt-1">
+        {patrimonio.total_formatado}
+      </div>
+      <p class="text-xs text-slate-500 mt-1">
+        Concorrendo a: <strong class="text-slate-800 font-semibold">{candidatura.cargo}</strong> {candidatura.reeleicao ? '(Reeleição)' : ''}
+      </p>
+    </div>
+
+    <!-- Card Comparativo Anterior -->
+    {comp && (
+      <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/80">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Comparativo • Pleito {comp.ano}
+          </span>
+          {variacaoPercentual && (
+            <span class={`text-xs font-bold px-2 py-0.5 rounded-full border ${
+              variacaoPositiva 
+                ? 'bg-amber-50 text-amber-800 border-amber-200' 
+                : 'bg-emerald-50 text-emerald-800 border-emerald-200'
+            }`}>
+              {variacaoPercentual}
+            </span>
+          )}
+        </div>
+        <div class="text-xl font-bold text-slate-900 mt-1">
+          {comp.total_formatado}
+        </div>
+        <p class="text-xs text-slate-500 mt-1">
+          Variação nominal: <span class="font-medium text-slate-700">{variacaoTexto}</span>
+        </p>
+      </div>
+    )}
+  </div>
+
+  <!-- Tabela Discriminada de Bens -->
+  {patrimonio.bens && patrimonio.bens.length > 0 && (
+    <div class="space-y-3 pt-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-bold text-slate-900">
+          Discriminação dos Bens Declarados ({patrimonio.bens.length} {patrimonio.bens.length === 1 ? 'item' : 'itens'})
+        </h3>
+        <a 
+          href={candidatura.url_divulgacand} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-xs text-emerald-700 hover:text-emerald-800 font-medium inline-flex items-center gap-1 underline underline-offset-2"
+        >
+          <span>Conferir no DivulgaCandContas</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-100 text-slate-600 font-semibold border-b border-slate-200 uppercase tracking-wider">
+            <tr>
+              <th class="py-2.5 px-4">Tipo do Bem</th>
+              <th class="py-2.5 px-4">Descrição Oficial</th>
+              <th class="py-2.5 px-4 text-right">Valor Declarado</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {patrimonio.bens.map((b) => (
+              <tr class="hover:bg-slate-50 transition">
+                <td class="py-2.5 px-4 font-semibold text-slate-800 whitespace-nowrap">
+                  {b.tipo}
+                </td>
+                <td class="py-2.5 px-4 text-slate-600">
+                  {b.descricao}
+                </td>
+                <td class="py-2.5 px-4 text-right font-mono font-medium text-slate-900 whitespace-nowrap">
+                  {`R$ ${b.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <!-- Nota Metodológica Oficial Obrigatória (AD-018 / AD-004) -->
+  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1">
+    <div class="flex items-center gap-1.5 font-semibold text-slate-800">
+      <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Critério Legal e Metodologia de Custo Histórico (Receita Federal / TSE)
+    </div>
+    <p class="leading-relaxed">
+      Conforme a legislação eleitoral brasileira (Lei nº 9.504/1997) e instruções normativas da Receita Federal, os valores declarados refletem o <strong>custo histórico de aquisição</strong> informado na Declaração de Imposto de Renda Pessoa Física (IRPF), e não a cotação corrente de mercado. Variações patrimoniais entre eleições podem decorrer de valorização, aquisição de novos bens ou atualização contábil legal. O Ficha do Político exibe exclusivamente os dados brutos oficiais, sem qualquer inferência ou juízo de valor.
+    </p>
+  </div>
+</section>

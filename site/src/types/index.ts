@@ -12,6 +12,32 @@ export type VotoTipo =
   | 'Não votou / Ausente'
   | string;
 
+export interface PatrimonioComparativo {
+  ano: number;
+  total_declarado: number;
+  total_formatado: string;
+}
+
+export interface PatrimonioCongresso {
+  total_declarado: number;
+  total_formatado: string;
+  ano: number;
+  tse_url: string;
+  bens: BemItem[];
+  comparativo_anterior?: PatrimonioComparativo;
+}
+
+export interface Candidatura2026 {
+  cargo: string;
+  reeleicao: boolean;
+  numero_urna: string;
+  partido: string;
+  uf: string;
+  situacao_registro: string;
+  url_divulgacand: string;
+  patrimonio?: PatrimonioCongresso;
+}
+
 export interface Deputado {
   id: number;
   nome_eleitoral: string;
@@ -22,6 +48,7 @@ export interface Deputado {
   url_foto: string;
   url_perfil_camara: string;
   votos: Record<string, string>;
+  candidatura_2026?: Candidatura2026 | null;
 }
 
 export interface Senador {
@@ -34,6 +61,7 @@ export interface Senador {
   url_foto: string;
   url_perfil_senado: string;
   votos: Record<string, string>;
+  candidatura_2026?: Candidatura2026 | null;
 }
 
 export type CasaLegislativa = 'camara' | 'senado';
@@ -48,6 +76,9 @@ export interface ParlamentarCardData {
   casa: CasaLegislativa;
   cargo: string;
   href: string;
+  is_candidato_2026?: boolean;
+  is_reeleicao?: boolean;
+  cargo_2026?: string;
 }
 
 export interface TemaSenadoInfo {

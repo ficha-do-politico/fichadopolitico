@@ -32,6 +32,7 @@ CANON_SENADORES_FILE = SENADO_DIR / "senadores.json"
 SENADO_VOTACOES_DIR = SENADO_DIR / "votacoes"
 TSE_DIR = ROOT / "dados" / "tse"
 CANON_PRESIDENCIA_FILE = TSE_DIR / "presidencia.json"
+CANON_CONGRESSO_2026_FILE = TSE_DIR / "congresso_2026.json"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
 
@@ -104,6 +105,14 @@ def load_deputados_base():
     return deputados
 
 
+def load_congresso_2026():
+    """Carrega dados canônicos de candidaturas e patrimônio do Congresso Nacional (TSE 2026)."""
+    if not CANON_CONGRESSO_2026_FILE.exists():
+        return {}
+    with open(CANON_CONGRESSO_2026_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def validar_integridade(deputados, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD)."""
     # 1. Validação de verificabilidade dos temas
@@ -114,24 +123,62 @@ def validar_integridade(deputados, temas):
             raise ValueError(f"Tema {t.get('id')} sem url_proposicao oficial válida.")
 
     # 2. Validação LGPD: assegurar que dados privados nunca entrem nos datasets públicos
-    campos_proibidos = {"cpf", "email", "telefone", "redes", "redeSocial"}
+    campos_proibidos = {
+        "cpf",
+        "email",
+        "telefone",
+        "redes",
+        "redeSocial",
+        "rg",
+        "endereco",
+        "titulo_eleitor",
+    }
     for d in deputados:
         chaves_encontradas = set(d.keys()).intersection(campos_proibidos)
         if chaves_encontradas:
             raise ValueError(
                 f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no deputado {d.get('id')}"
             )
+        cand = d.get("candidatura_2026")
+        if cand:
+            chaves_cand = set(cand.keys()).intersection(campos_proibidos)
+            if chaves_cand:
+                raise ValueError(
+                    f"Violação LGPD na candidatura 2026: chaves {chaves_cand} no deputado {d.get('id')}"
+                )
+            url_tse = cand.get("url_divulgacand", "")
+            if not url_tse.startswith("https://divulgacandcontas.tse.jus.br"):
+                raise ValueError(f"Deputado {d.get('id')} com URL DivulgaCand inválida: {url_tse}")
 
 
 def validar_senadores(senadores, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD) para o Senado."""
-    campos_proibidos = {"cpf", "email", "telefone", "redes", "redeSocial"}
+    campos_proibidos = {
+        "cpf",
+        "email",
+        "telefone",
+        "redes",
+        "redeSocial",
+        "rg",
+        "endereco",
+        "titulo_eleitor",
+    }
     for s in senadores:
         chaves_encontradas = set(s.keys()).intersection(campos_proibidos)
         if chaves_encontradas:
             raise ValueError(
                 f"Violação LGPD detectada: chaves proibidas {chaves_encontradas} no senador {s.get('id')}"
             )
+        cand = s.get("candidatura_2026")
+        if cand:
+            chaves_cand = set(cand.keys()).intersection(campos_proibidos)
+            if chaves_cand:
+                raise ValueError(
+                    f"Violação LGPD na candidatura 2026: chaves {chaves_cand} no senador {s.get('id')}"
+                )
+            url_tse = cand.get("url_divulgacand", "")
+            if not url_tse.startswith("https://divulgacandcontas.tse.jus.br"):
+                raise ValueError(f"Senador {s.get('id')} com URL DivulgaCand inválida: {url_tse}")
         url_perfil = s.get("url_perfil_senado", "")
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
@@ -164,12 +211,16 @@ def main():
         f"Carregadas {len(senado_votacoes)} votações oficiais do Senado em {SENADO_VOTACOES_DIR.relative_to(ROOT)}"
     )
 
+    congresso_2026 = load_congresso_2026()
+    print(f"Carregadas {len(congresso_2026)} candidaturas de 2026 do Congresso Nacional (TSE)")
+
     deputados_base = load_deputados_base()
     print(f"Carregados {len(deputados_base)} deputados (base canônica)")
 
     deputados = []
     for dep in deputados_base:
         dep_id_str = str(dep["id"])
+        dep["candidatura_2026"] = congresso_2026.get(dep_id_str)
 
         votos_map = {}
         for tema in temas:
@@ -205,6 +256,7 @@ def main():
 
         for sen in senadores_raw:
             sen_id_str = str(sen["id"])
+            sen["candidatura_2026"] = congresso_2026.get(sen_id_str)
             votos_map = {}
             for tema in temas:
                 vid = tema["id"]
@@ -316,6 +368,14 @@ def main():
             json.dump(presidencia, f, ensure_ascii=False, indent=2)
         print(
             f"  - {len(presidencia)} candidatos à presidência exportados em: {out_presidencia} ({out_presidencia.stat().st_size / 1024:.1f} KB)"
+        )
+
+    if CANON_CONGRESSO_2026_FILE.exists():
+        out_congresso_2026 = SITE_DATA_DIR / "congresso_2026.json"
+        with open(out_congresso_2026, "w", encoding="utf-8") as f:
+            json.dump(congresso_2026, f, ensure_ascii=False, indent=2)
+        print(
+            f"  - {len(congresso_2026)} candidaturas do congresso exportadas em: {out_congresso_2026} ({out_congresso_2026.stat().st_size / 1024:.1f} KB)"
         )
 
     print("Sucesso!")
