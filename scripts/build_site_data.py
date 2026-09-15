@@ -148,9 +148,7 @@ def validar_integridade(deputados, temas):
                 )
             url_tse = cand.get("url_divulgacand", "")
             if not url_tse.startswith("https://divulgacandcontas.tse.jus.br"):
-                raise ValueError(
-                    f"Deputado {d.get('id')} com URL DivulgaCand inválida: {url_tse}"
-                )
+                raise ValueError(f"Deputado {d.get('id')} com URL DivulgaCand inválida: {url_tse}")
 
 
 def validar_senadores(senadores, temas):
@@ -180,9 +178,7 @@ def validar_senadores(senadores, temas):
                 )
             url_tse = cand.get("url_divulgacand", "")
             if not url_tse.startswith("https://divulgacandcontas.tse.jus.br"):
-                raise ValueError(
-                    f"Senador {s.get('id')} com URL DivulgaCand inválida: {url_tse}"
-                )
+                raise ValueError(f"Senador {s.get('id')} com URL DivulgaCand inválida: {url_tse}")
         url_perfil = s.get("url_perfil_senado", "")
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
@@ -216,9 +212,7 @@ def main():
     )
 
     congresso_2026 = load_congresso_2026()
-    print(
-        f"Carregadas {len(congresso_2026)} candidaturas de 2026 do Congresso Nacional (TSE)"
-    )
+    print(f"Carregadas {len(congresso_2026)} candidaturas de 2026 do Congresso Nacional (TSE)")
 
     deputados_base = load_deputados_base()
     print(f"Carregados {len(deputados_base)} deputados (base canônica)")
