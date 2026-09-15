@@ -30,7 +30,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "22",
         "cargo": "Presidente",
         "fotoUrl": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Alfredo Gaspar", "partido": "UNIÃO"},
         "historicoPatrimonial": [
@@ -164,7 +164,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 8180000.00,
                 "totalFormatado": "R$ 8.180.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Casa Residencial (Mansão)",
@@ -204,7 +204,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "13",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607829/2022/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Geraldo Alckmin", "partido": "PSB"},
         "historicoPatrimonial": [
@@ -301,7 +301,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 4775650.64,
                 "totalFormatado": "R$ 4.775.650,64",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "VGBL - Previdência Privada",
@@ -346,7 +346,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "30",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/130001607830/2022/MG",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
             {
@@ -402,7 +402,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 178700000.00,
                 "totalFormatado": "R$ 178.700.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Quotas de Holding Familiar",
@@ -432,7 +432,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "55",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/90001607855/2022/GO",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Gilberto Kassab", "partido": "PSD"},
         "historicoPatrimonial": [
@@ -513,7 +513,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 52560000.00,
                 "totalFormatado": "R$ 52.560.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Imóveis Rurais e Urbanos",
@@ -543,7 +543,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "70",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607870/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Júlio Delgado", "partido": "AVANTE"},
         "historicoPatrimonial": [
@@ -552,7 +552,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 38450000.00,
                 "totalFormatado": "R$ 38.450.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Direitos Autorais e Propriedade Intelectual",
@@ -582,7 +582,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "33",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607833/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
             {
@@ -590,7 +590,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 1250000.00,
                 "totalFormatado": "R$ 1.250.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Apartamento",
@@ -620,7 +620,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "80",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607880/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Raquel Brício", "partido": "UP"},
         "historicoPatrimonial": [
@@ -643,7 +643,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 4800.00,
                 "totalFormatado": "R$ 4.800,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Caderneta de Poupança",
@@ -663,7 +663,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "29",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607829/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "vice": {"nomeUrna": "Antônio Carlos", "partido": "PCO"},
         "historicoPatrimonial": [
@@ -680,7 +680,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 0.00,
                 "totalFormatado": "R$ 0,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [],
             },
         ],
@@ -694,7 +694,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "21",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607821/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
             {
@@ -702,7 +702,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 420000.00,
                 "totalFormatado": "R$ 420.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Apartamento",
@@ -727,7 +727,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "16",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607816/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
             {
@@ -749,7 +749,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 120000.00,
                 "totalFormatado": "R$ 120.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Casa",
@@ -769,7 +769,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "27",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607827/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
             {
@@ -777,7 +777,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 580000.00,
                 "totalFormatado": "R$ 580.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Apartamento",
@@ -802,7 +802,7 @@ PRESIDENCIA_DATA_2026 = [
         "numeroUrna": "35",
         "cargo": "Presidente",
         "fotoUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/foto/2/280001607835/2026/BR",
-        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+        "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
         "situacaoCandidatura": "Deferido",
         "historicoPatrimonial": [
             {
@@ -810,7 +810,7 @@ PRESIDENCIA_DATA_2026 = [
                 "cargoDisputado": "Presidente",
                 "totalDeclarado": 1850000.00,
                 "totalFormatado": "R$ 1.850.000,00",
-                "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/BR/1/candidatos",
+                "tseUrl": "https://divulgacandcontas.tse.jus.br/",
                 "bens": [
                     {
                         "tipo": "Instalações e Clínica Veterinária",
