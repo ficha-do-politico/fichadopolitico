@@ -130,3 +130,37 @@ export interface VotoParlamentarItem {
   href: string;
 }
 
+export interface BemItem {
+  tipo: string;
+  descricao: string;
+  valor: number;
+}
+
+export interface HistoricoPatrimonial {
+  ano: number;
+  cargoDisputado: string;
+  totalDeclarado: number;
+  totalFormatado: string;
+  tseUrl: string;
+  bens: BemItem[];
+}
+
+export interface CandidatoPresidencia {
+  id: string;
+  nomeUrna: string;
+  nomeCivil: string;
+  partido: string;
+  partidoNome: string;
+  numeroUrna: string;
+  cargo: string;
+  fotoUrl: string;
+  tsePerfilUrl: string;
+  situacaoCandidatura: string;
+  vice?: {
+    nomeUrna: string;
+    partido: string;
+  };
+  historicoPatrimonial: HistoricoPatrimonial[];
+}
+
+

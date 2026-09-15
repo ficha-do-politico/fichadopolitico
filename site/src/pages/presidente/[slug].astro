@@ -1,0 +1,328 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import presidenciaData from '../../data/presidencia.json';
+import type { CandidatoPresidencia } from '../../types';
+
+export async function getStaticPaths() {
+  const candidatos = presidenciaData as CandidatoPresidencia[];
+  return candidatos.map(c => ({
+    params: { slug: c.id },
+    props: { candidato: c },
+  }));
+}
+
+interface Props {
+  candidato: CandidatoPresidencia;
+}
+
+const { candidato } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const historico = candidato.historicoPatrimonial;
+const ultimoPleito = historico[historico.length - 1];
+const primeiroPleito = historico[0];
+
+// Cálculo para alturas do gráfico de evolução patrimonial
+const valores = historico.map(h => h.totalDeclarado);
+const valorMaximo = Math.max(...valores, 1);
+
+const pageTitle = `${candidato.nomeUrna} — Evolução Patrimonial`;
+const pageDescription = `Confira a evolução patrimonial oficial de ${candidato.nomeUrna} (${candidato.partido}) ao longo de ${historico.length} eleições registradas no Tribunal Superior Eleitoral (TSE).`;
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  image={candidato.fotoUrl}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+    <!-- Navegação / Voltar -->
+    <div>
+      <a 
+        href={`${base}presidente`} 
+        class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-emerald-700 transition"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Voltar para todos os candidatos presidenciais
+      </a>
+    </div>
+
+    <!-- Header do Candidato -->
+    <header class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-6">
+      <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-slate-100 border-2 border-slate-200 shadow-inner flex-shrink-0">
+        <img 
+          src={candidato.fotoUrl} 
+          alt={candidato.nomeUrna} 
+          class="w-full h-full object-cover object-top"
+          onerror={`this.onerror=null; this.src='${base}avatar-placeholder.svg';`}
+        />
+      </div>
+
+      <div class="text-center sm:text-left flex-1 space-y-3">
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+              {candidato.nomeUrna}
+            </h1>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200">
+              {candidato.partido}
+            </span>
+            <span class="text-xs font-bold text-slate-500">
+              Nº {candidato.numeroUrna}
+            </span>
+            {candidato.situacaoCandidatura === 'Eleito' && (
+              <span class="px-2 py-0.5 text-xs font-bold bg-emerald-100 text-emerald-800 rounded-full">
+                Eleito
+              </span>
+            )}
+          </div>
+          <p class="text-sm text-slate-500">
+            {candidato.nomeCivil} • {candidato.partidoNome}
+          </p>
+          {candidato.vice && (
+            <p class="text-xs text-slate-500">
+              Chapa com: <strong class="text-slate-700">{candidato.vice.nomeUrna} ({candidato.vice.partido})</strong>
+            </p>
+          )}
+        </div>
+
+        <div class="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs">
+          <a 
+            href={candidato.tsePerfilUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold transition"
+          >
+            <span>Ver perfil no TSE DivulgaCand</span>
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Resumo Patrimonial (KPIs) -->
+    <section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-2xs">
+        <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          Último Declarado ({ultimoPleito?.ano})
+        </span>
+        <div class="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+          {ultimoPleito?.totalFormatado || 'R$ 0,00'}
+        </div>
+        <p class="text-xs text-slate-500 mt-0.5">
+          Concorrendo a {ultimoPleito?.cargoDisputado}
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-2xs">
+        <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          Primeiro Registro ({primeiroPleito?.ano})
+        </span>
+        <div class="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+          {primeiroPleito?.totalFormatado || 'R$ 0,00'}
+        </div>
+        <p class="text-xs text-slate-500 mt-0.5">
+          Concorrendo a {primeiroPleito?.cargoDisputado}
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-2xs">
+        <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          Eleições no Histórico
+        </span>
+        <div class="text-xl sm:text-2xl font-black text-emerald-700 mt-1">
+          {historico.length} {historico.length === 1 ? 'pleito' : 'pleitos'}
+        </div>
+        <p class="text-xs text-slate-500 mt-0.5">
+          Período {primeiroPleito?.ano} a {ultimoPleito?.ano}
+        </p>
+      </div>
+    </section>
+
+    <!-- Visualização Gráfica da Evolução Patrimonial -->
+    <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-2xs space-y-6">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">
+            Evolução Patrimonial Oficial (TSE)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Valores brutos nominais autodeclarados à Justiça Eleitoral a cada pleito
+          </p>
+        </div>
+        <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
+          Valores em R$ (nominal)
+        </span>
+      </div>
+
+      <!-- Gráfico em Barras Responsivo -->
+      <div class="pt-6 pb-2">
+        <div class="grid grid-cols-2 sm:grid-cols-{Math.min(historico.length, 6)} gap-4 items-end min-h-[220px]">
+          {historico.map(h => {
+            const pct = valorMaximo > 0 ? Math.max((h.totalDeclarado / valorMaximo) * 100, 6) : 6;
+            return (
+              <div class="flex flex-col items-center gap-2 group flex-1">
+                <span class="text-2xs sm:text-xs font-bold text-slate-700 group-hover:text-emerald-700 transition text-center">
+                  {h.totalFormatado}
+                </span>
+                <div class="w-full bg-slate-100 rounded-t-lg h-44 flex items-end p-1 relative overflow-hidden">
+                  <div 
+                    class="w-full bg-gradient-to-t from-emerald-600 to-emerald-500 group-hover:from-emerald-700 group-hover:to-emerald-600 rounded-t-md transition-all duration-300"
+                    style={`height: ${pct}%;`}
+                  ></div>
+                </div>
+                <div class="text-center">
+                  <span class="text-sm font-bold text-slate-900 block">{h.ano}</span>
+                  <span class="text-2xs text-slate-500 block leading-tight truncate max-w-[120px]" title={h.cargoDisputado}>
+                    {h.cargoDisputado}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Nota de Rastreabilidade -->
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <span>Fonte: Tribunal Superior Eleitoral (TSE / DivulgaCandContas)</span>
+        <span class="text-emerald-700 font-semibold">100% Verificável</span>
+      </div>
+    </section>
+
+    <!-- Lista Detalhada de Bens Declarados por Ano -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">
+            Detalhamento dos Bens por Eleição
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Clique em cada ano para visualizar os itens declarados oficialmente pelo candidato
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        {historico.slice().reverse().map((h, idx) => {
+          const totalBens = h.bens.length;
+          return (
+            <details 
+              class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs group"
+              open={idx === 0}
+            >
+              <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer hover:bg-slate-50/80 transition list-none">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 font-bold text-sm flex items-center justify-center border border-slate-200">
+                    {h.ano}
+                  </span>
+                  <div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900">
+                      Eleição de {h.ano} — {h.cargoDisputado}
+                    </h3>
+                    <p class="text-xs text-slate-500">
+                      {totalBens} {totalBens === 1 ? 'bem discriminado' : 'bens discriminados'}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                  <span class="text-sm sm:text-base font-black text-slate-900">
+                    {h.totalFormatado}
+                  </span>
+                  <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </summary>
+
+              <div class="p-4 sm:p-5 border-t border-slate-100 bg-slate-50/50 space-y-4">
+                {totalBens === 0 ? (
+                  <p class="text-xs sm:text-sm text-slate-500 italic py-2">
+                    Nenhum bem cadastrado ou declarado na prestação de contas à Justiça Eleitoral neste pleito.
+                  </p>
+                ) : (
+                  <div class="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                      <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold">
+                        <tr>
+                          <th class="py-2.5 px-3">Tipo do Bem</th>
+                          <th class="py-2.5 px-3">Descrição Oficial (TSE)</th>
+                          <th class="py-2.5 px-3 text-right">Valor Declarado</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-slate-100">
+                        {h.bens.map(bem => (
+                          <tr class="hover:bg-slate-50/60 transition">
+                            <td class="py-2.5 px-3 font-medium text-slate-900 whitespace-nowrap">
+                              <span class="inline-block px-2 py-0.5 rounded text-2xs font-semibold bg-slate-100 text-slate-700">
+                                {bem.tipo}
+                              </span>
+                            </td>
+                            <td class="py-2.5 px-3 text-slate-600">
+                              {bem.descricao}
+                            </td>
+                            <td class="py-2.5 px-3 text-right font-semibold text-slate-900 whitespace-nowrap">
+                              {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(bem.valor)}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                      <tfoot class="bg-slate-50 font-bold border-t border-slate-200">
+                        <tr>
+                          <td colspan="2" class="py-2.5 px-3 text-slate-800">
+                            Total Declarado em {h.ano}
+                          </td>
+                          <td class="py-2.5 px-3 text-right text-emerald-800">
+                            {h.totalFormatado}
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                )}
+
+                <div class="flex justify-end pt-1">
+                  <a 
+                    href={h.tseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:text-emerald-800 transition"
+                  >
+                    <span>Consultar registro oficial desta eleição no TSE</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Nota Metodológica de Rodapé -->
+    <footer class="bg-white border border-slate-200 rounded-2xl p-6 text-xs text-slate-600 space-y-3">
+      <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        Metodologia & Compromisso com a Verdade
+      </h4>
+      <p class="leading-relaxed">
+        <strong>1. Custo de Aquisição (Regra do IRPF):</strong> No Brasil, a declaração de bens à Justiça Eleitoral e à Receita Federal é autodeclaratória e segue a regra do custo histórico de aquisição. Isso significa que imóveis ou outros ativos não são atualizados automaticamente pela inflação ou pela cotação de mercado, exceto em caso de reformas ou benfeitorias documentalmente averbadas.
+      </p>
+      <p class="leading-relaxed">
+        <strong>2. Apartidarismo e Isenção:</strong> O Ficha do Político não emite opiniões, notas ou juízos de valor sobre o crescimento ou redução de patrimônio de qualquer candidato. Exibimos os dados brutos oficiais tal como registrados no Tribunal Superior Eleitoral (TSE).
+      </p>
+      <p class="leading-relaxed">
+        <strong>3. Verificabilidade:</strong> Todos os links apontam para páginas oficiais do domínio <code>tse.jus.br</code>.
+      </p>
+    </footer>
+  </div>
+</Layout>

@@ -30,6 +30,8 @@ VOTACOES_DIR = CAMARA_DIR / "votacoes"
 SENADO_DIR = ROOT / "dados" / "senado"
 CANON_SENADORES_FILE = SENADO_DIR / "senadores.json"
 SENADO_VOTACOES_DIR = SENADO_DIR / "votacoes"
+TSE_DIR = ROOT / "dados" / "tse"
+CANON_PRESIDENCIA_FILE = TSE_DIR / "presidencia.json"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
 
@@ -305,6 +307,16 @@ def main():
     out_temas = SITE_DATA_DIR / "temas.json"
     with open(out_temas, "w", encoding="utf-8") as f:
         json.dump(temas, f, ensure_ascii=False, indent=2)
+
+    if CANON_PRESIDENCIA_FILE.exists():
+        with open(CANON_PRESIDENCIA_FILE, encoding="utf-8") as f:
+            presidencia = json.load(f)
+        out_presidencia = SITE_DATA_DIR / "presidencia.json"
+        with open(out_presidencia, "w", encoding="utf-8") as f:
+            json.dump(presidencia, f, ensure_ascii=False, indent=2)
+        print(
+            f"  - {len(presidencia)} candidatos à presidência exportados em: {out_presidencia} ({out_presidencia.stat().st_size / 1024:.1f} KB)"
+        )
 
     print("Sucesso!")
     print(

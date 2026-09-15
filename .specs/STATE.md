@@ -38,14 +38,15 @@
 
 - **Fase:** Transição MVP v0 → v1 (Expansão Bicameral).
 - **Estado Entregue:**
-  - 594 fichas geradas (513 deputados + 81 senadores na 57ª Legislatura).
+  - 594 fichas parlamentares geradas (513 deputados + 81 senadores na 57ª Legislatura).
+  - 11 fichas completas de candidatos à Presidência da República com evolução patrimonial histórica oficial (TSE).
   - 5 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
-  - Busca rápida unificada na Home com filtros por Casa, Partido e UF.
+  - Busca rápida unificada na Home (parlamentares) e rota dedicada `/presidente` com busca e visualização gráfica de bens.
   - Testes automatizados de LGPD e integridade de fontes com 100% de sucesso.
   - Documentação de backlog de votações criada (`docs/backlog-votacoes.md`).
 - **Foco Ativo (v1):**
   1. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes com votação nominal concluída (meta 10+ matérias).
-  2. *Módulo Eleições 2026 (Roadmap Prioritário - AD-015):* Apoio ao eleitor para o pleito de 03/10/2026 (mandatários disputando eleição + bens declarados no TSE).
+  2. *Módulo Eleições 2026 (Roadmap Prioritário - AD-015 & AD-018):* Apoio ao eleitor para o pleito de 03/10/2026 (entregue rota de presidenciáveis + expansão para mandatários no Congresso).
   3. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
 - **Próximas Fases (v2 / v3):**
   4. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
@@ -54,13 +55,13 @@
 
 ---
 
-## 4. Planejamento — Módulo Eleições 2026 (AD-015)
+## 4. Planejamento — Módulo Eleições & Presidenciáveis (AD-015 & AD-018)
 
-> **Decisão Arquitetural AD-015 (Escopo Eleitoral Focado no Congresso):**  
-> Diante da proximidade do pleito nacional (03/10/2026), o portal incluirá apoio à consulta eleitoral com as seguintes diretrizes:
-> 1. **Fidelidade ao Escopo Federal (AD-011):** Cobertura restrita a candidatos a Deputado Federal e Senador da República (cargos estaduais e municipais permanecem fora de escopo).
-> 2. **Fase 1 (Mandatários & Reeleição):** Sinalização na ficha de quais dos 594 congressistas atuais estão disputando a reeleição ou outro cargo, incorporando os bens declarados no TSE (pleito 2026).
-> 3. **Fase 2 (Novos Candidatos Federais):** Ingestão do dump oficial do TSE (DivulgaCandContas 2026) com busca dedicada por UF e cargo, exibindo bens declarados, número de urna e proposta, mantendo integridade e neutralidade (AD-004).
+> **Decisão Arquitetural AD-018 (Rota Dedicada para Presidência e Evolução Patrimonial):**  
+> Para garantir utilidade pública imediata diante do ciclo eleitoral sem poluir a modelagem de dados do Legislativo bicameral:
+> 1. **Rota Dedicada `/presidente`:** Isolada das rotas `/deputado` e `/senador`, permitindo fichas focadas em candidaturas majoritárias ao Executivo Federal.
+> 2. **Metodologia de Custo Histórico (IRPF/TSE):** Todo dado patrimonial explicita em nota oficial neutra que os bens autodeclarados refletem o custo de aquisição da Receita Federal e não a cotação de mercado.
+> 3. **Verificabilidade e LGPD:** Todo pleito e item discriminado linka para o TSE (`divulgacandcontas.tse.jus.br`). CPFs e identificadores pessoais são 100% descartados no compilador estático.
 
 ---
 
