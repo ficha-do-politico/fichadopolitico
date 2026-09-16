@@ -43,13 +43,14 @@
   - Exibição de bens autodeclarados ao TSE em 2026 nas fichas individuais de deputados e senadores, com comparativo de eleições anteriores e discriminação item a item (AD-015).
   - Filtro instantâneo client-side na Home por status eleitoral em 2026 ("Todos", "Candidatos 2026", "Reeleição").
   - 11 fichas completas de candidatos à Presidência da República com evolução patrimonial histórica oficial (TSE / AD-018).
+  - 510 deputados da Câmara com detalhamento completo da Cota Parlamentar (CEAP 2026), discriminados por categoria de despesa, top 5 maiores gastos e link oficial para notas fiscais/recibos (AD-019).
   - 6 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
   - Busca rápida unificada na Home (parlamentares) e rota dedicada `/presidente` com busca e visualização gráfica de bens.
-  - Testes automatizados de LGPD e integridade de fontes com 100% de sucesso (16 testes).
+  - Testes automatizados de LGPD, integridade de fontes e CEAP com 100% de sucesso (21 testes).
   - Documentação de backlog de votações criada (`docs/backlog-votacoes.md`).
 - **Foco Ativo (v1):**
   1. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes com votação nominal concluída (meta 10+ matérias).
-  2. *Gastos Parlamentares (CEAP/CEAPS):* Modelagem de despesas e notas fiscais oficiais.
+  2. *Gastos no Senado (CEAPS):* Ingestão das despesas dos 81 senadores da República.
 - **Próximas Fases (v2 / v3):**
   3. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
   4. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
@@ -74,7 +75,18 @@
 
 ---
 
-## 5. Planejamento — Módulo Destinação de Emendas Parlamentares (AD-016)
+## 5. Decisões Arquiteturais — Módulo Gastos Parlamentares (AD-019)
+
+> **Decisão Arquitetural AD-019 (Cota Parlamentar CEAP da Câmara dos Deputados):**  
+> Exibir em cada ficha parlamentar o detalhamento do uso da Cota para Exercício da Atividade Parlamentar (CEAP) no exercício vigente:
+> 1. **Foco em Gastos Discricionários:** Foco exclusivo na CEAP (passagens, locação de veículos, combustíveis, divulgação/gráfica, consultorias e alimentação). Não misturar com salários fixos nem com Verba de Gabinete (pessoal).
+> 2. **Processamento em Lote Resiliente:** Ingestão a partir do dump anual consolidado oficial da Câmara (`Ano-2026.csv.zip`), evitando gargalos e rate-limits da API REST.
+> 3. **Agregação e Rastreabilidade Obrigatória:** O dataset do site não armazena milhares de comprovantes brutos. Consolida o total gasto, percentuais por categoria e as 5 maiores despesas com link direto oficial para o comprovante (`https://www.camara.leg.br/cota-parlamentar/`).
+> 4. **LGPD Rigorosa (AD-009):** O campo CPF do parlamentar contido no dump original é descartado no coletor. CPFs de prestadores pessoa física são mascarados (`***.XXX.XXX-**`).
+
+---
+
+## 6. Planejamento — Módulo Destinação de Emendas Parlamentares (AD-016)
 
 > **Decisão Arquitetural AD-016 (Rastreabilidade de Emendas Parlamentares):**  
 > Exibir em cada ficha parlamentar a destinação dos recursos do Orçamento Geral da União (emendas individuais, de bancada e transferências especiais):
@@ -83,7 +95,7 @@
 
 ---
 
-## 6. Planejamento — Módulo Transparência Processual e Judicial (AD-017)
+## 7. Planejamento — Módulo Transparência Processual e Judicial (AD-017)
 
 > **Decisão Arquitetural AD-017 (Integridade Processual e Presunção de Inocência):**  
 > Para exibir processos em aberto de parlamentares em tribunais:
