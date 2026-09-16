@@ -90,6 +90,7 @@ export interface Senador {
   url_perfil_senado: string;
   votos: Record<string, string>;
   candidatura_2026?: Candidatura2026 | null;
+  despesas_2026?: DespesasCEAP | null;
 }
 
 export type CasaLegislativa = 'camara' | 'senado';
