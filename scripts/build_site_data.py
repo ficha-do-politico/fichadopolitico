@@ -169,7 +169,9 @@ def validar_integridade(deputados, temas):
             for m in desp.get("maiores_despesas", []):
                 u_doc = m.get("url_documento")
                 if u_doc and not u_doc.startswith("https://"):
-                    raise ValueError(f"URL de comprovante fiscal insegura no deputado {d.get('id')}: {u_doc}")
+                    raise ValueError(
+                        f"URL de comprovante fiscal insegura no deputado {d.get('id')}: {u_doc}"
+                    )
 
 
 def validar_senadores(senadores, temas):
@@ -236,9 +238,7 @@ def main():
     print(f"Carregadas {len(congresso_2026)} candidaturas de 2026 do Congresso Nacional (TSE)")
 
     despesas_camara_2026 = load_camara_despesas_2026()
-    print(
-        f"Carregadas despesas da CEAP 2026 para {len(despesas_camara_2026)} deputados da Câmara"
-    )
+    print(f"Carregadas despesas da CEAP 2026 para {len(despesas_camara_2026)} deputados da Câmara")
 
     deputados_base = load_deputados_base()
     print(f"Carregados {len(deputados_base)} deputados (base canônica)")
