@@ -39,21 +39,20 @@
 - **Fase:** Transição MVP v0 → v1 (Expansão Bicameral).
 - **Estado Entregue:**
   - 594 fichas parlamentares geradas (513 deputados + 81 senadores na 57ª Legislatura).
+  - Paridade bicameral completa de gastos discricionários: CEAP 2026 (510 deputados federais) e CEAPS 2026 (80 senadores da República), discriminados por categoria de despesa, top 5 maiores gastos e links oficiais para notas fiscais e transparência (AD-019 e AD-020).
   - 548 candidaturas do Congresso Nacional mapeadas para o pleito geral de 2026 com número de urna, partido, situação do registro e link direto ao TSE DivulgaCand (AD-015).
   - Exibição de bens autodeclarados ao TSE em 2026 nas fichas individuais de deputados e senadores, com comparativo de eleições anteriores e discriminação item a item (AD-015).
   - Filtro instantâneo client-side na Home por status eleitoral em 2026 ("Todos", "Candidatos 2026", "Reeleição").
   - 11 fichas completas de candidatos à Presidência da República com evolução patrimonial histórica oficial (TSE / AD-018).
-  - 510 deputados da Câmara com detalhamento completo da Cota Parlamentar (CEAP 2026), discriminados por categoria de despesa, top 5 maiores gastos e link oficial para notas fiscais/recibos (AD-019).
   - 6 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
   - Busca rápida unificada na Home (parlamentares) e rota dedicada `/presidente` com busca e visualização gráfica de bens.
-  - Testes automatizados de LGPD, integridade de fontes e CEAP com 100% de sucesso (21 testes).
+  - Testes automatizados de LGPD, integridade de fontes e gastos bicamerais com 100% de sucesso (25 testes).
   - Documentação de backlog de votações criada (`docs/backlog-votacoes.md`).
 - **Foco Ativo (v1):**
   1. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes com votação nominal concluída (meta 10+ matérias).
-  2. *Gastos no Senado (CEAPS):* Ingestão das despesas dos 81 senadores da República.
 - **Próximas Fases (v2 / v3):**
-  3. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
-  4. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
+  2. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
+  3. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
 - **Bloqueios:** Nenhum.
 
 ---
@@ -83,6 +82,13 @@
 > 2. **Processamento em Lote Resiliente:** Ingestão a partir do dump anual consolidado oficial da Câmara (`Ano-2026.csv.zip`), evitando gargalos e rate-limits da API REST.
 > 3. **Agregação e Rastreabilidade Obrigatória:** O dataset do site não armazena milhares de comprovantes brutos. Consolida o total gasto, percentuais por categoria e as 5 maiores despesas com link direto oficial para o comprovante (`https://www.camara.leg.br/cota-parlamentar/`).
 > 4. **LGPD Rigorosa (AD-009):** O campo CPF do parlamentar contido no dump original é descartado no coletor. CPFs de prestadores pessoa física são mascarados (`***.XXX.XXX-**`).
+
+> **Decisão Arquitetural AD-020 (Cota Parlamentar CEAPS do Senado Federal):**  
+> Exibir em cada ficha parlamentar do Senado o detalhamento do uso da Cota para Exercício da Atividade Parlamentar dos Senadores (CEAPS) no ano de 2026:
+> 1. **Paridade Bicameral:** Mesma interface e metodologia da Câmara, cobrindo gastos discricionários operacionais (passagens, aluguel de escritórios, consultorias, divulgação, combustíveis).
+> 2. **Fonte de Dados Abertos:** Ingestão a partir da API de Dados Abertos Administrativos do Senado (`https://adm.senado.leg.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/{ano}`), tratando respostas grandes com fallback a `IncompleteRead`.
+> 3. **Rastreabilidade Obrigatória:** Cada ficha linka diretamente para o portal de transparência do senador no Senado Federal (`https://www6g.senado.leg.br/transparencia/sen/{codSenador}/?ano=2026`).
+> 4. **Conformidade LGPD (AD-009):** Descarte total de identificadores pessoais e mascaramento de CPFs de prestadores pessoa física.
 
 ---
 

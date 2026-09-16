@@ -34,6 +34,7 @@ TSE_DIR = ROOT / "dados" / "tse"
 CANON_PRESIDENCIA_FILE = TSE_DIR / "presidencia.json"
 CANON_CONGRESSO_2026_FILE = TSE_DIR / "congresso_2026.json"
 CANON_DESPESAS_2026_FILE = CAMARA_DIR / "despesas_2026.json"
+CANON_SENADO_DESPESAS_2026_FILE = SENADO_DIR / "despesas_2026.json"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
 
@@ -122,6 +123,14 @@ def load_camara_despesas_2026():
         return json.load(f)
 
 
+def load_senado_despesas_2026():
+    """Carrega dados canônicos agregados da CEAPS 2026 do Senado Federal."""
+    if not CANON_SENADO_DESPESAS_2026_FILE.exists():
+        return {}
+    with open(CANON_SENADO_DESPESAS_2026_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def validar_integridade(deputados, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD)."""
     # 1. Validação de verificabilidade dos temas
@@ -202,6 +211,13 @@ def validar_senadores(senadores, temas):
             url_tse = cand.get("url_divulgacand", "")
             if not url_tse.startswith("https://divulgacandcontas.tse.jus.br"):
                 raise ValueError(f"Senador {s.get('id')} com URL DivulgaCand inválida: {url_tse}")
+        desp = s.get("despesas_2026")
+        if desp:
+            chaves_desp = set(desp.keys()).intersection(campos_proibidos)
+            if chaves_desp:
+                raise ValueError(
+                    f"Violação LGPD nas despesas 2026: chaves {chaves_desp} no senador {s.get('id')}"
+                )
         url_perfil = s.get("url_perfil_senado", "")
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
@@ -239,6 +255,11 @@ def main():
 
     despesas_camara_2026 = load_camara_despesas_2026()
     print(f"Carregadas despesas da CEAP 2026 para {len(despesas_camara_2026)} deputados da Câmara")
+
+    despesas_senado_2026 = load_senado_despesas_2026()
+    print(
+        f"Carregadas despesas da CEAPS 2026 para {len(despesas_senado_2026)} senadores da República"
+    )
 
     deputados_base = load_deputados_base()
     print(f"Carregados {len(deputados_base)} deputados (base canônica)")
@@ -284,6 +305,7 @@ def main():
         for sen in senadores_raw:
             sen_id_str = str(sen["id"])
             sen["candidatura_2026"] = congresso_2026.get(sen_id_str)
+            sen["despesas_2026"] = despesas_senado_2026.get(sen_id_str)
             votos_map = {}
             for tema in temas:
                 vid = tema["id"]
@@ -411,6 +433,14 @@ def main():
             json.dump(despesas_camara_2026, f, ensure_ascii=False, indent=2)
         print(
             f"  - {len(despesas_camara_2026)} despesas CEAP exportadas em: {out_despesas} ({out_despesas.stat().st_size / 1024:.1f} KB)"
+        )
+
+    if CANON_SENADO_DESPESAS_2026_FILE.exists():
+        out_despesas_senado = SITE_DATA_DIR / "despesas_senado_2026.json"
+        with open(out_despesas_senado, "w", encoding="utf-8") as f:
+            json.dump(despesas_senado_2026, f, ensure_ascii=False, indent=2)
+        print(
+            f"  - {len(despesas_senado_2026)} despesas CEAPS exportadas em: {out_despesas_senado} ({out_despesas_senado.stat().st_size / 1024:.1f} KB)"
         )
 
     print("Sucesso!")
