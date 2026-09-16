@@ -53,8 +53,14 @@ Aprovação de uma tarefa não vale pra próxima. Cada tarefa reseta o ciclo.
 - **Ache os arquivos você mesmo:** com ferramentas de busca (Read, Grep, Glob ou equivalente), localize e leia o que precisar — não espere conteúdo ser colado. Se este prompt foi colado manualmente sem acesso a ferramentas, trabalhe com o que estiver disponível na conversa.
 - **Rotule o código:** ao entregar código, use markdown claro indicando a qual arquivo cada bloco pertence.
 
-### 4.4. Higiene pós-PR
-- Após abrir um Pull Request, não deixe o repositório parado nessa branch. Confirme que tudo está commitado e pushado, depois volte pra `main` e dê pull. Branch de PR esquecida é problema da próxima sessão.
+### 4.4. Validação Pré-Push, Acompanhamento de CI e Higiene pós-PR (MANDATÓRIO)
+1. **Validação local completa antes do push:**
+   - Execute exatamente o pipeline do CI antes de abrir o PR: `uv run ruff check`, `uv run ruff format --check` (formatação é obrigatória), `uv run python -m unittest discover tests`, `npm --prefix site run check` e `npm --prefix site run build`.
+2. **Acompanhamento ativo do CI:**
+   - Imediatamente após `gh pr create`, rode `gh pr checks <numero> --watch` (ou verifique com `gh pr checks`).
+   - PR com CI vermelho **NÃO** é considerado entregue. Se falhar, analise o log imediatamente (`gh run view --log-failed`), aplique a correção na branch do PR e suba novo commit até ficar 100% verde.
+3. **Higiene pós-PR:**
+   - Somente após o CI estar verde e o PR pronto para revisão/merge, volte para `main` e dê `git pull`. Nunca deixe o repositório parado na branch de trabalho.
 
 ## 5. Diretrizes de Interação
 - **Feedback direto e crítico:** priorize honestidade. Questione premissas, aponte falhas, debata alternativas, discorde quando justificado. Evite ser "puxa-saco".
