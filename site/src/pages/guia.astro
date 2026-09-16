@@ -1,0 +1,631 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout 
+  title="Guia Cívico de Cargos e Eleições"
+  description="Entenda as atribuições constitucionais de cada cargo político no Brasil: ciclo eleitoral, competências dos poderes, suplência e o papel de cada esfera de governo."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+    
+    <!-- Cabeçalho Principal -->
+    <header class="space-y-4 text-center sm:text-left border-b border-slate-200 pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+        Educação Cívica & Constituição de 1988
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Guia Cívico: O que faz cada cargo público no Brasil?
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
+        Compreender as atribuições constitucionais de cada representante é o primeiro passo para fiscalizar mandatos, cobrar resultados reais e exercer o voto com consciência e responsabilidade.
+      </p>
+
+      <!-- Navegação Rápida por Âncoras -->
+      <nav class="pt-4 flex flex-wrap gap-2 text-xs font-medium" aria-label="Navegação rápida pelas seções do guia">
+        <a href="#ciclos" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 transition">
+          Ciclos Eleitorais
+        </a>
+        <a href="#municipal" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 transition">
+          Esfera Municipal
+        </a>
+        <a href="#estadual" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 transition">
+          Esfera Estadual
+        </a>
+        <a href="#federal" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 transition">
+          Esfera Federal
+        </a>
+        <a href="#suplencia" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 transition">
+          Suplentes e Vices
+        </a>
+        <a href="#instituicoes" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 transition">
+          Sabatinas e Instituições
+        </a>
+      </nav>
+    </header>
+
+    <!-- Box de Escopo da Plataforma -->
+    <section class="bg-gradient-to-br from-emerald-50/70 to-slate-50 rounded-2xl border border-emerald-200/80 p-6 space-y-2">
+      <div class="flex items-center gap-2 text-emerald-900 font-bold text-sm">
+        <svg class="w-5 h-5 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Nota de Escopo da Ficha do Político</span>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+        A <strong>Ficha do Político</strong> é uma ferramenta especializada no monitoramento analítico do <strong>Congresso Nacional (Deputados Federais e Senadores)</strong> e da <strong>Presidência da República</strong>, com extração automatizada de dados oficiais. Disponibilizamos este guia didático de todas as esferas para esclarecer as competências de cada cargo e evitar a cobrança equivocada de atribuições fora da alçada do mandatário.
+      </p>
+    </section>
+
+    <!-- Seção 1: Ciclos Eleitorais -->
+    <section id="ciclos" class="space-y-6 pt-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span>1. Como funcionam os Ciclos Eleitorais no Brasil?</span>
+        </h2>
+        <p class="text-sm text-slate-600 mt-1">
+          No Brasil, as eleições ocorrem rigorosamente a cada 2 anos (em anos pares), alternando entre eleições municipais e eleições gerais.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Card Eleições Municipais -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+              Eleições Municipais
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Ex: 2024, 2028</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">2 votos na urna</h3>
+            <p class="text-xs text-slate-600 mt-1">
+              Decidem os representantes diretos do seu município para mandatos de 4 anos.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-3">
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-emerald-700">1.</span>
+              <span><strong>Prefeito & Vice:</strong> Poder Executivo Municipal (gestão da cidade).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-emerald-700">2.</span>
+              <span><strong>Vereador:</strong> Poder Legislativo Municipal (criação de leis locais e fiscalização).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card Eleições Gerais -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
+              Eleições Gerais
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Ex: 2022, 2026</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">5 votos na urna</h3>
+            <p class="text-xs text-slate-600 mt-1">
+              Decidem os rumos dos Estados e da Federação (mandatos de 4 anos, exceto Senador com 8 anos).
+            </p>
+          </div>
+          <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-3">
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-blue-700">1.</span>
+              <span><strong>Deputado Federal:</strong> Câmara dos Deputados (representa a população brasileira).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-blue-700">2.</span>
+              <span><strong>Deputado Estadual ou Distrital:</strong> Assembleia Legislativa do Estado / CLDF.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-blue-700">3.</span>
+              <span><strong>Senador & 2 Suplentes:</strong> Senado Federal (representa os 26 Estados e o DF).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-blue-700">4.</span>
+              <span><strong>Governador & Vice:</strong> Poder Executivo Estadual.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-blue-700">5.</span>
+              <span><strong>Presidente & Vice:</strong> Poder Executivo Federal (União).</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Diferença de Sistemas Eleitorais -->
+      <div class="bg-slate-100/80 rounded-2xl border border-slate-200 p-6 space-y-3 text-xs text-slate-700">
+        <h4 class="font-bold text-slate-900 text-sm">Sistemas de Votação: Majoritário vs. Proporcional</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <span class="font-semibold text-slate-900">Sistema Majoritário (Presidente, Governador, Prefeito, Senador):</span>
+            <p class="leading-relaxed">
+              Vence quem obtiver o maior número de votos válidos. Em cidades com mais de 200 mil eleitores e para Presidente/Governador, exige-se mais de 50% dos votos válidos para vitória em 1º turno, havendo 2º turno entre os dois mais votados se a meta não for atingida.
+            </p>
+          </div>
+          <div class="space-y-1">
+            <span class="font-semibold text-slate-900">Sistema Proporcional (Deputado Federal, Deputado Estadual, Vereador):</span>
+            <p class="leading-relaxed">
+              O voto vai primeiro para o partido/federação e depois para o candidato. As vagas são distribuídas com base no <em>Quociente Eleitoral</em> e partidário. Por isso, um candidato muito votado pode "puxar" outros colegas de chapa com votações menores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 2: Esfera Municipal -->
+    <section id="municipal" class="space-y-6 pt-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">
+          2. Poder Público Municipal
+        </h2>
+        <p class="text-sm text-slate-600 mt-1">
+          A esfera mais próxima do dia a dia do cidadão, responsável pelos serviços de impacto local imediato.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Prefeito -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm">PM</span>
+              <h3 class="text-lg font-bold text-slate-900">Prefeito (Poder Executivo Municipal)</h3>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art29" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 29 ↗
+            </a>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            É o administrador da cidade. Arrecada tributos municipais e executa as políticas públicas do perímetro urbano e rural do município.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">O que é da competência do Prefeito:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>Saúde básica: postos de saúde (UBS) e UPAs;</li>
+                <li>Educação infantil: creches e ensino fundamental;</li>
+                <li>Transporte público municipal e trânsito da cidade;</li>
+                <li>Zeladoria: coleta de lixo, iluminação e pavimentação;</li>
+                <li>Tributos locais: IPTU, ISS e ITBI.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-rose-700 block mb-1">O que NÃO compete ao Prefeito:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>Comandar polícias ostensivas (PM) ou investigativas (Polícia Civil);</li>
+                <li>Criar leis penais ou trabalhistas;</li>
+                <li>Definir taxas de juros ou emitir moeda;</li>
+                <li>Gerir rodovias estaduais ou federais.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vereador -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-800 flex items-center justify-center font-bold text-sm">VR</span>
+              <h3 class="text-lg font-bold text-slate-900">Vereador (Poder Legislativo Municipal)</h3>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art29" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 29, IV ↗
+            </a>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Atua na Câmara Municipal representando os munícipes com duas funções centrais: <strong>legislar</strong> sobre temas estritamente locais e <strong>fiscalizar</strong> os gastos e contratos do Prefeito.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Atribuições reais:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>Votar o orçamento da cidade (LOA, LDO e PPA municipal);</li>
+                <li>Fiscalizar licitações e obras da prefeitura;</li>
+                <li>Deliberar sobre zoneamento urbano e plano diretor;</li>
+                <li>Julgar as contas anuais prestadas pelo Prefeito.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-amber-800 block mb-1">Atenção ao Voto:</span>
+              <p class="text-slate-600 leading-relaxed">
+                Vereador <strong>não executa obras</strong> nem compra remédios diretamente. Promessas eleitorais como "asfaltar ruas", "reduzir imposto de renda" ou "reformar presídios" são juridicamente nulas para a função legislativa municipal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: Esfera Estadual -->
+    <section id="estadual" class="space-y-6 pt-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">
+          3. Poder Público Estadual
+        </h2>
+        <p class="text-sm text-slate-600 mt-1">
+          Responsável pela segurança pública ostensiva e investigativa, ensino médio e articulação regional entre cidades.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Governador -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm">GV</span>
+              <h3 class="text-lg font-bold text-slate-900">Governador (Poder Executivo Estadual)</h3>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art28" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 28 e 144 ↗
+            </a>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Chefe do Executivo Estadual. Comanda a administração estadual e é a autoridade máxima da segurança pública nos Estados e no DF.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Principais responsabilidades:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li><strong>Segurança pública:</strong> comando da Polícia Militar, Polícia Civil e Corpo de Bombeiros;</li>
+                <li>Gestão do sistema prisional e penitenciárias;</li>
+                <li>Rede de hospitais regionais de média e alta complexidade;</li>
+                <li>Educação: gestão do ensino médio e universidades estaduais;</li>
+                <li>Tributos estaduais: arrecadação de ICMS, IPVA e ITCMD.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Relação Federativa:</span>
+              <p class="text-slate-600 leading-relaxed">
+                Depende do repasse constitucional do Fundo de Participação dos Estados (FPE) e da articulação com o Governo Federal e as bancadas de deputados e senadores para atração de investimentos e emendas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deputado Estadual -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-800 flex items-center justify-center font-bold text-sm">DE</span>
+              <h3 class="text-lg font-bold text-slate-900">Deputado Estadual / Distrital (Poder Legislativo Estadual)</h3>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art27" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 27 ↗
+            </a>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Atua na Assembleia Legislativa do Estado (ou na Câmara Legislativa do DF no caso dos deputados distritais). O número de parlamentares varia de 24 a 94 conforme o tamanho da população estadual.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Atribuições centrais:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>Criar leis estaduais (regras de ICMS, servidores estaduais, meio ambiente regional);</li>
+                <li>Votar o orçamento do governo estadual;</li>
+                <li>Fiscalizar a administração e contratos do Governador, auxiliado pelo TCE;</li>
+                <li>Instalar Comissões Parlamentares de Inquérito (CPIs estaduais).</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-amber-800 block mb-1">Limite Constitucional:</span>
+              <p class="text-slate-600 leading-relaxed">
+                Não legisla sobre Direito Penal, Civil, Eleitoral ou Trabalhista — matérias reservadas com exclusividade pela Constituição ao Congresso Nacional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: Esfera Federal -->
+    <section id="federal" class="space-y-6 pt-4">
+      <div class="border-b border-slate-200 pb-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h2 class="text-2xl font-bold text-slate-900">
+            4. Poder Público Federal (Congresso & Presidência)
+          </h2>
+          <span class="text-xs font-bold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300">
+            Foco da Ficha do Político
+          </span>
+        </div>
+        <p class="text-sm text-slate-600 mt-1">
+          A esfera responsável pela unidade nacional, soberania, grandes reformas constitucionais e regulação de leis para todo o território brasileiro.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Presidente da República -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-xs space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">PR</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Presidente da República (Poder Executivo Federal)</h3>
+                <span class="text-xs text-slate-500 font-medium">Chefe de Estado e Chefe de Governo da União</span>
+              </div>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art84" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 84 ↗
+            </a>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Concentra a chefia máxima da administração pública federal. Representa o país perante as demais nações soberanas (Chefe de Estado) e lidera a condução das políticas públicas nacionais (Chefe de Governo).
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-3 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Competências constitucionais privativas:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>Comando supremo das Forças Armadas (Exército, Marinha e Aeronáutica);</li>
+                <li>Relações exteriores e celebração de tratados internacionais;</li>
+                <li>Nomeação de Ministros de Estado e dirigentes federais;</li>
+                <li>Sancionar, promulgar ou vetar projetos de lei aprovados pelo Congresso;</li>
+                <li>Indicação de Ministros do STF, Tribunais Superiores e Procurador-Geral da República (sujeitos à aprovação do Senado).</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Freios e Contrapesos:</span>
+              <p class="text-slate-600 leading-relaxed mb-2">
+                O Presidente não governa por decreto absoluto. Qualquer proposta de orçamento, tributação ou alteração de lei depende do aval do Congresso Nacional, que também pode derrubar vetos presidenciais.
+              </p>
+              <a 
+                href={`${base}presidente`} 
+                class="inline-flex items-center gap-1 text-emerald-700 font-bold hover:underline"
+              >
+                Ver fichas da Presidência da República →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deputado Federal -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-xs space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-sm">DF</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Deputado Federal (Câmara dos Deputados)</h3>
+                <span class="text-xs text-slate-500 font-medium">513 parlamentares • Representantes do Povo</span>
+              </div>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art51" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 48 e 51 ↗
+            </a>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Compõem a câmara baixa do Congresso Nacional. O número de deputados por estado varia de 8 a 70, em proporção à densidade populacional, garantindo que o povo brasileiro esteja diretamente representado.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-3 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Atribuições centrais na Câmara:</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>Legislar sobre matérias nacionais: Código Penal, leis trabalhistas, impostos federais e previdência;</li>
+                <li>Propor e votar Propostas de Emenda à Constituição (PECs);</li>
+                <li>Instaurar formalmente processos de impeachment contra Presidente e Vice (Art. 51, I);</li>
+                <li>Votar a Lei Orçamentária Anual da União e destinar emendas parlamentares.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Como fiscalizar:</span>
+              <p class="text-slate-600 leading-relaxed mb-2">
+                Na Ficha do Político você acompanha como cada deputado federal votou nas votações nominais mais relevantes do país e como utilizou os recursos públicos da Cota Parlamentar (CEAP).
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <a href={base} class="inline-flex items-center gap-1 text-emerald-700 font-bold hover:underline">
+                  Buscar Deputados Federais →
+                </a>
+                <a href={`${base}votacoes`} class="inline-flex items-center gap-1 text-slate-600 hover:text-slate-900 hover:underline">
+                  Ver Votações Nominais →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Senador da República -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-xs space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center font-bold text-sm">SF</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Senador da República (Senado Federal)</h3>
+                <span class="text-xs text-slate-500 font-medium">81 parlamentares • Representantes dos 26 Estados e do DF</span>
+              </div>
+            </div>
+            <a 
+              href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art52" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-semibold text-emerald-700 hover:underline"
+            >
+              CF/88 Art. 48 e 52 ↗
+            </a>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Compõem a câmara alta do Congresso Nacional. Cada uma das 27 unidades da federação (26 estados + DF) elege exatamente 3 senadores, garantindo equilíbrio federativo para que os estados mais populosos não anulem os menores.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-3 border-t border-slate-100">
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Competências exclusivas do Senado (Art. 52):</span>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li><strong>Sabatinar e aprovar autoridades:</strong> Ministros do STF, Procurador-Geral da República, diretores do Banco Central e embaixadores;</li>
+                <li><strong>Julgamento de impeachment:</strong> julgar o Presidente da República e Ministros do STF por crime de responsabilidade;</li>
+                <li>Aprovar operações financeiras externas e limites da dívida pública;</li>
+                <li>Revisar e votar todos os projetos aprovados pelos deputados.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block mb-1">Particularidades do Mandato:</span>
+              <p class="text-slate-600 leading-relaxed mb-2">
+                O mandato de senador tem duração de <strong>8 anos</strong>. As eleições alternam a cada 4 anos entre a renovação de 1/3 das cadeiras (1 vaga por estado) e de 2/3 (2 vagas por estado).
+              </p>
+              <a href={base} class="inline-flex items-center gap-1 text-emerald-700 font-bold hover:underline">
+                Buscar Senadores em Exercício →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 5: Suplência e Vices -->
+    <section id="suplencia" class="space-y-6 pt-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">
+          5. Regras de Suplência e Vices
+        </h2>
+        <p class="text-sm text-slate-600 mt-1">
+          A linha sucessória é um dos elementos mais determinantes da política e costuma ser ignorada no momento do voto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Suplente de Senador -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">
+            1/2
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm">Suplentes de Senador (Chapa Fechada)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Cada candidato a Senador é eleito com <strong>dois suplentes</strong> registrados previamente na mesma chapa. Se o titular se afastar para assumir um ministério, renunciar ou falecer, quem assume é o 1º suplente — que assume sem ter recebido votos nominais diretos.
+          </p>
+        </div>
+
+        <!-- Suplente Proporcional -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">
+            QE
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm">Suplentes Proporcionais (Deputados e Vereadores)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Não existe chapa de suplência prévia. A vaga pertence ao partido/federação. Se um deputado federal assume um cargo de secretário ou se licencia, é convocado o candidato do mesmo partido que obteve a maior votação subsequente na eleição geral.
+          </p>
+        </div>
+
+        <!-- Vices do Executivo -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+            VC
+          </div>
+          <h3 class="font-bold text-slate-900 text-sm">Vices do Poder Executivo</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Substituem temporariamente os chefes do Executivo (viagens oficiais, internações médicas) e sucedem em definitivo em caso de vacância (renúncia, cassação ou morte). Também podem desempenhar funções de articulação ou liderar ministérios e secretarias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 6: Instituições de Estado & Sabatinas -->
+    <section id="instituicoes" class="space-y-6 pt-4">
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">
+          6. Instituições de Estado e o Papel do Senado
+        </h2>
+        <p class="text-sm text-slate-600 mt-1">
+          Por que cargos como ministros do STF, PGR e diretores do Banco Central não são eleitos nas urnas?
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-5">
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+          No regime democrático e constitucional brasileiro, as instituições técnicas e judiciárias possuem mandatos ou estabilidade funcional para garantir independência contra pressões político-eleitorais imediatas. Sua legitimidade democrática é exercida pelo mecanismo de <strong>freios e contrapesos</strong> (<em>checks and balances</em>):
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm">STF (Supremo Tribunal Federal)</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Guardião da Constituição. Indicados pelo Presidente da República entre brasileiros com notável saber jurídico e reputação ilibada, passam por sabatina pública e exigem aprovação por maioria absoluta do Senado Federal.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm">PGR (Procurador-Geral)</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Chefe do Ministério Público da União. Defensor da ordem jurídica e titular da ação penal pública contra autoridades com foro constitucional. É indicado pelo Presidente e requer aprovação prévia do Senado.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm">Banco Central do Brasil</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Autoridade monetária dotada de autonomia legal (Lei Complementar nº 179/2021). O Presidente e a diretoria têm mandatos fixos não coincidentes com o mandato presidencial e precisam ser sabatinados pelo Senado.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-200 pt-4 text-xs text-slate-600">
+          <p>
+            <strong>Conexão direta com o seu voto:</strong> Quando você vota para Senador, está escolhendo os parlamentares que terão a prerrogativa constitucional de aceitar, rejeitar ou julgar os ocupantes desses cargos estratégicos da República.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes e Verificabilidade -->
+    <section class="bg-slate-100/70 rounded-2xl border border-slate-200 p-6 space-y-3 text-xs text-slate-600">
+      <h3 class="font-bold text-slate-900 text-sm">
+        Fontes Jurídicas e Verificabilidade
+      </h3>
+      <p>
+        As competências e normas descritas neste guia são extraídas diretamente dos textos legais consolidados da República Federativa do Brasil:
+      </p>
+      <ul class="list-disc list-inside space-y-1 text-slate-700">
+        <li>
+          <a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
+            Constituição da República Federativa do Brasil de 1988 (CF/88) ↗
+          </a>
+        </li>
+        <li>
+          <a href="https://www.planalto.gov.br/ccivil_03/leis/l9504.htm" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
+            Lei das Eleições (Lei nº 9.504/1997) ↗
+          </a>
+        </li>
+        <li>
+          <a href="https://www.planalto.gov.br/ccivil_03/leis/l4737compilado.htm" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
+            Código Eleitoral Brasileiro (Lei nº 4.737/1965) ↗
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</Layout>
