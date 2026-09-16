@@ -25,9 +25,120 @@ const historico = candidato.historicoPatrimonial;
 const ultimoPleito = historico[historico.length - 1];
 const primeiroPleito = historico[0];
 
-// Cálculo para alturas do gráfico de evolução patrimonial
+// Formatação abreviada de valores para referências dos eixos
+function formatarValorAbreviado(val: number): string {
+  if (val >= 1_000_000_000) {
+    return `R$ ${(val / 1_000_000_000).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} bi`;
+  }
+  if (val >= 1_000_000) {
+    return `R$ ${(val / 1_000_000).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} mi`;
+  }
+  if (val >= 1_000) {
+    return `R$ ${(val / 1_000).toLocaleString('pt-BR', { maximumFractionDigits: 0 })} mil`;
+  }
+  return `R$ ${val.toLocaleString('pt-BR')}`;
+}
+
+// Cálculo para alturas e coordenadas do gráfico de evolução patrimonial
 const valores = historico.map(h => h.totalDeclarado);
 const valorMaximo = Math.max(...valores, 1);
+const numPontos = historico.length;
+const temMultiplasEleicoes = numPontos > 1;
+
+// Variação acumulada no período inteiro
+const variacaoTotalValor = temMultiplasEleicoes && primeiroPleito && ultimoPleito
+  ? ultimoPleito.totalDeclarado - primeiroPleito.totalDeclarado
+  : 0;
+const variacaoTotalPct = temMultiplasEleicoes && primeiroPleito && primeiroPleito.totalDeclarado > 0
+  ? `${variacaoTotalValor >= 0 ? '+' : ''}${((variacaoTotalValor / primeiroPleito.totalDeclarado) * 100).toFixed(1)}%`
+  : null;
+const variacaoTotalPositiva = variacaoTotalValor >= 0;
+
+// Dimensões do canvas SVG responsivo
+const chartWidth = Math.max(680, numPontos * 135);
+const chartHeight = 290;
+const padLeft = 85;
+const padRight = 65;
+const padTop = 50;
+const padBottom = 65;
+const plotWidth = chartWidth - padLeft - padRight;
+const plotHeight = chartHeight - padTop - padBottom;
+
+const yRefTopo = padTop;
+const yRefMeio = padTop + plotHeight / 2;
+const yRefBase = padTop + plotHeight;
+
+const labelTopo = formatarValorAbreviado(valorMaximo);
+const labelMeio = formatarValorAbreviado(valorMaximo / 2);
+const labelBase = 'R$ 0';
+
+// Cálculo das coordenadas de cada ponto e métricas de variação
+const pontos = historico.map((h, i) => {
+  const x = numPontos === 1
+    ? chartWidth / 2
+    : padLeft + (i / (numPontos - 1)) * plotWidth;
+  const ratio = valorMaximo > 0 ? h.totalDeclarado / valorMaximo : 0;
+  const y = yRefBase - (ratio * plotHeight);
+
+  let diffValor = 0;
+  let diffPctTexto: string | null = null;
+  let diffPositiva = true;
+  let saltoAnos = 0;
+  let isSaltoLongo = false;
+
+  if (i > 0) {
+    const anterior = historico[i - 1];
+    diffValor = h.totalDeclarado - anterior.totalDeclarado;
+    saltoAnos = h.ano - anterior.ano;
+    isSaltoLongo = saltoAnos > 4;
+    diffPositiva = diffValor >= 0;
+    if (anterior.totalDeclarado > 0) {
+      const pct = (diffValor / anterior.totalDeclarado) * 100;
+      const sinal = diffValor >= 0 ? '+' : '';
+      diffPctTexto = `${sinal}${pct.toFixed(1)}%`;
+    } else if (diffValor > 0) {
+      diffPctTexto = '+100%';
+    }
+  }
+
+  return {
+    ...h,
+    x,
+    y,
+    ratio,
+    diffValor,
+    diffPctTexto,
+    diffPositiva,
+    saltoAnos,
+    isSaltoLongo,
+  };
+});
+
+// Segmentos entre pontos adjacentes
+const segmentos = [];
+for (let i = 1; i < pontos.length; i++) {
+  const p1 = pontos[i - 1];
+  const p2 = pontos[i];
+  segmentos.push({
+    x1: p1.x,
+    y1: p1.y,
+    x2: p2.x,
+    y2: p2.y,
+    isSaltoLongo: p2.isSaltoLongo,
+    saltoAnos: p2.saltoAnos,
+    diffPctTexto: p2.diffPctTexto,
+    diffPositiva: p2.diffPositiva,
+    midX: (p1.x + p2.x) / 2,
+    midY: (p1.y + p2.y) / 2,
+  });
+}
+
+// Path de área sombreada sob a curva
+const areaPathD = pontos.length > 1
+  ? `M ${pontos[0].x} ${yRefBase} L ` +
+    pontos.map(p => `${p.x} ${p.y}`).join(' L ') +
+    ` L ${pontos[pontos.length - 1].x} ${yRefBase} Z`
+  : '';
 
 const pageTitle = `${candidato.nomeUrna} — Evolução Patrimonial`;
 const pageDescription = `Confira a evolução patrimonial oficial de ${candidato.nomeUrna} (${candidato.partido}) ao longo de ${historico.length} eleições registradas no Tribunal Superior Eleitoral (TSE).`;
@@ -149,54 +260,239 @@ const pageDescription = `Confira a evolução patrimonial oficial de ${candidato
           {historico.length} {historico.length === 1 ? 'pleito' : 'pleitos'}
         </div>
         <p class="text-xs text-slate-500 mt-0.5">
-          Período {primeiroPleito?.ano} a {ultimoPleito?.ano}
+          {historico.length === 1 ? `Pleito de ${primeiroPleito?.ano}` : `Período ${primeiroPleito?.ano} a ${ultimoPleito?.ano}`}
         </p>
       </div>
     </section>
 
     <!-- Visualização Gráfica da Evolução Patrimonial -->
     <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-2xs space-y-6">
-      <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center justify-between flex-wrap gap-3">
         <div>
           <h2 class="text-lg sm:text-xl font-bold text-slate-900">
             Evolução Patrimonial Oficial (TSE)
           </h2>
           <p class="text-xs sm:text-sm text-slate-500">
-            Valores brutos nominais autodeclarados à Justiça Eleitoral a cada pleito
+            Trajetória dos valores autodeclarados à Justiça Eleitoral a cada pleito disputado
           </p>
         </div>
-        <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
-          Valores em R$ (nominal)
-        </span>
-      </div>
-
-      <!-- Gráfico em Barras Responsivo -->
-      <div class="pt-6 pb-2">
-        <div class="grid grid-cols-2 sm:grid-cols-{Math.min(historico.length, 6)} gap-4 items-end min-h-[220px]">
-          {historico.map(h => {
-            const pct = valorMaximo > 0 ? Math.max((h.totalDeclarado / valorMaximo) * 100, 6) : 6;
-            return (
-              <div class="flex flex-col items-center gap-2 group flex-1">
-                <span class="text-2xs sm:text-xs font-bold text-slate-700 group-hover:text-emerald-700 transition text-center">
-                  {h.totalFormatado}
-                </span>
-                <div class="w-full bg-slate-100 rounded-t-lg h-44 flex items-end p-1 relative overflow-hidden">
-                  <div 
-                    class="w-full bg-gradient-to-t from-emerald-600 to-emerald-500 group-hover:from-emerald-700 group-hover:to-emerald-600 rounded-t-md transition-all duration-300"
-                    style={`height: ${pct}%;`}
-                  ></div>
-                </div>
-                <div class="text-center">
-                  <span class="text-sm font-bold text-slate-900 block">{h.ano}</span>
-                  <span class="text-2xs text-slate-500 block leading-tight truncate max-w-[120px]" title={h.cargoDisputado}>
-                    {h.cargoDisputado}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+            Valores em R$ (nominal)
+          </span>
+          {variacaoTotalPct && (
+            <span class={`text-xs font-bold px-2.5 py-1 rounded-md border ${
+              variacaoTotalPositiva 
+                ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
+                : 'bg-rose-50 text-rose-800 border-rose-200'
+            }`}>
+              {variacaoTotalPositiva ? 'Crescimento acumulado:' : 'Variação acumulada:'} {variacaoTotalPct}
+            </span>
+          )}
         </div>
       </div>
+
+      {temMultiplasEleicoes && (
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600 bg-slate-50/80 border border-slate-200/80 rounded-xl px-4 py-2.5">
+            <div class="flex items-center gap-4 flex-wrap">
+              <div class="inline-flex items-center gap-2">
+                <span class="w-5 h-0.5 bg-emerald-600 rounded"></span>
+                <span class="font-medium text-slate-700">Linha contínua: pleitos consecutivos</span>
+              </div>
+              <div class="inline-flex items-center gap-2">
+                <span class="w-5 h-0 border-t-2 border-dashed border-emerald-600"></span>
+                <span class="font-medium text-slate-700">Linha tracejada: hiato eleitoral (&gt; 4 anos)</span>
+              </div>
+            </div>
+            <div class="text-2xs text-slate-400 font-medium">
+              Eixo X: Ano do pleito • Eixo Y: Valor declarado
+            </div>
+          </div>
+
+          <div class="overflow-x-auto pb-4 pt-1 -mx-2 px-2 sm:mx-0 sm:px-0">
+            <div style={`min-width: ${chartWidth}px;`}>
+              <svg 
+                viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
+                class="w-full h-auto select-none overflow-visible"
+                role="img" 
+                aria-label={`Gráfico de evolução patrimonial oficial de ${candidato.nomeUrna}`}
+              >
+                <defs>
+                  <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#059669" stop-opacity="0.22" />
+                    <stop offset="100%" stop-color="#059669" stop-opacity="0.01" />
+                  </linearGradient>
+                </defs>
+
+                <line x1={padLeft} y1={yRefTopo} x2={chartWidth - padRight + 15} y2={yRefTopo} stroke="#f1f5f9" stroke-dasharray="4,4" stroke-width="1.5" />
+                <line x1={padLeft} y1={yRefMeio} x2={chartWidth - padRight + 15} y2={yRefMeio} stroke="#f1f5f9" stroke-dasharray="4,4" stroke-width="1.5" />
+                <line x1={padLeft} y1={yRefBase} x2={chartWidth - padRight + 15} y2={yRefBase} stroke="#cbd5e1" stroke-width="1.5" />
+
+                <text x={padLeft - 12} y={yRefTopo + 4} text-anchor="end" font-size="11" font-weight="600" fill="#94a3b8">{labelTopo}</text>
+                <text x={padLeft - 12} y={yRefMeio + 4} text-anchor="end" font-size="11" font-weight="600" fill="#94a3b8">{labelMeio}</text>
+                <text x={padLeft - 12} y={yRefBase + 4} text-anchor="end" font-size="11" font-weight="600" fill="#94a3b8">{labelBase}</text>
+
+                {areaPathD && <path d={areaPathD} fill="url(#areaGrad)" />}
+
+                {pontos.map(p => (
+                  <line 
+                    x1={p.x} 
+                    y1={p.y} 
+                    x2={p.x} 
+                    y2={yRefBase} 
+                    stroke="#cbd5e1" 
+                    stroke-width="1.5" 
+                    stroke-dasharray="2,3" 
+                    opacity="0.65" 
+                  />
+                ))}
+
+                {segmentos.map(s => (
+                  <g>
+                    <line 
+                      x1={s.x1} 
+                      y1={s.y1} 
+                      x2={s.x2} 
+                      y2={s.y2} 
+                      stroke="#059669" 
+                      stroke-width="3" 
+                      stroke-linecap="round"
+                      stroke-dasharray={s.isSaltoLongo ? "6,6" : undefined} 
+                    />
+                    {s.isSaltoLongo && (
+                      <g>
+                        <rect 
+                          x={s.midX - 44} 
+                          y={s.midY - 18} 
+                          width="88" 
+                          height="18" 
+                          rx="9" 
+                          fill="#ffffff" 
+                          stroke="#cbd5e1" 
+                          stroke-width="1" 
+                        />
+                        <text 
+                          x={s.midX} 
+                          y={s.midY - 5} 
+                          text-anchor="middle" 
+                          font-size="9" 
+                          font-weight="700" 
+                          fill="#64748b"
+                        >
+                          Hiato de {s.saltoAnos} anos
+                        </text>
+                      </g>
+                    )}
+                  </g>
+                ))}
+
+                {pontos.map(p => {
+                  const hasBadge = !!p.diffPctTexto;
+                  const yVal = p.y - (hasBadge ? 24 : 12);
+                  const yBadge = p.y - 18;
+                  const yBadgeText = p.y - 6;
+
+                  return (
+                    <g class="transition-transform group">
+                      <circle cx={p.x} cy={p.y} r="8" fill="#10b981" opacity="0.25" />
+                      
+                      <circle 
+                        cx={p.x} 
+                        cy={p.y} 
+                        r="5" 
+                        fill="#ffffff" 
+                        stroke="#047857" 
+                        stroke-width="3" 
+                      />
+
+                      <text 
+                        x={p.x} 
+                        y={yVal} 
+                        text-anchor="middle" 
+                        font-size="12" 
+                        font-weight="800" 
+                        fill="#0f172a"
+                      >
+                        {p.totalFormatado}
+                      </text>
+
+                      {hasBadge && (
+                        <g>
+                          <rect 
+                            x={p.x - 24} 
+                            y={yBadge} 
+                            width="48" 
+                            height="15" 
+                            rx="7.5" 
+                            fill={p.diffPositiva ? '#ecfdf5' : '#fef2f2'} 
+                            stroke={p.diffPositiva ? '#a7f3d0' : '#fecaca'} 
+                            stroke-width="1" 
+                          />
+                          <text 
+                            x={p.x} 
+                            y={yBadgeText} 
+                            text-anchor="middle" 
+                            font-size="9.5" 
+                            font-weight="700" 
+                            fill={p.diffPositiva ? '#065f46' : '#991b1b'}
+                          >
+                            {p.diffPctTexto}
+                          </text>
+                        </g>
+                      )}
+
+                      <line x1={p.x} y1={yRefBase} x2={p.x} y2={yRefBase + 6} stroke="#94a3b8" stroke-width="1.5" />
+                      <text 
+                        x={p.x} 
+                        y={yRefBase + 21} 
+                        text-anchor="middle" 
+                        font-size="13" 
+                        font-weight="800" 
+                        fill="#0f172a"
+                      >
+                        {p.ano}
+                      </text>
+                      <text 
+                        x={p.x} 
+                        y={yRefBase + 35} 
+                        text-anchor="middle" 
+                        font-size="10" 
+                        font-weight="500" 
+                        fill="#64748b"
+                      >
+                        {p.cargoDisputado}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {!temMultiplasEleicoes && (
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 sm:p-8 text-center space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/70 text-slate-700 text-xs font-semibold">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Primeiro Pleito Registrado no TSE
+          </div>
+          <div class="max-w-md mx-auto space-y-2">
+            <div class="text-3xl font-black text-slate-900">
+              {primeiroPleito?.totalFormatado || 'R$ 0,00'}
+            </div>
+            <p class="text-sm font-semibold text-slate-700">
+              Eleição de {primeiroPleito?.ano} — {primeiroPleito?.cargoDisputado}
+            </p>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Este candidato possui apenas um pleito autodeclarado na base oficial do TSE. A curva de evolução temporal (Eixo X = Ano, Eixo Y = Valor) será desenhada a partir de novos registros oficiais de candidatura.
+            </p>
+          </div>
+        </div>
+      )}
 
       <!-- Nota de Rastreabilidade -->
       <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
