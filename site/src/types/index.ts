@@ -38,6 +38,33 @@ export interface Candidatura2026 {
   patrimonio?: PatrimonioCongresso;
 }
 
+export interface DespesaCategoria {
+  categoria: string;
+  valor: number;
+  valor_formatado: string;
+  percentual: number;
+}
+
+export interface DespesaItem {
+  data: string;
+  fornecedor: string;
+  cnpj_cpf: string;
+  categoria: string;
+  valor: number;
+  valor_formatado: string;
+  url_documento?: string | null;
+}
+
+export interface DespesasCEAP {
+  ano: number;
+  total_gasto: number;
+  total_formatado: string;
+  total_documentos: number;
+  categorias: DespesaCategoria[];
+  maiores_despesas: DespesaItem[];
+  fonte_oficial: string;
+}
+
 export interface Deputado {
   id: number;
   nome_eleitoral: string;
@@ -49,6 +76,7 @@ export interface Deputado {
   url_perfil_camara: string;
   votos: Record<string, string>;
   candidatura_2026?: Candidatura2026 | null;
+  despesas_2026?: DespesasCEAP | null;
 }
 
 export interface Senador {
