@@ -50,6 +50,7 @@ O MVP v0 valida o formato da ficha com o menor esforço viável:
 5. **Navegação Rápida (Entregue):** Filtros combinados por Casa, Partido e Estado (UF).
 
 ### 3.2. Fases Subsequentes (v2 e v3):
+- **v2 — Auditoria de Gastos e Cruzamento Societário (AD-021):** Cruzamento objetivo de CNPJs de fornecedores da CEAP/CEAPS com a base de dados abertos da Receita Federal (QSA — Quadro de Sócios e Administradores) e a folha de servidores/comissionados do Congresso, sinalizando relações formais de conformidade legal e vedações regimentais com links diretos aos registros oficiais (sem juízos de valor ou acusações subjetivas).
 - **v2 — Destinação de Emendas Parlamentares (AD-016):** Rastreabilidade de valores empenhados e pagos do Orçamento da União via CGU e destino físico no Transferegov.br.
 - **v3 — Transparência Processual e Judicial (AD-017):** Levantamento de inquéritos e ações penais no STF (foro privilegiado) e ações públicas no DataJud/CNJ, com rigorosa desambiguação de homônimos e respeito à presunção de inocência.
 

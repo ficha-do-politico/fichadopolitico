@@ -157,9 +157,13 @@ Este documento cataloga as fontes de dados primárias e oficiais do Estado brasi
 ### 4.1. Receita Federal do Brasil — Dados Abertos do CNPJ
 - **O que é:** Base completa do Cadastro Nacional da Pessoa Jurídica disponibilizada publicamente pela Receita Federal.
 - **Portal:** [dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj)
-- **Formato:** Dumps mensais compactados em CSV (.zip).
+- **Formato:** Dumps mensais compactados em CSV (.zip) divididos em `Empresas`, `Estabelecimentos` e `Socios`.
 - **Tabela essencial:** `Socios` (Quadro de Sócios e Administradores — QSA).
-- **Relevância para a ficha:** Cruzamento do CPF/nome civil do político para identificar participações societárias ativas ou históricas em empresas privadas, cooperativas ou holdings patrimoniais. Crucial para checagem cruzada com declaração de bens do TSE e contratos governamentais.
+- **Relevância para a ficha (AD-021):**
+  - Identificação oficial de sócios-administradores e cotistas de fornecedores que receberam recursos da cota parlamentar (CEAP/CEAPS).
+  - Cruzamento de dados para verificação de vedações regimentais (ex.: sócio de empresa contratada nomeado como secretário parlamentar ou comissionado na folha do Congresso).
+  - Checagem cruzada com a prestação de contas de campanha do TSE (sócios doadores de campanha) e bens autodeclarados do político.
+  - Verificação cronológica da data de abertura do CNPJ em relação ao primeiro pagamento da cota.
 
 ---
 
@@ -170,17 +174,25 @@ Este documento cataloga as fontes de dados primárias e oficiais do Estado brasi
 
 ---
 
+### 4.3. Congresso Nacional — Folha de Pagamento de Servidores e Assessores
+- **Câmara dos Deputados:** [dadosabertos.camara.leg.br/arquivos/](https://dadosabertos.camara.leg.br/arquivos/) — Dumps de secretários parlamentares e ocupantes de cargos em comissão de gabinete.
+- **Senado Federal:** [adm.senado.gov.br/adm-dadosabertos/](https://adm.senado.gov.br/adm-dadosabertos/) — Estrutura de pessoal e comissionados ativos.
+- **Relevância para a ficha (AD-021):** Fonte primária oficial para cruzar se sócios de empresas prestadoras de serviço contratadas com verba indenizatória possuem vínculo funcional com gabinetes parlamentares.
+
+---
+
 ## 5. Matriz de Prioridade & Estratégia de Ingestão
 
 | Fonte Oficial | Domínio | Formato Primário | Autenticação | Dificuldade de Coleta | Prioridade Roadmap |
 |---|---|---|---|---|---|
-| **Câmara dos Deputados** | Votos e Perfil | REST JSON / Dumps CSV | Nenhuma | Baixa | **MVP v0 (Ativo)** |
-| **Câmara dos Deputados (CEAP)** | Gastos de Deputados | REST JSON / CSV | Nenhuma | Baixa | **v1 (Próximo)** |
-| **TSE (Bens Declarados)** | Patrimônio Político | Dumps CSV por eleição | Nenhuma (requer bulk download devido a WAF) | Média | **v1 (Próximo)** |
-| **Senado Federal (Legis)** | Votos e Perfil | REST JSON / XML | Nenhuma | Baixa | **v1 (Próximo)** |
-| **Senado Federal (CEAPS)** | Gastos de Senadores | REST JSON / CSV | Nenhuma | Baixa | **v1 (Próximo)** |
-| **Portal da Transparência (CGU)** | Emendas Parlamentares | REST JSON / Dumps CSV | API Key gratuita (via Gov.br) | Média | **v2** |
+| **Câmara dos Deputados** | Votos e Perfil | REST JSON / Dumps CSV | Nenhuma | Baixa | **Entregue (v0/v1)** |
+| **Senado Federal (Legis)** | Votos e Perfil | REST JSON / XML | Nenhuma | Baixa | **Entregue (v1)** |
+| **Câmara dos Deputados (CEAP)** | Gastos de Deputados | Dumps CSV anuais | Nenhuma | Baixa | **Entregue (v1 / AD-019)** |
+| **Senado Federal (CEAPS)** | Gastos de Senadores | REST JSON / Dumps | Nenhuma | Baixa | **Entregue (v1 / AD-020)** |
+| **TSE (Bens e Eleições 2026)** | Patrimônio e Pleito 2026 | Dumps CSV / API TSE | Nenhuma | Média | **Entregue (v1 / AD-015)** |
+| **Portal da Transparência (CGU)** | Emendas Parlamentares | REST JSON / Dumps CSV | API Key gratuita (Gov.br) | Média | **v2 (AD-016)** |
+| **Transferegov.br** | Destino de Emendas | REST JSON / Dumps CSV | Nenhuma | Média | **v2 (AD-016)** |
+| **Receita Federal (CNPJ QSA)** | Cruzamento Societário CEAP | Dumps CSV / Parquet | Nenhuma | Média/Alta (volume) | **v2 (AD-021)** |
+| **Congresso (Folha Servidores)** | Vínculos de Gabinete | Dumps CSV oficiais | Nenhuma | Baixa/Média | **v2 (AD-021)** |
 | **TCU (CADIRREG)** | Ficha Limpa / Contas | Consulta web / Export CSV | Nenhuma | Baixa | **v2** |
-| **Transferegov.br** | Destino de Emendas | REST JSON / Dumps CSV | Nenhuma | Média | **v2** |
-| **CNJ (DataJud)** | Processos Judiciais | REST Elasticsearch | API Key pública | Alta | **v3 (Avançado)** |
-| **Receita Federal (CNPJ QSA)** | Empresas e Vínculos | Dumps CSV (~GBs) | Nenhuma | Alta (volume) | **v3 (Avançado)** |
+| **CNJ (DataJud) / STF** | Processos Judiciais | REST Elasticsearch | API Key pública | Alta | **v3 (AD-017)** |
