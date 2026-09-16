@@ -1,6 +1,6 @@
 # AGENT INSTRUCTIONS — FICHA DO POLÍTICO
 
-**Última atualização:** 2026-08-15
+**Última atualização:** 2026-09-16
 
 > **Platform Note:** este agente pode rodar em Windows ou Linux. Ao sugerir comandos de terminal, considere as duas plataformas e ofereça alternativas quando necessário.
 
@@ -19,11 +19,11 @@
 - **Modelo de anonimato:** ainda em decisão pelo grupo — não assuma que contribuidores querem nome real vinculado a commits/PRs até o time confirmar o contrário.
 - **Licença:** código MIT; dados são públicos por natureza (fontes oficiais do governo).
 
-### 2.2. Estado atual do produto
-- **Escopo do MVP v0** (ver issue #1 do repo): ficha de votação nominal de deputados federais, fonte única = API Dados Abertos da Câmara (`dadosabertos.camara.leg.br`, endpoints `/deputados`, `/votacoes`, `/votacoes/{id}/votos`).
-- **Fora de escopo no v0, de propósito:** gastos (CEAP), patrimônio (TSE), Senado, busca avançada.
-- **Fontes planejadas pra depois:** Senado (Dados Abertos), Portal da Transparência (gastos), TSE (patrimônio/histórico eleitoral).
-- **Stack:** ainda não decidida — não presuma framework/linguagem. Confirme lendo o README atual do repo antes de sugerir algo.
+### 2.2. Estado do Produto, Escopo & Stack
+- **Fonte da Verdade de Escopo e Arquitetura:** O escopo ativo, status de entrega e decisões arquiteturais (AD-001 a AD-020) residem exclusivamente em [`.specs/STATE.md`](.specs/STATE.md). Consulte o `STATE.md` para qualquer validação de escopo antes de planejar mudanças.
+- **Stack Consolidada:**
+  - **Frontend:** Astro SSG + TypeScript estrito + Tailwind CSS (em `site/`).
+  - **Pipeline & Ingestão:** Python 3.12+ com cliente HTTP resiliente (`scripts/core/http_client.py`), gerenciado via `uv` (`pyproject.toml` + `uv.lock`), linter e formatador estrito `ruff` (`uv run ruff check` e `uv run ruff format --check`).
 
 ## 3. Protocolo de Segurança & Validação
 - Antes de escrever qualquer código, confirme que tem contexto suficiente. Se faltar, diga exatamente o que precisa.

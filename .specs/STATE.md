@@ -34,26 +34,18 @@
 
 ---
 
-## 3. Handoff & Foco Atual
+## 3. Handoff & Foco Operacional
 
-- **Fase:** Transição MVP v0 → v1 (Expansão Bicameral).
-- **Estado Entregue:**
-  - 594 fichas parlamentares geradas (513 deputados + 81 senadores na 57ª Legislatura).
-  - Paridade bicameral completa de gastos discricionários: CEAP 2026 (510 deputados federais) e CEAPS 2026 (80 senadores da República), discriminados por categoria de despesa, top 5 maiores gastos e links oficiais para notas fiscais e transparência (AD-019 e AD-020).
-  - 548 candidaturas do Congresso Nacional mapeadas para o pleito geral de 2026 com número de urna, partido, situação do registro e link direto ao TSE DivulgaCand (AD-015).
-  - Exibição de bens autodeclarados ao TSE em 2026 nas fichas individuais de deputados e senadores, com comparativo de eleições anteriores e discriminação item a item (AD-015).
-  - Filtro instantâneo client-side na Home por status eleitoral em 2026 ("Todos", "Candidatos 2026", "Reeleição").
-  - 11 fichas completas de candidatos à Presidência da República com evolução patrimonial histórica oficial (TSE / AD-018).
-  - 6 votações nominais da Câmara e Senado registradas com links duplos de verificabilidade.
-  - Busca rápida unificada na Home (parlamentares) e rota dedicada `/presidente` com busca e visualização gráfica de bens.
-  - Testes automatizados de LGPD, integridade de fontes e gastos bicamerais com 100% de sucesso (25 testes).
-  - Documentação de backlog de votações criada (`docs/backlog-votacoes.md`).
-- **Foco Ativo (v1):**
-  1. *Expansão do Catálogo:* Adicionar novos temas nacionais relevantes com votação nominal concluída (meta 10+ matérias).
-- **Próximas Fases (v2 / v3):**
-  2. *Destinação de Emendas Parlamentares (AD-016):* Rastreabilidade de valores empenhados/pagos e destino no Transferegov.br (v2).
-  3. *Transparência Processual e Judicial (AD-017):* Inquéritos e ações penais no STF e base DataJud/CNJ (v3).
-- **Bloqueios:** Nenhum.
+- **Fase Atual:** v1 em expansão (Legislativo Federal Bicameral).
+- **Módulos Ativos em Produção:**
+  - *Votações Nominais Curadas:* Deliberações da Câmara e Senado com links duplos de verificabilidade.
+  - *Gastos Discricionários:* CEAP (Câmara) e CEAPS (Senado) do exercício vigente (AD-019 e AD-020).
+  - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
+- **Foco Imediato (v1):** Expansão do catálogo de votações nominais para 10+ temas de impacto nacional (ver `docs/backlog-votacoes.md`).
+- **Roadmap Subsequente:**
+  - *v2:* Destinação de Emendas Parlamentares via CGU e Transferegov.br (AD-016).
+  - *v3:* Transparência Processual e Judicial via STF e DataJud/CNJ (AD-017).
+- **Bloqueios Ativos:** Nenhum.
 
 ---
 
