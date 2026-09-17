@@ -43,6 +43,7 @@
   - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
 - **Foco Imediato (v1):** Expansão do catálogo de votações nominais para 10+ temas de impacto nacional (ver `docs/backlog-votacoes.md`).
 - **Roadmap Subsequente:**
+  - *v2:* Auditoria de Gastos e Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Folha de Servidores (AD-021).
   - *v2:* Destinação de Emendas Parlamentares via CGU e Transferegov.br (AD-016).
   - *v3:* Transparência Processual e Judicial via STF e DataJud/CNJ (AD-017).
 - **Bloqueios Ativos:** Nenhum.
@@ -100,4 +101,22 @@
 > 1. **Fontes Primárias Estritas:** Consulta ao STF (foro por prerrogativa de função para matéria penal) e base DataJud do CNJ.
 > 2. **Impedimento de Homônimos:** O match DEVE ser 100% verificado por identificador unívoco para evitar atribuição indevida de processos judiciais de homônimos.
 > 3. **Neutralidade e Presunção de Inocência:** Distinção obrigatória e inequívoca entre "Inquérito / Processo em Andamento" e "Condenação Transitada em Julgado". Processos sob segredo de justiça não são exibidos. Link direto para o andamento processual no tribunal de origem é mandatório.
+
+---
+
+## 8. Planejamento — Módulo Cruzamento Societário e Conformidade de Gastos (AD-021)
+
+> **Decisão Arquitetural AD-021 (Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Servidores):**  
+> Cruzar objetivamente os CNPJs dos fornecedores pagos pela Cota Parlamentar (CEAP da Câmara e CEAPS do Senado) com a base do Quadro de Sócios e Administradores (QSA) da Receita Federal e a folha de pagamento de servidores do Congresso:
+> 1. **Proibição Estrita de Juízo Penal / Adjetivação:** O sistema NUNCA utiliza rótulos subjetivos, tipificações criminais ("laranja", "fantasma", "esquema") ou rankings de suspeição. O portal exibe exclusivamente fatos e vínculos documentais oficiais auditáveis.
+> 2. **Padrões de Conformidade e Vínculos Auditados:**
+>    - *Vínculo com Gabinete / Servidores:* Mapeamento de sócios-administradores de empresas contratadas que constam na folha de pagamento de secretários parlamentares ou comissionados da Casa legislativa (vedação expressa do Ato da Mesa).
+>    - *Vínculo com Financiamento Eleitoral:* Mapeamento de sócios-administradores que constam como doadores de campanha do próprio parlamentar no TSE.
+>    - *Relação Cronológica:* Data de fundação do CNPJ na Receita Federal comparada à data do primeiro pagamento da cota.
+> 3. **Verificabilidade Tripla Obrigatória:** Toda conexão sinalizada DEVE incluir links diretos para os três documentos primários:
+>    - Comprovante de despesa pública da Câmara/Senado (com link oficial da NF/recibo).
+>    - Espelho público do CNPJ/QSA da Receita Federal.
+>    - Ato de nomeação ou folha oficial da Casa Legislativa / prestação de contas do TSE.
+> 4. **Conformidade LGPD (AD-009):** Tratamento exclusivo de dados públicos de pessoas jurídicas e agentes públicos no exercício de funções ou doações oficiais registradas, mantendo o mascaramento de CPFs (`***.XXX.XXX-**`) conforme a legislação.
+
 
