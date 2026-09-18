@@ -4,6 +4,16 @@
 
 ## Projetos open source (código pra estudar)
 
+### Puxa Ficha
+- **O que é:** plataforma cívica de transparência eleitoral para as Eleições 2026 com fichas de candidatos majoritários do Executivo (Presidência da República e Governos Estaduais), vices, pesquisas de intenção de voto agregadas, comparador lado a lado e análise de planos de governo.
+- **Site:** [puxaficha.com.br](https://puxaficha.com.br/)
+- **Repo:** [github.com/thiago-salvador/puxa-ficha](https://github.com/thiago-salvador/puxa-ficha)
+- **Status:** ativo e em produção (Eleições 2026).
+- **Mantenedor:** Thiago Salvador.
+- **Licença:** Apache 2.0.
+- **Stack:** Next.js 15, TypeScript, Tailwind CSS, Supabase.
+- **Relevância pra nós:** principal referência viva e ativa de civic tech no ciclo de 2026. Benchmark valioso de UX para o comparador de candidatos, normalização de chapas majoritárias e auditoria de integridade do TSE (documentou e corrigiu duplicidades na leitura do pacote `bem_candidato_2026`). Diferencia-se por ser uma plataforma centrada na corrida eleitoral executiva (com quiz de afinidade), enquanto a Ficha do Político é focada na auditoria permanente de mandatos legislativos (votações nominais e notas fiscais de cota CEAP/CEAPS da Câmara e Senado) sob estrita neutralidade e custo zero de infraestrutura.
+
 ### Operação Serenata de Amor
 - **O que é:** fiscalização de gastos de deputados federais (CEAP) via IA — o bot "Rosie".
 - **Repo:** [github.com/okfn-brasil/serenata-de-amor](https://github.com/okfn-brasil/serenata-de-amor)
@@ -54,6 +64,6 @@
 ---
 
 ## Síntese
-Nenhum projeto vivo cobre exatamente o que queremos: ficha individual e apartidária de político (voto + gasto + patrimônio) open source. Os dois projetos mais próximos conceitualmente (Serenata de Amor, Perfil Político) estão mortos — dá pra saquear ideia de schema e abordagem técnica sem conflito. Querido Diário é o único com comunidade viva pra aprender processo de contribuição. Voto Consciente/Legisla Brasil valem consulta de metodologia de indicadores, não parceria de código. Radar do Congresso é o produto fechado mais parecido em conceito de "ficha única" — vale de referência de UX/campos.
+No cenário de projetos abertos de political tech, o **Puxa Ficha** é hoje o projeto vivo mais avançado na esteira da disputa eleitoral executiva (Presidência, Governadores e pesquisas). No entanto, a **Ficha do Político** mantém um propósito único e complementar: a auditoria permanente e contínua do mandato de parlamentares federais (Câmara e Senado), combinando votações nominais curadas e notas fiscais de cota parlamentar (CEAP/CEAPS), com neutralidade estrita (sem scores ou quizzes) e arquitetura estática (Astro SSG) de custo zero perpétuo. Entre os projetos históricos, Serenata de Amor e Perfil Político servem para consulta de schemas e abordagens legadas, enquanto o Querido Diário é referência em comunidade ativa.
 
 Para os endpoints, formatos e especificações técnicas de extração das fontes governamentais primárias (Câmara, Senado, TSE, CGU, TCU, CNJ), consulte [fontes-oficiais-de-dados.md](fontes-oficiais-de-dados.md).
