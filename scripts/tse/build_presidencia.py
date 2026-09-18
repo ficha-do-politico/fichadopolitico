@@ -16,6 +16,7 @@ Conformidade e Diretrizes:
 import json
 import pathlib
 import sys
+import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 OUTPUT_FILE = ROOT / "dados" / "tse" / "presidencia.json"
@@ -844,6 +845,15 @@ PRESIDENCIA_DATA_2026 = [
         ],
     },
 ]
+
+
+def sort_key_candidato(cand: dict) -> str:
+    norm = unicodedata.normalize("NFKD", cand.get("nomeUrna", ""))
+    return "".join(c for c in norm if not unicodedata.combining(c)).lower()
+
+
+# Garantir ordenação alfabética por nome de urna conforme AD-004 e boa prática eleitoral
+PRESIDENCIA_DATA_2026.sort(key=sort_key_candidato)
 
 
 def validate_and_save():

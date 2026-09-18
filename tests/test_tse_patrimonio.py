@@ -9,6 +9,7 @@ Conformidade e Regras:
 
 import json
 import pathlib
+import unicodedata
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -131,6 +132,31 @@ class TestTSEPatrimonio(unittest.TestCase):
                     self.assertIn("descricao", b)
                     self.assertIn("valor", b)
                     self.assertGreaterEqual(b["valor"], 0)
+
+    def test_ordenacao_alfabetica_candidatos_presidencia(self):
+        """Garante que os candidatos à presidência estão ordenados alfabeticamente por nomeUrna."""
+
+        def sort_key(c):
+            norm = unicodedata.normalize("NFKD", c["nomeUrna"])
+            return "".join(ch for ch in norm if not unicodedata.combining(ch)).lower()
+
+        # Validar canônico
+        nomes_canon = [c["nomeUrna"] for c in self.canon_candidatos]
+        nomes_canon_esperados = [c["nomeUrna"] for c in sorted(self.canon_candidatos, key=sort_key)]
+        self.assertEqual(
+            nomes_canon,
+            nomes_canon_esperados,
+            f"Dataset canônico de presidência fora de ordem alfabética: {nomes_canon}",
+        )
+
+        # Validar dataset compilado do site
+        nomes_site = [c["nomeUrna"] for c in self.site_candidatos]
+        nomes_site_esperados = [c["nomeUrna"] for c in sorted(self.site_candidatos, key=sort_key)]
+        self.assertEqual(
+            nomes_site,
+            nomes_site_esperados,
+            f"Dataset compilado do site fora de ordem alfabética: {nomes_site}",
+        )
 
     def test_congresso_2026_conformidade_lgpd(self):
         """Garante que nenhum dado sensível esteja presente no dataset do Congresso 2026."""

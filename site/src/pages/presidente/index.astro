@@ -3,7 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import presidenciaData from '../../data/presidencia.json';
 import type { CandidatoPresidencia } from '../../types';
 
-const candidatos = presidenciaData as CandidatoPresidencia[];
+const candidatos = (presidenciaData as CandidatoPresidencia[]).sort((a, b) =>
+  a.nomeUrna.localeCompare(b.nomeUrna, 'pt-BR')
+);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const totalCandidatos = candidatos.length;
