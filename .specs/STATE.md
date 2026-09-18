@@ -1,24 +1,39 @@
 # STATE — Ficha do Político
 
 > **Status:** v1 em expansão (Legislativo Federal Bicameral)  
-> **Última atualização:** 2026-09-13  
-> **Base de Decisões:** AD-001 a AD-017
+> **Última atualização:** 2026-09-17  
+> **Base de Decisões:** AD-001 a AD-021
 
 ---
 
-## 1. Diretrizes Arquiteturais Ativas (ADRs Consolidados)
+## 1. Visão de Produto & Diferencial Cívico
 
-### 1.1. Produto & Curadoria Editorial
+### 1.1. O Problema
+Para saber como um parlamentar votou ou quanto gastou em decisões de grande impacto nacional (ex.: *Escala 6×1*, *Marco Temporal*, *Reforma Tributária*), o cidadão enfrenta uma jornada burocrática e confusa:
+1. Descobrir em notícias o número do projeto (PL, PEC, MPV).
+2. Entrar nos portais da Câmara ou Senado e decifrar tramitações e requerimentos regimentais.
+3. Localizar o parlamentar em listas extensas de votação.
+
+Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dumps cronológicos procedimentais irrelevantes ou aplicam scores ideológicos subjetivos.
+
+### 1.2. A Proposta da Ficha
+> **A maneira mais rápida e simples de um cidadão buscar um parlamentar e ver imediatamente como ele votou, quanto gastou e qual o patrimônio declarado — em dados crus, sem viés partidário, sem adjetivação e sempre com link direto para a fonte oficial primária.**
+
+---
+
+## 2. Diretrizes Arquiteturais Ativas (ADRs Consolidados)
+
+### 2.1. Produto & Curadoria Editorial
 - **AD-001 & AD-007 (Temas Curados vs. Dumps):** O portal foca em votações nominais cruciais de grande repercussão pública nacional (seed inicial de 5 temas, meta de expansão para 10–20 no v1), em vez de dumps cronológicos ou procedimentais.
 - **AD-003 (Transparência Editorial):** A curadoria é pública, documentada em critérios auditáveis (`site/src/pages/criterios.astro`) e versionada diretamente em `dados/catalogo/temas.json`.
 - **AD-004 (Apartidarismo e Isenção de Scores):** Proibido qualquer score, nota, ranqueamento ou rotulação ideológica ("progressista", "conservador", "governista"). O portal exibe o dado cru oficial; a interpretação cabe exclusivamente ao cidadão.
 
-### 1.2. Fontes Oficiais, Integridade & Privacidade
+### 2.2. Fontes Oficiais, Integridade & Privacidade
 - **AD-006 (Verificabilidade Estrita):** Todo dado político exibido (identidade parlamentar ou voto nominal) DEVE conter link direto para a URL da fonte oficial de origem (Câmara ou Senado). Fato sem fonte é proibido no projeto.
 - **AD-009 (Privacidade e LGPD):** Dados pessoais sensíveis (CPF, email, telefone de gabinete ou endereço residencial) NÃO são expostos na aplicação, mesmo quando disponíveis nas APIs públicas.
 - **AD-011 & AD-014 (Escopo Federal Bicameral):** O projeto cobre estritamente o Congresso Nacional (513 Deputados Federais + 81 Senadores da República). Âmbitos municipal e estadual estão definitivamente fora de escopo por inviabilidade técnica de sustentação sem APIs unificadas.
 
-### 1.3. Arquitetura de Software & Stack
+### 2.3. Arquitetura de Software & Stack
 - **AD-002 & AD-013 (Desacoplamento em 3 Camadas):**
   1. *Curadoria Editorial:* `dados/catalogo/temas.json` (Single Source of Truth).
   2. *Dados Canônicos:* `dados/camara/` e `dados/senado/` (JSONs estruturados e sanitizados).
@@ -27,14 +42,14 @@
 
 ---
 
-## 2. Decisões Históricas Superadas (Arquivo)
+## 3. Decisões Históricas Superadas (Arquivo)
 
 - **AD-005 (Fonte exclusiva Câmara):** Superada pela AD-014 com a expansão bicameral para o Senado Federal.
 - **AD-008 (Stack indefinida):** Superada pela AD-012 com a adoção definitiva do Astro SSG + Tailwind CSS.
 
 ---
 
-## 3. Handoff & Foco Operacional
+## 4. Handoff & Foco Operacional
 
 - **Fase Atual:** v1 em expansão (Legislativo Federal Bicameral).
 - **Módulos Ativos em Produção:**
@@ -50,7 +65,7 @@
 
 ---
 
-## 4. Decisões Arquiteturais — Módulo Eleições 2026 (AD-015 & AD-018)
+## 5. Decisões Arquiteturais — Módulo Eleições 2026 (AD-015 & AD-018)
 
 > **Decisão Arquitetural AD-015 (Candidaturas e Patrimônio TSE no Congresso Nacional):**  
 > Cruzamento do Legislativo Federal (513 deputados + 81 senadores) com a base oficial de candidaturas de 2026 do TSE DivulgaCandContas:
@@ -67,7 +82,7 @@
 
 ---
 
-## 5. Decisões Arquiteturais — Módulo Gastos Parlamentares (AD-019)
+## 6. Decisões Arquiteturais — Módulo Gastos Parlamentares (AD-019 & AD-020)
 
 > **Decisão Arquitetural AD-019 (Cota Parlamentar CEAP da Câmara dos Deputados):**  
 > Exibir em cada ficha parlamentar o detalhamento do uso da Cota para Exercício da Atividade Parlamentar (CEAP) no exercício vigente:
@@ -85,7 +100,7 @@
 
 ---
 
-## 6. Planejamento — Módulo Destinação de Emendas Parlamentares (AD-016)
+## 7. Planejamento — Módulo Destinação de Emendas Parlamentares (AD-016)
 
 > **Decisão Arquitetural AD-016 (Rastreabilidade de Emendas Parlamentares):**  
 > Exibir em cada ficha parlamentar a destinação dos recursos do Orçamento Geral da União (emendas individuais, de bancada e transferências especiais):
@@ -94,7 +109,7 @@
 
 ---
 
-## 7. Planejamento — Módulo Transparência Processual e Judicial (AD-017)
+## 8. Planejamento — Módulo Transparência Processual e Judicial (AD-017)
 
 > **Decisão Arquitetural AD-017 (Integridade Processual e Presunção de Inocência):**  
 > Para exibir processos em aberto de parlamentares em tribunais:
@@ -104,7 +119,7 @@
 
 ---
 
-## 8. Planejamento — Módulo Cruzamento Societário e Conformidade de Gastos (AD-021)
+## 9. Planejamento — Módulo Cruzamento Societário e Conformidade de Gastos (AD-021)
 
 > **Decisão Arquitetural AD-021 (Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Servidores):**  
 > Cruzar objetivamente os CNPJs dos fornecedores pagos pela Cota Parlamentar (CEAP da Câmara e CEAPS do Senado) com a base do Quadro de Sócios e Administradores (QSA) da Receita Federal e a folha de pagamento de servidores do Congresso:
@@ -118,5 +133,14 @@
 >    - Espelho público do CNPJ/QSA da Receita Federal.
 >    - Ato de nomeação ou folha oficial da Casa Legislativa / prestação de contas do TSE.
 > 4. **Conformidade LGPD (AD-009):** Tratamento exclusivo de dados públicos de pessoas jurídicas e agentes públicos no exercício de funções ou doações oficiais registradas, mantendo o mascaramento de CPFs (`***.XXX.XXX-**`) conforme a legislação.
+
+---
+
+## 10. Governança e Mudanças de Escopo
+
+Para sugerir inclusão de novos campos, alteração de fases ou ajustes de roadmap:
+1. Abra uma issue para discussão prévia e exploração de ideias junto ao time.
+2. Mudanças aprovadas em escopo, arquitetura ou fases de entrega são formalizadas via Pull Request diretamente neste documento (`.specs/STATE.md`).
+3. O time (Antonio, Soutto, Layr, Ludovic) revisa e valida as alterações com base na viabilidade técnica e nos dois pilares inegociáveis do projeto: **apartidarismo** e **verificabilidade de fonte primária**.
 
 

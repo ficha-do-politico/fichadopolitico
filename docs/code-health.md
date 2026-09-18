@@ -1,6 +1,6 @@
 # Code Health & Arquitetura do Repositório
 
-> **Documentos de referência:** [STATE.md](../.specs/STATE.md), [MVP.md](../MVP.md), [AGENTS.md](../AGENTS.md)
+> **Documentos de referência:** [STATE.md](../.specs/STATE.md), [AGENTS.md](../AGENTS.md)
 
 ---
 

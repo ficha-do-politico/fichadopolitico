@@ -4,9 +4,15 @@
 
 Ficha pública e apartidária de parlamentares: como votaram, quanto gastaram, o que declaram de patrimônio — sempre com a fonte oficial linkada.
 
-## Status
+## O Problema & A Proposta de Valor
 
-🚧 MVP online — veja a especificação detalhada em [MVP.md](MVP.md).
+Hoje, para saber como um parlamentar votou ou quanto gastou, o cidadão enfrenta uma jornada burocrática entre portais de transparência confusos, diários oficiais e tramitações regimentais complexas. Ferramentas existentes muitas vezes agregam dados demais sem curadoria ou aplicam scores subjetivos.
+
+A **Ficha do Político** é a maneira mais rápida e simples de qualquer cidadão buscar um parlamentar e auditar votos, gastos de cota e patrimônio — em dados crus, sem juízo de valor, sem filtros ideológicos e sempre com link direto para a fonte oficial primária.
+
+## Status & Roadmap
+
+🚧 **Em produção (v1 bicameral em expansão):** veja o escopo ativo, decisões arquiteturais consolidadas (ADRs) e roadmap em [.specs/STATE.md](.specs/STATE.md).
 
 - Para a especificação técnica detalhada das APIs e dumps de dados oficiais (incluindo Câmara, Senado, TSE, CGU, TCU e CNJ), veja [fontes-oficiais-de-dados.md](fontes-oficiais-de-dados.md).
 - Para análise de projetos cívicos correlatos, benchmarks de UX e referências metodológicas, veja [referencias.md](referencias.md).
