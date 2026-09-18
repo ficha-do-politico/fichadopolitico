@@ -45,6 +45,12 @@
 - **Status:** ativo (metodologia fechada, sem repositório aberto).
 - **Relevância pra nós:** referência metodológica para métricas quantitativas de atuação legislativa.
 
+### TemMeuVoto 2026
+- **O que é:** plataforma de afinidade eleitoral (VAA) para o Legislativo (deputados e senadores) mantida por coalizão cívica (CLP, Ethos, Comunitas e outros).
+- **Site:** [temmeuvoto.org.br](https://temmeuvoto.org.br/)
+- **Status:** ativo (Eleições 2026, código fechado).
+- **Relevância pra nós:** benchmark de privacidade client-side e curadoria documentada de votações nominais da 57ª Legislatura da Câmara — incluindo critérios de descarte de votações ambíguas.
+
 ## Produtos Fechados (Referência de UX)
 
 ### Radar do Congresso (Congresso em Foco)
@@ -56,6 +62,6 @@
 ---
 
 ## Posicionamento da Ficha do Político
-O ecossistema divide-se entre ferramentas eleitorais sazonais (Puxa Ficha), dados municipais (Querido Diário) ou projetos legados de cota (Serenata). A **Ficha do Político** atua na **auditoria contínua e permanente do mandato federal (Câmara e Senado)**, combinando votações nominais e notas fiscais de cota (CEAP/CEAPS), com neutralidade estrita (dados brutos oficiais, sem scores editoriais) e arquitetura estática (Astro SSG) de custo perpétuo zero.
+O ecossistema divide-se entre ferramentas eleitorais sazonais (Puxa Ficha, TemMeuVoto), dados municipais (Querido Diário) ou projetos legados de cota (Serenata). A **Ficha do Político** atua na **auditoria contínua e permanente do mandato federal (Câmara e Senado)**, combinando votações nominais e notas fiscais de cota (CEAP/CEAPS), com neutralidade estrita (dados brutos oficiais, sem scores editoriais) e arquitetura estática (Astro SSG) de custo perpétuo zero.
 
 Para os endpoints, formatos e especificações técnicas de extração das fontes governamentais primárias (Câmara, Senado, TSE, CGU, TCU, CNJ), consulte [fontes-oficiais-de-dados.md](fontes-oficiais-de-dados.md).
