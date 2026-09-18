@@ -1,5 +1,116 @@
 [
   {
+    "id": "clariana-barao",
+    "nomeUrna": "Clariana Barão",
+    "nomeCivil": "Clariana Barão da Silva",
+    "partido": "DC",
+    "partidoNome": "Democracia Cristã",
+    "numeroUrna": "27",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/clariana-barao.jpg",
+    "fotoFonteOficial": "TSE DivulgaCandContas (Registro Eleitoral)",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 580000.0,
+        "totalFormatado": "R$ 580.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento",
+            "descricao": "Apartamento residencial em Curitiba/PR",
+            "valor": 480000.0
+          },
+          {
+            "tipo": "Veículo Automotor Terrestre",
+            "descricao": "Veículo de passeio",
+            "valor": 100000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "edmilson-costa",
+    "nomeUrna": "Edmilson Costa",
+    "nomeCivil": "Edmilson Silva Costa",
+    "partido": "PCB",
+    "partidoNome": "Partido Comunista Brasileiro",
+    "numeroUrna": "21",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/edmilson-costa.jpg",
+    "fotoFonteOficial": "Acervo Partidário Oficial PCB / Registro Eleitoral",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 420000.0,
+        "totalFormatado": "R$ 420.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento",
+            "descricao": "Apartamento residencial na cidade de São Paulo/SP",
+            "valor": 380000.0
+          },
+          {
+            "tipo": "Caderneta de Poupança",
+            "descricao": "Saldo em poupança",
+            "valor": 40000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "augusto-cury",
+    "nomeUrna": "Escritor Augusto Cury",
+    "nomeCivil": "Augusto Jorge Cury",
+    "partido": "AVANTE",
+    "partidoNome": "Avante",
+    "numeroUrna": "70",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/augusto-cury.jpg",
+    "fotoFonteOficial": "Divulgação Oficial / Acervo Aberto (CC BY)",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "situacaoCandidatura": "Deferido",
+    "vice": {
+      "nomeUrna": "Júlio Delgado",
+      "partido": "AVANTE"
+    },
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 38450000.0,
+        "totalFormatado": "R$ 38.450.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Direitos Autorais e Propriedade Intelectual",
+            "descricao": "Direitos autorais de obras literárias e editoriais no Brasil e exterior",
+            "valor": 22000000.0
+          },
+          {
+            "tipo": "Imóveis Residenciais e Comerciais",
+            "descricao": "Imóveis declarados nos estados de São Paulo e Minas Gerais",
+            "valor": 11500000.0
+          },
+          {
+            "tipo": "Aplicações Financeiras",
+            "descricao": "Fundos de investimento e títulos de renda fixa",
+            "valor": 4950000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "flavio-bolsonaro",
     "nomeUrna": "Flávio Bolsonaro",
     "nomeCivil": "Flávio Nantes Bolsonaro",
@@ -178,6 +289,49 @@
     ]
   },
   {
+    "id": "hertz-dias",
+    "nomeUrna": "Hertz Dias",
+    "nomeCivil": "Hertz da Silva Dias",
+    "partido": "PSTU",
+    "partidoNome": "Partido Socialista dos Trabalhadores Unificado",
+    "numeroUrna": "16",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/hertz-dias.jpg",
+    "fotoFonteOficial": "Acervo Partidário Oficial PSTU / Registro Eleitoral",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2022,
+        "cargoDisputado": "Vice-Presidente",
+        "totalDeclarado": 100000.0,
+        "totalFormatado": "R$ 100.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607838/bens",
+        "bens": [
+          {
+            "tipo": "Casa",
+            "descricao": "Casa residencial em São Luís/MA",
+            "valor": 100000.0
+          }
+        ]
+      },
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 120000.0,
+        "totalFormatado": "R$ 120.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Casa",
+            "descricao": "Casa residencial em São Luís/MA",
+            "valor": 120000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "luiz-inacio-lula-da-silva",
     "nomeUrna": "Lula",
     "nomeCivil": "Luiz Inácio Lula da Silva",
@@ -318,6 +472,45 @@
             "tipo": "Aplicações e Depósitos",
             "descricao": "Saldo em caderneta de poupança e contas bancárias",
             "valor": 739160.57
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "renan-santos",
+    "nomeUrna": "Renan Santos",
+    "nomeCivil": "Renan Antônio Ferreira dos Santos",
+    "partido": "MISSÃO",
+    "partidoNome": "Partido Missão",
+    "numeroUrna": "33",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/renan-santos.jpg",
+    "fotoFonteOficial": "Divulgação Institucional / Movimento Missão",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 1250000.0,
+        "totalFormatado": "R$ 1.250.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "bens": [
+          {
+            "tipo": "Apartamento",
+            "descricao": "Apartamento residencial na cidade de São Paulo/SP",
+            "valor": 850000.0
+          },
+          {
+            "tipo": "Quotas de Capital",
+            "descricao": "Participação em sociedade limitada de produção de conteúdo",
+            "valor": 250000.0
+          },
+          {
+            "tipo": "Aplicações e Depósitos",
+            "descricao": "Investimentos em renda fixa e saldo bancário",
+            "valor": 150000.0
           }
         ]
       }
@@ -526,84 +719,37 @@
     ]
   },
   {
-    "id": "augusto-cury",
-    "nomeUrna": "Escritor Augusto Cury",
-    "nomeCivil": "Augusto Jorge Cury",
-    "partido": "AVANTE",
-    "partidoNome": "Avante",
-    "numeroUrna": "70",
+    "id": "rui-costa-pimenta",
+    "nomeUrna": "Rui Costa Pimenta",
+    "nomeCivil": "Rui Costa Pimenta",
+    "partido": "PCO",
+    "partidoNome": "Partido da Causa Operária",
+    "numeroUrna": "29",
     "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/augusto-cury.jpg",
-    "fotoFonteOficial": "Divulgação Oficial / Acervo Aberto (CC BY)",
+    "fotoUrl": "fotos/presidencia/rui-costa-pimenta.jpg",
+    "fotoFonteOficial": "Agência Brasil / EBC (agenciabrasil.ebc.com.br)",
     "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
     "situacaoCandidatura": "Deferido",
     "vice": {
-      "nomeUrna": "Júlio Delgado",
-      "partido": "AVANTE"
+      "nomeUrna": "Antônio Carlos",
+      "partido": "PCO"
     },
     "historicoPatrimonial": [
       {
-        "ano": 2026,
+        "ano": 2014,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 38450000.0,
-        "totalFormatado": "R$ 38.450.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Direitos Autorais e Propriedade Intelectual",
-            "descricao": "Direitos autorais de obras literárias e editoriais no Brasil e exterior",
-            "valor": 22000000.0
-          },
-          {
-            "tipo": "Imóveis Residenciais e Comerciais",
-            "descricao": "Imóveis declarados nos estados de São Paulo e Minas Gerais",
-            "valor": 11500000.0
-          },
-          {
-            "tipo": "Aplicações Financeiras",
-            "descricao": "Fundos de investimento e títulos de renda fixa",
-            "valor": 4950000.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "renan-santos",
-    "nomeUrna": "Renan Santos",
-    "nomeCivil": "Renan Antônio Ferreira dos Santos",
-    "partido": "MISSÃO",
-    "partidoNome": "Partido Missão",
-    "numeroUrna": "33",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/renan-santos.jpg",
-    "fotoFonteOficial": "Divulgação Institucional / Movimento Missão",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "historicoPatrimonial": [
+        "totalDeclarado": 0.0,
+        "totalFormatado": "R$ 0,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/BR/1/candidatos",
+        "bens": []
+      },
       {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 1250000.0,
-        "totalFormatado": "R$ 1.250.000,00",
+        "totalDeclarado": 0.0,
+        "totalFormatado": "R$ 0,00",
         "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial na cidade de São Paulo/SP",
-            "valor": 850000.0
-          },
-          {
-            "tipo": "Quotas de Capital",
-            "descricao": "Participação em sociedade limitada de produção de conteúdo",
-            "valor": 250000.0
-          },
-          {
-            "tipo": "Aplicações e Depósitos",
-            "descricao": "Investimentos em renda fixa e saldo bancário",
-            "valor": 150000.0
-          }
-        ]
+        "bens": []
       }
     ]
   },
@@ -649,152 +795,6 @@
             "tipo": "Caderneta de Poupança",
             "descricao": "Saldo em caderneta de poupança",
             "valor": 4800.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "rui-costa-pimenta",
-    "nomeUrna": "Rui Costa Pimenta",
-    "nomeCivil": "Rui Costa Pimenta",
-    "partido": "PCO",
-    "partidoNome": "Partido da Causa Operária",
-    "numeroUrna": "29",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/rui-costa-pimenta.jpg",
-    "fotoFonteOficial": "Agência Brasil / EBC (agenciabrasil.ebc.com.br)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "vice": {
-      "nomeUrna": "Antônio Carlos",
-      "partido": "PCO"
-    },
-    "historicoPatrimonial": [
-      {
-        "ano": 2014,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 0.0,
-        "totalFormatado": "R$ 0,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/BR/1/candidatos",
-        "bens": []
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 0.0,
-        "totalFormatado": "R$ 0,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": []
-      }
-    ]
-  },
-  {
-    "id": "edmilson-costa",
-    "nomeUrna": "Edmilson Costa",
-    "nomeCivil": "Edmilson Silva Costa",
-    "partido": "PCB",
-    "partidoNome": "Partido Comunista Brasileiro",
-    "numeroUrna": "21",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/edmilson-costa.jpg",
-    "fotoFonteOficial": "Acervo Partidário Oficial PCB / Registro Eleitoral",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "historicoPatrimonial": [
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 420000.0,
-        "totalFormatado": "R$ 420.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial na cidade de São Paulo/SP",
-            "valor": 380000.0
-          },
-          {
-            "tipo": "Caderneta de Poupança",
-            "descricao": "Saldo em poupança",
-            "valor": 40000.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "hertz-dias",
-    "nomeUrna": "Hertz Dias",
-    "nomeCivil": "Hertz da Silva Dias",
-    "partido": "PSTU",
-    "partidoNome": "Partido Socialista dos Trabalhadores Unificado",
-    "numeroUrna": "16",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/hertz-dias.jpg",
-    "fotoFonteOficial": "Acervo Partidário Oficial PSTU / Registro Eleitoral",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "historicoPatrimonial": [
-      {
-        "ano": 2022,
-        "cargoDisputado": "Vice-Presidente",
-        "totalDeclarado": 100000.0,
-        "totalFormatado": "R$ 100.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607838/bens",
-        "bens": [
-          {
-            "tipo": "Casa",
-            "descricao": "Casa residencial em São Luís/MA",
-            "valor": 100000.0
-          }
-        ]
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 120000.0,
-        "totalFormatado": "R$ 120.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Casa",
-            "descricao": "Casa residencial em São Luís/MA",
-            "valor": 120000.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "clariana-barao",
-    "nomeUrna": "Clariana Barão",
-    "nomeCivil": "Clariana Barão da Silva",
-    "partido": "DC",
-    "partidoNome": "Democracia Cristã",
-    "numeroUrna": "27",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/clariana-barao.jpg",
-    "fotoFonteOficial": "TSE DivulgaCandContas (Registro Eleitoral)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "historicoPatrimonial": [
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 580000.0,
-        "totalFormatado": "R$ 580.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em Curitiba/PR",
-            "valor": 480000.0
-          },
-          {
-            "tipo": "Veículo Automotor Terrestre",
-            "descricao": "Veículo de passeio",
-            "valor": 100000.0
           }
         ]
       }
