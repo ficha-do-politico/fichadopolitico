@@ -108,6 +108,9 @@ export interface ParlamentarCardData {
   is_candidato_2026?: boolean;
   is_reeleicao?: boolean;
   cargo_2026?: string;
+  total_cota_formatado?: string;
+  total_votos?: number;
+  patrimonio_formatado?: string;
 }
 
 export interface TemaSenadoInfo {
