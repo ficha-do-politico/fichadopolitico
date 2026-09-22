@@ -1,0 +1,64 @@
+---
+import type { ParlamentarCardData } from '../types';
+
+interface Props {
+  parlamentar: ParlamentarCardData;
+}
+
+const { parlamentar: p } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const isSenado = p.casa === 'senado';
+---
+
+<a
+  href={p.href}
+  class="parlamentar-row group grid grid-cols-[2.2fr_0.9fr_1.3fr_1.3fr_1.3fr] items-center gap-3 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-sm transition-all duration-150 text-sm"
+  data-nome={p.nome_eleitoral.toLowerCase()}
+  data-civil={p.nome_civil.toLowerCase()}
+  data-partido={p.partido.toLowerCase()}
+  data-uf={p.uf.toLowerCase()}
+  data-casa={p.casa}
+  data-candidato-2026={p.is_candidato_2026 ? "true" : "false"}
+  data-reeleicao={p.is_reeleicao ? "true" : "false"}
+  data-cota={p.total_cota ?? ''}
+  data-emendas={p.total_emendas ?? ''}
+  data-patrimonio={p.patrimonio_total ?? ''}
+>
+  <div class="flex items-center gap-2.5 min-w-0">
+    <div class="relative w-8 h-8 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0">
+      <img
+        src={p.url_foto}
+        alt={p.nome_eleitoral}
+        class="w-full h-full object-cover object-top"
+        loading="lazy"
+        onerror={`this.onerror=null; this.src='${base}avatar-placeholder.svg';`}
+      />
+    </div>
+    <div class="min-w-0">
+      <p class="font-bold text-slate-900 truncate group-hover:text-emerald-700 transition leading-tight">
+        {p.nome_eleitoral}
+      </p>
+      <p class="text-xs text-slate-500 truncate">{p.partido} · {p.uf}</p>
+    </div>
+  </div>
+
+  <span class={`inline-flex justify-self-start items-center px-1.5 py-0.5 rounded text-[10px] font-medium border ${
+    isSenado
+      ? 'bg-blue-50 text-blue-700 border-blue-200'
+      : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+  }`}>
+    {isSenado ? 'Senado' : 'Câmara'}
+  </span>
+
+  <span class="text-slate-700 text-right sm:text-left tabular-nums">
+    {p.total_cota_formatado ?? '—'}
+  </span>
+
+  <span class="text-slate-700 text-right sm:text-left tabular-nums">
+    {p.total_emendas_formatado ?? '—'}
+  </span>
+
+  <span class="text-slate-700 text-right sm:text-left tabular-nums">
+    {p.patrimonio_formatado ?? '—'}
+  </span>
+</a>
