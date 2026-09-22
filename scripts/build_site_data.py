@@ -35,6 +35,8 @@ CANON_PRESIDENCIA_FILE = TSE_DIR / "presidencia.json"
 CANON_CONGRESSO_2026_FILE = TSE_DIR / "congresso_2026.json"
 CANON_DESPESAS_2026_FILE = CAMARA_DIR / "despesas_2026.json"
 CANON_SENADO_DESPESAS_2026_FILE = SENADO_DIR / "despesas_2026.json"
+EMENDAS_DIR = ROOT / "dados" / "emendas"
+CANON_EMENDAS_FILE = EMENDAS_DIR / "emendas_resumo.json"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
 
@@ -131,6 +133,14 @@ def load_senado_despesas_2026():
         return json.load(f)
 
 
+def load_emendas():
+    """Carrega dados canônicos consolidados de emendas parlamentares (CGU 2023-2026)."""
+    if not CANON_EMENDAS_FILE.exists():
+        return {}
+    with open(CANON_EMENDAS_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def validar_integridade(deputados, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD)."""
     # 1. Validação de verificabilidade dos temas
@@ -182,6 +192,17 @@ def validar_integridade(deputados, temas):
                         f"URL de comprovante fiscal insegura no deputado {d.get('id')}: {u_doc}"
                     )
 
+        emendas = d.get("emendas")
+        if emendas:
+            chaves_emendas = set(emendas.keys()).intersection(campos_proibidos)
+            if chaves_emendas:
+                raise ValueError(
+                    f"Violação LGPD nas emendas: chaves {chaves_emendas} no deputado {d.get('id')}"
+                )
+            u_cgu = emendas.get("url_portal_transparencia", "")
+            if u_cgu and not u_cgu.startswith("https://portaldatransparencia.gov.br"):
+                raise ValueError(f"URL CGU inválida no deputado {d.get('id')}: {u_cgu}")
+
 
 def validar_senadores(senadores, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD) para o Senado."""
@@ -218,6 +239,16 @@ def validar_senadores(senadores, temas):
                 raise ValueError(
                     f"Violação LGPD nas despesas 2026: chaves {chaves_desp} no senador {s.get('id')}"
                 )
+        emendas = s.get("emendas")
+        if emendas:
+            chaves_emendas = set(emendas.keys()).intersection(campos_proibidos)
+            if chaves_emendas:
+                raise ValueError(
+                    f"Violação LGPD nas emendas: chaves {chaves_emendas} no senador {s.get('id')}"
+                )
+            u_cgu = emendas.get("url_portal_transparencia", "")
+            if u_cgu and not u_cgu.startswith("https://portaldatransparencia.gov.br"):
+                raise ValueError(f"URL CGU inválida no senador {s.get('id')}: {u_cgu}")
         url_perfil = s.get("url_perfil_senado", "")
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
@@ -261,6 +292,9 @@ def main():
         f"Carregadas despesas da CEAPS 2026 para {len(despesas_senado_2026)} senadores da República"
     )
 
+    emendas = load_emendas()
+    print(f"Carregadas emendas parlamentares (CGU 2023-2026) para {len(emendas)} parlamentares")
+
     deputados_base = load_deputados_base()
     print(f"Carregados {len(deputados_base)} deputados (base canônica)")
 
@@ -269,6 +303,7 @@ def main():
         dep_id_str = str(dep["id"])
         dep["candidatura_2026"] = congresso_2026.get(dep_id_str)
         dep["despesas_2026"] = despesas_camara_2026.get(dep_id_str)
+        dep["emendas"] = emendas.get(dep_id_str)
 
         votos_map = {}
         for tema in temas:
@@ -306,6 +341,7 @@ def main():
             sen_id_str = str(sen["id"])
             sen["candidatura_2026"] = congresso_2026.get(sen_id_str)
             sen["despesas_2026"] = despesas_senado_2026.get(sen_id_str)
+            sen["emendas"] = emendas.get(sen_id_str)
             votos_map = {}
             for tema in temas:
                 vid = tema["id"]

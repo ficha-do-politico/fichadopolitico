@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import VotoBadge from '../../components/VotoBadge.astro';
 import PatrimonioSecao from '../../components/PatrimonioSecao.astro';
 import DespesasSecao from '../../components/DespesasSecao.astro';
+import EmendasSecao from '../../components/EmendasSecao.astro';
 import deputadosData from '../../data/deputados.json';
 import temasData from '../../data/temas.json';
 import type { Deputado, Tema } from '../../types';
@@ -83,6 +84,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           {deputado.despesas_2026 && (
             <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
               Cota CEAP 2026: {deputado.despesas_2026.total_formatado}
+            </span>
+          )}
+          {deputado.emendas && (
+            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+              Emendas Pagas (23–26): {deputado.emendas.total_pago_formatado}
             </span>
           )}
         </div>
@@ -227,6 +233,17 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         <DespesasSecao 
           despesas={deputado.despesas_2026} 
           nomeEleitoral={deputado.nome_eleitoral} 
+        />
+      </div>
+    )}
+
+    <!-- Seção de Emendas Parlamentares (AD-016) -->
+    {deputado.emendas && (
+      <div class="mt-8">
+        <EmendasSecao 
+          emendas={deputado.emendas} 
+          nomeEleitoral={deputado.nome_eleitoral} 
+          casa="camara"
         />
       </div>
     )}

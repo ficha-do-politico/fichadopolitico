@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import VotoBadge from '../../components/VotoBadge.astro';
 import PatrimonioSecao from '../../components/PatrimonioSecao.astro';
 import DespesasSecao from '../../components/DespesasSecao.astro';
+import EmendasSecao from '../../components/EmendasSecao.astro';
 import senadoresData from '../../data/senadores.json';
 import temasData from '../../data/temas.json';
 import type { Senador, Tema } from '../../types';
@@ -85,6 +86,11 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
           {senador.despesas_2026 && (
             <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
               Cota CEAPS 2026: {senador.despesas_2026.total_formatado}
+            </span>
+          )}
+          {senador.emendas && (
+            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
+              Emendas Pagas (23–26): {senador.emendas.total_pago_formatado}
             </span>
           )}
         </div>
@@ -262,6 +268,17 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
       <div class="mt-8">
         <DespesasSecao 
           despesas={senador.despesas_2026} 
+          nomeEleitoral={senador.nome_eleitoral} 
+          casa="senado"
+        />
+      </div>
+    )}
+
+    <!-- Seção de Emendas Parlamentares (AD-016) -->
+    {senador.emendas && (
+      <div class="mt-8">
+        <EmendasSecao 
+          emendas={senador.emendas} 
           nomeEleitoral={senador.nome_eleitoral} 
           casa="senado"
         />

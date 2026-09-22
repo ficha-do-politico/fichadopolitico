@@ -55,11 +55,12 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
 - **Módulos Ativos em Produção:**
   - *Votações Nominais Curadas:* Deliberações da Câmara e Senado com links duplos de verificabilidade.
   - *Gastos Discricionários:* CEAP (Câmara) e CEAPS (Senado) do exercício vigente (AD-019 e AD-020).
+  - *Destinação de Emendas Parlamentares:* Execução orçamentária oficial da CGU da 57ª Legislatura (2023–2026), discriminando Emendas Pix e Finalidade Definida (AD-016).
   - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
 - **Foco Imediato (v1):** Expansão do catálogo de votações nominais para 10+ temas de impacto nacional (ver `docs/backlog-votacoes.md`).
 - **Roadmap Subsequente:**
   - *v2:* Auditoria de Gastos e Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Folha de Servidores (AD-021).
-  - *v2:* Destinação de Emendas Parlamentares via CGU e Transferegov.br (AD-016).
+  - *v2:* Rastreabilidade de Convênios na Ponta das Emendas via Transferegov.br.
   - *v3:* Transparência Processual e Judicial via STF e DataJud/CNJ (AD-017).
 - **Bloqueios Ativos:** Nenhum.
 
@@ -100,12 +101,15 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
 
 ---
 
-## 7. Planejamento — Módulo Destinação de Emendas Parlamentares (AD-016)
+## 7. Decisões Arquiteturais — Módulo Emendas Parlamentares (AD-016)
 
-> **Decisão Arquitetural AD-016 (Rastreabilidade de Emendas Parlamentares):**  
-> Exibir em cada ficha parlamentar a destinação dos recursos do Orçamento Geral da União (emendas individuais, de bancada e transferências especiais):
-> 1. **Fontes Oficiais:** Portal da Transparência da CGU (`/api-de-dados/emendas`) e Transferegov.br (convênios e contratos de repasse).
-> 2. **Sem Adjetivação:** Exibição quantitativa de valores autorizados, empenhados, liquidados e pagos, acompanhados do município/estado beneficiário e objeto do convênio, sempre linkando o documento fiscal e registro oficial.
+> **Decisão Arquitetural AD-016 (Rastreabilidade de Emendas Parlamentares — CGU):**  
+> Exibir em cada ficha parlamentar a destinação dos recursos do Orçamento Geral da União (57ª Legislatura: 2023–2026):
+> 1. **Fonte Oficial Primária:** Download de dados consolidados abertos da Controladoria-Geral da União (CGU), processando `EmendasParlamentares.csv`.
+> 2. **Diferenciação Canônica Neutra:** Distinção explícita entre *Transferências Especiais ("Emendas Pix")* (repasses diretos sem convênio prévio) e *Transferências com Finalidade Definida* (vinculadas a políticas públicas específicas).
+> 3. **Agregação e Rastreabilidade Obrigatória:** Cada ficha exibe o total pago, restos a pagar pagos, divisão por funções orçamentárias (Saúde, Educação, Infraestrutura), principais municípios destinatários e link de consulta direta para a página oficial do autor no Portal da Transparência da CGU.
+> 4. **Conformidade LGPD (AD-009):** Descarte total de identificadores privados e foco estrito no repasse de recursos públicos a entes federativos.
+> 5. **Dataset Canônico:** `dados/emendas/emendas_resumo.json`, compilado via `scripts/cgu/fetch_emendas.py`.
 
 ---
 
