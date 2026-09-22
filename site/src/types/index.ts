@@ -65,6 +65,59 @@ export interface DespesasCEAP {
   fonte_oficial: string;
 }
 
+export interface ModalidadeEmenda {
+  total_pago: number;
+  total_formatado: string;
+  percentual: number;
+}
+
+export interface FuncaoEmenda {
+  funcao: string;
+  valor_pago: number;
+  valor_formatado: string;
+  percentual: number;
+}
+
+export interface MunicipioEmenda {
+  municipio: string;
+  valor_pago: number;
+  valor_formatado: string;
+}
+
+export interface EmendaItem {
+  ano: number;
+  numero: string;
+  tipo: string;
+  funcao: string;
+  subfuncao: string;
+  localidade: string;
+  valor_pago: number;
+  valor_pago_formatado: string;
+}
+
+export interface EmendasParlamentar {
+  parlamentar_id: number;
+  casa: string;
+  legislatura: string;
+  total_registros: number;
+  total_empenhado: number;
+  total_empenhado_formatado: string;
+  total_liquidado: number;
+  total_liquidado_formatado: string;
+  total_pago: number;
+  total_pago_formatado: string;
+  total_resto_pago: number;
+  total_resto_pago_formatado: string;
+  modalidades: {
+    especiais_pix: ModalidadeEmenda;
+    finalidade_definida: ModalidadeEmenda;
+  };
+  por_funcao: FuncaoEmenda[];
+  principais_municipios: MunicipioEmenda[];
+  ultimas_emendas: EmendaItem[];
+  url_portal_transparencia: string;
+}
+
 export interface Deputado {
   id: number;
   nome_eleitoral: string;
@@ -77,6 +130,7 @@ export interface Deputado {
   votos: Record<string, string>;
   candidatura_2026?: Candidatura2026 | null;
   despesas_2026?: DespesasCEAP | null;
+  emendas?: EmendasParlamentar | null;
 }
 
 export interface Senador {
@@ -91,6 +145,7 @@ export interface Senador {
   votos: Record<string, string>;
   candidatura_2026?: Candidatura2026 | null;
   despesas_2026?: DespesasCEAP | null;
+  emendas?: EmendasParlamentar | null;
 }
 
 export type CasaLegislativa = 'camara' | 'senado';

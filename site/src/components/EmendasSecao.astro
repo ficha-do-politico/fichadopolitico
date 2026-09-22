@@ -1,0 +1,240 @@
+---
+import type { EmendasParlamentar } from '../types';
+
+interface Props {
+  emendas: EmendasParlamentar;
+  nomeEleitoral: string;
+  casa?: 'camara' | 'senado';
+}
+
+const { emendas, nomeEleitoral, casa = 'camara' } = Astro.props;
+
+if (!emendas) {
+  return null;
+}
+---
+
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
+  <!-- Cabeçalho e Totais Consolidados -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+    <div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Orçamento da União • 57ª Legislatura (2023–2026)
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+        Destinação de Emendas Parlamentares
+      </h2>
+      <p class="text-xs text-slate-500 mt-0.5">
+        Recursos do Orçamento Geral da União executados e pagos por indicação de {nomeEleitoral} ({casa === 'senado' ? 'Senado Federal' : 'Câmara dos Deputados'}).
+      </p>
+    </div>
+
+    <div class="sm:text-right">
+      <span class="text-xs font-semibold text-slate-400 block uppercase">Total Pago em Emendas (2023–2026)</span>
+      <span class="text-2xl sm:text-3xl font-black text-slate-900">
+        {emendas.total_pago_formatado}
+      </span>
+      <span class="text-[11px] text-slate-400 block mt-0.5">
+        {emendas.total_registros} registros oficiais • Restos a pagar pagos: {emendas.total_resto_pago_formatado}
+      </span>
+    </div>
+  </div>
+
+  <!-- Comparativo das Modalidades: Transferências Especiais (Pix) vs Finalidade Definida -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- Card Transferências Especiais / Emendas Pix -->
+    <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-200 flex flex-col justify-between gap-3">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 uppercase tracking-wider">
+            <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Transferências Especiais ("Emendas Pix")
+          </span>
+          <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-200 text-amber-900">
+            {emendas.modalidades.especiais_pix.percentual}%
+          </span>
+        </div>
+        <p class="text-xs text-amber-800/80 leading-relaxed">
+          Repasses diretos a estados e municípios sem necessidade prévia de convênio vinculado. A fiscalização local cabe aos Tribunais de Contas e órgãos de controle.
+        </p>
+      </div>
+      <div class="pt-2 border-t border-amber-200/60 flex items-baseline justify-between">
+        <span class="text-xs text-amber-900 font-medium">Valor Total Pago:</span>
+        <span class="text-lg font-bold text-amber-950 font-mono">
+          {emendas.modalidades.especiais_pix.total_formatado}
+        </span>
+      </div>
+    </div>
+
+    <!-- Card Transferências com Finalidade Definida -->
+    <div class="p-4 rounded-xl bg-blue-50/60 border border-blue-200 flex flex-col justify-between gap-3">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 uppercase tracking-wider">
+            <svg class="w-3.5 h-3.5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Finalidade Definida (Convênios Vinculados)
+          </span>
+          <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-200 text-blue-900">
+            {emendas.modalidades.finalidade_definida.percentual}%
+          </span>
+        </div>
+        <p class="text-xs text-blue-800/80 leading-relaxed">
+          Recursos vinculados obrigatoriamente a áreas e objetos específicos (reforma de postos de saúde, compra de equipamentos, pavimentação e saneamento).
+        </p>
+      </div>
+      <div class="pt-2 border-t border-blue-200/60 flex items-baseline justify-between">
+        <span class="text-xs text-blue-900 font-medium">Valor Total Pago:</span>
+        <span class="text-lg font-bold text-blue-950 font-mono">
+          {emendas.modalidades.finalidade_definida.total_formatado}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breakdown por Área / Função Orçamentária -->
+  {emendas.por_funcao && emendas.por_funcao.length > 0 && (
+    <div class="space-y-3 pt-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-700">
+          Distribuição por Área de Aplicação
+        </h3>
+        <span class="text-xs text-slate-400">
+          Classificação orçamentária oficial CGU
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 gap-2.5">
+        {emendas.por_funcao.map(item => (
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 flex flex-col gap-2">
+            <div class="flex items-center justify-between text-xs sm:text-sm">
+              <span class="font-medium text-slate-800">
+                {item.funcao}
+              </span>
+              <div class="flex items-center gap-2 font-mono">
+                <span class="font-bold text-slate-900">
+                  {item.valor_formatado}
+                </span>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-200/80 text-slate-700">
+                  {item.percentual}%
+                </span>
+              </div>
+            </div>
+            <div class="w-full bg-slate-200/60 rounded-full h-2 overflow-hidden">
+              <div 
+                class="bg-emerald-600 h-2 rounded-full transition-all duration-300"
+                style={`width: ${Math.min(Math.max(item.percentual, 1), 100)}%`}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Principais Municípios Destinatários -->
+  {emendas.principais_municipios && emendas.principais_municipios.length > 0 && (
+    <div class="space-y-3 pt-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-700">
+          Principais Municípios Destinatários
+        </h3>
+        <span class="text-xs text-slate-400">
+          Top localidades por valor pago
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+        {emendas.principais_municipios.map(muni => (
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-800 truncate mr-2">
+              {muni.municipio}
+            </span>
+            <span class="text-xs font-bold text-emerald-800 font-mono flex-shrink-0">
+              {muni.valor_formatado}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Amostra de Emendas Recentes -->
+  {emendas.ultimas_emendas && emendas.ultimas_emendas.length > 0 && (
+    <div class="space-y-3 pt-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-700">
+          Amostra de Emendas Pagas
+        </h3>
+        <span class="text-xs text-slate-400">
+          Últimas deliberações com repasse efetuado
+        </span>
+      </div>
+
+      <div class="overflow-x-auto border border-slate-200 rounded-xl">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+              <th class="py-2.5 px-3">Ano / Nº</th>
+              <th class="py-2.5 px-3">Modalidade</th>
+              <th class="py-2.5 px-3">Área / Objeto</th>
+              <th class="py-2.5 px-3">Localidade</th>
+              <th class="py-2.5 px-3 text-right">Valor Pago</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 font-mono">
+            {emendas.ultimas_emendas.map(em => (
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-2 px-3 font-semibold text-slate-900 whitespace-nowrap">
+                  {em.ano} • {em.numero}
+                </td>
+                <td class="py-2 px-3 whitespace-nowrap">
+                  <span class={`px-2 py-0.5 rounded text-[11px] font-semibold ${em.tipo === 'Emenda Pix' ? 'bg-amber-100 text-amber-900' : 'bg-blue-100 text-blue-900'}`}>
+                    {em.tipo}
+                  </span>
+                </td>
+                <td class="py-2 px-3 font-sans text-slate-700">
+                  <div class="font-medium text-slate-900">{em.funcao}</div>
+                  <div class="text-[11px] text-slate-500">{em.subfuncao}</div>
+                </td>
+                <td class="py-2 px-3 font-sans text-slate-600 whitespace-nowrap">
+                  {em.localidade}
+                </td>
+                <td class="py-2 px-3 text-right font-bold text-slate-900 whitespace-nowrap">
+                  {em.valor_pago_formatado}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <!-- Nota de Verificabilidade e Link Oficial da CGU (AD-006 e AD-016) -->
+  <footer class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+    <div class="flex items-center gap-2">
+      <svg class="w-4 h-4 text-emerald-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+      <span>
+        Fonte oficial primária: <strong>Controladoria-Geral da União (CGU)</strong> • Portal da Transparência do Governo Federal.
+      </span>
+    </div>
+
+    <a 
+      href={emendas.url_portal_transparencia} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="inline-flex items-center gap-1.5 font-semibold text-emerald-700 hover:text-emerald-900 underline underline-offset-2 flex-shrink-0"
+    >
+      <span>Consultar extrato oficial na CGU ↗</span>
+    </a>
+  </footer>
+</section>

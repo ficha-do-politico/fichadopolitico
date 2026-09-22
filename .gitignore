@@ -12,6 +12,7 @@ __pycache__/
 .venv/
 .ruff_cache/
 
-# OS
-.DS_Store
-Thumbs.db
+# Data dumps & raw archives
+*.zip
+*.csv
+
