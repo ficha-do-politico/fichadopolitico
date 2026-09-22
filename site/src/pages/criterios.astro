@@ -58,6 +58,23 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       </div>
     </section>
 
+    <!-- Chamada para Diretório de Referências -->
+    <div class="bg-emerald-50/60 border border-emerald-200/80 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <h3 class="font-bold text-slate-900 text-sm">Procurando outras bases governamentais ou indicadores estaduais?</h3>
+        <p class="text-xs text-slate-600">
+          Catalogamos as fontes primárias do Estado (Câmara, Senado, TSE, CGU, IBGE) e iniciativas cívicas parceiras (CLP, IMDS, Base dos Dados, Querido Diário).
+        </p>
+      </div>
+      <a 
+        href={`${base}referencias`} 
+        class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800 text-xs font-semibold transition shadow-xs"
+      >
+        <span>Ver Fontes & Referências</span>
+        <span>→</span>
+      </a>
+    </div>
+
     <!-- Critérios de Seleção de Temas -->
     <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
       <h2 class="text-2xl font-bold text-slate-900">

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "dados-camara",
+    "nome": "Câmara dos Deputados — Dados Abertos",
+    "tipo": "oficial",
+    "categoria": "Fontes Oficiais Primárias",
+    "foco": "Votações nominais, presença e cota CEAP",
+    "descricao": "API REST oficial e arquivos consolidados contendo todas as deliberações de Plenário, presenças e notas fiscais de despesas dos 513 deputados federais.",
+    "url": "https://dadosabertos.camara.leg.br/",
+    "tags": ["Oficial", "Legislativo", "Dados Abertos", "API REST"]
+  },
+  {
+    "id": "dados-senado",
+    "nome": "Senado Federal — Dados Abertos",
+    "tipo": "oficial",
+    "categoria": "Fontes Oficiais Primárias",
+    "foco": "Atuação legislativa e cota CEAPS",
+    "descricao": "Portal e APIs legislativa e administrativa com deliberações do Plenário, comissões temáticas e detalhamento de notas fiscais dos 81 senadores da República.",
+    "url": "https://www12.senado.leg.br/dados-abertos",
+    "tags": ["Oficial", "Legislativo", "Dados Abertos", "API REST"]
+  },
+  {
+    "id": "tse-divulgacand",
+    "nome": "TSE — DivulgaCandContas",
+    "tipo": "oficial",
+    "categoria": "Fontes Oficiais Primárias",
+    "foco": "Candidaturas, bens e finanças eleitorais",
+    "descricao": "Sistema do Tribunal Superior Eleitoral para consulta pública de registros de candidatura, situação cadastral, certidões e histórico de bens autodeclarados.",
+    "url": "https://divulgacandcontas.tse.jus.br/",
+    "tags": ["Oficial", "Eleitoral", "Patrimônio", "TSE"]
+  },
+  {
+    "id": "cgu-transparencia",
+    "nome": "CGU — Portal da Transparência",
+    "tipo": "oficial",
+    "categoria": "Fontes Oficiais Primárias",
+    "foco": "Execução de Emendas Parlamentares e Orçamento",
+    "descricao": "Base oficial do Governo Federal que discrimina a execução orçamentária, transferências especiais (Emendas Pix) e pagamentos a estados e municípios.",
+    "url": "https://portaldatransparencia.gov.br/",
+    "tags": ["Oficial", "Orçamento", "Emendas", "Executivo"]
+  },
+  {
+    "id": "ibge-cidades",
+    "nome": "IBGE — Cidades e Séries Estatísticas",
+    "tipo": "oficial",
+    "categoria": "Fontes Oficiais Primárias",
+    "foco": "Demografia, Censo e PNAD Contínua",
+    "descricao": "Provedor oficial de estatísticas públicas brasileiras: séries de população, renda per capita, desigualdade (Gini), alfabetização e trabalho.",
+    "url": "https://cidades.ibge.gov.br/",
+    "tags": ["Oficial", "Estatística", "Censo", "IBGE"]
+  },
+  {
+    "id": "cnj-datajud",
+    "nome": "CNJ — DataJud e Painéis de Estatísticas",
+    "tipo": "oficial",
+    "categoria": "Fontes Oficiais Primárias",
+    "foco": "Transparência processual e Poder Judiciário",
+    "descricao": "Base unificada do Conselho Nacional de Justiça com metadados de andamento processual, produtividade e tramitação em tribunais de todo o país.",
+    "url": "https://paineis.cnj.jus.br/",
+    "tags": ["Oficial", "Judiciário", "Processos", "CNJ"]
+  },
+  {
+    "id": "clp-ranking",
+    "nome": "Ranking de Competitividade dos Estados (CLP)",
+    "tipo": "indicador",
+    "categoria": "Indicadores Socioeconômicos & Gestão Estadual",
+    "foco": "Gestão pública e comparativo dos 27 estados",
+    "descricao": "Avaliação multidimensional anual das 27 unidades federativas em 10 pilares estratégicos: Educação, Segurança Pública, Saneamento, Sustentabilidade Social e Solidez Fiscal.",
+    "url": "https://rankingdecompetitividade.org.br/",
+    "tags": ["Sociedade Civil", "Estados", "Série Histórica", "Metodologia"]
+  },
+  {
+    "id": "imds-panorama",
+    "nome": "IMDS — Panorama Estadual",
+    "tipo": "indicador",
+    "categoria": "Indicadores Socioeconômicos & Gestão Estadual",
+    "foco": "228 indicadores socioeconômicos dos estados",
+    "descricao": "Painel analítico do Instituto Mobilidade e Desenvolvimento Social com diagnóstico completo de saúde, educação, mercado de trabalho e infraestrutura por unidade federativa.",
+    "url": "https://imdsbrasil.org/",
+    "tags": ["Sociedade Civil", "Pesquisa", "Diagnóstico", "Estados"]
+  },
+  {
+    "id": "atlas-brasil",
+    "nome": "Atlas do Desenvolvimento Humano no Brasil",
+    "tipo": "indicador",
+    "categoria": "Indicadores Socioeconômicos & Gestão Estadual",
+    "foco": "IDHM, renda per capita e desigualdade (Gini)",
+    "descricao": "Plataforma mantida pelo PNUD, Ipea e FJP para consulta e comparação de séries históricas de desenvolvimento humano, renda e longevidade por estado e município.",
+    "url": "http://www.atlasbrasil.org.br/",
+    "tags": ["Ipea / PNUD", "IDHM", "Desigualdade", "Séries Históricas"]
+  },
+  {
+    "id": "trata-brasil",
+    "nome": "Painel do Saneamento (Instituto Trata Brasil)",
+    "tipo": "indicador",
+    "categoria": "Indicadores Socioeconômicos & Gestão Estadual",
+    "foco": "Água tratada, coleta/tratamento de esgoto e perdas",
+    "descricao": "Monitoramento detalhado da infraestrutura de saneamento básico em todos os estados e municípios a partir de dados consolidados do SNIS/SINISA.",
+    "url": "https://paineldosaneamento.org.br/",
+    "tags": ["Sociedade Civil", "Saneamento", "Infraestrutura", "SNIS"]
+  },
+  {
+    "id": "fbsp-anuario",
+    "nome": "Anuário Brasileiro de Segurança Pública (FBSP)",
+    "tipo": "indicador",
+    "categoria": "Indicadores Socioeconômicos & Gestão Estadual",
+    "foco": "Criminalidade, mortes violentas e policiamento",
+    "descricao": "Principal referência estatística padronizada sobre mortes violentas intencionais, taxas de criminalidade e gastos dos estados com segurança pública.",
+    "url": "https://forumseguranca.org.br/",
+    "tags": ["Sociedade Civil", "Segurança Pública", "Estatística", "FBSP"]
+  },
+  {
+    "id": "basedosdados",
+    "nome": "Base dos Dados",
+    "tipo": "civico",
+    "categoria": "Projetos Cívicos & Open Source",
+    "foco": "Integração e limpeza de bases governamentais",
+    "descricao": "Organização sem fins lucrativos que limpa, integra e disponibiliza centenas de bases públicas brasileiras prontas para análise em BigQuery, Python e R.",
+    "url": "https://basedosdados.org/",
+    "tags": ["Open Source", "BigQuery", "Dados Abertos", "Python"]
+  },
+  {
+    "id": "querido-diario",
+    "nome": "Querido Diário (Open Knowledge Brasil)",
+    "tipo": "civico",
+    "categoria": "Projetos Cívicos & Open Source",
+    "foco": "Diários Oficiais municipais abertos",
+    "descricao": "Plataforma de código aberto reconhecida como Digital Public Good que liberta e indexa os diários oficiais municipais do país para busca textual.",
+    "url": "https://queridodiario.ok.org.br/",
+    "tags": ["Open Source", "Municípios", "Diários Oficiais", "OKBR"]
+  },
+  {
+    "id": "puxa-ficha",
+    "nome": "Puxa Ficha",
+    "tipo": "civico",
+    "categoria": "Projetos Cívicos & Open Source",
+    "foco": "Candidaturas majoritárias e planos de governo",
+    "descricao": "Plataforma cívica open source voltada para eleições majoritárias (governadores e presidência), com comparador lado a lado de propostas e trajetórias.",
+    "url": "https://puxaficha.com.br/",
+    "tags": ["Open Source", "Eleições", "Executivo", "TSE"]
+  },
+  {
+    "id": "serenata-amor",
+    "nome": "Operação Serenata de Amor",
+    "tipo": "civico",
+    "categoria": "Projetos Cívicos & Open Source",
+    "foco": "Auditoria de gastos da cota parlamentar",
+    "descricao": "Projeto pioneiro de ciência de dados e inteligência artificial cívica (bot Rosie) para fiscalização de reembolsos da CEAP na Câmara dos Deputados.",
+    "url": "https://serenata.ai/",
+    "tags": ["Open Source", "Histórico", "Auditoria", "Python"]
+  },
+  {
+    "id": "tem-meu-voto",
+    "nome": "TemMeuVoto",
+    "tipo": "civico",
+    "categoria": "Projetos Cívicos & Open Source",
+    "foco": "Afinidade eleitoral no Legislativo",
+    "descricao": "Ferramenta de Voting Advice Application (VAA) para comparar posições do cidadão com as votações substantivas de deputados e senadores.",
+    "url": "https://temmeuvoto.org.br/",
+    "tags": ["Sociedade Civil", "Legislativo", "Eleições", "VAA"]
+  }
+]

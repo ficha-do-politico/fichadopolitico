@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import referenciasData from '../data/referencias.json';
+import type { ReferenciaItem } from '../types';
+
+const referencias = referenciasData as ReferenciaItem[];
+const totalOficiais = referencias.filter(r => r.tipo === 'oficial').length;
+const totalIndicadores = referencias.filter(r => r.tipo === 'indicador').length;
+const totalCivicos = referencias.filter(r => r.tipo === 'civico').length;
+---
+
+<Layout 
+  title="Fontes & Referências Cívicas"
+  description="Guia público de fontes oficiais primárias do Estado, painéis de indicadores de gestão pública e projetos cívicos de dados abertos no Brasil."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+    <!-- Header -->
+    <header class="space-y-4 text-center sm:text-left border-b border-slate-200 pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+        Transparência & Ecossistema Aberto
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Fontes Oficiais & Referências Cívicas
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-3xl">
+        Nenhum projeto monitora o poder público sozinho. A <strong>Ficha do Político</strong> atua na auditoria direta de parlamentares federais. Para indicadores de estados, municípios, orçamentos locais ou dados brutos, reunimos aqui as melhores fontes do ecossistema brasileiro.
+      </p>
+    </header>
+
+    <!-- Resumo de Orientação Rápida -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-base">
+          🏛️
+        </div>
+        <h3 class="font-bold text-slate-900 text-base">Auditoria do Congresso</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Para ver como votaram deputados e senadores, quanto gastaram de cota parlamentar e para onde destinaram emendas, consulte as fichas aqui no <strong>Ficha do Político</strong>.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-base">
+          📊
+        </div>
+        <h3 class="font-bold text-slate-900 text-base">Indicadores Estaduais</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Para comparar educação, saneamento, segurança e solidez fiscal entre os 27 estados ao longo do tempo, consulte o <strong>Ranking do CLP</strong>, o <strong>IMDS</strong> ou o <strong>Trata Brasil</strong>.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold text-base">
+          💻
+        </div>
+        <h3 class="font-bold text-slate-900 text-base">Diários & Dados Brutos</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Para buscar atos e licitações em diários oficiais municipais, consulte o <strong>Querido Diário</strong>. Para análises avançadas em SQL e Python, acesse a <strong>Base dos Dados</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Controles de Filtro e Busca -->
+    <section class="space-y-4">
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+        <!-- Filtros por Categoria -->
+        <div class="flex flex-wrap items-center gap-2" id="filterButtons">
+          <button 
+            type="button" 
+            data-filter="all" 
+            class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-900 text-white shadow-xs"
+          >
+            Todos ({referencias.length})
+          </button>
+          <button 
+            type="button" 
+            data-filter="oficial" 
+            class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200"
+          >
+            Bases Oficiais do Estado ({totalOficiais})
+          </button>
+          <button 
+            type="button" 
+            data-filter="indicador" 
+            class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200"
+          >
+            Indicadores & Gestão ({totalIndicadores})
+          </button>
+          <button 
+            type="button" 
+            data-filter="civico" 
+            class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200"
+          >
+            Projetos Cívicos & Open Source ({totalCivicos})
+          </button>
+        </div>
+
+        <!-- Input de Busca -->
+        <div class="relative min-w-[240px]">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Buscar fonte ou indicador..." 
+            class="w-full px-3 py-1.5 pl-8 text-xs rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white"
+          />
+          <span class="absolute left-2.5 top-2 text-slate-400 text-xs">🔍</span>
+        </div>
+      </div>
+
+      <!-- Grid de Referências -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="referenciasGrid">
+        {referencias.map(item => {
+          const isOficial = item.tipo === 'oficial';
+          const isIndicador = item.tipo === 'indicador';
+          
+          let badgeClass = 'bg-purple-50 text-purple-700 border-purple-200';
+          let badgeLabel = 'Projeto Cívico';
+          if (isOficial) {
+            badgeClass = 'bg-emerald-50 text-emerald-800 border-emerald-200';
+            badgeLabel = 'Fonte Oficial';
+          } else if (isIndicador) {
+            badgeClass = 'bg-blue-50 text-blue-800 border-blue-200';
+            badgeLabel = 'Indicadores de Gestão';
+          }
+
+          return (
+            <article 
+              class="ref-card bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between hover:border-slate-300 hover:shadow-sm transition space-y-4"
+              data-tipo={item.tipo}
+              data-search={`${item.nome} ${item.foco} ${item.descricao} ${item.tags.join(' ')}`.toLowerCase()}
+            >
+              <div class="space-y-3">
+                <div class="flex items-center justify-between gap-2">
+                  <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${badgeClass}`}>
+                    {badgeLabel}
+                  </span>
+                  <span class="text-[11px] font-medium text-slate-400">
+                    {item.categoria}
+                  </span>
+                </div>
+
+                <div>
+                  <h2 class="text-base font-bold text-slate-900 hover:text-emerald-700 transition">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1">
+                      {item.nome}
+                      <span class="text-xs text-slate-400">↗</span>
+                    </a>
+                  </h2>
+                  <div class="text-xs font-medium text-emerald-800 mt-1">
+                    🎯 Foco: {item.foco}
+                  </div>
+                </div>
+
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  {item.descricao}
+                </p>
+              </div>
+
+              <div class="space-y-4 pt-2 border-t border-slate-100">
+                <div class="flex flex-wrap gap-1.5">
+                  {item.tags.map(tag => (
+                    <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div>
+                  <a 
+                    href={item.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-900 hover:underline transition"
+                  >
+                    <span>Acessar portal de origem</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <!-- Estado Vazio para Busca -->
+      <div id="noResults" class="hidden py-12 text-center space-y-2 bg-slate-50 rounded-2xl border border-slate-200">
+        <p class="text-sm font-semibold text-slate-700">Nenhuma fonte encontrada para os termos buscados.</p>
+        <p class="text-xs text-slate-500">Tente buscar por termos como "educação", "cota", "saneamento" ou "TSE".</p>
+      </div>
+    </section>
+
+    <!-- Princípios e Transparência de Critérios -->
+    <section class="bg-slate-100/70 rounded-2xl border border-slate-200 p-6 sm:p-8 space-y-4 text-xs text-slate-600">
+      <h3 class="font-bold text-slate-900 text-sm">
+        Por que catalogamos iniciativas de terceiros?
+      </h3>
+      <p class="leading-relaxed">
+        <strong>Especialização e rigor:</strong> Nenhum sistema único é capaz de processar com excelência a totalidade dos dados do Estado brasileiro. O compromisso do <em>Ficha do Político</em> é manter foco estrito e contínuo no mandato parlamentar federal (votações nominais, notas fiscais de cota e emendas da CGU).
+      </p>
+      <p class="leading-relaxed">
+        <strong>Apartidarismo e utilidade pública:</strong> Não ranqueamos as iniciativas nem atribuímos juízo ideológico. Disponibilizamos os links oficiais para que todo cidadão, pesquisador e jornalista tenha acesso fácil às fontes primárias e aos melhores levantamentos técnicos da sociedade civil.
+      </p>
+    </section>
+  </div>
+
+  <!-- Script Cliente para Filtro e Busca Rápida -->
+  <script is:inline>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.ref-card');
+    const noResults = document.getElementById('noResults');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardTipo = card.getAttribute('data-tipo');
+        const cardText = card.getAttribute('data-search') || '';
+
+        const matchesFilter = (currentFilter === 'all') || (cardTipo === currentFilter);
+        const matchesSearch = !searchQuery || cardText.includes(searchQuery);
+
+        if (matchesFilter && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+
+        // Atualizar estado visual dos botões
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-slate-900', 'text-white', 'shadow-xs');
+          b.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        btn.classList.add('bg-slate-900', 'text-white', 'shadow-xs');
+        btn.classList.remove('bg-slate-100', 'text-slate-700');
+
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = (e.target.value || '').trim().toLowerCase();
+        applyFilters();
+      });
+    }
+  </script>
+</Layout>
