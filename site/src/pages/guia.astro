@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         Guia de Competências dos Cargos Eletivos
       </h1>
       <p class="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
-        Mapeamento objetivo das competências, limites legais e responsabilidades de cada função pública no Brasil, com base na Constituição Federal de 1988 e na legislação eleitoral vigente.
+        Quem cuida do quê no Brasil? Um guia rápido de prefeito, governador, deputado, senador e presidente, com base na Constituição.
       </p>
 
       <!-- Navegação Rápida com Pílulas -->
@@ -74,7 +74,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           Identificação de Responsabilidade Pública
         </h2>
         <p class="text-sm text-slate-600 mt-0.5">
-          Localize a autoridade legalmente responsável pela gestão de cada serviço público ou política setorial.
+          Busque por um problema do dia a dia e veja quem é o responsável por resolver.
         </p>
       </div>
 
@@ -263,7 +263,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           Ciclos Eleitorais no Brasil
         </h2>
         <p class="text-sm text-slate-600 mt-1">
-          As eleições no Brasil ocorrem a cada dois anos (sempre em anos pares), alternando o pleito municipal e o pleito geral (federal e estadual).
+          No Brasil se vota a cada dois anos, alternando eleição municipal e eleição geral.
         </p>
       </div>
 
@@ -340,23 +340,30 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       </div>
 
       <!-- Caixa didática: Majoritário vs Proporcional -->
-      <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 sm:p-6 space-y-3 text-xs text-slate-700">
-        <h4 class="font-bold text-slate-900 text-sm">Sistemas de Votação: Majoritário vs. Proporcional</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 space-y-1">
-            <span class="font-bold text-slate-900">Sistema Majoritário (Presidente, Governador, Prefeito, Senador)</span>
-            <p class="text-slate-600 leading-relaxed">
-              É eleito o candidato com maior número de votos válidos. Em municípios com mais de 200 mil eleitores e nas eleições para Presidente e Governador, exige-se mais de 50% dos votos válidos em 1º turno para evitar a realização de 2º turno.
-            </p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 space-y-1">
-            <span class="font-bold text-slate-900">Sistema Proporcional (Deputados Federais, Estaduais e Vereadores)</span>
-            <p class="text-slate-600 leading-relaxed">
-              O voto é contabilizado inicialmente para o partido ou federação partidária. As vagas são distribuídas de acordo com o Quociente Eleitoral (total de votos válidos dividido pelo número de vagas), elegendo os candidatos com mais votos dentro de cada legenda qualificada.
-            </p>
+      <details class="group bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-700 overflow-hidden">
+        <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer font-bold text-slate-900 text-sm select-none">
+          <span>Por que o voto pra prefeito funciona diferente do voto pra vereador?</span>
+          <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-5 sm:px-6 pb-5 sm:pb-6 space-y-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 bg-white rounded-xl border border-slate-200 space-y-1">
+              <span class="font-bold text-slate-900">Sistema Majoritário (Presidente, Governador, Prefeito, Senador)</span>
+              <p class="text-slate-600 leading-relaxed">
+                Vence quem tiver mais votos. Em municípios grandes e nas eleições para Presidente e Governador, é preciso passar de 50% dos votos válidos pra vencer já no 1º turno — senão vai pro 2º turno.
+              </p>
+            </div>
+            <div class="p-3.5 bg-white rounded-xl border border-slate-200 space-y-1">
+              <span class="font-bold text-slate-900">Sistema Proporcional (Deputados Federais, Estaduais e Vereadores)</span>
+              <p class="text-slate-600 leading-relaxed">
+                O voto conta primeiro pro partido. As vagas do partido são divididas entre os candidatos mais votados dentro dele — por isso é possível ser eleito "puxado" por outro nome da mesma legenda.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </details>
     </section>
 
     <!-- SEÇÃO 3: ESFERA MUNICIPAL -->
@@ -369,7 +376,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           Poder Público Municipal
         </h2>
         <p class="text-sm text-slate-600 mt-1">
-          Administração local responsável pelos serviços urbanos, trânsito interno, atenção básica à saúde e educação infantil.
+          Cuida do que está mais perto de casa: rua, ônibus, posto de saúde, creche.
         </p>
       </div>
 
@@ -492,7 +499,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           Poder Público Estadual
         </h2>
         <p class="text-sm text-slate-600 mt-1">
-          Responsável pela segurança pública (Polícia Militar e Polícia Civil), rede penitenciária, ensino médio e hospitais de média/alta complexidade.
+          Cuida de polícia, presídios, ensino médio e hospitais maiores.
         </p>
       </div>
 
@@ -599,7 +606,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             Poder Público Federal (Presidência & Congresso)
           </h2>
           <p class="text-sm text-slate-600 mt-1">
-            Esfera responsável pela legislação nacional, reformas constitucionais, tributação federal e relações exteriores.
+            Cuida das leis que valem pro país inteiro: impostos federais, Código Penal e relações com outros países.
           </p>
         </div>
         <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full border border-emerald-200">
@@ -768,44 +775,52 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           Suplência e Linha Sucessória
         </h2>
         <p class="text-sm text-slate-600 mt-1">
-          Entenda as regras constitucionais para substituição e sucessão definitiva dos mandatos eletivos no Brasil.
+          O que acontece quando um mandato fica vago antes do fim?
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <!-- Suplente de Senador -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-2">
-          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs">
-            1/2
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+        <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 hover:text-slate-900 transition select-none">
+          <span>Ver como funciona a substituição em cada caso</span>
+          <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="p-5 pt-0 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Suplente de Senador -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs">
+              1/2
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm">Suplentes de Senador (Chapa Majoritária)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Cada candidato a senador se elege com <strong>dois suplentes já definidos na chapa</strong>. Se o titular sai por licença, renúncia, cassação ou morte, assume o 1º suplente — sem nova votação.
+            </p>
           </div>
-          <h3 class="font-bold text-slate-900 text-sm">Suplentes de Senador (Chapa Majoritária)</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            A chapa para o Senado Federal registra obrigatoriamente <strong>dois suplentes vinculados</strong>. Em caso de licença para assumir ministério, renúncia, cassação ou falecimento do titular, assume o 1º suplente da chapa, sem votação nominal individual direta na urna.
-          </p>
-        </div>
 
-        <!-- Suplente Proporcional -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-2">
-          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs">
-            QE
+          <!-- Suplente Proporcional -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs">
+              QE
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm">Suplentes Proporcionais (Deputados e Vereadores)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              A vaga é do partido, não da pessoa. Se o titular sai, assume o candidato mais votado do mesmo partido que não se elegeu na eleição original.
+            </p>
           </div>
-          <h3 class="font-bold text-slate-900 text-sm">Suplentes Proporcionais (Deputados e Vereadores)</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            No sistema proporcional, a vaga pertence à agremiação ou federação partidária. Na vacância ou afastamento temporário do parlamentar, assume o candidato da mesma sigla com a votação nominal imediatamente seguinte no pleito original.
-          </p>
-        </div>
 
-        <!-- Vices do Executivo -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-2">
-          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs">
-            VC
+          <!-- Vices do Executivo -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs">
+              VC
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm">Vices do Executivo (Presidente, Gov, Prefeito)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Assumem temporariamente em viagens, licenças ou afastamentos — e de forma definitiva em caso de impeachment, renúncia ou morte do titular.
+            </p>
           </div>
-          <h3 class="font-bold text-slate-900 text-sm">Vices do Executivo (Presidente, Gov, Prefeito)</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Substituem interinamente os titulares nos casos de licença, impedimento médico ou viagens oficiais, e sucedem em caráter definitivo nos casos de cassação de mandato (impeachment), renúncia formal ou falecimento.
-          </p>
         </div>
-      </div>
+      </details>
     </section>
 
     <!-- SEÇÃO 7: SABATINAS & INSTITUIÇÕES -->
@@ -818,38 +833,46 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           Aprovação de Autoridades pelo Senado Federal
         </h2>
         <p class="text-sm text-slate-600 mt-1">
-          O desenho institucional brasileiro submete a nomeação de dirigentes de órgãos com autonomia técnica e estabilidade jurídica ao escrutínio do Legislativo.
+          O Presidente indica, mas algumas autoridades só assumem o cargo depois de aprovadas pelo Senado.
         </p>
       </div>
 
-      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-xs space-y-5">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-            <h4 class="font-bold text-slate-900 text-sm">STF (Supremo Tribunal Federal)</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Instância guardiã da Constituição. Os ministros são indicados pelo Presidente da República e devem ser aprovados por maioria absoluta do Senado Federal após sabatina pública na Comissão de Constituição e Justiça (CCJ).
-            </p>
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+        <summary class="flex items-center justify-between p-6 sm:p-7 cursor-pointer font-semibold text-slate-700 hover:text-slate-900 transition select-none">
+          <span>Ver quais autoridades passam pelo Senado</span>
+          <svg class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 sm:px-7 pb-6 sm:pb-7 space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <h4 class="font-bold text-slate-900 text-sm">STF (Supremo Tribunal Federal)</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Os ministros são indicados pelo Presidente e precisam ser aprovados pela maioria do Senado, depois de uma sabatina pública.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <h4 class="font-bold text-slate-900 text-sm">PGR (Procurador-Geral da República)</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Chefe do Ministério Público Federal. Também é indicado pelo Presidente e depende de aprovação do Senado.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <h4 class="font-bold text-slate-900 text-sm">Banco Central do Brasil</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Cuida dos juros e da moeda. O presidente e a diretoria têm mandato fixo e também passam por sabatina no Senado.
+              </p>
+            </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-            <h4 class="font-bold text-slate-900 text-sm">PGR (Procurador-Geral da República)</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Chefe do Ministério Público Federal e titular da ação penal pública perante o STF contra autoridades com prerrogativa de foro. Sua nomeação depende de aprovação prévia do Senado.
-            </p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-            <h4 class="font-bold text-slate-900 text-sm">Banco Central do Brasil</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Autarquia responsável pela política monetária e regulação do sistema financeiro. O presidente e a diretoria colegiada têm mandatos fixos não coincidentes com o mandato presidencial e dependem de sabatina no Senado.
-            </p>
+          <div class="border-t border-slate-200 pt-4 text-xs text-slate-600">
+            Por isso o voto pra senador importa mesmo fora de temas legislativos: é quem aprova — e pode julgar — essas autoridades.
           </div>
         </div>
-
-        <div class="border-t border-slate-200 pt-4 text-xs text-slate-600">
-          <strong class="text-slate-900">Relação com o voto legislativo:</strong> Ao escolher representantes para o Senado Federal, o eleitor define os parlamentares responsáveis por arguir publicamente, aprovar e eventualmente julgar o impeachment dessas autoridades.
-        </div>
-      </div>
+      </details>
     </section>
 
     <!-- SEÇÃO 8: FONTES E VERIFICABILIDADE -->
