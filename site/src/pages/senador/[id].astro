@@ -4,6 +4,7 @@ import VotoBadge from '../../components/VotoBadge.astro';
 import PatrimonioSecao from '../../components/PatrimonioSecao.astro';
 import DespesasSecao from '../../components/DespesasSecao.astro';
 import EmendasSecao from '../../components/EmendasSecao.astro';
+import FichaTabs from '../../components/FichaTabs.astro';
 import senadoresData from '../../data/senadores.json';
 import temasData from '../../data/temas.json';
 import type { Senador, Tema } from '../../types';
@@ -29,6 +30,13 @@ const pageDescription = `Confira a ficha pública do Senador da República ${sen
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
+
+const tabs = [
+  { key: 'votacoes', label: 'Votações' },
+  ...(senador.despesas_2026 ? [{ key: 'gastos', label: 'Gastos (Cota)' }] : []),
+  ...(senador.emendas ? [{ key: 'emendas', label: 'Emendas' }] : []),
+  ...(senador.candidatura_2026?.patrimonio ? [{ key: 'patrimonio', label: 'Patrimônio' }] : []),
+];
 ---
 
 <Layout 
@@ -149,8 +157,10 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
       </p>
     </div>
 
-    <!-- Seção de Votações -->
-    <section class="space-y-4">
+    <!-- Ficha em Abas: Votações, Gastos, Emendas, Patrimônio (Etapa 2 #47) -->
+    <FichaTabs tabs={tabs}>
+      <Fragment slot="votacoes">
+        <section class="space-y-4">
       <div class="flex items-center justify-between">
         <h2 class="text-xl font-bold text-slate-900">
           Votações Nominais no Senado
@@ -261,38 +271,37 @@ const temVotosRegistrados = Object.keys(senador.votos || {}).length > 0;
           </div>
         </div>
       )}
-    </section>
+        </section>
+      </Fragment>
 
-    <!-- Seção de Gastos Parlamentares / CEAPS 2026 -->
-    {senador.despesas_2026 && (
-      <div class="mt-8">
-        <DespesasSecao 
-          despesas={senador.despesas_2026} 
-          nomeEleitoral={senador.nome_eleitoral} 
-          casa="senado"
-        />
-      </div>
-    )}
+      {senador.despesas_2026 && (
+        <Fragment slot="gastos">
+          <DespesasSecao
+            despesas={senador.despesas_2026}
+            nomeEleitoral={senador.nome_eleitoral}
+            casa="senado"
+          />
+        </Fragment>
+      )}
 
-    <!-- Seção de Emendas Parlamentares (AD-016) -->
-    {senador.emendas && (
-      <div class="mt-8">
-        <EmendasSecao 
-          emendas={senador.emendas} 
-          nomeEleitoral={senador.nome_eleitoral} 
-          casa="senado"
-        />
-      </div>
-    )}
+      {senador.emendas && (
+        <Fragment slot="emendas">
+          <EmendasSecao
+            emendas={senador.emendas}
+            nomeEleitoral={senador.nome_eleitoral}
+            casa="senado"
+          />
+        </Fragment>
+      )}
 
-    <!-- Seção de Patrimônio Declarado ao TSE (Eleições 2026) -->
-    {senador.candidatura_2026 && senador.candidatura_2026.patrimonio && (
-      <div class="mt-8">
-        <PatrimonioSecao 
-          candidatura={senador.candidatura_2026} 
-          nomeEleitoral={senador.nome_eleitoral} 
-        />
-      </div>
-    )}
+      {senador.candidatura_2026 && senador.candidatura_2026.patrimonio && (
+        <Fragment slot="patrimonio">
+          <PatrimonioSecao
+            candidatura={senador.candidatura_2026}
+            nomeEleitoral={senador.nome_eleitoral}
+          />
+        </Fragment>
+      )}
+    </FichaTabs>
   </div>
 </Layout>

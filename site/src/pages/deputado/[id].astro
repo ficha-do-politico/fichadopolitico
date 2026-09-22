@@ -4,6 +4,7 @@ import VotoBadge from '../../components/VotoBadge.astro';
 import PatrimonioSecao from '../../components/PatrimonioSecao.astro';
 import DespesasSecao from '../../components/DespesasSecao.astro';
 import EmendasSecao from '../../components/EmendasSecao.astro';
+import FichaTabs from '../../components/FichaTabs.astro';
 import deputadosData from '../../data/deputados.json';
 import temasData from '../../data/temas.json';
 import type { Deputado, Tema } from '../../types';
@@ -27,6 +28,13 @@ const { deputado } = Astro.props;
 const pageTitle = `Dep. ${deputado.nome_eleitoral} (${deputado.partido}-${deputado.uf})`;
 const pageDescription = `Confira como o Deputado Federal ${deputado.nome_eleitoral} (${deputado.partido}/${deputado.uf}) votou nas principais matérias da Câmara dos Deputados.`;
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const tabs = [
+  { key: 'votacoes', label: 'Votações' },
+  ...(deputado.despesas_2026 ? [{ key: 'gastos', label: 'Gastos (Cota)' }] : []),
+  ...(deputado.emendas ? [{ key: 'emendas', label: 'Emendas' }] : []),
+  ...(deputado.candidatura_2026?.patrimonio ? [{ key: 'patrimonio', label: 'Patrimônio' }] : []),
+];
 ---
 
 <Layout 
@@ -147,19 +155,21 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       </p>
     </div>
 
-    <!-- Lista de Votações Nominais Curadas -->
-    <section class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl font-bold text-slate-900">
-          Votações em Temas Nacionais Relevantes
-        </h2>
-        <span class="text-xs text-slate-500 font-medium">
-          {temas.length} decisões cadastradas
-        </span>
-      </div>
+    <!-- Ficha em Abas: Votações, Gastos, Emendas, Patrimônio (Etapa 2 #47) -->
+    <FichaTabs tabs={tabs}>
+      <Fragment slot="votacoes">
+        <section class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-bold text-slate-900">
+              Votações em Temas Nacionais Relevantes
+            </h2>
+            <span class="text-xs text-slate-500 font-medium">
+              {temas.length} decisões cadastradas
+            </span>
+          </div>
 
-      <div class="space-y-4">
-        {temas.map(tema => {
+          <div class="space-y-4">
+            {temas.map(tema => {
           const voto = deputado.votos[tema.id] || "Não votou / Ausente";
           return (
             <article class="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm transition hover:border-slate-300">
@@ -224,38 +234,37 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             </article>
           );
         })}
-      </div>
-    </section>
+          </div>
+        </section>
+      </Fragment>
 
-    <!-- Seção de Gastos Parlamentares / CEAP 2026 -->
-    {deputado.despesas_2026 && (
-      <div class="mt-8">
-        <DespesasSecao 
-          despesas={deputado.despesas_2026} 
-          nomeEleitoral={deputado.nome_eleitoral} 
-        />
-      </div>
-    )}
+      {deputado.despesas_2026 && (
+        <Fragment slot="gastos">
+          <DespesasSecao
+            despesas={deputado.despesas_2026}
+            nomeEleitoral={deputado.nome_eleitoral}
+          />
+        </Fragment>
+      )}
 
-    <!-- Seção de Emendas Parlamentares (AD-016) -->
-    {deputado.emendas && (
-      <div class="mt-8">
-        <EmendasSecao 
-          emendas={deputado.emendas} 
-          nomeEleitoral={deputado.nome_eleitoral} 
-          casa="camara"
-        />
-      </div>
-    )}
+      {deputado.emendas && (
+        <Fragment slot="emendas">
+          <EmendasSecao
+            emendas={deputado.emendas}
+            nomeEleitoral={deputado.nome_eleitoral}
+            casa="camara"
+          />
+        </Fragment>
+      )}
 
-    <!-- Seção de Patrimônio Declarado ao TSE (Eleições 2026) -->
-    {deputado.candidatura_2026 && deputado.candidatura_2026.patrimonio && (
-      <div class="mt-8">
-        <PatrimonioSecao 
-          candidatura={deputado.candidatura_2026} 
-          nomeEleitoral={deputado.nome_eleitoral} 
-        />
-      </div>
-    )}
+      {deputado.candidatura_2026 && deputado.candidatura_2026.patrimonio && (
+        <Fragment slot="patrimonio">
+          <PatrimonioSecao
+            candidatura={deputado.candidatura_2026}
+            nomeEleitoral={deputado.nome_eleitoral}
+          />
+        </Fragment>
+      )}
+    </FichaTabs>
   </div>
 </Layout>
