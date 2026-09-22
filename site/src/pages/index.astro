@@ -78,53 +78,6 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
         Acesse em dados crus e auditáveis como votaram os <strong class="text-slate-900">{totalDeputados} deputados</strong> e <strong class="text-slate-900">{totalSenadores} senadores</strong>, o detalhamento das despesas de cota parlamentar e o patrimônio autodeclarado à Justiça Eleitoral.
       </p>
 
-      <!-- 3 Pilares Estruturais da Ficha -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto pt-2 text-left">
-        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
-          <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60 inline-block">1. Votações</span>
-          <h2 class="text-sm font-bold text-slate-900 mt-2">Decisões Cruciais</h2>
-          <p class="text-xs text-slate-500 mt-1 leading-normal">Votos nominais auditados em projetos de lei, PECs e medidas de repercussão nacional.</p>
-        </div>
-
-        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
-          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200 inline-block">2. Cota Pública</span>
-          <h2 class="text-sm font-bold text-slate-900 mt-2">Gastos Operacionais</h2>
-          <p class="text-xs text-slate-500 mt-1 leading-normal">Uso da CEAP e CEAPS no exercício vigente, com maiores despesas e notas fiscais linkadas.</p>
-        </div>
-
-        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
-          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200 inline-block">3. Patrimônio</span>
-          <h2 class="text-sm font-bold text-slate-900 mt-2">Justiça Eleitoral</h2>
-          <p class="text-xs text-slate-500 mt-1 leading-normal">Histórico de bens declarados ao TSE e registro oficial de candidaturas para 2026.</p>
-        </div>
-      </div>
-
-      <!-- Atalhos Rápidos de Pautas e Presidência -->
-      <div class="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs">
-        <span class="text-slate-400 font-semibold">Pautas em destaque:</span>
-        {temas.slice(0, 3).map(t => (
-          <a 
-            href={`${base}votacao/${t.id}`}
-            class="inline-flex items-center px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 font-medium hover:border-emerald-600 hover:text-emerald-700 transition shadow-2xs"
-          >
-            {t.titulo}
-          </a>
-        ))}
-        <a 
-          href={`${base}votacoes`}
-          class="inline-flex items-center px-2 py-1 text-slate-500 hover:text-slate-900 hover:underline transition font-medium"
-        >
-          Todas as {totalTemas} votações &rarr;
-        </a>
-        <span class="text-slate-300 hidden sm:inline">•</span>
-        <a 
-          href={`${base}presidente`}
-          class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-900 text-white font-medium hover:bg-slate-800 transition shadow-2xs"
-        >
-          Candidaturas à Presidência &rarr;
-        </a>
-      </div>
-
       <!-- Barra de Busca Hero -->
       <div class="pt-2 max-w-2xl mx-auto">
         <div class="relative shadow-xs rounded-2xl">

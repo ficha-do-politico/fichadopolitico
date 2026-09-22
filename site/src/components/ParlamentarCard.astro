@@ -12,7 +12,7 @@ const isSenado = parlamentar.casa === 'senado';
 
 <a 
   href={parlamentar.href} 
-  class="group relative flex flex-col justify-between p-4 rounded-xl bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-md transition-all duration-200"
+  class="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-sm transition-all duration-150"
   data-nome={parlamentar.nome_eleitoral.toLowerCase()}
   data-civil={parlamentar.nome_civil.toLowerCase()}
   data-partido={parlamentar.partido.toLowerCase()}
@@ -21,9 +21,9 @@ const isSenado = parlamentar.casa === 'senado';
   data-candidato-2026={parlamentar.is_candidato_2026 ? "true" : "false"}
   data-reeleicao={parlamentar.is_reeleicao ? "true" : "false"}
 >
-  <!-- Cabeçalho do Card: Foto e Identificação -->
-  <div class="flex items-start gap-3.5">
-    <div class="relative w-12 h-12 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0 group-hover:ring-2 group-hover:ring-emerald-600 transition">
+  <!-- Foto e Identificação do Parlamentar -->
+  <div class="flex items-center gap-3.5 min-w-0">
+    <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0 group-hover:ring-2 group-hover:ring-emerald-600 transition">
       <img 
         src={parlamentar.url_foto} 
         alt={parlamentar.nome_eleitoral} 
@@ -34,11 +34,11 @@ const isSenado = parlamentar.casa === 'senado';
     </div>
 
     <div class="min-w-0 flex-1">
-      <h3 class="font-bold text-slate-900 text-base truncate group-hover:text-emerald-700 transition leading-snug">
+      <h3 class="font-bold text-slate-900 text-sm sm:text-base truncate group-hover:text-emerald-700 transition leading-snug">
         {parlamentar.nome_eleitoral}
       </h3>
       
-      <div class="flex flex-wrap items-center gap-1 mt-1">
+      <div class="flex flex-wrap items-center gap-1.5 mt-0.5">
         <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700 border border-slate-200">
           {parlamentar.partido}
         </span>
@@ -58,37 +58,17 @@ const isSenado = parlamentar.casa === 'senado';
               ? 'bg-purple-50 text-purple-700 border-purple-200'
               : 'bg-amber-50 text-amber-800 border-amber-200'
           }`}>
-            {parlamentar.is_reeleicao ? 'Reeleição 2026' : `2026: ${parlamentar.cargo_2026}`}
+            {parlamentar.is_reeleicao ? 'Reeleição' : `2026: ${parlamentar.cargo_2026}`}
           </span>
         )}
       </div>
     </div>
   </div>
 
-  <!-- Micro-indicadores da Ficha (Dados crus oficiais) -->
-  <div class="mt-3.5 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
-    <div class="bg-slate-50/80 rounded-lg p-2 border border-slate-100">
-      <span class="block text-[10px] uppercase tracking-wider font-semibold text-slate-500">Cota 2026</span>
-      <span class="block font-bold text-slate-900 truncate mt-0.5">
-        {parlamentar.total_cota_formatado || 'Sem registro'}
-      </span>
-    </div>
-
-    <div class="bg-slate-50/80 rounded-lg p-2 border border-slate-100">
-      <span class="block text-[10px] uppercase tracking-wider font-semibold text-slate-500">
-        {parlamentar.patrimonio_formatado ? 'Bens TSE' : 'Votações'}
-      </span>
-      <span class="block font-bold text-slate-900 truncate mt-0.5">
-        {parlamentar.patrimonio_formatado ? parlamentar.patrimonio_formatado : `${parlamentar.total_votos || 0} registradas`}
-      </span>
-    </div>
-  </div>
-
-  <!-- Rodapé com chamada direta -->
-  <div class="mt-3 pt-2 flex items-center justify-between text-[11px] font-semibold text-slate-500 group-hover:text-emerald-700 transition">
-    <span>Ver ficha detalhada</span>
-    <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+  <!-- Ação sutil -->
+  <div class="shrink-0 pl-2 text-slate-300 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
     </svg>
   </div>
 </a>
