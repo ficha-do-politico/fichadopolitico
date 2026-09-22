@@ -164,8 +164,12 @@ export interface ParlamentarCardData {
   is_reeleicao?: boolean;
   cargo_2026?: string;
   total_cota_formatado?: string;
+  total_cota?: number;
   total_votos?: number;
   patrimonio_formatado?: string;
+  patrimonio_total?: number;
+  total_emendas_formatado?: string;
+  total_emendas?: number;
 }
 
 export interface TemaSenadoInfo {
