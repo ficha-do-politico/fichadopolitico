@@ -59,7 +59,40 @@
 - **Status:** ativo (produto fechado).
 - **Relevância pra nós:** referência de interface unificada para visualizar votos e gastos no mesmo perfil de parlamentar.
 
+## Indicadores Socioeconômicos e Gestão Pública
+
+### Ranking de Competitividade dos Estados (CLP)
+- **O que é:** avaliação anual multidimensional dos 27 estados em 10 pilares (Educação, Segurança Pública, Saneamento, Sustentabilidade Social, Solidez Fiscal, Eficiência da Máquina Pública, etc.).
+- **Site:** [rankingdecompetitividade.org.br](https://rankingdecompetitividade.org.br/)
+- **Status:** ativo e mantido anualmente pelo Centro de Liderança Pública (CLP) com a Tendências Consultoria.
+- **Relevância pra nós:** principal referência cívica para séries históricas e comparações de desempenho de gestão e serviços públicos estaduais.
+
+### IMDS – Eleições: Panorama Estadual
+- **O que é:** painel analítico com 228 indicadores socioeconômicos das 27 unidades da federação distribuídos em 12 temas estratégicos (educação, saúde, segurança, renda, habitação e mercado de trabalho).
+- **Site:** [imdsbrasil.org](https://imdsbrasil.org/)
+- **Status:** ativo (lançado em 2026 pelo Instituto Mobilidade e Desenvolvimento Social).
+- **Relevância pra nós:** benchmark para avaliação de trajetórias socioeconômicas e diagnóstico regional dos estados.
+
+### Atlas do Desenvolvimento Humano no Brasil (PNUD / Ipea / FJP)
+- **O que é:** plataforma de consulta de IDHM, desigualdade de renda (Índice de Gini), escolaridade e longevidade desagregados por estado e município.
+- **Site:** [atlasbrasil.org.br](http://www.atlasbrasil.org.br/)
+- **Status:** mantido em cooperação técnica por PNUD, Ipea e Fundação João Pinheiro.
+- **Relevância pra nós:** referência canônica para dados históricos de desenvolvimento humano e renda per capita.
+
+### Painel do Saneamento (Instituto Trata Brasil)
+- **O que é:** monitoramento dos indicadores de acesso a água tratada, coleta/tratamento de esgoto e perdas na distribuição a partir de dados oficiais do SNIS/SINISA.
+- **Site:** [paineldosaneamento.org.br](https://paineldosaneamento.org.br/)
+- **Status:** ativo e atualizado continuamente.
+- **Relevância pra nós:** referência temática para dados de infraestrutura sanitária em estados e cidades.
+
+### Anuário Brasileiro de Segurança Pública (FBSP)
+- **O que é:** principal levantamento de estatísticas padronizadas sobre mortes violentas intencionais, ocorrências policiais e gastos em segurança pública por UF.
+- **Site:** [forumseguranca.org.br](https://forumseguranca.org.br/)
+- **Status:** publicado anualmente pelo Fórum Brasileiro de Segurança Pública.
+- **Relevância pra nós:** referência técnica para dados auditáveis de segurança pública nos estados.
+
 ---
+
 
 ## Posicionamento da Ficha do Político
 O ecossistema divide-se entre ferramentas eleitorais sazonais (Puxa Ficha, TemMeuVoto), dados municipais (Querido Diário) ou projetos legados de cota (Serenata). A **Ficha do Político** atua na **auditoria contínua e permanente do mandato federal (Câmara e Senado)**, combinando votações nominais e notas fiscais de cota (CEAP/CEAPS), com neutralidade estrita (dados brutos oficiais, sem scores editoriais) e arquitetura estática (Astro SSG) de custo perpétuo zero.

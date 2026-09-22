@@ -282,4 +282,16 @@ export interface CandidatoPresidencia {
   historicoPatrimonial: HistoricoPatrimonial[];
 }
 
+export interface ReferenciaItem {
+  id: string;
+  nome: string;
+  tipo: 'oficial' | 'indicador' | 'civico';
+  categoria: string;
+  foco: string;
+  descricao: string;
+  url: string;
+  tags: string[];
+}
+
+
 
