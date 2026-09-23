@@ -1,7 +1,7 @@
 # STATE — Ficha do Político
 
 > **Status:** v1 em expansão (Legislativo Federal Bicameral)  
-> **Última atualização:** 2026-09-22  
+> **Última atualização:** 2026-09-23  
 > **Base de Decisões:** AD-001 a AD-021
 
 ---
@@ -53,11 +53,11 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
 
 - **Fase Atual:** v1 em expansão (Legislativo Federal Bicameral).
 - **Módulos Ativos em Produção:**
-  - *Votações Nominais Curadas:* 8 temas deliberados na Câmara e Senado com links duplos de verificabilidade (incluindo Arcabouço Fiscal e Regulamentação da Reforma Tributária).
+  - *Votações Nominais Curadas:* 10 temas deliberados na Câmara e Senado com links duplos de verificabilidade (incluindo Arcabouço Fiscal, Regulamentação Tributária, Estrutura dos Ministérios e Recriação do DPVAT/SPVAT).
   - *Gastos Discricionários:* CEAP (Câmara) e CEAPS (Senado) do exercício vigente (AD-019 e AD-020).
   - *Destinação de Emendas Parlamentares:* Execução orçamentária oficial da CGU da 57ª Legislatura (2023–2026), discriminando Emendas Pix e Finalidade Definida (AD-016).
   - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
-- **Foco Imediato (v1):** Expansão do catálogo de votações nominais para 10+ temas de impacto nacional (8 temas integrados; ver `docs/backlog-votacoes.md`).
+- **Foco Imediato (v1):** Catálogo de votações nominais consolidado em 10 temas (meta inicial atingida; ver `docs/backlog-votacoes.md`).
 - **Roadmap Subsequente:**
   - *v2:* Auditoria de Gastos e Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Folha de Servidores (AD-021).
   - *v2:* Rastreabilidade de Convênios na Ponta das Emendas via Transferegov.br.
