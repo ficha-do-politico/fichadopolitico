@@ -4,6 +4,7 @@ Implementa retries automáticos com backoff exponencial e tratamento de rate-lim
 Alinhado à Fase 3 do Code Health (docs/code-health.md) e AD-014.
 """
 
+import http.client
 import json
 import logging
 import time
@@ -29,6 +30,7 @@ def fetch_json(
     """
     Executa requisição GET HTTP(S) retornando payload JSON decodificado.
     Suporta retries automáticos em caso de HTTP 429, 500, 502, 503, 504 e ConnectionResetError.
+    Trata fallback para IncompleteRead em conexões chunked instáveis.
     """
     req_headers = dict(DEFAULT_HEADERS)
     if headers:
@@ -40,7 +42,14 @@ def fetch_json(
     for attempt in range(1, max_retries + 1):
         try:
             with urllib.request.urlopen(req, timeout=timeout) as response:
-                data = response.read()
+                try:
+                    data = response.read()
+                except http.client.IncompleteRead as e:
+                    logger.warning(
+                        f"IncompleteRead capturado ({len(e.partial)} bytes) ao ler {url}. "
+                        "Tentando decodificar payload parcial..."
+                    )
+                    data = e.partial
                 charset = response.headers.get_content_charset() or "utf-8"
                 text = data.decode(charset, errors="replace")
                 return json.loads(text)

@@ -7,53 +7,63 @@ Este documento organiza as matérias legislativas sugeridas para inclusão no [C
 
 ---
 
-## 1. Matérias Integradas Recentemente no Catálogo Oficial
+## 1. Matérias Integradas no Catálogo Oficial
 
 ### 1.1. PEC da Escala 6×1 / Redução da Jornada para 40h (PEC 221/2019)
-- **Autoria / Proposição:** PEC 221/2019 (Dep. Reginaldo Lopes - PT/MG), à qual foi apensada a PEC 8/2025 (Dep. Erika Hilton - PSOL/SP e movimento VAT).
+- **Autoria / Proposição:** PEC 221/2019 (Dep. Reginaldo Lopes - PT/MG), com PEC 8/2025 apensada (Dep. Erika Hilton - PSOL/SP).
+- **Status Regimental:** Aprovada na Câmara em 2 turnos (votação `2233802-438`: Sim: 461, Não: 19). Aguarda Plenário no Senado.
+- **Situação no Portal:** **Tema 6**.
+
+### 1.2. Novo Arcabouço Fiscal (PLP 93/2023)
+- **Autoria / Proposição:** Poder Executivo / Ministério da Fazenda. Substituição do Teto de Gastos da EC 95/2016.
 - **Status Regimental:**
-  - **Câmara dos Deputados:** Aprovada no Plenário em 2 turnos em 27/05/2026. 1º turno (`2233802-424`: Sim: 472, Não: 22); 2º turno (`2233802-438`: Sim: 461, Não: 19).
-  - **Senado Federal:** Matéria `174386` autuada em 28/05/2026. Aprovada na CCJ em 02/09/2026. Aguarda deliberação no Plenário do Senado em 2 turnos.
-- **Situação no Portal:** **Integrada ao Catálogo Oficial como Tema 6** (votos nominais dos 513 deputados federais registrados a partir da API oficial).
+  - **Câmara dos Deputados:** Aprovado Substitutivo em 23/05/2023 (`2357053-47`: Sim: 372, Não: 108, Abst: 1).
+  - **Senado Federal:** Aprovado em 21/06/2023 (Matéria `157826`, Votação `6714`: Sim: 57, Não: 17).
+- **Situação no Portal:** **Integrado ao Catálogo Oficial como Tema 7** (cobertura bicameral nominal 100%).
+
+### 1.3. Regulamentação da Reforma Tributária (PLP 68/2024)
+- **Autoria / Proposição:** Poder Executivo. Instituição do IBS, CBS e Imposto Seletivo.
+- **Status Regimental:**
+  - **Câmara dos Deputados:** Aprovada Subemenda Substitutiva Global em 10/07/2024 (`2430143-72`: Sim: 336, Não: 142, Abst: 2).
+  - **Senado Federal:** Aprovado Substitutivo em 12/12/2024 (Matéria `164914`, Votação `6899`: Sim: 49, Não: 19).
+- **Situação no Portal:** **Integrado ao Catálogo Oficial como Tema 8** (cobertura bicameral nominal 100%).
 
 ---
 
 ## 2. Matérias em Radar com Impedimento Regimental (Sem Votação Nominal em Plenário)
 
-As propostas abaixo geram forte debate público, mas **não possuem votação nominal no Plenário do Congresso até o momento**. Ficam catalogadas aqui para acompanhamento contínuo.
+As propostas abaixo geram forte debate público, mas **não possuem votação nominal de mérito no Plenário do Congresso para a 57ª Legislatura**. Ficam catalogadas aqui para acompanhamento contínuo.
 
 ### 2.1. PEC da Segurança Pública
-- **Origem:** Proposta elaborada pelo Ministério da Justiça e Segurança Pública (Poder Executivo) para constitucionalizar o SUSP e ampliar atribuições da Polícia Federal e PRF.
-- **Status Regimental:** Fase de negociação com governadores e tramitação no Congresso.
-- **Situação de Voto:** **Inviável para a ficha no momento.** Nenhuma votação nominal em plenário registrada.
-- **Ação Futura:** Monitorar deliberação plenária.
+- **Origem:** Proposta elaborada pelo Ministério da Justiça e Segurança Pública (Poder Executivo).
+- **Status Regimental:** Fase de negociação com governadores e tramitação inicial. Sem votação nominal em plenário.
+
+### 2.2. Isenção do IRPF até 2 Salários Mínimos (PL 81/2024)
+- **Auditoria Técnica:** O Substitutivo (`2417025-56`, 12/03/2024) foi aprovado **simbolicamente** no Plenário da Câmara e do Senado (0 votos nominais). As votações nominais da sessão foram apenas recursos regimentais de preferência. Inviável para registro de votos por parlamentar.
+
+### 2.3. Decreto de Armas / CACs (PDL 206/2024)
+- **Auditoria Técnica:** O texto substitutivo (`2430026-39`, 28/05/2024) foi aprovado de forma **simbólica** na Câmara dos Deputados (0 votos nominais).
+
+### 2.4. Fim das "Saidinhas" de Presos (PL 2253/2022)
+- **Auditoria Técnica:** No Senado Federal houve votação nominal plena em 20/02/2024 (`6818`: Sim: 62, Não: 2). Na Câmara dos Deputados, a aprovação final de 2024 foi simbólica (`493361-84`), e a votação de mérito anterior data de agosto de 2022 (56ª Legislatura, anterior aos atuais deputados). A derrubada de veto ocorreu em sessão conjunta do Congresso Nacional (fora da API direta da Câmara).
 
 ---
 
-## 2. Matérias em Análise para Expansão do Catálogo (Votação Nominal Existente)
+## 3. Matérias em Análise para Próxima Expansão (Meta 10+ Temas)
 
-Candidatas prioritárias para expansão da lista de temas (meta v1: 10 a 20 matérias).
+Candidatas prioritárias para expansão da lista de temas no v1:
 
-### 2.1. Isenção e Tributação do Imposto de Renda
-- **Contexto:** Discussões sobre tabela do IRPF (isenção de até 2 salários mínimos vs. proposta de isenção até R$ 5.000).
-- **Matérias Relevantes:**
-  - **PL 81/2024:** Altera a tabela progressiva mensal do IRPF para garantir isenção a rendimentos de até 2 salários mínimos. Aprovado na Câmara e no Senado em 2024 (Lei nº 14.848/2024).
-  - **Reforma da Renda / R$ 5K:** Matéria enviada/em tramitação para o exercício de 2025/2026.
-- **Próximo Passo Técnico:** Investigar na API da Câmara (`GET /proposicoes?numero=81&ano=2024`) os IDs de votação nominal de mérito em plenário.
+### 3.1. Regulamentação de Apostas Esportivas e Cassinos Online (PL 3626/2023)
+- **Contexto:** Regulação das "Bets" e inclusão de jogos online/iGaming.
+- **Status Regimental:** Votação nominal na Câmara em 21/12/2023 (`2374400-110`: Sim: 292, Não: 114) e votações nominais em destaques no Senado.
 
-### 2.2. Pauta Ambiental e Emergência Climática ("Devastação / Meio Ambiente")
-- **Contexto:** Votações que opõem flexibilização ambiental e preservação de biomas/recursos naturais.
-- **Matérias Candidatas com Votação Plenária:**
-  - **PL 2159/2021 (Lei Geral do Licenciamento Ambiental):** Estabelece normas gerais para o licenciamento de atividades e empreendimentos. Votação de mérito histórica na Câmara, com envio ao Senado.
-  - **MPV 1150/2022 (Mata Atlântica):** Conversão na Lei 14.595/2023, envolvendo vetos e destaques sobre dispositivos de proteção florestal.
-  - **PL 1459/2022 (Marco dos Agrotóxicos):** Aprovado no Congresso (Lei 14.785/2023).
-  - *(Nota: O PL 490/2007 - Marco Temporal das Terras Indígenas já integra o [catálogo oficial](../dados/catalogo/temas.json) como Tema 3).*
-- **Próximo Passo Técnico:** Priorizar entre Licenciamento Ambiental (PL 2159/2021) e o Marco dos Agrotóxicos (PL 1459/2022) e extrair os IDs de votação bicameral.
+### 3.2. Estrutura dos Ministérios do Governo Federal (MPV 1154/2023)
+- **Contexto:** Organização básica da Esplanada e esvaziamento das atribuições dos ministérios do Meio Ambiente e dos Povos Indígenas.
+- **Status Regimental:** Votação nominal na Câmara (`2345493-41`: Sim: 337, Não: 125) e no Senado (`6704`: Sim: 51, Não: 19).
 
-### 2.3. Segurança Pública e Execução Penal
-- **PL 2253/2022 (Fim das "Saidinhas" de Presos):**
-  - Matéria deliberada nominalmente na Câmara e no Senado com derrubada de veto presidencial (Lei nº 14.843/2024).
-  - Tema de altíssima repercussão popular e divisão clara de votos nominais.
+### 3.3. PEC das Drogas / Criminalização da Posse (PEC 45/2023)
+- **Contexto:** Mandado de criminalização para posse/porte de qualquer quantidade de substância entorpecente.
+- **Status Regimental:** Aprovada em 2 turnos no Plenário do Senado (`6825`: Sim: 52, Não: 9). Aguarda deliberação em Plenário na Câmara dos Deputados.
 
 ---
 
