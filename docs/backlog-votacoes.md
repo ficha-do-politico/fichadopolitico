@@ -28,6 +28,20 @@ Este documento organiza as matérias legislativas sugeridas para inclusão no [C
   - **Senado Federal:** Aprovado Substitutivo em 12/12/2024 (Matéria `164914`, Votação `6899`: Sim: 49, Não: 19).
 - **Situação no Portal:** **Integrado ao Catálogo Oficial como Tema 8** (cobertura bicameral nominal 100%).
 
+### 1.4. Estrutura dos Ministérios do Governo Federal (MPV 1154/2023)
+- **Autoria / Proposição:** Presidência da República. Organização básica da Esplanada dos Ministérios.
+- **Status Regimental:**
+  - **Câmara dos Deputados:** Aprovado PLV 12/2023 em 31/05/2023 (`2345493-41`: Sim: 337, Não: 125, Abst: 1).
+  - **Senado Federal:** Aprovado PLV 12/2023 em 01/06/2023 (Matéria `155651`, Votação `6704`: Sim: 51, Não: 19).
+- **Situação no Portal:** **Integrado ao Catálogo Oficial como Tema 9** (cobertura bicameral nominal 100%).
+
+### 1.5. Recriação do DPVAT / SPVAT e Margem Fiscal (PLP 233/2023)
+- **Autoria / Proposição:** Poder Executivo. Instituição do Seguro Obrigatório (SPVAT) e flexibilização de despesas no regime fiscal.
+- **Status Regimental:**
+  - **Câmara dos Deputados:** Aprovada Subemenda Substitutiva Global em 09/04/2024 (`2400758-62`: Sim: 304, Não: 136).
+  - **Senado Federal:** Aprovado texto principal em 08/05/2024 (Matéria `163100`, Votação `6827`: Sim: 41, Não: 28).
+- **Situação no Portal:** **Integrado ao Catálogo Oficial como Tema 10** (cobertura bicameral nominal 100%).
+
 ---
 
 ## 2. Matérias em Radar com Impedimento Regimental (Sem Votação Nominal em Plenário)
@@ -49,21 +63,21 @@ As propostas abaixo geram forte debate público, mas **não possuem votação no
 
 ---
 
-## 3. Matérias em Análise para Próxima Expansão (Meta 10+ Temas)
+## 3. Matérias em Análise para Próximas Expansões
 
-Candidatas prioritárias para expansão da lista de temas no v1:
+Candidatas prioritárias para futuras expansões do catálogo:
 
 ### 3.1. Regulamentação de Apostas Esportivas e Cassinos Online (PL 3626/2023)
 - **Contexto:** Regulação das "Bets" e inclusão de jogos online/iGaming.
-- **Status Regimental:** Votação nominal na Câmara em 21/12/2023 (`2374400-110`: Sim: 292, Não: 114) e votações nominais em destaques no Senado.
+- **Status Regimental:** Votação nominal na Câmara em 21/12/2023 (`2374400-110`: Sim: 292, Não: 114) e votação nominal do destaque da exclusão dos cassinos virtuais no Senado (`6797`: Sim: 37, Não: 27).
 
-### 3.2. Estrutura dos Ministérios do Governo Federal (MPV 1154/2023)
-- **Contexto:** Organização básica da Esplanada e esvaziamento das atribuições dos ministérios do Meio Ambiente e dos Povos Indígenas.
-- **Status Regimental:** Votação nominal na Câmara (`2345493-41`: Sim: 337, Não: 125) e no Senado (`6704`: Sim: 51, Não: 19).
-
-### 3.3. PEC das Drogas / Criminalização da Posse (PEC 45/2023)
+### 3.2. PEC das Drogas / Criminalização da Posse (PEC 45/2023)
 - **Contexto:** Mandado de criminalização para posse/porte de qualquer quantidade de substância entorpecente.
 - **Status Regimental:** Aprovada em 2 turnos no Plenário do Senado (`6825`: Sim: 52, Não: 9). Aguarda deliberação em Plenário na Câmara dos Deputados.
+
+### 3.3. Tributação de Offshores e Fundos Exclusivos (PL 4173/2023)
+- **Contexto:** Tributação periódica ("come-cotas") sobre fundos de alta renda e investimentos mantidos no exterior.
+- **Status Regimental:** Aprovado nominalmente na Câmara (`2383287-43`: Sim: 323, Não: 119) e aprovado simbolicamente no Senado.
 
 ---
 

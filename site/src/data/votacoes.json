@@ -643,5 +643,169 @@
         "Presidente (Art. 51)": 1
       }
     }
+  },
+  "2345493-41": {
+    "id": "2345493-41",
+    "camara": {
+      "votacao_id": "2345493-41",
+      "dataHora": "2023-05-31T23:07:18",
+      "descricao": "Aprovada a Medida Provisória nº 1.154 de 2023, na forma do Projeto de Lei de Conversão, ressalvados os destaques. Sim: 337; não: 125; abstenção: 1; total: 463.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 464,
+      "total_deputados_locais": 513,
+      "total_ausentes": 49,
+      "distribuicao_votos": {
+        "Sim": 337,
+        "Não": 125,
+        "Abstenção": 1,
+        "Artigo 17": 1,
+        "Não votou / Ausente": 49
+      },
+      "orientacoes": [
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPodePsc",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Não"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6704,
+      "senado_sessao_id": 338716,
+      "codigo_materia": 155651,
+      "data": "2023-06-01",
+      "descricao": "Votação nominal do PLV nº 12/2023 e Pressupostos Constitucionais da MPV nº 1.154/2023, nos termos do Parecer.",
+      "resultado_oficial": "Aprovado PLV nº 12/2023 (Sim: 51, Não: 19)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/338716",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/155651",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Não votou / Ausente": 9,
+        "Sim": 51,
+        "Não": 19,
+        "Abstenção": 1,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "2400758-62": {
+    "id": "2400758-62",
+    "camara": {
+      "votacao_id": "2400758-62",
+      "dataHora": "2024-04-09T20:44:17",
+      "descricao": "Aprovada a Subemenda Substitutiva Global Reformulada ao Projeto de Lei Complementar nº 233, de 2023, adotada pelo relator da Comissão de Viação e Transportes. Sim: 304; não: 136; total: 440.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 441,
+      "total_deputados_locais": 513,
+      "total_ausentes": 72,
+      "distribuicao_votos": {
+        "Sim": 304,
+        "Não": 136,
+        "Artigo 17": 1,
+        "Não votou / Ausente": 72
+      },
+      "orientacoes": [
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PSB",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPode",
+          "orientacao": "Sim"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6827,
+      "senado_sessao_id": 399276,
+      "codigo_materia": 163100,
+      "data": "2024-05-08",
+      "descricao": "Votação nominal do Projeto de Lei Complementar nº 233, de 2023, nos termos do parecer, ressalvados os destaques.",
+      "resultado_oficial": "Aprovado Substitutivo (Sim: 41, Não: 28)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/399276",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/163100",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Não": 28,
+        "Sim": 41,
+        "Não votou / Ausente": 11,
+        "Presidente (Art. 51)": 1
+      }
+    }
   }
 }

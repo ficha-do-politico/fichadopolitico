@@ -96,6 +96,28 @@ SENADO_VOTACOES_MAP = [
         "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/442701",
         "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/164914",
     },
+    {
+        "tema_id": "2345493-41",
+        "codigo_materia": 155651,
+        "votacao_id": 6704,
+        "sessao_id": 338716,
+        "proposicao": "MPV 1154/2023",
+        "data": "2023-06-01",
+        "resultado_oficial": "Aprovado PLV nº 12/2023 (Sim: 51, Não: 19)",
+        "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/338716",
+        "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/155651",
+    },
+    {
+        "tema_id": "2400758-62",
+        "codigo_materia": 163100,
+        "votacao_id": 6827,
+        "sessao_id": 399276,
+        "proposicao": "PLP 233/2023",
+        "data": "2024-05-08",
+        "resultado_oficial": "Aprovado Substitutivo (Sim: 41, Não: 28)",
+        "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/399276",
+        "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/163100",
+    },
 ]
 
 OUTPUT_DIR = ROOT / "dados" / "senado" / "votacoes"

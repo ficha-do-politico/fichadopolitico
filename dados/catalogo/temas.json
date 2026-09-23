@@ -196,5 +196,57 @@
       "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/442701",
       "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/164914"
     }
+  },
+  {
+    "id": "2345493-41",
+    "ordem": 9,
+    "titulo": "Estrutura dos Ministérios do Governo Federal",
+    "subtitulo": "Organização básica dos órgãos da Presidência da República e definição das atribuições dos ministérios.",
+    "tipo": "MPV",
+    "numero": 1154,
+    "ano": 2023,
+    "proposicao": "MPV 1154/2023",
+    "proposicao_id": 2345493,
+    "data": "2023-05-31",
+    "resultado_oficial": "Aprovada na forma do Projeto de Lei de Conversão (Sim: 337, Não: 125, Abst: 1)",
+    "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2345493-41",
+    "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2345493",
+    "criterio_resumo": "Medida Provisória convertida em lei que fixou a estrutura de ministérios do Poder Executivo Federal, gerando debate central sobre competências de demarcação de terras indígenas e recursos hídricos.",
+    "senado": {
+      "votacao_id": 6704,
+      "sessao_id": 338716,
+      "codigo_materia": 155651,
+      "proposicao": "MPV 1154/2023",
+      "data": "2023-06-01",
+      "resultado_oficial": "Aprovado PLV nº 12/2023 (Sim: 51, Não: 19)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/338716",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/155651"
+    }
+  },
+  {
+    "id": "2400758-62",
+    "ordem": 10,
+    "titulo": "Recriação do DPVAT / SPVAT e Margem Fiscal",
+    "subtitulo": "Instituição do seguro obrigatório de trânsito gerido pela Caixa e antecipação de limite de despesas no regime fiscal.",
+    "tipo": "PLP",
+    "numero": 233,
+    "ano": 2023,
+    "proposicao": "PLP 233/2023",
+    "proposicao_id": 2400758,
+    "data": "2024-04-09",
+    "resultado_oficial": "Aprovada Subemenda Substitutiva Global Reformulada (Sim: 304, Não: 136)",
+    "url_votacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2400758-62",
+    "url_proposicao": "https://www.camara.leg.br/propostas-legislativas/2400758",
+    "criterio_resumo": "Projeto que reformulou a cobrança obrigatória do Seguro para Proteção de Vítimas de Acidentes de Trânsito (SPVAT) e permitiu a ampliação de R$ 15 bilhões no teto de despesas do Novo Arcabouço Fiscal.",
+    "senado": {
+      "votacao_id": 6827,
+      "sessao_id": 399276,
+      "codigo_materia": 163100,
+      "proposicao": "PLP 233/2023",
+      "data": "2024-05-08",
+      "resultado_oficial": "Aprovado Substitutivo (Sim: 41, Não: 28)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/399276",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/163100"
+    }
   }
 ]
