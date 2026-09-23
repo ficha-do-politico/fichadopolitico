@@ -481,5 +481,167 @@
         }
       ]
     }
+  },
+  "2357053-47": {
+    "id": "2357053-47",
+    "camara": {
+      "votacao_id": "2357053-47",
+      "dataHora": "2023-05-23T23:31:18",
+      "descricao": "Aprovado o Substitutivo ao Projeto de Lei Complementar nº 93, de 2023, adotado pelo relator da Comissão de Finanças e Tributação, ressalvados os destaques. Sim: 372; não: 108; abstenção: 1; total: 481.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 481,
+      "total_deputados_locais": 513,
+      "total_ausentes": 32,
+      "distribuicao_votos": {
+        "Sim": 372,
+        "Não": 108,
+        "Abstenção": 1,
+        "Não votou / Ausente": 32
+      },
+      "orientacoes": [
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPodePsc",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Liberado"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Não"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6714,
+      "senado_sessao_id": 342138,
+      "codigo_materia": 157826,
+      "data": "2023-06-21",
+      "descricao": "Votação nominal do Projeto de Lei Complementar nº 39, de 2023,e das emendas, nos termos do parecer, ressalvados os destaques.",
+      "resultado_oficial": "Aprovado (Sim: 57, Não: 17)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/342138",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157826",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Sim": 57,
+        "Não votou / Ausente": 6,
+        "Não": 17,
+        "Presidente (Art. 51)": 1
+      }
+    }
+  },
+  "2430143-72": {
+    "id": "2430143-72",
+    "camara": {
+      "votacao_id": "2430143-72",
+      "dataHora": "2024-07-10T19:55:30",
+      "descricao": "Aprovada a Subemenda Substitutiva Global ao Projeto de Lei Complementar nº 68, de 2024, adotada pelo relator da Comissão Especial, ressalvados os destaques. Sim: 336; não: 142; abstenção: 2; total: 480.",
+      "siglaOrgao": "PLEN",
+      "total_votos_registrados": 480,
+      "total_deputados_locais": 513,
+      "total_ausentes": 33,
+      "distribuicao_votos": {
+        "Sim": 336,
+        "Não": 142,
+        "Abstenção": 2,
+        "Não votou / Ausente": 33
+      },
+      "orientacoes": [
+        {
+          "bancada": "Maioria",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "PL",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Bl MdbPsdRepPode",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PSOL-REDE",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Bl UniPpFdrPsdbCid...",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "NOVO",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Oposição",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "PSB",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Fdr PT-PCdoB-PV",
+          "orientacao": "Sim"
+        },
+        {
+          "bancada": "Minoria",
+          "orientacao": "Não"
+        },
+        {
+          "bancada": "Governo",
+          "orientacao": "Sim"
+        }
+      ]
+    },
+    "senado": {
+      "senado_votacao_id": 6899,
+      "senado_sessao_id": 442701,
+      "codigo_materia": 164914,
+      "data": "2024-12-12",
+      "descricao": "Votação nominal da Emenda nº 2.171(Substitutivo) ao PLP 68/24 com Emendas e supressão, nos termos dos pareceres, ressalvados os destaques.",
+      "resultado_oficial": "Aprovado Substitutivo (Sim: 49, Não: 19)",
+      "url_votacao": "https://www25.senado.leg.br/web/atividade/sessao-plenaria/-/p/sessao/442701",
+      "url_proposicao": "https://www25.senado.leg.br/web/atividade/materias/-/materia/164914",
+      "total_votos_registrados": 81,
+      "total_senadores": 81,
+      "total_ausentes": 0,
+      "distribuicao_votos": {
+        "Sim": 49,
+        "Não votou / Ausente": 12,
+        "Não": 19,
+        "Presidente (Art. 51)": 1
+      }
+    }
   }
 }
