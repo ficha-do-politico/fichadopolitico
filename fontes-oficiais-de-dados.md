@@ -195,4 +195,32 @@ Este documento cataloga as fontes de dados primárias e oficiais do Estado brasi
 | **Receita Federal (CNPJ QSA)** | Cruzamento Societário CEAP | Dumps CSV / Parquet | Nenhuma | Média/Alta (volume) | **v2 (AD-021)** |
 | **Congresso (Folha Servidores)** | Vínculos de Gabinete | Dumps CSV oficiais | Nenhuma | Baixa/Média | **v2 (AD-021)** |
 | **TCU (CADIRREG)** | Ficha Limpa / Contas | Consulta web / Export CSV | Nenhuma | Baixa | **v2** |
-| **CNJ (DataJud) / STF** | Processos Judiciais | REST Elasticsearch | API Key pública | Alta | **v3 (AD-017)** |
+| **CNJ (DataJud) / STF** | Processos Judiciais | REST Elasticsearch | API Key pública | Alta | **v3 (AD-017)** |
+
+---
+
+## 6. Poder Legislativo Estadual (Assembleias Legislativas) — Diagnóstico Empírico
+
+A viabilidade técnica de ingestão dos dados de **Deputados Estaduais** varia radicalmente entre as unidades federativas. Não há padronização nacional ou API única para as 27 assembleias legislativas estaduais/distrital.
+
+Abaixo está o registro empírico das auditorias já realizadas pelo projeto, disponível como referência para agentes ou contribuidores que desejem implementar módulos ou scrapers estaduais:
+
+### 6.1. São Paulo — ALESP (Assembleia Legislativa do Estado de São Paulo)
+* **Status:** **Viável para Gastos e Identidade** (Estudo detalhado em [estudo/alesp-viabilidade-tecnica.md](estudo/alesp-viabilidade-tecnica.md)).
+* **Portal de Dados Abertos (CKAN):** `https://ckan.al.sp.gov.br/api/3/action/package_list` (26 conjuntos de dados públicos ativos).
+* **Gastos de Gabinete:** Dump estruturado em tempo real em `https://www3.al.sp.gov.br/repositorio/dados-abertos/output/json/despesas_gabinetes.json` (inclui CNPJ, fornecedor, tipo de despesa, valor e matrícula do parlamentar).
+* **Votações em Comissões:** Disponíveis em XML/JSON (`comissoes_permanentes_votacoes.xml`).
+* **Votações em Plenário:** Não disponibilizadas no CKAN; requerem raspagem da consulta web de sessões.
+
+### 6.2. Rio de Janeiro — ALERJ (Assembleia Legislativa do Estado do Rio de Janeiro)
+* **Status:** **Alta Dificuldade / Inviável sem OCR de PDFs** (Estudo detalhado em [estudo/alerj-viabilidade-tecnica.md](estudo/alerj-viabilidade-tecnica.md)).
+* **Portal de Dados Abertos:** Inexistente (`dadosabertos.alerj.rj.gov.br` falha no DNS).
+* **API REST:** Rota `/api` retorna `404 Not Found`.
+* **Gastos do Legislativo:** Apenas links para relatórios anuais fechados em formato PDF (`report/104`), sem detalhamento transacional de notas fiscais por deputado.
+* **Processo Legislativo:** Sistema baseado em IBM Lotus Notes legado. Votações nominais não são expostas em dados abertos estruturados, constando apenas em transcrições do Diário Oficial (DOERJ Parte II).
+
+### 6.3. Diretriz para Contribuições Estaduais
+* **Sem Veto Dogmático:** Futuros agentes e contribuidores têm liberdade para implementar coletores ou scrapers estaduais conforme a demanda da comunidade.
+* **Abordagem Estado a Estado:** Como demonstrado pela discrepância entre SP e RJ, cada estado deve ser tratado como um pipeline independente.
+* **Componente Federal Comum:** O Tribunal Superior Eleitoral (TSE) unifica candidaturas, votações nas urnas e histórico de patrimônio para todos os deputados estaduais do país, servindo como base canônica imediata para qualquer estado.
+
