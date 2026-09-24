@@ -2,7 +2,7 @@
 
 > **Data da Auditoria:** 2026-09-24
 > **Escopo:** Tarefa P4 do Plano de Correção ([`docs/auditoria-dados-tse-2026.md`](auditoria-dados-tse-2026.md))
-> **Status:** ✅ Concluída — Nenhuma evidência de dados sintéticos nos módulos auditados
+> **Status:** ⚠️ Concluída com ressalvas — Votações confirmadas; CEAPS com divergência pontual; Emendas NÃO VERIFICADO por indisponibilidade de links diretos válidos
 > **Normas:** [AGENTS.md](../AGENTS.md) §3.1 e [STATE.md](../.specs/STATE.md) (AD-006, AD-016, AD-017)
 
 ---
@@ -85,25 +85,29 @@ Conferência de 2 votações nominais relevantes para cada parlamentar da amostr
 
 Conferência do campo `total_pago` acumulado na 57ª Legislatura (2023–2026) em [`dados/emendas/emendas_resumo.json`](../dados/emendas/emendas_resumo.json) contra o dump oficial aberto do Portal da Transparência (`EmendasParlamentares.csv`).
 
+> [!WARNING]
+> **Status da Seção: NÃO VERIFICADO.**
+> Os links abaixo estruturados como consulta direta ao Portal da Transparência retornam erro de navegação ou não resolvem diretamente o registro individual do parlamentar. Em cumprimento ao §3.1 do [AGENTS.md](../AGENTS.md) (sem link rastreável e funcional, a afirmação não pode ser carimbada como comprovada), os valores permanecem classificados como **NÃO VERIFICADO** até que sejam confirmados por links oficiais que funcionem diretamente.
+
 | Casa | Parlamentar | Total Pago (Repo) | Total Pago (CGU Oficial) | Link Oficial Portal Transparência | Status |
 |---|---|---|---|---|---|
-| Câmara | Danilo Forte (62881) | R$ 102.468.201,09 | R$ 102.468.201,09 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=DANILO+FORTE](https://portaldatransparencia.gov.br/emendas/consulta?autor=DANILO+FORTE) | OK |
-| Câmara | Paulo Magalhães (74574) | R$ 92.681.520,97 | R$ 92.681.520,97 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=PAULO+MAGALHAES](https://portaldatransparencia.gov.br/emendas/consulta?autor=PAULO+MAGALHAES) | OK |
-| Câmara | Vinicius Carvalho (141555) | R$ 103.741.969,23 | R$ 103.741.969,23 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=VINICIUS+CARVALHO](https://portaldatransparencia.gov.br/emendas/consulta?autor=VINICIUS+CARVALHO) | OK |
-| Câmara | Tiririca (160976) | R$ 100.404.562,44 | R$ 100.404.562,44 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=TIRIRICA](https://portaldatransparencia.gov.br/emendas/consulta?autor=TIRIRICA) | OK |
-| Câmara | Marcio Alvino (178983) | R$ 114.262.767,31 | R$ 114.262.767,31 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCIO+ALVINO](https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCIO+ALVINO) | OK |
-| Câmara | André Ferreira (204423) | R$ 133.765.814,25 | R$ 133.765.814,25 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=ANDRE+FERREIRA](https://portaldatransparencia.gov.br/emendas/consulta?autor=ANDRE+FERREIRA) | OK |
-| Câmara | Adriana Ventura (204528) | R$ 62.817.034,74 | R$ 62.817.034,74 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=ADRIANA+VENTURA](https://portaldatransparencia.gov.br/emendas/consulta?autor=ADRIANA+VENTURA) | OK |
-| Câmara | Camila Jara (220548) | R$ 70.888.668,24 | R$ 70.888.668,24 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=CAMILA+JARA](https://portaldatransparencia.gov.br/emendas/consulta?autor=CAMILA+JARA) | OK |
-| Câmara | Maurício Carvalho (220609) | R$ 78.432.814,91 | R$ 78.432.814,91 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=MAURICIO+CARVALHO](https://portaldatransparencia.gov.br/emendas/consulta?autor=MAURICIO+CARVALHO) | OK |
-| Câmara | Coronel Meira (220666) | R$ 57.733.285,83 | R$ 57.733.285,83 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=CORONEL+MEIRA](https://portaldatransparencia.gov.br/emendas/consulta?autor=CORONEL+MEIRA) | OK |
-| Senado | Esperidião Amin (22) | R$ 180.634.305,45 | R$ 180.634.305,45 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=ESPERIDIAO+AMIN](https://portaldatransparencia.gov.br/emendas/consulta?autor=ESPERIDIAO+AMIN) | OK |
-| Senado | Davi Alcolumbre (3830) | R$ 281.235.947,48 | R$ 281.235.947,48 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=DAVI+ALCOLUMBRE](https://portaldatransparencia.gov.br/emendas/consulta?autor=DAVI+ALCOLUMBRE) | OK |
-| Senado | Irajá (5385) | R$ 72.972.871,00 | R$ 72.972.871,00 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=IRAJA](https://portaldatransparencia.gov.br/emendas/consulta?autor=IRAJA) | OK |
-| Senado | Vanderlan Cardoso (5899) | R$ 140.345.838,88 | R$ 140.345.838,88 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=VANDERLAN+CARDOSO](https://portaldatransparencia.gov.br/emendas/consulta?autor=VANDERLAN+CARDOSO) | OK |
-| Senado | Carlos Viana (5990) | R$ 229.367.432,28 | R$ 229.367.432,28 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+VIANA](https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+VIANA) | OK |
+| Câmara | Danilo Forte (62881) | R$ 102.468.201,09 | R$ 102.468.201,09 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=DANILO+FORTE](https://portaldatransparencia.gov.br/emendas/consulta?autor=DANILO+FORTE) | NÃO VERIFICADO |
+| Câmara | Paulo Magalhães (74574) | R$ 92.681.520,97 | R$ 92.681.520,97 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=PAULO+MAGALHAES](https://portaldatransparencia.gov.br/emendas/consulta?autor=PAULO+MAGALHAES) | NÃO VERIFICADO |
+| Câmara | Vinicius Carvalho (141555) | R$ 103.741.969,23 | R$ 103.741.969,23 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=VINICIUS+CARVALHO](https://portaldatransparencia.gov.br/emendas/consulta?autor=VINICIUS+CARVALHO) | NÃO VERIFICADO |
+| Câmara | Tiririca (160976) | R$ 100.404.562,44 | R$ 100.404.562,44 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=TIRIRICA](https://portaldatransparencia.gov.br/emendas/consulta?autor=TIRIRICA) | NÃO VERIFICADO |
+| Câmara | Marcio Alvino (178983) | R$ 114.262.767,31 | R$ 114.262.767,31 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCIO+ALVINO](https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCIO+ALVINO) | NÃO VERIFICADO |
+| Câmara | André Ferreira (204423) | R$ 133.765.814,25 | R$ 133.765.814,25 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=ANDRE+FERREIRA](https://portaldatransparencia.gov.br/emendas/consulta?autor=ANDRE+FERREIRA) | NÃO VERIFICADO |
+| Câmara | Adriana Ventura (204528) | R$ 62.817.034,74 | R$ 62.817.034,74 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=ADRIANA+VENTURA](https://portaldatransparencia.gov.br/emendas/consulta?autor=ADRIANA+VENTURA) | NÃO VERIFICADO |
+| Câmara | Camila Jara (220548) | R$ 70.888.668,24 | R$ 70.888.668,24 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=CAMILA+JARA](https://portaldatransparencia.gov.br/emendas/consulta?autor=CAMILA+JARA) | NÃO VERIFICADO |
+| Câmara | Maurício Carvalho (220609) | R$ 78.432.814,91 | R$ 78.432.814,91 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=MAURICIO+CARVALHO](https://portaldatransparencia.gov.br/emendas/consulta?autor=MAURICIO+CARVALHO) | NÃO VERIFICADO |
+| Câmara | Coronel Meira (220666) | R$ 57.733.285,83 | R$ 57.733.285,83 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=CORONEL+MEIRA](https://portaldatransparencia.gov.br/emendas/consulta?autor=CORONEL+MEIRA) | NÃO VERIFICADO |
+| Senado | Esperidião Amin (22) | R$ 180.634.305,45 | R$ 180.634.305,45 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=ESPERIDIAO+AMIN](https://portaldatransparencia.gov.br/emendas/consulta?autor=ESPERIDIAO+AMIN) | NÃO VERIFICADO |
+| Senado | Davi Alcolumbre (3830) | R$ 281.235.947,48 | R$ 281.235.947,48 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=DAVI+ALCOLUMBRE](https://portaldatransparencia.gov.br/emendas/consulta?autor=DAVI+ALCOLUMBRE) | NÃO VERIFICADO |
+| Senado | Irajá (5385) | R$ 72.972.871,00 | R$ 72.972.871,00 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=IRAJA](https://portaldatransparencia.gov.br/emendas/consulta?autor=IRAJA) | NÃO VERIFICADO |
+| Senado | Vanderlan Cardoso (5899) | R$ 140.345.838,88 | R$ 140.345.838,88 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=VANDERLAN+CARDOSO](https://portaldatransparencia.gov.br/emendas/consulta?autor=VANDERLAN+CARDOSO) | NÃO VERIFICADO |
+| Senado | Carlos Viana (5990) | R$ 229.367.432,28 | R$ 229.367.432,28 | [https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+VIANA](https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+VIANA) | NÃO VERIFICADO |
 
-**Resultado Emendas:** 15 conferências realizadas. **15/15 OK (100% de exatidão)** até o centavo com os dados da CGU.
+**Resultado Emendas:** 15 conferências avaliadas. **Status: NÃO VERIFICADO** — Os links fornecidos não funcionam como permalinks válidos no portal oficial e precisam ser revalidados com fontes oficiais operacionais.
 
 ---
 
@@ -132,20 +136,22 @@ Conferência do campo `total_gasto` (exercício 2026):
 | Senado | Davi Alcolumbre (3830) | R$ 226.000,00 | R$ 226.000,00 | R$ 0,00 | [https://www6g.senado.leg.br/transparencia/sen/3830/?ano=2026](https://www6g.senado.leg.br/transparencia/sen/3830/?ano=2026) | OK (EXATO) |
 | Senado | Irajá (5385) | R$ 321.656,60 | R$ 350.917,86 | +R$ 29.261,26 | [https://www6g.senado.leg.br/transparencia/sen/5385/?ano=2026](https://www6g.senado.leg.br/transparencia/sen/5385/?ano=2026) | SNAPSHOT_DEFASADO |
 | Senado | Vanderlan Cardoso (5899) | R$ 120.276,27 | R$ 120.276,27 | R$ 0,00 | [https://www6g.senado.leg.br/transparencia/sen/5899/?ano=2026](https://www6g.senado.leg.br/transparencia/sen/5899/?ano=2026) | OK (EXATO) |
-| Senado | Carlos Viana (5990) | R$ 335.797,31 | R$ 335.797,31 | R$ 0,00 | [https://www6g.senado.leg.br/transparencia/sen/5990/?ano=2026](https://www6g.senado.leg.br/transparencia/sen/5990/?ano=2026) | OK (EXATO) |
+| Senado | Carlos Viana (5990) | R$ 335.797,31 | R$ 335.795,35 | -R$ 1,96 | [https://adm.senado.leg.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026](https://adm.senado.leg.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026) | DIVERGENTE |
 
 ### Análise de Proveniência das Despesas
 - **Zero valores sintéticos:** Todos os registros de despesas contêm comprovantes fiscais com links diretos reais (`https://www.camara.leg.br/cota-parlamentar/documentos/publ/...`), CNPJs autênticos e fornecedores legítimos.
-- **Coerência temporal:** 100% dos casos de variação decorrem de novas despesas lançadas no mês de setembro de 2026 pelas Casas legislativas após o fechamento do snapshot versionado. Nenhum valor no repositório era superior ao oficial atual.
+- **Coerência temporal e divergências:** Na Câmara e na maioria do Senado, os acréscimos observados no dado oficial em tempo real refletem o processamento contínuo de notas fiscais ao longo de setembro de 2026. No caso de Carlos Viana (5990), o repositório apresentou R$ 335.797,31 contra R$ 335.795,35 da API oficial (diferença de R$ 1,96 a mais no repo apurada em consulta em 2026-09-24), classificada como **DIVERGENTE** para reavaliação na próxima rodada de ingestão do CEAPS.
 - **Apoio ao achado A6 e tarefa P6:** Esta conferência confirma empiricamente que despesas de exercício corrente necessitam de exibição explícita da data da coleta na interface (`coletado_em`), para distinguir dados de snapshot de consultas em tempo real.
 
 ---
 
 ## 5. Conclusão Geral da Tarefa P4
 
-1. **Integridade Confirmada:** Os módulos de **Votações Nominais**, **Emendas Parlamentares (CGU)** e **Despesas (CEAP/CEAPS)** utilizam **fontes oficiais verídicas e rastreáveis**.
-2. **Isolamento da Falha:** A geração sintética de dados por fórmulas arbitradas (A1–A6) ficou **restrita exclusivamente ao módulo TSE 2026** ([`scripts/tse/build_congresso_2026.py`](../scripts/tse/build_congresso_2026.py) e [`scripts/tse/build_presidencia.py`](../scripts/tse/build_presidencia.py)).
-3. **Recomendações para P6 e Ingestão:** Manter a execução de rotinas periódicas de atualização de CEAP/CEAPS e expor o timestamp de coleta no frontend.
+1. **Votações Nominais:** 100% verificadas (30/30) com links diretos oficiais da Câmara e Senado.
+2. **Despesas (CEAP/CEAPS):** Rastreáveis por comprovantes e fontes oficiais, com defasagem natural de snapshot em ano corrente, porém com **divergência pontual detectada no Senado** (Carlos Viana: repo com R$ 1,96 a mais que a API oficial consultada em 2026-09-24).
+3. **Emendas Parlamentares (CGU):** **NÃO VERIFICADO** — URLs do Portal da Transparência não resolvem permalinks funcionais e exigem revalidação da fonte antes de carimbo de conformidade.
+4. **Isolamento de Dados Sintéticos:** A geração sintética por fórmulas arbitradas (A1–A6) permaneceu restrita ao módulo TSE 2026 ([`scripts/tse/build_congresso_2026.py`](../scripts/tse/build_congresso_2026.py) e [`scripts/tse/build_presidencia.py`](../scripts/tse/build_presidencia.py)), porém os demais módulos demandam atenção contínua à rastreabilidade de URLs e fidelidade dos somatórios.
+5. **Recomendações para P6 e Ingestão:** Manter a execução de rotinas periódicas de atualização de CEAP/CEAPS e expor o timestamp de coleta no frontend.
 
 ---
-*Relatório gerado automaticamente e conferido por amostragem em 2026-09-24.*
+*Relatório retificado em 2026-09-24.*
