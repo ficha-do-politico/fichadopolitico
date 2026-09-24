@@ -203,6 +203,16 @@ def validar_integridade(deputados, temas):
             if u_cgu and not u_cgu.startswith("https://portaldatransparencia.gov.br"):
                 raise ValueError(f"URL CGU inválida no deputado {d.get('id')}: {u_cgu}")
 
+        part = d.get("participacao_votacoes")
+        if not part or not isinstance(part, dict):
+            raise ValueError(f"Deputado {d.get('id')} sem participacao_votacoes válida.")
+        if part.get("total") != len(temas):
+            raise ValueError(f"Deputado {d.get('id')} com total de temas divergente do catálogo.")
+        if not (0 <= part.get("registrados", -1) <= part.get("total", 0)):
+            raise ValueError(
+                f"Deputado {d.get('id')} com votos registrados fora do intervalo válido."
+            )
+
 
 def validar_senadores(senadores, temas):
     """Validações estritas de conformidade com AD-006 (verificabilidade) e AD-009 (LGPD) para o Senado."""
@@ -216,6 +226,7 @@ def validar_senadores(senadores, temas):
         "endereco",
         "titulo_eleitor",
     }
+    temas_senado_count = sum(1 for t in temas if "senado" in t)
     for s in senadores:
         chaves_encontradas = set(s.keys()).intersection(campos_proibidos)
         if chaves_encontradas:
@@ -252,6 +263,18 @@ def validar_senadores(senadores, temas):
         url_perfil = s.get("url_perfil_senado", "")
         if not url_perfil.startswith("https://"):
             raise ValueError(f"Senador {s.get('id')} com url_perfil_senado inválida: {url_perfil}")
+
+        part = s.get("participacao_votacoes")
+        if not part or not isinstance(part, dict):
+            raise ValueError(f"Senador {s.get('id')} sem participacao_votacoes válida.")
+        if part.get("total") != temas_senado_count:
+            raise ValueError(
+                f"Senador {s.get('id')} com total divergente de temas do Senado ({part.get('total')} != {temas_senado_count})."
+            )
+        if not (0 <= part.get("registrados", -1) <= part.get("total", 0)):
+            raise ValueError(
+                f"Senador {s.get('id')} com votos registrados fora do intervalo válido."
+            )
 
     for t in temas:
         if "senado" in t:
@@ -306,18 +329,31 @@ def main():
         dep["emendas"] = emendas.get(dep_id_str)
 
         votos_map = {}
+        votos_registrados_count = 0
         for tema in temas:
             vid = tema["id"]
             votacao_json = votacoes[vid]
             votos_dict = votacao_json.get("votos", {})
 
             if dep_id_str in votos_dict:
-                votos_map[vid] = votos_dict[dep_id_str].get("tipoVoto", "Sim")
+                tipo_voto = votos_dict[dep_id_str].get("tipoVoto", "Sim")
+                votos_map[vid] = tipo_voto
+                if tipo_voto != "Não votou / Ausente":
+                    votos_registrados_count += 1
             else:
                 # Se não consta na lista de quem registrou voto no painel, é formalmente Ausente
                 votos_map[vid] = "Não votou / Ausente"
 
         dep["votos"] = votos_map
+        total_temas_camara = len(temas)
+        dep["participacao_votacoes"] = {
+            "total": total_temas_camara,
+            "registrados": votos_registrados_count,
+            "percentual": round((votos_registrados_count / total_temas_camara) * 100, 1)
+            if total_temas_camara > 0
+            else 0.0,
+            "formatado": f"{votos_registrados_count}/{total_temas_camara}",
+        }
         deputados.append(dep)
 
     # Ordena deputados por nome eleitoral para busca e navegação previsíveis
@@ -343,16 +379,30 @@ def main():
             sen["despesas_2026"] = despesas_senado_2026.get(sen_id_str)
             sen["emendas"] = emendas.get(sen_id_str)
             votos_map = {}
+            votos_registrados_count = 0
+            total_senado_temas = 0
             for tema in temas:
                 vid = tema["id"]
                 if vid in senado_votacoes:
+                    total_senado_temas += 1
                     votacao_json = senado_votacoes[vid]
                     votos_dict = votacao_json.get("votos", {})
                     if sen_id_str in votos_dict:
-                        votos_map[vid] = votos_dict[sen_id_str].get("tipoVoto", "Sim")
+                        tipo_voto = votos_dict[sen_id_str].get("tipoVoto", "Sim")
+                        votos_map[vid] = tipo_voto
+                        if tipo_voto != "Não votou / Ausente":
+                            votos_registrados_count += 1
                     else:
                         votos_map[vid] = "Não votou / Ausente"
             sen["votos"] = votos_map
+            sen["participacao_votacoes"] = {
+                "total": total_senado_temas,
+                "registrados": votos_registrados_count,
+                "percentual": round((votos_registrados_count / total_senado_temas) * 100, 1)
+                if total_senado_temas > 0
+                else 0.0,
+                "formatado": f"{votos_registrados_count}/{total_senado_temas}",
+            }
             senadores.append(sen)
 
         senadores.sort(key=lambda s: s["nome_eleitoral"].lower())

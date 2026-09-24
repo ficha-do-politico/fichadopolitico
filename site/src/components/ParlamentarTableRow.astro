@@ -12,7 +12,7 @@ const isSenado = p.casa === 'senado';
 
 <a
   href={p.href}
-  class="parlamentar-row group grid grid-cols-[2.2fr_0.9fr_1.3fr_1.3fr_1.3fr] items-center gap-3 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-sm transition-all duration-150 text-sm"
+  class="parlamentar-row group grid grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr_1.2fr] items-center gap-3 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-sm transition-all duration-150 text-sm"
   data-nome={p.nome_eleitoral.toLowerCase()}
   data-civil={p.nome_civil.toLowerCase()}
   data-partido={p.partido.toLowerCase()}
@@ -20,6 +20,7 @@ const isSenado = p.casa === 'senado';
   data-casa={p.casa}
   data-candidato-2026={p.is_candidato_2026 ? "true" : "false"}
   data-reeleicao={p.is_reeleicao ? "true" : "false"}
+  data-votos={p.participacao_votacoes?.percentual ?? ''}
   data-cota={p.total_cota ?? ''}
   data-emendas={p.total_emendas ?? ''}
   data-patrimonio={p.patrimonio_total ?? ''}
@@ -49,6 +50,13 @@ const isSenado = p.casa === 'senado';
   }`}>
     {isSenado ? 'Senado' : 'Câmara'}
   </span>
+
+  <div class="flex items-center gap-1 tabular-nums text-slate-700">
+    <span class="font-semibold text-slate-900">{p.participacao_votacoes?.formatado ?? '—'}</span>
+    {p.participacao_votacoes && (
+      <span class="text-[11px] text-slate-400">({p.participacao_votacoes.percentual.toFixed(0)}%)</span>
+    )}
+  </div>
 
   <span class="text-slate-700 text-right sm:text-left tabular-nums">
     {p.total_cota_formatado ?? '—'}

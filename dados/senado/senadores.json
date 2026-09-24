@@ -292,6 +292,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ALAN+RICK"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -545,6 +551,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ALESSANDRO+VIEIRA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -814,6 +826,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ANGELO+CORONEL"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -1058,6 +1076,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ASTRONAUTA+MARCOS+PONTES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -1341,6 +1365,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=BETO+FARO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -1493,7 +1523,13 @@
       ],
       "fonte_oficial": "https://www6g.senado.leg.br/transparencia/sen/6336/?ano=2026"
     },
-    "emendas": null
+    "emendas": null,
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
+    }
   },
   {
     "id": 6295,
@@ -1770,6 +1806,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+FAVARO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
     }
   },
   {
@@ -2055,6 +2097,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+PORTINHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -2308,6 +2356,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CARLOS+VIANA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -2604,6 +2658,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CHICO+RODRIGUES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -2832,6 +2892,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CID+GOMES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 4,
+      "percentual": 44.4,
+      "formatado": "4/9"
     }
   },
   {
@@ -3077,6 +3143,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CIRO+NOGUEIRA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -3350,6 +3422,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CLEITINHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -3618,6 +3696,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=CONFUCIO+MOURA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -3919,6 +4003,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=DAMARES+ALVES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -4156,6 +4246,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=DANIELLA+RIBEIRO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -4395,6 +4491,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=DAVI+ALCOLUMBRE"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -4690,6 +4792,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=DR.+HIRAN"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -4958,6 +5066,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=DRA.+EUDOCIA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
     }
   },
   {
@@ -5203,6 +5317,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=EDUARDO+BRAGA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -5478,6 +5598,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=EDUARDO+GOMES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -5756,6 +5882,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=EFRAIM+FILHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -6051,6 +6183,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ELIZIANE+GAMA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -6342,6 +6480,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ESPERIDIAO+AMIN"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -6573,6 +6717,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=FABIANO+CONTARATO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -6853,6 +7003,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=FERNANDO+DUEIRE"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -7148,6 +7304,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=FLAVIO+ARNS"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -7432,6 +7594,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=FLAVIO+BOLSONARO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -7645,6 +7813,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=GIORDANO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 4,
+      "percentual": 44.4,
+      "formatado": "4/9"
     }
   },
   {
@@ -7947,6 +8121,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=HAMILTON+MOURAO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -8237,6 +8417,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=HUMBERTO+COSTA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -8493,6 +8679,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=IRAJA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -8740,6 +8932,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=IVETE+DA+SILVEIRA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -9002,6 +9200,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=IZALCI+LUCAS"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -9269,6 +9473,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JADER+BARBALHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -9558,6 +9768,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JAIME+BAGATTOLI"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -9821,6 +10037,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JAQUES+WAGNER"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -10094,6 +10316,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JAYME+CAMPOS"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -10289,6 +10517,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JORGE+KAJURU"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -10580,6 +10814,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JORGE+SEIF"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -10869,6 +11109,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=JUSSARA+LIMA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -11164,6 +11410,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=LAERCIO+OLIVEIRA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -11384,6 +11636,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=LEILA+BARROS"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -11503,7 +11761,13 @@
       ],
       "fonte_oficial": "https://www6g.senado.leg.br/transparencia/sen/6359/?ano=2026"
     },
-    "emendas": null
+    "emendas": null,
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
+    }
   },
   {
     "id": 5926,
@@ -11776,6 +12040,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=LUCAS+BARRETO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -12057,6 +12327,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=LUIS+CARLOS+HEINZE"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 5,
+      "percentual": 55.6,
+      "formatado": "5/9"
     }
   },
   {
@@ -12331,6 +12607,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=MAGNO+MALTA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -12606,6 +12888,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=MARA+GABRILLI"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 4,
+      "percentual": 44.4,
+      "formatado": "4/9"
     }
   },
   {
@@ -12880,6 +13168,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCELO+CASTRO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -13169,6 +13463,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCIO+BITTAR"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -13449,6 +13749,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCOS+DO+VAL"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 5,
+      "percentual": 55.6,
+      "formatado": "5/9"
     }
   },
   {
@@ -13716,6 +14022,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=MARCOS+ROGERIO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -13941,6 +14253,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=NELSINHO+TRAD"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -14219,6 +14537,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=OMAR+AZIZ"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -14486,6 +14810,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ORIOVISTO+GUIMARAES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -14736,6 +15066,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=OTTO+ALENCAR"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -15017,6 +15353,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=PAULO+PAIM"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -15290,6 +15632,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=PLINIO+VALERIO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   },
   {
@@ -15571,6 +15919,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=PROFESSORA+DORINHA+SEABRA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -15838,6 +16192,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=RANDOLFE+RODRIGUES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -16089,6 +16449,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=RENAN+CALHEIROS"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -16235,7 +16601,13 @@
       ],
       "fonte_oficial": "https://www6g.senado.leg.br/transparencia/sen/5207/?ano=2026"
     },
-    "emendas": null
+    "emendas": null,
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
+    }
   },
   {
     "id": 6025,
@@ -16338,7 +16710,13 @@
       ],
       "fonte_oficial": "https://www6g.senado.leg.br/transparencia/sen/6025/?ano=2026"
     },
-    "emendas": null
+    "emendas": null,
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
+    }
   },
   {
     "id": 5732,
@@ -16634,6 +17012,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=RODRIGO+PACHECO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -16913,6 +17297,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ROGERIO+MARINHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -17198,6 +17588,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ROGERIO+CARVALHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -17493,6 +17889,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ROMARIO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -17621,7 +18023,13 @@
       ],
       "fonte_oficial": "https://www6g.senado.leg.br/transparencia/sen/5974/?ano=2026"
     },
-    "emendas": null
+    "emendas": null,
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 0,
+      "percentual": 0.0,
+      "formatado": "0/9"
+    }
   },
   {
     "id": 6331,
@@ -17906,6 +18314,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=SERGIO+MORO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -18144,6 +18558,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=SORAYA+THRONICKE"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -18423,6 +18843,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=STYVENSON+VALENTIM"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -18718,6 +19144,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=SERGIO+PETECAO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -18998,6 +19430,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=TERESA+LEITAO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -19293,6 +19731,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=TEREZA+CRISTINA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -19572,6 +20016,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=VANDERLAN+CARDOSO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -19840,6 +20290,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=VENEZIANO+VITAL+DO+REGO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -20121,6 +20577,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=WELLINGTON+FAGUNDES"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 7,
+      "percentual": 77.8,
+      "formatado": "7/9"
     }
   },
   {
@@ -20412,6 +20874,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=WEVERTON"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -20702,6 +21170,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=WILDER+MORAIS"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 9,
+      "percentual": 100.0,
+      "formatado": "9/9"
     }
   },
   {
@@ -20975,6 +21449,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ZENAIDE+MAIA"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 8,
+      "percentual": 88.9,
+      "formatado": "8/9"
     }
   },
   {
@@ -21276,6 +21756,12 @@
         }
       ],
       "url_portal_transparencia": "https://portaldatransparencia.gov.br/emendas/consulta?autor=ZEQUINHA+MARINHO"
+    },
+    "participacao_votacoes": {
+      "total": 9,
+      "registrados": 6,
+      "percentual": 66.7,
+      "formatado": "6/9"
     }
   }
 ]
