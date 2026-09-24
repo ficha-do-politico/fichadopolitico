@@ -92,7 +92,7 @@ Arquivos necessários (Portal de Dados Abertos do TSE → Candidatos 2026):
 | P2 | Cruzamento parlamentar ↔ candidato por identificador unívoco (verificar se o dump 2026 traz CPF; se não, nome de urna + UF + cargo com lista de revisão manual). CPF usado só em memória e descartado (AD-009) | ⏳ |
 | P3 | Presidência: substituir `PRESIDENCIA_DATA_2026` hardcoded pelos mesmos dumps, com filtro no cargo Presidente | ⏳ |
 | P4 | Conferência amostral (10 deputados e 5 senadores) de votos, CEAP/CEAPS e emendas contra os portais oficiais ([detalhes](auditoria-amostral-modulos.md)) | ✅ Concluída com ressalvas (votações confirmadas; CEAPS com divergência em Carlos Viana; emendas NÃO VERIFICADO por URLs com erro) |
-| P5 | Teste de proveniência: todo registro de pessoa carrega `fonte_url` específica + `coletado_em`; CI falha em URL genérica (home do sistema) | ⏳ |
+| P5 | Teste de proveniência: todo registro de pessoa carrega `fonte_url` específica + `coletado_em`; CI falha em URL genérica (home do sistema) | ✅ Implementado ([`tests/test_tse_proveniencia.py`](../tests/test_tse_proveniencia.py), ativo pós-suspensão) |
 | P6 | Exibir "dados coletados em DD/MM/AAAA" nas seções da ficha | ⏳ |
 | P7 | Corrigir STATE.md §5 e code-health.md após P1–P3 | ⏳ |
 
