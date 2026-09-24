@@ -17,6 +17,9 @@ CANON_PRESIDENCIA = ROOT / "dados" / "tse" / "presidencia.json"
 SITE_PRESIDENCIA = ROOT / "site" / "src" / "data" / "presidencia.json"
 CANON_CONGRESSO = ROOT / "dados" / "tse" / "congresso_2026.json"
 SITE_CONGRESSO = ROOT / "site" / "src" / "data" / "congresso_2026.json"
+SITE_TSE_STATUS = ROOT / "site" / "src" / "data" / "tse_status.json"
+SITE_DEPUTADOS = ROOT / "site" / "src" / "data" / "deputados.json"
+SITE_SENADORES = ROOT / "site" / "src" / "data" / "senadores.json"
 
 PROHIBITED_LGPD_KEYS = {
     "cpf",
@@ -31,8 +34,44 @@ PROHIBITED_LGPD_KEYS = {
 }
 
 
+def tse_suspenso():
+    with open(SITE_TSE_STATUS, encoding="utf-8") as f:
+        return json.load(f)["suspenso"]
+
+
+class TestTSESuspensao(unittest.TestCase):
+    """Enquanto o módulo TSE 2026 estiver suspenso (docs/auditoria-dados-tse-2026.md),
+    nenhum dado de candidatura ou patrimônio pode chegar ao site."""
+
+    def setUp(self):
+        self.assertTrue(
+            SITE_TSE_STATUS.exists(), f"Status do módulo TSE ausente: {SITE_TSE_STATUS}"
+        )
+        if not tse_suspenso():
+            self.skipTest("Módulo TSE 2026 ativo.")
+
+    def test_status_aponta_auditoria(self):
+        with open(SITE_TSE_STATUS, encoding="utf-8") as f:
+            status = json.load(f)
+        self.assertTrue(status["auditoria_url"].startswith("https://github.com/ficha-do-politico/"))
+
+    def test_nenhum_candidato_presidencia_publicado(self):
+        with open(SITE_PRESIDENCIA, encoding="utf-8") as f:
+            self.assertEqual(json.load(f), [])
+
+    def test_nenhuma_candidatura_congresso_publicada(self):
+        with open(SITE_CONGRESSO, encoding="utf-8") as f:
+            self.assertEqual(json.load(f), {})
+        for path in (SITE_DEPUTADOS, SITE_SENADORES):
+            with open(path, encoding="utf-8") as f:
+                com_candidatura = [p["id"] for p in json.load(f) if p.get("candidatura_2026")]
+            self.assertEqual(com_candidatura, [], f"Candidaturas publicadas em {path.name}")
+
+
 class TestTSEPatrimonio(unittest.TestCase):
     def setUp(self):
+        if tse_suspenso():
+            self.skipTest("Módulo TSE 2026 suspenso (docs/auditoria-dados-tse-2026.md).")
         self.assertTrue(
             CANON_PRESIDENCIA.exists(), f"Arquivo canônico ausente: {CANON_PRESIDENCIA}"
         )

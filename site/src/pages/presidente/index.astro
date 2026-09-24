@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import presidenciaData from '../../data/presidencia.json';
 import type { CandidatoPresidencia } from '../../types';
+import TseSuspensoAviso from '../../components/TseSuspensoAviso.astro';
+import tseStatus from '../../data/tse_status.json';
 
 const candidatos = (presidenciaData as CandidatoPresidencia[]).sort((a, b) =>
   a.nomeUrna.localeCompare(b.nomeUrna, 'pt-BR')
@@ -15,6 +17,12 @@ const totalCandidatos = candidatos.length;
   title="Presidência da República — Evolução Patrimonial"
   description="Histórico e evolução patrimonial oficial dos candidatos à Presidência da República com base em declarações prestadas ao Tribunal Superior Eleitoral (TSE)."
 >
+  {tseStatus.suspenso ? (
+    <section class="bg-slate-50 pt-14 pb-16 px-4 sm:px-6">
+      <TseSuspensoAviso auditoriaUrl={tseStatus.auditoria_url} />
+    </section>
+  ) : (
+    <Fragment>
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-b from-emerald-50/60 via-slate-50 to-slate-50 pt-14 pb-10 px-4 sm:px-6">
     <div class="max-w-4xl mx-auto text-center space-y-4">
@@ -164,6 +172,8 @@ const totalCandidatos = candidatos.length;
       <p class="text-sm text-slate-500">Verifique os termos digitados e tente novamente.</p>
     </div>
   </main>
+    </Fragment>
+  )}
 </Layout>
 
 <script>

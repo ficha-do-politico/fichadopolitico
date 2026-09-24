@@ -5,6 +5,7 @@ import ParlamentarTableRow from '../components/ParlamentarTableRow.astro';
 import deputadosData from '../data/deputados.json';
 import senadoresData from '../data/senadores.json';
 import temasData from '../data/temas.json';
+import tseStatus from '../data/tse_status.json';
 import type { Deputado, Senador, Tema, ParlamentarCardData } from '../types';
 
 const deputados = deputadosData as Deputado[];
@@ -66,6 +67,8 @@ const totalParlamentares = parlamentares.length;
 const totalTemas = temas.length;
 const totalCandidatos2026 = parlamentares.filter(p => p.is_candidato_2026).length;
 const totalReeleicao2026 = parlamentares.filter(p => p.is_reeleicao).length;
+// Módulo TSE 2026 suspenso até a correção da auditoria (docs/auditoria-dados-tse-2026.md)
+const mostrarTse = !tseStatus.suspenso;
 
 // Lista única ordenada de partidos e estados para filtros rápidos
 const partidos = [...new Set(parlamentares.map(p => p.partido))].filter(Boolean).sort();
@@ -86,7 +89,7 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
       </h1>
 
       <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Acesse em dados crus e auditáveis como votaram os <strong class="text-slate-900">{totalDeputados} deputados</strong> e <strong class="text-slate-900">{totalSenadores} senadores</strong>, o detalhamento das despesas de cota parlamentar e o patrimônio autodeclarado à Justiça Eleitoral.
+        Acesse em dados crus e auditáveis como votaram os <strong class="text-slate-900">{totalDeputados} deputados</strong> e <strong class="text-slate-900">{totalSenadores} senadores</strong>, o detalhamento das despesas de cota parlamentar{mostrarTse ? ' e o patrimônio autodeclarado à Justiça Eleitoral' : ' e as emendas pagas'}.
       </p>
 
       <!-- Barra de Busca Hero -->
@@ -145,14 +148,16 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
 
           <!-- Selects de Eleições 2026, UF e Partido em container responsivo -->
           <div class="w-full md:w-auto flex flex-wrap md:flex-nowrap items-center gap-2">
-            <div class="flex items-center gap-1.5 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 shadow-2xs w-full sm:w-auto justify-between sm:justify-start">
-              <label for="filterEleicao" class="text-slate-500 font-medium whitespace-nowrap">2026:</label>
-              <select id="filterEleicao" class="bg-transparent text-slate-700 outline-none focus:text-emerald-700 font-medium text-xs cursor-pointer flex-1 sm:flex-initial text-right sm:text-left">
-                <option value="">Todos</option>
-                <option value="candidatos">Candidatos ({totalCandidatos2026})</option>
-                <option value="reeleicao">Reeleição ({totalReeleicao2026})</option>
-              </select>
-            </div>
+            {mostrarTse && (
+              <div class="flex items-center gap-1.5 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 shadow-2xs w-full sm:w-auto justify-between sm:justify-start">
+                <label for="filterEleicao" class="text-slate-500 font-medium whitespace-nowrap">2026:</label>
+                <select id="filterEleicao" class="bg-transparent text-slate-700 outline-none focus:text-emerald-700 font-medium text-xs cursor-pointer flex-1 sm:flex-initial text-right sm:text-left">
+                  <option value="">Todos</option>
+                  <option value="candidatos">Candidatos ({totalCandidatos2026})</option>
+                  <option value="reeleicao">Reeleição ({totalReeleicao2026})</option>
+                </select>
+              </div>
+            )}
 
             <div class="flex items-center gap-1.5 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 shadow-2xs flex-1 md:flex-initial justify-between md:justify-start">
               <label for="filterUf" class="text-slate-500 font-medium whitespace-nowrap">UF:</label>
@@ -221,7 +226,7 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
     <!-- Lista/Tabela ordenável -->
     <div id="parlamentaresTable" class="hidden pt-6 overflow-x-auto">
       <div class="min-w-[760px] flex flex-col gap-1.5">
-        <div class="grid grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr_1.2fr] gap-3 px-3.5 pb-1 text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
+        <div class:list={["grid gap-3 px-3.5 pb-1 text-[11px] font-semibold text-slate-500 uppercase tracking-wide", mostrarTse ? "grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr_1.2fr]" : "grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr]"]}>
           <button type="button" data-sort-key="nome" class="sort-btn text-left hover:text-slate-900 transition">
             Parlamentar <span class="sort-arrow"></span>
           </button>
@@ -235,13 +240,15 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
           <button type="button" data-sort-key="emendas" class="sort-btn text-left hover:text-slate-900 transition">
             Emendas Pagas <span class="sort-arrow"></span>
           </button>
-          <button type="button" data-sort-key="patrimonio" class="sort-btn text-left hover:text-slate-900 transition">
-            Patrimônio <span class="sort-arrow"></span>
-          </button>
+          {mostrarTse && (
+            <button type="button" data-sort-key="patrimonio" class="sort-btn text-left hover:text-slate-900 transition">
+              Patrimônio <span class="sort-arrow"></span>
+            </button>
+          )}
         </div>
         <div id="parlamentaresTableBody" class="flex flex-col gap-1.5">
           {parlamentares.map(p => (
-            <ParlamentarTableRow parlamentar={p} />
+            <ParlamentarTableRow parlamentar={p} mostrarPatrimonio={mostrarTse} />
           ))}
         </div>
       </div>
