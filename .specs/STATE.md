@@ -63,7 +63,7 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
   - *v2:* Auditoria de Gastos e Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Folha de Servidores (AD-021).
   - *v2:* Rastreabilidade de Convênios na Ponta das Emendas via Transferegov.br.
   - *v3:* Transparência Processual e Judicial via STF e DataJud/CNJ (AD-017).
-- **Bloqueios Ativos:** Nenhum.
+- **Bloqueios Ativos:** 🔴 Dados do módulo Eleições & Patrimônio 2026 sem proveniência oficial (parte sintética) — em correção; ver [docs/auditoria-dados-tse-2026.md](../docs/auditoria-dados-tse-2026.md).
 
 ---
 
