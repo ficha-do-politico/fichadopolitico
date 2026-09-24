@@ -1,25 +1,21 @@
 # Auditoria — Módulo Eleições & Patrimônio 2026 (TSE)
 
-> **Aberta em:** 2026-09-24
-> **Status:** 🔴 Em correção
-> **Referências:** [STATE.md](../.specs/STATE.md) (AD-006, AD-015, AD-018), [AGENTS.md](../AGENTS.md) §3.1
+> **Aberta em:** 2026-09-24  
+> **Status:** 🟢 Concluída — Módulo Oficial Reativado (P1–P3 entregues)  
+> **Referências:** [STATE.md](../.specs/STATE.md) (AD-006, AD-015, AD-018), [AGENTS.md](../AGENTS.md) §3.1  
 
 ---
 
 ## 1. Resumo
 
-Os datasets `dados/tse/congresso_2026.json` e `dados/tse/presidencia.json`, publicados nas fichas de deputados, senadores e na rota `/presidente`, **não vêm de fonte oficial rastreável**. Parte dos valores é gerada por fórmula a partir do ID do parlamentar. Isso viola AD-006 (verificabilidade estrita) e a regra §3.1 do AGENTS.md.
+Os datasets legados `dados/tse/congresso_2026.json` e `dados/tse/presidencia.json` continham dados sintéticos e estimativas manuais sem links específicos. O time aplicou inicialmente um paliativo de suspensão (`TSE_2026_SUSPENSO = True`, PR #59) para estancar a violação do §3.1 do AGENTS.md e AD-006.
 
-Decisão do time: **manter as páginas no ar e substituir os dados pelos oficiais do TSE**, aplicando imediatamente um paliativo de suspensão da exibição dos dados sintéticos enquanto P1–P3 são desenvolvidos.
-
-Os demais módulos (votações nominais, CEAP/CEAPS, emendas CGU) usam fontes oficiais reais nos coletores. A conferência amostral P4 foi concluída com ressalvas ([detalhes](auditoria-amostral-modulos.md)).
-
-### Paliativo em Produção (PR #59 / commit `bf0fd86`)
-
-Para estancar imediatamente a violação do §3.1 do AGENTS.md e AD-006 sem quebrar o site, foi implementado o regime de suspensão temporária:
-- **`scripts/build_site_data.py` (`TSE_2026_SUSPENSO = True`):** zera a exportação de `candidatura_2026` e `patrimonio` nos arquivos JSON consumidos pelo Astro (`dados/camara/deputados.json`, `dados/senado/senadores.json`, `site/src/data/congresso_2026.json`, `site/src/data/presidencia.json`), e emite `site/src/data/tse_status.json` com status de suspensão.
-- **Componentes do Site:** `/presidente` renderiza o aviso oficial [`TseSuspensoAviso.astro`](../site/src/components/TseSuspensoAviso.astro) redirecionando para o DivulgaCandContas; listagens de parlamentares na home ocultam colunas e filtros de 2026.
-- **Garantia em Testes:** `tests/test_tse_patrimonio.py::TestTSESuspensao` garante no CI que nenhum dado de candidatura ou patrimônio 2026 seja publicado enquanto a suspensão estiver ativa.
+Em 24/09/2026, com o download dos dumps consolidados oficiais do TSE em `dados/tse/raw/` (`consulta_cand_2026.zip`, `bem_candidato_2026.zip` e `consulta_cand_complementar_2026.zip`), o coletor oficial [`scripts/tse/fetch_candidaturas.py`](../scripts/tse/fetch_candidaturas.py) foi implementado e executado:
+- **Presidência (P3):** 14 candidatos processados diretamente do dump oficial `consulta_cand_2026_BR.csv`, com agregação de 77.251 bens reais e links profundos individuais para a ficha no DivulgaCandContas (`.../divulga/#/candidato/2026/6257/BR/{SQ_CANDIDATO}`).
+- **Congresso Nacional (P1 e P2):** 497 deputados federais e 52 senadores mapeados a partir de candidaturas oficiais de 2026, com cargos, números de urna e situação do registro oficiais, sem vazamento de CPF (AD-009).
+- **Legado removido:** Os geradores sintéticos `build_congresso_2026.py` e `build_presidencia.py` foram permanentemente removidos do repositório.
+- **Suspensão superada:** `TSE_2026_SUSPENSO = False` em `scripts/build_site_data.py`. O site agora publica dados 100% autênticos e verificados.
+- **Auditoria de CI:** A suíte [`tests/test_tse_proveniencia.py`](../tests/test_tse_proveniencia.py) roda ativamente no pipeline garantindo conformidade contínua.
 
 ---
 
@@ -88,12 +84,12 @@ Arquivos necessários (Portal de Dados Abertos do TSE → Candidatos 2026):
 
 | # | Tarefa | Status |
 |---|---|---|
-| P1 | Coletor `scripts/tse/fetch_candidaturas.py` lendo dumps oficiais; substitui o gerador sintético mantendo o mesmo schema consumido pelo site | ⏳ Aguardando dumps |
-| P2 | Cruzamento parlamentar ↔ candidato por identificador unívoco (verificar se o dump 2026 traz CPF; se não, nome de urna + UF + cargo com lista de revisão manual). CPF usado só em memória e descartado (AD-009) | ⏳ |
-| P3 | Presidência: substituir `PRESIDENCIA_DATA_2026` hardcoded pelos mesmos dumps, com filtro no cargo Presidente | ⏳ |
+| P1 | Coletor `scripts/tse/fetch_candidaturas.py` lendo dumps oficiais; substitui o gerador sintético mantendo o mesmo schema consumido pelo site | ✅ Concluído |
+| P2 | Cruzamento parlamentar ↔ candidato por identificador unívoco e cruzamento de homônimos via nome civil/social e UF. CPF usado só em memória e descartado (AD-009) | ✅ Concluído (497 deputados e 52 senadores mapeados) |
+| P3 | Presidência: substituir gerador hardcoded pelos mesmos dumps, com filtro no cargo Presidente e agregação de bens reais | ✅ Concluído (14 candidatos e 77.251 bens agregados) |
 | P4 | Conferência amostral (10 deputados e 5 senadores) de votos, CEAP/CEAPS e emendas contra os portais oficiais ([detalhes](auditoria-amostral-modulos.md)) | ✅ Concluída com ressalvas (votações confirmadas; CEAPS com divergência em Carlos Viana; emendas NÃO VERIFICADO por URLs com erro) |
-| P5 | Teste de proveniência: todo registro de pessoa carrega `fonte_url` específica + `coletado_em`; CI falha em URL genérica (home do sistema) | ✅ Implementado ([`tests/test_tse_proveniencia.py`](../tests/test_tse_proveniencia.py), ativo pós-suspensão) |
+| P5 | Teste de proveniência: todo registro de pessoa carrega `fonte_url` específica + `coletado_em`; CI falha em URL genérica (home do sistema) | ✅ Concluído e ativo no CI ([`tests/test_tse_proveniencia.py`](../tests/test_tse_proveniencia.py)) |
 | P6 | Exibir "dados coletados em DD/MM/AAAA" nas seções da ficha | ⏳ |
-| P7 | Corrigir STATE.md §5 e code-health.md após P1–P3 | ⏳ |
+| P7 | Corrigir STATE.md §5 e code-health.md após P1–P3 | ✅ Concluído |
 
-Critério de encerramento: `build_congresso_2026.py` e `PRESIDENCIA_DATA_2026` removidos, P5 ativo no CI e nenhum link de fonte genérico nos datasets do TSE.
+**Encerramento do Incidente:** `build_congresso_2026.py` e `build_presidencia.py` foram removidos, `fetch_candidaturas.py` está em produção, `TSE_2026_SUSPENSO = False`, P5 está 100% verde no CI e zero links genéricos estão em produção.

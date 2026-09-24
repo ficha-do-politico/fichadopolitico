@@ -39,11 +39,9 @@ EMENDAS_DIR = ROOT / "dados" / "emendas"
 CANON_EMENDAS_FILE = EMENDAS_DIR / "emendas_resumo.json"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
-# Módulo TSE 2026 suspenso: os datasets atuais não têm proveniência oficial
-# (docs/auditoria-dados-tse-2026.md, achados A1/A2). Enquanto True, nenhuma
-# candidatura, patrimônio ou candidato à Presidência é publicado. Volta a False
-# somente quando o coletor a partir dos dumps oficiais (P1–P3) substituir os geradores.
-TSE_2026_SUSPENSO = True
+# Módulo TSE 2026: alimentado pelos dumps oficiais do TSE (scripts/tse/fetch_candidaturas.py)
+# em cumprimento às tarefas P1–P3 de docs/auditoria-dados-tse-2026.md.
+TSE_2026_SUSPENSO = False
 TSE_AUDITORIA_URL = "https://github.com/ficha-do-politico/fichadopolitico/blob/main/docs/auditoria-dados-tse-2026.md"
 
 

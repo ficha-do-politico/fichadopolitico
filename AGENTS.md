@@ -1,6 +1,6 @@
 # AGENT INSTRUCTIONS — FICHA DO POLÍTICO
 
-**Última atualização:** 2026-09-16
+**Última atualização:** 2026-09-24
 
 > **Platform Note:** este agente pode rodar em Windows ou Linux. Ao sugerir comandos de terminal, considere as duas plataformas e ofereça alternativas quando necessário.
 
@@ -32,6 +32,7 @@
 
 ### 3.1. Regra específica deste projeto: dado político é munição
 - **Toda afirmação factual sobre um político (voto, gasto, patrimônio, declaração) precisa linkar a fonte oficial de origem** (URL da API, do diário oficial, da proposição). Sem fonte rastreável, o dado não entra na ficha — nem em teste, nem em seed de exemplo com nome real.
+- **PROIBIÇÃO ABSOLUTA DE DADOS SINTÉTICOS / MOCKS COM NOMES REAIS (A Lição do TSE 2026):** Se uma fonte governamental (API ou portal) estiver inacessível, bloqueada por WAF (HTTP 403) ou instável, **NUNCA** gere fórmulas matemáticas (ex.: `% 13`, `% 20`), dados estimados, palpites manuais ou mocks para preencher a tela ou fazer testes passarem. **PARE IMEDIATAMENTE**, declare o bloqueio ao usuário, exija os dumps oficiais em lote ou suspenda a feature até a obtenção da base real. Testes unitários DEVEM validar proveniência estrita (URLs profundas e timestamps), e não apenas conformidade de schema/tipagem.
 - Nunca infira, extrapole ou "arredonde" um dado político a partir de fonte não-oficial (notícia, rede social) sem deixar explícito que é secundário e não-verificado.
 - Nunca gere texto que enquadre um voto/gasto com adjetivo de valor (ex: "escandaloso", "correto") — a ficha mostra o dado cru; interpretação é do usuário.
 - Isso vale para qualquer política/pessoa citada, incluindo em fixtures/testes — dado de mentira sobre pessoa real também é problema.

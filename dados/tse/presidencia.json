@@ -1,842 +1,1351 @@
 [
   {
     "id": "clariana-barao",
-    "nomeUrna": "Clariana Barão",
-    "nomeCivil": "Clariana Barão da Silva",
+    "nomeUrna": "CLARIANA BARAO",
+    "nomeCivil": "CLARIANA ZACARKIM BARAO",
     "partido": "DC",
-    "partidoNome": "Democracia Cristã",
+    "partidoNome": "DEMOCRACIA CRISTÃ",
     "numeroUrna": "27",
     "cargo": "Presidente",
     "fotoUrl": "fotos/presidencia/clariana-barao.jpg",
-    "fotoFonteOficial": "TSE DivulgaCandContas (Registro Eleitoral)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002552484",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002552484",
+    "coletado_em": "2026-09-24",
     "situacaoCandidatura": "Deferido",
     "historicoPatrimonial": [
       {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 580000.0,
-        "totalFormatado": "R$ 580.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "totalDeclarado": 1820760.1700000002,
+        "totalFormatado": "R$ 1.820.760,17",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002552484",
         "bens": [
           {
             "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em Curitiba/PR",
-            "valor": 480000.0
+            "descricao": "EDIFÍCIO",
+            "valor": 261759.38
           },
           {
-            "tipo": "Veículo Automotor Terrestre",
-            "descricao": "Veículo de passeio",
-            "valor": 100000.0
+            "tipo": "Terreno",
+            "descricao": "TERRENO FRAÇÃO",
+            "valor": 5000.0
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO BRADESCO",
+            "valor": 151.7
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "descricao": "LAND ROVER DISCOVERY SPORT",
+            "valor": 376006.08
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "CONDOMINIO",
+            "valor": 979500.0
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "RESIDENCIAL SFH CEF",
+            "valor": 90933.51
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "RESIDENCIAL FINACIADA BRADESCO",
+            "valor": 107409.5
           }
         ]
       }
-    ]
+    ],
+    "vice": {
+      "nomeUrna": "FABIANA TORQUATO",
+      "partido": "DC"
+    }
   },
   {
     "id": "edmilson-costa",
-    "nomeUrna": "Edmilson Costa",
-    "nomeCivil": "Edmilson Silva Costa",
+    "nomeUrna": "EDMILSON COSTA",
+    "nomeCivil": "EDMILSON SILVA COSTA",
     "partido": "PCB",
-    "partidoNome": "Partido Comunista Brasileiro",
+    "partidoNome": "PARTIDO COMUNISTA BRASILEIRO",
     "numeroUrna": "21",
     "cargo": "Presidente",
     "fotoUrl": "fotos/presidencia/edmilson-costa.jpg",
-    "fotoFonteOficial": "Acervo Partidário Oficial PCB / Registro Eleitoral",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551975",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551975",
+    "coletado_em": "2026-09-24",
     "situacaoCandidatura": "Deferido",
     "historicoPatrimonial": [
       {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 420000.0,
-        "totalFormatado": "R$ 420.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "totalDeclarado": 454485.68,
+        "totalFormatado": "R$ 454.485,68",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551975",
         "bens": [
           {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial na cidade de São Paulo/SP",
-            "valor": 380000.0
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "VALOR APLICADO",
+            "valor": 232.61
           },
           {
-            "tipo": "Caderneta de Poupança",
-            "descricao": "Saldo em poupança",
-            "valor": 40000.0
+            "tipo": "VGBL - Vida Gerador de Benefício Livre",
+            "descricao": "VALOR",
+            "valor": 52850.0
+          },
+          {
+            "tipo": "Apartamento",
+            "descricao": "50% DO APARTAMENTO",
+            "valor": 350000.0
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "VALOR APLICADO",
+            "valor": 51403.07
           }
         ]
       }
-    ]
+    ],
+    "vice": {
+      "nomeUrna": "CLEUSA SANTOS",
+      "partido": "PCB"
+    }
   },
   {
     "id": "augusto-cury",
-    "nomeUrna": "Escritor Augusto Cury",
-    "nomeCivil": "Augusto Jorge Cury",
+    "nomeUrna": "ESCRITOR AUGUSTO CURY",
+    "nomeCivil": "AUGUSTO JORGE CURY",
     "partido": "AVANTE",
-    "partidoNome": "Avante",
+    "partidoNome": "AVANTE",
     "numeroUrna": "70",
     "cargo": "Presidente",
     "fotoUrl": "fotos/presidencia/augusto-cury.jpg",
-    "fotoFonteOficial": "Divulgação Oficial / Acervo Aberto (CC BY)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551547",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551547",
+    "coletado_em": "2026-09-24",
     "situacaoCandidatura": "Deferido",
-    "vice": {
-      "nomeUrna": "Júlio Delgado",
-      "partido": "AVANTE"
-    },
     "historicoPatrimonial": [
       {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 38450000.0,
-        "totalFormatado": "R$ 38.450.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "totalDeclarado": 242593012.43,
+        "totalFormatado": "R$ 242.593.012,43",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551547",
         "bens": [
           {
-            "tipo": "Direitos Autorais e Propriedade Intelectual",
-            "descricao": "Direitos autorais de obras literárias e editoriais no Brasil e exterior",
-            "valor": 22000000.0
+            "tipo": "Apartamento",
+            "descricao": "APARTAMENTO",
+            "valor": 560000.0
           },
           {
-            "tipo": "Imóveis Residenciais e Comerciais",
-            "descricao": "Imóveis declarados nos estados de São Paulo e Minas Gerais",
-            "valor": 11500000.0
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA PRATA",
+            "valor": 45128.0
           },
           {
-            "tipo": "Aplicações Financeiras",
-            "descricao": "Fundos de investimento e títulos de renda fixa",
-            "valor": 4950000.0
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA LAVARINTO",
+            "valor": 500060.0
+          },
+          {
+            "tipo": "Outros créditos e poupança vinculados",
+            "descricao": "CRÉDITOS EM TRÂNSITO",
+            "valor": 247299.54
+          },
+          {
+            "tipo": "Prédio comercial",
+            "descricao": "PRÉDIO COMERCIAL",
+            "valor": 164654.85
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA PERNAMBUCO",
+            "valor": 180000.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA TAMBORIL E SOBRADINHO",
+            "valor": 1000000.0
+          },
+          {
+            "tipo": "Prédio residencial",
+            "descricao": "PRÉDIO URBANO",
+            "valor": 6623800.0
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA",
+            "valor": 16254.76
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA MARAVILHA/SAGARANA",
+            "valor": 200000.0
+          },
+          {
+            "tipo": "Prédio comercial",
+            "descricao": "PRÉDIO COMERCIAL",
+            "valor": 3200000.0
+          },
+          {
+            "tipo": "Apartamento",
+            "descricao": "APARTAMENTO",
+            "valor": 160809.6
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "50% DE ÁREA EM CONDOMINIO",
+            "valor": 2150000.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA",
+            "valor": 342503.28
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA CAMPINA VERDE",
+            "valor": 104998.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA CRUZ DA RETIRADA BONITA",
+            "valor": 180000.0
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "18,25% DE IMÓVEL",
+            "valor": 4388.94
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "EMPRÉSTIMO CONCEDIDO - INTELLIENCE SCHOOL LLC",
+            "valor": 4125172.3
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no exterior",
+            "descricao": "SALDO EM CONTA",
+            "valor": 11500.04
+          },
+          {
+            "tipo": "Ações (inclusive as provenientes de linha telefônica)",
+            "descricao": "AÇÕES BBDC3",
+            "valor": 7090180.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA SOBRADINHO/CORUMBÁ",
+            "valor": 201727.91
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "SÓCIO PARTICIPANTE - FICTOR INVEST LTDA",
+            "valor": 31500000.0
+          },
+          {
+            "tipo": "Outros bens móveis",
+            "descricao": "SÍTIO FIGUEIRA",
+            "valor": 180000.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA SALTO E PONTE",
+            "valor": 9025.63
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "18,25% DE IMÓVEL",
+            "valor": 26597.48
+          },
+          {
+            "tipo": "Ações (inclusive as provenientes de linha telefônica)",
+            "descricao": "AÇÕES PETR4",
+            "valor": 799500.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA SERRA BRANCA",
+            "valor": 14535.7
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "INSTITUTO ACADEMIA DE INTELIGENCIA LTDA",
+            "valor": 95000.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "FILADÉLFIA NATURE PARTICIPAÇÕES E EMPREENDIMENTOS LTDA",
+            "valor": 15607925.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "64% DE PARTICIPAÇÃO - INTELLIGENCE SCHOOL LLC",
+            "valor": 115362.06
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "CAPITAL SOCIAL - SICOOB",
+            "valor": 150582.92
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "SALDO CDB",
+            "valor": 223970.64
+          },
+          {
+            "tipo": "Fundo de Curto Prazo",
+            "descricao": "FUNDO BB GESTÃO DE RECURSOS",
+            "valor": 2558575.5
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "BRADESCO",
+            "valor": 9757.42
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA PERNAMBUCO",
+            "valor": 1000000.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "ESTÂNCIA ECOLÓGICA EM COLINA/SP",
+            "valor": 520750.0
+          },
+          {
+            "tipo": "Crédito decorrente de alienação",
+            "descricao": "DE QUOTAS - FACULDADE METROPOLITANA",
+            "valor": 2950000.0
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA",
+            "valor": 1518.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "COTAS DE CAPITAL - FLORIDA INVESTIMENTOS PARTICIPAÇÕES LTDA",
+            "valor": 4739990.0
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no exterior",
+            "descricao": "SALDO EM CONTA",
+            "valor": 40267.95
+          },
+          {
+            "tipo": "Fundo de Longo Prazo e Fundo de Investimentos em Direitos Creditórios (FIDC)",
+            "descricao": "NAVI ENERGIAS SUSTENTÁVEIS II FIP INFRAESTRUTURA",
+            "valor": 2733124.44
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA SANTOS REIS",
+            "valor": 1325721.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "EMPRÉSTIMO MUTUO - FILADÉLFIA NATURE PARTICIPAÇÕES",
+            "valor": 121190451.65
+          },
+          {
+            "tipo": "Ações (inclusive as provenientes de linha telefônica)",
+            "descricao": "ATIVOS NEGOCIADOS BDR",
+            "valor": 25827960.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA",
+            "valor": 36102.52
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "40% ÁREA EM FAZENDA",
+            "valor": 603288.0
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA",
+            "valor": 1361.47
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "80% DE PARTICIPAÇÃO - LOVE STORY JOSEFINA LLC",
+            "valor": 2570476.79
+          },
+          {
+            "tipo": "Outros créditos e poupança vinculados",
+            "descricao": "BANCO 001",
+            "valor": 241.01
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA SERRA BRANCA",
+            "valor": 110000.0
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "FAZENDA SOBRADINHO",
+            "valor": 176854.5
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "18,25% DE IMÓVEL",
+            "valor": 46775.35
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "BANCO 001",
+            "valor": 3918.95
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "QUOTAS DE CAPITAL - ACADEMIA DE GESTÃO DA EMOÇÃO LTDA",
+            "valor": 244.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "CAPITAL SOCIAL - COOPERATIVA DE CRÉDITO DE PROD. RURAIS DO TRIÂNGULO MINEIRO",
+            "valor": 941.3
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA",
+            "valor": 1866.02
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "50% DAS COTAS DE PARTICIPAÇÃO SOCIETÁRIA NA EMPRESA FREE MIND PUBLISH KKC, SITUADA NOS ESTADOS UNIDOS",
+            "valor": 268524.91
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "5% DE PARTICIPAÇÃO SOCIETÁRIA NA EMPRESA CURY ACADEMIA COMPORTAMENTAL LLC, SITUADA NOS ESTADOS UNIDOS",
+            "valor": 37710.4
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "100% DE PARTICIPAÇÃO NA EMPRESA CONTEMPLARE INVESTMENTS LLC",
+            "valor": 5114.6
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "CONTEMPLARE INTELIGÊNCIA IMOBILIÁRIA LTDA",
+            "valor": 500.0
           }
         ]
       }
-    ]
+    ],
+    "vice": {
+      "nomeUrna": "JÚLIO DELGADO",
+      "partido": "AVANTE"
+    }
   },
   {
     "id": "flavio-bolsonaro",
-    "nomeUrna": "Flávio Bolsonaro",
-    "nomeCivil": "Flávio Nantes Bolsonaro",
+    "nomeUrna": "FLAVIO BOLSONARO",
+    "nomeCivil": "FLAVIO NANTES BOLSONARO",
     "partido": "PL",
-    "partidoNome": "Partido Liberal",
+    "partidoNome": "PARTIDO LIBERAL",
     "numeroUrna": "22",
     "cargo": "Presidente",
     "fotoUrl": "fotos/presidencia/flavio-bolsonaro.jpg",
-    "fotoFonteOficial": "Senado Federal (senado.leg.br)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551544",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551544",
+    "coletado_em": "2026-09-24",
     "situacaoCandidatura": "Deferido",
-    "vice": {
-      "nomeUrna": "Alfredo Gaspar",
-      "partido": "UNIÃO"
-    },
     "historicoPatrimonial": [
-      {
-        "ano": 2006,
-        "cargoDisputado": "Deputado Estadual (RJ)",
-        "totalDeclarado": 385000.0,
-        "totalFormatado": "R$ 385.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2006/RJ/7/candidatos",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial no Rio de Janeiro/RJ",
-            "valor": 250000.0
-          },
-          {
-            "tipo": "Veículo Automotor Terrestre",
-            "descricao": "Veículo automotor terrestre declarado",
-            "valor": 65000.0
-          },
-          {
-            "tipo": "Aplicações e Depósitos",
-            "descricao": "Saldo bancário e poupança",
-            "valor": 70000.0
-          }
-        ]
-      },
-      {
-        "ano": 2010,
-        "cargoDisputado": "Deputado Estadual (RJ)",
-        "totalDeclarado": 691000.0,
-        "totalFormatado": "R$ 691.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2010/RJ/7/candidatos",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial na Barra da Tijuca, Rio de Janeiro/RJ",
-            "valor": 450000.0
-          },
-          {
-            "tipo": "Salas ou Conjuntos",
-            "descricao": "Sala comercial no Rio de Janeiro/RJ",
-            "valor": 120000.0
-          },
-          {
-            "tipo": "Aplicações Financeiras",
-            "descricao": "Investimentos e saldo bancário",
-            "valor": 121000.0
-          }
-        ]
-      },
-      {
-        "ano": 2014,
-        "cargoDisputado": "Deputado Estadual (RJ)",
-        "totalDeclarado": 714000.0,
-        "totalFormatado": "R$ 714.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/RJ/7/candidatos",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial no Rio de Janeiro/RJ",
-            "valor": 450000.0
-          },
-          {
-            "tipo": "Salas ou Conjuntos",
-            "descricao": "Sala comercial na Barra da Tijuca",
-            "valor": 140000.0
-          },
-          {
-            "tipo": "Veículo e Aplicações",
-            "descricao": "Veículo e investimentos em renda fixa",
-            "valor": 124000.0
-          }
-        ]
-      },
-      {
-        "ano": 2016,
-        "cargoDisputado": "Prefeito (Rio de Janeiro/RJ)",
-        "totalDeclarado": 1500000.0,
-        "totalFormatado": "R$ 1.500.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2016/RJ/11/candidatos",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em Laranjeiras, Rio de Janeiro/RJ",
-            "valor": 844000.0
-          },
-          {
-            "tipo": "Salas Comerciais",
-            "descricao": "Salas comerciais no Edifício Barra Prime, Rio de Janeiro/RJ",
-            "valor": 450000.0
-          },
-          {
-            "tipo": "Aplicações e Investimentos",
-            "descricao": "Quotas de franquia e aplicações financeiras",
-            "valor": 206000.0
-          }
-        ]
-      },
-      {
-        "ano": 2018,
-        "cargoDisputado": "Senador (RJ)",
-        "totalDeclarado": 1740000.0,
-        "totalFormatado": "R$ 1.740.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2018/2022802018/RJ/190000600001/bens",
-        "bens": [
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em Laranjeiras, Rio de Janeiro/RJ",
-            "valor": 950000.0
-          },
-          {
-            "tipo": "Salas Comerciais",
-            "descricao": "Salas comerciais na Barra da Tijuca, Rio de Janeiro/RJ",
-            "valor": 550000.0
-          },
-          {
-            "tipo": "Quotas de Capital / Franquia",
-            "descricao": "Participação em sociedade limitada (loja de chocolates)",
-            "valor": 100000.0
-          },
-          {
-            "tipo": "Aplicações Financeiras",
-            "descricao": "Caderneta de poupança e saldo bancário",
-            "valor": 140000.0
-          }
-        ]
-      },
       {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 8180000.0,
-        "totalFormatado": "R$ 8.180.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "totalDeclarado": 8186555.83,
+        "totalFormatado": "R$ 8.186.555,83",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551544",
         "bens": [
           {
-            "tipo": "Casa Residencial (Mansão)",
-            "descricao": "Casa residencial no setor de Mansões Dom Bosco, Lago Sul, Brasília/DF",
-            "valor": 6200000.0
+            "tipo": "Outras participações societárias",
+            "descricao": "QUOTA E QUINHÃO DE CAPITAL",
+            "valor": 46000.0
           },
           {
-            "tipo": "Salas Comerciais",
-            "descricao": "Conjunto de salas comerciais na Barra da Tijuca, Rio de Janeiro/RJ",
-            "valor": 950000.0
+            "tipo": "Casa",
+            "descricao": "CASA, LAGO SUL, BRASÍLIA",
+            "valor": 6226043.8
           },
           {
-            "tipo": "Aplicações de Renda Fixa e Fundos",
-            "descricao": "Aplicações financeiras em instituições financeiras nacionais",
-            "valor": 680000.0
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "APLICAÇÃO EM CDB - BANCO DO BRASIL",
+            "valor": 8266.1
           },
           {
-            "tipo": "Veículo Automotor Terrestre",
-            "descricao": "Veículo automotor terrestre modelo 2024",
-            "valor": 250000.0
+            "tipo": "Outras participações societárias",
+            "descricao": "QUOTA OU QUINHÃO DE CAPITAL - SOCIEDADE INDIVIDUAL DE ADVOCACIA",
+            "valor": 10000.0
           },
           {
-            "tipo": "Depósitos Bancários",
-            "descricao": "Saldo em conta corrente bancária",
-            "valor": 100000.0
+            "tipo": "Outros fundos",
+            "descricao": "FUNDO DE INVESTIMENTO EM COTAS MULTIMERCADO FIFCIC RL",
+            "valor": 1090520.47
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "QUOTA OU QUINHÃO DE CAPITAL",
+            "valor": 249.0
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "descricao": "VEÍCULO  2014",
+            "valor": 133000.0
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "SALDO CONTA POUPANÇA - BANCO ITAU",
+            "valor": 103746.23
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "BANCOS DIVERSOS",
+            "valor": 568730.23
           }
         ]
       }
-    ]
+    ],
+    "vice": {
+      "nomeUrna": "ALFREDO GASPAR",
+      "partido": "PL"
+    }
   },
   {
     "id": "hertz-dias",
-    "nomeUrna": "Hertz Dias",
-    "nomeCivil": "Hertz da Silva Dias",
+    "nomeUrna": "HERTZ DIAS",
+    "nomeCivil": "HERTZ DA CONCEICAO DIAS",
     "partido": "PSTU",
-    "partidoNome": "Partido Socialista dos Trabalhadores Unificado",
+    "partidoNome": "PARTIDO SOCIALISTA  DOS TRABALHADORES UNIFICADO",
     "numeroUrna": "16",
     "cargo": "Presidente",
     "fotoUrl": "fotos/presidencia/hertz-dias.jpg",
-    "fotoFonteOficial": "Acervo Partidário Oficial PSTU / Registro Eleitoral",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002541457",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002541457",
+    "coletado_em": "2026-09-24",
     "situacaoCandidatura": "Deferido",
     "historicoPatrimonial": [
       {
-        "ano": 2022,
-        "cargoDisputado": "Vice-Presidente",
-        "totalDeclarado": 100000.0,
-        "totalFormatado": "R$ 100.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607838/bens",
-        "bens": [
-          {
-            "tipo": "Casa",
-            "descricao": "Casa residencial em São Luís/MA",
-            "valor": 100000.0
-          }
-        ]
-      },
-      {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 120000.0,
-        "totalFormatado": "R$ 120.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "totalDeclarado": 170000.0,
+        "totalFormatado": "R$ 170.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002541457",
         "bens": [
           {
-            "tipo": "Casa",
-            "descricao": "Casa residencial em São Luís/MA",
-            "valor": 120000.0
+            "tipo": "Apartamento",
+            "descricao": "de 45 metros quadrados, 2 dormitórios, 1 Banheiro, 1 banheiro social, sala de estar/jantar conjugada, cozinha funcional e área de serviço integrada",
+            "valor": 170000.0
           }
         ]
       }
-    ]
-  },
-  {
-    "id": "luiz-inacio-lula-da-silva",
-    "nomeUrna": "Lula",
-    "nomeCivil": "Luiz Inácio Lula da Silva",
-    "partido": "PT",
-    "partidoNome": "Partido dos Trabalhadores",
-    "numeroUrna": "13",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/luiz-inacio-lula-da-silva.jpg",
-    "fotoFonteOficial": "Presidência da República / Ricardo Stuckert (gov.br)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
+    ],
     "vice": {
-      "nomeUrna": "Geraldo Alckmin",
-      "partido": "PSB"
-    },
-    "historicoPatrimonial": [
-      {
-        "ano": 2006,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 839033.52,
-        "totalFormatado": "R$ 839.033,52",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2006/BR/1/candidatos",
-        "bens": [
-          {
-            "tipo": "Terreno",
-            "descricao": "Terreno urbano em São Bernardo do Campo/SP",
-            "valor": 265000.0
-          },
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
-            "valor": 130000.0
-          },
-          {
-            "tipo": "Aplicação de Renda Fixa",
-            "descricao": "Aplicações financeiras (CDB / Fundos de Renda Fixa)",
-            "valor": 249033.52
-          },
-          {
-            "tipo": "Outros Bens Móveis",
-            "descricao": "Veículos e participações declarados à Receita Federal",
-            "valor": 195000.0
-          }
-        ]
-      },
-      {
-        "ano": 2022,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 7423725.78,
-        "totalFormatado": "R$ 7.423.725,78",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607829/bens",
-        "bens": [
-          {
-            "tipo": "VGBL - Previdência Privada",
-            "descricao": "Plano de previdência privada Vida Gerador de Benefício Livre (VGBL)",
-            "valor": 5570798.99
-          },
-          {
-            "tipo": "Construção Residencial",
-            "descricao": "Construção residencial em São Bernardo do Campo/SP",
-            "valor": 246918.82
-          },
-          {
-            "tipo": "Terreno",
-            "descricao": "Terreno em São Bernardo do Campo/SP",
-            "valor": 265000.0
-          },
-          {
-            "tipo": "Terreno",
-            "descricao": "Terreno urbano adquirido em São Bernardo do Campo/SP",
-            "valor": 130000.0
-          },
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
-            "valor": 94571.25
-          },
-          {
-            "tipo": "Veículo Automotor Terrestre",
-            "descricao": "Veículo automotor terrestre declarado",
-            "valor": 85000.0
-          },
-          {
-            "tipo": "Veículo Automotor Terrestre",
-            "descricao": "Veículo automotor terrestre declarado",
-            "valor": 48475.0
-          },
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
-            "valor": 19167.34
-          },
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
-            "valor": 19167.34
-          },
-          {
-            "tipo": "Aplicação Financeira / Outros",
-            "descricao": "Caderneta de poupança, quotas societárias e depósitos bancários",
-            "valor": 944627.04
-          }
-        ]
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 4775650.64,
-        "totalFormatado": "R$ 4.775.650,64",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "VGBL - Previdência Privada",
-            "descricao": "Plano de previdência privada VGBL",
-            "valor": 3300000.0
-          },
-          {
-            "tipo": "Construção Residencial",
-            "descricao": "Construção residencial em São Bernardo do Campo/SP",
-            "valor": 246918.82
-          },
-          {
-            "tipo": "Terreno",
-            "descricao": "Terreno em São Bernardo do Campo/SP",
-            "valor": 265000.0
-          },
-          {
-            "tipo": "Terreno",
-            "descricao": "Terreno urbano em São Bernardo do Campo/SP",
-            "valor": 130000.0
-          },
-          {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial em São Bernardo do Campo/SP",
-            "valor": 94571.25
-          },
-          {
-            "tipo": "Aplicações e Depósitos",
-            "descricao": "Saldo em caderneta de poupança e contas bancárias",
-            "valor": 739160.57
-          }
-        ]
-      }
-    ]
+      "nomeUrna": "VANESSA PORTUGAL",
+      "partido": "PSTU"
+    }
   },
   {
-    "id": "renan-santos",
-    "nomeUrna": "Renan Santos",
-    "nomeCivil": "Renan Antônio Ferreira dos Santos",
-    "partido": "MISSÃO",
-    "partidoNome": "Partido Missão",
-    "numeroUrna": "33",
+    "id": "leonardo-avalanche",
+    "nomeUrna": "LEONARDO AVALANCHE",
+    "nomeCivil": "LEONARDO ALVES DE ARAUJO",
+    "partido": "PRTB",
+    "partidoNome": "PARTIDO RENOVADOR TRABALHISTA BRASILEIRO",
+    "numeroUrna": "28",
     "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/renan-santos.jpg",
-    "fotoFonteOficial": "Divulgação Institucional / Movimento Missão",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
+    "fotoUrl": "avatar-placeholder.svg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002554479",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002554479",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Aguardando julgamento",
     "historicoPatrimonial": [
       {
         "ano": 2026,
         "cargoDisputado": "Presidente",
-        "totalDeclarado": 1250000.0,
-        "totalFormatado": "R$ 1.250.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
+        "totalDeclarado": 495030000.0,
+        "totalFormatado": "R$ 495.030.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002554479",
         "bens": [
           {
-            "tipo": "Apartamento",
-            "descricao": "Apartamento residencial na cidade de São Paulo/SP",
-            "valor": 850000.0
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "100% DAS QUOTAS ¿ AVALANCHE BANK LTDA. (CNPJ 35.741.159/0001-41)",
+            "valor": 500000.0
           },
           {
-            "tipo": "Quotas de Capital",
-            "descricao": "Participação em sociedade limitada de produção de conteúdo",
-            "valor": 250000.0
-          },
-          {
-            "tipo": "Aplicações e Depósitos",
-            "descricao": "Investimentos em renda fixa e saldo bancário",
-            "valor": 150000.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "romeu-zema",
-    "nomeUrna": "Romeu Zema",
-    "nomeCivil": "Romeu Zema Neto",
-    "partido": "NOVO",
-    "partidoNome": "Partido Novo",
-    "numeroUrna": "30",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/romeu-zema.jpg",
-    "fotoFonteOficial": "Governo do Estado de Minas Gerais (mg.gov.br)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "historicoPatrimonial": [
-      {
-        "ano": 2018,
-        "cargoDisputado": "Governador (MG)",
-        "totalDeclarado": 69752863.96,
-        "totalFormatado": "R$ 69.752.863,96",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2018/2022802018/MG/130000600001/bens",
-        "bens": [
-          {
-            "tipo": "Quotas de Sociedade / Holding",
-            "descricao": "Participação em holdings e empresas do Grupo Zema",
-            "valor": 45000000.0
-          },
-          {
-            "tipo": "Aplicações Financeiras / Fundos",
-            "descricao": "Aplicações em fundos de investimento e ações",
-            "valor": 18500000.0
-          },
-          {
-            "tipo": "Imóveis Residenciais e Comerciais",
-            "descricao": "Imóveis declarados em Araxá e Belo Horizonte/MG",
-            "valor": 6252863.96
-          }
-        ]
-      },
-      {
-        "ano": 2022,
-        "cargoDisputado": "Governador (MG)",
-        "totalDeclarado": 129795421.7,
-        "totalFormatado": "R$ 129.795.421,70",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/MG/130001607830/bens",
-        "bens": [
-          {
-            "tipo": "Quotas de Capital / Holding",
-            "descricao": "Participação na holding familiar Zema Participações",
-            "valor": 78000000.0
-          },
-          {
-            "tipo": "Aplicações em Fundos de Investimento",
-            "descricao": "Cotas de fundos de investimento multimercado e renda fixa",
-            "valor": 43500000.0
-          },
-          {
-            "tipo": "Imóveis e Terrenos",
-            "descricao": "Casas, apartamentos e terrenos em Minas Gerais",
-            "valor": 8295421.7
-          }
-        ]
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 178700000.0,
-        "totalFormatado": "R$ 178.700.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Quotas de Holding Familiar",
-            "descricao": "Participações societárias na holding familiar do Grupo Zema",
-            "valor": 94000000.0
-          },
-          {
-            "tipo": "Fundos de Investimento e Renda Fixa",
-            "descricao": "Carteira de fundos de investimento e aplicações no Brasil",
-            "valor": 56200000.0
-          },
-          {
-            "tipo": "Imóveis Residenciais e Terrenos",
-            "descricao": "Propriedades residenciais e terrenos no estado de Minas Gerais",
-            "valor": 28500000.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ronaldo-caiado",
-    "nomeUrna": "Ronaldo Caiado",
-    "nomeCivil": "Ronaldo Ramos Caiado",
-    "partido": "PSD",
-    "partidoNome": "Partido Social Democrático",
-    "numeroUrna": "55",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/ronaldo-caiado.jpg",
-    "fotoFonteOficial": "Governo do Estado de Goiás (go.gov.br)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "vice": {
-      "nomeUrna": "Gilberto Kassab",
-      "partido": "PSD"
-    },
-    "historicoPatrimonial": [
-      {
-        "ano": 2014,
-        "cargoDisputado": "Senador (GO)",
-        "totalDeclarado": 7500000.0,
-        "totalFormatado": "R$ 7.500.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/GO/5/candidatos",
-        "bens": [
-          {
-            "tipo": "Imóvel Rural / Fazenda",
-            "descricao": "Fazendas e terras agropecuárias no estado de Goiás",
-            "valor": 5200000.0
-          },
-          {
-            "tipo": "Rebanho Bovino",
-            "descricao": "Semoventes e rebanho de gado bovino",
-            "valor": 1500000.0
-          },
-          {
-            "tipo": "Imóveis Urbanos",
-            "descricao": "Casas residenciais em Goiânia/GO e Brasília/DF",
-            "valor": 800000.0
-          }
-        ]
-      },
-      {
-        "ano": 2018,
-        "cargoDisputado": "Governador (GO)",
-        "totalDeclarado": 8200000.0,
-        "totalFormatado": "R$ 8.200.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2018/2022802018/GO/90000600001/bens",
-        "bens": [
-          {
-            "tipo": "Imóveis Rurais / Terras",
-            "descricao": "Fazendas e propriedades agropecuárias em Goiás e Bahia",
-            "valor": 5800000.0
-          },
-          {
-            "tipo": "Rebanho de Gado",
-            "descricao": "Gado bovino registrado na agropecuária",
-            "valor": 1600000.0
-          },
-          {
-            "tipo": "Imóveis Urbanos e Aplicações",
-            "descricao": "Apartamento em Goiânia e fundos bancários",
-            "valor": 800000.0
-          }
-        ]
-      },
-      {
-        "ano": 2022,
-        "cargoDisputado": "Governador (GO)",
-        "totalDeclarado": 24890000.0,
-        "totalFormatado": "R$ 24.890.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/GO/90001607855/bens",
-        "bens": [
-          {
-            "tipo": "Fazendas e Propriedades Rurais",
-            "descricao": "Áreas rurais agropecuárias em Goiás",
-            "valor": 17500000.0
-          },
-          {
-            "tipo": "Rebanho Bovino",
-            "descricao": "Cabeças de gado e matrizes reprodutoras",
-            "valor": 5500000.0
-          },
-          {
-            "tipo": "Imóveis Urbanos e Investimentos",
-            "descricao": "Casas e aplicações financeiras",
-            "valor": 1890000.0
-          }
-        ]
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 52560000.0,
-        "totalFormatado": "R$ 52.560.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Imóveis Rurais e Urbanos",
-            "descricao": "Fazendas produtivas e imóveis nos estados de GO e BA",
-            "valor": 36200000.0
-          },
-          {
-            "tipo": "Rebanho Bovino (Semoventes)",
-            "descricao": "Rebanho bovino e gado de corte/criação registrado",
-            "valor": 10490000.0
-          },
-          {
-            "tipo": "Aplicações e Participações",
-            "descricao": "Aplicações de renda fixa, quotas societárias e depósitos",
-            "valor": 5870000.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "rui-costa-pimenta",
-    "nomeUrna": "Rui Costa Pimenta",
-    "nomeCivil": "Rui Costa Pimenta",
-    "partido": "PCO",
-    "partidoNome": "Partido da Causa Operária",
-    "numeroUrna": "29",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/rui-costa-pimenta.jpg",
-    "fotoFonteOficial": "Agência Brasil / EBC (agenciabrasil.ebc.com.br)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "vice": {
-      "nomeUrna": "Antônio Carlos",
-      "partido": "PCO"
-    },
-    "historicoPatrimonial": [
-      {
-        "ano": 2014,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 0.0,
-        "totalFormatado": "R$ 0,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2014/BR/1/candidatos",
-        "bens": []
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 0.0,
-        "totalFormatado": "R$ 0,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": []
-      }
-    ]
-  },
-  {
-    "id": "samara-martins",
-    "nomeUrna": "Samara Martins",
-    "nomeCivil": "Samara Martins de Oliveira",
-    "partido": "UP",
-    "partidoNome": "Unidade Popular",
-    "numeroUrna": "80",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/samara-martins.jpg",
-    "fotoFonteOficial": "TSE DivulgaCandContas (Registro Oficial 2022)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "vice": {
-      "nomeUrna": "Raquel Brício",
-      "partido": "UP"
-    },
-    "historicoPatrimonial": [
-      {
-        "ano": 2022,
-        "cargoDisputado": "Vice-Presidente",
-        "totalDeclarado": 3500.0,
-        "totalFormatado": "R$ 3.500,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2022/2040602022/BR/280001607839/bens",
-        "bens": [
-          {
-            "tipo": "Caderneta de Poupança",
-            "descricao": "Saldo em caderneta de poupança na Caixa Econômica",
-            "valor": 3500.0
-          }
-        ]
-      },
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 4800.0,
-        "totalFormatado": "R$ 4.800,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Caderneta de Poupança",
-            "descricao": "Saldo em caderneta de poupança",
-            "valor": 4800.0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "wilson-grassi",
-    "nomeUrna": "Veterinário Wilson Grassi",
-    "nomeCivil": "Wilson Grassi Júnior",
-    "partido": "DEMOCRATA",
-    "partidoNome": "Democrata",
-    "numeroUrna": "35",
-    "cargo": "Presidente",
-    "fotoUrl": "fotos/presidencia/wilson-grassi.jpg",
-    "fotoFonteOficial": "TSE DivulgaCandContas (Registro Eleitoral)",
-    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/",
-    "situacaoCandidatura": "Deferido",
-    "historicoPatrimonial": [
-      {
-        "ano": 2026,
-        "cargoDisputado": "Presidente",
-        "totalDeclarado": 1850000.0,
-        "totalFormatado": "R$ 1.850.000,00",
-        "tseUrl": "https://divulgacandcontas.tse.jus.br/",
-        "bens": [
-          {
-            "tipo": "Instalações e Clínica Veterinária",
-            "descricao": "Prédio comercial e equipamentos de clínica veterinária em São Paulo/SP",
+            "tipo": "Jóia, quadro, objeto de arte, de coleção, antiguidade, etc.",
+            "descricao": "JÓIAS",
             "valor": 1200000.0
           },
           {
-            "tipo": "Apartamento Residencial",
-            "descricao": "Apartamento residencial em São Paulo/SP",
-            "valor": 550000.0
+            "tipo": "Jóia, quadro, objeto de arte, de coleção, antiguidade, etc.",
+            "descricao": "OBRAS DE ARTE",
+            "valor": 2230000.0
           },
           {
-            "tipo": "Aplicações Financeiras",
-            "descricao": "Saldo bancário e poupança",
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "100% DAS QUOTAS ¿ AVALANCHE CONSULTORIA PARTICIPAÇÃO   INCORPORAÇÃO LTDA. (CNPJ 19.152.972/0001-20)",
+            "valor": 100000.0
+          },
+          {
+            "tipo": "Outras aplicações e Investimentos",
+            "descricao": "INVESTIMENTOS EM CRIPTOMOEDAS ¿ BITCOIN",
+            "valor": 491000000.0
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "LEONARDO AVALANCHE",
+      "partido": "PRTB"
+    }
+  },
+  {
+    "id": "luiz-inacio-lula-da-silva",
+    "nomeUrna": "LULA",
+    "nomeCivil": "LUIZ INÁCIO LULA DA SILVA",
+    "partido": "PT",
+    "partidoNome": "PARTIDO DOS TRABALHADORES",
+    "numeroUrna": "13",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/luiz-inacio-lula-da-silva.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002542548",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002542548",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 4775650.640000001,
+        "totalFormatado": "R$ 4.775.650,64",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002542548",
+        "bens": [
+          {
+            "tipo": "Fundo de Curto Prazo",
+            "descricao": "FUNDO DI PLUS AGIL",
+            "valor": 132834.2
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "64,08% DE TERRENO LOCALIZADO NO DISTRITO DO RIACHO GRANDE, SÃO BERNARDO DO CAMPO",
+            "valor": 265000.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "98% DO CAPITAL SOCIAL DA L.I.L.S PALESTRAS, EVENTOS E PUBLICAÇÕES",
+            "valor": 49000.0
+          },
+          {
+            "tipo": "VGBL - Vida Gerador de Benefício Livre",
+            "descricao": "BANCO BRADESCO",
+            "valor": 1380000.0
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "CADERNETA DE POUPANÇA",
+            "valor": 0.13
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "CREDITO DECORRENTE DO DISTRATO DATADO  EM 11/2015., COM SOLICITACAO DE RESGATE,  DA QUOTA PARTE DO TERMO DE ADESAO E COMPROMISSO DE PARTICIPACAO PARA  IMPLANTACAO E CONSTRUCAO ATRAVES DA BANCOOP",
+            "valor": 179298.96
+          },
+          {
+            "tipo": "Apartamento",
+            "descricao": "50% DO APARTAMENTO LOCALIZADO EM SÃO BERNARDO DO CAMPO",
+            "valor": 94571.25
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "26,68% DE SÍTIO  NO DISTRITO DE RIACHO GRANDE, SÃO BERNARDO DO CAMPO",
+            "valor": 130000.0
+          },
+          {
+            "tipo": "Outras aplicações e Investimentos",
+            "descricao": "APLICAÇÃO FINANCEIRA - BANCO DO BRASIL",
+            "valor": 485.39
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "BRADESCO FUNDO DE INVESTIMENTO EM COTAS DE FUNDOS DE INVESTIMENTO RENDA FIXA SIMPLES",
+            "valor": 6277.62
+          },
+          {
+            "tipo": "Fundo de Investimento Imobiliário",
+            "descricao": "TVRI11",
+            "valor": 50000.0
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "SALDO EM CADERNETA DE POUPANÇA",
+            "valor": 14.99
+          },
+          {
+            "tipo": "Construção",
+            "descricao": "CASA EM CONSTRUÇÃO SÃO BERNARDO DO CAMPO",
+            "valor": 246918.82
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "descricao": "MARCA CHEVROLET, ANO 2010/2011",
+            "valor": 50000.0
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "SITUADO NO DISTRITO DE RIACHO GRANDE EM SÃO BERNARDO DO CAMPO",
+            "valor": 2733.45
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "BRADESCO",
+            "valor": 56671.07
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "BB RF LP HIGH",
+            "valor": 207917.4
+          },
+          {
+            "tipo": "VGBL - Vida Gerador de Benefício Livre",
+            "descricao": "BRASILPREV SEGUROS",
+            "valor": 1923927.36
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "GERALDO ALCKMIN",
+      "partido": "PSB"
+    }
+  },
+  {
+    "id": "pablo-marcal",
+    "nomeUrna": "PABLO MARÇAL",
+    "nomeCivil": "PABLO HENRIQUE COSTA MARCAL",
+    "partido": "PRTB",
+    "partidoNome": "PARTIDO RENOVADOR TRABALHISTA BRASILEIRO",
+    "numeroUrna": "28",
+    "cargo": "Presidente",
+    "fotoUrl": "avatar-placeholder.svg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002553884",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002553884",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 149986151.74000004,
+        "totalFormatado": "R$ 149.986.151,74",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002553884",
+        "bens": [
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "APLICAÇÃO DE RENDA FIXA (CDB, RDB E OUTROS)  LFT - XP INVESTIMENTOS CCTVM S.A.",
+            "valor": 138314.62
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO - BANCO SAFRA DI MAST RF REFERENCIADO LP",
+            "valor": 6644693.42
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - MARÇAL PARTICIPAÇÕES LTDA (90%)  OUTRAS PARTICIPAÇÕES SOCIETÁRIAS",
+            "valor": 2555475.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "IPO DO BEM DESCRIÇÃO BEM  VALOR (R$)  APLICAÇÃO DE RENDA FIXA (CDB, RDB E OUTROS) BANCO SAFRA - SALDO EM CONTA POUPANÇA",
+            "valor": 1042.59
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "APLICAÇÃO DE RENDA FIXA (CDB, RDB E OUTROS)  BANCO ITAÚ - LETRA IMOBILIÁRIA GARANTIDA",
+            "valor": 4900384.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "OUTRAS PARTICIPAÇÕES SOCIETÁRIAS  PARTICIPAÇÃO SOCIETÁRIA - INTEGRALIZAÇÃO CONTRATUAL (CNPJ 58.088.630/0001-40, 75%)",
+            "valor": 9232500.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "APLICAÇÃO DE RENDA FIXA (CDB, RDB E OUTROS)  SALDO APLICAÇÃO CDB - BANCO ITAÚ",
+            "valor": 26220.6
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO - GENIAL CORRETORA / XEQUE-MATE FIM",
+            "valor": 583498.21
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "APLICAÇÃO DE RENDA FIXA (CDB, RDB E OUTROS)  SALDO RENDA FIXA BANCO ITAÚ - RDB/CDB",
+            "valor": 6791824.75
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "DEPÓSITO BANCÁRIO EM CONTA CORRENTE NO PAÍS  SALDO EM CONTA CORRENTE - BANCO GENIAL S.A. R",
+            "valor": 234887.39
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "TERRENO URBANO - ALAMEDA BIRMANIA, SANTANA DE PARNAÍBA/SP",
+            "valor": 4900000.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO INCENTIVADO DE INVESTIMENTO EM INFRAESTRUTURA - ITAÚ DEB INC PÓS-FIXADO R",
+            "valor": 6426476.03
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "TERRENO (FRAÇÃO) RECEBIDO EM DAÇÃO EM PAGAMENTO - PIRENÓPOLIS/GO",
+            "valor": 964726.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - AVIATION PARTICIPAÇÕES LTDA (80%)  OUTRAS PARTICIPAÇÕES SOCIETÁRIAS",
+            "valor": 80000000.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - MARÇAL HOLDING LTDA (50%)  OUTRAS PARTICIPAÇÕES SOCIETÁRIAS",
+            "valor": 19871592.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "DEPÓSITO BANCÁRIO EM CONTA CORRENTE NO PAÍS SALDO EM CONTA CORRENTE - XP INVESTIMENTOS CCTVM S.A.",
+            "valor": 21146.41
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO - XEQUE-MATE MULTIMERCADO",
+            "valor": 293646.63
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - DAMA11 R",
+            "valor": 4653970.66
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA CORRENTE - BANCO BTG PACTUAL S.A",
+            "valor": 95.09
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA CORRENTE - BANCO ITAÚ (AG. 6374/CC 18487-4)",
+            "valor": 1.01
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "SALDO EM CONTA CORRENTE - BANCO ITAÚ (AG. 6374/CC 38488-8)",
+            "valor": 1.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - HGIC11",
+            "valor": 16835.19
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - IBCR11",
+            "valor": 21123.51
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - KISU11",
+            "valor": 15927.78
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - ARRI11",
+            "valor": 52608.36
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - TGAR11",
+            "valor": 58943.3
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - IRIM11",
+            "valor": 17429.47
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - VIUR11",
+            "valor": 4132.68
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - GLOG11",
+            "valor": 35511.16
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - TRXF11",
+            "valor": 24907.87
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - FLAT PARTICIPAÇÕES LTDA (50%)",
+            "valor": 500000.0
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - MCAR PATRIMONIAL LTDA (80%)",
+            "valor": 80000.0
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "FUNDO DE INVESTIMENTO IMOBILIÁRIO - RBRX11",
+            "valor": 40162.42
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - MARÇAL LOTEAMENTO PARTICIPAÇÕES LTDA (100%)",
+            "valor": 100000.0
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SOCIETÁRIA - PARVAIM GOLD MINERAÇÃO E PARTICIPAÇÕES LTDA (100%)",
+            "valor": 10000.0
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SCP PRIMO RICO - BOSSA NOVA INVESTIMENTOS",
+            "valor": 99073.63
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SCP POOL SPORTTECH - BOSSA NOVA INVESTIMENTOS",
+            "valor": 95934.56
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SCP POOL BRASIL 6 - BOSSA NOVA INVESTIMENTOS",
+            "valor": 93334.35
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SCP POOL O ANJO - BOSSA NOVA INVESTIMENTOS",
+            "valor": 80305.96
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SCP POOL EDUTECH - BOSSA NOVA INVESTIMENTOS",
+            "valor": 93148.36
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "PARTICIPAÇÃO SCP POOL ANGEL LIST II - BOSSA NOVA INVESTIMENTOS",
+            "valor": 144093.4
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "CHÁCARA EM TRINDADE/GO - CONDOMÍNIO DE CHÁCARA CANAÃ",
+            "valor": 62184.33
+          },
+          {
+            "tipo": "Sala ou conjunto",
+            "descricao": "SALA COMERCIAL - GOIÁS CENTER MODAS, GOIÂNIA/GO",
             "valor": 100000.0
           }
         ]
       }
-    ]
+    ],
+    "vice": {
+      "nomeUrna": "LEONARDO AVALANCHE",
+      "partido": "PRTB"
+    }
+  },
+  {
+    "id": "renan-santos",
+    "nomeUrna": "RENAN SANTOS",
+    "nomeCivil": "RENAN ANTONIO FERREIRA DOS SANTOS",
+    "partido": "MISSÃO",
+    "partidoNome": "PARTIDO MISSÃO",
+    "numeroUrna": "14",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/renan-santos.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002540694",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002540694",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 795089.0,
+        "totalFormatado": "R$ 795.089,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002540694",
+        "bens": [
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "QUOTAS DE CAPITAL",
+            "valor": 100000.0
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "QUOTAS DE SOCIEDADE",
+            "valor": 119760.0
+          },
+          {
+            "tipo": "Outros créditos e poupança vinculados",
+            "descricao": "OUTROS CRÉDITOS E POUPANÇA VINCULADOS",
+            "valor": 300000.0
+          },
+          {
+            "tipo": "Bem relacionado com o exercício da atividade autônoma",
+            "descricao": "BEM RELACIONADO COM O EXERCÍCIO DA ATIVIDADE AUTÔNOMA",
+            "valor": 275329.0
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "CORONEL MEDINA",
+      "partido": "MISSÃO"
+    }
+  },
+  {
+    "id": "ronaldo-caiado",
+    "nomeUrna": "RONALDO CAIADO",
+    "nomeCivil": "RONALDO RAMOS CAIADO",
+    "partido": "PSD",
+    "partidoNome": "PARTIDO SOCIAL DEMOCRÁTICO",
+    "numeroUrna": "55",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/ronaldo-caiado.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551932",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551932",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 52557930.980000004,
+        "totalFormatado": "R$ 52.557.930,98",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002551932",
+        "bens": [
+          {
+            "tipo": "Ações (inclusive as provenientes de linha telefônica)",
+            "descricao": "AÇÕES",
+            "valor": 133.53
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "descricao": "VEÍCULO AUTOMOTOR TERRESTRE",
+            "valor": 7100.0
+          },
+          {
+            "tipo": "Sala ou conjunto",
+            "descricao": "SALAS OU CONJUNTOS",
+            "valor": 35711.94
+          },
+          {
+            "tipo": "Outras aplicações e Investimentos",
+            "descricao": "TÍTULO DE CAPITALIZAÇÃO",
+            "valor": 3385.99
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "IMÓVEIS DO TIPO RURAL",
+            "valor": 36213674.73
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "CASA",
+            "valor": 70000.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "QUOTAS OU QUINHÕES DE CAPITAL",
+            "valor": 1008634.21
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "DEPÓSITOS À VISTA / NUMERÁRIO",
+            "valor": 44881.89
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "descricao": "OUTROS BENS IMÓVEIS",
+            "valor": 4640.34
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "TERRENO",
+            "valor": 243037.95
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "descricao": "OUTRAS PARTICIPAÇÕES SOCIETÁRIAS",
+            "valor": 148613.18
+          },
+          {
+            "tipo": "Outros fundos",
+            "descricao": "FUNDOS DE INVESTIMENTO",
+            "valor": 16.71
+          },
+          {
+            "tipo": "Outras aplicações e Investimentos",
+            "descricao": "TÍTULOS ISENTOS DE TRIBUTAÇÃO (LIG/LCI/LCA/CRI/CRA)",
+            "valor": 4288620.51
+          },
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "SEMOVENTES (REBANHO) - VALOR TOTAL DE MERCADO - ESTIMADO",
+            "valor": 10489480.0
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "GILBERTO KASSAB",
+      "partido": "PSD"
+    }
+  },
+  {
+    "id": "rui-costa-pimenta",
+    "nomeUrna": "RUI COSTA PIMENTA",
+    "nomeCivil": "RUI COSTA PIMENTA",
+    "partido": "PCO",
+    "partidoNome": "PARTIDO DA CAUSA OPERÁRIA",
+    "numeroUrna": "29",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/rui-costa-pimenta.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002552487",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002552487",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 0.0,
+        "totalFormatado": "R$ 0,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002552487",
+        "bens": []
+      }
+    ],
+    "vice": {
+      "nomeUrna": "ANTÔNIO CARLOS",
+      "partido": "PCO"
+    }
+  },
+  {
+    "id": "samara-martins",
+    "nomeUrna": "SAMARA",
+    "nomeCivil": "SAMARA MARTINS DA SILVA FEITOSA",
+    "partido": "UP",
+    "partidoNome": "UNIDADE POPULAR",
+    "numeroUrna": "80",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/samara-martins.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002538811",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002538811",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 33000.0,
+        "totalFormatado": "R$ 33.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002538811",
+        "bens": [
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "descricao": "UNO VIVACE 2016",
+            "valor": 29000.0
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "POUPANÇA",
+            "valor": 4000.0
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "RAQUEL BRÍCIO",
+      "partido": "UP"
+    }
+  },
+  {
+    "id": "wilson-grassi",
+    "nomeUrna": "VETERINÁRIO WILSON GRASSI",
+    "nomeCivil": "WILSON GRASSI JUNIOR",
+    "partido": "DEMOCRATA",
+    "partidoNome": "DEMOCRATA",
+    "numeroUrna": "35",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/wilson-grassi.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002548139",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002548139",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 50000000.0,
+        "totalFormatado": "R$ 50.000.000,00",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002548139",
+        "bens": [
+          {
+            "tipo": "OUTROS BENS E DIREITOS",
+            "descricao": "BENS IMÓVEIS: POSSE E DIREITOS SOBRE DIVERSOS IMÓVEIS FINANCIADOS JUNTO A INSTITUIÇÕES FINANCEIRAS. ¿ PARTICIPAÇÕES SOCIETÁRIAS: PARTICIPAÇÃO NO CAPITAL SOCIAL DE DIVERSAS SOCIEDADES EMPRESARIAIS.",
+            "valor": 50000000.0
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "SUÊD HAIDAR",
+      "partido": "DEMOCRATA"
+    }
+  },
+  {
+    "id": "romeu-zema",
+    "nomeUrna": "ZEMA",
+    "nomeCivil": "ROMEU ZEMA NETO",
+    "partido": "NOVO",
+    "partidoNome": "PARTIDO NOVO",
+    "numeroUrna": "30",
+    "cargo": "Presidente",
+    "fotoUrl": "fotos/presidencia/romeu-zema.jpg",
+    "fotoFonteOficial": "https://dadosabertos.tse.jus.br",
+    "tsePerfilUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002539826",
+    "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002539826",
+    "coletado_em": "2026-09-24",
+    "situacaoCandidatura": "Deferido",
+    "historicoPatrimonial": [
+      {
+        "ano": 2026,
+        "cargoDisputado": "Presidente",
+        "totalDeclarado": 178707610.08999997,
+        "totalFormatado": "R$ 178.707.610,09",
+        "tseUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/2026/6257/BR/280002539826",
+        "bens": [
+          {
+            "tipo": "Fundos: Ações, Mútuos de Privatização, Invest. Empresas Emergentes, Invest.Participação e Invest. Índice Mercado",
+            "descricao": "FUNDO DE INVESTIMENTO EM AÇÕES",
+            "valor": 1556006.67
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "PARTICIPAÇÃO EM SEGURADORA",
+            "valor": 3666680.0
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "APLICAÇÃO DE RENDA FIXA",
+            "valor": 3964283.93
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "APLICAÇÃO EM CDB",
+            "valor": 337400.33
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "CONTA CORRENTE EM COOPERATIVA",
+            "valor": 14.86
+          },
+          {
+            "tipo": "Casa",
+            "descricao": "IMÓVEL RESIDENCIAL REFORMADO",
+            "valor": 704864.25
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "PARTICIPAÇÃO EM EMPRESA IMOBILIÁRIA",
+            "valor": 47000.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "PARTICIPAÇÃO EM INSTITUIÇÃO FINANCEIRA",
+            "valor": 16834806.0
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "descricao": "CONTA CORRENTE EM COOPERATIVA",
+            "valor": 9848.34
+          },
+          {
+            "tipo": "Fundos: Ações, Mútuos de Privatização, Invest. Empresas Emergentes, Invest.Participação e Invest. Índice Mercado",
+            "descricao": "FUNDO DE INVESTIMENTO MULTIMERCADO",
+            "valor": 56218194.15
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "descricao": "POUPANÇA BANCÁRIA",
+            "valor": 119.02
+          },
+          {
+            "tipo": "Fundo de Longo Prazo e Fundo de Investimentos em Direitos Creditórios (FIDC)",
+            "descricao": "FUNDO DE INVESTIMENTO RENDA FIXA",
+            "valor": 362.56
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "QUOTAS EM COOPERATIVA DE CRÉDITO",
+            "valor": 393000.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "QUOTAS OU QUINHÕES DE CAPITAL",
+            "valor": 3959.16
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "descricao": "FUNDO DE INVESTIMENTO RENDA FIXA",
+            "valor": 4306.56
+          },
+          {
+            "tipo": "Terreno",
+            "descricao": "TERRENO RECEBIDO EM DOAÇÃO",
+            "valor": 70000.0
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "descricao": "PARTICIPAÇÃO EM HOLDING FAMILIAR",
+            "valor": 94498898.0
+          },
+          {
+            "tipo": "Fundos: Ações, Mútuos de Privatização, Invest. Empresas Emergentes, Invest.Participação e Invest. Índice Mercado",
+            "descricao": "FUNDO DE INVESTIMENTO EM COTAS",
+            "valor": 397866.26
+          }
+        ]
+      }
+    ],
+    "vice": {
+      "nomeUrna": "EDUARDO GIRÃO",
+      "partido": "NOVO"
+    }
   }
 ]
