@@ -30,6 +30,7 @@ const parlamentares: ParlamentarCardData[] = [
     total_cota_formatado: d.despesas_2026?.total_formatado,
     total_cota: d.despesas_2026?.total_gasto,
     total_votos: Object.keys(d.votos || {}).length,
+    participacao_votacoes: d.participacao_votacoes,
     patrimonio_formatado: d.candidatura_2026?.patrimonio?.total_formatado,
     patrimonio_total: d.candidatura_2026?.patrimonio?.total_declarado,
     total_emendas_formatado: d.emendas?.total_pago_formatado,
@@ -51,6 +52,7 @@ const parlamentares: ParlamentarCardData[] = [
     total_cota_formatado: s.despesas_2026?.total_formatado,
     total_cota: s.despesas_2026?.total_gasto,
     total_votos: Object.keys(s.votos || {}).length,
+    participacao_votacoes: s.participacao_votacoes,
     patrimonio_formatado: s.candidatura_2026?.patrimonio?.total_formatado,
     patrimonio_total: s.candidatura_2026?.patrimonio?.total_declarado,
     total_emendas_formatado: s.emendas?.total_pago_formatado,
@@ -218,12 +220,15 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
 
     <!-- Lista/Tabela ordenável -->
     <div id="parlamentaresTable" class="hidden pt-6 overflow-x-auto">
-      <div class="min-w-[640px] flex flex-col gap-1.5">
-        <div class="grid grid-cols-[2.2fr_0.9fr_1.3fr_1.3fr_1.3fr] gap-3 px-3.5 pb-1 text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
+      <div class="min-w-[760px] flex flex-col gap-1.5">
+        <div class="grid grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr_1.2fr] gap-3 px-3.5 pb-1 text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
           <button type="button" data-sort-key="nome" class="sort-btn text-left hover:text-slate-900 transition">
             Parlamentar <span class="sort-arrow"></span>
           </button>
           <span>Casa</span>
+          <button type="button" data-sort-key="votos" class="sort-btn text-left hover:text-slate-900 transition" title="Presença de voto registrado nas votações cruciais catalogadas">
+            Votações-Chave <span class="sort-arrow"></span>
+          </button>
           <button type="button" data-sort-key="cota" class="sort-btn text-left hover:text-slate-900 transition">
             Gastos de Cota <span class="sort-arrow"></span>
           </button>
@@ -240,8 +245,9 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
           ))}
         </div>
       </div>
-      <p class="text-xs text-slate-400 pt-3 px-1">
-        Valores ausentes ("—") indicam que a fonte oficial não tem registro para o parlamentar no período coberto — não significam gasto/emenda/patrimônio zero.
+      <p class="text-xs text-slate-400 pt-3 px-1 leading-relaxed">
+        • <strong>Votações-Chave:</strong> indica a presença de voto registrado no painel eletrônico nas votações nominais catalogadas pela Ficha do Político (10 na Câmara e 9 no Senado). Não afere presença física diária em plenário nem sessões sem deliberação nominal. Suplentes e parlamentares licenciados para o Executivo podem apresentar menor total em razão do período em exercício.<br />
+        • Valores ausentes ("—") indicam que a fonte oficial não tem registro para o parlamentar no período coberto — não significam gasto/emenda/patrimônio zero.
       </p>
     </div>
 
@@ -376,8 +382,8 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
     });
 
     // Ordenação da tabela por coluna
-    const DEFAULT_DIR = { nome: 'asc', cota: 'desc', emendas: 'desc', patrimonio: 'desc' };
-    const ATTR_BY_KEY = { nome: 'data-nome', cota: 'data-cota', emendas: 'data-emendas', patrimonio: 'data-patrimonio' };
+    const DEFAULT_DIR = { nome: 'asc', votos: 'desc', cota: 'desc', emendas: 'desc', patrimonio: 'desc' };
+    const ATTR_BY_KEY = { nome: 'data-nome', votos: 'data-votos', cota: 'data-cota', emendas: 'data-emendas', patrimonio: 'data-patrimonio' };
     let currentSort = { key: null, dir: null };
 
     function compareRows(a, b, key, dir) {

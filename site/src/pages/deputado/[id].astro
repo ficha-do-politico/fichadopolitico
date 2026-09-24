@@ -89,6 +89,11 @@ const tabs = [
           <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs text-slate-600 bg-slate-50 border border-slate-200">
             {deputado.situacao}
           </span>
+          {deputado.participacao_votacoes && (
+            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200" title="Votos registrados no painel eletrônico nas votações nominais catalogadas">
+              Votações-Chave: {deputado.participacao_votacoes.formatado} ({deputado.participacao_votacoes.percentual.toFixed(0)}%)
+            </span>
+          )}
           {deputado.despesas_2026 && (
             <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
               Cota CEAP 2026: {deputado.despesas_2026.total_formatado}
@@ -151,7 +156,7 @@ const tabs = [
         Sobre esta ficha pública
       </div>
       <p>
-        Esta página exibe os votos oficiais registrados no painel eletrônico do Plenário da Câmara dos Deputados em matérias cruciais de grande repercussão nacional. Todos os registros possuem link direto para a fonte oficial do Congresso. A ficha não expressa juízo de valor ou rotulação política.
+        Esta página exibe os votos oficiais registrados no painel eletrônico do Plenário da Câmara dos Deputados em matérias cruciais de grande repercussão nacional. A métrica de Votações-Chave afere a presença de voto registrado no painel oficial destas decisões catalogadas (não mede presença física diária em plenário). Todos os registros possuem link direto para a fonte oficial do Congresso. A ficha não expressa juízo de valor ou rotulação política.
       </p>
     </div>
 
@@ -163,9 +168,17 @@ const tabs = [
             <h2 class="text-xl font-bold text-slate-900">
               Votações em Temas Nacionais Relevantes
             </h2>
-            <span class="text-xs text-slate-500 font-medium">
-              {temas.length} decisões cadastradas
-            </span>
+            <div class="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+              <span>{temas.length} decisões cadastradas</span>
+              {deputado.participacao_votacoes && (
+                <>
+                  <span>•</span>
+                  <span class="font-semibold text-emerald-700">
+                    {deputado.participacao_votacoes.registrados} votos registrados ({deputado.participacao_votacoes.percentual.toFixed(0)}%)
+                  </span>
+                </>
+              )}
+            </div>
           </div>
 
           <div class="space-y-4">

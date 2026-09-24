@@ -118,6 +118,13 @@ export interface EmendasParlamentar {
   url_portal_transparencia: string;
 }
 
+export interface ParticipacaoVotacoes {
+  total: number;
+  registrados: number;
+  percentual: number;
+  formatado: string;
+}
+
 export interface Deputado {
   id: number;
   nome_eleitoral: string;
@@ -128,6 +135,7 @@ export interface Deputado {
   url_foto: string;
   url_perfil_camara: string;
   votos: Record<string, string>;
+  participacao_votacoes?: ParticipacaoVotacoes;
   candidatura_2026?: Candidatura2026 | null;
   despesas_2026?: DespesasCEAP | null;
   emendas?: EmendasParlamentar | null;
@@ -143,6 +151,7 @@ export interface Senador {
   url_foto: string;
   url_perfil_senado: string;
   votos: Record<string, string>;
+  participacao_votacoes?: ParticipacaoVotacoes;
   candidatura_2026?: Candidatura2026 | null;
   despesas_2026?: DespesasCEAP | null;
   emendas?: EmendasParlamentar | null;
@@ -166,6 +175,7 @@ export interface ParlamentarCardData {
   total_cota_formatado?: string;
   total_cota?: number;
   total_votos?: number;
+  participacao_votacoes?: ParticipacaoVotacoes;
   patrimonio_formatado?: string;
   patrimonio_total?: number;
   total_emendas_formatado?: string;

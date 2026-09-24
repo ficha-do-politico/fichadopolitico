@@ -91,6 +91,11 @@ const tabs = [
           <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs text-slate-600 bg-slate-50 border border-slate-200">
             {senador.situacao}
           </span>
+          {senador.participacao_votacoes && (
+            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200" title="Votos registrados no painel eletrônico nas votações nominais catalogadas">
+              Votações-Chave: {senador.participacao_votacoes.formatado} ({senador.participacao_votacoes.percentual.toFixed(0)}%)
+            </span>
+          )}
           {senador.despesas_2026 && (
             <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
               Cota CEAPS 2026: {senador.despesas_2026.total_formatado}
@@ -153,7 +158,7 @@ const tabs = [
         Sobre a ficha no Senado Federal
       </div>
       <p>
-        Esta página integra a expansão bicameral do Ficha do Político (AD-014), cobrindo os 81 Senadores da República em exercício na 57ª Legislatura. Todos os dados são rastreáveis à API oficial de Dados Abertos do Senado Federal.
+        Esta página integra a expansão bicameral do Ficha do Político (AD-014), cobrindo os 81 Senadores da República em exercício na 57ª Legislatura. A métrica de Votações-Chave indica a presença de voto registrado no painel das matérias catalogadas pelo portal (não afere presença física geral). Todos os dados são rastreáveis à API oficial de Dados Abertos do Senado Federal.
       </p>
     </div>
 
@@ -165,9 +170,17 @@ const tabs = [
         <h2 class="text-xl font-bold text-slate-900">
           Votações Nominais no Senado
         </h2>
-        <span class="text-xs text-slate-500 font-medium">
-          {temVotosRegistrados ? `${Object.keys(senador.votos).length} registradas` : 'Em catalogação'}
-        </span>
+        <div class="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+          <span>{temVotosRegistrados ? `${Object.keys(senador.votos).length} registradas` : 'Em catalogação'}</span>
+          {senador.participacao_votacoes && (
+            <>
+              <span>•</span>
+              <span class="font-semibold text-blue-700">
+                {senador.participacao_votacoes.registrados} votos registrados ({senador.participacao_votacoes.percentual.toFixed(0)}%)
+              </span>
+            </>
+          )}
+        </div>
       </div>
 
       {temVotosRegistrados ? (

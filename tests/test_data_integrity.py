@@ -324,6 +324,31 @@ class TestDataIntegrity(unittest.TestCase):
                     pat["tse_url"].startswith("https://divulgacandcontas.tse.jus.br"),
                 )
 
+    def test_participacao_votacoes_integridade(self):
+        """Valida que deputados e senadores possuem métricas consistentes de participação em votações-chave."""
+        total_temas_camara = len(self.temas)
+        temas_senado_count = sum(1 for t in self.temas if "senado" in t)
+
+        for d in self.deputados:
+            part = d.get("participacao_votacoes")
+            self.assertIsInstance(part, dict, f"Deputado {d.get('id')} sem participacao_votacoes.")
+            self.assertEqual(part["total"], total_temas_camara)
+            self.assertGreaterEqual(part["registrados"], 0)
+            self.assertLessEqual(part["registrados"], total_temas_camara)
+            self.assertEqual(part["formatado"], f"{part['registrados']}/{total_temas_camara}")
+            expected_pct = round((part["registrados"] / total_temas_camara) * 100, 1)
+            self.assertEqual(part["percentual"], expected_pct)
+
+        for s in self.senadores:
+            part = s.get("participacao_votacoes")
+            self.assertIsInstance(part, dict, f"Senador {s.get('id')} sem participacao_votacoes.")
+            self.assertEqual(part["total"], temas_senado_count)
+            self.assertGreaterEqual(part["registrados"], 0)
+            self.assertLessEqual(part["registrados"], temas_senado_count)
+            self.assertEqual(part["formatado"], f"{part['registrados']}/{temas_senado_count}")
+            expected_pct = round((part["registrados"] / temas_senado_count) * 100, 1)
+            self.assertEqual(part["percentual"], expected_pct)
+
 
 if __name__ == "__main__":
     unittest.main()

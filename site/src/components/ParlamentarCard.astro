@@ -52,6 +52,11 @@ const isSenado = parlamentar.casa === 'senado';
         }`}>
           {isSenado ? 'Senado' : 'Câmara'}
         </span>
+        {parlamentar.participacao_votacoes && (
+          <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-50 text-slate-600 border border-slate-200" title="Votos registrados nas votações nominais catalogadas">
+            Votos: {parlamentar.participacao_votacoes.formatado}
+          </span>
+        )}
         {parlamentar.is_candidato_2026 && (
           <span class={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium border ${
             parlamentar.is_reeleicao

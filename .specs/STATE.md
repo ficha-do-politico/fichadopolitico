@@ -54,6 +54,7 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
 - **Fase Atual:** v1 em expansão (Legislativo Federal Bicameral).
 - **Módulos Ativos em Produção:**
   - *Votações Nominais Curadas:* 10 temas deliberados na Câmara e Senado com links duplos de verificabilidade (incluindo Arcabouço Fiscal, Regulamentação Tributária, Estrutura dos Ministérios e Recriação do DPVAT/SPVAT).
+  - *Participação em Votações-Chave:* Indicador auditável de presença de voto registrado no painel eletrônico nas matérias catalogadas (10 na Câmara e 9 no Senado), ordenável na tabela e contextualizado com ressalvas a suplentes e licenças oficiais (resolução da Issue #51).
   - *Gastos Discricionários:* CEAP (Câmara) e CEAPS (Senado) do exercício vigente (AD-019 e AD-020).
   - *Destinação de Emendas Parlamentares:* Execução orçamentária oficial da CGU da 57ª Legislatura (2023–2026), discriminando Emendas Pix e Finalidade Definida (AD-016).
   - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
