@@ -1,0 +1,27 @@
+---
+interface Props {
+  auditoriaUrl: string;
+}
+
+const { auditoriaUrl } = Astro.props;
+---
+
+<div class="max-w-2xl mx-auto bg-white border border-amber-300 rounded-2xl p-6 shadow-2xs text-left space-y-3">
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-800 text-xs font-semibold">
+    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+    Em atualização
+  </div>
+  <h2 class="text-lg sm:text-xl font-bold text-slate-900">
+    Candidaturas e patrimônio 2026 temporariamente fora do ar
+  </h2>
+  <p class="text-sm text-slate-600 leading-relaxed">
+    Uma auditoria interna encontrou valores sem fonte oficial rastreável nos dados de candidaturas e bens declarados de 2026. Retiramos esses dados até que sejam substituídos pelos arquivos oficiais do Portal de Dados Abertos do TSE.
+  </p>
+  <p class="text-sm text-slate-600 leading-relaxed">
+    Enquanto isso, a consulta pode ser feita diretamente no
+    <a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 font-semibold hover:underline">DivulgaCandContas (TSE)</a>.
+  </p>
+  <a href={auditoriaUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-semibold text-slate-500 hover:text-slate-900 hover:underline">
+    Ler o relatório da auditoria ↗
+  </a>
+</div>

@@ -19,6 +19,7 @@ SENADO_VOTACOES_DIR = ROOT / "dados" / "senado" / "votacoes"
 SITE_DEPUTADOS_FILE = ROOT / "site" / "src" / "data" / "deputados.json"
 SITE_SENADORES_FILE = ROOT / "site" / "src" / "data" / "senadores.json"
 SITE_TEMAS_FILE = ROOT / "site" / "src" / "data" / "temas.json"
+SITE_TSE_STATUS_FILE = ROOT / "site" / "src" / "data" / "tse_status.json"
 
 
 class TestDataIntegrity(unittest.TestCase):
@@ -295,6 +296,9 @@ class TestDataIntegrity(unittest.TestCase):
 
     def test_candidaturas_2026_integridade(self):
         """Valida que candidaturas de 2026 dos parlamentares contêm links oficiais do TSE e dados válidos."""
+        with open(SITE_TSE_STATUS_FILE, encoding="utf-8") as f:
+            if json.load(f)["suspenso"]:
+                self.skipTest("Módulo TSE 2026 suspenso (docs/auditoria-dados-tse-2026.md).")
         with open(SITE_DEPUTADOS_FILE, encoding="utf-8") as f:
             site_deputados = json.load(f)
         with open(SITE_SENADORES_FILE, encoding="utf-8") as f:

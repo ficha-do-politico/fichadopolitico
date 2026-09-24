@@ -39,6 +39,13 @@ EMENDAS_DIR = ROOT / "dados" / "emendas"
 CANON_EMENDAS_FILE = EMENDAS_DIR / "emendas_resumo.json"
 SITE_DATA_DIR = ROOT / "site" / "src" / "data"
 
+# Módulo TSE 2026 suspenso: os datasets atuais não têm proveniência oficial
+# (docs/auditoria-dados-tse-2026.md, achados A1/A2). Enquanto True, nenhuma
+# candidatura, patrimônio ou candidato à Presidência é publicado. Volta a False
+# somente quando o coletor a partir dos dumps oficiais (P1–P3) substituir os geradores.
+TSE_2026_SUSPENSO = True
+TSE_AUDITORIA_URL = "https://github.com/ficha-do-politico/fichadopolitico/blob/main/docs/auditoria-dados-tse-2026.md"
+
 
 def load_catalogo_temas():
     if not CATALOGO_FILE.exists():
@@ -111,7 +118,7 @@ def load_deputados_base():
 
 def load_congresso_2026():
     """Carrega dados canônicos de candidaturas e patrimônio do Congresso Nacional (TSE 2026)."""
-    if not CANON_CONGRESSO_2026_FILE.exists():
+    if TSE_2026_SUSPENSO or not CANON_CONGRESSO_2026_FILE.exists():
         return {}
     with open(CANON_CONGRESSO_2026_FILE, encoding="utf-8") as f:
         return json.load(f)
@@ -495,9 +502,20 @@ def main():
     with open(out_temas, "w", encoding="utf-8") as f:
         json.dump(temas, f, ensure_ascii=False, indent=2)
 
-    if CANON_PRESIDENCIA_FILE.exists():
-        with open(CANON_PRESIDENCIA_FILE, encoding="utf-8") as f:
-            presidencia = json.load(f)
+    out_tse_status = SITE_DATA_DIR / "tse_status.json"
+    with open(out_tse_status, "w", encoding="utf-8") as f:
+        json.dump(
+            {"suspenso": TSE_2026_SUSPENSO, "auditoria_url": TSE_AUDITORIA_URL},
+            f,
+            ensure_ascii=False,
+            indent=2,
+        )
+
+    if TSE_2026_SUSPENSO or CANON_PRESIDENCIA_FILE.exists():
+        presidencia = []
+        if not TSE_2026_SUSPENSO:
+            with open(CANON_PRESIDENCIA_FILE, encoding="utf-8") as f:
+                presidencia = json.load(f)
         out_presidencia = SITE_DATA_DIR / "presidencia.json"
         with open(out_presidencia, "w", encoding="utf-8") as f:
             json.dump(presidencia, f, ensure_ascii=False, indent=2)
@@ -505,7 +523,7 @@ def main():
             f"  - {len(presidencia)} candidatos à presidência exportados em: {out_presidencia} ({out_presidencia.stat().st_size / 1024:.1f} KB)"
         )
 
-    if CANON_CONGRESSO_2026_FILE.exists():
+    if TSE_2026_SUSPENSO or CANON_CONGRESSO_2026_FILE.exists():
         out_congresso_2026 = SITE_DATA_DIR / "congresso_2026.json"
         with open(out_congresso_2026, "w", encoding="utf-8") as f:
             json.dump(congresso_2026, f, ensure_ascii=False, indent=2)

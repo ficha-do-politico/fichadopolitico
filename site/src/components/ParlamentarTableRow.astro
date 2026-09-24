@@ -3,16 +3,18 @@ import type { ParlamentarCardData } from '../types';
 
 interface Props {
   parlamentar: ParlamentarCardData;
+  mostrarPatrimonio?: boolean;
 }
 
-const { parlamentar: p } = Astro.props;
+const { parlamentar: p, mostrarPatrimonio = true } = Astro.props;
+const gridCols = mostrarPatrimonio ? 'grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr_1.2fr]' : 'grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr]';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const isSenado = p.casa === 'senado';
 ---
 
 <a
   href={p.href}
-  class="parlamentar-row group grid grid-cols-[2fr_0.7fr_1.1fr_1.2fr_1.2fr_1.2fr] items-center gap-3 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-sm transition-all duration-150 text-sm"
+  class:list={["parlamentar-row group grid items-center gap-3 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200/90 hover:border-emerald-600 hover:shadow-sm transition-all duration-150 text-sm", gridCols]}
   data-nome={p.nome_eleitoral.toLowerCase()}
   data-civil={p.nome_civil.toLowerCase()}
   data-partido={p.partido.toLowerCase()}
@@ -66,7 +68,9 @@ const isSenado = p.casa === 'senado';
     {p.total_emendas_formatado ?? '—'}
   </span>
 
-  <span class="text-slate-700 text-right sm:text-left tabular-nums">
-    {p.patrimonio_formatado ?? '—'}
-  </span>
+  {mostrarPatrimonio && (
+    <span class="text-slate-700 text-right sm:text-left tabular-nums">
+      {p.patrimonio_formatado ?? '—'}
+    </span>
+  )}
 </a>
