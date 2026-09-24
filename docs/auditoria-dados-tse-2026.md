@@ -10,9 +10,16 @@
 
 Os datasets `dados/tse/congresso_2026.json` e `dados/tse/presidencia.json`, publicados nas fichas de deputados, senadores e na rota `/presidente`, **não vêm de fonte oficial rastreável**. Parte dos valores é gerada por fórmula a partir do ID do parlamentar. Isso viola AD-006 (verificabilidade estrita) e a regra §3.1 do AGENTS.md.
 
-Decisão do time: **manter as páginas no ar e substituir os dados pelos oficiais do TSE**, em vez de remover o módulo.
+Decisão do time: **manter as páginas no ar e substituir os dados pelos oficiais do TSE**, aplicando imediatamente um paliativo de suspensão da exibição dos dados sintéticos enquanto P1–P3 são desenvolvidos.
 
-Os demais módulos (votações nominais, CEAP/CEAPS, emendas CGU) usam fontes oficiais reais nos coletores. A conferência por amostragem ainda está pendente (§4, P4).
+Os demais módulos (votações nominais, CEAP/CEAPS, emendas CGU) usam fontes oficiais reais nos coletores. A conferência amostral P4 foi concluída com ressalvas ([detalhes](auditoria-amostral-modulos.md)).
+
+### Paliativo em Produção (PR #59 / commit `bf0fd86`)
+
+Para estancar imediatamente a violação do §3.1 do AGENTS.md e AD-006 sem quebrar o site, foi implementado o regime de suspensão temporária:
+- **`scripts/build_site_data.py` (`TSE_2026_SUSPENSO = True`):** zera a exportação de `candidatura_2026` e `patrimonio` nos arquivos JSON consumidos pelo Astro (`dados/camara/deputados.json`, `dados/senado/senadores.json`, `site/src/data/congresso_2026.json`, `site/src/data/presidencia.json`), e emite `site/src/data/tse_status.json` com status de suspensão.
+- **Componentes do Site:** `/presidente` renderiza o aviso oficial [`TseSuspensoAviso.astro`](../site/src/components/TseSuspensoAviso.astro) redirecionando para o DivulgaCandContas; listagens de parlamentares na home ocultam colunas e filtros de 2026.
+- **Garantia em Testes:** `tests/test_tse_patrimonio.py::TestTSESuspensao` garante no CI que nenhum dado de candidatura ou patrimônio 2026 seja publicado enquanto a suspensão estiver ativa.
 
 ---
 
@@ -84,7 +91,7 @@ Arquivos necessários (Portal de Dados Abertos do TSE → Candidatos 2026):
 | P1 | Coletor `scripts/tse/fetch_candidaturas.py` lendo dumps oficiais; substitui o gerador sintético mantendo o mesmo schema consumido pelo site | ⏳ Aguardando dumps |
 | P2 | Cruzamento parlamentar ↔ candidato por identificador unívoco (verificar se o dump 2026 traz CPF; se não, nome de urna + UF + cargo com lista de revisão manual). CPF usado só em memória e descartado (AD-009) | ⏳ |
 | P3 | Presidência: substituir `PRESIDENCIA_DATA_2026` hardcoded pelos mesmos dumps, com filtro no cargo Presidente | ⏳ |
-| P4 | Conferência amostral (10 deputados e 5 senadores) de votos, CEAP/CEAPS e emendas contra os portais oficiais ([detalhes](auditoria-amostral-modulos.md)) | ✅ Concluída |
+| P4 | Conferência amostral (10 deputados e 5 senadores) de votos, CEAP/CEAPS e emendas contra os portais oficiais ([detalhes](auditoria-amostral-modulos.md)) | ✅ Concluída com ressalvas (votações confirmadas; CEAPS com divergência em Carlos Viana; emendas NÃO VERIFICADO por URLs com erro) |
 | P5 | Teste de proveniência: todo registro de pessoa carrega `fonte_url` específica + `coletado_em`; CI falha em URL genérica (home do sistema) | ⏳ |
 | P6 | Exibir "dados coletados em DD/MM/AAAA" nas seções da ficha | ⏳ |
 | P7 | Corrigir STATE.md §5 e code-health.md após P1–P3 | ⏳ |
