@@ -31,7 +31,7 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
 ### 2.2. Fontes Oficiais, Integridade & Privacidade
 - **AD-006 (Verificabilidade Estrita):** Todo dado político exibido (identidade parlamentar ou voto nominal) DEVE conter link direto para a URL da fonte oficial de origem (Câmara ou Senado). Fato sem fonte é proibido no projeto.
 - **AD-009 (Privacidade e LGPD):** Dados pessoais sensíveis (CPF, email, telefone de gabinete ou endereço residencial) NÃO são expostos na aplicação, mesmo quando disponíveis nas APIs públicas.
-- **AD-011 & AD-014 (Escopo Federal Bicameral):** O projeto cobre estritamente o Congresso Nacional (513 Deputados Federais + 81 Senadores da República). Âmbitos municipal e estadual estão definitivamente fora de escopo por inviabilidade técnica de sustentação sem APIs unificadas.
+- **AD-011 & AD-014 (Escopo Federal Bicameral):** O foco central do v1 cobre o Congresso Nacional (513 Deputados Federais + 81 Senadores da República). A esfera estadual permanece fora do core de produção da v1 pela extrema assimetria de maturidade de dados entre estados, mas não há veto impeditivo para módulos independentes por estado desenvolvidos pela comunidade (ver auditorias empíricas de RJ e SP em [estudo/alerj-viabilidade-tecnica.md](../estudo/alerj-viabilidade-tecnica.md) e [estudo/alesp-viabilidade-tecnica.md](../estudo/alesp-viabilidade-tecnica.md)).
 
 ### 2.3. Arquitetura de Software & Stack
 - **AD-002 & AD-013 (Desacoplamento em 3 Camadas):**
