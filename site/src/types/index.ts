@@ -358,6 +358,7 @@ export interface PartidoVotacaoTema {
 
 export interface Partido {
   sigla: string;
+  slug: string;
   nome: string;
   numero_eleitoral: number;
   deferimento: string;

@@ -300,6 +300,11 @@ def clean_sigla(s: str) -> str:
     return "".join(c for c in nfkd if not unicodedata.combining(c)).upper().strip()
 
 
+def slugify_sigla(s: str) -> str:
+    """Gera slug canônico em minúsculas e sem acentos para rotas estáticas (ex: 'uniao', 'pl')."""
+    return clean_sigla(s).lower()
+
+
 def get_orientacao_camara(orientacoes: list[dict], sigla_partido: str) -> str | None:
     """Extrai a orientação oficial de bancada para uma sigla partidária na Câmara dos Deputados."""
     sig = clean_sigla(sigla_partido)
@@ -365,6 +370,15 @@ def validar_partidos(partidos: list[dict]):
         recursos = p.get("recursos", {})
         if recursos.get("total_cota_2026", 0) < 0 or recursos.get("emendas_cgu_pagas", 0) < 0:
             raise ValueError(f"Recursos negativos detectados no partido {p.get('sigla')}")
+
+    slugs_vistos = set()
+    for p in partidos:
+        slug = p.get("slug", "")
+        if not slug or not slug.isalnum():
+            raise ValueError(f"Partido {p.get('sigla')} com slug inválido: {slug}")
+        if slug in slugs_vistos:
+            raise ValueError(f"Slug duplicado detectado: {slug}")
+        slugs_vistos.add(slug)
 
 
 def compile_partidos_data(deputados, senadores, temas, votacoes_site_data):
@@ -513,6 +527,7 @@ def compile_partidos_data(deputados, senadores, temas, votacoes_site_data):
 
         partido_dict = {
             "sigla": sigla,
+            "slug": slugify_sigla(sigla),
             "nome": p["nome"],
             "numero_eleitoral": p["numero_eleitoral"],
             "deferimento": p["deferimento"],

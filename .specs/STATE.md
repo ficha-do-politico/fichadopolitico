@@ -58,10 +58,9 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
   - *Gastos Discricionários:* CEAP (Câmara) e CEAPS (Senado) do exercício vigente (AD-019 e AD-020).
   - *Destinação de Emendas Parlamentares:* Execução orçamentária oficial da CGU da 57ª Legislatura (2023–2026), discriminando Emendas Pix e Finalidade Definida (AD-016).
   - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
-  - *Guia de Partidos (Fases 1 e 2 em Produção):* Relação oficial das 30 agremiações do TSE com autodeclaração estatutária literal (Art. 1º), força de bancada bicameral (513 deputados e 81 senadores), recursos sob gestão (CEAP/CEAPS e Emendas CGU) e rota ativa `/partidos`.
+  - *Guia de Partidos (Fases 1, 2 e 3 em Produção):* Relação oficial das 30 agremiações do TSE com autodeclaração estatutária literal (Art. 1º), força de bancada bicameral (513 deputados e 81 senadores), recursos sob gestão (CEAP/CEAPS e Emendas CGU), rota ativa `/partidos` e fichas individuais com matriz completa de votações nominais (`/partido/[sigla]`; ver [docs/proposta-guia-partidos.md](../docs/proposta-guia-partidos.md)).
 - **Foco Imediato (v1):** Catálogo de votações nominais consolidado em 10 temas (meta inicial atingida; ver `docs/backlog-votacoes.md`).
 - **Roadmap Subsequente:**
-  - *v2:* Guia de Partidos — Fase 3: Fichas individuais aprofundadas com matriz completa de votações nominais (`/partido/[sigla]`; ver [docs/proposta-guia-partidos.md](../docs/proposta-guia-partidos.md)).
   - *v2:* Hemiciclo Parlamentar Interativo (visualização vetorial das 81 cadeiras do Senado e 513 da Câmara por bancadas oficiais e placas de votações nominais; ver [docs/proposta-hemiciclo-parlamentar.md](../docs/proposta-hemiciclo-parlamentar.md)).
   - *v2:* Auditoria de Gastos e Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Folha de Servidores (AD-021).
   - *v2:* Rastreabilidade de Convênios na Ponta das Emendas via Transferegov.br.

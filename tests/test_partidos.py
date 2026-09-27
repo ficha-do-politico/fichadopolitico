@@ -70,6 +70,23 @@ class TestGuiaPartidos(unittest.TestCase):
                 p.get("presidente_nacional"), f"Partido {sigla} sem presidente registrado."
             )
 
+    def test_slugs_canonicos_e_unicos(self):
+        """Assegura que todas as agremiações possuem slug ASCII válido e exclusivo para rotas estáticas."""
+        slug_regex = re.compile(r"^[a-z0-9]+$")
+        slugs = []
+        for p in self.site_partidos:
+            sigla = p.get("sigla")
+            slug = p.get("slug")
+            self.assertTrue(slug, f"Partido {sigla} sem slug definido.")
+            self.assertTrue(
+                slug_regex.match(slug),
+                f"Partido {sigla} com slug fora do padrão canônico (minúsculo/alfanumérico): {slug}",
+            )
+            slugs.append(slug)
+
+        self.assertEqual(len(slugs), 30)
+        self.assertEqual(len(set(slugs)), 30, f"Slugs duplicados detectados: {slugs}")
+
     def test_apartidarismo_e_neutralidade_estrita(self):
         """Garante a ausência de scores, notas ou rótulos subjetivos atribuídos pela plataforma (AD-004)."""
         campos_proibidos = {
