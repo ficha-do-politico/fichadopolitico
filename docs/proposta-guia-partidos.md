@@ -43,9 +43,10 @@ Toda página ou ficha partidária deve ser estruturada sobre cinco blocos rigoro
 
 ---
 
-## 3. Checklist Técnico de Implementação Futura
+## 3. Checklist Técnico de Implementação
 
-- [ ] Ingestão do cadastro partidário via API/dump SGIP do TSE (`tse.jus.br/partidos/partidos-registrados-no-tse`).
-- [ ] Compilação de agregados por partido no script de build (`scripts/build_site_data.py`).
-- [ ] Geração de rotas estáticas `/partido/[sigla]` via Astro SSG com layout compartilhado e cards de bancada.
-- [ ] Testes de conformidade e ausência de adjetivação ou scores ideológicos em `tests/test_partidos.py`.
+- [x] Ingestão do cadastro partidário oficial do TSE (`dados/tse/partidos.json` via `scripts/tse/build_partidos_base.py`).
+- [x] Compilação de agregados por partido no script de build (`scripts/build_site_data.py` gerando `site/src/data/partidos.json`).
+- [x] Testes de conformidade, ausência de adjetivação/scores ideológicos e integridade matemática em `tests/test_partidos.py`.
+- [x] Fase 2: Rota estática `/partidos` (visão geral e comparativa de agremiações no Astro SSG).
+- [ ] Fase 3: Geração de rotas estáticas `/partido/[sigla]` via Astro SSG com layout detalhado e matriz de votações nominais.

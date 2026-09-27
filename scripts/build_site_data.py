@@ -21,6 +21,7 @@ Regras de negócio:
 import json
 import pathlib
 import sys
+import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CATALOGO_FILE = ROOT / "dados" / "catalogo" / "temas.json"
@@ -33,6 +34,7 @@ SENADO_VOTACOES_DIR = SENADO_DIR / "votacoes"
 TSE_DIR = ROOT / "dados" / "tse"
 CANON_PRESIDENCIA_FILE = TSE_DIR / "presidencia.json"
 CANON_CONGRESSO_2026_FILE = TSE_DIR / "congresso_2026.json"
+CANON_PARTIDOS_TSE_FILE = TSE_DIR / "partidos.json"
 CANON_DESPESAS_2026_FILE = CAMARA_DIR / "despesas_2026.json"
 CANON_SENADO_DESPESAS_2026_FILE = SENADO_DIR / "despesas_2026.json"
 EMENDAS_DIR = ROOT / "dados" / "emendas"
@@ -290,6 +292,275 @@ def validar_senadores(senadores, temas):
                 raise ValueError(f"Tema {t.get('id')} sem url_proposicao oficial do Senado válida.")
 
 
+def clean_sigla(s: str) -> str:
+    """Normaliza sigla para comparação robusta insensível a acentos e caixa."""
+    if not s:
+        return ""
+    nfkd = unicodedata.normalize("NFKD", str(s))
+    return "".join(c for c in nfkd if not unicodedata.combining(c)).upper().strip()
+
+
+def get_orientacao_camara(orientacoes: list[dict], sigla_partido: str) -> str | None:
+    """Extrai a orientação oficial de bancada para uma sigla partidária na Câmara dos Deputados."""
+    sig = clean_sigla(sigla_partido)
+    # 1. Match exato da sigla
+    for o in orientacoes:
+        b_clean = clean_sigla(o.get("bancada", ""))
+        if b_clean == sig:
+            return o.get("orientacao")
+    # 2. Match de federação partidária oficial
+    for o in orientacoes:
+        b_clean = clean_sigla(o.get("bancada", ""))
+        if "FDR" in b_clean:
+            if sig in b_clean:
+                return o.get("orientacao")
+            if sig == "PCDOB" and "PC" in b_clean:
+                return o.get("orientacao")
+    # 3. Match de bloco parlamentar
+    for o in orientacoes:
+        b_clean = clean_sigla(o.get("bancada", ""))
+        if "BL" in b_clean:
+            if sig in b_clean:
+                return o.get("orientacao")
+            if sig == "REPUBLICANOS" and "REP" in b_clean:
+                return o.get("orientacao")
+            if sig == "CIDADANIA" and "CID" in b_clean:
+                return o.get("orientacao")
+    return None
+
+
+def validar_partidos(partidos: list[dict]):
+    """Validações estritas de conformidade com AD-004 (apartidarismo), AD-006 (verificabilidade) e AD-009 (LGPD)."""
+    campos_proibidos = {
+        "espectro",
+        "ideologia",
+        "rotulo",
+        "score",
+        "nota",
+        "classificacao",
+        "alinhamento",
+        "ranking",
+    }
+    for p in partidos:
+        fonte = p.get("fonte_oficial_tse", "")
+        if not fonte.startswith("https://www.tse.jus.br"):
+            raise ValueError(f"Partido {p.get('sigla')} com link oficial do TSE inválido: {fonte}")
+
+        nr = p.get("numero_eleitoral")
+        if not isinstance(nr, int) or not (10 <= nr <= 90):
+            raise ValueError(f"Partido {p.get('sigla')} com número eleitoral inválido: {nr}")
+
+        chaves_proibidas = set(p.keys()).intersection(campos_proibidos)
+        if chaves_proibidas:
+            raise ValueError(
+                f"Violação AD-004 (Apartidarismo): chaves subjetivas/scores detectadas no partido {p.get('sigla')}: {chaves_proibidas}"
+            )
+
+        bancada = p.get("bancada", {})
+        if bancada.get("total_congresso") != bancada.get("deputados", 0) + bancada.get(
+            "senadores", 0
+        ):
+            raise ValueError(f"Inconsistência na soma da bancada do partido {p.get('sigla')}")
+
+        recursos = p.get("recursos", {})
+        if recursos.get("total_cota_2026", 0) < 0 or recursos.get("emendas_cgu_pagas", 0) < 0:
+            raise ValueError(f"Recursos negativos detectados no partido {p.get('sigla')}")
+
+
+def compile_partidos_data(deputados, senadores, temas, votacoes_site_data):
+    """Compila agregação estatística neutra dos partidos com representação e dados oficiais do TSE."""
+    if not CANON_PARTIDOS_TSE_FILE.exists():
+        print(
+            f"AVISO: Arquivo canônico do TSE não encontrado em {CANON_PARTIDOS_TSE_FILE}",
+            file=sys.stderr,
+        )
+        return []
+
+    with open(CANON_PARTIDOS_TSE_FILE, encoding="utf-8") as f:
+        tse_partidos = json.load(f)
+
+    partidos_compilados = []
+
+    for p in tse_partidos:
+        sigla = p["sigla"]
+        sigla_norm = clean_sigla(sigla)
+
+        deps = [d for d in deputados if clean_sigla(d.get("partido", "")) == sigla_norm]
+        sens = [s for s in senadores if clean_sigla(s.get("partido", "")) == sigla_norm]
+
+        total_deps = len(deps)
+        total_sens = len(sens)
+        total_cong = total_deps + total_sens
+        pct_cong = round((total_cong / 594.0) * 100, 2)
+
+        ceap_camara = round(
+            sum(
+                d.get("despesas_2026", {}).get("total_gasto", 0.0)
+                if d.get("despesas_2026")
+                else 0.0
+                for d in deps
+            ),
+            2,
+        )
+        ceaps_senado = round(
+            sum(
+                s.get("despesas_2026", {}).get("total_gasto", 0.0)
+                if s.get("despesas_2026")
+                else 0.0
+                for s in sens
+            ),
+            2,
+        )
+        total_cota = round(ceap_camara + ceaps_senado, 2)
+
+        emendas_pago = 0.0
+        emendas_pix = 0.0
+        emendas_definida = 0.0
+
+        for par in deps + sens:
+            em = par.get("emendas")
+            if em:
+                emendas_pago += em.get("total_pago", 0.0)
+                mods = em.get("modalidades", {})
+                emendas_pix += mods.get("especiais_pix", {}).get("total_pago", 0.0)
+                emendas_definida += mods.get("finalidade_definida", {}).get("total_pago", 0.0)
+
+        emendas_pago = round(emendas_pago, 2)
+        emendas_pix = round(emendas_pix, 2)
+        emendas_definida = round(emendas_definida, 2)
+
+        # Votações na Câmara dos Deputados
+        camara_temas_resultado = []
+        taxas_adesao_validas = []
+
+        for tema in temas:
+            vid = tema["id"]
+            v_meta = votacoes_site_data.get(vid, {}).get("camara", {})
+            orients = v_meta.get("orientacoes", [])
+            orientacao = get_orientacao_camara(orients, sigla)
+
+            dist = {"sim": 0, "nao": 0, "abstencao": 0, "ausente": 0, "outro": 0}
+            for d in deps:
+                voto = d.get("votos", {}).get(vid, "Não votou / Ausente")
+                if voto == "Sim":
+                    dist["sim"] += 1
+                elif voto == "Não":
+                    dist["nao"] += 1
+                elif voto in ("Abstenção", "Artigo 17"):
+                    dist["abstencao"] += 1
+                elif voto == "Não votou / Ausente":
+                    dist["ausente"] += 1
+                else:
+                    dist["outro"] += 1
+
+            total_votantes = dist["sim"] + dist["nao"] + dist["abstencao"] + dist["outro"]
+            taxa_adesao = None
+
+            if orientacao and orientacao in ("Sim", "Não") and total_votantes > 0:
+                if orientacao == "Sim":
+                    taxa_adesao = round((dist["sim"] / total_votantes) * 100, 1)
+                elif orientacao == "Não":
+                    taxa_adesao = round((dist["nao"] / total_votantes) * 100, 1)
+                taxas_adesao_validas.append(taxa_adesao)
+
+            camara_temas_resultado.append(
+                {
+                    "tema_id": vid,
+                    "tema_titulo": tema.get("titulo", ""),
+                    "orientacao_bancada": orientacao or "Sem orientação registrada",
+                    "distribuicao_votos": dist,
+                    "total_votantes": total_votantes,
+                    "taxa_adesao_orientacao": taxa_adesao,
+                }
+            )
+
+        # Votações no Senado Federal
+        senado_temas_resultado = []
+        for tema in temas:
+            vid = tema["id"]
+            if vid in votacoes_site_data and "senado" in votacoes_site_data[vid]:
+                dist = {"sim": 0, "nao": 0, "abstencao": 0, "ausente": 0, "outro": 0}
+                for s in sens:
+                    voto = s.get("votos", {}).get(vid, "Não votou / Ausente")
+                    if voto == "Sim":
+                        dist["sim"] += 1
+                    elif voto == "Não":
+                        dist["nao"] += 1
+                    elif voto in ("Abstenção", "Artigo 17"):
+                        dist["abstencao"] += 1
+                    elif voto == "Não votou / Ausente":
+                        dist["ausente"] += 1
+                    else:
+                        dist["outro"] += 1
+
+                senado_temas_resultado.append(
+                    {
+                        "tema_id": vid,
+                        "tema_titulo": tema.get("titulo", ""),
+                        "distribuicao_votos": dist,
+                        "total_votantes": dist["sim"]
+                        + dist["nao"]
+                        + dist["abstencao"]
+                        + dist["outro"],
+                    }
+                )
+
+        media_adesao = (
+            round(sum(taxas_adesao_validas) / len(taxas_adesao_validas), 1)
+            if taxas_adesao_validas
+            else None
+        )
+
+        partido_dict = {
+            "sigla": sigla,
+            "nome": p["nome"],
+            "numero_eleitoral": p["numero_eleitoral"],
+            "deferimento": p["deferimento"],
+            "criacao": p.get("criacao", ""),
+            "presidente_nacional": p["presidente_nacional"],
+            "fonte_oficial_tse": p["fonte_oficial_tse"],
+            "federacao": p.get("federacao"),
+            "autodeclaracao": p.get("autodeclaracao", {}),
+            "bancada": {
+                "deputados": total_deps,
+                "senadores": total_sens,
+                "total_congresso": total_cong,
+                "percentual_congresso": pct_cong,
+                "deputados_ids": [d["id"] for d in deps],
+                "senadores_ids": [s["id"] for s in sens],
+            },
+            "recursos": {
+                "ceap_camara_2026": ceap_camara,
+                "ceaps_senado_2026": ceaps_senado,
+                "total_cota_2026": total_cota,
+                "emendas_cgu_pagas": emendas_pago,
+                "emendas_pix_pagas": emendas_pix,
+                "emendas_definida_pagas": emendas_definida,
+            },
+            "coesao": {
+                "media_adesao_orientacao": media_adesao,
+                "total_votacoes_avaliadas": len(taxas_adesao_validas),
+            },
+            "votacoes": {
+                "camara": {
+                    "total_temas": len(camara_temas_resultado),
+                    "temas": camara_temas_resultado,
+                },
+                "senado": {
+                    "total_temas": len(senado_temas_resultado),
+                    "temas": senado_temas_resultado,
+                },
+            },
+        }
+        partidos_compilados.append(partido_dict)
+
+    # Ordenação neutra: maiores bancadas primeiro; desempate alfabético por sigla
+    partidos_compilados.sort(key=lambda x: (-x["bancada"]["total_congresso"], x["sigla"]))
+
+    validar_partidos(partidos_compilados)
+    return partidos_compilados
+
+
 def main():
     print("Compilando dados para o site do Ficha do Político...")
     SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -544,6 +815,15 @@ def main():
         print(
             f"  - {len(despesas_senado_2026)} despesas CEAPS exportadas em: {out_despesas_senado} ({out_despesas_senado.stat().st_size / 1024:.1f} KB)"
         )
+
+    # 5. Compila e exporta partidos (TSE + Bancadas do Congresso Nacional)
+    partidos_data = compile_partidos_data(deputados, senadores, temas, votacoes_site_data)
+    out_partidos = SITE_DATA_DIR / "partidos.json"
+    with open(out_partidos, "w", encoding="utf-8") as f:
+        json.dump(partidos_data, f, ensure_ascii=False, indent=2)
+    print(
+        f"  - {len(partidos_data)} partidos exportados em: {out_partidos} ({out_partidos.stat().st_size / 1024:.1f} KB)"
+    )
 
     print("Sucesso!")
     print(

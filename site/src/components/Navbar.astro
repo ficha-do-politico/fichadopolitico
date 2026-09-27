@@ -5,7 +5,8 @@ const isGuia = pathname.includes('/guia');
 const isCriterios = pathname.includes('/criterios');
 const isVotacoes = pathname.includes('/votacao') || pathname.includes('/votacoes');
 const isPresidente = pathname.includes('/presidente');
-const isHome = !isGuia && !isCriterios && !isVotacoes && !isPresidente && (pathname === base || pathname === `${base}index.html` || pathname.endsWith('/'));
+const isPartidos = pathname.includes('/partido');
+const isHome = !isGuia && !isCriterios && !isVotacoes && !isPresidente && !isPartidos && (pathname === base || pathname === `${base}index.html` || pathname.endsWith('/'));
 ---
 <header class="border-b border-slate-200 bg-white/90 backdrop-blur sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -31,6 +32,12 @@ const isHome = !isGuia && !isCriterios && !isVotacoes && !isPresidente && (pathn
         class={`px-3 py-1.5 rounded-lg transition ${isPresidente ? 'text-emerald-700 font-semibold bg-emerald-50/80' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
       >
         Presidência
+      </a>
+      <a 
+        href={`${base}partidos`} 
+        class={`px-3 py-1.5 rounded-lg transition ${isPartidos ? 'text-emerald-700 font-semibold bg-emerald-50/80' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'}`}
+      >
+        Partidos
       </a>
       <a 
         href={`${base}votacoes`} 
@@ -91,6 +98,13 @@ const isHome = !isGuia && !isCriterios && !isVotacoes && !isPresidente && (pathn
     >
       <span>Presidência</span>
       {isPresidente && <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>}
+    </a>
+    <a 
+      href={`${base}partidos`} 
+      class={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition ${isPartidos ? 'text-emerald-700 font-semibold bg-emerald-50 border border-emerald-200/60' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'}`}
+    >
+      <span>Partidos</span>
+      {isPartidos && <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>}
     </a>
     <a 
       href={`${base}votacoes`} 
