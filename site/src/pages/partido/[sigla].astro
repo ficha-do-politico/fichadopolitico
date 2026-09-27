@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FichaTabs from '../../components/FichaTabs.astro';
+import PartidoLogo from '../../components/PartidoLogo.astro';
 import ParlamentarCard from '../../components/ParlamentarCard.astro';
 import partidosData from '../../data/partidos.json';
 import temasData from '../../data/temas.json';
@@ -114,6 +115,14 @@ const pageDescription = `Consulte a ficha oficial do ${partido.nome} (${partido.
     <header class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-6 border-b border-slate-100 pb-6">
         <div class="flex items-start gap-4 sm:gap-5">
+          <!-- Logo Oficial do Partido -->
+          <PartidoLogo
+            slug={partido.slug}
+            sigla={partido.sigla}
+            numeroEleitoral={partido.numero_eleitoral}
+            size="lg"
+          />
+
           <!-- Número de Urna em Destaque Visual -->
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-900 text-white flex flex-col items-center justify-center shrink-0 shadow-sm">
             <span class="text-[11px] sm:text-xs uppercase font-medium leading-none text-slate-400">Nº</span>

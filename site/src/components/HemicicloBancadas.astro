@@ -25,7 +25,7 @@ const camaraSlices = computeSemiDonutSlices(
 
 const camaraMarkers = computeMajorityMarkers(
   bancadasData.camara.total_cadeiras,
-  bancadasData.camara.maioria_simples,
+  bancadasData.camara.maioria_absoluta ?? bancadasData.camara.maioria_simples,
   bancadasData.camara.maioria_qualificada_3_5,
   dimensions
 );
@@ -38,7 +38,7 @@ const senadoSlices = computeSemiDonutSlices(
 
 const senadoMarkers = computeMajorityMarkers(
   bancadasData.senado.total_cadeiras,
-  bancadasData.senado.maioria_simples,
+  bancadasData.senado.maioria_absoluta ?? bancadasData.senado.maioria_simples,
   bancadasData.senado.maioria_qualificada_3_5,
   dimensions
 );
@@ -239,7 +239,7 @@ const senadoMarkers = computeMajorityMarkers(
     <div class="flex items-center justify-center gap-4 text-[11px] text-slate-500 pt-1">
       <div class="flex items-center gap-1.5">
         <span class="w-3 border-b-2 border-dashed border-slate-400"></span>
-        <span id="legendaMaioriaSimples">Maioria simples: 257</span>
+        <span id="legendaMaioriaAbsoluta">Maioria absoluta: 257</span>
       </div>
       <span class="text-slate-300">•</span>
       <div class="flex items-center gap-1.5">
@@ -326,7 +326,7 @@ const senadoMarkers = computeMajorityMarkers(
     const mioloFocusNome = document.getElementById('mioloFocusNome');
     const mioloFocusCadeiras = document.getElementById('mioloFocusCadeiras');
 
-    const legendaSimples = document.getElementById('legendaMaioriaSimples');
+    const legendaAbsoluta = document.getElementById('legendaMaioriaAbsoluta');
     const legendaQualificada = document.getElementById('legendaMaioriaQualificada');
 
     let currentCasa: 'camara' | 'senado' = 'camara';
@@ -353,16 +353,16 @@ const senadoMarkers = computeMajorityMarkers(
         pilulasSenado.classList.toggle('hidden', casa !== 'senado');
       }
 
-      if (mioloTotalCadeiras && mioloSubtitle && legendaSimples && legendaQualificada) {
+      if (mioloTotalCadeiras && mioloSubtitle && legendaAbsoluta && legendaQualificada) {
         if (casa === 'camara') {
           mioloTotalCadeiras.textContent = '513 cadeiras';
           mioloSubtitle.textContent = '22 bancadas partidárias';
-          legendaSimples.textContent = 'Maioria simples: 257';
+          legendaAbsoluta.textContent = 'Maioria absoluta: 257';
           legendaQualificada.textContent = 'Maioria 3/5: 308';
         } else {
           mioloTotalCadeiras.textContent = '81 cadeiras';
-          mioloSubtitle.textContent = '12 bancadas partidárias';
-          legendaSimples.textContent = 'Maioria simples: 41';
+          mioloSubtitle.textContent = '11 bancadas + 1 sem partido';
+          legendaAbsoluta.textContent = 'Maioria absoluta: 41';
           legendaQualificada.textContent = 'Maioria 3/5: 49';
         }
       }

@@ -1,0 +1,272 @@
+{
+  "pl": {
+    "sigla": "PL",
+    "nome": "Partido Liberal",
+    "numero_eleitoral": 22,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/1/12/Partido_Liberal_%28Brazil%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Partido Liberal (Brazil) logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 3729
+  },
+  "pt": {
+    "sigla": "PT",
+    "nome": "Partido dos Trabalhadores",
+    "numero_eleitoral": 13,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/c/c3/PT_%28Brazil%29_logo_2021.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:PT (Brazil) logo 2021.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 2946
+  },
+  "psd": {
+    "sigla": "PSD",
+    "nome": "Partido Social Democrático",
+    "numero_eleitoral": 55,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/0/0c/PSD_Brazil_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:PSD Brazil logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 45012
+  },
+  "uniao": {
+    "sigla": "UNIÃO",
+    "nome": "União Brasil",
+    "numero_eleitoral": 44,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/7/73/Uni%C3%A3o_Brasil_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:União Brasil logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 9366
+  },
+  "pp": {
+    "sigla": "PP",
+    "nome": "Progressistas",
+    "numero_eleitoral": 11,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/8/87/Progressistas_%28Brazil%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Progressistas (Brazil) logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 42193
+  },
+  "republicanos": {
+    "sigla": "REPUBLICANOS",
+    "nome": "Republicanos",
+    "numero_eleitoral": 10,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/pt/thumb/0/0d/Republicanos_logo.png/330px-Republicanos_logo.png?utm_source=pt.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Republicanos logo.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 24728
+  },
+  "mdb": {
+    "sigla": "MDB",
+    "nome": "Movimento Democrático Brasileiro",
+    "numero_eleitoral": 15,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/6/69/Brazilian_Democratic_Movement_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Brazilian Democratic Movement logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 8065
+  },
+  "pode": {
+    "sigla": "PODE",
+    "nome": "Podemos",
+    "numero_eleitoral": 20,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Podemos_%28Brasil%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Podemos (Brasil) logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 17927
+  },
+  "psb": {
+    "sigla": "PSB",
+    "nome": "Partido Socialista Brasileiro",
+    "numero_eleitoral": 40,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Logo_of_the_Brazilian_Socialist_Party_%28wordmark_color%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Logo of the Brazilian Socialist Party (wordmark color).svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 5343
+  },
+  "psdb": {
+    "sigla": "PSDB",
+    "nome": "Partido da Social Democracia Brasileira",
+    "numero_eleitoral": 45,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/2/22/Logo_of_the_Brazilian_Social_Democracy_Party_%282023%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Logo of the Brazilian Social Democracy Party (2023).svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 7050
+  },
+  "psol": {
+    "sigla": "PSOL",
+    "nome": "Partido Socialismo e Liberdade",
+    "numero_eleitoral": 50,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Logo_PSOL_roxo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Logo PSOL roxo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 9524
+  },
+  "pcdob": {
+    "sigla": "PCdoB",
+    "nome": "Partido Comunista do Brasil",
+    "numero_eleitoral": 65,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/e/e5/PCdoB_flag.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:PCdoB flag.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 2951
+  },
+  "pdt": {
+    "sigla": "PDT",
+    "nome": "Partido Democrático Trabalhista",
+    "numero_eleitoral": 12,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Bandeira.PDT.png/330px-Bandeira.PDT.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Bandeira.PDT.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 57790
+  },
+  "avante": {
+    "sigla": "AVANTE",
+    "nome": "Avante",
+    "numero_eleitoral": 70,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Avante_70_%28Brasil%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Avante 70 (Brasil) logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 23569
+  },
+  "pv": {
+    "sigla": "PV",
+    "nome": "Partido Verde",
+    "numero_eleitoral": 43,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Bandeira_Partido_Verde_Brasil.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Bandeira Partido Verde Brasil.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 3597
+  },
+  "novo": {
+    "sigla": "NOVO",
+    "nome": "Partido Novo",
+    "numero_eleitoral": 30,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Partido_Novo_logo_%282023%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Partido Novo logo (2023).svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 16520
+  },
+  "solidariedade": {
+    "sigla": "SOLIDARIEDADE",
+    "nome": "Solidariedade",
+    "numero_eleitoral": 77,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/7/77/Solidariedade_77_%28Brasil%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Solidariedade 77 (Brasil) logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 112151
+  },
+  "prd": {
+    "sigla": "PRD",
+    "nome": "Partido Renovação Democrática",
+    "numero_eleitoral": 25,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Partido_Renova%C3%A7%C3%A3o_Democr%C3%A1tica_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Partido Renovação Democrática logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 59239
+  },
+  "rede": {
+    "sigla": "REDE",
+    "nome": "Rede Sustentabilidade",
+    "numero_eleitoral": 18,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/3/39/Rede_Sustentabilidade_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Rede Sustentabilidade logo.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 9302
+  },
+  "cidadania": {
+    "sigla": "CIDADANIA",
+    "nome": "Cidadania",
+    "numero_eleitoral": 23,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Cidadania_%28Brasil%29_logo_%28variant_1%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Cidadania (Brasil) logo (variant 1).svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 26641
+  },
+  "dc": {
+    "sigla": "DC",
+    "nome": "Democracia Cristã",
+    "numero_eleitoral": 27,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Logomarca_Democracia_Crist%C3%A3.png/330px-Logomarca_Democracia_Crist%C3%A3.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logomarca Democracia Cristã.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 25355
+  },
+  "missao": {
+    "sigla": "MISSÃO",
+    "nome": "Partido Missão",
+    "numero_eleitoral": 14,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bandeira_do_Partido_Miss%C3%A3o.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Bandeira do Partido Missão.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 13686
+  },
+  "agir": {
+    "sigla": "AGIR",
+    "nome": "Agir",
+    "numero_eleitoral": 36,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Logomarca_do_Partido_Agir.png/330px-Logomarca_do_Partido_Agir.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logomarca do Partido Agir.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 24926
+  },
+  "democrata": {
+    "sigla": "DEMOCRATA",
+    "nome": "Democrata",
+    "numero_eleitoral": 35,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Logomarca_O_Democrata_35.png/330px-Logomarca_O_Democrata_35.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logomarca O Democrata 35.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 31834
+  },
+  "mobiliza": {
+    "sigla": "MOBILIZA",
+    "nome": "Mobilização Nacional",
+    "numero_eleitoral": 33,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Logomarca_Partido_Mobiliza.png/330px-Logomarca_Partido_Mobiliza.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logomarca Partido Mobiliza.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 23903
+  },
+  "pcb": {
+    "sigla": "PCB",
+    "nome": "Partido Comunista Brasileiro",
+    "numero_eleitoral": 21,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Logo_PCB.png/330px-Logo_PCB.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logo PCB.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 31311
+  },
+  "pco": {
+    "sigla": "PCO",
+    "nome": "Partido da Causa Operária",
+    "numero_eleitoral": 29,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Logo_PCO_Institucional.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "arquivo_fonte": "File:Logo PCO Institucional.svg",
+    "mime_original": "image/svg+xml",
+    "tamanho_bytes": 5919
+  },
+  "prtb": {
+    "sigla": "PRTB",
+    "nome": "Partido Renovador Trabalhista Brasileiro",
+    "numero_eleitoral": 28,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Logomarca_do_Partido_Renovador_Trabalhista_Brasileiro.png/330px-Logomarca_do_Partido_Renovador_Trabalhista_Brasileiro.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logomarca do Partido Renovador Trabalhista Brasileiro.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 18548
+  },
+  "pstu": {
+    "sigla": "PSTU",
+    "nome": "Partido Socialista dos Trabalhadores Unificado",
+    "numero_eleitoral": 16,
+    "url_fonte_oficial": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_PSTU.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "arquivo_fonte": "File:Logo PSTU.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 4043
+  },
+  "up": {
+    "sigla": "UP",
+    "nome": "Unidade Popular",
+    "numero_eleitoral": 80,
+    "url_fonte_oficial": "https://thumb.wikimedia.org/wikipedia/pt/thumb/0/00/Logo_-_UP_site.png/330px-Logo_-_UP_site.png?utm_source=pt.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "arquivo_fonte": "File:Logo - UP site.png",
+    "mime_original": "image/png",
+    "tamanho_bytes": 10474
+  }
+}

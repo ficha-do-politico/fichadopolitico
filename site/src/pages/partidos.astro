@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PartidoLogo from '../components/PartidoLogo.astro';
 import partidosData from '../data/partidos.json';
 import type { Partido } from '../types';
 
@@ -155,6 +156,14 @@ function formatMoeda(val: number): string {
               <!-- Linha Superior: Identidade Oficial TSE -->
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
                 <div class="flex items-center gap-3">
+                  <!-- Logo Oficial do Partido -->
+                  <PartidoLogo
+                    slug={p.slug}
+                    sigla={p.sigla}
+                    numeroEleitoral={p.numero_eleitoral}
+                    size="md"
+                  />
+
                   <!-- Número de Urna em Badge Forte -->
                   <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex flex-col items-center justify-center shrink-0 shadow-xs">
                     <span class="text-xs uppercase font-medium leading-none text-slate-300">Nº</span>

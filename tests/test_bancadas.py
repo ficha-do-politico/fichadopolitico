@@ -40,6 +40,7 @@ class TestHemicicloBancadas(unittest.TestCase):
         """Assegura paridade bicameral e fechamento exato em 513 deputados na Câmara."""
         camara = self.bancadas_data["camara"]
         self.assertEqual(camara["total_cadeiras"], 513)
+        self.assertEqual(camara["maioria_absoluta"], 257)
         self.assertEqual(camara["maioria_simples"], 257)
         self.assertEqual(camara["maioria_qualificada_3_5"], 308)
 
@@ -58,6 +59,7 @@ class TestHemicicloBancadas(unittest.TestCase):
         """Assegura paridade bicameral e fechamento exato em 81 senadores no Senado."""
         senado = self.bancadas_data["senado"]
         self.assertEqual(senado["total_cadeiras"], 81)
+        self.assertEqual(senado["maioria_absoluta"], 41)
         self.assertEqual(senado["maioria_simples"], 41)
         self.assertEqual(senado["maioria_qualificada_3_5"], 49)
 

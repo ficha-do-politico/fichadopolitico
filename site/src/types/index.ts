@@ -398,6 +398,7 @@ export interface CasaBancadas {
   casa: 'camara' | 'senado';
   nome_casa: string;
   total_cadeiras: number;
+  maioria_absoluta: number;
   maioria_simples: number;
   maioria_qualificada_3_5: number;
   total_partidos: number;
