@@ -1,0 +1,503 @@
+---
+import bancadasDataRaw from '../data/bancadas.json';
+import type { BancadasData } from '../types';
+import {
+  computeSemiDonutSlices,
+  computeMajorityMarkers,
+  type DonutDimensions,
+} from '../utils/donut';
+
+const bancadasData = bancadasDataRaw as BancadasData;
+
+const dimensions: DonutDimensions = {
+  cx: 220,
+  cy: 200,
+  outerRadius: 175,
+  innerRadius: 105,
+};
+
+// Computa fatias para Câmara (513) e Senado (81)
+const camaraSlices = computeSemiDonutSlices(
+  bancadasData.camara.bancadas,
+  bancadasData.camara.total_cadeiras,
+  dimensions
+);
+
+const camaraMarkers = computeMajorityMarkers(
+  bancadasData.camara.total_cadeiras,
+  bancadasData.camara.maioria_simples,
+  bancadasData.camara.maioria_qualificada_3_5,
+  dimensions
+);
+
+const senadoSlices = computeSemiDonutSlices(
+  bancadasData.senado.bancadas,
+  bancadasData.senado.total_cadeiras,
+  dimensions
+);
+
+const senadoMarkers = computeMajorityMarkers(
+  bancadasData.senado.total_cadeiras,
+  bancadasData.senado.maioria_simples,
+  bancadasData.senado.maioria_qualificada_3_5,
+  dimensions
+);
+---
+
+<div class="bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-6 shadow-xs space-y-5" id="hemicicloRoot">
+  <!-- Cabeçalho do Hemiciclo com Alternador de Casas -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+    <div>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[11px] font-semibold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+        Composição Parlamentar Oficial
+      </div>
+      <h2 class="text-base sm:text-lg font-bold text-slate-900 mt-1 flex items-center gap-2">
+        Hemiciclo das Bancadas
+        <span class="text-xs font-normal text-slate-500 hidden sm:inline">• 57ª Legislatura</span>
+      </h2>
+    </div>
+
+    <!-- Alternador Câmara (513) / Senado (81) -->
+    <div class="inline-flex rounded-xl border border-slate-200 bg-slate-50 p-1 shadow-2xs text-xs font-semibold" id="hemicicloCasaToggle">
+      <button
+        type="button"
+        data-hemiciclo-casa="camara"
+        class="hemiciclo-casa-btn active px-3 py-1.5 rounded-lg transition bg-slate-900 text-white shadow-xs cursor-pointer"
+        aria-label="Ver composição da Câmara dos Deputados (513 cadeiras)"
+      >
+        Câmara ({bancadasData.camara.total_cadeiras})
+      </button>
+      <button
+        type="button"
+        data-hemiciclo-casa="senado"
+        class="hemiciclo-casa-btn px-3 py-1.5 rounded-lg transition text-slate-600 hover:text-slate-900 cursor-pointer"
+        aria-label="Ver composição do Senado Federal (81 cadeiras)"
+      >
+        Senado ({bancadasData.senado.total_cadeiras})
+      </button>
+    </div>
+  </div>
+
+  <!-- Container do Gráfico SVG Semi-Donut com Miolo Informativo -->
+  <div class="relative flex flex-col items-center">
+    <div class="w-full max-w-[480px] aspect-[440/230] relative select-none">
+      <!-- SVG Câmara -->
+      <svg
+        id="hemicicloSvgCamara"
+        viewBox="0 0 440 230"
+        class="w-full h-full overflow-visible transition-opacity duration-200"
+        role="img"
+        aria-label="Gráfico do hemiciclo da Câmara dos Deputados: 513 cadeiras divididas em 22 bancadas partidárias"
+      >
+        <!-- Fatias das bancadas -->
+        <g class="slices-group">
+          {camaraSlices.map(s => (
+            <path
+              d={s.path}
+              fill={s.color}
+              stroke="#ffffff"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+              class="hemiciclo-slice cursor-pointer transition-all duration-150 hover:brightness-110 focus:outline-none"
+              tabindex="0"
+              role="img"
+              aria-label={`Bancada do ${s.sigla}: ${s.cadeiras} deputados (${s.percentual}%)`}
+              data-casa="camara"
+              data-sigla={s.sigla}
+              data-nome={s.nome}
+              data-cadeiras={s.cadeiras}
+              data-percentual={s.percentual}
+              data-cor={s.color}
+            />
+          ))}
+        </g>
+
+        <!-- Linhas e marcações de maioria -->
+        <g class="markers-group pointer-events-none opacity-60">
+          {camaraMarkers.map(m => (
+            <g>
+              <line
+                x1={m.x1}
+                y1={m.y1}
+                x2={m.x2}
+                y2={m.y2}
+                stroke="#64748b"
+                stroke-width="1.5"
+                stroke-dasharray="2 3"
+              />
+              <text
+                x={m.labelX}
+                y={m.labelY}
+                font-size="9"
+                font-weight="600"
+                fill="#64748b"
+                text-anchor="middle"
+                dominant-baseline="central"
+              >
+                {m.cadeiras}
+              </text>
+            </g>
+          ))}
+        </g>
+      </svg>
+
+      <!-- SVG Senado (inicialmente oculto) -->
+      <svg
+        id="hemicicloSvgSenado"
+        viewBox="0 0 440 230"
+        class="w-full h-full overflow-visible hidden transition-opacity duration-200"
+        role="img"
+        aria-label="Gráfico do hemiciclo do Senado Federal: 81 cadeiras divididas em bancadas partidárias"
+      >
+        <!-- Fatias das bancadas -->
+        <g class="slices-group">
+          {senadoSlices.map(s => (
+            <path
+              d={s.path}
+              fill={s.color}
+              stroke="#ffffff"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+              class="hemiciclo-slice cursor-pointer transition-all duration-150 hover:brightness-110 focus:outline-none"
+              tabindex="0"
+              role="img"
+              aria-label={`Bancada do ${s.sigla}: ${s.cadeiras} senadores (${s.percentual}%)`}
+              data-casa="senado"
+              data-sigla={s.sigla}
+              data-nome={s.nome}
+              data-cadeiras={s.cadeiras}
+              data-percentual={s.percentual}
+              data-cor={s.color}
+            />
+          ))}
+        </g>
+
+        <!-- Linhas e marcações de maioria -->
+        <g class="markers-group pointer-events-none opacity-60">
+          {senadoMarkers.map(m => (
+            <g>
+              <line
+                x1={m.x1}
+                y1={m.y1}
+                x2={m.x2}
+                y2={m.y2}
+                stroke="#64748b"
+                stroke-width="1.5"
+                stroke-dasharray="2 3"
+              />
+              <text
+                x={m.labelX}
+                y={m.labelY}
+                font-size="9"
+                font-weight="600"
+                fill="#64748b"
+                text-anchor="middle"
+                dominant-baseline="central"
+              >
+                {m.cadeiras}
+              </text>
+            </g>
+          ))}
+        </g>
+      </svg>
+
+      <!-- Miolo Informativo Dinâmico (posicionado no centro oco do semicírculo) -->
+      <div
+        id="hemicicloMiolo"
+        class="absolute bottom-1 left-1/2 -translate-x-1/2 w-48 sm:w-56 text-center pointer-events-none flex flex-col items-center justify-end pb-1"
+      >
+        <!-- Estado Padrão -->
+        <div id="mioloDefault" class="space-y-0.5 transition-opacity duration-150">
+          <span id="mioloTotalCadeiras" class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight block">
+            513 cadeiras
+          </span>
+          <span id="mioloSubtitle" class="text-[11px] sm:text-xs font-semibold text-slate-500 block">
+            22 bancadas partidárias
+          </span>
+          <span class="text-[10px] text-slate-400 block pt-0.5">
+            Passe o cursor ou toque na fatia
+          </span>
+        </div>
+
+        <!-- Estado em Foco / Hover -->
+        <div id="mioloFocus" class="hidden space-y-0.5 transition-opacity duration-150">
+          <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 text-xs font-bold text-slate-900">
+            <span id="mioloFocusDot" class="w-2 h-2 rounded-full"></span>
+            <span id="mioloFocusSigla"></span>
+          </div>
+          <span id="mioloFocusNome" class="text-[11px] font-medium text-slate-600 block truncate max-w-[190px]"></span>
+          <span id="mioloFocusCadeiras" class="text-sm sm:text-base font-extrabold text-slate-900 block leading-tight"></span>
+          <span class="text-[10px] text-emerald-700 font-semibold block pt-0.5">
+            Clique para filtrar lista ↓
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legenda de Maiorias -->
+    <div class="flex items-center justify-center gap-4 text-[11px] text-slate-500 pt-1">
+      <div class="flex items-center gap-1.5">
+        <span class="w-3 border-b-2 border-dashed border-slate-400"></span>
+        <span id="legendaMaioriaSimples">Maioria simples: 257</span>
+      </div>
+      <span class="text-slate-300">•</span>
+      <div class="flex items-center gap-1.5">
+        <span class="w-3 border-b-2 border-dashed border-slate-400"></span>
+        <span id="legendaMaioriaQualificada">Maioria 3/5: 308</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pílulas Rápidas das Bancadas (Legenda Interativa) -->
+  <div class="space-y-2 border-t border-slate-100 pt-3">
+    <div class="flex items-center justify-between text-xs">
+      <span class="font-semibold text-slate-700 text-[11px] uppercase tracking-wide">Bancadas por tamanho:</span>
+      <span class="text-[11px] text-slate-400">Clique para filtrar</span>
+    </div>
+
+    <!-- Pílulas da Câmara -->
+    <div id="pilulasCamara" class="flex flex-wrap gap-1.5">
+      {camaraSlices.map(s => (
+        <button
+          type="button"
+          class="hemiciclo-pill inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-slate-50 hover:bg-white hover:border-slate-300 hover:shadow-2xs text-xs text-slate-700 transition cursor-pointer"
+          data-casa="camara"
+          data-sigla={s.sigla}
+          data-nome={s.nome}
+          data-cadeiras={s.cadeiras}
+          data-percentual={s.percentual}
+          data-cor={s.color}
+          aria-label={`Filtrar bancada do ${s.sigla} (${s.cadeiras} deputados)`}
+        >
+          <span class="w-2 h-2 rounded-full shrink-0" style={`background-color: ${s.color};`}></span>
+          <span class="font-bold text-slate-900">{s.sigla}</span>
+          <span class="text-slate-500 text-[11px]">{s.cadeiras}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Pílulas do Senado (inicialmente ocultas) -->
+    <div id="pilulasSenado" class="flex flex-wrap gap-1.5 hidden">
+      {senadoSlices.map(s => (
+        <button
+          type="button"
+          class="hemiciclo-pill inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-slate-50 hover:bg-white hover:border-slate-300 hover:shadow-2xs text-xs text-slate-700 transition cursor-pointer"
+          data-casa="senado"
+          data-sigla={s.sigla}
+          data-nome={s.nome}
+          data-cadeiras={s.cadeiras}
+          data-percentual={s.percentual}
+          data-cor={s.color}
+          aria-label={`Filtrar bancada do ${s.sigla} (${s.cadeiras} senadores)`}
+        >
+          <span class="w-2 h-2 rounded-full shrink-0" style={`background-color: ${s.color};`}></span>
+          <span class="font-bold text-slate-900">{s.sigla}</span>
+          <span class="text-slate-500 text-[11px]">{s.cadeiras}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Nota de Neutralidade e Apartidarismo (AD-004) -->
+  <footer class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100/80 pt-2.5">
+    <span>Ordenação canônica neutra por tamanho de bancada (AD-004).</span>
+    <span>Fontes: Dados Abertos Câmara e Senado.</span>
+  </footer>
+</div>
+
+<script>
+  function initHemiciclo() {
+    const root = document.getElementById('hemicicloRoot');
+    if (!root) return;
+
+    const casaBtns = root.querySelectorAll('.hemiciclo-casa-btn');
+    const svgCamara = document.getElementById('hemicicloSvgCamara');
+    const svgSenado = document.getElementById('hemicicloSvgSenado');
+    const pilulasCamara = document.getElementById('pilulasCamara');
+    const pilulasSenado = document.getElementById('pilulasSenado');
+
+    const mioloDefault = document.getElementById('mioloDefault');
+    const mioloFocus = document.getElementById('mioloFocus');
+    const mioloTotalCadeiras = document.getElementById('mioloTotalCadeiras');
+    const mioloSubtitle = document.getElementById('mioloSubtitle');
+    const mioloFocusDot = document.getElementById('mioloFocusDot');
+    const mioloFocusSigla = document.getElementById('mioloFocusSigla');
+    const mioloFocusNome = document.getElementById('mioloFocusNome');
+    const mioloFocusCadeiras = document.getElementById('mioloFocusCadeiras');
+
+    const legendaSimples = document.getElementById('legendaMaioriaSimples');
+    const legendaQualificada = document.getElementById('legendaMaioriaQualificada');
+
+    let currentCasa: 'camara' | 'senado' = 'camara';
+
+    function setCasa(casa: 'camara' | 'senado') {
+      currentCasa = casa;
+
+      casaBtns.forEach(b => {
+        const isMatch = b.getAttribute('data-hemiciclo-casa') === casa;
+        b.classList.toggle('active', isMatch);
+        b.classList.toggle('bg-slate-900', isMatch);
+        b.classList.toggle('text-white', isMatch);
+        b.classList.toggle('shadow-xs', isMatch);
+        b.classList.toggle('text-slate-600', !isMatch);
+      });
+
+      if (svgCamara && svgSenado) {
+        svgCamara.classList.toggle('hidden', casa !== 'camara');
+        svgSenado.classList.toggle('hidden', casa !== 'senado');
+      }
+
+      if (pilulasCamara && pilulasSenado) {
+        pilulasCamara.classList.toggle('hidden', casa !== 'camara');
+        pilulasSenado.classList.toggle('hidden', casa !== 'senado');
+      }
+
+      if (mioloTotalCadeiras && mioloSubtitle && legendaSimples && legendaQualificada) {
+        if (casa === 'camara') {
+          mioloTotalCadeiras.textContent = '513 cadeiras';
+          mioloSubtitle.textContent = '22 bancadas partidárias';
+          legendaSimples.textContent = 'Maioria simples: 257';
+          legendaQualificada.textContent = 'Maioria 3/5: 308';
+        } else {
+          mioloTotalCadeiras.textContent = '81 cadeiras';
+          mioloSubtitle.textContent = '12 bancadas partidárias';
+          legendaSimples.textContent = 'Maioria simples: 41';
+          legendaQualificada.textContent = 'Maioria 3/5: 49';
+        }
+      }
+
+      resetHighlight();
+    }
+
+    casaBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const casa = btn.getAttribute('data-hemiciclo-casa') as 'camara' | 'senado';
+        if (casa) setCasa(casa);
+      });
+    });
+
+    const slices = root.querySelectorAll<SVGPathElement>('.hemiciclo-slice');
+    const pills = root.querySelectorAll<HTMLButtonElement>('.hemiciclo-pill');
+
+    function highlightPartido(sigla: string | null, data?: { sigla: string; nome: string; cadeiras: string; percentual: string; cor: string; casa: string }) {
+      if (!sigla) {
+        resetHighlight();
+        return;
+      }
+
+      const activeSvg = currentCasa === 'camara' ? svgCamara : svgSenado;
+      if (activeSvg) {
+        const activeSlices = activeSvg.querySelectorAll<SVGPathElement>('.hemiciclo-slice');
+        activeSlices.forEach(s => {
+          const match = s.getAttribute('data-sigla') === sigla;
+          s.style.opacity = match ? '1' : '0.25';
+          s.style.transform = match ? 'scale(1.015)' : 'none';
+          s.style.transformOrigin = '220px 200px';
+        });
+      }
+
+      const activePillContainer = currentCasa === 'camara' ? pilulasCamara : pilulasSenado;
+      if (activePillContainer) {
+        const activePills = activePillContainer.querySelectorAll<HTMLButtonElement>('.hemiciclo-pill');
+        activePills.forEach(p => {
+          const match = p.getAttribute('data-sigla') === sigla;
+          p.classList.toggle('border-slate-900', match);
+          p.classList.toggle('bg-slate-100', match);
+        });
+      }
+
+      if (data && mioloDefault && mioloFocus && mioloFocusDot && mioloFocusSigla && mioloFocusNome && mioloFocusCadeiras) {
+        mioloDefault.classList.add('hidden');
+        mioloFocus.classList.remove('hidden');
+
+        mioloFocusDot.style.backgroundColor = data.cor;
+        mioloFocusSigla.textContent = data.sigla;
+        mioloFocusNome.textContent = data.nome;
+        const cargo = data.casa === 'camara' ? 'deputados' : 'senadores';
+        mioloFocusCadeiras.textContent = `${data.cadeiras} ${cargo} (${data.percentual}%)`;
+      }
+    }
+
+    function resetHighlight() {
+      slices.forEach(s => {
+        s.style.opacity = '1';
+        s.style.transform = 'none';
+      });
+
+      pills.forEach(p => {
+        p.classList.remove('border-slate-900', 'bg-slate-100');
+      });
+
+      if (mioloDefault && mioloFocus) {
+        mioloDefault.classList.remove('hidden');
+        mioloFocus.classList.add('hidden');
+      }
+    }
+
+    function extractData(el: Element) {
+      return {
+        sigla: el.getAttribute('data-sigla') || '',
+        nome: el.getAttribute('data-nome') || '',
+        cadeiras: el.getAttribute('data-cadeiras') || '',
+        percentual: el.getAttribute('data-percentual') || '',
+        cor: el.getAttribute('data-cor') || '',
+        casa: el.getAttribute('data-casa') || 'camara',
+      };
+    }
+
+    slices.forEach(s => {
+      s.addEventListener('mouseenter', () => {
+        highlightPartido(s.getAttribute('data-sigla'), extractData(s));
+      });
+      s.addEventListener('focus', () => {
+        highlightPartido(s.getAttribute('data-sigla'), extractData(s));
+      });
+      s.addEventListener('mouseleave', resetHighlight);
+      s.addEventListener('blur', resetHighlight);
+
+      s.addEventListener('click', () => {
+        const sigla = s.getAttribute('data-sigla');
+        const casa = s.getAttribute('data-casa');
+        if (sigla) {
+          window.dispatchEvent(new CustomEvent('hemiciclo:selecionar-partido', {
+            detail: { sigla, casa }
+          }));
+        }
+      });
+    });
+
+    pills.forEach(p => {
+      p.addEventListener('mouseenter', () => {
+        highlightPartido(p.getAttribute('data-sigla'), extractData(p));
+      });
+      p.addEventListener('focus', () => {
+        highlightPartido(p.getAttribute('data-sigla'), extractData(p));
+      });
+      p.addEventListener('mouseleave', resetHighlight);
+      p.addEventListener('blur', resetHighlight);
+
+      p.addEventListener('click', () => {
+        const sigla = p.getAttribute('data-sigla');
+        const casa = p.getAttribute('data-casa');
+        if (sigla) {
+          window.dispatchEvent(new CustomEvent('hemiciclo:selecionar-partido', {
+            detail: { sigla, casa }
+          }));
+        }
+      });
+    });
+
+    // Sincronização externa (se a casa mudar na página principal)
+    window.addEventListener('hemiciclo:sync-casa', (e: Event) => {
+      const customEvent = e as CustomEvent<{ casa: 'camara' | 'senado' }>;
+      if (customEvent.detail?.casa) {
+        setCasa(customEvent.detail.casa);
+      }
+    });
+  }
+
+  // Executa no load e em transições de página
+  initHemiciclo();
+  document.addEventListener('astro:page-load', initHemiciclo);
+</script>

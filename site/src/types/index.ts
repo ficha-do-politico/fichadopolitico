@@ -384,3 +384,27 @@ export interface Partido {
 
 
 
+
+export interface BancadaItem {
+  sigla: string;
+  nome: string;
+  slug: string;
+  numero_eleitoral: number | null;
+  cadeiras: number;
+  percentual: number;
+}
+
+export interface CasaBancadas {
+  casa: 'camara' | 'senado';
+  nome_casa: string;
+  total_cadeiras: number;
+  maioria_simples: number;
+  maioria_qualificada_3_5: number;
+  total_partidos: number;
+  bancadas: BancadaItem[];
+}
+
+export interface BancadasData {
+  camara: CasaBancadas;
+  senado: CasaBancadas;
+}
