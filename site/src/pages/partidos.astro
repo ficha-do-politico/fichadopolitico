@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+import partidosData from '../data/partidos.json';
+import type { Partido } from '../types';
+
+const partidos = partidosData as Partido[];
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+// Totais gerais do ecossistema
+const totalPartidos = partidos.length;
+const partidosComBancada = partidos.filter(p => p.bancada.total_congresso > 0);
+const partidosSemBancada = partidos.filter(p => p.bancada.total_congresso === 0);
+const partidosEmFederacao = partidos.filter(p => Boolean(p.federacao));
+
+function formatMoeda(val: number): string {
+  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
+}
+---
+
+<Layout 
+  title="Guia dos Partidos Políticos"
+  description="Audite os 30 partidos políticos registrados no TSE: número eleitoral, autodeclaração estatutária literal, tamanho das bancadas no Congresso e recursos públicos geridos."
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-10">
+    
+    <!-- Cabeçalho Principal -->
+    <header class="space-y-4 border-b border-slate-200 pb-8 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+        Dados Oficiais • Tribunal Superior Eleitoral & Congresso Nacional
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Guia dos Partidos Políticos
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
+        Consulte as <strong>30 agremiações partidárias homologadas</strong> pela Justiça Eleitoral brasileira. 
+        Audite o que cada legenda registrou formalmente em cartório, o tamanho real de suas bancadas e os recursos públicos movimentados por seus parlamentares.
+      </p>
+
+      <!-- Nota de Neutralidade e Apartidarismo (AD-004) -->
+      <div class="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 text-left flex items-start gap-3">
+        <svg class="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <div class="space-y-1">
+          <span class="font-bold text-slate-900 block">Compromisso com Apartidarismo e Verificabilidade (AD-004 e AD-006):</span>
+          <p class="leading-relaxed">
+            A Ficha do Político <strong>não aplica espectros ideológicos subjetivos</strong> (como "esquerda", "direita" ou "centrão") nem notas ou ranqueamentos opinativos. Exibimos a <strong>autodeclaração estatutária literal registrada no TSE</strong> e o dado numérico bruto do comportamento legislativo.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cards de Resumo Institucional -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4" aria-label="Estatísticas gerais de partidos">
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Registrados no TSE</span>
+        <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 block">{totalPartidos}</span>
+        <span class="text-[11px] text-slate-500 mt-0.5 block">Partidos homologados</span>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Com Bancada Federal</span>
+        <span class="text-2xl sm:text-3xl font-extrabold text-emerald-700 mt-1 block">{partidosComBancada.length}</span>
+        <span class="text-[11px] text-slate-500 mt-0.5 block">Legendas com assentos</span>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Sem Representação</span>
+        <span class="text-2xl sm:text-3xl font-extrabold text-slate-700 mt-1 block">{partidosSemBancada.length}</span>
+        <span class="text-[11px] text-slate-500 mt-0.5 block">0 cadeiras no Congresso</span>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Em Federação</span>
+        <span class="text-2xl sm:text-3xl font-extrabold text-blue-700 mt-1 block">{partidosEmFederacao.length}</span>
+        <span class="text-[11px] text-slate-500 mt-0.5 block">5 federações ativas</span>
+      </div>
+    </section>
+
+    <!-- Barra de Filtros e Busca Rápida -->
+    <section class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs space-y-4">
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <!-- Campo de Busca -->
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input 
+            type="search" 
+            id="partySearchInput"
+            placeholder="Buscar por sigla, nome, número (ex: 22, 13, PL, PT) ou dirigente..." 
+            class="w-full pl-10 pr-4 py-2 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition"
+          />
+        </div>
+
+        <!-- Filtro por Escopo de Representação -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 text-xs">
+          <button 
+            type="button" 
+            class="filter-btn active px-3 py-2 rounded-xl border border-emerald-600 bg-emerald-600 text-white font-semibold transition shrink-0" 
+            data-filter="todos"
+          >
+            Todos ({totalPartidos})
+          </button>
+          <button 
+            type="button" 
+            class="filter-btn px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition shrink-0" 
+            data-filter="bancada"
+          >
+            Com Bancada ({partidosComBancada.length})
+          </button>
+          <button 
+            type="button" 
+            class="filter-btn px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition shrink-0" 
+            data-filter="sem-bancada"
+          >
+            Sem Bancada ({partidosSemBancada.length})
+          </button>
+          <button 
+            type="button" 
+            class="filter-btn px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition shrink-0" 
+            data-filter="federacao"
+          >
+            Em Federação ({partidosEmFederacao.length})
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listagem Principal de Partidos -->
+    <section class="space-y-4" aria-label="Relação de agremiações partidárias">
+      <div class="flex items-center justify-between text-xs text-slate-500 px-1">
+        <span id="counterLabel">Exibindo todos os {totalPartidos} partidos registrados</span>
+        <span class="italic">Ordenação padrão: Maior bancada no Congresso Nacional</span>
+      </div>
+
+      <div id="partiesContainer" class="grid grid-cols-1 gap-4">
+        {partidos.map((p) => {
+          const temBancada = p.bancada.total_congresso > 0;
+          const temFederacao = Boolean(p.federacao);
+
+          return (
+            <article 
+              class="party-card bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs hover:border-slate-300 hover:shadow-md transition space-y-5"
+              data-sigla={p.sigla.toLowerCase()}
+              data-nome={p.nome.toLowerCase()}
+              data-numero={String(p.numero_eleitoral)}
+              data-presidente={p.presidente_nacional.toLowerCase()}
+              data-tem-bancada={temBancada ? "true" : "false"}
+              data-tem-federacao={temFederacao ? "true" : "false"}
+            >
+              <!-- Linha Superior: Identidade Oficial TSE -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                  <!-- Número de Urna em Badge Forte -->
+                  <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex flex-col items-center justify-center shrink-0 shadow-xs">
+                    <span class="text-xs uppercase font-medium leading-none text-slate-300">Nº</span>
+                    <span class="text-lg font-black leading-none mt-0.5">{p.numero_eleitoral}</span>
+                  </div>
+
+                  <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">
+                        {p.sigla}
+                      </h2>
+                      {p.federacao && (
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-blue-800 border border-blue-200" title={`Federação: ${p.federacao.nome} (${p.federacao.composicao.join(', ')})`}>
+                          Federação: {p.federacao.sigla}
+                        </span>
+                      )}
+                      {!temBancada && (
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-600">
+                          Sem representação federal
+                        </span>
+                      )}
+                    </div>
+                    <span class="text-xs sm:text-sm font-medium text-slate-600 block">
+                      {p.nome}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Link Oficial TSE -->
+                <div class="flex items-center gap-2 sm:self-center">
+                  <a 
+                    href={p.fonte_oficial_tse} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 transition"
+                  >
+                    <span>Registro Oficial TSE</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Grade de Indicadores Oficiais -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                <!-- Força no Congresso -->
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide block">Bancada Federal</span>
+                  <div class="flex items-baseline gap-1.5">
+                    <span class="text-lg font-bold text-slate-900">{p.bancada.total_congresso}</span>
+                    <span class="text-slate-500 text-[11px]">({p.bancada.percentual_congresso}% do Congresso)</span>
+                  </div>
+                  <span class="text-[11px] text-slate-600 block">
+                    {p.bancada.deputados} Dep. • {p.bancada.senadores} Sen.
+                  </span>
+                </div>
+
+                <!-- Cota Parlamentar 2026 -->
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide block">Cota 2026 (CEAP/CEAPS)</span>
+                  <span class="text-sm sm:text-base font-bold text-slate-900 block truncate" title={`Total: ${formatMoeda(p.recursos.total_cota_2026)}`}>
+                    {p.recursos.total_cota_2026 > 0 ? formatMoeda(p.recursos.total_cota_2026) : 'R$ 0'}
+                  </span>
+                  <span class="text-[11px] text-slate-500 block">
+                    Câmara: {formatMoeda(p.recursos.ceap_camara_2026)}
+                  </span>
+                </div>
+
+                <!-- Emendas Parlamentares CGU -->
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide block">Emendas Pagas (57ª Leg)</span>
+                  <span class="text-sm sm:text-base font-bold text-slate-900 block truncate" title={`Total: ${formatMoeda(p.recursos.emendas_cgu_pagas)}`}>
+                    {p.recursos.emendas_cgu_pagas > 0 ? formatMoeda(p.recursos.emendas_cgu_pagas) : 'R$ 0'}
+                  </span>
+                  <span class="text-[11px] text-slate-500 block truncate">
+                    Pix: {formatMoeda(p.recursos.emendas_pix_pagas)}
+                  </span>
+                </div>
+
+                <!-- Coesão / Fidelidade Partidária -->
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide block">Fidelidade às Orientações</span>
+                  <div class="flex items-baseline gap-1">
+                    {p.coesao.media_adesao_orientacao !== null ? (
+                      <>
+                        <span class={`text-lg font-bold ${p.coesao.media_adesao_orientacao >= 80 ? 'text-emerald-700' : 'text-slate-800'}`}>
+                          {p.coesao.media_adesao_orientacao}%
+                        </span>
+                        <span class="text-[11px] text-slate-500">média</span>
+                      </>
+                    ) : (
+                      <span class="text-xs text-slate-500 italic">Sem votações c/ orientação</span>
+                    )}
+                  </div>
+                  <span class="text-[11px] text-slate-500 block">
+                    {p.coesao.total_votacoes_avaliadas} votações avaliadas
+                  </span>
+                </div>
+              </div>
+
+              <!-- Autodeclaração Estatutária Literal (Art. 1º) -->
+              <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-4 space-y-2 text-xs">
+                <div class="flex items-center justify-between text-[11px] text-slate-500">
+                  <span class="font-semibold text-slate-700">{p.autodeclaracao.artigo}</span>
+                  <span>Deferimento TSE: {p.deferimento}</span>
+                </div>
+                <blockquote class="italic text-slate-700 border-l-2 border-slate-300 pl-3 leading-relaxed">
+                  "{p.autodeclaracao.texto}"
+                </blockquote>
+                <div class="pt-1 flex items-center justify-between text-[11px] text-slate-500">
+                  <span>Presidente Nacional Registrado: <strong class="text-slate-800 font-semibold">{p.presidente_nacional}</strong></span>
+                  {p.criacao && <span>Fundação: {p.criacao}</span>}
+                </div>
+              </div>
+
+              <!-- Rodapé do Card com Ação -->
+              <div class="pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs border-t border-slate-100">
+                <div class="text-slate-500">
+                  {temBancada ? (
+                    <span>
+                      Representado por <strong>{p.bancada.deputados} deputados</strong> e <strong>{p.bancada.senadores} senadores</strong> em exercício.
+                    </span>
+                  ) : (
+                    <span class="italic text-slate-400">
+                      Partido apto a disputar eleições, sem cadeiras no Congresso Nacional nesta legislatura.
+                    </span>
+                  )}
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <a 
+                    href={`${base}?partido=${encodeURIComponent(p.sigla)}`}
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold transition"
+                  >
+                    <span>Ver parlamentares da bancada</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <!-- Estado Vazio para Busca Sem Resultados -->
+      <div id="noResultsState" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200 space-y-3">
+        <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <p class="text-slate-700 font-semibold text-base">Nenhum partido encontrado</p>
+        <p class="text-xs text-slate-500 max-w-sm mx-auto">
+          Tente buscar por outra sigla, nome, número eleitoral de urna ou limpe os filtros ativos.
+        </p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('partySearchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.party-card');
+    const counterLabel = document.getElementById('counterLabel');
+    const noResults = document.getElementById('noResultsState');
+
+    let currentFilter = 'todos';
+    let currentQuery = '';
+
+    function normalizeText(text) {
+      return (text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    }
+
+    function applyFilters() {
+      const q = normalizeText(currentQuery);
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const sigla = normalizeText(card.getAttribute('data-sigla'));
+        const nome = normalizeText(card.getAttribute('data-nome'));
+        const numero = normalizeText(card.getAttribute('data-numero'));
+        const presidente = normalizeText(card.getAttribute('data-presidente'));
+        const temBancada = card.getAttribute('data-tem-bancada') === 'true';
+        const temFederacao = card.getAttribute('data-tem-federacao') === 'true';
+
+        // Filtro de escopo
+        let matchesScope = true;
+        if (currentFilter === 'bancada') {
+          matchesScope = temBancada;
+        } else if (currentFilter === 'sem-bancada') {
+          matchesScope = !temBancada;
+        } else if (currentFilter === 'federacao') {
+          matchesScope = temFederacao;
+        }
+
+        // Filtro de busca textual
+        let matchesQuery = true;
+        if (q) {
+          matchesQuery = sigla.includes(q) || nome.includes(q) || numero.includes(q) || presidente.includes(q);
+        }
+
+        if (matchesScope && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Atualiza contador
+      if (counterLabel) {
+        counterLabel.textContent = `Exibindo ${visibleCount} partido${visibleCount === 1 ? '' : 's'}`;
+      }
+
+      // Mostra/oculta mensagem de sem resultados
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    // Eventos de Busca
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        applyFilters();
+      });
+    }
+
+    // Eventos de Filtro por Botões
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-emerald-600', 'text-white', 'border-emerald-600');
+          b.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200');
+        });
+
+        btn.classList.add('active', 'bg-emerald-600', 'text-white', 'border-emerald-600');
+        btn.classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200');
+
+        currentFilter = btn.getAttribute('data-filter') || 'todos';
+        applyFilters();
+      });
+    });
+  });
+</script>

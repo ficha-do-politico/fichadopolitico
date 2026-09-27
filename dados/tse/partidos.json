@@ -1,0 +1,502 @@
+[
+  {
+    "sigla": "MDB",
+    "nome": "Movimento Democrático Brasileiro",
+    "numero_eleitoral": 15,
+    "deferimento": "30/06/1981",
+    "criacao": "15/01/1980",
+    "presidente_nacional": "Baleia Rossi",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/movimento-democratico-brasileiro",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Movimento Democrático Brasileiro - MDB é uma agremiação partidária de cidadãos que se unem para atuar na vida política do País com base na defesa da democracia, do Estado Democrático de Direito, dos direitos humanos e da justiça social."
+    }
+  },
+  {
+    "sigla": "PT",
+    "nome": "Partido dos Trabalhadores",
+    "numero_eleitoral": 13,
+    "deferimento": "11/02/1982",
+    "criacao": "10/02/1980",
+    "presidente_nacional": "Edinho Silva",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-dos-trabalhadores",
+    "federacao": {
+      "nome": "Federação Brasil da Esperança",
+      "sigla": "Fe Brasil",
+      "composicao": [
+        "PT",
+        "PCdoB",
+        "PV"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido dos Trabalhadores (PT) é uma associação voluntária de cidadãos e cidadãs que se propõe a lutar pela democracia, pela soberania nacional e pela construção de uma sociedade socialista democrática."
+    }
+  },
+  {
+    "sigla": "PP",
+    "nome": "Progressistas",
+    "numero_eleitoral": 11,
+    "deferimento": "16/11/1995",
+    "criacao": "08/08/1995",
+    "presidente_nacional": "Ciro Nogueira",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/progressistas",
+    "federacao": {
+      "nome": "Federação União Progressista",
+      "sigla": "UNIÃO/PP",
+      "composicao": [
+        "UNIÃO",
+        "PP"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Progressistas, agremiação política nacional, tem por objetivo a promoção da dignidade da pessoa humana, a livre iniciativa, a economia de mercado, a redução das desigualdades sociais e a preservação do Estado Democrático de Direito."
+    }
+  },
+  {
+    "sigla": "PRD",
+    "nome": "Partido Renovação Democrática",
+    "numero_eleitoral": 25,
+    "deferimento": "09/11/2023",
+    "criacao": "26/10/2022",
+    "presidente_nacional": "Marcus Vinícius Neskau",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-renovacao-democratica",
+    "federacao": {
+      "nome": "Federação Renovação Solidária",
+      "sigla": "PRD/SOLIDARIEDADE",
+      "composicao": [
+        "PRD",
+        "SOLIDARIEDADE"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Renovação Democrática - PRD congrega cidadãos para a preservação das instituições democráticas, o incentivo ao trabalho e à produção, a defesa da liberdade e a segurança jurídica."
+    }
+  },
+  {
+    "sigla": "PSDB",
+    "nome": "Partido da Social Democracia Brasileira",
+    "numero_eleitoral": 45,
+    "deferimento": "24/08/1988",
+    "criacao": "25/06/1988",
+    "presidente_nacional": "Aécio Neves",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-da-social-democracia-brasileira",
+    "federacao": {
+      "nome": "Federação PSDB Cidadania",
+      "sigla": "PSDB/CIDADANIA",
+      "composicao": [
+        "PSDB",
+        "CIDADANIA"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido da Social Democracia Brasileira - PSDB é uma agremiação política orientada pelos princípios da social-democracia, da liberdade política e individual, da justiça social e da modernização do Estado."
+    }
+  },
+  {
+    "sigla": "PDT",
+    "nome": "Partido Democrático Trabalhista",
+    "numero_eleitoral": 12,
+    "deferimento": "10/11/1981",
+    "criacao": "17/06/1979",
+    "presidente_nacional": "Carlos Lupi",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-democratico-trabalhista",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Democrático Trabalhista - PDT é a organização política dos trabalhadores da cidade e do campo, que luta pelo socialismo democrático, pela emancipação nacional e pelos direitos trabalhistas e sociais."
+    }
+  },
+  {
+    "sigla": "UNIÃO",
+    "nome": "União Brasil",
+    "numero_eleitoral": 44,
+    "deferimento": "08/02/2022",
+    "criacao": "06/10/2021",
+    "presidente_nacional": "Antônio de Rueda",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/uniao-brasil",
+    "federacao": {
+      "nome": "Federação União Progressista",
+      "sigla": "UNIÃO/PP",
+      "composicao": [
+        "UNIÃO",
+        "PP"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O União Brasil é um partido político com atuação nacional, fundado nos princípios da democracia liberal, da defesa da liberdade econômica, da responsabilidade fiscal e da promoção da justiça social."
+    }
+  },
+  {
+    "sigla": "PL",
+    "nome": "Partido Liberal",
+    "numero_eleitoral": 22,
+    "deferimento": "19/12/2006",
+    "criacao": "26/10/2006",
+    "presidente_nacional": "Valdemar Costa Neto",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-liberal",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Liberal - PL, agremiação política constituída por tempo indeterminado, tem por finalidade a defesa da liberdade individual, da livre iniciativa, da ordem constitucional, da família e dos valores fundamentais da sociedade."
+    }
+  },
+  {
+    "sigla": "PODE",
+    "nome": "Podemos",
+    "numero_eleitoral": 20,
+    "deferimento": "02/10/1997",
+    "criacao": "01/05/1995",
+    "presidente_nacional": "Renata Abreu",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/podemos",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Podemos é uma agremiação política que tem por princípios a transparência governamental, a participação direta do cidadão nas decisões públicas, a probidade administrativa e o desenvolvimento socioeconômico."
+    }
+  },
+  {
+    "sigla": "PSB",
+    "nome": "Partido Socialista Brasileiro",
+    "numero_eleitoral": 40,
+    "deferimento": "01/07/1988",
+    "criacao": "02/07/1985",
+    "presidente_nacional": "João Henrique Campos",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-socialista-brasileiro",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Socialista Brasileiro - PSB é uma organização política que luta pela transformação socialista da sociedade, pela liberdade, pela igualdade de oportunidades e pela soberania nacional."
+    }
+  },
+  {
+    "sigla": "REPUBLICANOS",
+    "nome": "Republicanos",
+    "numero_eleitoral": 10,
+    "deferimento": "25/08/2005",
+    "criacao": "16/12/2003",
+    "presidente_nacional": "Marcos Pereira",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/republicanos",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Republicanos é uma agremiação partidária de cidadãos brasileiros comprometidos com a defesa da democracia representativa, da moralidade pública, da liberdade econômica e dos valores da família."
+    }
+  },
+  {
+    "sigla": "PSD",
+    "nome": "Partido Social Democrático",
+    "numero_eleitoral": 55,
+    "deferimento": "27/09/2011",
+    "criacao": "11/03/2011",
+    "presidente_nacional": "Gilberto Kassab",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-social-democratico",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Social Democrático - PSD é uma associação de cidadãos que tem como objetivos a valorização da democracia, a descentralização do poder, a eficiência do setor público e o desenvolvimento sustentável com justiça social."
+    }
+  },
+  {
+    "sigla": "CIDADANIA",
+    "nome": "Cidadania",
+    "numero_eleitoral": 23,
+    "deferimento": "19/03/1992",
+    "criacao": "26/01/1992",
+    "presidente_nacional": "Roberto Freire",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/cidadania",
+    "federacao": {
+      "nome": "Federação PSDB Cidadania",
+      "sigla": "PSDB/CIDADANIA",
+      "composicao": [
+        "PSDB",
+        "CIDADANIA"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Cidadania é uma organização partidária democrática, pluralista e progressista que tem por compromisso a defesa intransigente dos direitos civis, políticos, sociais e econômicos."
+    }
+  },
+  {
+    "sigla": "PCdoB",
+    "nome": "Partido Comunista do Brasil",
+    "numero_eleitoral": 65,
+    "deferimento": "23/06/1988",
+    "criacao": "18/02/1962",
+    "presidente_nacional": "Luciana Santos",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-comunista-do-brasil",
+    "federacao": {
+      "nome": "Federação Brasil da Esperança",
+      "sigla": "Fe Brasil",
+      "composicao": [
+        "PT",
+        "PCdoB",
+        "PV"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Comunista do Brasil - PCdoB é o partido político de vanguarda da classe trabalhadora, que tem como objetivo a conquista do poder político e a construção do socialismo."
+    }
+  },
+  {
+    "sigla": "SOLIDARIEDADE",
+    "nome": "Solidariedade",
+    "numero_eleitoral": 77,
+    "deferimento": "24/09/2013",
+    "criacao": "25/10/2012",
+    "presidente_nacional": "Eurípedes Júnior",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/solidariedade",
+    "federacao": {
+      "nome": "Federação Renovação Solidária",
+      "sigla": "PRD/SOLIDARIEDADE",
+      "composicao": [
+        "PRD",
+        "SOLIDARIEDADE"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Solidariedade é um partido político com atuação nacional que congrega forças sociais e produtivas para a defesa dos direitos dos trabalhadores, da geração de empregos e da dignidade humana."
+    }
+  },
+  {
+    "sigla": "PV",
+    "nome": "Partido Verde",
+    "numero_eleitoral": 43,
+    "deferimento": "30/09/1993",
+    "criacao": "17/01/1986",
+    "presidente_nacional": "José Luiz Penna",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-verde",
+    "federacao": {
+      "nome": "Federação Brasil da Esperança",
+      "sigla": "Fe Brasil",
+      "composicao": [
+        "PT",
+        "PCdoB",
+        "PV"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Verde - PV orienta sua ação na defesa do meio ambiente, da ecologia integral, da não-violência, da justiça social e da democracia participativa."
+    }
+  },
+  {
+    "sigla": "PSOL",
+    "nome": "Partido Socialismo e Liberdade",
+    "numero_eleitoral": 50,
+    "deferimento": "15/09/2005",
+    "criacao": "07/07/2004",
+    "presidente_nacional": "Paula Coradi",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-socialismo-e-liberdade",
+    "federacao": {
+      "nome": "Federação PSOL REDE",
+      "sigla": "PSOL/REDE",
+      "composicao": [
+        "PSOL",
+        "REDE"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Socialismo e Liberdade - PSOL tem como objetivo estratégico a superação da ordem capitalista e a construção de uma sociedade socialista democrática, baseada na igualdade substantiva e na soberania popular."
+    }
+  },
+  {
+    "sigla": "AVANTE",
+    "nome": "Avante",
+    "numero_eleitoral": 70,
+    "deferimento": "11/10/1994",
+    "criacao": "15/05/1989",
+    "presidente_nacional": "Luis Tibé",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/avante",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Avante é uma agremiação partidária que visa à representação democrática da sociedade civil, à eficiência da gestão pública, à defesa da família e ao fomento ao trabalho produtivo."
+    }
+  },
+  {
+    "sigla": "MOBILIZA",
+    "nome": "Mobilização Nacional",
+    "numero_eleitoral": 33,
+    "deferimento": "25/10/1990",
+    "criacao": "21/04/1984",
+    "presidente_nacional": "Antonio Massarollo",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/mobilizacao-nacional",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Mobilização Nacional congrega cidadãos em torno da soberania nacional, do fortalecimento do federalismo, da valorização da cultura brasileira e do desenvolvimento socioeconômico equilibrado."
+    }
+  },
+  {
+    "sigla": "AGIR",
+    "nome": "Agir",
+    "numero_eleitoral": 36,
+    "deferimento": "22/02/1990",
+    "criacao": "11/07/1985",
+    "presidente_nacional": "Daniel Tourinho",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/agir",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Agir é um partido político comprometido com a ação governamental voltada à inclusão social, à capacitação e à garantia dos direitos fundamentais da pessoa humana."
+    }
+  },
+  {
+    "sigla": "DC",
+    "nome": "Democracia Cristã",
+    "numero_eleitoral": 27,
+    "deferimento": "05/08/1997",
+    "criacao": "30/03/1995",
+    "presidente_nacional": "João Caldas",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/democracia-crista",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "A Democracia Cristã - DC tem por fundamento os princípios do humanismo cristão, a defesa da dignidade da pessoa humana, da liberdade religiosa, da justiça social e da ordem democrática."
+    }
+  },
+  {
+    "sigla": "PRTB",
+    "nome": "Partido Renovador Trabalhista Brasileiro",
+    "numero_eleitoral": 28,
+    "deferimento": "18/02/1997",
+    "criacao": "27/11/1994",
+    "presidente_nacional": "Leonardo Araujo",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-renovador-trabalhista-brasileiro",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Renovador Trabalhista Brasileiro - PRTB fundamenta sua doutrina no trabalhismo participativo, no nacionalismo democrático, na ordem constitucional e na defesa da família."
+    }
+  },
+  {
+    "sigla": "NOVO",
+    "nome": "Partido Novo",
+    "numero_eleitoral": 30,
+    "deferimento": "15/09/2015",
+    "criacao": "12/02/2011",
+    "presidente_nacional": "Eduardo Ribeiro",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-novo",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Novo - NOVO é uma instituição política regida pelos princípios da liberdade individual, da livre iniciativa econômica, do livre mercado, do império da lei e da atuação do Estado restrita às suas funções essenciais."
+    }
+  },
+  {
+    "sigla": "REDE",
+    "nome": "Rede Sustentabilidade",
+    "numero_eleitoral": 18,
+    "deferimento": "22/09/2015",
+    "criacao": "16/02/2013",
+    "presidente_nacional": "Paulo Lamac",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/rede-sustentabilidade",
+    "federacao": {
+      "nome": "Federação PSOL REDE",
+      "sigla": "PSOL/REDE",
+      "composicao": [
+        "PSOL",
+        "REDE"
+      ]
+    },
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "A Rede Sustentabilidade - REDE é uma organização política que visa aprofundar a democracia, promover o desenvolvimento sustentável, defender os direitos humanos e ambientais e renovar a cultura política."
+    }
+  },
+  {
+    "sigla": "DEMOCRATA",
+    "nome": "Democrata",
+    "numero_eleitoral": 35,
+    "deferimento": "29/09/2015",
+    "criacao": "13/09/2008",
+    "presidente_nacional": "Suêd Haidar",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/democrata",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Democrata é uma agremiação partidária que defende o Estado Democrático de Direito, as liberdades civis, a igualdade de oportunidades e o desenvolvimento socioeconômico autônomo."
+    }
+  },
+  {
+    "sigla": "MISSÃO",
+    "nome": "Partido Missão",
+    "numero_eleitoral": 14,
+    "deferimento": "04/11/2025",
+    "criacao": "17/10/2023",
+    "presidente_nacional": "Renan Santos",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-missao",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Missão é uma agremiação partidária de cidadãos comprometidos com o fortalecimento das instituições republicanas, a probidade na gestão pública, a responsabilidade fiscal e a renovação de lideranças."
+    }
+  },
+  {
+    "sigla": "UP",
+    "nome": "Unidade Popular",
+    "numero_eleitoral": 80,
+    "deferimento": "10/12/2019",
+    "criacao": "16/06/2016",
+    "presidente_nacional": "Léo Péricles",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/unidade-popular",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "A Unidade Popular pelo Socialismo - UP tem por objetivo a organização popular e da classe trabalhadora para a superação das desigualdades socioeconômicas e a construção do socialismo."
+    }
+  },
+  {
+    "sigla": "PSTU",
+    "nome": "Partido Socialista dos Trabalhadores Unificado",
+    "numero_eleitoral": 16,
+    "deferimento": "19/12/1995",
+    "criacao": "05/06/1994",
+    "presidente_nacional": "Zé Maria",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-socialista-dos-trabalhadores-unificado",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Socialista dos Trabalhadores Unificado - PSTU é um partido socialista e revolucionário que luta pela auto-organização da classe trabalhadora e pela defesa intransigente de suas reivindicações."
+    }
+  },
+  {
+    "sigla": "PCB",
+    "nome": "Partido Comunista Brasileiro",
+    "numero_eleitoral": 21,
+    "deferimento": "09/05/1996",
+    "criacao": "25/03/1922",
+    "presidente_nacional": "Edmilson Costa",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-comunista-brasileiro",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido Comunista Brasileiro - PCB fundamenta sua ação política na emancipação dos trabalhadores, na solidariedade internacionalista e na transformação socialista da sociedade."
+    }
+  },
+  {
+    "sigla": "PCO",
+    "nome": "Partido da Causa Operária",
+    "numero_eleitoral": 29,
+    "deferimento": "30/09/1997",
+    "criacao": "07/12/1995",
+    "presidente_nacional": "Rui Costa Pimenta",
+    "fonte_oficial_tse": "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-da-causa-operaria",
+    "federacao": null,
+    "autodeclaracao": {
+      "artigo": "Art. 1º do Estatuto Partidário Oficial registrado no TSE",
+      "texto": "O Partido da Causa Operária - PCO é uma organização política operária independente que luta pela mobilização dos trabalhadores na defesa de seus direitos fundamentais e de sua emancipação política."
+    }
+  }
+]

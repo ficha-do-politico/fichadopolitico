@@ -307,5 +307,79 @@ export interface ReferenciaItem {
   tags: string[];
 }
 
+export interface PartidoFederacao {
+  nome: string;
+  sigla: string;
+  composicao: string[];
+}
+
+export interface PartidoAutodeclaracao {
+  artigo: string;
+  texto: string;
+}
+
+export interface PartidoBancada {
+  deputados: number;
+  senadores: number;
+  total_congresso: number;
+  percentual_congresso: number;
+  deputados_ids: number[];
+  senadores_ids: number[];
+}
+
+export interface PartidoRecursos {
+  ceap_camara_2026: number;
+  ceaps_senado_2026: number;
+  total_cota_2026: number;
+  emendas_cgu_pagas: number;
+  emendas_pix_pagas: number;
+  emendas_definida_pagas: number;
+}
+
+export interface PartidoCoesao {
+  media_adesao_orientacao: number | null;
+  total_votacoes_avaliadas: number;
+}
+
+export interface PartidoVotacaoTema {
+  tema_id: string;
+  tema_titulo: string;
+  orientacao_bancada?: string;
+  distribuicao_votos: {
+    sim: number;
+    nao: number;
+    abstencao: number;
+    ausente: number;
+    outro: number;
+  };
+  total_votantes: number;
+  taxa_adesao_orientacao?: number | null;
+}
+
+export interface Partido {
+  sigla: string;
+  nome: string;
+  numero_eleitoral: number;
+  deferimento: string;
+  criacao?: string;
+  presidente_nacional: string;
+  fonte_oficial_tse: string;
+  federacao: PartidoFederacao | null;
+  autodeclaracao: PartidoAutodeclaracao;
+  bancada: PartidoBancada;
+  recursos: PartidoRecursos;
+  coesao: PartidoCoesao;
+  votacoes: {
+    camara: {
+      total_temas: number;
+      temas: PartidoVotacaoTema[];
+    };
+    senado: {
+      total_temas: number;
+      temas: PartidoVotacaoTema[];
+    };
+  };
+}
+
 
 
