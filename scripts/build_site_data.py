@@ -576,6 +576,100 @@ def compile_partidos_data(deputados, senadores, temas, votacoes_site_data):
     return partidos_compilados
 
 
+def compile_bancadas_data(deputados, senadores, partidos_data):
+    """Compila a composição das bancadas para o Hemiciclo Parlamentar (Semi-donut).
+
+    Apartidarismo estrito (AD-004): ordenação unicamente pelo tamanho da bancada
+    (maior para menor) e desempate alfabético por sigla. Proibida ordenação por espectro ideológico.
+    Paridade bicameral (AD-011/AD-014): Câmara (513) e Senado (81).
+    """
+    # 1. Bancadas da Câmara dos Deputados (513)
+    bancadas_camara = []
+    for p in partidos_data:
+        deps_count = p["bancada"]["deputados"]
+        if deps_count > 0:
+            bancadas_camara.append(
+                {
+                    "sigla": p["sigla"],
+                    "nome": p["nome"],
+                    "slug": p["slug"],
+                    "numero_eleitoral": p["numero_eleitoral"],
+                    "cadeiras": deps_count,
+                    "percentual": round((deps_count / 513.0) * 100, 2),
+                }
+            )
+
+    # Ordenação neutra: maiores bancadas primeiro; desempate alfabético por sigla
+    bancadas_camara.sort(key=lambda x: (-x["cadeiras"], x["sigla"]))
+
+    total_camara = sum(b["cadeiras"] for b in bancadas_camara)
+    if total_camara != 513:
+        raise ValueError(
+            f"Integridade violada na Câmara: soma das bancadas ({total_camara}) diferente de 513"
+        )
+
+    # 2. Bancadas do Senado Federal (81)
+    bancadas_senado = []
+    for p in partidos_data:
+        sens_count = p["bancada"]["senadores"]
+        if sens_count > 0:
+            bancadas_senado.append(
+                {
+                    "sigla": p["sigla"],
+                    "nome": p["nome"],
+                    "slug": p["slug"],
+                    "numero_eleitoral": p["numero_eleitoral"],
+                    "cadeiras": sens_count,
+                    "percentual": round((sens_count / 81.0) * 100, 2),
+                }
+            )
+
+    # Contabiliza senadores sem partido
+    sens_sem_partido = sum(
+        1 for s in senadores if s.get("partido") in ("S/Partido", "Sem Partido", "", None)
+    )
+    if sens_sem_partido > 0:
+        bancadas_senado.append(
+            {
+                "sigla": "S/Partido",
+                "nome": "Sem Partido",
+                "slug": "sem-partido",
+                "numero_eleitoral": None,
+                "cadeiras": sens_sem_partido,
+                "percentual": round((sens_sem_partido / 81.0) * 100, 2),
+            }
+        )
+
+    bancadas_senado.sort(key=lambda x: (-x["cadeiras"], x["sigla"]))
+
+    total_senado = sum(b["cadeiras"] for b in bancadas_senado)
+    if total_senado != 81:
+        raise ValueError(
+            f"Integridade violada no Senado: soma das bancadas ({total_senado}) diferente de 81"
+        )
+
+    return {
+        "camara": {
+            "casa": "camara",
+            "nome_casa": "Câmara dos Deputados",
+            "total_cadeiras": 513,
+            "maioria_simples": 257,
+            "maioria_qualificada_3_5": 308,
+            "total_partidos": len(bancadas_camara),
+            "bancadas": bancadas_camara,
+        },
+        "senado": {
+            "casa": "senado",
+            "nome_casa": "Senado Federal",
+            "total_cadeiras": 81,
+            "maioria_simples": 41,
+            "maioria_qualificada_3_5": 49,
+            "total_partidos": len(bancadas_senado),
+            "bancadas": bancadas_senado,
+        },
+    }
+
+
 def main():
     print("Compilando dados para o site do Ficha do Político...")
     SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -838,6 +932,15 @@ def main():
         json.dump(partidos_data, f, ensure_ascii=False, indent=2)
     print(
         f"  - {len(partidos_data)} partidos exportados em: {out_partidos} ({out_partidos.stat().st_size / 1024:.1f} KB)"
+    )
+
+    # 6. Compila e exporta composição de bancadas (Hemiciclo / Semi-donut)
+    bancadas_data = compile_bancadas_data(deputados, senadores, partidos_data)
+    out_bancadas = SITE_DATA_DIR / "bancadas.json"
+    with open(out_bancadas, "w", encoding="utf-8") as f:
+        json.dump(bancadas_data, f, ensure_ascii=False, indent=2)
+    print(
+        f"  - Hemiciclo de bancadas exportado em: {out_bancadas} ({out_bancadas.stat().st_size / 1024:.1f} KB)"
     )
 
     print("Sucesso!")

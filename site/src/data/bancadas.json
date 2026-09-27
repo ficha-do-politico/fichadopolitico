@@ -1,0 +1,302 @@
+{
+  "camara": {
+    "casa": "camara",
+    "nome_casa": "Câmara dos Deputados",
+    "total_cadeiras": 513,
+    "maioria_simples": 257,
+    "maioria_qualificada_3_5": 308,
+    "total_partidos": 22,
+    "bancadas": [
+      {
+        "sigla": "PL",
+        "nome": "Partido Liberal",
+        "slug": "pl",
+        "numero_eleitoral": 22,
+        "cadeiras": 98,
+        "percentual": 19.1
+      },
+      {
+        "sigla": "PT",
+        "nome": "Partido dos Trabalhadores",
+        "slug": "pt",
+        "numero_eleitoral": 13,
+        "cadeiras": 64,
+        "percentual": 12.48
+      },
+      {
+        "sigla": "UNIÃO",
+        "nome": "União Brasil",
+        "slug": "uniao",
+        "numero_eleitoral": 44,
+        "cadeiras": 52,
+        "percentual": 10.14
+      },
+      {
+        "sigla": "PSD",
+        "nome": "Partido Social Democrático",
+        "slug": "psd",
+        "numero_eleitoral": 55,
+        "cadeiras": 48,
+        "percentual": 9.36
+      },
+      {
+        "sigla": "PP",
+        "nome": "Progressistas",
+        "slug": "pp",
+        "numero_eleitoral": 11,
+        "cadeiras": 46,
+        "percentual": 8.97
+      },
+      {
+        "sigla": "REPUBLICANOS",
+        "nome": "Republicanos",
+        "slug": "republicanos",
+        "numero_eleitoral": 10,
+        "cadeiras": 42,
+        "percentual": 8.19
+      },
+      {
+        "sigla": "MDB",
+        "nome": "Movimento Democrático Brasileiro",
+        "slug": "mdb",
+        "numero_eleitoral": 15,
+        "cadeiras": 38,
+        "percentual": 7.41
+      },
+      {
+        "sigla": "PODE",
+        "nome": "Podemos",
+        "slug": "pode",
+        "numero_eleitoral": 20,
+        "cadeiras": 27,
+        "percentual": 5.26
+      },
+      {
+        "sigla": "PSDB",
+        "nome": "Partido da Social Democracia Brasileira",
+        "slug": "psdb",
+        "numero_eleitoral": 45,
+        "cadeiras": 18,
+        "percentual": 3.51
+      },
+      {
+        "sigla": "PSB",
+        "nome": "Partido Socialista Brasileiro",
+        "slug": "psb",
+        "numero_eleitoral": 40,
+        "cadeiras": 17,
+        "percentual": 3.31
+      },
+      {
+        "sigla": "PSOL",
+        "nome": "Partido Socialismo e Liberdade",
+        "slug": "psol",
+        "numero_eleitoral": 50,
+        "cadeiras": 13,
+        "percentual": 2.53
+      },
+      {
+        "sigla": "PCdoB",
+        "nome": "Partido Comunista do Brasil",
+        "slug": "pcdob",
+        "numero_eleitoral": 65,
+        "cadeiras": 11,
+        "percentual": 2.14
+      },
+      {
+        "sigla": "PDT",
+        "nome": "Partido Democrático Trabalhista",
+        "slug": "pdt",
+        "numero_eleitoral": 12,
+        "cadeiras": 9,
+        "percentual": 1.75
+      },
+      {
+        "sigla": "PV",
+        "nome": "Partido Verde",
+        "slug": "pv",
+        "numero_eleitoral": 43,
+        "cadeiras": 6,
+        "percentual": 1.17
+      },
+      {
+        "sigla": "AVANTE",
+        "nome": "Avante",
+        "slug": "avante",
+        "numero_eleitoral": 70,
+        "cadeiras": 5,
+        "percentual": 0.97
+      },
+      {
+        "sigla": "NOVO",
+        "nome": "Partido Novo",
+        "slug": "novo",
+        "numero_eleitoral": 30,
+        "cadeiras": 5,
+        "percentual": 0.97
+      },
+      {
+        "sigla": "SOLIDARIEDADE",
+        "nome": "Solidariedade",
+        "slug": "solidariedade",
+        "numero_eleitoral": 77,
+        "cadeiras": 4,
+        "percentual": 0.78
+      },
+      {
+        "sigla": "PRD",
+        "nome": "Partido Renovação Democrática",
+        "slug": "prd",
+        "numero_eleitoral": 25,
+        "cadeiras": 3,
+        "percentual": 0.58
+      },
+      {
+        "sigla": "REDE",
+        "nome": "Rede Sustentabilidade",
+        "slug": "rede",
+        "numero_eleitoral": 18,
+        "cadeiras": 3,
+        "percentual": 0.58
+      },
+      {
+        "sigla": "CIDADANIA",
+        "nome": "Cidadania",
+        "slug": "cidadania",
+        "numero_eleitoral": 23,
+        "cadeiras": 2,
+        "percentual": 0.39
+      },
+      {
+        "sigla": "DC",
+        "nome": "Democracia Cristã",
+        "slug": "dc",
+        "numero_eleitoral": 27,
+        "cadeiras": 1,
+        "percentual": 0.19
+      },
+      {
+        "sigla": "MISSÃO",
+        "nome": "Partido Missão",
+        "slug": "missao",
+        "numero_eleitoral": 14,
+        "cadeiras": 1,
+        "percentual": 0.19
+      }
+    ]
+  },
+  "senado": {
+    "casa": "senado",
+    "nome_casa": "Senado Federal",
+    "total_cadeiras": 81,
+    "maioria_simples": 41,
+    "maioria_qualificada_3_5": 49,
+    "total_partidos": 13,
+    "bancadas": [
+      {
+        "sigla": "PL",
+        "nome": "Partido Liberal",
+        "slug": "pl",
+        "numero_eleitoral": 22,
+        "cadeiras": 15,
+        "percentual": 18.52
+      },
+      {
+        "sigla": "PSD",
+        "nome": "Partido Social Democrático",
+        "slug": "psd",
+        "numero_eleitoral": 55,
+        "cadeiras": 14,
+        "percentual": 17.28
+      },
+      {
+        "sigla": "MDB",
+        "nome": "Movimento Democrático Brasileiro",
+        "slug": "mdb",
+        "numero_eleitoral": 15,
+        "cadeiras": 9,
+        "percentual": 11.11
+      },
+      {
+        "sigla": "PT",
+        "nome": "Partido dos Trabalhadores",
+        "slug": "pt",
+        "numero_eleitoral": 13,
+        "cadeiras": 9,
+        "percentual": 11.11
+      },
+      {
+        "sigla": "PP",
+        "nome": "Progressistas",
+        "slug": "pp",
+        "numero_eleitoral": 11,
+        "cadeiras": 7,
+        "percentual": 8.64
+      },
+      {
+        "sigla": "PSB",
+        "nome": "Partido Socialista Brasileiro",
+        "slug": "psb",
+        "numero_eleitoral": 40,
+        "cadeiras": 7,
+        "percentual": 8.64
+      },
+      {
+        "sigla": "REPUBLICANOS",
+        "nome": "Republicanos",
+        "slug": "republicanos",
+        "numero_eleitoral": 10,
+        "cadeiras": 6,
+        "percentual": 7.41
+      },
+      {
+        "sigla": "PSDB",
+        "nome": "Partido da Social Democracia Brasileira",
+        "slug": "psdb",
+        "numero_eleitoral": 45,
+        "cadeiras": 4,
+        "percentual": 4.94
+      },
+      {
+        "sigla": "PODE",
+        "nome": "Podemos",
+        "slug": "pode",
+        "numero_eleitoral": 20,
+        "cadeiras": 3,
+        "percentual": 3.7
+      },
+      {
+        "sigla": "UNIÃO",
+        "nome": "União Brasil",
+        "slug": "uniao",
+        "numero_eleitoral": 44,
+        "cadeiras": 3,
+        "percentual": 3.7
+      },
+      {
+        "sigla": "PDT",
+        "nome": "Partido Democrático Trabalhista",
+        "slug": "pdt",
+        "numero_eleitoral": 12,
+        "cadeiras": 2,
+        "percentual": 2.47
+      },
+      {
+        "sigla": "AVANTE",
+        "nome": "Avante",
+        "slug": "avante",
+        "numero_eleitoral": 70,
+        "cadeiras": 1,
+        "percentual": 1.23
+      },
+      {
+        "sigla": "S/Partido",
+        "nome": "Sem Partido",
+        "slug": "sem-partido",
+        "numero_eleitoral": null,
+        "cadeiras": 1,
+        "percentual": 1.23
+      }
+    ]
+  }
+}

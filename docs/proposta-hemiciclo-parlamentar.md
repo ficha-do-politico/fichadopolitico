@@ -81,9 +81,9 @@ Com base no benchmark prático de infografia cívica, avaliamos dois formatos vi
 
 ## 6. Checklist de Implementação
 
-- [ ] Utilitário geométrico para cálculo de arcos SVG de semi-donut (`scripts/core/svg_arc.py` ou helper TypeScript).
-- [ ] Agregação de totais de bancadas no compilador de dados (`scripts/build_site_data.py`).
-- [ ] Componente `SemiDonutBancadas.astro` com suporte a alternância Câmara/Senado.
-- [ ] Integração do clique na fatia com o filtro multiselect de parlamentares em `index.astro`.
+- [x] Utilitário geométrico para cálculo de arcos SVG de semi-donut (`site/src/utils/donut.ts`).
+- [x] Agregação de totais de bancadas no compilador de dados (`scripts/build_site_data.py` gerando `site/src/data/bancadas.json`).
+- [x] Componente `HemicicloBancadas.astro` com suporte a alternância Câmara (513) / Senado (81).
+- [x] Integração do clique na fatia com o filtro multiselect de parlamentares em `index.astro`.
 - [ ] Variante do componente para placares de votação nominal (`/votacao/[id]`).
-- [ ] Testes automatizados de consistência da soma das cadeiras (513 e 81) em `tests/test_bancadas.py`.
+- [x] Testes automatizados de consistência da soma das cadeiras (513 e 81) em `tests/test_bancadas.py`.

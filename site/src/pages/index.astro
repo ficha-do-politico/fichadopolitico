@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ParlamentarCard from '../components/ParlamentarCard.astro';
 import ParlamentarTableRow from '../components/ParlamentarTableRow.astro';
+import HemicicloBancadas from '../components/HemicicloBancadas.astro';
 import deputadosData from '../data/deputados.json';
 import senadoresData from '../data/senadores.json';
 import temasData from '../data/temas.json';
@@ -226,8 +227,13 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
     </div>
   </section>
 
+  <!-- Hemiciclo Parlamentar das Bancadas (Semi-Donut Oficial) -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-2">
+    <HemicicloBancadas />
+  </section>
+
   <!-- Lista de Parlamentares -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-6" id="secaoParlamentares">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-200 text-sm">
       <span class="text-slate-500 text-xs sm:text-sm">
         Mostrando <strong id="visibleCount" class="text-slate-900 font-semibold">{totalParlamentares}</strong> de {totalParlamentares} parlamentares
@@ -495,8 +501,54 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
         btn.classList.add('active', 'bg-slate-900', 'text-white', 'shadow-xs');
         btn.classList.remove('text-slate-600');
         activeCasa = btn.getAttribute('data-filter-casa') || '';
+        if (activeCasa === 'camara' || activeCasa === 'senado') {
+          window.dispatchEvent(new CustomEvent('hemiciclo:sync-casa', {
+            detail: { casa: activeCasa }
+          }));
+        }
         renderFilter();
       });
+    });
+
+    // Escuta cliques em bancadas originados do Hemiciclo
+    window.addEventListener('hemiciclo:selecionar-partido', (e) => {
+      const detail = e.detail || {};
+      const sigla = detail.sigla;
+      const casa = detail.casa;
+      if (!sigla) return;
+
+      if (casa && activeCasa !== casa) {
+        activeCasa = casa;
+        casaBtns.forEach(b => {
+          const match = b.getAttribute('data-filter-casa') === casa;
+          b.classList.toggle('active', match);
+          b.classList.toggle('bg-slate-900', match);
+          b.classList.toggle('text-white', match);
+          b.classList.toggle('shadow-xs', match);
+          b.classList.toggle('text-slate-600', !match);
+        });
+      }
+
+      const targetCb = Array.from(partidoCheckboxes).find(
+        cb => cb.getAttribute('data-partido-name')?.toLowerCase() === sigla.toLowerCase()
+      );
+
+      if (targetCb) {
+        const isOnlyChecked = targetCb.checked && getSelectedPartidos().length === 1;
+        if (isOnlyChecked) {
+          targetCb.checked = false;
+        } else {
+          partidoCheckboxes.forEach(cb => { cb.checked = false; });
+          targetCb.checked = true;
+        }
+        updatePartidoDisplay();
+        renderFilter();
+
+        const listaSec = document.getElementById('secaoParlamentares');
+        if (listaSec) {
+          listaSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     });
 
     clearBtn.addEventListener('click', () => {
