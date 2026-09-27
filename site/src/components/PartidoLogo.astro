@@ -1,0 +1,55 @@
+---
+interface Props {
+  slug: string;
+  sigla: string;
+  numeroEleitoral?: number | null;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  class?: string;
+}
+
+const {
+  slug,
+  sigla,
+  numeroEleitoral,
+  size = 'md',
+  class: className = '',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const sizeClasses = {
+  sm: 'w-8 h-8 p-1 rounded-lg',
+  md: 'w-12 h-12 p-1.5 rounded-xl',
+  lg: 'w-16 h-16 sm:w-20 sm:h-20 p-2 rounded-2xl',
+  xl: 'w-20 h-20 p-2.5 rounded-2xl',
+}[size];
+
+const fallbackTextSize = {
+  sm: 'text-[10px]',
+  md: 'text-xs',
+  lg: 'text-sm',
+  xl: 'text-base',
+}[size];
+---
+
+<div
+  class={`bg-white border border-slate-200/90 shadow-2xs flex items-center justify-center shrink-0 overflow-hidden relative select-none ${sizeClasses} ${className}`}
+  title={`${sigla} ${numeroEleitoral ? `(Nº ${numeroEleitoral})` : ''}`}
+>
+  <img
+    src={`${base}partidos/${slug}.svg`}
+    alt={`Logo oficial do ${sigla}`}
+    class="w-full h-full object-contain partido-logo-img"
+    loading="lazy"
+    width="80"
+    height="80"
+    onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+  />
+  <div
+    class={`partido-logo-fallback hidden w-full h-full bg-slate-900 text-white flex-col items-center justify-center font-black ${fallbackTextSize}`}
+  >
+    {numeroEleitoral ? numeroEleitoral : sigla.slice(0, 3)}
+  </div>
+</div>

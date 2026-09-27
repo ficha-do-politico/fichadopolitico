@@ -150,11 +150,11 @@ export function computeSemiDonutSlices(
 }
 
 /**
- * Calcula marcadores de maioria (simples e qualificada) no semi-donut.
+ * Calcula marcadores de maioria (absoluta e qualificada) no semi-donut.
  */
 export function computeMajorityMarkers(
   totalCadeiras: number,
-  maioriaSimples: number,
+  maioriaAbsoluta: number,
   maioriaQualificada: number,
   dimensions: DonutDimensions
 ): MajorityMarker[] {
@@ -162,7 +162,7 @@ export function computeMajorityMarkers(
   const markers: MajorityMarker[] = [];
 
   const configs = [
-    { label: '50% (Maioria simples)', cadeiras: maioriaSimples },
+    { label: '50% (Maioria absoluta)', cadeiras: maioriaAbsoluta },
     { label: '3/5 (Maioria qualificada)', cadeiras: maioriaQualificada },
   ];
 
