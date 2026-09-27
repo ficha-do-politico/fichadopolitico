@@ -60,6 +60,7 @@ Ferramentas existentes muitas vezes agregam dados sem curadoria, apresentam dump
   - *Eleições & Patrimônio 2026:* Candidaturas mapeadas e histórico de bens autodeclarados ao TSE para o Congresso e Presidência (AD-015 e AD-018).
 - **Foco Imediato (v1):** Catálogo de votações nominais consolidado em 10 temas (meta inicial atingida; ver `docs/backlog-votacoes.md`).
 - **Roadmap Subsequente:**
+  - *v2:* Guia de Partidos Auditável e Neutro (dados cadastrais do TSE, autodeclaração estatutária literal, coesão de votos nas matérias curadas e despesas/emendas consolidadas por bancada; ver [docs/proposta-guia-partidos.md](../docs/proposta-guia-partidos.md)).
   - *v2:* Auditoria de Gastos e Cruzamento Societário de Fornecedores da Cota com QSA da Receita Federal e Folha de Servidores (AD-021).
   - *v2:* Rastreabilidade de Convênios na Ponta das Emendas via Transferegov.br.
   - *v3:* Transparência Processual e Judicial via STF e DataJud/CNJ (AD-017).

@@ -167,12 +167,58 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
               </select>
             </div>
 
-            <div class="flex items-center gap-1.5 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 shadow-2xs flex-1 md:flex-initial justify-between md:justify-start">
-              <label for="filterPartido" class="text-slate-500 font-medium whitespace-nowrap">Partido:</label>
-              <select id="filterPartido" class="bg-transparent text-slate-700 outline-none focus:text-emerald-700 text-xs cursor-pointer flex-1 md:flex-initial text-right md:text-left">
-                <option value="">Todos</option>
-                {partidos.map(p => <option value={p.toLowerCase()}>{p}</option>)}
-              </select>
+            <!-- Filtro Multiselect de Partidos -->
+            <div class="relative flex-1 md:flex-initial" id="partidoDropdownContainer">
+              <button
+                type="button"
+                id="partidoDropdownBtn"
+                class="w-full flex items-center justify-between md:justify-start gap-1.5 bg-white border border-slate-200 hover:border-slate-300 rounded-lg px-2.5 py-1.5 shadow-2xs text-xs text-slate-700 transition cursor-pointer"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Filtrar por partido"
+              >
+                <div class="flex items-center gap-1.5 truncate">
+                  <span class="text-slate-500 font-medium whitespace-nowrap">Partido:</span>
+                  <span id="partidoLabel" class="font-medium text-slate-700 truncate max-w-[100px] sm:max-w-[130px]">Todos</span>
+                </div>
+                <div class="flex items-center gap-1 shrink-0 ml-1">
+                  <span id="partidoCountBadge" class="hidden px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold leading-none"></span>
+                  <svg id="partidoDropdownArrow" class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Painel Flutuante do Multiselect -->
+              <div
+                id="partidoDropdownMenu"
+                class="hidden absolute right-0 sm:right-0 md:left-0 md:right-auto top-full mt-1.5 w-60 sm:w-64 bg-white border border-slate-200 rounded-xl shadow-lg z-50 flex flex-col overflow-hidden text-xs"
+              >
+                <div class="px-3 py-2 border-b border-slate-100 flex items-center justify-between bg-slate-50/90">
+                  <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Selecionar Partidos</span>
+                  <button
+                    type="button"
+                    id="clearPartidosBtn"
+                    class="text-[11px] text-emerald-700 hover:text-emerald-800 font-medium hover:underline cursor-pointer"
+                  >
+                    Limpar
+                  </button>
+                </div>
+                <div class="overflow-y-auto max-h-56 p-1.5 space-y-0.5 divide-y divide-slate-50">
+                  {partidos.map(p => (
+                    <label class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer select-none text-slate-700 transition">
+                      <input
+                        type="checkbox"
+                        name="partidoCheckbox"
+                        value={p.toLowerCase()}
+                        data-partido-name={p}
+                        class="partido-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-600/20 w-3.5 h-3.5 cursor-pointer accent-emerald-600"
+                      />
+                      <span class="font-medium">{p}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -276,7 +322,14 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
     const clearBtn = document.getElementById('clearSearch');
     const filterEleicao = document.getElementById('filterEleicao');
     const filterUf = document.getElementById('filterUf');
-    const filterPartido = document.getElementById('filterPartido');
+    const partidoDropdownContainer = document.getElementById('partidoDropdownContainer');
+    const partidoDropdownBtn = document.getElementById('partidoDropdownBtn');
+    const partidoDropdownMenu = document.getElementById('partidoDropdownMenu');
+    const partidoDropdownArrow = document.getElementById('partidoDropdownArrow');
+    const partidoLabel = document.getElementById('partidoLabel');
+    const partidoCountBadge = document.getElementById('partidoCountBadge');
+    const clearPartidosBtn = document.getElementById('clearPartidosBtn');
+    const partidoCheckboxes = Array.from(document.querySelectorAll('.partido-checkbox'));
     const casaBtns = Array.from(document.querySelectorAll('.casa-btn'));
     const grid = document.getElementById('parlamentaresGrid');
     const table = document.getElementById('parlamentaresTable');
@@ -292,7 +345,40 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
       return el.tagName === 'A' ? el : el.querySelector('a');
     }
 
-    function matchesFilters(anchor, q, uf, partido, eleicao) {
+    function getSelectedPartidos() {
+      return partidoCheckboxes
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+    }
+
+    function updatePartidoDisplay() {
+      const checkedBoxes = partidoCheckboxes.filter(cb => cb.checked);
+      const count = checkedBoxes.length;
+
+      if (count === 0) {
+        partidoLabel.textContent = 'Todos';
+        partidoCountBadge.classList.add('hidden');
+        partidoDropdownBtn.classList.remove('border-emerald-500', 'bg-emerald-50/40');
+      } else if (count === 1) {
+        const name = checkedBoxes[0].getAttribute('data-partido-name') || checkedBoxes[0].value.toUpperCase();
+        partidoLabel.textContent = name;
+        partidoCountBadge.classList.add('hidden');
+        partidoDropdownBtn.classList.add('border-emerald-500', 'bg-emerald-50/40');
+      } else if (count === 2) {
+        const n1 = checkedBoxes[0].getAttribute('data-partido-name') || checkedBoxes[0].value.toUpperCase();
+        const n2 = checkedBoxes[1].getAttribute('data-partido-name') || checkedBoxes[1].value.toUpperCase();
+        partidoLabel.textContent = `${n1}, ${n2}`;
+        partidoCountBadge.classList.add('hidden');
+        partidoDropdownBtn.classList.add('border-emerald-500', 'bg-emerald-50/40');
+      } else {
+        partidoLabel.textContent = `${count} partidos`;
+        partidoCountBadge.textContent = String(count);
+        partidoCountBadge.classList.remove('hidden');
+        partidoDropdownBtn.classList.add('border-emerald-500', 'bg-emerald-50/40');
+      }
+    }
+
+    function matchesFilters(anchor, q, uf, selectedPartidos, eleicao) {
       const nome = anchor.getAttribute('data-nome') || '';
       const civil = anchor.getAttribute('data-civil') || '';
       const p = anchor.getAttribute('data-partido') || '';
@@ -303,7 +389,7 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
 
       const matchesQuery = !q || nome.includes(q) || civil.includes(q) || p.includes(q) || u.includes(q);
       const matchesUf = !uf || u === uf;
-      const matchesPartido = !partido || p === partido;
+      const matchesPartido = selectedPartidos.length === 0 || selectedPartidos.includes(p);
       const matchesCasa = !activeCasa || c === activeCasa;
       let matchesEleicao = true;
       if (eleicao === 'candidatos') matchesEleicao = isCand;
@@ -318,7 +404,7 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
     function renderFilter() {
       const q = input.value.trim().toLowerCase();
       const uf = filterUf.value;
-      const partido = filterPartido.value;
+      const selectedPartidos = getSelectedPartidos();
       const eleicao = filterEleicao ? filterEleicao.value : '';
 
       clearBtn.classList.toggle('hidden', q.length === 0);
@@ -327,13 +413,13 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
         let visible = 0;
         for (let i = 0; i < cardItems.length; i++) {
           const anchor = getAnchor(cardItems[i]);
-          const ok = matchesFilters(anchor, q, uf, partido, eleicao);
+          const ok = matchesFilters(anchor, q, uf, selectedPartidos, eleicao);
           cardItems[i].style.display = ok ? '' : 'none';
           if (ok) visible++;
         }
         for (let i = 0; i < rowItems.length; i++) {
           const anchor = getAnchor(rowItems[i]);
-          const ok = matchesFilters(anchor, q, uf, partido, eleicao);
+          const ok = matchesFilters(anchor, q, uf, selectedPartidos, eleicao);
           rowItems[i].style.display = ok ? '' : 'none';
         }
 
@@ -351,7 +437,54 @@ const ufs = [...new Set(parlamentares.map(p => p.uf))].filter(Boolean).sort();
       filterEleicao.addEventListener('change', renderFilter);
     }
     filterUf.addEventListener('change', renderFilter);
-    filterPartido.addEventListener('change', renderFilter);
+
+    partidoCheckboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        updatePartidoDisplay();
+        renderFilter();
+      });
+    });
+
+    if (clearPartidosBtn) {
+      clearPartidosBtn.addEventListener('click', () => {
+        partidoCheckboxes.forEach(cb => { cb.checked = false; });
+        updatePartidoDisplay();
+        renderFilter();
+      });
+    }
+
+    function togglePartidoDropdown(open) {
+      if (!partidoDropdownMenu) return;
+      const shouldOpen = open !== undefined ? open : partidoDropdownMenu.classList.contains('hidden');
+      if (shouldOpen) {
+        partidoDropdownMenu.classList.remove('hidden');
+        partidoDropdownArrow.classList.add('rotate-180');
+        partidoDropdownBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        partidoDropdownMenu.classList.add('hidden');
+        partidoDropdownArrow.classList.remove('rotate-180');
+        partidoDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    if (partidoDropdownBtn) {
+      partidoDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        togglePartidoDropdown();
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (partidoDropdownContainer && !partidoDropdownContainer.contains(e.target)) {
+        togglePartidoDropdown(false);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        togglePartidoDropdown(false);
+      }
+    });
 
     casaBtns.forEach(btn => {
       btn.addEventListener('click', () => {
