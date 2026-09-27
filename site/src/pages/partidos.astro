@@ -163,8 +163,8 @@ function formatMoeda(val: number): string {
 
                   <div>
                     <div class="flex items-center gap-2 flex-wrap">
-                      <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">
-                        {p.sigla}
+                      <h2 class="text-xl font-extrabold text-slate-900 tracking-tight hover:text-emerald-700 transition">
+                        <a href={`${base}partido/${p.slug}/`}>{p.sigla}</a>
                       </h2>
                       {p.federacao && (
                         <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-blue-800 border border-blue-200" title={`Federação: ${p.federacao.nome} (${p.federacao.composicao.join(', ')})`}>
@@ -285,12 +285,21 @@ function formatMoeda(val: number): string {
                   )}
                 </div>
 
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  {temBancada && (
+                    <a 
+                      href={`${base}?partido=${encodeURIComponent(p.sigla)}`}
+                      class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-100 transition"
+                      title="Filtrar parlamentares na busca principal"
+                    >
+                      <span>Filtrar na busca</span>
+                    </a>
+                  )}
                   <a 
-                    href={`${base}?partido=${encodeURIComponent(p.sigla)}`}
-                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold transition"
+                    href={`${base}partido/${p.slug}/`}
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 font-semibold transition text-xs shadow-xs"
                   >
-                    <span>Ver parlamentares da bancada</span>
+                    <span>Ver ficha completa</span>
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
