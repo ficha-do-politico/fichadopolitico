@@ -1,4 +1,4 @@
-# Especificação & Backlog: Hemiciclo Parlamentar Interativo (Cadeiras do Congresso)
+# Especificação & Backlog: Composição do Congresso & Hemiciclo Parlamentar (Semi-Donut de Bancadas)
 
 > **Status:** Proposta / Backlog (v2)  
 > **Pilares:** Apartidarismo estrito ([AD-004](file:///C:/gitrepos/fichadopolitico/.specs/STATE.md#L29)), Verificabilidade Oficial ([AD-006](file:///C:/gitrepos/fichadopolitico/.specs/STATE.md#L32)) e Paridade Bicameral ([AD-011](file:///C:/gitrepos/fichadopolitico/.specs/STATE.md#L34)/[AD-014](file:///C:/gitrepos/fichadopolitico/.specs/STATE.md#L34)).
@@ -7,67 +7,83 @@
 
 ## 1. Visão do Produto & Proposta de Valor
 
-O **Hemiciclo Parlamentar** (*Parliamentary Seating / Hemicycle Chart*) é a representação visual em formato de semicírculo da distribuição física e quantitativa das cadeiras legislativas:
-- **Senado Federal:** 81 assentos parlamentares (distribuídos em 3 fileiras concêntricas).
-- **Câmara dos Deputados:** 513 assentos parlamentares (distribuídos em 5 a 6 fileiras concêntricas).
+A **Composição das Bancadas do Congresso** permite ao cidadão apreender visualmente a distribuição de forças políticas nas duas casas legislativas:
+- **Câmara dos Deputados:** 513 cadeiras (distribuídas entre partidos e federações).
+- **Senado Federal:** 81 cadeiras (distribuídas entre bancadas e blocos oficiais).
 
-Em vez de forçar o cidadão a ler tabelas numéricas extensas, o Hemiciclo permite apreender imediatamente a **composição das bancadas** e a **geometria de votação** de qualquer deliberação oficial do Congresso Nacional.
+Em vez de exigir a leitura de extensas tabelas de legendas, o portal oferecerá uma visualização geométrica clara das bancadas, permitindo auditar imediatamente a correlação de poder e a formação de maiorias legislativas.
 
 ---
 
-## 2. Modos de Uso na Plataforma
+## 2. Paradigma Visual: Semi-Donut Particionado vs. Pontinhos de Assento
 
-### 2.1. Modo Composição do Congresso (Foto do Poder Atual)
-- **Localização:** Home (`/`), aba de Parlamentares ou seção dedicada `/congresso`.
-- **Objetivo:** Exibir o tamanho relativo de cada bancada partidária ou bloco parlamentar oficial registrado.
+Com base no benchmark prático de infografia cívica, avaliamos dois formatos visuais:
+
+### 2.1. Abordagem Recomendada: Semi-Donut Particionado (Arco de Bancadas)
+*Inspirado na infografia oficial de composição partidária da Câmara dos Deputados.*
+- **Como funciona:** Um semicírculo oco (formato meia-rosca/arco) dividido em fatias contínuas proporcionais ao número de assentos de cada partido ou federação partidária.
+- **Por que é superior no produto:**
+  1. **Usabilidade Mobile Impecável:** Em telas de smartphones (360px a 400px), desenhar 513 bolinhas individuais gera um borrão ilegível onde o toque tátil é impossível. O semi-donut mantém fatias nítidas, legíveis e confortáveis para o toque em qualquer resolução.
+  2. **Compreensão Imediata de Maioria:** O arco contínuo permite identificar de relance o domínio de bancadas sobre o hemiciclo e a proximidade da maioria simples (257 na Câmara, 41 no Senado) ou de três quintos (308 na Câmara, 49 no Senado).
+  3. **Miolo Informativo Interativo:** O espaço interno oco do arco é aproveitado para exibir a bancada em foco no hover/touch (ex: `PL • 99 deputados (19,3%)`) ou elencar legendas com representação menor (1 a 3 cadeiras).
+
+### 2.2. Abordagem Secundária: Matriz de Cadeiras Pontilhadas (Pontinhos)
+- Representação de cada assento por um círculo discreto (81 círculos no Senado em 3 fileiras; 513 círculos na Câmara em 6 fileiras).
+- **Adequação:** Viável para o **Senado Federal** (81 nós têm boa legibilidade em telas médias), mas subótimo para a Câmara dos Deputados em dispositivos móveis. Pode ser considerado como modo de visualização alternativo específico para o Senado ou para telas desktop em votações nominais.
+
+---
+
+## 3. Modos de Uso na Plataforma
+
+### 3.1. Modo Composição do Congresso (Foto do Poder Atual)
+- **Localização:** Home (`/`), aba de Parlamentares ou seção `/congresso`.
+- **Alternador de Casas:** Botão de controle direto `[ Câmara (513) | Senado (81) ]`.
 - **Interatividade:**
-  - **Hover/Tap no assento:** Exibe tooltip com foto, nome parlamentar, partido e UF do titular.
-  - **Hover/Tap na legenda do partido:** Destaca todos os assentos daquela bancada e atenua os demais.
-  - **Filtro de busca integrado:** Clicar numa bancada filtra automaticamente a listagem de parlamentares da página.
+  - **Hover/Tap na fatia do partido:** Destaca a fatia, esmaece as demais e exibe no centro a sigla, total de cadeiras e percentual da casa.
+  - **Clique de filtro:** Clicar na fatia do partido aciona instantaneamente o filtro multiselect da página, exibindo na listagem apenas os parlamentares daquela bancada.
+  - **Legendas Menores:** Partidos com bancadas unitárias ou reduzidas podem ser listados no miolo central ou agrupados de forma transparente com expansão sob demanda.
 
-### 2.2. Modo Votação Nominal (Placar do Plenário)
-- **Localização:** Página individual de votação (`/votacao/[id]`).
-- **Objetivo:** Visualizar o resultado de votações nominais cruciais no plenário (Câmara ou Senado).
-- **Codificação de Cores Oficial:**
+### 3.2. Modo Votação Nominal (Placar do Plenário)
+- **Localização:** Página individual de deliberação (`/votacao/[id]`).
+- **Objetivo:** O arco do semi-donut é colorido conforme a deliberação nominal registrada na matéria:
   - 🟢 **Verde:** Voto "Sim"
   - 🔴 **Vermelho:** Voto "Não"
-  - 🟡 **Amarelo:** Abstenção / Obstrução / Artigo 17
+  - 🟡 **Amarelo:** Abstenção / Obstrução / Art. 17
   - ⚪ **Cinza:** Não votou / Ausência registrada
-- **Valor Cívico:** O eleitor compreende visualmente de onde veio o apoio ou a rejeição da matéria sem intermediários ou narrativas enviesadas.
+- **Valor Cívico:** O cidadão visualiza instantaneamente como a matéria passou ou travou no plenário sem mediação retórica.
 
 ---
 
-## 3. Diretriz de Neutralidade & Ordenação de Cadeiras ([AD-004](file:///C:/gitrepos/fichadopolitico/.specs/STATE.md#L29))
+## 4. Diretriz de Neutralidade & Ordenação ([AD-004](file:///C:/gitrepos/fichadopolitico/.specs/STATE.md#L29))
 
 > **Regra Mandatória de Apartidarismo:**  
-> É estritamente **PROIBIDO** ordenar os assentos da esquerda para a direita simulando um espectro ideológico ("esquerda", "centro", "direita"), pois isso exigiria arbitragem subjetiva e juízo de valor.
+> É terminantemente **PROIBIDO** ordenar as fatias do arco simulando um espectro ideológico esquerda-direita ("esquerda", "centro", "direita"), o que constituiria arbitragem subjetiva e infração das diretrizes editoriais do projeto.
 
-### Critérios Oficiais de Agrupamento e Ordenação:
-1. **Agrupamento por Bancada:** Assentos do mesmo partido ficam contíguos no arco.
-2. **Agrupamento por Bloco Parlamentar Oficial:** Opção de agrupar conforme os blocos partidários formalmente registrados na Mesa Diretora da Câmara e do Senado (dados oficiais de API).
-3. **Ordenação Neutra das Bancadas no Arco:**
-   - **Critério A (Padrão):** Por tamanho decrescente de bancada (maiores bancadas agrupadas ao centro ou nas extremidades com simetria neutra).
-   - **Critério B:** Por ordem alfabética da sigla partidária (critério 100% formal e objetivo).
+### Critérios Neutros de Ordenação das Fatias:
+1. **Critério Canônico (Tamanho de Bancada):** Fatias dispostas da maior bancada para a menor, garantindo leitura hierárquica clara do peso de cada agremiação.
+2. **Critério de Bloco Oficial:** Agrupamento por blocos parlamentares formalmente registrados perante a Mesa Diretora da Câmara ou do Senado (dados oficiais de API).
+3. **Critério Alfabético:** Ordenação neutra por ordem alfabética da sigla partidária.
 
 ---
 
-## 4. Arquitetura Técnica & Performance (Astro SSG)
+## 5. Arquitetura Técnica & Performance (Astro SSG)
 
-- **Geração Estática em SVG:**
-  - As coordenadas polares `(x, y)` dos arcos concêntricos são computadas via função matemática leve durante o build (`scripts/build_site_data.py` ou componente Astro server-side).
-  - Sem necessidade de runtime cliente de bibliotecas externas pesadas (como D3.js completo).
-  - SVG inline com classes Tailwind para transições de cor e opacidade (`transition-colors duration-150`).
-- **Acessibilidade (a11y):**
-  - Cada ponto `<circle>` possui atributos `role="button"`, `aria-label="Senador [Nome] - [Partido]/[UF]"` e foco por teclado.
-- **Responsividade Mobile:**
-  - `viewBox` responsivo com escala vetorial automática, garantindo legibilidade perfeita tanto em telas de 360px quanto em monitores desktop 4K.
+- **Renderização em SVG Puro:**
+  - As fatias do semi-donut são geradas como arcos vetoriais `<path d="M... A... L... A... Z">` computados estaticamente durante o build.
+  - Sem uso de bibliotecas clientes pesadas (ex.: dependência inteira de D3 ou Chart.js desnecessária).
+  - Peso do componente inferior a 3 KB.
+- **Acessibilidade e Semântica:**
+  - Cada fatia possui atributos ARIA (`role="graphics-symbol"`, `aria-label="Bancada do [Partido]: [N] cadeiras, [X]%"`) e suporte a navegação por foco de teclado.
+- **Responsividade Total:**
+  - `viewBox` vetorial escalável preservando proporções perfeitas de 320px a 4K.
 
 ---
 
-## 5. Checklist de Implementação Futura
+## 6. Checklist de Implementação
 
-- [ ] Utilitário geométrico para cálculo de posições concêntricas de hemiciclos (81 e 513 nós).
-- [ ] Ingestão dos blocos partidários vigentes via APIs de dados abertos da Câmara e Senado.
-- [ ] Componente `HemicycleChart.astro` reutilizável em modo `composicao` e modo `votacao`.
-- [ ] Integração com as páginas de votação nominal (`/votacao/[id]`).
-- [ ] Testes de conformidade de schema e acessibilidade a11y em `tests/test_hemiciclo.py`.
+- [ ] Utilitário geométrico para cálculo de arcos SVG de semi-donut (`scripts/core/svg_arc.py` ou helper TypeScript).
+- [ ] Agregação de totais de bancadas no compilador de dados (`scripts/build_site_data.py`).
+- [ ] Componente `SemiDonutBancadas.astro` com suporte a alternância Câmara/Senado.
+- [ ] Integração do clique na fatia com o filtro multiselect de parlamentares em `index.astro`.
+- [ ] Variante do componente para placares de votação nominal (`/votacao/[id]`).
+- [ ] Testes automatizados de consistência da soma das cadeiras (513 e 81) em `tests/test_bancadas.py`.
