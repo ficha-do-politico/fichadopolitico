@@ -59,6 +59,13 @@
 - **Status:** ativo (produto fechado).
 - **Relevância pra nós:** referência de interface unificada para visualizar votos e gastos no mesmo perfil de parlamentar.
 
+### VOTAE
+- **O que é:** plataforma independente e apartidária de educação legislativa e cívica voltada para a nova geração de eleitores (jovens de 15 a 24 anos), com guias didáticos sobre o funcionamento do Congresso ("Como uma lei nasce", papéis de deputados e senadores) e dados eleitorais.
+- **Site:** [votae.org](https://votae.org/)
+- **Status:** ativo (Eleições 2026, produto fechado).
+- **Relevância pra nós:** benchmark de excelência em UX, microlearning e simplificação de linguagem ("Tradutor de Politiquês") para aproximar ritos regimentais e atuação parlamentar de novos eleitores.
+
+
 ## Indicadores Socioeconômicos e Gestão Pública
 
 ### Ranking de Competitividade dos Estados (CLP)
@@ -95,6 +102,6 @@
 
 
 ## Posicionamento da Ficha do Político
-O ecossistema divide-se entre ferramentas eleitorais sazonais (Puxa Ficha, TemMeuVoto), dados municipais (Querido Diário) ou projetos legados de cota (Serenata). A **Ficha do Político** atua na **auditoria contínua e permanente do mandato federal (Câmara e Senado)**, combinando votações nominais e notas fiscais de cota (CEAP/CEAPS), com neutralidade estrita (dados brutos oficiais, sem scores editoriais) e arquitetura estática (Astro SSG) de custo perpétuo zero.
+O ecossistema divide-se entre ferramentas eleitorais e educativas (Puxa Ficha, TemMeuVoto, VOTAE), dados municipais (Querido Diário) ou projetos legados de cota (Serenata). A **Ficha do Político** atua na **auditoria contínua e permanente do mandato federal (Câmara e Senado)**, combinando votações nominais e notas fiscais de cota (CEAP/CEAPS), com neutralidade estrita (dados brutos oficiais, sem scores editoriais) e arquitetura estática (Astro SSG) de custo perpétuo zero.
 
 Para os endpoints, formatos e especificações técnicas de extração das fontes governamentais primárias (Câmara, Senado, TSE, CGU, TCU, CNJ), consulte [fontes-oficiais-de-dados.md](fontes-oficiais-de-dados.md).
