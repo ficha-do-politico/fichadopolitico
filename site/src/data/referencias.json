@@ -158,5 +158,16 @@
     "descricao": "Ferramenta de Voting Advice Application (VAA) para comparar posições do cidadão com as votações substantivas de deputados e senadores.",
     "url": "https://temmeuvoto.org.br/",
     "tags": ["Sociedade Civil", "Legislativo", "Eleições", "VAA"]
+  },
+  {
+    "id": "votae",
+    "nome": "VOTAE",
+    "tipo": "civico",
+    "categoria": "Projetos Cívicos & Open Source",
+    "foco": "Educação legislativa e cívica para jovens",
+    "descricao": "Plataforma independente de educação política e cívica voltada a jovens e novos eleitores, com explicações didáticas de ritos do Congresso ('Como uma lei nasce') e termos institucionais.",
+    "url": "https://votae.org/",
+    "tags": ["Educação Cívica", "Legislativo", "Eleições", "Sociedade Civil"]
   }
 ]
+
