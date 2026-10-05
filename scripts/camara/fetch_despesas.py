@@ -13,6 +13,7 @@ Conformidade e Regras:
 
 import argparse
 import csv
+import datetime
 import io
 import json
 import pathlib
@@ -195,6 +196,7 @@ def baixar_e_processar_despesas(ano: int = 2026) -> dict:
     print(f"Despesas processadas para {len(despesas_por_deputado)} deputados federais.")
 
     # Formata payload final sumarizado por parlamentar
+    coletado_em = datetime.date.today().isoformat()
     resultado_final = {}
     for dep_id, d_info in despesas_por_deputado.items():
         total = round(d_info["total"], 2)
@@ -227,6 +229,7 @@ def baixar_e_processar_despesas(ano: int = 2026) -> dict:
             "categorias": categorias_lista,
             "maiores_despesas": maiores_despesas,
             "fonte_oficial": f"https://www.camara.leg.br/deputados/{dep_id}",
+            "coletado_em": coletado_em,
         }
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)

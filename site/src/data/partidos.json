@@ -137,12 +137,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 22735823.15,
-      "ceaps_senado_2026": 3849831.62,
-      "total_cota_2026": 26585654.77,
-      "emendas_cgu_pagas": 11312887814.74,
+      "ceap_camara_2026": 23796211.02,
+      "ceaps_senado_2026": 4007844.81,
+      "total_cota_2026": 27804055.83,
+      "emendas_cgu_pagas": 11064037765.5,
       "emendas_pix_pagas": 3962119219.92,
-      "emendas_definida_pagas": 7350768594.82
+      "emendas_definida_pagas": 7101918545.58
     },
     "coesao": {
       "media_adesao_orientacao": 83.4,
@@ -515,12 +515,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 16960034.71,
-      "ceaps_senado_2026": 2956503.75,
-      "total_cota_2026": 19916538.46,
-      "emendas_cgu_pagas": 7395778888.84,
+      "ceap_camara_2026": 17615273.7,
+      "ceaps_senado_2026": 3061828.15,
+      "total_cota_2026": 20677101.85,
+      "emendas_cgu_pagas": 7239138563.09,
       "emendas_pix_pagas": 2208227310.45,
-      "emendas_definida_pagas": 5187551578.39
+      "emendas_definida_pagas": 5030911252.64
     },
     "coesao": {
       "media_adesao_orientacao": 99.6,
@@ -874,12 +874,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 11578223.46,
-      "ceaps_senado_2026": 4080689.04,
-      "total_cota_2026": 15658912.5,
-      "emendas_cgu_pagas": 7847361847.15,
+      "ceap_camara_2026": 12144430.73,
+      "ceaps_senado_2026": 4176944.68,
+      "total_cota_2026": 16321375.41,
+      "emendas_cgu_pagas": 7618106329.54,
       "emendas_pix_pagas": 2769298909.28,
-      "emendas_definida_pagas": 5078062937.87
+      "emendas_definida_pagas": 4848807420.26
     },
     "coesao": {
       "media_adesao_orientacao": 86.7,
@@ -1233,12 +1233,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 13488345.09,
-      "ceaps_senado_2026": 802042.92,
-      "total_cota_2026": 14290388.01,
-      "emendas_cgu_pagas": 5683680966.89,
+      "ceap_camara_2026": 14145612.94,
+      "ceaps_senado_2026": 809197.12,
+      "total_cota_2026": 14954810.06,
+      "emendas_cgu_pagas": 5501648248.97,
       "emendas_pix_pagas": 2379135312.15,
-      "emendas_definida_pagas": 3304545654.74
+      "emendas_definida_pagas": 3122512936.82
     },
     "coesao": {
       "media_adesao_orientacao": null,
@@ -1590,12 +1590,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 11763686.13,
-      "ceaps_senado_2026": 2111810.96,
-      "total_cota_2026": 13875497.09,
-      "emendas_cgu_pagas": 5818377596.55,
+      "ceap_camara_2026": 12360134.96,
+      "ceaps_senado_2026": 2161107.5,
+      "total_cota_2026": 14521242.46,
+      "emendas_cgu_pagas": 5682940095.98,
       "emendas_pix_pagas": 2229107989.3,
-      "emendas_definida_pagas": 3589269607.25
+      "emendas_definida_pagas": 3453832106.68
     },
     "coesao": {
       "media_adesao_orientacao": 81.4,
@@ -1935,12 +1935,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 9162813.13,
-      "ceaps_senado_2026": 1471836.92,
-      "total_cota_2026": 10634650.05,
-      "emendas_cgu_pagas": 4583217309.7,
+      "ceap_camara_2026": 9775496.48,
+      "ceaps_senado_2026": 1518057.32,
+      "total_cota_2026": 11293553.8,
+      "emendas_cgu_pagas": 4450873408.47,
       "emendas_pix_pagas": 1603952994.84,
-      "emendas_definida_pagas": 2979264314.86
+      "emendas_definida_pagas": 2846920413.63
     },
     "coesao": {
       "media_adesao_orientacao": 80.6,
@@ -2279,12 +2279,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 9363762.4,
-      "ceaps_senado_2026": 2079825.45,
-      "total_cota_2026": 11443587.85,
-      "emendas_cgu_pagas": 6006039537.62,
+      "ceap_camara_2026": 9658242.78,
+      "ceaps_senado_2026": 2120818.65,
+      "total_cota_2026": 11779061.43,
+      "emendas_cgu_pagas": 5790852542.89,
       "emendas_pix_pagas": 2297844812.87,
-      "emendas_definida_pagas": 3708194724.75
+      "emendas_definida_pagas": 3493007730.02
     },
     "coesao": {
       "media_adesao_orientacao": 90.1,
@@ -2606,12 +2606,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 6758211.4,
+      "ceap_camara_2026": 6986755.56,
       "ceaps_senado_2026": 1011040.41,
-      "total_cota_2026": 7769251.81,
-      "emendas_cgu_pagas": 2793459730.99,
+      "total_cota_2026": 7997795.97,
+      "emendas_cgu_pagas": 2702625377.35,
       "emendas_pix_pagas": 1010302963.23,
-      "emendas_definida_pagas": 1783156767.76
+      "emendas_definida_pagas": 1692322414.12
     },
     "coesao": {
       "media_adesao_orientacao": 73.6,
@@ -2927,12 +2927,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 4228832.29,
-      "ceaps_senado_2026": 1346064.78,
-      "total_cota_2026": 5574897.07,
-      "emendas_cgu_pagas": 2996342070.72,
+      "ceap_camara_2026": 4337206.29,
+      "ceaps_senado_2026": 1453930.46,
+      "total_cota_2026": 5791136.75,
+      "emendas_cgu_pagas": 2924515589.03,
       "emendas_pix_pagas": 943420852.13,
-      "emendas_definida_pagas": 2052921218.59
+      "emendas_definida_pagas": 1981094736.9
     },
     "coesao": {
       "media_adesao_orientacao": 96.9,
@@ -3253,12 +3253,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 4108850.7,
-      "ceaps_senado_2026": 602109.89,
-      "total_cota_2026": 4710960.59,
-      "emendas_cgu_pagas": 1994758245.59,
+      "ceap_camara_2026": 4368160.29,
+      "ceaps_senado_2026": 605162.03,
+      "total_cota_2026": 4973322.32,
+      "emendas_cgu_pagas": 1925656122.46,
       "emendas_pix_pagas": 587216753.45,
-      "emendas_definida_pagas": 1407541492.14
+      "emendas_definida_pagas": 1338439369.01
     },
     "coesao": {
       "media_adesao_orientacao": 79.9,
@@ -3569,12 +3569,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 2598643.59,
+      "ceap_camara_2026": 2754561.51,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 2598643.59,
-      "emendas_cgu_pagas": 551840549.58,
+      "total_cota_2026": 2754561.51,
+      "emendas_cgu_pagas": 553140306.25,
       "emendas_pix_pagas": 8827193.42,
-      "emendas_definida_pagas": 543013356.16
+      "emendas_definida_pagas": 544313112.83
     },
     "coesao": {
       "media_adesao_orientacao": 93.6,
@@ -3884,12 +3884,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 2691581.72,
+      "ceap_camara_2026": 2804477.76,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 2691581.72,
-      "emendas_cgu_pagas": 918331213.4,
+      "total_cota_2026": 2804477.76,
+      "emendas_cgu_pagas": 885097718.1,
       "emendas_pix_pagas": 319956843.73,
-      "emendas_definida_pagas": 598374369.67
+      "emendas_definida_pagas": 565140874.37
     },
     "coesao": {
       "media_adesao_orientacao": 100.0,
@@ -4192,12 +4192,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 2579579.36,
-      "ceaps_senado_2026": 467705.91,
-      "total_cota_2026": 3047285.27,
-      "emendas_cgu_pagas": 1326342761.47,
+      "ceap_camara_2026": 2610240.56,
+      "ceaps_senado_2026": 513667.31,
+      "total_cota_2026": 3123907.87,
+      "emendas_cgu_pagas": 1282835303.8,
       "emendas_pix_pagas": 424437199.16,
-      "emendas_definida_pagas": 901905562.31
+      "emendas_definida_pagas": 858398104.64
     },
     "coesao": {
       "media_adesao_orientacao": 100.0,
@@ -4495,12 +4495,12 @@
       ]
     },
     "recursos": {
-      "ceap_camara_2026": 805760.75,
-      "ceaps_senado_2026": 345494.83,
-      "total_cota_2026": 1151255.58,
-      "emendas_cgu_pagas": 736696660.56,
+      "ceap_camara_2026": 847807.89,
+      "ceaps_senado_2026": 378668.76,
+      "total_cota_2026": 1226476.65,
+      "emendas_cgu_pagas": 716168770.16,
       "emendas_pix_pagas": 284006592.17,
-      "emendas_definida_pagas": 452690068.39
+      "emendas_definida_pagas": 432162177.99
     },
     "coesao": {
       "media_adesao_orientacao": 100.0,
@@ -4805,12 +4805,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 1681980.05,
+      "ceap_camara_2026": 1771467.84,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 1681980.05,
-      "emendas_cgu_pagas": 610680022.07,
+      "total_cota_2026": 1771467.84,
+      "emendas_cgu_pagas": 599348032.87,
       "emendas_pix_pagas": 182651950.95,
-      "emendas_definida_pagas": 428028071.12
+      "emendas_definida_pagas": 416696081.92
     },
     "coesao": {
       "media_adesao_orientacao": 90.8,
@@ -5106,12 +5106,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 797564.44,
+      "ceap_camara_2026": 836135.49,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 797564.44,
-      "emendas_cgu_pagas": 307241957.95,
+      "total_cota_2026": 836135.49,
+      "emendas_cgu_pagas": 307255269.62,
       "emendas_pix_pagas": 39803143.41,
-      "emendas_definida_pagas": 267438814.54
+      "emendas_definida_pagas": 267452126.21
     },
     "coesao": {
       "media_adesao_orientacao": 100.0,
@@ -5413,12 +5413,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 747810.93,
+      "ceap_camara_2026": 776367.19,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 747810.93,
-      "emendas_cgu_pagas": 433272725.15,
+      "total_cota_2026": 776367.19,
+      "emendas_cgu_pagas": 425331514.26,
       "emendas_pix_pagas": 179634489.47,
-      "emendas_definida_pagas": 253638235.68
+      "emendas_definida_pagas": 245697024.79
     },
     "coesao": {
       "media_adesao_orientacao": 100.0,
@@ -5719,12 +5719,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 491280.9,
+      "ceap_camara_2026": 524689.64,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 491280.9,
-      "emendas_cgu_pagas": 388346099.99,
+      "total_cota_2026": 524689.64,
+      "emendas_cgu_pagas": 361969192.18,
       "emendas_pix_pagas": 142788862.28,
-      "emendas_definida_pagas": 245557237.71
+      "emendas_definida_pagas": 219180329.9
     },
     "coesao": {
       "media_adesao_orientacao": null,
@@ -6025,12 +6025,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 641448.17,
+      "ceap_camara_2026": 699695.84,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 641448.17,
-      "emendas_cgu_pagas": 227571781.48,
+      "total_cota_2026": 699695.84,
+      "emendas_cgu_pagas": 225571781.48,
       "emendas_pix_pagas": 52445497.21,
-      "emendas_definida_pagas": 175126284.27
+      "emendas_definida_pagas": 173126284.27
     },
     "coesao": {
       "media_adesao_orientacao": 80.0,
@@ -6330,12 +6330,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 397305.61,
+      "ceap_camara_2026": 444443.57,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 397305.61,
-      "emendas_cgu_pagas": 232454520.07,
+      "total_cota_2026": 444443.57,
+      "emendas_cgu_pagas": 231354520.07,
       "emendas_pix_pagas": 109291441.07,
-      "emendas_definida_pagas": 123163079.0
+      "emendas_definida_pagas": 122063079.0
     },
     "coesao": {
       "media_adesao_orientacao": 94.4,
@@ -6627,9 +6627,9 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 97937.48,
+      "ceap_camara_2026": 139991.92,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 97937.48,
+      "total_cota_2026": 139991.92,
       "emendas_cgu_pagas": 0.0,
       "emendas_pix_pagas": 0.0,
       "emendas_definida_pagas": 0.0
@@ -6924,12 +6924,12 @@
       "senadores_ids": []
     },
     "recursos": {
-      "ceap_camara_2026": 68414.49,
+      "ceap_camara_2026": 86073.89,
       "ceaps_senado_2026": 0,
-      "total_cota_2026": 68414.49,
-      "emendas_cgu_pagas": 108271128.62,
+      "total_cota_2026": 86073.89,
+      "emendas_cgu_pagas": 108196607.62,
       "emendas_pix_pagas": 37254837.66,
-      "emendas_definida_pagas": 71016290.96
+      "emendas_definida_pagas": 70941769.96
     },
     "coesao": {
       "media_adesao_orientacao": null,

@@ -1,5 +1,6 @@
 ---
 import type { DespesasCEAP } from '../types';
+import ColetaInfo from './ColetaInfo.astro';
 
 interface Props {
   despesas: DespesasCEAP;
@@ -182,5 +183,6 @@ if (!despesas) {
     <p class="leading-relaxed">
       A <strong>{casa === 'senado' ? 'Cota para o Exercício da Atividade Parlamentar dos Senadores (CEAPS)' : 'Cota para o Exercício da Atividade Parlamentar (CEAP)'}</strong> é uma verba mensal destinada a cobrir despesas estritamente operacionais ligadas ao mandato (como passagens, locação de escritórios e veículos, consultorias e alimentação). Ela <strong>não inclui o subsídio (salário)</strong> dos parlamentares nem a contratação de assessores e secretários de gabinete. Todos os dados são obtidos diretamente dos portais oficiais de Dados Abertos e Transparência {casa === 'senado' ? 'do Senado Federal' : 'da Câmara dos Deputados'}.
     </p>
+    <ColetaInfo data={despesas.coletado_em} class="block" />
   </div>
 </section>

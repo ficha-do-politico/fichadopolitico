@@ -13,6 +13,7 @@ Conformidade e Regras:
 """
 
 import argparse
+import datetime
 import http.client
 import json
 import pathlib
@@ -181,6 +182,7 @@ def baixar_e_processar_ceaps_senado(ano: int = 2026) -> dict:
 
     print(f"Despesas processadas para {len(despesas_por_senador)} senadores da República.")
 
+    coletado_em = datetime.date.today().isoformat()
     resultado_final = {}
     for sen_id, s_info in despesas_por_senador.items():
         total = round(s_info["total"], 2)
@@ -211,6 +213,7 @@ def baixar_e_processar_ceaps_senado(ano: int = 2026) -> dict:
             "categorias": categorias_lista,
             "maiores_despesas": maiores_despesas,
             "fonte_oficial": PORTAL_TRANSPARENCIA_TEMPLATE.format(codSenador=sen_id, ano=ano),
+            "coletado_em": coletado_em,
         }
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,19 @@
+---
+interface Props {
+  data?: string;
+  class?: string;
+}
+
+const { data, class: className = '' } = Astro.props;
+
+// Formata 'AAAA-MM-DD' por string para não sofrer deslocamento de fuso do Date.
+const match = data?.match(/^(\d{4})-(\d{2})-(\d{2})/);
+if (!match) {
+  return null;
+}
+const [, ano, mes, dia] = match;
+---
+
+<span class:list={['text-slate-500', className]}>
+  Dados coletados em <time datetime={`${ano}-${mes}-${dia}`}>{`${dia}/${mes}/${ano}`}</time>
+</span>

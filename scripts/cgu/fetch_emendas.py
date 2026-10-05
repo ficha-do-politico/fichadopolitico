@@ -13,6 +13,7 @@ Saída:
 
 import argparse
 import csv
+import datetime
 import io
 import json
 import pathlib
@@ -248,6 +249,7 @@ def process_emendas(zf: zipfile.ZipFile, name_to_parlamentar: dict) -> dict:
 
 def consolidate_summary(parlamentar_emendas: dict) -> dict:
     """Consolida os totais, percentuais e rankings formatados."""
+    coletado_em = datetime.date.today().isoformat()
     consolidated = {}
 
     for pid, data in parlamentar_emendas.items():
@@ -326,6 +328,7 @@ def consolidate_summary(parlamentar_emendas: dict) -> dict:
             "principais_municipios": ranking_municipios,
             "ultimas_emendas": data["ultimas_emendas"],
             "url_portal_transparencia": cgu_url,
+            "coletado_em": coletado_em,
         }
 
     return consolidated

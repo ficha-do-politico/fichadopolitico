@@ -1,5 +1,6 @@
 ---
 import type { EmendasParlamentar } from '../types';
+import ColetaInfo from './ColetaInfo.astro';
 
 interface Props {
   emendas: EmendasParlamentar;
@@ -225,6 +226,7 @@ if (!emendas) {
       </svg>
       <span>
         Fonte oficial primária: <strong>Controladoria-Geral da União (CGU)</strong> • Portal da Transparência do Governo Federal.
+        <ColetaInfo data={emendas.coletado_em} class="block mt-0.5" />
       </span>
     </div>
 

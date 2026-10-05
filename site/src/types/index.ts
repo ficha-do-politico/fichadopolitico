@@ -25,6 +25,7 @@ export interface PatrimonioCongresso {
   tse_url: string;
   bens: BemItem[];
   comparativo_anterior?: PatrimonioComparativo;
+  coletado_em?: string;
 }
 
 export interface Candidatura2026 {
@@ -36,6 +37,7 @@ export interface Candidatura2026 {
   situacao_registro: string;
   url_divulgacand: string;
   patrimonio?: PatrimonioCongresso;
+  coletado_em?: string;
 }
 
 export interface DespesaCategoria {
@@ -63,6 +65,7 @@ export interface DespesasCEAP {
   categorias: DespesaCategoria[];
   maiores_despesas: DespesaItem[];
   fonte_oficial: string;
+  coletado_em?: string;
 }
 
 export interface ModalidadeEmenda {
@@ -116,6 +119,7 @@ export interface EmendasParlamentar {
   principais_municipios: MunicipioEmenda[];
   ultimas_emendas: EmendaItem[];
   url_portal_transparencia: string;
+  coletado_em?: string;
 }
 
 export interface ParticipacaoVotacoes {
@@ -288,6 +292,7 @@ export interface CandidatoPresidencia {
   fotoUrl: string;
   fotoFonteOficial?: string;
   tsePerfilUrl: string;
+  coletado_em?: string;
   situacaoCandidatura: string;
   vice?: {
     nomeUrna: string;

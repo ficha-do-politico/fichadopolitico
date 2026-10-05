@@ -1,5 +1,6 @@
 ---
 import type { Candidatura2026 } from '../types';
+import ColetaInfo from './ColetaInfo.astro';
 
 interface Props {
   candidatura: Candidatura2026;
@@ -156,5 +157,6 @@ if (comp && comp.total_declarado > 0) {
     <p class="leading-relaxed">
       Conforme a legislação eleitoral brasileira (Lei nº 9.504/1997) e instruções normativas da Receita Federal, os valores declarados refletem o <strong>custo histórico de aquisição</strong> informado na Declaração de Imposto de Renda Pessoa Física (IRPF), e não a cotação corrente de mercado. Variações patrimoniais entre eleições podem decorrer de valorização, aquisição de novos bens ou atualização contábil legal. O Ficha do Político exibe exclusivamente os dados brutos oficiais, sem qualquer inferência ou juízo de valor.
     </p>
+    <ColetaInfo data={patrimonio.coletado_em ?? candidatura.coletado_em} class="block pt-1" />
   </div>
 </section>
