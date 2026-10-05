@@ -118,13 +118,16 @@ class TestCamaraDespesas(unittest.TestCase):
             f"Esperado ao menos 500 deputados com despesas_2026 no site, obtido {len(deps_com_despesa)}",
         )
 
-        # Validação específica de paridade oficial para Adilson Barroso (ID: 221328)
+        # Validação específica de paridade oficial para Adilson Barroso (ID: 221328).
+        # Referência conferida no dump Ano-2026.csv.zip em 2026-10-05 (278 lançamentos);
+        # exercício em curso: atualizar a cada nova coleta.
         adilson = next((d for d in self.deputados if d["id"] == 221328), None)
         self.assertIsNotNone(adilson, "Deputado Adilson Barroso não encontrado.")
         self.assertIsNotNone(adilson.get("despesas_2026"), "Adilson Barroso sem despesas_2026.")
+        self.assertEqual(adilson["despesas_2026"].get("coletado_em"), "2026-10-05")
         self.assertAlmostEqual(
             adilson["despesas_2026"]["total_gasto"],
-            296927.14,
+            306875.64,
             places=2,
             msg="Total de CEAP de Adilson Barroso difere do oficial da Câmara.",
         )
