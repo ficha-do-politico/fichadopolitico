@@ -89,7 +89,7 @@ Arquivos necessários (Portal de Dados Abertos do TSE → Candidatos 2026):
 | P3 | Presidência: substituir gerador hardcoded pelos mesmos dumps, com filtro no cargo Presidente e agregação de bens reais | ✅ Concluído (14 candidatos e 77.251 bens agregados) |
 | P4 | Conferência amostral (10 deputados e 5 senadores) de votos, CEAP/CEAPS e emendas contra os portais oficiais ([detalhes](auditoria-amostral-modulos.md)) | ✅ Concluída com ressalvas (votações confirmadas; CEAPS com divergência em Carlos Viana; emendas NÃO VERIFICADO por URLs com erro) |
 | P5 | Teste de proveniência: todo registro de pessoa carrega `fonte_url` específica + `coletado_em`; CI falha em URL genérica (home do sistema) | ✅ Concluído e ativo no CI ([`tests/test_tse_proveniencia.py`](../tests/test_tse_proveniencia.py)) |
-| P6 | Exibir "dados coletados em DD/MM/AAAA" nas seções da ficha | ⏳ |
+| P6 | Exibir "dados coletados em DD/MM/AAAA" nas seções da ficha | ✅ Concluído (gastos, emendas e patrimônio; `coletado_em` exigido no CI por [`tests/test_coleta_proveniencia.py`](../tests/test_coleta_proveniencia.py)) |
 | P7 | Corrigir STATE.md §5 e code-health.md após P1–P3 | ✅ Concluído |
 
 **Encerramento do Incidente:** `build_congresso_2026.py` e `build_presidencia.py` foram removidos, `fetch_candidaturas.py` está em produção, `TSE_2026_SUSPENSO = False`, P5 está 100% verde no CI e zero links genéricos estão em produção.
